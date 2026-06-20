@@ -1,7 +1,7 @@
 {
   "model_name": "Advanced Statistical Ensemble Model",
   "model_version": "1.0",
-  "training_draws": 10009,
+  "training_draws": 10057,
   "candidate_count": 18000,
   "weights": {
     "time_decay": 0.18,
@@ -16,321 +16,321 @@
   "important_note": "This model ranks combinations using statistical signals. It does not change the true 6/49 jackpot odds.",
   "theoretical_jackpot_odds": "1 in 13983816",
   "fairness_test": {
-    "draw_count": 10009,
-    "expected_count_per_number": 1225.5918367346937,
-    "chi_square": 41.860458920305064,
+    "draw_count": 10057,
+    "expected_count_per_number": 1231.469387755102,
+    "chi_square": 42.07348115740281,
     "degrees_of_freedom": 48,
-    "p_value": 0.7212839116476395,
-    "max_abs_z_number": 23,
-    "max_abs_z": 1.9695568308982785,
+    "p_value": 0.7132474444638972,
+    "max_abs_z_number": 40,
+    "max_abs_z": 1.9915457227038076,
     "interpretation": "No strong evidence against fair-looking number frequencies.",
     "number_z_scores": {
-      "1": 0.5308157904443122,
-      "2": -0.2924776336562969,
-      "3": -1.5426639443275922,
-      "4": 1.3846015635856845,
-      "5": -0.32296998269706023,
-      "6": 1.2931245164633947,
-      "7": -0.47543172790087673,
-      "8": 0.4393387433220223,
-      "9": 0.622292837566602,
-      "10": -0.8718322654307996,
-      "11": 1.2321398183818681,
-      "12": 0.5003234414035489,
-      "13": -0.6278934731046932,
-      "14": -0.6888781711862199,
-      "15": -0.26198528461553366,
-      "16": -0.902324614471563,
-      "17": 1.0796780731780515,
-      "18": -1.1767557558384327,
-      "19": -1.2682328029607226,
-      "20": -0.35346233173782354,
-      "21": 1.8419867991971342,
-      "22": 0.5308157904443122,
-      "23": -1.9695568308982785,
-      "24": 0.19539995099591587,
-      "25": 0.37835404524049565,
-      "26": -0.41444702981935017,
-      "27": -0.9328169635123262,
-      "28": 0.5613081394850755,
-      "29": 0.8052469318111819,
-      "30": 0.40884639428125896,
-      "31": -1.5121715952868289,
-      "32": -0.7498628692677465,
-      "33": -0.17050823749324373,
-      "34": 1.933463846319424,
-      "35": 0.4393387433220223,
-      "36": -0.4449393788601134,
-      "37": 1.1711551203003414,
-      "38": -0.10952353941171714,
-      "39": -0.6278934731046932,
-      "40": -1.9695568308982785,
-      "41": -1.725618038572172,
-      "42": 0.012445856751336063,
-      "43": -0.26198528461553366,
-      "44": 1.8114944501563708,
-      "45": 0.25638464907744246,
-      "46": 0.4393387433220223,
-      "47": -0.4449393788601134,
-      "48": 1.110170422218815,
-      "49": 1.1406627712595783
+      "1": 0.5941113642853981,
+      "2": -0.28805399480503674,
+      "3": -1.5048338004470159,
+      "4": 1.354598742811635,
+      "5": -0.37931248022818514,
+      "6": 1.2329207622474372,
+      "7": -0.5009904607923831,
+      "8": 0.4420138885801508,
+      "9": 0.6245308594264477,
+      "10": -0.9268633927670757,
+      "11": 1.2633402573884867,
+      "12": 0.5332723740032992,
+      "13": -0.5314099559334325,
+      "14": -0.7443464219207789,
+      "15": -0.3184734899460862,
+      "16": -0.9268633927670757,
+      "17": 1.0808232865421898,
+      "18": -1.078960868472323,
+      "19": -1.2918973344596696,
+      "20": -0.3184734899460862,
+      "21": 1.7500521796452784,
+      "22": 0.5636918691443487,
+      "23": -1.9002872372806592,
+      "24": 0.2594969177338539,
+      "25": 0.2594969177338539,
+      "26": -0.37931248022818514,
+      "27": -0.9877023830491747,
+      "28": 0.5941113642853981,
+      "29": 0.7462088399906456,
+      "30": 0.4420138885801508,
+      "31": -1.5960922858701643,
+      "32": -0.8356049073439273,
+      "33": -0.1359565190997893,
+      "34": 1.8108911699273773,
+      "35": 0.3507554031570023,
+      "36": -0.3184734899460862,
+      "37": 1.354598742811635,
+      "38": -0.014278538535591407,
+      "39": -0.6530879364976304,
+      "40": -1.9915457227038076,
+      "41": -1.778609256716461,
+      "42": 0.1073994420286065,
+      "43": -0.28805399480503674,
+      "44": 1.7804716747863278,
+      "45": 0.19865792745175495,
+      "46": 0.4420138885801508,
+      "47": -0.5314099559334325,
+      "48": 1.1416622768242888,
+      "49": 1.2937597525295361
     }
   },
   "top_number_scores": [
     {
-      "number": 42,
-      "count": 1226,
-      "empirical_probability": 0.12248975921670496,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 0.012445856751336063,
-      "time_decay_probability": 0.13765059992094342,
-      "bayesian_posterior_probability": 0.12248956054881686,
-      "current_gap": 18,
-      "average_interval": 8.155102040816326,
-      "gap_ratio": 2.2072072072072073,
-      "time_decay_score": 0.8002892941886013,
-      "bayesian_score": 0.5078125000000007,
-      "gap_score": 0.9391489068784498,
-      "frequency_stability_score": 1.0,
-      "advanced_number_score": 0.8018271399761929
-    },
-    {
       "number": 34,
-      "count": 1289,
-      "empirical_probability": 0.1287840943151164,
+      "count": 1291,
+      "empirical_probability": 0.1283683006860893,
       "expected_probability": 0.12244897959183673,
-      "z_score": 1.933463846319424,
-      "time_decay_probability": 0.14800374586146137,
-      "bayesian_posterior_probability": 0.12875323125869953,
-      "current_gap": 17,
-      "average_interval": 7.748447204968944,
-      "gap_ratio": 2.193987975951904,
-      "time_decay_score": 1.0,
+      "z_score": 1.8108911699273773,
+      "time_decay_probability": 0.14112808875954322,
+      "bayesian_posterior_probability": 0.12833960023748267,
+      "current_gap": 28,
+      "average_interval": 7.765116279069767,
+      "gap_ratio": 3.605870020964361,
+      "time_decay_score": 0.8666355846747081,
       "bayesian_score": 1.0,
-      "gap_score": 0.9335242303448407,
-      "frequency_stability_score": 0.006365000046145891,
-      "advanced_number_score": 0.7846540575954394
-    },
-    {
-      "number": 37,
-      "count": 1264,
-      "empirical_probability": 0.12628634229193725,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 1.1711551203003414,
-      "time_decay_probability": 0.13392010666726237,
-      "bayesian_posterior_probability": 0.12626764764366674,
-      "current_gap": 17,
-      "average_interval": 7.905779889152811,
-      "gap_ratio": 2.1503254882323484,
-      "time_decay_score": 0.7283286123825423,
-      "bayesian_score": 0.8046875000000016,
-      "gap_score": 0.9149461931403957,
-      "frequency_stability_score": 0.19023348360206055,
-      "advanced_number_score": 0.686453703720274
-    },
-    {
-      "number": 45,
-      "count": 1234,
-      "empirical_probability": 0.12328903986412229,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 0.25638464907744246,
-      "time_decay_probability": 0.12157392054299812,
-      "bayesian_posterior_probability": 0.12328494730562736,
-      "current_gap": 19,
-      "average_interval": 8.084347120843471,
-      "gap_ratio": 2.350220706260032,
-      "time_decay_score": 0.49017244621607203,
-      "bayesian_score": 0.5703125000000007,
       "gap_score": 1.0,
-      "frequency_stability_score": 0.7053988505634393,
-      "advanced_number_score": 0.6807096289775096
+      "frequency_stability_score": 0.032968315472464815,
+      "advanced_number_score": 0.7665843384969053
     },
     {
-      "number": 17,
-      "count": 1261,
-      "empirical_probability": 0.12598661204915576,
+      "number": 44,
+      "count": 1290,
+      "empirical_probability": 0.12826886745550362,
       "expected_probability": 0.12244897959183673,
-      "z_score": 1.0796780731780515,
-      "time_decay_probability": 0.12483983481616487,
-      "bayesian_posterior_probability": 0.1259693776098628,
-      "current_gap": 18,
-      "average_interval": 7.916666666666667,
-      "gap_ratio": 2.2736842105263158,
-      "time_decay_score": 0.5531714658726057,
-      "bayesian_score": 0.7812500000000006,
-      "gap_score": 0.9674343368987202,
-      "frequency_stability_score": 0.22135588985975305,
-      "advanced_number_score": 0.6473937019584125
-    },
-    {
-      "number": 43,
-      "count": 1217,
-      "empirical_probability": 0.12159056848836047,
-      "expected_probability": 0.12244897959183673,
-      "z_score": -0.26198528461553366,
-      "time_decay_probability": 0.12607462361988664,
-      "bayesian_posterior_probability": 0.12159475044740505,
-      "current_gap": 12,
-      "average_interval": 8.19983552631579,
-      "gap_ratio": 1.4634439875639353,
-      "time_decay_score": 0.576990365455021,
-      "bayesian_score": 0.4375,
-      "gap_score": 0.6226836414409573,
-      "frequency_stability_score": 0.6999724931460061,
-      "advanced_number_score": 0.5781375186259468
+      "z_score": 1.7804716747863278,
+      "time_decay_probability": 0.1213361543004848,
+      "bayesian_posterior_probability": 0.12824064911933505,
+      "current_gap": 27,
+      "average_interval": 7.7750193948797515,
+      "gap_ratio": 3.4726601476751147,
+      "time_decay_score": 0.48031286442413484,
+      "bayesian_score": 0.9920000000000014,
+      "gap_score": 0.963057494442459,
+      "frequency_stability_score": 0.03894110234569899,
+      "advanced_number_score": 0.6406464534069954
     },
     {
       "number": 12,
-      "count": 1242,
-      "empirical_probability": 0.12408832051153962,
+      "count": 1249,
+      "empirical_probability": 0.1241921050014915,
       "expected_probability": 0.12244897959183673,
-      "z_score": 0.5003234414035489,
-      "time_decay_probability": 0.12276749624055362,
-      "bayesian_posterior_probability": 0.12408033406243786,
-      "current_gap": 12,
-      "average_interval": 8.054794520547945,
-      "gap_ratio": 1.4897959183673468,
-      "time_decay_score": 0.5131963508695611,
-      "bayesian_score": 0.6328125000000007,
-      "gap_score": 0.6338961759630218,
-      "frequency_stability_score": 0.5065965757271557,
-      "advanced_number_score": 0.571955389397055
+      "z_score": 0.5332723740032992,
+      "time_decay_probability": 0.12415961433058267,
+      "bayesian_posterior_probability": 0.12418365327528201,
+      "current_gap": 21,
+      "average_interval": 8.040865384615385,
+      "gap_ratio": 2.611659192825112,
+      "time_decay_score": 0.5354245444674643,
+      "bayesian_score": 0.6640000000000005,
+      "gap_score": 0.7242799040567316,
+      "frequency_stability_score": 0.4878783041279764,
+      "advanced_number_score": 0.6052730001800177
     },
     {
-      "number": 33,
-      "count": 1220,
-      "empirical_probability": 0.12189029873114197,
+      "number": 21,
+      "count": 1289,
+      "empirical_probability": 0.12816943422491797,
       "expected_probability": 0.12244897959183673,
-      "z_score": -0.17050823749324373,
-      "time_decay_probability": 0.12102341492045435,
-      "bayesian_posterior_probability": 0.121893020481209,
-      "current_gap": 11,
-      "average_interval": 8.196882690730106,
-      "gap_ratio": 1.3419735788630904,
-      "time_decay_score": 0.4795532714200235,
-      "bayesian_score": 0.46093750000000094,
-      "gap_score": 0.5709989599226228,
-      "frequency_stability_score": 0.7951055316910903,
-      "advanced_number_score": 0.560871202744881
-    },
-    {
-      "number": 4,
-      "count": 1271,
-      "empirical_probability": 0.1269857128584274,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 1.3846015635856845,
-      "time_decay_probability": 0.11147315932267679,
-      "bayesian_posterior_probability": 0.12696361105587592,
-      "current_gap": 16,
-      "average_interval": 7.850393700787402,
-      "gap_ratio": 2.038114343029087,
-      "time_decay_score": 0.29533020559352174,
-      "bayesian_score": 0.8593750000000008,
-      "gap_score": 0.867201253737736,
-      "frequency_stability_score": 0.12690045722855323,
-      "advanced_number_score": 0.5456232165582013
+      "z_score": 1.7500521796452784,
+      "time_decay_probability": 0.12882924403926405,
+      "bayesian_posterior_probability": 0.1281416980011874,
+      "current_gap": 18,
+      "average_interval": 7.791149068322981,
+      "gap_ratio": 2.3103139013452916,
+      "time_decay_score": 0.6265719790627233,
+      "bayesian_score": 0.9840000000000008,
+      "gap_score": 0.6407091458963395,
+      "frequency_stability_score": 0.04504602428357922,
+      "advanced_number_score": 0.603158085049618
     },
     {
       "number": 38,
-      "count": 1222,
-      "empirical_probability": 0.1220901188929963,
+      "count": 1231,
+      "empirical_probability": 0.12240230685094959,
       "expected_probability": 0.12244897959183673,
-      "z_score": -0.10952353941171714,
-      "time_decay_probability": 0.126991462215614,
-      "bayesian_posterior_probability": 0.12209186717041161,
-      "current_gap": 4,
-      "average_interval": 8.192465192465193,
-      "gap_ratio": 0.4882535239428171,
-      "time_decay_score": 0.5946760509577487,
-      "bayesian_score": 0.4765625000000001,
-      "gap_score": 0.20774794581730488,
-      "frequency_stability_score": 0.8672424988727052,
-      "advanced_number_score": 0.5229289265161918
+      "z_score": -0.014278538535591407,
+      "time_decay_probability": 0.13092994982897227,
+      "bayesian_posterior_probability": 0.12240253314862458,
+      "current_gap": 7,
+      "average_interval": 8.169105691056911,
+      "gap_ratio": 0.8568869426751592,
+      "time_decay_score": 0.6675760747869175,
+      "bayesian_score": 0.5200000000000002,
+      "gap_score": 0.23763666956747145,
+      "frequency_stability_score": 1.0,
+      "advanced_number_score": 0.5896819898279432
+    },
+    {
+      "number": 48,
+      "count": 1269,
+      "empirical_probability": 0.12618076961320474,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 1.1416622768242888,
+      "time_decay_probability": 0.12800160435904762,
+      "bayesian_posterior_probability": 0.12616267563823472,
+      "current_gap": 18,
+      "average_interval": 7.906940063091483,
+      "gap_ratio": 2.276481149012567,
+      "time_decay_score": 0.6104171149027833,
+      "bayesian_score": 0.8240000000000012,
+      "gap_score": 0.6313264581854618,
+      "frequency_stability_score": 0.20356366461133535,
+      "advanced_number_score": 0.5876694819394678
+    },
+    {
+      "number": 42,
+      "count": 1235,
+      "empirical_probability": 0.12280003977329224,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 0.1073994420286065,
+      "time_decay_probability": 0.14102495768850884,
+      "bayesian_posterior_probability": 0.12279833762121511,
+      "current_gap": 0,
+      "average_interval": 8.149108589951378,
+      "gap_ratio": 0.0,
+      "time_decay_score": 0.8646225487086294,
+      "bayesian_score": 0.5519999999999999,
+      "gap_score": 0.0,
+      "frequency_stability_score": 0.8727747927521504,
+      "advanced_number_score": 0.571941723163019
+    },
+    {
+      "number": 37,
+      "count": 1276,
+      "empirical_probability": 0.12687680222730435,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 1.354598742811635,
+      "time_decay_probability": 0.14134989708694656,
+      "bayesian_posterior_probability": 0.12685533346526814,
+      "current_gap": 2,
+      "average_interval": 7.88078431372549,
+      "gap_ratio": 0.25378184713375795,
+      "time_decay_score": 0.8709651057022735,
+      "bayesian_score": 0.8799999999999998,
+      "gap_score": 0.07038019830395496,
+      "frequency_stability_score": 0.13876446081100616,
+      "advanced_number_score": 0.526637473448872
+    },
+    {
+      "number": 25,
+      "count": 1240,
+      "empirical_probability": 0.12329720592622054,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 0.2594969177338539,
+      "time_decay_probability": 0.10284127609146575,
+      "bayesian_posterior_probability": 0.1232930932119533,
+      "current_gap": 23,
+      "average_interval": 8.09765940274415,
+      "gap_ratio": 2.840326921160171,
+      "time_decay_score": 0.1193076440808976,
+      "bayesian_score": 0.5920000000000003,
+      "gap_score": 0.7876953147636055,
+      "frequency_stability_score": 0.7054315734791757,
+      "advanced_number_score": 0.5218024366110059
     },
     {
       "number": 35,
-      "count": 1240,
-      "empirical_probability": 0.12388850034968528,
+      "count": 1243,
+      "empirical_probability": 0.12359550561797752,
       "expected_probability": 0.12244897959183673,
-      "z_score": 0.4393387433220223,
-      "time_decay_probability": 0.13492950588614736,
-      "bayesian_posterior_probability": 0.12388148737323523,
-      "current_gap": 1,
-      "average_interval": 8.063761097659404,
-      "gap_ratio": 0.12401161044940445,
-      "time_decay_score": 0.7477997790798129,
-      "bayesian_score": 0.6171875000000004,
-      "gap_score": 0.052765942415147635,
-      "frequency_stability_score": 0.5499797138982131,
-      "advanced_number_score": 0.5018242371073736
+      "z_score": 0.3507554031570023,
+      "time_decay_probability": 0.13033474493941355,
+      "bayesian_posterior_probability": 0.1235899465663962,
+      "current_gap": 4,
+      "average_interval": 8.080515297906603,
+      "gap_ratio": 0.49501793543244316,
+      "time_decay_score": 0.6559581517124236,
+      "bayesian_score": 0.6160000000000004,
+      "gap_score": 0.13728113674492753,
+      "frequency_stability_score": 0.6231150620440009,
+      "advanced_number_score": 0.5097307421087593
     },
     {
-      "number": 9,
+      "number": 24,
+      "count": 1240,
+      "empirical_probability": 0.12329720592622054,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 0.2594969177338539,
+      "time_decay_probability": 0.1183008977097703,
+      "bayesian_posterior_probability": 0.1232930932119533,
+      "current_gap": 11,
+      "average_interval": 8.103309120258272,
+      "gap_ratio": 1.3574701195219125,
+      "time_decay_score": 0.42106708502804174,
+      "bayesian_score": 0.5920000000000003,
+      "gap_score": 0.37646119012322804,
+      "frequency_stability_score": 0.7054315734791757,
+      "advanced_number_score": 0.5095217377350547
+    },
+    {
+      "number": 33,
+      "count": 1227,
+      "empirical_probability": 0.12200457392860695,
+      "expected_probability": 0.12244897959183673,
+      "z_score": -0.1359565190997893,
+      "time_decay_probability": 0.12253771156801926,
+      "bayesian_posterior_probability": 0.12200672867603404,
+      "current_gap": 8,
+      "average_interval": 8.191680261011419,
+      "gap_ratio": 0.9766006173454148,
+      "time_decay_score": 0.5037663006251782,
+      "bayesian_score": 0.48800000000000054,
+      "gap_score": 0.27083633399637375,
+      "frequency_stability_score": 0.8379382324043114,
+      "advanced_number_score": 0.5084266201675094
+    },
+    {
+      "number": 4,
+      "count": 1276,
+      "empirical_probability": 0.12687680222730435,
+      "expected_probability": 0.12244897959183673,
+      "z_score": 1.354598742811635,
+      "time_decay_probability": 0.1109307772078273,
+      "bayesian_posterior_probability": 0.12685533346526814,
+      "current_gap": 19,
+      "average_interval": 7.854901960784313,
+      "gap_ratio": 2.418871692461308,
+      "time_decay_score": 0.27720823147459306,
+      "bayesian_score": 0.8799999999999998,
+      "gap_score": 0.6708149984325836,
+      "frequency_stability_score": 0.13876446081100616,
+      "advanced_number_score": 0.49861911121272495
+    },
+    {
+      "number": 20,
+      "count": 1221,
+      "empirical_probability": 0.12140797454509297,
+      "expected_probability": 0.12244897959183673,
+      "z_score": -0.3184734899460862,
+      "time_decay_probability": 0.12297128600818104,
+      "bayesian_posterior_probability": 0.12141302196714823,
+      "current_gap": 12,
+      "average_interval": 8.222131147540983,
+      "gap_ratio": 1.4594756255607617,
+      "time_decay_score": 0.512229326687684,
+      "bayesian_score": 0.44000000000000045,
+      "gap_score": 0.4047499263909787,
+      "frequency_stability_score": 0.6509313179200039,
+      "advanced_number_score": 0.49504254318805074
+    },
+    {
+      "number": 46,
       "count": 1246,
-      "empirical_probability": 0.12448796083524828,
+      "empirical_probability": 0.12389380530973451,
       "expected_probability": 0.12244897959183673,
-      "z_score": 0.622292837566602,
-      "time_decay_probability": 0.12545220416438888,
-      "bayesian_posterior_probability": 0.1244780274408431,
-      "current_gap": 6,
-      "average_interval": 8.026506024096385,
-      "gap_ratio": 0.7475232662864005,
-      "time_decay_score": 0.5649839830971977,
-      "bayesian_score": 0.6640625000000001,
-      "gap_score": 0.3180651350297879,
-      "frequency_stability_score": 0.4296153672418142,
-      "advanced_number_score": 0.5009501771349691
-    },
-    {
-      "number": 23,
-      "count": 1161,
-      "empirical_probability": 0.11599560395643921,
-      "expected_probability": 0.12244897959183673,
-      "z_score": -1.9695568308982785,
-      "time_decay_probability": 0.146670649565624,
-      "bayesian_posterior_probability": 0.11602704314973156,
-      "current_gap": 16,
-      "average_interval": 8.608620689655172,
-      "gap_ratio": 1.858602042860004,
-      "time_decay_score": 0.974284762942024,
-      "bayesian_score": 0.0,
-      "gap_score": 0.7908202144204773,
-      "frequency_stability_score": 0.0,
-      "advanced_number_score": 0.4899904824877266
-    },
-    {
-      "number": 8,
-      "count": 1240,
-      "empirical_probability": 0.12388850034968528,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 0.4393387433220223,
-      "time_decay_probability": 0.1233987945298724,
-      "bayesian_posterior_probability": 0.12388148737323523,
-      "current_gap": 5,
-      "average_interval": 8.073446327683616,
-      "gap_ratio": 0.6193142057382786,
-      "time_decay_score": 0.5253740046630778,
-      "bayesian_score": 0.6171875000000004,
-      "gap_score": 0.2635132113714586,
-      "frequency_stability_score": 0.5499797138982131,
-      "advanced_number_score": 0.48778332202143077
-    },
-    {
-      "number": 30,
-      "count": 1239,
-      "empirical_probability": 0.12378859026875812,
-      "expected_probability": 0.12244897959183673,
-      "z_score": 0.40884639428125896,
-      "time_decay_probability": 0.1203140168708899,
-      "bayesian_posterior_probability": 0.12378206402863393,
-      "current_gap": 6,
-      "average_interval": 8.07108239095315,
-      "gap_ratio": 0.7433947157726182,
-      "time_decay_score": 0.46586908441119457,
-      "bayesian_score": 0.6093750000000008,
-      "gap_score": 0.3163084700056114,
-      "frequency_stability_score": 0.5730797265837309,
-      "advanced_number_score": 0.4857975381415076
+      "z_score": 0.4420138885801508,
+      "time_decay_probability": 0.12471699176266648,
+      "bayesian_posterior_probability": 0.1238867999208391,
+      "current_gap": 7,
+      "average_interval": 8.070682730923695,
+      "gap_ratio": 0.8673367834394905,
+      "time_decay_score": 0.5463041058470921,
+      "bayesian_score": 0.6400000000000005,
+      "gap_score": 0.24053467773292844,
+      "frequency_stability_score": 0.5512174241278432,
+      "advanced_number_score": 0.4942683860129285
     }
   ],
   "top_pair_significance": [
@@ -340,9 +340,9 @@
         44
       ],
       "count": 165,
-      "expected": 127.66581632653062,
-      "z_score": 3.325499581127352,
-      "support_score": 0.9156874476409189
+      "expected": 128.2780612244898,
+      "z_score": 3.263149411233845,
+      "support_score": 0.9078936764042307
     },
     {
       "pair": [
@@ -350,9 +350,9 @@
         30
       ],
       "count": 163,
-      "expected": 127.66581632653062,
-      "z_score": 3.14735187551725,
-      "support_score": 0.8934189844396563
+      "expected": 128.2780612244898,
+      "z_score": 3.085427345349348,
+      "support_score": 0.8856784181686685
     },
     {
       "pair": [
@@ -360,9 +360,19 @@
         11
       ],
       "count": 162,
-      "expected": 127.66581632653062,
-      "z_score": 3.0582780227121984,
-      "support_score": 0.8822847528390247
+      "expected": 128.2780612244898,
+      "z_score": 2.9965663124070994,
+      "support_score": 0.8745707890508874
+    },
+    {
+      "pair": [
+        26,
+        29
+      ],
+      "count": 162,
+      "expected": 128.2780612244898,
+      "z_score": 2.9965663124070994,
+      "support_score": 0.8745707890508874
     },
     {
       "pair": [
@@ -370,39 +380,69 @@
         6
       ],
       "count": 161,
-      "expected": 127.66581632653062,
-      "z_score": 2.9692041699071474,
-      "support_score": 0.8711505212383934
-    },
-    {
-      "pair": [
-        26,
-        29
-      ],
-      "count": 161,
-      "expected": 127.66581632653062,
-      "z_score": 2.9692041699071474,
-      "support_score": 0.8711505212383934
+      "expected": 128.2780612244898,
+      "z_score": 2.907705279464851,
+      "support_score": 0.8634631599331064
     },
     {
       "pair": [
         44,
         49
       ],
-      "count": 158,
-      "expected": 127.66581632653062,
-      "z_score": 2.7019826114919945,
-      "support_score": 0.8377478264364993
+      "count": 159,
+      "expected": 128.2780612244898,
+      "z_score": 2.729983213580354,
+      "support_score": 0.8412479016975443
     },
     {
       "pair": [
         6,
         22
       ],
+      "count": 158,
+      "expected": 128.2780612244898,
+      "z_score": 2.6411221806381056,
+      "support_score": 0.8301402725797632
+    },
+    {
+      "pair": [
+        4,
+        44
+      ],
       "count": 157,
-      "expected": 127.66581632653062,
-      "z_score": 2.6129087586869435,
-      "support_score": 0.8266135948358679
+      "expected": 128.2780612244898,
+      "z_score": 2.552261147695857,
+      "support_score": 0.8190326434619821
+    },
+    {
+      "pair": [
+        18,
+        22
+      ],
+      "count": 157,
+      "expected": 128.2780612244898,
+      "z_score": 2.552261147695857,
+      "support_score": 0.8190326434619821
+    },
+    {
+      "pair": [
+        4,
+        24
+      ],
+      "count": 156,
+      "expected": 128.2780612244898,
+      "z_score": 2.4634001147536084,
+      "support_score": 0.807925014344201
+    },
+    {
+      "pair": [
+        4,
+        47
+      ],
+      "count": 156,
+      "expected": 128.2780612244898,
+      "z_score": 2.4634001147536084,
+      "support_score": 0.807925014344201
     },
     {
       "pair": [
@@ -410,49 +450,19 @@
         32
       ],
       "count": 156,
-      "expected": 127.66581632653062,
-      "z_score": 2.523834905881892,
-      "support_score": 0.8154793632352365
+      "expected": 128.2780612244898,
+      "z_score": 2.4634001147536084,
+      "support_score": 0.807925014344201
     },
     {
       "pair": [
-        18,
-        22
-      ],
-      "count": 156,
-      "expected": 127.66581632653062,
-      "z_score": 2.523834905881892,
-      "support_score": 0.8154793632352365
-    },
-    {
-      "pair": [
-        4,
-        24
+        41,
+        49
       ],
       "count": 155,
-      "expected": 127.66581632653062,
-      "z_score": 2.434761053076841,
-      "support_score": 0.8043451316346051
-    },
-    {
-      "pair": [
-        4,
-        44
-      ],
-      "count": 155,
-      "expected": 127.66581632653062,
-      "z_score": 2.434761053076841,
-      "support_score": 0.8043451316346051
-    },
-    {
-      "pair": [
-        4,
-        47
-      ],
-      "count": 155,
-      "expected": 127.66581632653062,
-      "z_score": 2.434761053076841,
-      "support_score": 0.8043451316346051
+      "expected": 128.2780612244898,
+      "z_score": 2.37453908181136,
+      "support_score": 0.79681738522642
     },
     {
       "pair": [
@@ -460,39 +470,59 @@
         46
       ],
       "count": 154,
-      "expected": 127.66581632653062,
-      "z_score": 2.34568720027179,
-      "support_score": 0.7932109000339738
-    },
-    {
-      "pair": [
-        41,
-        49
-      ],
-      "count": 154,
-      "expected": 127.66581632653062,
-      "z_score": 2.34568720027179,
-      "support_score": 0.7932109000339738
+      "expected": 128.2780612244898,
+      "z_score": 2.2856780488691117,
+      "support_score": 0.785709756108639
     },
     {
       "pair": [
         30,
         34
       ],
-      "count": 153,
-      "expected": 127.66581632653062,
-      "z_score": 2.256613347466739,
-      "support_score": 0.7820766684333424
+      "count": 154,
+      "expected": 128.2780612244898,
+      "z_score": 2.2856780488691117,
+      "support_score": 0.785709756108639
     },
     {
       "pair": [
         1,
         5
       ],
+      "count": 153,
+      "expected": 128.2780612244898,
+      "z_score": 2.196817015926863,
+      "support_score": 0.7746021269908578
+    },
+    {
+      "pair": [
+        36,
+        37
+      ],
+      "count": 153,
+      "expected": 128.2780612244898,
+      "z_score": 2.196817015926863,
+      "support_score": 0.7746021269908578
+    },
+    {
+      "pair": [
+        37,
+        49
+      ],
+      "count": 153,
+      "expected": 128.2780612244898,
+      "z_score": 2.196817015926863,
+      "support_score": 0.7746021269908578
+    },
+    {
+      "pair": [
+        1,
+        21
+      ],
       "count": 152,
-      "expected": 127.66581632653062,
-      "z_score": 2.167539494661688,
-      "support_score": 0.770942436832711
+      "expected": 128.2780612244898,
+      "z_score": 2.1079559829846146,
+      "support_score": 0.7634944978730769
     },
     {
       "pair": [
@@ -500,39 +530,9 @@
         48
       ],
       "count": 152,
-      "expected": 127.66581632653062,
-      "z_score": 2.167539494661688,
-      "support_score": 0.770942436832711
-    },
-    {
-      "pair": [
-        8,
-        37
-      ],
-      "count": 152,
-      "expected": 127.66581632653062,
-      "z_score": 2.167539494661688,
-      "support_score": 0.770942436832711
-    },
-    {
-      "pair": [
-        11,
-        35
-      ],
-      "count": 152,
-      "expected": 127.66581632653062,
-      "z_score": 2.167539494661688,
-      "support_score": 0.770942436832711
-    },
-    {
-      "pair": [
-        34,
-        38
-      ],
-      "count": 152,
-      "expected": 127.66581632653062,
-      "z_score": 2.167539494661688,
-      "support_score": 0.770942436832711
+      "expected": 128.2780612244898,
+      "z_score": 2.1079559829846146,
+      "support_score": 0.7634944978730769
     }
   ],
   "top_triple_significance": [
@@ -543,8 +543,8 @@
         49
       ],
       "count": 25,
-      "expected": 10.865175857577075,
-      "z_score": 4.290499738251603,
+      "expected": 10.917281806339558,
+      "z_score": 4.264470147372308,
       "support_score": 1.0
     },
     {
@@ -554,9 +554,9 @@
         34
       ],
       "count": 24,
-      "expected": 10.865175857577075,
-      "z_score": 3.9869586616156014,
-      "support_score": 0.9983698327019501
+      "expected": 10.917281806339558,
+      "z_score": 3.9616543067988577,
+      "support_score": 0.9952067883498572
     },
     {
       "triple": [
@@ -565,9 +565,9 @@
         34
       ],
       "count": 24,
-      "expected": 10.865175857577075,
-      "z_score": 3.9869586616156014,
-      "support_score": 0.9983698327019501
+      "expected": 10.917281806339558,
+      "z_score": 3.9616543067988577,
+      "support_score": 0.9952067883498572
     },
     {
       "triple": [
@@ -576,9 +576,20 @@
         22
       ],
       "count": 24,
-      "expected": 10.865175857577075,
-      "z_score": 3.9869586616156014,
-      "support_score": 0.9983698327019501
+      "expected": 10.917281806339558,
+      "z_score": 3.9616543067988577,
+      "support_score": 0.9952067883498572
+    },
+    {
+      "triple": [
+        11,
+        34,
+        36
+      ],
+      "count": 24,
+      "expected": 10.917281806339558,
+      "z_score": 3.9616543067988577,
+      "support_score": 0.9952067883498572
     },
     {
       "triple": [
@@ -587,9 +598,9 @@
         37
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -598,9 +609,9 @@
         33
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -609,9 +620,9 @@
         22
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -620,9 +631,9 @@
         49
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -631,20 +642,9 @@
         48
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
-    },
-    {
-      "triple": [
-        11,
-        34,
-        36
-      ],
-      "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -653,9 +653,9 @@
         36
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -664,9 +664,9 @@
         34
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -675,9 +675,9 @@
         43
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -686,9 +686,9 @@
         38
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     },
     {
       "triple": [
@@ -697,469 +697,342 @@
         46
       ],
       "count": 23,
-      "expected": 10.865175857577075,
-      "z_score": 3.6834175849796,
-      "support_score": 0.9604271981224499
+      "expected": 10.917281806339558,
+      "z_score": 3.6588384662254074,
+      "support_score": 0.957354808278176
     }
   ],
   "recommended_combinations": [
     {
       "numbers": [
         4,
-        9,
-        17,
+        12,
+        21,
         34,
         37,
-        42
+        44
       ],
-      "final_score": 0.7630342927394492,
-      "confidence_score": 76.30342927394493,
+      "final_score": 0.7488379884138571,
+      "confidence_score": 74.88379884138571,
       "sub_scores": {
-        "time_decay_score": 0.6570172601890781,
-        "bayesian_score": 0.7695312500000006,
-        "gap_score": 0.8233866760049883,
-        "pair_significance_score": 0.5920524491159002,
-        "triple_significance_score": 0.5202926370002476,
-        "structure_balance_score": 0.9742105263157895,
+        "time_decay_score": 0.6095197183009828,
+        "bayesian_score": 0.9000000000000004,
+        "gap_score": 0.6782069568553447,
+        "pair_significance_score": 0.6775954993622366,
+        "triple_significance_score": 0.6129017896258763,
+        "structure_balance_score": 0.9092982456140352,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.32907836632972115
+        "frequency_stability_score": 0.1470604446419553
       },
       "structure_details": {
-        "structure_balance_score": 0.9742105263157895,
-        "sum_score": 0.9263157894736842,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.9092982456140352,
+        "sum_score": 0.9789473684210527,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 143,
-        "odd_count": 3,
-        "even_count": 3,
+        "sum": 152,
+        "odd_count": 2,
+        "even_count": 4,
         "consecutive_pairs": 0,
-        "spread": 38,
+        "spread": 40,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 1,
       "relative_top_percent": 0.005555555555555556,
-      "relative_model_probability": 0.00041118110783782303
+      "relative_model_probability": 0.0005021538767699091
     },
     {
       "numbers": [
         4,
-        17,
-        23,
+        12,
+        21,
+        25,
         34,
-        37,
-        42
+        44
       ],
-      "final_score": 0.7623329809889802,
-      "confidence_score": 76.23329809889802,
+      "final_score": 0.7328659034728614,
+      "confidence_score": 73.28659034728614,
       "sub_scores": {
-        "time_decay_score": 0.7252340568298825,
-        "bayesian_score": 0.6588541666666673,
-        "gap_score": 0.90217918923677,
-        "pair_significance_score": 0.5593920364207148,
-        "triple_significance_score": 0.5127041100843476,
-        "structure_balance_score": 0.9742105263157895,
+        "time_decay_score": 0.48424347469742024,
+        "bayesian_score": 0.8520000000000004,
+        "gap_score": 0.7977594762652865,
+        "pair_significance_score": 0.6383485431460768,
+        "triple_significance_score": 0.5977609975972038,
+        "structure_balance_score": 0.8798245614035088,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.2574758051227521
+        "frequency_stability_score": 0.24150496341998354
       },
       "structure_details": {
-        "structure_balance_score": 0.9742105263157895,
-        "sum_score": 0.9263157894736842,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.8798245614035088,
+        "sum_score": 0.8947368421052632,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 157,
-        "odd_count": 3,
-        "even_count": 3,
+        "sum": 140,
+        "odd_count": 2,
+        "even_count": 4,
         "consecutive_pairs": 0,
-        "spread": 38,
-        "birthdate_range_count": 3
+        "spread": 40,
+        "birthdate_range_count": 4
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 2,
       "relative_top_percent": 0.011111111111111112,
-      "relative_model_probability": 0.0004075922845644858
-    },
-    {
-      "numbers": [
-        9,
-        12,
-        17,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7591898285985968,
-      "confidence_score": 75.91898285985968,
-      "sub_scores": {
-        "time_decay_score": 0.6933282844017513,
-        "bayesian_score": 0.7317708333333339,
-        "gap_score": 0.7845024963758694,
-        "pair_significance_score": 0.5571651901005885,
-        "triple_significance_score": 0.5164983735422976,
-        "structure_balance_score": 0.9963157894736842,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3923610527461549
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9963157894736842,
-        "sum_score": 0.9894736842105263,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 151,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 33,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 3,
-      "relative_top_percent": 0.016666666666666666,
-      "relative_model_probability": 0.0003918887377964882
+      "relative_model_probability": 0.0004112723052873048
     },
     {
       "numbers": [
         4,
         12,
-        17,
+        21,
+        25,
         34,
-        37,
-        45
+        44
       ],
-      "final_score": 0.7589458928716311,
-      "confidence_score": 75.8945892871631,
+      "final_score": 0.7328659034728614,
+      "confidence_score": 73.28659034728614,
       "sub_scores": {
-        "time_decay_score": 0.5966998468223838,
-        "bayesian_score": 0.774739583333334,
-        "gap_score": 0.8861670316807858,
-        "pair_significance_score": 0.5534537795670448,
-        "triple_significance_score": 0.5051155831684475,
-        "structure_balance_score": 0.9963157894736842,
+        "time_decay_score": 0.48424347469742024,
+        "bayesian_score": 0.8520000000000004,
+        "gap_score": 0.7977594762652865,
+        "pair_significance_score": 0.6383485431460768,
+        "triple_significance_score": 0.5977609975972038,
+        "structure_balance_score": 0.8798245614035088,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.2928083761711846
+        "frequency_stability_score": 0.24150496341998354
       },
       "structure_details": {
-        "structure_balance_score": 0.9963157894736842,
-        "sum_score": 0.9894736842105263,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.8798245614035088,
+        "sum_score": 0.8947368421052632,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 149,
-        "odd_count": 3,
-        "even_count": 3,
+        "sum": 140,
+        "odd_count": 2,
+        "even_count": 4,
         "consecutive_pairs": 0,
-        "spread": 41,
+        "spread": 40,
+        "birthdate_range_count": 4
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 3,
+      "relative_top_percent": 0.016666666666666666,
+      "relative_model_probability": 0.0004112723052873048
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        34,
+        37,
+        48
+      ],
+      "final_score": 0.7316944195896498,
+      "confidence_score": 73.16944195896498,
+      "sub_scores": {
+        "time_decay_score": 0.6312037600474243,
+        "bayesian_score": 0.8720000000000003,
+        "gap_score": 0.622918450812512,
+        "pair_significance_score": 0.6324244742832603,
+        "triple_significance_score": 0.5807276065649472,
+        "structure_balance_score": 0.894561403508772,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.1744975383528947
+      },
+      "structure_details": {
+        "structure_balance_score": 0.894561403508772,
+        "sum_score": 0.9368421052631579,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 156,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 44,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 4,
       "relative_top_percent": 0.022222222222222223,
-      "relative_model_probability": 0.00039069561195674004
+      "relative_model_probability": 0.0004052937001529169
     },
     {
       "numbers": [
         4,
-        12,
-        17,
+        21,
+        25,
         34,
         37,
-        42
+        44
       ],
-      "final_score": 0.7588733297998529,
-      "confidence_score": 75.88733297998529,
+      "final_score": 0.7276730295395484,
+      "confidence_score": 72.76730295395484,
       "sub_scores": {
-        "time_decay_score": 0.6483859881511387,
-        "bayesian_score": 0.7643229166666674,
-        "gap_score": 0.876025182827194,
-        "pair_significance_score": 0.586856474368939,
-        "triple_significance_score": 0.5183955052712725,
-        "structure_balance_score": 0.9019298245614035,
+        "time_decay_score": 0.5401669015698883,
+        "bayesian_score": 0.8880000000000003,
+        "gap_score": 0.6887761919731571,
+        "pair_significance_score": 0.6487156636560059,
+        "triple_significance_score": 0.6110091906222922,
+        "structure_balance_score": 0.86140350877193,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3419085677439447
+        "frequency_stability_score": 0.18331932286715516
       },
       "structure_details": {
-        "structure_balance_score": 0.9019298245614035,
-        "sum_score": 0.9578947368421052,
-        "odd_even_score": 0.6666666666666667,
-        "low_high_score": 1.0,
+        "structure_balance_score": 0.86140350877193,
+        "sum_score": 0.8421052631578947,
+        "odd_even_score": 1.0,
+        "low_high_score": 0.6666666666666667,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 146,
-        "odd_count": 2,
-        "even_count": 4,
+        "sum": 165,
+        "odd_count": 3,
+        "even_count": 3,
         "consecutive_pairs": 0,
-        "spread": 38,
+        "spread": 40,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 5,
       "relative_top_percent": 0.027777777777777776,
-      "relative_model_probability": 0.00039034139670277024
+      "relative_model_probability": 0.00038542422632816697
     },
     {
       "numbers": [
         4,
-        9,
-        17,
+        12,
+        21,
+        33,
         34,
-        42,
-        45
+        44
       ],
-      "final_score": 0.7536260107743394,
-      "confidence_score": 75.36260107743395,
+      "final_score": 0.7263156513436164,
+      "confidence_score": 72.63156513436164,
       "sub_scores": {
-        "time_decay_score": 0.6173245658279997,
-        "bayesian_score": 0.7304687500000004,
-        "gap_score": 0.837562310481589,
-        "pair_significance_score": 0.552711497460336,
-        "triple_significance_score": 0.5013213197104974,
-        "structure_balance_score": 0.9963157894736842,
+        "time_decay_score": 0.5483199174548004,
+        "bayesian_score": 0.8346666666666671,
+        "gap_score": 0.7116163128040812,
+        "pair_significance_score": 0.6376080345382248,
+        "triple_significance_score": 0.5693720125434428,
+        "structure_balance_score": 0.8717982456140352,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.41493926082328425
+        "frequency_stability_score": 0.26358940657417285
       },
       "structure_details": {
-        "structure_balance_score": 0.9963157894736842,
-        "sum_score": 0.9894736842105263,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.8717982456140352,
+        "sum_score": 0.9789473684210527,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
-        "consecutive_score": 1.0
+        "consecutive_score": 0.75
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 151,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
+        "sum": 148,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 40,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 6,
       "relative_top_percent": 0.03333333333333333,
-      "relative_model_probability": 0.00036555993425164897
+      "relative_model_probability": 0.00037893981264061643
     },
     {
       "numbers": [
+        4,
         12,
-        17,
-        23,
+        21,
         34,
-        37,
-        42
+        44,
+        48
       ],
-      "final_score": 0.7518794157188967,
-      "confidence_score": 75.18794157188967,
+      "final_score": 0.7261728469786947,
+      "confidence_score": 72.61728469786947,
       "sub_scores": {
-        "time_decay_score": 0.7615450810425557,
-        "bayesian_score": 0.6210937500000006,
-        "gap_score": 0.8632950096076509,
-        "pair_significance_score": 0.5311853163657819,
-        "triple_significance_score": 0.5051155831684475,
-        "structure_balance_score": 0.9447368421052632,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.32075849153918584
+        "time_decay_score": 0.5660950531677346,
+        "bayesian_score": 0.8906666666666673,
+        "gap_score": 0.7716980001689292,
+        "pair_significance_score": 0.6642663444208993,
+        "triple_significance_score": 0.5826202055685312,
+        "structure_balance_score": 0.785438596491228,
+        "human_pattern_avoidance_score": 0.94,
+        "frequency_stability_score": 0.15786031194201014
       },
       "structure_details": {
-        "structure_balance_score": 0.9447368421052632,
-        "sum_score": 0.8421052631578947,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.785438596491228,
+        "sum_score": 0.8631578947368421,
+        "odd_even_score": 0.33333333333333337,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 165,
-        "odd_count": 3,
-        "even_count": 3,
+        "human_pattern_avoidance_score": 0.94,
+        "penalties": [
+          "unbalanced_even_odd"
+        ],
+        "sum": 163,
+        "odd_count": 1,
+        "even_count": 5,
         "consecutive_pairs": 0,
-        "spread": 30,
+        "spread": 44,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
       "relative_rank": 7,
       "relative_top_percent": 0.03888888888888889,
-      "relative_model_probability": 0.0003576653620411933
-    },
-    {
-      "numbers": [
-        4,
-        8,
-        17,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7510539765694418,
-      "confidence_score": 75.10539765694418,
-      "sub_scores": {
-        "time_decay_score": 0.6504155971167248,
-        "bayesian_score": 0.7617187500000006,
-        "gap_score": 0.8142946887286002,
-        "pair_significance_score": 0.6091249375702017,
-        "triple_significance_score": 0.5411610860189727,
-        "structure_balance_score": 0.8871929824561403,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3491390907724543
-      },
-      "structure_details": {
-        "structure_balance_score": 0.8871929824561403,
-        "sum_score": 0.9157894736842105,
-        "odd_even_score": 0.6666666666666667,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 142,
-        "odd_count": 2,
-        "even_count": 4,
-        "consecutive_pairs": 0,
-        "spread": 38,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 8,
-      "relative_top_percent": 0.044444444444444446,
-      "relative_model_probability": 0.0003539939480155059
-    },
-    {
-      "numbers": [
-        4,
-        17,
-        23,
-        34,
-        42,
-        45
-      ],
-      "final_score": 0.7502012680535439,
-      "confidence_score": 75.0201268053544,
-      "sub_scores": {
-        "time_decay_score": 0.6855413624688041,
-        "bayesian_score": 0.6197916666666671,
-        "gap_score": 0.9163548237133706,
-        "pair_significance_score": 0.5393504195395783,
-        "triple_significance_score": 0.5373668225610226,
-        "structure_balance_score": 0.9447368421052632,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.34333669961631524
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9447368421052632,
-        "sum_score": 0.8421052631578947,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 165,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 9,
-      "relative_top_percent": 0.05,
-      "relative_model_probability": 0.00035024081492640845
+      "relative_model_probability": 0.00037826398777110823
     },
     {
       "numbers": [
         4,
         12,
-        17,
+        21,
         34,
-        37,
-        43
+        35,
+        44
       ],
-      "final_score": 0.749356147924793,
-      "confidence_score": 74.9356147924793,
+      "final_score": 0.7254392998209908,
+      "confidence_score": 72.54392998209907,
       "sub_scores": {
-        "time_decay_score": 0.6111695000288754,
-        "bayesian_score": 0.7526041666666673,
-        "gap_score": 0.8232809719209454,
-        "pair_significance_score": 0.5631034469542586,
-        "triple_significance_score": 0.5316754273740976,
-        "structure_balance_score": 0.9889473684210527,
+        "time_decay_score": 0.5736852259693412,
+        "bayesian_score": 0.8560000000000004,
+        "gap_score": 0.6893571132621735,
+        "pair_significance_score": 0.6124307418712543,
+        "triple_significance_score": 0.5390904284860978,
+        "structure_balance_score": 0.8791666666666667,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.2919039832682791
+        "frequency_stability_score": 0.22778554484745442
       },
       "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 147,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 39,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 10,
-      "relative_top_percent": 0.05555555555555555,
-      "relative_model_probability": 0.0003465603448674007
-    },
-    {
-      "numbers": [
-        8,
-        12,
-        17,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7477899393782887,
-      "confidence_score": 74.77899393782887,
-      "sub_scores": {
-        "time_decay_score": 0.686726621329398,
-        "bayesian_score": 0.7239583333333339,
-        "gap_score": 0.7754105090994812,
-        "pair_significance_score": 0.5712685501280549,
-        "triple_significance_score": 0.5354696908320478,
-        "structure_balance_score": 0.9166666666666666,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.41242177718888806
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9166666666666666,
+        "structure_balance_score": 0.8791666666666667,
         "sum_score": 1.0,
         "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
-        "consecutive_score": 1.0
+        "consecutive_score": 0.75
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
@@ -1167,254 +1040,39 @@
         "sum": 150,
         "odd_count": 2,
         "even_count": 4,
-        "consecutive_pairs": 0,
-        "spread": 34,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 11,
-      "relative_top_percent": 0.06111111111111111,
-      "relative_model_probability": 0.0003398415066783071
-    },
-    {
-      "numbers": [
-        4,
-        17,
-        34,
-        37,
-        42,
-        45
-      ],
-      "final_score": 0.7473479485211512,
-      "confidence_score": 74.73479485211512,
-      "sub_scores": {
-        "time_decay_score": 0.6445486707088905,
-        "bayesian_score": 0.7539062500000008,
-        "gap_score": 0.9370424868333571,
-        "pair_significance_score": 0.5393504195395783,
-        "triple_significance_score": 0.47855573896279735,
-        "structure_balance_score": 0.8098245614035088,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.37504228021665864
-      },
-      "structure_details": {
-        "structure_balance_score": 0.8098245614035088,
-        "sum_score": 0.6947368421052631,
-        "odd_even_score": 1.0,
-        "low_high_score": 0.6666666666666667,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 179,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 2
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 12,
-      "relative_top_percent": 0.06666666666666667,
-      "relative_model_probability": 0.00033796909837673615
-    },
-    {
-      "numbers": [
-        4,
-        17,
-        34,
-        37,
-        42,
-        45
-      ],
-      "final_score": 0.7473479485211512,
-      "confidence_score": 74.73479485211512,
-      "sub_scores": {
-        "time_decay_score": 0.6445486707088905,
-        "bayesian_score": 0.7539062500000008,
-        "gap_score": 0.9370424868333571,
-        "pair_significance_score": 0.5393504195395783,
-        "triple_significance_score": 0.47855573896279735,
-        "structure_balance_score": 0.8098245614035088,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.37504228021665864
-      },
-      "structure_details": {
-        "structure_balance_score": 0.8098245614035088,
-        "sum_score": 0.6947368421052631,
-        "odd_even_score": 1.0,
-        "low_high_score": 0.6666666666666667,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 179,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 2
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 13,
-      "relative_top_percent": 0.07222222222222222,
-      "relative_model_probability": 0.00033796909837673615
-    },
-    {
-      "numbers": [
-        4,
-        8,
-        17,
-        34,
-        37,
-        45
-      ],
-      "final_score": 0.7472524349496028,
-      "confidence_score": 74.72524349496028,
-      "sub_scores": {
-        "time_decay_score": 0.59872945578797,
-        "bayesian_score": 0.7721354166666673,
-        "gap_score": 0.8244365375821919,
-        "pair_significance_score": 0.561618882740841,
-        "triple_significance_score": 0.4842471341497224,
-        "structure_balance_score": 0.981578947368421,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3000388991996942
-      },
-      "structure_details": {
-        "structure_balance_score": 0.981578947368421,
-        "sum_score": 0.9473684210526316,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 145,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 14,
-      "relative_top_percent": 0.07777777777777778,
-      "relative_model_probability": 0.00033756583121319654
-    },
-    {
-      "numbers": [
-        8,
-        9,
-        17,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7470687631963929,
-      "confidence_score": 74.70687631963929,
-      "sub_scores": {
-        "time_decay_score": 0.6953578933673374,
-        "bayesian_score": 0.7291666666666673,
-        "gap_score": 0.7227720022772756,
-        "pair_significance_score": 0.5779490890884337,
-        "triple_significance_score": 0.5411610860189727,
-        "structure_balance_score": 0.9514473684210527,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3995915757746645
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9514473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 0.75
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 147,
-        "odd_count": 3,
-        "even_count": 3,
         "consecutive_pairs": 1,
-        "spread": 34,
+        "spread": 40,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 15,
-      "relative_top_percent": 0.08333333333333334,
-      "relative_model_probability": 0.0003367917038610076
+      "relative_rank": 8,
+      "relative_top_percent": 0.044444444444444446,
+      "relative_model_probability": 0.00037481140997649585
     },
     {
       "numbers": [
-        8,
-        17,
-        23,
+        12,
+        21,
+        25,
         34,
         37,
-        42
+        44
       ],
-      "final_score": 0.7467982258830902,
-      "confidence_score": 74.67982258830902,
+      "final_score": 0.7243865621594505,
+      "confidence_score": 72.43865621594506,
       "sub_scores": {
-        "time_decay_score": 0.7635746900081418,
-        "bayesian_score": 0.6184895833333338,
-        "gap_score": 0.801564515509057,
-        "pair_significance_score": 0.5490000869267921,
-        "triple_significance_score": 0.5108069783553726,
-        "structure_balance_score": 0.9594736842105264,
+        "time_decay_score": 0.583202953735367,
+        "bayesian_score": 0.8520000000000004,
+        "gap_score": 0.6976870095771818,
+        "pair_significance_score": 0.6235383709890354,
+        "triple_significance_score": 0.5618016165291065,
+        "structure_balance_score": 0.8319298245614036,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3279890145676954
+        "frequency_stability_score": 0.24150496341998354
       },
       "structure_details": {
-        "structure_balance_score": 0.9594736842105264,
-        "sum_score": 0.8842105263157894,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 161,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 34,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 16,
-      "relative_top_percent": 0.08888888888888889,
-      "relative_model_probability": 0.00033565469343417673
-    },
-    {
-      "numbers": [
-        4,
-        17,
-        29,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7455788869701411,
-      "confidence_score": 74.5578886970141,
-      "sub_scores": {
-        "time_decay_score": 0.6731450584241981,
-        "bayesian_score": 0.7773437500000006,
-        "gap_score": 0.796993003590757,
-        "pair_significance_score": 0.5705262680213462,
-        "triple_significance_score": 0.5354696908320478,
-        "structure_balance_score": 0.8687719298245614,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3130837799932338
-      },
-      "structure_details": {
-        "structure_balance_score": 0.8687719298245614,
-        "sum_score": 0.8631578947368421,
+        "structure_balance_score": 0.8319298245614036,
+        "sum_score": 0.7578947368421053,
         "odd_even_score": 1.0,
         "low_high_score": 0.6666666666666667,
         "consecutive_score": 1.0
@@ -1422,128 +1080,42 @@
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 163,
+        "sum": 173,
         "odd_count": 3,
         "even_count": 3,
         "consecutive_pairs": 0,
-        "spread": 38,
+        "spread": 32,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 17,
-      "relative_top_percent": 0.09444444444444444,
-      "relative_model_probability": 0.00033057752380169264
+      "relative_rank": 9,
+      "relative_top_percent": 0.05,
+      "relative_model_probability": 0.00036991149413062395
     },
     {
       "numbers": [
-        8,
         12,
-        17,
+        21,
+        24,
         34,
         37,
-        45
+        44
       ],
-      "final_score": 0.7443767737948794,
-      "confidence_score": 74.43767737948794,
+      "final_score": 0.7239317493967485,
+      "confidence_score": 72.39317493967485,
       "sub_scores": {
-        "time_decay_score": 0.6350404800006432,
-        "bayesian_score": 0.7343750000000006,
-        "gap_score": 0.7855523579530729,
-        "pair_significance_score": 0.5393504195395783,
-        "triple_significance_score": 0.5108069783553726,
-        "structure_balance_score": 0.9889473684210527,
+        "time_decay_score": 0.6334961938932243,
+        "bayesian_score": 0.8520000000000004,
+        "gap_score": 0.6291479888037855,
+        "pair_significance_score": 0.6361270173225206,
+        "triple_significance_score": 0.5504460225076022,
+        "structure_balance_score": 0.8356140350877194,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3633215856161279
+        "frequency_stability_score": 0.24150496341998354
       },
       "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 37,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 18,
-      "relative_top_percent": 0.1,
-      "relative_model_probability": 0.0003256472636760839
-    },
-    {
-      "numbers": [
-        4,
-        9,
-        23,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7441424225339125,
-      "confidence_score": 74.41424225339125,
-      "sub_scores": {
-        "time_decay_score": 0.7272028097006479,
-        "bayesian_score": 0.6393229166666672,
-        "gap_score": 0.7939509889252813,
-        "pair_significance_score": 0.5341544447926171,
-        "triple_significance_score": 0.5146012418133226,
-        "structure_balance_score": 0.9963157894736842,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.2921857180197623
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9963157894736842,
-        "sum_score": 0.9894736842105263,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 149,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 38,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 19,
-      "relative_top_percent": 0.10555555555555554,
-      "relative_model_probability": 0.00032469471147016885
-    },
-    {
-      "numbers": [
-        4,
-        12,
-        17,
-        34,
-        42,
-        45
-      ],
-      "final_score": 0.7439306205650392,
-      "confidence_score": 74.39306205650392,
-      "sub_scores": {
-        "time_decay_score": 0.6086932937900603,
-        "bayesian_score": 0.7252604166666673,
-        "gap_score": 0.8902008173037949,
-        "pair_significance_score": 0.5319275984724907,
-        "triple_significance_score": 0.4880413976076724,
-        "structure_balance_score": 0.9019298245614035,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.4277694622375079
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9019298245614035,
-        "sum_score": 0.9578947368421052,
+        "structure_balance_score": 0.8356140350877194,
+        "sum_score": 0.7684210526315789,
         "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
@@ -1551,392 +1123,124 @@
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 154,
+        "sum": 172,
         "odd_count": 2,
         "even_count": 4,
         "consecutive_pairs": 0,
-        "spread": 41,
+        "spread": 32,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 20,
-      "relative_top_percent": 0.1111111111111111,
-      "relative_model_probability": 0.00032383621118230096
-    }
-  ],
-  "portfolio_recommendations": [
+      "relative_rank": 10,
+      "relative_top_percent": 0.05555555555555555,
+      "relative_model_probability": 0.00036781445492254175
+    },
     {
       "numbers": [
         4,
-        9,
-        17,
-        34,
-        37,
-        42
-      ],
-      "final_score": 0.7630342927394492,
-      "confidence_score": 76.30342927394493,
-      "sub_scores": {
-        "time_decay_score": 0.6570172601890781,
-        "bayesian_score": 0.7695312500000006,
-        "gap_score": 0.8233866760049883,
-        "pair_significance_score": 0.5920524491159002,
-        "triple_significance_score": 0.5202926370002476,
-        "structure_balance_score": 0.9742105263157895,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.32907836632972115
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9742105263157895,
-        "sum_score": 0.9263157894736842,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 143,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 38,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 1,
-      "relative_top_percent": 0.005555555555555556,
-      "relative_model_probability": 0.00041118110783782303,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        8,
         12,
-        17,
+        21,
+        25,
         34,
-        37,
-        45
+        48
       ],
-      "final_score": 0.7443767737948794,
-      "confidence_score": 74.43767737948794,
+      "final_score": 0.7214850898088979,
+      "confidence_score": 72.14850898088979,
       "sub_scores": {
-        "time_decay_score": 0.6350404800006432,
-        "bayesian_score": 0.7343750000000006,
-        "gap_score": 0.7855523579530729,
-        "pair_significance_score": 0.5393504195395783,
-        "triple_significance_score": 0.5108069783553726,
-        "structure_balance_score": 0.9889473684210527,
+        "time_decay_score": 0.5059275164438616,
+        "bayesian_score": 0.8240000000000004,
+        "gap_score": 0.7424709702224538,
+        "pair_significance_score": 0.6139117590869585,
+        "triple_significance_score": 0.548553423504018,
+        "structure_balance_score": 0.894561403508772,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3633215856161279
+        "frequency_stability_score": 0.26894205713092295
       },
       "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.894561403508772,
+        "sum_score": 0.9368421052631579,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
+        "sum": 144,
+        "odd_count": 2,
+        "even_count": 4,
         "consecutive_pairs": 0,
-        "spread": 37,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 18,
-      "relative_top_percent": 0.1,
-      "relative_model_probability": 0.0003256472636760839,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        12,
-        17,
-        23,
-        29,
-        34,
-        42
-      ],
-      "final_score": 0.7327707615969072,
-      "confidence_score": 73.27707615969072,
-      "sub_scores": {
-        "time_decay_score": 0.750448774396785,
-        "bayesian_score": 0.6054687500000003,
-        "gap_score": 0.7374211608416515,
-        "pair_significance_score": 0.5289584700456557,
-        "triple_significance_score": 0.5146012418133226,
-        "structure_balance_score": 0.9742105263157895,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.3446608858093241
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9742105263157895,
-        "sum_score": 0.9263157894736842,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 157,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 30,
+        "spread": 44,
         "birthdate_range_count": 4
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 64,
-      "relative_top_percent": 0.35555555555555557,
-      "relative_model_probability": 0.00028167097370416876,
-      "portfolio_reason": "selected_with_max_overlap_3"
+      "relative_rank": 11,
+      "relative_top_percent": 0.06111111111111111,
+      "relative_model_probability": 0.0003567357699661687
     },
     {
       "numbers": [
-        4,
         12,
-        23,
+        20,
+        21,
         34,
         37,
-        43
+        44
       ],
-      "final_score": 0.7282660621388449,
-      "confidence_score": 72.82660621388449,
+      "final_score": 0.7211287812130655,
+      "confidence_score": 72.11287812130655,
       "sub_scores": {
-        "time_decay_score": 0.681355049540445,
-        "bayesian_score": 0.6223958333333338,
-        "gap_score": 0.7938452848412382,
-        "pair_significance_score": 0.5118859815913542,
-        "triple_significance_score": 0.5278811639161477,
-        "structure_balance_score": 0.9889473684210527,
+        "time_decay_score": 0.648689900836498,
+        "bayesian_score": 0.8266666666666671,
+        "gap_score": 0.633862778181744,
+        "pair_significance_score": 0.6383485431460768,
+        "triple_significance_score": 0.573157210550611,
+        "structure_balance_score": 0.8128508771929825,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.25501133495832023
+        "frequency_stability_score": 0.2324215874934549
       },
       "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
+        "structure_balance_score": 0.8128508771929825,
+        "sum_score": 0.8105263157894737,
+        "odd_even_score": 0.6666666666666667,
         "low_high_score": 1.0,
-        "consecutive_score": 1.0
+        "consecutive_score": 0.75
       },
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 39,
+        "sum": 168,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 32,
         "birthdate_range_count": 3
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 98,
-      "relative_top_percent": 0.5444444444444444,
-      "relative_model_probability": 0.0002662487139038196,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        4,
-        17,
-        23,
-        30,
-        34,
-        45
-      ],
-      "final_score": 0.7272559130300242,
-      "confidence_score": 72.72559130300242,
-      "sub_scores": {
-        "time_decay_score": 0.6298046608392364,
-        "bayesian_score": 0.6367187500000004,
-        "gap_score": 0.8125480842345643,
-        "pair_significance_score": 0.5311853163657819,
-        "triple_significance_score": 0.5240869004581976,
-        "structure_balance_score": 0.9889473684210527,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.27218332071360374
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 4
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 115,
-      "relative_top_percent": 0.638888888888889,
-      "relative_model_probability": 0.0002629079636265329,
-      "portfolio_reason": "selected_with_max_overlap_3"
+      "relative_rank": 12,
+      "relative_top_percent": 0.06666666666666667,
+      "relative_model_probability": 0.00035515045270934656
     },
     {
       "numbers": [
         4,
         12,
-        17,
-        33,
-        42,
-        45
-      ],
-      "final_score": 0.7232372334409348,
-      "confidence_score": 72.32372334409348,
-      "sub_scores": {
-        "time_decay_score": 0.5219521723600642,
-        "bayesian_score": 0.6354166666666674,
-        "gap_score": 0.8297799389000917,
-        "pair_significance_score": 0.5297007521523645,
-        "triple_significance_score": 0.4975270562525475,
-        "structure_balance_score": 0.9889473684210527,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.5592262175116652
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 153,
-      "relative_top_percent": 0.8500000000000001,
-      "relative_model_probability": 0.00025002740400626344,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        9,
-        12,
-        17,
+        21,
+        25,
         34,
-        38,
-        43
+        37
       ],
-      "final_score": 0.7182581626724883,
-      "confidence_score": 71.82581626724883,
+      "final_score": 0.7207364848034278,
+      "confidence_score": 72.07364848034278,
       "sub_scores": {
-        "time_decay_score": 0.6338363693753557,
-        "bayesian_score": 0.6653645833333336,
-        "gap_score": 0.6138919109157721,
-        "pair_significance_score": 0.5824027817286864,
-        "triple_significance_score": 0.5677209302246229,
-        "structure_balance_score": 0.9889473684210527,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.45519130414893
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9889473684210527,
-        "sum_score": 0.968421052631579,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 153,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 34,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 231,
-      "relative_top_percent": 1.2833333333333334,
-      "relative_model_probability": 0.0002349404653880749,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        4,
-        8,
-        23,
-        37,
-        42,
-        45
-      ],
-      "final_score": 0.7169332952636344,
-      "confidence_score": 71.69332952636344,
-      "sub_scores": {
-        "time_decay_score": 0.6356298876643066,
-        "bayesian_score": 0.559895833333334,
-        "gap_score": 0.7959382965914196,
-        "pair_significance_score": 0.5334121626859082,
-        "triple_significance_score": 0.49562992452357246,
-        "structure_balance_score": 0.9668421052631578,
-        "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.42875208421537775
-      },
-      "structure_details": {
-        "structure_balance_score": 0.9668421052631578,
-        "sum_score": 0.9052631578947369,
-        "odd_even_score": 1.0,
-        "low_high_score": 1.0,
-        "consecutive_score": 1.0
-      },
-      "human_pattern_details": {
-        "human_pattern_avoidance_score": 1.0,
-        "penalties": [],
-        "sum": 159,
-        "odd_count": 3,
-        "even_count": 3,
-        "consecutive_pairs": 0,
-        "spread": 41,
-        "birthdate_range_count": 3
-      },
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 264,
-      "relative_top_percent": 1.4666666666666666,
-      "relative_model_probability": 0.000231081693764972,
-      "portfolio_reason": "selected_with_max_overlap_3"
-    },
-    {
-      "numbers": [
-        4,
-        9,
-        12,
-        29,
-        34,
-        45
-      ],
-      "final_score": 0.7084542198551166,
-      "confidence_score": 70.84542198551166,
-      "sub_scores": {
-        "time_decay_score": 0.5875722930473785,
-        "bayesian_score": 0.7395833333333336,
-        "gap_score": 0.6520649826032977,
-        "pair_significance_score": 0.5497423690335009,
-        "triple_significance_score": 0.5051155831684475,
+        "time_decay_score": 0.54935218157711,
+        "bayesian_score": 0.8333333333333335,
+        "gap_score": 0.6489799269088692,
+        "pair_significance_score": 0.5998420955377691,
+        "triple_significance_score": 0.5712646115470268,
         "structure_balance_score": 0.9373684210526315,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.35142068333833304
+        "frequency_stability_score": 0.25814218983086806
       },
       "structure_details": {
         "structure_balance_score": 0.9373684210526315,
@@ -1952,39 +1256,126 @@
         "odd_count": 3,
         "even_count": 3,
         "consecutive_pairs": 0,
-        "spread": 41,
+        "spread": 33,
         "birthdate_range_count": 4
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 457,
-      "relative_top_percent": 2.5388888888888888,
-      "relative_model_probability": 0.00020784297320050054,
-      "portfolio_reason": "selected_with_max_overlap_3"
+      "relative_rank": 13,
+      "relative_top_percent": 0.07222222222222222,
+      "relative_model_probability": 0.00035341316267615907
     },
     {
       "numbers": [
         4,
-        8,
-        17,
-        29,
+        20,
+        21,
         34,
-        43
+        37,
+        44
       ],
-      "final_score": 0.7048991457970877,
-      "confidence_score": 70.48991457970877,
+      "final_score": 0.7200749230878551,
+      "confidence_score": 72.00749230878552,
       "sub_scores": {
-        "time_decay_score": 0.6021028023486906,
-        "bayesian_score": 0.7343750000000003,
-        "gap_score": 0.635676629056352,
-        "pair_significance_score": 0.5319275984724907,
-        "triple_significance_score": 0.5013213197104974,
-        "structure_balance_score": 0.9447368421052632,
+        "time_decay_score": 0.6056538486710195,
+        "bayesian_score": 0.862666666666667,
+        "gap_score": 0.6249519605777193,
+        "pair_significance_score": 0.6376080345382248,
+        "triple_significance_score": 0.5977609975972038,
+        "structure_balance_score": 0.8423245614035089,
         "human_pattern_avoidance_score": 1.0,
-        "frequency_stability_score": 0.32303690056692685
+        "frequency_stability_score": 0.17423594694062652
       },
       "structure_details": {
-        "structure_balance_score": 0.9447368421052632,
-        "sum_score": 0.8421052631578947,
+        "structure_balance_score": 0.8423245614035089,
+        "sum_score": 0.8947368421052632,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 160,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 40,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 14,
+      "relative_top_percent": 0.07777777777777778,
+      "relative_model_probability": 0.00035050265578439097
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        34,
+        38,
+        44
+      ],
+      "final_score": 0.7199164565983337,
+      "confidence_score": 71.99164565983337,
+      "sub_scores": {
+        "time_decay_score": 0.5756215464817569,
+        "bayesian_score": 0.8400000000000004,
+        "gap_score": 0.7060830353992643,
+        "pair_significance_score": 0.6553802411266746,
+        "triple_significance_score": 0.5807276065649472,
+        "structure_balance_score": 0.822280701754386,
+        "human_pattern_avoidance_score": 0.94,
+        "frequency_stability_score": 0.2905997011734543
+      },
+      "structure_details": {
+        "structure_balance_score": 0.822280701754386,
+        "sum_score": 0.968421052631579,
+        "odd_even_score": 0.33333333333333337,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 0.94,
+        "penalties": [
+          "unbalanced_even_odd"
+        ],
+        "sum": 153,
+        "odd_count": 1,
+        "even_count": 5,
+        "consecutive_pairs": 0,
+        "spread": 40,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 15,
+      "relative_top_percent": 0.08333333333333334,
+      "relative_model_probability": 0.00034980905639493134
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        33,
+        37,
+        44
+      ],
+      "final_score": 0.7188793554023871,
+      "confidence_score": 71.88793554023871,
+      "sub_scores": {
+        "time_decay_score": 0.5490415042927279,
+        "bayesian_score": 0.8146666666666671,
+        "gap_score": 0.5566796791880738,
+        "pair_significance_score": 0.6583422755580828,
+        "triple_significance_score": 0.5618016165291065,
+        "structure_balance_score": 0.9963157894736842,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.28122209746392973
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9963157894736842,
+        "sum_score": 0.9894736842105263,
         "odd_even_score": 1.0,
         "low_high_score": 1.0,
         "consecutive_score": 1.0
@@ -1992,17 +1383,630 @@
       "human_pattern_details": {
         "human_pattern_avoidance_score": 1.0,
         "penalties": [],
-        "sum": 135,
+        "sum": 151,
         "odd_count": 3,
         "even_count": 3,
         "consecutive_pairs": 0,
-        "spread": 39,
+        "spread": 40,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 16,
+      "relative_top_percent": 0.08888888888888889,
+      "relative_model_probability": 0.0003453034817163242
+    },
+    {
+      "numbers": [
+        4,
+        21,
+        34,
+        37,
+        44,
+        48
+      ],
+      "final_score": 0.7187745248039229,
+      "confidence_score": 71.8774524803923,
+      "sub_scores": {
+        "time_decay_score": 0.6220184800402027,
+        "bayesian_score": 0.9266666666666672,
+        "gap_score": 0.6627147158767999,
+        "pair_significance_score": 0.6753739735386804,
+        "triple_significance_score": 0.5882980025792834,
+        "structure_balance_score": 0.6933333333333335,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.09967467138918178
+      },
+      "structure_details": {
+        "structure_balance_score": 0.6933333333333335,
+        "sum_score": 0.6,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 0.6666666666666667,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 188,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 44,
+        "birthdate_range_count": 2
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 17,
+      "relative_top_percent": 0.09444444444444444,
+      "relative_model_probability": 0.00034485129841456505
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        34,
+        37,
+        45
+      ],
+      "final_score": 0.7184751807867782,
+      "confidence_score": 71.84751807867782,
+      "sub_scores": {
+        "time_decay_score": 0.6024351441604147,
+        "bayesian_score": 0.8306666666666668,
+        "gap_score": 0.557608327268743,
+        "pair_significance_score": 0.5709622598315385,
+        "triple_significance_score": 0.5504460225076022,
+        "structure_balance_score": 0.9889473684210527,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.26844903848251683
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9889473684210527,
+        "sum_score": 0.968421052631579,
+        "odd_even_score": 1.0,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 153,
+        "odd_count": 3,
+        "even_count": 3,
+        "consecutive_pairs": 0,
+        "spread": 41,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 18,
+      "relative_top_percent": 0.1,
+      "relative_model_probability": 0.0003435633448873716
+    },
+    {
+      "numbers": [
+        4,
+        21,
+        25,
+        34,
+        44,
+        48
+      ],
+      "final_score": 0.7184163921781858,
+      "confidence_score": 71.84163921781858,
+      "sub_scores": {
+        "time_decay_score": 0.49674223643664006,
+        "bayesian_score": 0.8786666666666673,
+        "gap_score": 0.7822672352867416,
+        "pair_significance_score": 0.660563801381639,
+        "triple_significance_score": 0.6204721856402126,
+        "structure_balance_score": 0.737543859649123,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.19411919016721005
+      },
+      "structure_details": {
+        "structure_balance_score": 0.737543859649123,
+        "sum_score": 0.7263157894736842,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 0.6666666666666667,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 176,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 44,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 19,
+      "relative_top_percent": 0.10555555555555554,
+      "relative_model_probability": 0.0003433109674918373
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        34,
+        37,
+        42
+      ],
+      "final_score": 0.7182128255443386,
+      "confidence_score": 71.82128255443386,
+      "sub_scores": {
+        "time_decay_score": 0.6735713323483986,
+        "bayesian_score": 0.8266666666666668,
+        "gap_score": 0.5176973744482684,
+        "pair_significance_score": 0.597620569714213,
+        "triple_significance_score": 0.5504460225076022,
+        "structure_balance_score": 0.9166666666666666,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.28603272637636384
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9166666666666666,
+        "sum_score": 1.0,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 150,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 38,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 20,
+      "relative_top_percent": 0.1111111111111111,
+      "relative_model_probability": 0.00034243849477699843
+    }
+  ],
+  "portfolio_recommendations": [
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        34,
+        37,
+        44
+      ],
+      "final_score": 0.7488379884138571,
+      "confidence_score": 74.88379884138571,
+      "sub_scores": {
+        "time_decay_score": 0.6095197183009828,
+        "bayesian_score": 0.9000000000000004,
+        "gap_score": 0.6782069568553447,
+        "pair_significance_score": 0.6775954993622366,
+        "triple_significance_score": 0.6129017896258763,
+        "structure_balance_score": 0.9092982456140352,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.1470604446419553
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9092982456140352,
+        "sum_score": 0.9789473684210527,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 152,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 40,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 1,
+      "relative_top_percent": 0.005555555555555556,
+      "relative_model_probability": 0.0005021538767699091,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        21,
+        24,
+        25,
+        34,
+        48
+      ],
+      "final_score": 0.707080426060037,
+      "confidence_score": 70.7080426060037,
+      "sub_scores": {
+        "time_decay_score": 0.48686793987062454,
+        "bayesian_score": 0.8120000000000004,
+        "gap_score": 0.6845011845668698,
+        "pair_significance_score": 0.6302029484597041,
+        "triple_significance_score": 0.5826202055685312,
+        "structure_balance_score": 0.857061403508772,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.30520093535612286
+      },
+      "structure_details": {
+        "structure_balance_score": 0.857061403508772,
+        "sum_score": 0.9368421052631579,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 156,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 44,
         "birthdate_range_count": 4
       },
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_rank": 574,
-      "relative_top_percent": 3.188888888888889,
-      "relative_model_probability": 0.00019880897365866224,
+      "relative_rank": 63,
+      "relative_top_percent": 0.35000000000000003,
+      "relative_model_probability": 0.00029795339174390186,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        12,
+        20,
+        21,
+        25,
+        34,
+        38
+      ],
+      "final_score": 0.6969517871613846,
+      "confidence_score": 69.69517871613846,
+      "sub_scores": {
+        "time_decay_score": 0.5546241922933991,
+        "bayesian_score": 0.7000000000000003,
+        "gap_score": 0.6325118267791878,
+        "pair_significance_score": 0.5746648028707988,
+        "triple_significance_score": 0.5504460225076022,
+        "structure_balance_score": 0.8791666666666667,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.48704258921386673
+      },
+      "structure_details": {
+        "structure_balance_score": 0.8791666666666667,
+        "sum_score": 1.0,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 150,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 26,
+        "birthdate_range_count": 4
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 144,
+      "relative_top_percent": 0.8,
+      "relative_model_probability": 0.00026252047644547723,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        20,
+        21,
+        25,
+        33,
+        44
+      ],
+      "final_score": 0.68603562446071,
+      "confidence_score": 68.603562446071,
+      "sub_scores": {
+        "time_decay_score": 0.4198993910592019,
+        "bayesian_score": 0.7293333333333338,
+        "gap_score": 0.62297720232039,
+        "pair_significance_score": 0.5991015869299171,
+        "triple_significance_score": 0.576942408557779,
+        "structure_balance_score": 0.9514473684210527,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.40284211854062923
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9514473684210527,
+        "sum_score": 0.968421052631579,
+        "odd_even_score": 1.0,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 147,
+        "odd_count": 3,
+        "even_count": 3,
+        "consecutive_pairs": 1,
+        "spread": 40,
+        "birthdate_range_count": 4
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 326,
+      "relative_top_percent": 1.8111111111111113,
+      "relative_model_probability": 0.00022903550855765879,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        12,
+        21,
+        24,
+        33,
+        37,
+        48
+      ],
+      "final_score": 0.6848315965371838,
+      "confidence_score": 68.48315965371839,
+      "sub_scores": {
+        "time_decay_score": 0.5947020216314107,
+        "bayesian_score": 0.7386666666666671,
+        "gap_score": 0.4523322050936816,
+        "pair_significance_score": 0.6013231127534733,
+        "triple_significance_score": 0.5561238195183543,
+        "structure_balance_score": 0.9078947368421053,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.40310370995289735
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9078947368421053,
+        "sum_score": 0.736842105263158,
+        "odd_even_score": 1.0,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 175,
+        "odd_count": 3,
+        "even_count": 3,
+        "consecutive_pairs": 0,
+        "spread": 36,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 353,
+      "relative_top_percent": 1.961111111111111,
+      "relative_model_probability": 0.0002256142543251999,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        35,
+        38,
+        48
+      ],
+      "final_score": 0.6790155925634777,
+      "confidence_score": 67.90155925634777,
+      "sub_scores": {
+        "time_decay_score": 0.5621926827344842,
+        "bayesian_score": 0.7480000000000006,
+        "gap_score": 0.5070080521472525,
+        "pair_significance_score": 0.5435634413410119,
+        "triple_significance_score": 0.5353052304789296,
+        "structure_balance_score": 0.8871929824561403,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.4163945859796497
+      },
+      "structure_details": {
+        "structure_balance_score": 0.8871929824561403,
+        "sum_score": 0.9157894736842105,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 158,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 44,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 481,
+      "relative_top_percent": 2.6722222222222225,
+      "relative_model_probability": 0.0002097941164638773,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        12,
+        21,
+        24,
+        34,
+        35,
+        42
+      ],
+      "final_score": 0.6774194904078694,
+      "confidence_score": 67.74194904078695,
+      "sub_scores": {
+        "time_decay_score": 0.6617133156089984,
+        "bayesian_score": 0.734666666666667,
+        "gap_score": 0.4797885628035378,
+        "pair_significance_score": 0.5228292003211538,
+        "triple_significance_score": 0.487990255389328,
+        "structure_balance_score": 0.8128508771929825,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.46120234535989124
+      },
+      "structure_details": {
+        "structure_balance_score": 0.8128508771929825,
+        "sum_score": 0.8105263157894737,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 168,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 30,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 534,
+      "relative_top_percent": 2.966666666666667,
+      "relative_model_probability": 0.00020564993427439675,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        21,
+        25,
+        42,
+        45
+      ],
+      "final_score": 0.6740699788084411,
+      "confidence_score": 67.40699788084412,
+      "sub_scores": {
+        "time_decay_score": 0.47682339456250555,
+        "bayesian_score": 0.7080000000000002,
+        "gap_score": 0.5104941800120182,
+        "pair_significance_score": 0.534677338046787,
+        "triple_significance_score": 0.4898828543929121,
+        "structure_balance_score": 0.9963157894736842,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.502861303473826
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9963157894736842,
+        "sum_score": 0.9894736842105263,
+        "odd_even_score": 1.0,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 149,
+        "odd_count": 3,
+        "even_count": 3,
+        "consecutive_pairs": 0,
+        "spread": 41,
+        "birthdate_range_count": 4
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 644,
+      "relative_top_percent": 3.5777777777777775,
+      "relative_model_probability": 0.0001972173618412067,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        12,
+        20,
+        25,
+        37,
+        48
+      ],
+      "final_score": 0.672983787597845,
+      "confidence_score": 67.2983787597845,
+      "sub_scores": {
+        "time_decay_score": 0.4875919945526159,
+        "bayesian_score": 0.7133333333333337,
+        "gap_score": 0.5482078000222194,
+        "pair_significance_score": 0.597620569714213,
+        "triple_significance_score": 0.5201644384502571,
+        "structure_balance_score": 0.9019298245614035,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.3875556302934173
+      },
+      "structure_details": {
+        "structure_balance_score": 0.9019298245614035,
+        "sum_score": 0.9578947368421052,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 1.0
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 146,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 0,
+        "spread": 44,
+        "birthdate_range_count": 4
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 684,
+      "relative_top_percent": 3.8,
+      "relative_model_probability": 0.0001945577608556868,
+      "portfolio_reason": "selected_with_max_overlap_3"
+    },
+    {
+      "numbers": [
+        4,
+        20,
+        24,
+        33,
+        34,
+        37
+      ],
+      "final_score": 0.6716004112340658,
+      "confidence_score": 67.16004112340657,
+      "sub_scores": {
+        "time_decay_score": 0.5753119390320798,
+        "bayesian_score": 0.7133333333333335,
+        "gap_score": 0.4655404412078532,
+        "pair_significance_score": 0.5724432770472425,
+        "triple_significance_score": 0.5561238195183543,
+        "structure_balance_score": 0.8717982456140352,
+        "human_pattern_avoidance_score": 1.0,
+        "frequency_stability_score": 0.4174663934829947
+      },
+      "structure_details": {
+        "structure_balance_score": 0.8717982456140352,
+        "sum_score": 0.9789473684210527,
+        "odd_even_score": 0.6666666666666667,
+        "low_high_score": 1.0,
+        "consecutive_score": 0.75
+      },
+      "human_pattern_details": {
+        "human_pattern_avoidance_score": 1.0,
+        "penalties": [],
+        "sum": 152,
+        "odd_count": 2,
+        "even_count": 4,
+        "consecutive_pairs": 1,
+        "spread": 33,
+        "birthdate_range_count": 3
+      },
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_rank": 734,
+      "relative_top_percent": 4.077777777777778,
+      "relative_model_probability": 0.00019122234967745592,
       "portfolio_reason": "selected_with_max_overlap_3"
     }
   ]

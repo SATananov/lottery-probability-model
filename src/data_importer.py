@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 BST_STATS_URL = "https://info.toto.bg/statistika/6x49"
 BASE_URL = "https://info.toto.bg"
 START_YEAR = 1958
-END_YEAR = 2025
+END_YEAR = 2026
 TOTAL_NUMBERS = 49
 DRAW_COUNT = 6
 

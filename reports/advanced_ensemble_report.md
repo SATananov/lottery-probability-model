@@ -8,11 +8,11 @@ The true jackpot odds for every exact combination remain: 1 in 13983816.
 
 ## Summary
 
-- Training draws: 10009
+- Training draws: 10057
 - Candidate combinations: 18000
-- Chi-square statistic: 41.8605
+- Chi-square statistic: 42.0735
 - Degrees of freedom: 48
-- Approximate p-value: 0.721284
+- Approximate p-value: 0.713247
 - Fairness interpretation: No strong evidence against fair-looking number frequencies.
 
 ## Weights
@@ -28,294 +28,294 @@ The true jackpot odds for every exact combination remain: 1 in 13983816.
 
 ## Recommended combinations
 
-### Rank 1: [4, 9, 17, 34, 37, 42]
+### Rank 1: [4, 12, 21, 34, 37, 44]
 
-- Confidence score: 76.30/100
-- Relative model probability: 0.041118%
+- Confidence score: 74.88/100
+- Relative model probability: 0.050215%
 - Relative top percent: 0.01%
-- Time-decay score: 0.6570
-- Bayesian score: 0.7695
-- Gap score: 0.8234
-- Pair significance score: 0.5921
-- Triple significance score: 0.5203
-- Structure balance score: 0.9742
+- Time-decay score: 0.6095
+- Bayesian score: 0.9000
+- Gap score: 0.6782
+- Pair significance score: 0.6776
+- Triple significance score: 0.6129
+- Structure balance score: 0.9093
 - Human-pattern avoidance score: 1.0000
 
-### Rank 2: [4, 17, 23, 34, 37, 42]
+### Rank 2: [4, 12, 21, 25, 34, 44]
 
-- Confidence score: 76.23/100
-- Relative model probability: 0.040759%
+- Confidence score: 73.29/100
+- Relative model probability: 0.041127%
 - Relative top percent: 0.01%
-- Time-decay score: 0.7252
-- Bayesian score: 0.6589
-- Gap score: 0.9022
-- Pair significance score: 0.5594
-- Triple significance score: 0.5127
-- Structure balance score: 0.9742
+- Time-decay score: 0.4842
+- Bayesian score: 0.8520
+- Gap score: 0.7978
+- Pair significance score: 0.6383
+- Triple significance score: 0.5978
+- Structure balance score: 0.8798
 - Human-pattern avoidance score: 1.0000
 
-### Rank 3: [9, 12, 17, 34, 37, 42]
+### Rank 3: [4, 12, 21, 25, 34, 44]
 
-- Confidence score: 75.92/100
-- Relative model probability: 0.039189%
+- Confidence score: 73.29/100
+- Relative model probability: 0.041127%
 - Relative top percent: 0.02%
-- Time-decay score: 0.6933
-- Bayesian score: 0.7318
-- Gap score: 0.7845
-- Pair significance score: 0.5572
-- Triple significance score: 0.5165
-- Structure balance score: 0.9963
+- Time-decay score: 0.4842
+- Bayesian score: 0.8520
+- Gap score: 0.7978
+- Pair significance score: 0.6383
+- Triple significance score: 0.5978
+- Structure balance score: 0.8798
 - Human-pattern avoidance score: 1.0000
 
-### Rank 4: [4, 12, 17, 34, 37, 45]
+### Rank 4: [4, 12, 21, 34, 37, 48]
 
-- Confidence score: 75.89/100
-- Relative model probability: 0.039070%
+- Confidence score: 73.17/100
+- Relative model probability: 0.040529%
 - Relative top percent: 0.02%
-- Time-decay score: 0.5967
-- Bayesian score: 0.7747
-- Gap score: 0.8862
-- Pair significance score: 0.5535
-- Triple significance score: 0.5051
-- Structure balance score: 0.9963
+- Time-decay score: 0.6312
+- Bayesian score: 0.8720
+- Gap score: 0.6229
+- Pair significance score: 0.6324
+- Triple significance score: 0.5807
+- Structure balance score: 0.8946
 - Human-pattern avoidance score: 1.0000
 
-### Rank 5: [4, 12, 17, 34, 37, 42]
+### Rank 5: [4, 21, 25, 34, 37, 44]
 
-- Confidence score: 75.89/100
-- Relative model probability: 0.039034%
+- Confidence score: 72.77/100
+- Relative model probability: 0.038542%
 - Relative top percent: 0.03%
-- Time-decay score: 0.6484
-- Bayesian score: 0.7643
-- Gap score: 0.8760
-- Pair significance score: 0.5869
-- Triple significance score: 0.5184
-- Structure balance score: 0.9019
+- Time-decay score: 0.5402
+- Bayesian score: 0.8880
+- Gap score: 0.6888
+- Pair significance score: 0.6487
+- Triple significance score: 0.6110
+- Structure balance score: 0.8614
 - Human-pattern avoidance score: 1.0000
 
-### Rank 6: [4, 9, 17, 34, 42, 45]
+### Rank 6: [4, 12, 21, 33, 34, 44]
 
-- Confidence score: 75.36/100
-- Relative model probability: 0.036556%
+- Confidence score: 72.63/100
+- Relative model probability: 0.037894%
 - Relative top percent: 0.03%
-- Time-decay score: 0.6173
-- Bayesian score: 0.7305
-- Gap score: 0.8376
-- Pair significance score: 0.5527
-- Triple significance score: 0.5013
-- Structure balance score: 0.9963
+- Time-decay score: 0.5483
+- Bayesian score: 0.8347
+- Gap score: 0.7116
+- Pair significance score: 0.6376
+- Triple significance score: 0.5694
+- Structure balance score: 0.8718
 - Human-pattern avoidance score: 1.0000
 
-### Rank 7: [12, 17, 23, 34, 37, 42]
+### Rank 7: [4, 12, 21, 34, 44, 48]
 
-- Confidence score: 75.19/100
-- Relative model probability: 0.035767%
+- Confidence score: 72.62/100
+- Relative model probability: 0.037826%
 - Relative top percent: 0.04%
-- Time-decay score: 0.7615
-- Bayesian score: 0.6211
-- Gap score: 0.8633
-- Pair significance score: 0.5312
-- Triple significance score: 0.5051
-- Structure balance score: 0.9447
-- Human-pattern avoidance score: 1.0000
+- Time-decay score: 0.5661
+- Bayesian score: 0.8907
+- Gap score: 0.7717
+- Pair significance score: 0.6643
+- Triple significance score: 0.5826
+- Structure balance score: 0.7854
+- Human-pattern avoidance score: 0.9400
 
-### Rank 8: [4, 8, 17, 34, 37, 42]
+### Rank 8: [4, 12, 21, 34, 35, 44]
 
-- Confidence score: 75.11/100
-- Relative model probability: 0.035399%
+- Confidence score: 72.54/100
+- Relative model probability: 0.037481%
 - Relative top percent: 0.04%
-- Time-decay score: 0.6504
-- Bayesian score: 0.7617
-- Gap score: 0.8143
-- Pair significance score: 0.6091
-- Triple significance score: 0.5412
-- Structure balance score: 0.8872
+- Time-decay score: 0.5737
+- Bayesian score: 0.8560
+- Gap score: 0.6894
+- Pair significance score: 0.6124
+- Triple significance score: 0.5391
+- Structure balance score: 0.8792
 - Human-pattern avoidance score: 1.0000
 
-### Rank 9: [4, 17, 23, 34, 42, 45]
+### Rank 9: [12, 21, 25, 34, 37, 44]
 
-- Confidence score: 75.02/100
-- Relative model probability: 0.035024%
+- Confidence score: 72.44/100
+- Relative model probability: 0.036991%
 - Relative top percent: 0.05%
-- Time-decay score: 0.6855
-- Bayesian score: 0.6198
-- Gap score: 0.9164
-- Pair significance score: 0.5394
-- Triple significance score: 0.5374
-- Structure balance score: 0.9447
+- Time-decay score: 0.5832
+- Bayesian score: 0.8520
+- Gap score: 0.6977
+- Pair significance score: 0.6235
+- Triple significance score: 0.5618
+- Structure balance score: 0.8319
 - Human-pattern avoidance score: 1.0000
 
-### Rank 10: [4, 12, 17, 34, 37, 43]
+### Rank 10: [12, 21, 24, 34, 37, 44]
 
-- Confidence score: 74.94/100
-- Relative model probability: 0.034656%
+- Confidence score: 72.39/100
+- Relative model probability: 0.036781%
 - Relative top percent: 0.06%
-- Time-decay score: 0.6112
-- Bayesian score: 0.7526
-- Gap score: 0.8233
-- Pair significance score: 0.5631
-- Triple significance score: 0.5317
-- Structure balance score: 0.9889
+- Time-decay score: 0.6335
+- Bayesian score: 0.8520
+- Gap score: 0.6291
+- Pair significance score: 0.6361
+- Triple significance score: 0.5504
+- Structure balance score: 0.8356
 - Human-pattern avoidance score: 1.0000
 
-### Rank 11: [8, 12, 17, 34, 37, 42]
+### Rank 11: [4, 12, 21, 25, 34, 48]
 
-- Confidence score: 74.78/100
-- Relative model probability: 0.033984%
+- Confidence score: 72.15/100
+- Relative model probability: 0.035674%
 - Relative top percent: 0.06%
-- Time-decay score: 0.6867
-- Bayesian score: 0.7240
-- Gap score: 0.7754
-- Pair significance score: 0.5713
-- Triple significance score: 0.5355
-- Structure balance score: 0.9167
+- Time-decay score: 0.5059
+- Bayesian score: 0.8240
+- Gap score: 0.7425
+- Pair significance score: 0.6139
+- Triple significance score: 0.5486
+- Structure balance score: 0.8946
 - Human-pattern avoidance score: 1.0000
 
-### Rank 12: [4, 17, 34, 37, 42, 45]
+### Rank 12: [12, 20, 21, 34, 37, 44]
 
-- Confidence score: 74.73/100
-- Relative model probability: 0.033797%
+- Confidence score: 72.11/100
+- Relative model probability: 0.035515%
 - Relative top percent: 0.07%
-- Time-decay score: 0.6445
-- Bayesian score: 0.7539
-- Gap score: 0.9370
-- Pair significance score: 0.5394
-- Triple significance score: 0.4786
-- Structure balance score: 0.8098
+- Time-decay score: 0.6487
+- Bayesian score: 0.8267
+- Gap score: 0.6339
+- Pair significance score: 0.6383
+- Triple significance score: 0.5732
+- Structure balance score: 0.8129
 - Human-pattern avoidance score: 1.0000
 
-### Rank 13: [4, 17, 34, 37, 42, 45]
+### Rank 13: [4, 12, 21, 25, 34, 37]
 
-- Confidence score: 74.73/100
-- Relative model probability: 0.033797%
+- Confidence score: 72.07/100
+- Relative model probability: 0.035341%
 - Relative top percent: 0.07%
-- Time-decay score: 0.6445
-- Bayesian score: 0.7539
-- Gap score: 0.9370
-- Pair significance score: 0.5394
-- Triple significance score: 0.4786
-- Structure balance score: 0.8098
+- Time-decay score: 0.5494
+- Bayesian score: 0.8333
+- Gap score: 0.6490
+- Pair significance score: 0.5998
+- Triple significance score: 0.5713
+- Structure balance score: 0.9374
 - Human-pattern avoidance score: 1.0000
 
-### Rank 14: [4, 8, 17, 34, 37, 45]
+### Rank 14: [4, 20, 21, 34, 37, 44]
 
-- Confidence score: 74.73/100
-- Relative model probability: 0.033757%
+- Confidence score: 72.01/100
+- Relative model probability: 0.035050%
 - Relative top percent: 0.08%
-- Time-decay score: 0.5987
-- Bayesian score: 0.7721
-- Gap score: 0.8244
-- Pair significance score: 0.5616
-- Triple significance score: 0.4842
-- Structure balance score: 0.9816
+- Time-decay score: 0.6057
+- Bayesian score: 0.8627
+- Gap score: 0.6250
+- Pair significance score: 0.6376
+- Triple significance score: 0.5978
+- Structure balance score: 0.8423
 - Human-pattern avoidance score: 1.0000
 
-### Rank 15: [8, 9, 17, 34, 37, 42]
+### Rank 15: [4, 12, 21, 34, 38, 44]
 
-- Confidence score: 74.71/100
-- Relative model probability: 0.033679%
+- Confidence score: 71.99/100
+- Relative model probability: 0.034981%
 - Relative top percent: 0.08%
-- Time-decay score: 0.6954
-- Bayesian score: 0.7292
-- Gap score: 0.7228
-- Pair significance score: 0.5779
-- Triple significance score: 0.5412
-- Structure balance score: 0.9514
-- Human-pattern avoidance score: 1.0000
+- Time-decay score: 0.5756
+- Bayesian score: 0.8400
+- Gap score: 0.7061
+- Pair significance score: 0.6554
+- Triple significance score: 0.5807
+- Structure balance score: 0.8223
+- Human-pattern avoidance score: 0.9400
 
-### Rank 16: [8, 17, 23, 34, 37, 42]
+### Rank 16: [4, 12, 21, 33, 37, 44]
 
-- Confidence score: 74.68/100
-- Relative model probability: 0.033565%
+- Confidence score: 71.89/100
+- Relative model probability: 0.034530%
 - Relative top percent: 0.09%
-- Time-decay score: 0.7636
-- Bayesian score: 0.6185
-- Gap score: 0.8016
-- Pair significance score: 0.5490
-- Triple significance score: 0.5108
-- Structure balance score: 0.9595
-- Human-pattern avoidance score: 1.0000
-
-### Rank 17: [4, 17, 29, 34, 37, 42]
-
-- Confidence score: 74.56/100
-- Relative model probability: 0.033058%
-- Relative top percent: 0.09%
-- Time-decay score: 0.6731
-- Bayesian score: 0.7773
-- Gap score: 0.7970
-- Pair significance score: 0.5705
-- Triple significance score: 0.5355
-- Structure balance score: 0.8688
-- Human-pattern avoidance score: 1.0000
-
-### Rank 18: [8, 12, 17, 34, 37, 45]
-
-- Confidence score: 74.44/100
-- Relative model probability: 0.032565%
-- Relative top percent: 0.10%
-- Time-decay score: 0.6350
-- Bayesian score: 0.7344
-- Gap score: 0.7856
-- Pair significance score: 0.5394
-- Triple significance score: 0.5108
-- Structure balance score: 0.9889
-- Human-pattern avoidance score: 1.0000
-
-### Rank 19: [4, 9, 23, 34, 37, 42]
-
-- Confidence score: 74.41/100
-- Relative model probability: 0.032469%
-- Relative top percent: 0.11%
-- Time-decay score: 0.7272
-- Bayesian score: 0.6393
-- Gap score: 0.7940
-- Pair significance score: 0.5342
-- Triple significance score: 0.5146
+- Time-decay score: 0.5490
+- Bayesian score: 0.8147
+- Gap score: 0.5567
+- Pair significance score: 0.6583
+- Triple significance score: 0.5618
 - Structure balance score: 0.9963
 - Human-pattern avoidance score: 1.0000
 
-### Rank 20: [4, 12, 17, 34, 42, 45]
+### Rank 17: [4, 21, 34, 37, 44, 48]
 
-- Confidence score: 74.39/100
-- Relative model probability: 0.032384%
+- Confidence score: 71.88/100
+- Relative model probability: 0.034485%
+- Relative top percent: 0.09%
+- Time-decay score: 0.6220
+- Bayesian score: 0.9267
+- Gap score: 0.6627
+- Pair significance score: 0.6754
+- Triple significance score: 0.5883
+- Structure balance score: 0.6933
+- Human-pattern avoidance score: 1.0000
+
+### Rank 18: [4, 12, 21, 34, 37, 45]
+
+- Confidence score: 71.85/100
+- Relative model probability: 0.034356%
+- Relative top percent: 0.10%
+- Time-decay score: 0.6024
+- Bayesian score: 0.8307
+- Gap score: 0.5576
+- Pair significance score: 0.5710
+- Triple significance score: 0.5504
+- Structure balance score: 0.9889
+- Human-pattern avoidance score: 1.0000
+
+### Rank 19: [4, 21, 25, 34, 44, 48]
+
+- Confidence score: 71.84/100
+- Relative model probability: 0.034331%
 - Relative top percent: 0.11%
-- Time-decay score: 0.6087
-- Bayesian score: 0.7253
-- Gap score: 0.8902
-- Pair significance score: 0.5319
-- Triple significance score: 0.4880
-- Structure balance score: 0.9019
+- Time-decay score: 0.4967
+- Bayesian score: 0.8787
+- Gap score: 0.7823
+- Pair significance score: 0.6606
+- Triple significance score: 0.6205
+- Structure balance score: 0.7375
+- Human-pattern avoidance score: 1.0000
+
+### Rank 20: [4, 12, 21, 34, 37, 42]
+
+- Confidence score: 71.82/100
+- Relative model probability: 0.034244%
+- Relative top percent: 0.11%
+- Time-decay score: 0.6736
+- Bayesian score: 0.8267
+- Gap score: 0.5177
+- Pair significance score: 0.5976
+- Triple significance score: 0.5504
+- Structure balance score: 0.9167
 - Human-pattern avoidance score: 1.0000
 
 
 ## Portfolio recommendations
 
-- Portfolio 1: [4, 9, 17, 34, 37, 42] — confidence 76.30/100
-- Portfolio 2: [8, 12, 17, 34, 37, 45] — confidence 74.44/100
-- Portfolio 3: [12, 17, 23, 29, 34, 42] — confidence 73.28/100
-- Portfolio 4: [4, 12, 23, 34, 37, 43] — confidence 72.83/100
-- Portfolio 5: [4, 17, 23, 30, 34, 45] — confidence 72.73/100
-- Portfolio 6: [4, 12, 17, 33, 42, 45] — confidence 72.32/100
-- Portfolio 7: [9, 12, 17, 34, 38, 43] — confidence 71.83/100
-- Portfolio 8: [4, 8, 23, 37, 42, 45] — confidence 71.69/100
-- Portfolio 9: [4, 9, 12, 29, 34, 45] — confidence 70.85/100
-- Portfolio 10: [4, 8, 17, 29, 34, 43] — confidence 70.49/100
+- Portfolio 1: [4, 12, 21, 34, 37, 44] — confidence 74.88/100
+- Portfolio 2: [4, 21, 24, 25, 34, 48] — confidence 70.71/100
+- Portfolio 3: [12, 20, 21, 25, 34, 38] — confidence 69.70/100
+- Portfolio 4: [4, 20, 21, 25, 33, 44] — confidence 68.60/100
+- Portfolio 5: [12, 21, 24, 33, 37, 48] — confidence 68.48/100
+- Portfolio 6: [4, 12, 21, 35, 38, 48] — confidence 67.90/100
+- Portfolio 7: [12, 21, 24, 34, 35, 42] — confidence 67.74/100
+- Portfolio 8: [4, 12, 21, 25, 42, 45] — confidence 67.41/100
+- Portfolio 9: [4, 12, 20, 25, 37, 48] — confidence 67.30/100
+- Portfolio 10: [4, 20, 24, 33, 34, 37] — confidence 67.16/100
 
 ## Top number scores
 
-- 42: score=0.8018, time_decay=0.8003, bayesian=0.5078, gap=0.9391, z=0.01
-- 34: score=0.7847, time_decay=1.0000, bayesian=1.0000, gap=0.9335, z=1.93
-- 37: score=0.6865, time_decay=0.7283, bayesian=0.8047, gap=0.9149, z=1.17
-- 45: score=0.6807, time_decay=0.4902, bayesian=0.5703, gap=1.0000, z=0.26
-- 17: score=0.6474, time_decay=0.5532, bayesian=0.7813, gap=0.9674, z=1.08
-- 43: score=0.5781, time_decay=0.5770, bayesian=0.4375, gap=0.6227, z=-0.26
-- 12: score=0.5720, time_decay=0.5132, bayesian=0.6328, gap=0.6339, z=0.50
-- 33: score=0.5609, time_decay=0.4796, bayesian=0.4609, gap=0.5710, z=-0.17
-- 4: score=0.5456, time_decay=0.2953, bayesian=0.8594, gap=0.8672, z=1.38
-- 38: score=0.5229, time_decay=0.5947, bayesian=0.4766, gap=0.2077, z=-0.11
-- 35: score=0.5018, time_decay=0.7478, bayesian=0.6172, gap=0.0528, z=0.44
-- 9: score=0.5010, time_decay=0.5650, bayesian=0.6641, gap=0.3181, z=0.62
-- 23: score=0.4900, time_decay=0.9743, bayesian=0.0000, gap=0.7908, z=-1.97
-- 8: score=0.4878, time_decay=0.5254, bayesian=0.6172, gap=0.2635, z=0.44
-- 30: score=0.4858, time_decay=0.4659, bayesian=0.6094, gap=0.3163, z=0.41
+- 34: score=0.7666, time_decay=0.8666, bayesian=1.0000, gap=1.0000, z=1.81
+- 44: score=0.6406, time_decay=0.4803, bayesian=0.9920, gap=0.9631, z=1.78
+- 12: score=0.6053, time_decay=0.5354, bayesian=0.6640, gap=0.7243, z=0.53
+- 21: score=0.6032, time_decay=0.6266, bayesian=0.9840, gap=0.6407, z=1.75
+- 38: score=0.5897, time_decay=0.6676, bayesian=0.5200, gap=0.2376, z=-0.01
+- 48: score=0.5877, time_decay=0.6104, bayesian=0.8240, gap=0.6313, z=1.14
+- 42: score=0.5719, time_decay=0.8646, bayesian=0.5520, gap=0.0000, z=0.11
+- 37: score=0.5266, time_decay=0.8710, bayesian=0.8800, gap=0.0704, z=1.35
+- 25: score=0.5218, time_decay=0.1193, bayesian=0.5920, gap=0.7877, z=0.26
+- 35: score=0.5097, time_decay=0.6560, bayesian=0.6160, gap=0.1373, z=0.35
+- 24: score=0.5095, time_decay=0.4211, bayesian=0.5920, gap=0.3765, z=0.26
+- 33: score=0.5084, time_decay=0.5038, bayesian=0.4880, gap=0.2708, z=-0.14
+- 4: score=0.4986, time_decay=0.2772, bayesian=0.8800, gap=0.6708, z=1.35
+- 20: score=0.4950, time_decay=0.5122, bayesian=0.4400, gap=0.4047, z=-0.32
+- 46: score=0.4943, time_decay=0.5463, bayesian=0.6400, gap=0.2405, z=0.44

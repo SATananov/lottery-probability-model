@@ -14,3 +14,7 @@ Important notes:
 - Exact draw dates are not always available in the yearly official files, so `date` is intentionally left blank for now.
 
 This project uses the data for statistical training and educational analysis only. It does not guarantee lottery predictions.
+
+## Partial 2026 update
+
+The canonical dataset includes a local partial 2026 Toto 6/49 statistics package with 48 draws from 2026-01-04 to 2026-06-18. The year 2026 must be treated as incomplete until a full official yearly archive is available.
