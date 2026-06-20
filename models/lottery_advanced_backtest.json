@@ -1,0 +1,3300 @@
+{
+  "tested_draws": 40,
+  "min_train_size": 300,
+  "candidate_limit": 800,
+  "random_seed": 2026,
+  "averages": {
+    "advanced": 0.625,
+    "time_decay": 0.725,
+    "bayesian": 0.625,
+    "gap": 0.875,
+    "frequency_stability": 0.95,
+    "random": 0.825
+  },
+  "hit_rates": {
+    "advanced": {
+      "at_least_3": 0.0,
+      "at_least_4": 0.0
+    },
+    "time_decay": {
+      "at_least_3": 0.025,
+      "at_least_4": 0.0
+    },
+    "bayesian": {
+      "at_least_3": 0.0,
+      "at_least_4": 0.0
+    },
+    "gap": {
+      "at_least_3": 0.1,
+      "at_least_4": 0.0
+    },
+    "frequency_stability": {
+      "at_least_3": 0.025,
+      "at_least_4": 0.025
+    },
+    "random": {
+      "at_least_3": 0.025,
+      "at_least_4": 0.0
+    }
+  },
+  "distributions": {
+    "advanced": {
+      "0": 18,
+      "1": 19,
+      "2": 3,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "time_decay": {
+      "0": 18,
+      "1": 16,
+      "2": 5,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "bayesian": {
+      "0": 20,
+      "1": 15,
+      "2": 5,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "gap": {
+      "0": 16,
+      "1": 17,
+      "2": 3,
+      "3": 4,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "frequency_stability": {
+      "0": 9,
+      "1": 26,
+      "2": 4,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 0
+    },
+    "random": {
+      "0": 15,
+      "1": 18,
+      "2": 6,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "best_strategy": "frequency_stability",
+  "conclusion": "Best average-match strategy in this backtest: frequency_stability. Treat this as a model check, not proof that future lottery draws are predictable.",
+  "details": [
+    {
+      "draw_id": 9971,
+      "date": "",
+      "actual_numbers": [
+        4,
+        10,
+        26,
+        38,
+        41,
+        47
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            7,
+            25,
+            31,
+            32,
+            40,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            7,
+            8,
+            21,
+            33,
+            42,
+            47
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9972,
+      "date": "",
+      "actual_numbers": [
+        2,
+        10,
+        17,
+        29,
+        37,
+        43
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 2
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            7,
+            25,
+            31,
+            32,
+            40,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            15,
+            27,
+            36,
+            37,
+            39,
+            40
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9973,
+      "date": "",
+      "actual_numbers": [
+        11,
+        17,
+        29,
+        30,
+        32,
+        37
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            7,
+            25,
+            31,
+            32,
+            40,
+            49
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            16,
+            29,
+            32,
+            36,
+            38,
+            47
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 9974,
+      "date": "",
+      "actual_numbers": [
+        7,
+        25,
+        28,
+        37,
+        40,
+        43
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            7,
+            25,
+            31,
+            40,
+            44,
+            49
+          ],
+          "matches": 3
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            1,
+            6,
+            7,
+            8,
+            19,
+            40
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 9975,
+      "date": "",
+      "actual_numbers": [
+        14,
+        16,
+        19,
+        23,
+        30,
+        47
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            13,
+            31,
+            35,
+            42,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            1,
+            21,
+            29,
+            32,
+            44,
+            47
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9976,
+      "date": "",
+      "actual_numbers": [
+        5,
+        11,
+        16,
+        21,
+        23,
+        38
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "gap": {
+          "numbers": [
+            13,
+            31,
+            35,
+            42,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            14,
+            17,
+            23,
+            25,
+            26,
+            46
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9977,
+      "date": "",
+      "actual_numbers": [
+        9,
+        12,
+        23,
+        34,
+        42,
+        44
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 3
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "gap": {
+          "numbers": [
+            31,
+            34,
+            35,
+            42,
+            44,
+            49
+          ],
+          "matches": 3
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            5,
+            6,
+            22,
+            33,
+            41,
+            48
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9978,
+      "date": "",
+      "actual_numbers": [
+        2,
+        4,
+        12,
+        16,
+        19,
+        30
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            13,
+            27,
+            31,
+            35,
+            45,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            30,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            10,
+            19,
+            30,
+            35,
+            36,
+            47
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 9979,
+      "date": "",
+      "actual_numbers": [
+        4,
+        7,
+        16,
+        23,
+        41,
+        45
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            13,
+            27,
+            31,
+            35,
+            45,
+            49
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            2,
+            20,
+            37,
+            42,
+            46,
+            48
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9980,
+      "date": "",
+      "actual_numbers": [
+        2,
+        13,
+        24,
+        26,
+        35,
+        42
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            13,
+            24,
+            27,
+            31,
+            35,
+            49
+          ],
+          "matches": 3
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 4
+        },
+        "random": {
+          "numbers": [
+            6,
+            24,
+            28,
+            30,
+            46,
+            48
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9981,
+      "date": "",
+      "actual_numbers": [
+        11,
+        25,
+        31,
+        38,
+        40,
+        45
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            3,
+            27,
+            31,
+            36,
+            46,
+            49
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            8,
+            26,
+            28,
+            32,
+            36,
+            38
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9982,
+      "date": "",
+      "actual_numbers": [
+        5,
+        10,
+        14,
+        33,
+        34,
+        38
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            34,
+            37,
+            49
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 2
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            3,
+            27,
+            36,
+            39,
+            46,
+            49
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            17,
+            26,
+            32,
+            33,
+            34,
+            39
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 9983,
+      "date": "",
+      "actual_numbers": [
+        17,
+        24,
+        25,
+        28,
+        37,
+        49
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            34,
+            37,
+            49
+          ],
+          "matches": 2
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            3,
+            27,
+            36,
+            39,
+            46,
+            49
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            2,
+            27,
+            31,
+            33,
+            34,
+            37
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9984,
+      "date": "",
+      "actual_numbers": [
+        2,
+        8,
+        16,
+        23,
+        39,
+        43
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            29,
+            39,
+            46
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            3,
+            22,
+            27,
+            36,
+            39,
+            46
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 2
+        },
+        "random": {
+          "numbers": [
+            4,
+            9,
+            15,
+            34,
+            37,
+            43
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9985,
+      "date": "",
+      "actual_numbers": [
+        3,
+        20,
+        24,
+        28,
+        31,
+        46
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            29,
+            34,
+            46
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            3,
+            18,
+            22,
+            27,
+            36,
+            46
+          ],
+          "matches": 2
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            7,
+            10,
+            28,
+            31,
+            40,
+            46
+          ],
+          "matches": 3
+        }
+      }
+    },
+    {
+      "draw_id": 9986,
+      "date": "",
+      "actual_numbers": [
+        3,
+        4,
+        16,
+        25,
+        28,
+        36
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            1,
+            21,
+            22,
+            29,
+            34,
+            42
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            18,
+            22,
+            27,
+            36
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            8,
+            15,
+            30,
+            31,
+            41,
+            45
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9987,
+      "date": "",
+      "actual_numbers": [
+        4,
+        12,
+        30,
+        42,
+        48,
+        49
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            9,
+            21,
+            22,
+            29,
+            34,
+            42
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            18,
+            22,
+            27,
+            48
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            17,
+            31,
+            35,
+            36,
+            44,
+            46
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9988,
+      "date": "",
+      "actual_numbers": [
+        13,
+        17,
+        23,
+        33,
+        34,
+        38
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            29,
+            34,
+            37
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 2
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            18,
+            22,
+            27
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            20,
+            26,
+            33,
+            36,
+            42,
+            43
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9989,
+      "date": "",
+      "actual_numbers": [
+        13,
+        17,
+        28,
+        32,
+        46,
+        47
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            29,
+            34,
+            37
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            18,
+            22,
+            27
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            13,
+            19,
+            26,
+            28,
+            31,
+            45
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 9990,
+      "date": "",
+      "actual_numbers": [
+        5,
+        11,
+        21,
+        28,
+        39,
+        43
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            21,
+            22,
+            29,
+            34,
+            37
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            18,
+            22,
+            27
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            1,
+            3,
+            10,
+            18,
+            39,
+            42
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9991,
+      "date": "",
+      "actual_numbers": [
+        27,
+        33,
+        38,
+        45,
+        46,
+        49
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            9,
+            22,
+            29,
+            35,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            18,
+            22,
+            27
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            13,
+            17,
+            24,
+            30,
+            32,
+            34
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9992,
+      "date": "",
+      "actual_numbers": [
+        7,
+        17,
+        18,
+        25,
+        30,
+        42
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            9,
+            22,
+            29,
+            37,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            18,
+            22,
+            29
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            28,
+            30,
+            32,
+            33,
+            45,
+            48
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9993,
+      "date": "",
+      "actual_numbers": [
+        12,
+        16,
+        26,
+        34,
+        37,
+        40
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            9,
+            22,
+            29,
+            37,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 2
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            22,
+            29,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            3,
+            19,
+            21,
+            30,
+            36,
+            43
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9994,
+      "date": "",
+      "actual_numbers": [
+        4,
+        6,
+        10,
+        18,
+        23,
+        25
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            6,
+            9,
+            22,
+            29,
+            35,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 2
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            1,
+            6,
+            15,
+            22,
+            29,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            7,
+            17,
+            29,
+            33,
+            45,
+            46
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9995,
+      "date": "",
+      "actual_numbers": [
+        3,
+        14,
+        20,
+        27,
+        33,
+        35
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            9,
+            15,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            9,
+            15,
+            22,
+            29,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            5,
+            12,
+            28,
+            29,
+            31,
+            42
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9996,
+      "date": "",
+      "actual_numbers": [
+        3,
+        9,
+        27,
+        31,
+        35,
+        36
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            9,
+            15,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            9,
+            15,
+            22,
+            29,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            7,
+            13,
+            18,
+            24,
+            27,
+            32
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 9997,
+      "date": "",
+      "actual_numbers": [
+        14,
+        21,
+        32,
+        38,
+        40,
+        49
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            1,
+            21,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "gap": {
+          "numbers": [
+            1,
+            15,
+            19,
+            22,
+            29,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            1,
+            6,
+            10,
+            29,
+            47,
+            48
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9998,
+      "date": "",
+      "actual_numbers": [
+        1,
+        12,
+        24,
+        27,
+        31,
+        43
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            1,
+            15,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            1,
+            15,
+            19,
+            22,
+            29,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            29,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 2
+        },
+        "random": {
+          "numbers": [
+            6,
+            13,
+            16,
+            35,
+            38,
+            40
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 9999,
+      "date": "",
+      "actual_numbers": [
+        3,
+        15,
+        26,
+        33,
+        47,
+        48
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            11,
+            15,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            15,
+            19,
+            22,
+            29,
+            41,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            29,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            3,
+            8,
+            18,
+            35,
+            40,
+            43
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 10000,
+      "date": "",
+      "actual_numbers": [
+        2,
+        14,
+        21,
+        27,
+        28,
+        48
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            23,
+            34,
+            35,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            8,
+            19,
+            22,
+            29,
+            41,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            29,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            1,
+            10,
+            21,
+            23,
+            41,
+            49
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 10001,
+      "date": "",
+      "actual_numbers": [
+        10,
+        16,
+        24,
+        27,
+        30,
+        36
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            8,
+            19,
+            22,
+            29,
+            41,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            9,
+            32,
+            37,
+            38,
+            43,
+            45
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 10002,
+      "date": "",
+      "actual_numbers": [
+        2,
+        6,
+        7,
+        19,
+        29,
+        41
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            8,
+            19,
+            22,
+            29,
+            41,
+            44
+          ],
+          "matches": 3
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            29,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            9,
+            15,
+            31,
+            35,
+            38,
+            39
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 10003,
+      "date": "",
+      "actual_numbers": [
+        2,
+        24,
+        31,
+        36,
+        40,
+        48
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            34,
+            37,
+            44
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            5,
+            8,
+            11,
+            13,
+            22,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 2
+        },
+        "random": {
+          "numbers": [
+            6,
+            19,
+            27,
+            33,
+            43,
+            45
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 10004,
+      "date": "",
+      "actual_numbers": [
+        3,
+        9,
+        10,
+        13,
+        20,
+        30
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            5,
+            8,
+            11,
+            13,
+            22,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            9,
+            11,
+            20,
+            27,
+            33,
+            38
+          ],
+          "matches": 2
+        }
+      }
+    },
+    {
+      "draw_id": 10005,
+      "date": "",
+      "actual_numbers": [
+        2,
+        6,
+        7,
+        8,
+        29,
+        39
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            8,
+            11,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            5,
+            8,
+            11,
+            22,
+            39,
+            44
+          ],
+          "matches": 2
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            1,
+            10,
+            13,
+            25,
+            34,
+            49
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 10006,
+      "date": "",
+      "actual_numbers": [
+        11,
+        15,
+        25,
+        38,
+        40,
+        44
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            11,
+            21,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 2
+        },
+        "gap": {
+          "numbers": [
+            5,
+            11,
+            22,
+            44,
+            45,
+            46
+          ],
+          "matches": 2
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            4,
+            5,
+            7,
+            23,
+            25,
+            42
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 10007,
+      "date": "",
+      "actual_numbers": [
+        7,
+        16,
+        24,
+        29,
+        31,
+        46
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            17,
+            21,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            5,
+            17,
+            22,
+            42,
+            45,
+            46
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            2,
+            21,
+            23,
+            31,
+            33,
+            48
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 10008,
+      "date": "",
+      "actual_numbers": [
+        2,
+        3,
+        15,
+        18,
+        21,
+        25
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            17,
+            21,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            5,
+            17,
+            22,
+            34,
+            42,
+            45
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 1
+        },
+        "random": {
+          "numbers": [
+            8,
+            20,
+            21,
+            29,
+            32,
+            44
+          ],
+          "matches": 1
+        }
+      }
+    },
+    {
+      "draw_id": 10009,
+      "date": "",
+      "actual_numbers": [
+        20,
+        22,
+        24,
+        32,
+        35,
+        49
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            9,
+            17,
+            22,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            5,
+            17,
+            22,
+            34,
+            42,
+            45
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 2
+        },
+        "random": {
+          "numbers": [
+            10,
+            11,
+            30,
+            37,
+            38,
+            40
+          ],
+          "matches": 0
+        }
+      }
+    },
+    {
+      "draw_id": 10010,
+      "date": "",
+      "actual_numbers": [
+        5,
+        21,
+        26,
+        28,
+        46,
+        48
+      ],
+      "tickets": {
+        "advanced": {
+          "numbers": [
+            4,
+            17,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 0
+        },
+        "time_decay": {
+          "numbers": [
+            10,
+            21,
+            23,
+            34,
+            37,
+            42
+          ],
+          "matches": 1
+        },
+        "bayesian": {
+          "numbers": [
+            6,
+            11,
+            21,
+            34,
+            44,
+            49
+          ],
+          "matches": 1
+        },
+        "gap": {
+          "numbers": [
+            5,
+            17,
+            34,
+            37,
+            42,
+            45
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            2,
+            24,
+            35,
+            38,
+            42,
+            43
+          ],
+          "matches": 0
+        },
+        "random": {
+          "numbers": [
+            14,
+            22,
+            28,
+            30,
+            34,
+            40
+          ],
+          "matches": 1
+        }
+      }
+    }
+  ]
+}
