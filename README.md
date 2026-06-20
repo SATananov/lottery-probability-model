@@ -130,3 +130,20 @@ python train_ml_extensions.py
 ```
 
 Streamlit приложението има страница **МЛ лаборатория**, където можеш да видиш препоръки, класификация, клъстери, 2D карта и отчетите.
+
+## Прогноза / Prediction Engine v36
+
+Проектът включва страница **Прогноза**, която генерира статистическа прогноза за следващ неизвестен тираж. Тя използва всички налични модели и историческата проверка, но не променя реалния шанс за печалба.
+
+Команда:
+
+```powershell
+python predict_next_draw.py
+```
+
+Изходни файлове:
+
+- `models/lottery_prediction_model.json`
+- `reports/prediction_report.md`
+- `reports/prediction_model_card.md`
+- `reports/prediction_methodology_report.md`

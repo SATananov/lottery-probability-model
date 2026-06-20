@@ -48,6 +48,10 @@ _BG34_EXACT = {
     "Reports": "Отчети",
     "Report": "Отчет",
     "Update Draws": "Добавяне на тираж",
+    "Prediction": "Прогноза",
+    "Prediction Engine": "Прогнозен модул",
+    "Прогноза": "Прогноза",
+    "Прогнозен статистически модул": "Прогнозен статистически модул",
     "Menu": "Меню",
     "Language": "Език",
 
@@ -705,6 +709,7 @@ TRANSLATIONS = {
         "combined": "Комбиниран модел",
         "advanced_lab": "Разширена лаборатория",
         "ml_lab": "МЛ лаборатория",
+        "prediction": "Прогноза",
         "ticket_analyzer": "Анализ на фиш",
         "history": "Историческа статистика",
         "probability_lab": "Вероятности",
@@ -768,6 +773,7 @@ TRANSLATIONS = {
         "combined": "Combined Model",
         "advanced_lab": "Advanced Lab",
         "ml_lab": "ML Laboratory",
+        "prediction": "Prediction",
         "ticket_analyzer": "Ticket Analyzer",
         "history": "Historical Statistics",
         "probability_lab": "Probability Lab",
@@ -1070,6 +1076,7 @@ def render_recommendation_list(title: str, recs: List[Dict[str, Any]], limit: in
             item.get("confidence_score")
             or item.get("confidence")
             or item.get("final_score")
+            or item.get("prediction_score")
             or item.get("score")
         )
         rank = item.get("rank") or item.get("относителна оценка_rank") or idx
@@ -1145,7 +1152,7 @@ def extract_single_ticket(model: Dict[str, Any]) -> List[int]:
 def extract_recommendations(model: Dict[str, Any]) -> List[Dict[str, Any]]:
     if not model:
         return []
-    for key in ["recommended_combinations", "top_recommendations", "recommendations", "top_combinations"]:
+    for key in ["recommended_combinations", "top_predictions", "portfolio_predictions", "top_recommendations", "recommendations", "top_combinations"]:
         value = model.get(key)
         if isinstance(value, list):
             result = []
@@ -1168,15 +1175,16 @@ def main_recommendation(model: Dict[str, Any]) -> Tuple[List[int], Optional[floa
     if recs:
         item = recs[0]
         numbers = item.get("numbers") or item.get("combination") or item.get("ticket") or []
-        score = item.get("confidence_score") or item.get("confidence") or item.get("final_score") or item.get("score")
+        score = item.get("confidence_score") or item.get("confidence") or item.get("final_score") or item.get("prediction_score") or item.get("score")
         return sorted([int(x) for x in numbers]) if numbers else [], score
     return extract_single_ticket(model), model.get("confidence_score") or model.get("score") if model else None
 
 
 def get_model_cards() -> List[Tuple[str, str, str, str]]:
     return [
-        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира time-decay, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
+        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира времево затихване, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
         ("МЛ разширения: класификация, клъстери и 2D карта", "lottery_ml_extensions_model.json", "ml_extensions", "Добавя класификация, клъстеризация, редукция на размерността и карта на модела и допълнителна историческа проверка."),
+        ("Прогнозен статистически модул", "lottery_prediction_model.json", "prediction", "Обобщава всички налични сигнали в статистическа прогноза за следващ неизвестен тираж. Не е гаранция."),
         (tr("combined_model"), "lottery_combined_model.json", "combined", "Финално претеглено класиране от основните модели."),
         (tr("hot_model"), "lottery_frequency_model.json", "hot", "Числа с по-силен исторически честотен сигнал."),
         (tr("cold_model"), "lottery_cold_model.json", "cold", "Числа, повлияни от по-слаба представеност и текущ интервал."),
@@ -1390,6 +1398,112 @@ def compute_number_stats(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+
+def _prediction_reason_html(reasons: List[str]) -> str:
+    if not reasons:
+        return '<div class="small-muted">Няма записано обяснение.</div>'
+    items = ''.join(f'<li>{reason}</li>' for reason in reasons)
+    return f'<ul class="small-muted" style="margin-top:8px;">{items}</ul>'
+
+
+def render_prediction_card(item: Dict[str, Any], title: str = "Прогнозна комбинация") -> None:
+    numbers = item.get("numbers", []) if isinstance(item, dict) else []
+    score = item.get("prediction_score") or item.get("confidence_score") or item.get("score") if isinstance(item, dict) else None
+    classification = item.get("classification", "-") if isinstance(item, dict) else "-"
+    cluster = item.get("cluster_label", "-") if isinstance(item, dict) else "-"
+    rel = item.get("relative_model_probability") if isinstance(item, dict) else None
+    try:
+        score_text = f'<span class="score-badge">Моделна оценка: {float(score):.2f}/100</span>' if score is not None else ""
+    except Exception:
+        score_text = f'<span class="score-badge">Моделна оценка: {score}</span>' if score is not None else ""
+    try:
+        rel_text = f'<span class="score-badge">Относителна моделна тежест: {float(rel):.6f}%</span>' if rel is not None else ""
+    except Exception:
+        rel_text = f'<span class="score-badge">Относителна моделна тежест: {rel}</span>' if rel is not None else ""
+    st.markdown(
+        f"""
+        <div class="model-card">
+          <div class="model-title">{title}</div>
+          {format_number_pills(numbers)}
+          <div>{score_text}{rel_text}<span class="score-badge">Реален шанс: {THEORETICAL_ODDS_TEXT}</span></div>
+          <div class="small-muted" style="margin-top:10px;">Клас: {classification} · Клъстер: {cluster}</div>
+          {_prediction_reason_html(item.get("reasons", []) if isinstance(item, dict) else [])}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def page_prediction() -> None:
+    render_header()
+    st.markdown("## Прогноза")
+    st.markdown(
+        '<div class="warning-soft"><b>Важно:</b> прогнозата е статистическо класиране на кандидат-комбинации. Тя не променя реалния шанс за точна комбинация 6/49 и не е гаранция за бъдещ тираж.</div>',
+        unsafe_allow_html=True,
+    )
+
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button("Генерирай нова прогноза", width="stretch"):
+            with st.spinner("Изчислява прогнозния модул..."):
+                ok, output = run_script("predict_next_draw.py")
+            st.success("Готово" if ok else "Неуспешно")
+            st.code(output[-5000:] if output else "Няма изход")
+            st.cache_data.clear()
+    with c2:
+        if st.button("Покажи отчета за прогнозата", width="stretch"):
+            render_report_file(REPORTS_DIR / "prediction_report.md")
+
+    model = model_json("lottery_prediction_model.json")
+    if not model:
+        st.info("Прогнозният модул още не е наличен. Натисни 'Генерирай нова прогноза'.")
+        return
+
+    best = model.get("recommended_prediction", {})
+    render_prediction_card(best, "Основна прогноза за следващия тираж")
+
+    context = model.get("latest_draw_context", {})
+    check = model.get("historical_check_summary", {})
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Обучени тиражи", f"{model.get('training_draws', 0):,}")
+    c2.metric("Кандидати", f"{model.get('candidate_count', 0):,}")
+    c3.metric("Последен тираж", f"{context.get('latest_year', '-')}/{context.get('latest_draw_number', '-')}")
+    c4.metric("Най-добра историческа стратегия", check.get("best_strategy", "-"))
+
+    tabs = st.tabs(["Топ прогнози", "Портфолио", "Защо тези числа", "Отчети"])
+
+    with tabs[0]:
+        st.markdown("### Топ прогнозни комбинации")
+        for item in model.get("recommended_combinations", [])[:15]:
+            render_prediction_card(item, f"Ранг {item.get('rank')}")
+
+    with tabs[1]:
+        st.markdown("### Диверсифицирано портфолио")
+        st.caption("Тук комбинациите са подбрани така, че да не се припокриват прекалено много една с друга.")
+        for item in model.get("portfolio_predictions", [])[:10]:
+            render_prediction_card(item, f"Портфолио {item.get('portfolio_rank')}")
+
+    with tabs[2]:
+        st.markdown("### Обяснение на прогнозата")
+        st.write("Модулът комбинира честотен сигнал, студен/интервален сигнал, баланс, двойки, тройки, структура, риск от човешки шаблон, последни тиражи и резултатите от историческата проверка.")
+        features = best.get("feature_summary", {}) if isinstance(best, dict) else {}
+        if features:
+            st.dataframe(pd.DataFrame([features]), width="stretch", hide_index=True)
+        methodology = model.get("methodology", [])
+        if methodology:
+            st.markdown("#### Методология")
+            st.markdown("\n".join(f"- {item}" for item in methodology))
+
+    with tabs[3]:
+        reports = [
+            ("prediction_report.md", "Отчет за прогнозата"),
+            ("prediction_model_card.md", "Карта на прогнозния модул"),
+            ("prediction_methodology_report.md", "Методология"),
+        ]
+        labels = dict(reports)
+        selected = st.selectbox("Отчет", [name for name, _ in reports], format_func=lambda name: labels.get(name, name), key="prediction_report_select")
+        render_report_file(REPORTS_DIR / selected)
+
 def page_ticket_analyzer() -> None:
     render_header()
     st.markdown("## " + tr("ticket_analyzer"))
@@ -1471,7 +1585,19 @@ def page_reports() -> None:
     if not files:
         st.info("Няма намерени отчети.")
         return
-    selected = st.selectbox("Отчет", files, format_func=lambda p: p.name)
+    report_labels = {
+        "prediction_report.md": "Отчет за прогнозата",
+        "prediction_model_card.md": "Карта на прогнозния модул",
+        "prediction_methodology_report.md": "Методология на прогнозата",
+        "advanced_backtest_report.md": "Отчет от историческа проверка",
+        "ml_extensions_backtest_report.md": "МЛ отчет от историческа проверка",
+        "backtest_report.md": "Честотен отчет от историческа проверка",
+        "combined_backtest_report.md": "Комбиниран отчет от историческа проверка",
+        "cold_backtest_report.md": "Студен модел — историческа проверка",
+        "gap_backtest_report.md": "Интервален модел — историческа проверка",
+        "middle_backtest_report.md": "Балансиран модел — историческа проверка",
+    }
+    selected = st.selectbox("Отчет", files, format_func=lambda p: report_labels.get(p.name, p.name))
     render_report_file(selected)
 
 
@@ -1665,6 +1791,7 @@ def retrain_all_models() -> List[Tuple[str, bool, str]]:
         "train_combined_model.py",
         "train_advanced_model.py",
         "train_ml_extensions.py",
+        "predict_next_draw.py",
     ]
     results = []
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -1798,6 +1925,7 @@ def main() -> None:
         tr("combined"): page_combined,
         tr("advanced_lab"): page_advanced_lab,
         tr("ml_lab"): page_ml_lab,
+        tr("prediction"): page_prediction,
         tr("ticket_analyzer"): page_ticket_analyzer,
         tr("history"): page_history,
         tr("probability_lab"): page_probability_lab,

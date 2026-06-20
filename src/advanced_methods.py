@@ -810,8 +810,8 @@ def run_advanced_backtest(
 
     best_strategy = max(averages, key=lambda name: averages[name])
     conclusion = (
-        f"Best average-match strategy in this backtest: {best_strategy}. "
-        "Treat this as a model check, not proof that future lottery draws are predictable."
+        f"Най-добрата стратегия по средни съвпадения в историческата проверка е: {_bg_strategy_name(best_strategy)}. "
+        "Това е проверка на модела, не доказателство, че бъдещи тегления са предсказуеми."
     )
 
     return {
@@ -829,6 +829,18 @@ def run_advanced_backtest(
 
 
 
+def _bg_strategy_name(name: str) -> str:
+    labels = {
+        "advanced": "Разширен ансамбъл",
+        "time_decay": "Времево затихване",
+        "bayesian": "Бейсово изглаждане",
+        "gap": "Интервален модел",
+        "frequency_stability": "Честотна стабилност",
+        "random": "Случаен базов модел",
+    }
+    return labels.get(str(name), str(name).replace("_", " "))
+
+
 def save_advanced_backtest(backtest: dict[str, Any], path: Path = DEFAULT_BACKTEST_JSON_PATH) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -844,42 +856,43 @@ def load_advanced_backtest(path: Path = DEFAULT_BACKTEST_JSON_PATH) -> dict[str,
 def write_advanced_backtest_report(backtest: dict[str, Any], report_path: Path = DEFAULT_BACKTEST_REPORT_PATH) -> Path:
     report_path = Path(report_path)
     report_path.parent.mkdir(parents=True, exist_ok=True)
+    best_label = _bg_strategy_name(backtest.get("best_strategy", ""))
     lines = [
-        "# Advanced Backtesting Report",
+        "# Отчет от историческа проверка",
         "",
-        "Rolling backtest: each step trains on past draws only and tests against the next real draw.",
+        "Историческата проверка тества модела назад във времето: при всяка стъпка се използват само предишни тиражи и се сравнява с реалния следващ тираж.",
         "",
-        f"- Tested draws: {backtest['tested_draws']}",
-        f"- Minimum training size: {backtest['min_train_size']}",
-        f"- Candidate limit per step: {backtest['candidate_limit']}",
-        f"- Best strategy: {backtest['best_strategy']}",
+        f"- Тествани тиражи: {backtest['tested_draws']}",
+        f"- Минимален обучаващ период: {backtest['min_train_size']}",
+        f"- Кандидат-комбинации на стъпка: {backtest['candidate_limit']}",
+        f"- Най-добра стратегия: {best_label}",
         "",
         backtest["conclusion"],
         "",
-        "## Average matches",
+        "## Средни съвпадения",
         "",
-        "| Strategy | Average matches | >=3 hit rate | >=4 hit rate |",
+        "| Стратегия | Средни съвпадения | >=3 съвпадения | >=4 съвпадения |",
         "|:---|---:|---:|---:|",
     ]
     for name, average in backtest["averages"].items():
         lines.append(
-            f"| {name} | {average:.4f} | "
+            f"| {_bg_strategy_name(name)} | {average:.4f} | "
             f"{backtest['hit_rates'][name]['at_least_3']:.2%} | "
             f"{backtest['hit_rates'][name]['at_least_4']:.2%} |"
         )
 
-    lines.extend(["", "## Match distributions", "", "| Strategy | 0 | 1 | 2 | 3 | 4 | 5 | 6 |", "|:---|---:|---:|---:|---:|---:|---:|---:|"])
+    lines.extend(["", "## Разпределение на съвпаденията", "", "| Стратегия | 0 | 1 | 2 | 3 | 4 | 5 | 6 |", "|:---|---:|---:|---:|---:|---:|---:|---:|"])
     for name, distribution in backtest["distributions"].items():
-        lines.append("| " + name + " | " + " | ".join(str(distribution[str(i)]) for i in range(DRAW_SIZE + 1)) + " |")
+        lines.append("| " + _bg_strategy_name(name) + " | " + " | ".join(str(distribution[str(i)]) for i in range(DRAW_SIZE + 1)) + " |")
 
-    lines.extend(["", "## Recent tested draws", ""])
+    lines.extend(["", "## Последни тествани тиражи", ""])
     for item in backtest["details"][-30:]:
         advanced = item["tickets"]["advanced"]
         random_ticket = item["tickets"]["random"]
         lines.append(
-            f"- Draw {item['draw_id']} ({item['date']}): actual={item['actual_numbers']}, "
-            f"advanced={advanced['numbers']} ({advanced['matches']} matches), "
-            f"random={random_ticket['numbers']} ({random_ticket['matches']} matches)"
+            f"- Тираж {item['draw_id']} ({item['date']}): реални={item['actual_numbers']}, "
+            f"разширен модел={advanced['numbers']} ({advanced['matches']} съвпадения), "
+            f"случаен фиш={random_ticket['numbers']} ({random_ticket['matches']} съвпадения)"
         )
 
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
