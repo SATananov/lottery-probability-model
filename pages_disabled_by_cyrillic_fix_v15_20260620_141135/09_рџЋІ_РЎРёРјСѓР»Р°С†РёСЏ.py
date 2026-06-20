@@ -1,3 +1,0 @@
-from streamlit_pages.simulation_lab_page import render_simulation_lab_page
-
-render_simulation_lab_page()

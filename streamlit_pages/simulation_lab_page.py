@@ -62,11 +62,11 @@ def _normalize_ticket(numbers: Iterable[int]) -> List[int]:
 
 def _validate_ticket(numbers: Sequence[int]) -> Tuple[bool, str]:
     if len(numbers) != 6:
-        return False, "Трябва да има точно 6 числа. / Exactly 6 numbers are required."
+        return False, "Трябва да има точно 6 числа."
     if len(set(numbers)) != 6:
-        return False, "Числата не трябва да се повтарят. / Numbers must be unique."
+        return False, "Числата не трябва да се повтарят."
     if any(number < 1 or number > 49 for number in numbers):
-        return False, "Всички числа трябва да са между 1 и 49. / All numbers must be between 1 and 49."
+        return False, "Всички числа трябва да са между 1 и 49."
     return True, "OK"
 
 
@@ -190,23 +190,23 @@ def _human_pattern_risk(ticket: Sequence[int]) -> Tuple[str, float, List[str]]:
     reasons: List[str] = []
     if all(number <= 31 for number in numbers):
         risk += 25
-        reasons.append("Всички числа са до 31 — прилича на дати. / All numbers are <=31, date-like pattern.")
+        reasons.append("Всички числа са до 31 — прилича на дати.")
     if sum(1 for a, b in zip(numbers, numbers[1:]) if b - a == 1) >= 2:
         risk += 20
-        reasons.append("Има много поредни числа. / Many consecutive numbers.")
+        reasons.append("Има много поредни числа.")
     gaps = [b - a for a, b in zip(numbers, numbers[1:])]
     if len(set(gaps)) <= 2:
         risk += 18
-        reasons.append("Разстоянията между числата са прекалено регулярни. / Very regular spacing.")
+        reasons.append("Разстоянията между числата са прекалено регулярни.")
     if numbers in ([1, 2, 3, 4, 5, 6], [7, 14, 21, 28, 35, 42]):
         risk += 40
-        reasons.append("Много популярен човешки pattern. / Very popular human pattern.")
+        reasons.append("Много популярен човешки pattern.")
     if risk < 20:
         label = "Нисък"
     elif risk < 45:
-        label = "Среден / Medium"
+        label = "Среден"
     else:
-        label = "Висок / High"
+        label = "Висок"
     return label, min(100.0, risk), reasons
 
 
@@ -249,23 +249,23 @@ def _ticket_model_analysis(ticket: Sequence[int], df: pd.DataFrame) -> Dict[str,
     for number in ticket:
         item = stats[number]
         if item["z_score"] > 1.8:
-            category = "Hot / Горещо"
+            category = "Горещо"
         elif item["z_score"] < -1.8:
-            category = "Cold / Студено"
+            category = "Студено"
         elif item["gap_ratio"] >= 1.7:
-            category = "Overdue / Отдавна непадало се"
+            category = "Отдавна не е излизало"
         else:
-            category = "Normal / Нормално"
+            category = "Нормално"
         per_number.append({
-            "Number": number,
-            "Category": category,
-            "Times drawn": int(item["count"]),
-            "Empirical %": round(item["empirical"] * 100, 3),
-            "Expected %": round(item["expected"] * 100, 3),
+            "Число": number,
+            "Категория": category,
+            "Появявания": int(item["count"]),
+            "Емпиричен %": round(item["empirical"] * 100, 3),
+            "Очакван %": round(item["expected"] * 100, 3),
             "Z-score": round(item["z_score"], 3),
-            "Current gap": int(item["gap"]),
-            "Avg interval": round(item["avg_interval"], 2),
-            "Gap ratio": round(item["gap_ratio"], 2),
+            "Текущ интервал": int(item["gap"]),
+            "Среден интервал": round(item["avg_interval"], 2),
+            "Коефициент на интервал": round(item["gap_ratio"], 2),
         })
 
     return {
@@ -309,11 +309,11 @@ def _monte_carlo(ticket: Sequence[int], simulations: int, seed: int) -> Dict[int
 def _load_model_recommendations() -> List[Dict[str, Any]]:
     candidates: List[Dict[str, Any]] = []
     model_files = [
-        ("Advanced ensemble", MODELS_DIR / "lottery_advanced_ensemble_model.json"),
-        ("Final combined", MODELS_DIR / "lottery_combined_model.json"),
+        ("Разширен ансамбъл", MODELS_DIR / "lottery_advanced_ensemble_model.json"),
+        ("Финален комбиниран модел", MODELS_DIR / "lottery_combined_model.json"),
         ("Горещ / честотен модел", MODELS_DIR / "lottery_frequency_model.json"),
         ("Студен + интервален модел", MODELS_DIR / "lottery_cold_model.json"),
-        ("Среден / балансиран моделd", MODELS_DIR / "lottery_middle_model.json"),
+        ("Среден / балансиран модел", MODELS_DIR / "lottery_middle_model.json"),
         ("Интервален модел", MODELS_DIR / "lottery_gap_model.json"),
     ]
     for label, path in model_files:
@@ -336,11 +336,11 @@ def _load_model_recommendations() -> List[Dict[str, Any]]:
                 numbers = first
                 score = None
             if numbers:
-                candidates.append({"Модел": label, "Числа": sorted(numbers), "Score": score})
+                candidates.append({"Модел": label, "Числа": sorted(numbers), "Оценка": score})
                 continue
         for key in ["recommended_ticket", "recommended_hot_ticket", "recommended_cold_ticket", "recommended_middle_ticket", "recommended_gap_ticket"]:
             if key in model and model[key]:
-                candidates.append({"Модел": label, "Числа": sorted(model[key]), "Score": model.get("confidence_score")})
+                candidates.append({"Модел": label, "Числа": sorted(model[key]), "Оценка": model.get("confidence_score")})
                 break
     return candidates
 
@@ -361,20 +361,20 @@ def _render_distribution(title: str, distribution: Dict[int, int], total: int, l
         rows.append({
             _t("Съвпадения", "Matches", lang): matches,
             _t("Брой", "Count", lang): count,
-            _t("Процент", "Percent", lang): round((count / total * 100) if total else 0, 4),
+            _t("Процент", "Процент", lang): round((count / total * 100) if total else 0, 4),
         })
     result_df = pd.DataFrame(rows)
     st.dataframe(result_df, width="stretch", hide_index=True)
-    chart_df = result_df.set_index(_t("Съвпадения", "Matches", lang))[[ _t("Процент", "Percent", lang) ]]
+    chart_df = result_df.set_index(_t("Съвпадения", "Matches", lang))[[ _t("Процент", "Процент", lang) ]]
     st.bar_chart(chart_df, height=240)
 
 
 def _render_metric_cards(ticket: Sequence[int], analysis: Dict[str, Any], lang: str) -> None:
     odds_pct = 100 / TOTAL_COMBINATIONS
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric(_t("Реален шанс 6/6", "Real 6/6 odds", lang), f"1 / {TOTAL_COMBINATIONS:,}")
-    col2.metric(_t("В проценти", "Percent", lang), f"{odds_pct:.8f}%")
-    col3.metric(_t("Моделна оценка", "Model score", lang), f"{analysis['final_score']:.2f}/100")
+    col1.metric(_t("Реален шанс 6/6", "Реален шанс 6/6", lang), f"1 / {TOTAL_COMBINATIONS:,}")
+    col2.metric(_t("В проценти", "Процент", lang), f"{odds_pct:.8f}%")
+    col3.metric(_t("Моделна оценка", "Моделна оценка", lang), f"{analysis['final_score']:.2f}/100")
     col4.metric(_t("Риск от човешки шаблон", "Риск от човешки шаблон", lang), analysis["human_pattern_label"])
 
 
@@ -541,17 +541,17 @@ def _generate_simulation_optimizer_tickets(
 
 def _render_optimizer_result_cards(results: List[Dict[str, Any]], lang: str) -> None:
     if not results:
-        st.warning(_t("Няма генерирани резултати.", "No generated results.", lang))
+        st.warning(_t("Няма генерирани резултати.", "Няма генерирани резултати.", lang))
         return
 
-    st.markdown(f"### {_t('Генерирани моделни фишове', 'Generated model tickets', lang)}")
+    st.markdown(f"### {_t('Генерирани моделни фишове', 'Генерирани моделни фишове', lang)}")
     for index, item in enumerate(results, start=1):
         st.markdown(
             f"""
             <div class='sim-card'>
                 <div style='display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap;'>
                     <div><strong>{_t('Ранг', 'Rank', lang)} {index}</strong></div>
-                    <div><strong>{_t('Моделна оценка', 'Model score', lang)}: {item['score']:.2f}/100</strong></div>
+                    <div><strong>{_t('Моделна оценка', 'Моделна оценка', lang)}: {item['score']:.2f}/100</strong></div>
                 </div>
                 {_ticket_to_html(item['numbers'], size=48)}
             </div>
@@ -564,7 +564,7 @@ def _render_optimizer_result_cards(results: List[Dict[str, Any]], lang: str) -> 
         rows.append({
             _t("Ранг", "Rank", lang): index,
             _t("Числа", "Числа", lang): " ".join(str(number) for number in item["numbers"]),
-            _t("Score", "Score", lang): round(item["score"], 2),
+            _t("Оценка", "Оценка", lang): round(item["score"], 2),
             "Hot": round(item["hot_score"], 2),
             "Cold+Gap": round(item["cold_gap_score"], 2),
             "Middle": round(item["middle_score"], 2),
@@ -573,9 +573,9 @@ def _render_optimizer_result_cards(results: List[Dict[str, Any]], lang: str) -> 
             "Triple": round(item["triple_support"], 2),
             "Structure": round(item["structure_score"], 2),
             "Човешки риск": round(item["human_risk"], 2),
-            _t("Сума", "Sum", lang): item["sum"],
-            _t("Н/Ч", "Odd/Even", lang): item["odd_even"],
-            _t("Нис/Ср/Вис", "Low/Mid/High", lang): item["low_mid_high"],
+            _t("Сума", "Сума", lang): item["sum"],
+            _t("Н/Ч", "Нечетни/четни", lang): item["odd_even"],
+            _t("Нис/Ср/Вис", "Ниски/средни/високи", lang): item["low_mid_high"],
         })
     st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 # V16_SIMULATION_OPTIMIZER_END
@@ -594,30 +594,30 @@ def _render_structure_visual_v18(details: Dict[str, Any], lang: str) -> None:
     consecutive_pairs = int(details.get("consecutive_pairs", 0))
     numbers_under_31 = int(details.get("numbers_under_31", 0))
 
-    st.markdown(f"#### {_t('Структура на комбинацията', 'Combination structure', lang)}")
+    st.markdown(f"#### {_t('Структура на комбинацията', 'Структура на комбинацията', lang)}")
 
     messages: List[str] = []
     if abs(odd - even) <= 2:
-        messages.append(_t("✅ Четни/нечетни: добър баланс.", "✅ Odd/even: good balance.", lang))
+        messages.append(_t("✅ Четни/нечетни: добър баланс.", "✅ Четни/нечетни: добър баланс.", lang))
     else:
-        messages.append(_t("⚠️ Четни/нечетни: по-небалансирана структура.", "⚠️ Odd/even: less balanced structure.", lang))
+        messages.append(_t("⚠️ Четни/нечетни: по-небалансирана структура.", "⚠️ Четни/нечетни: по-небалансирана структура.", lang))
 
     if 100 <= total_sum <= 200:
-        messages.append(_t("✅ Сборът е в нормална зона.", "✅ Sum is in a normal zone.", lang))
+        messages.append(_t("✅ Сборът е в нормална зона.", "✅ Сума is in a normal zone.", lang))
     else:
-        messages.append(_t("⚠️ Сборът е по-краен и заслужава внимание.", "⚠️ Sum is more extreme and deserves attention.", lang))
+        messages.append(_t("⚠️ Сборът е по-краен и заслужава внимание.", "⚠️ Сума is more extreme and deserves attention.", lang))
 
     if consecutive_pairs == 0:
-        messages.append(_t("✅ Няма поредни двойки.", "✅ No consecutive pairs.", lang))
+        messages.append(_t("✅ Няма поредни двойки.", "✅ Няма поредни двойки.", lang))
     elif consecutive_pairs == 1:
-        messages.append(_t("⚠️ Има една поредна двойка.", "⚠️ There is one consecutive pair.", lang))
+        messages.append(_t("⚠️ Има една поредна двойка.", "⚠️ Има една поредна двойка.", lang))
     else:
-        messages.append(_t("⚠️ Има повече поредни числа.", "⚠️ There are multiple consecutive pairs.", lang))
+        messages.append(_t("⚠️ Има повече поредни числа.", "⚠️ Има повече поредни числа.", lang))
 
     if numbers_under_31 <= 3:
-        messages.append(_t("✅ Нормален риск от човешки избор по дати.", "✅ Normal date-based human-choice risk.", lang))
+        messages.append(_t("✅ Нормален риск от човешки избор по дати.", "✅ Нормален риск от човешки избор по дати.", lang))
     else:
-        messages.append(_t("⚠️ Повече числа под 31 — възможен по-човешки фиш.", "⚠️ More numbers under 31 — possible human/date-like ticket.", lang))
+        messages.append(_t("⚠️ Повече числа под 31 — възможен по-човешки фиш.", "⚠️ Повече числа под 31 — възможен по-човешки фиш.", lang))
 
     st.success("\n".join(messages))
 
@@ -633,7 +633,7 @@ def _render_structure_visual_v18(details: Dict[str, Any], lang: str) -> None:
         _t("ниски / средни / високи", "low / middle / high", lang),
     )
     cols[2].metric(
-        _t("Сбор", "Sum", lang),
+        _t("Сбор", "Сума", lang),
         total_sum,
         _t("нормален" if 100 <= total_sum <= 200 else "краен", "normal" if 100 <= total_sum <= 200 else "extreme", lang),
     )
@@ -643,7 +643,7 @@ def _render_structure_visual_v18(details: Dict[str, Any], lang: str) -> None:
         _t("няма" if consecutive_pairs == 0 else "има", "none" if consecutive_pairs == 0 else "present", lang),
     )
     cols[4].metric(
-        _t("Числа под 31", "Numbers under 31", lang),
+        _t("Числа под 31", "Числоs under 31", lang),
         numbers_under_31,
         _t("риск по дати", "date risk", lang),
     )
@@ -760,8 +760,8 @@ def render_simulation_lab_page() -> None:
         _t("Монте Карло", "Монте Карло", lang),
         _t("Виртуален тираж", "Virtual draw", lang),
         _t("Историческа проверка", "Историческа проверка", lang),
-        _t("Сравни с моделите", "Compare with models", lang),
-        _t("Генерирай моделни числа", "Generate model tickets", lang),
+        _t("Сравни с моделите", "Сравни с моделите", lang),
+        _t("Генерирай моделни числа", "Генерирай моделни фишове", lang),
     ])
 
     with tabs[0]:
@@ -792,7 +792,7 @@ def render_simulation_lab_page() -> None:
 
     with tabs[1]:
         simulations = st.select_slider(
-            _t("Брой симулации", "Number of simulations", lang),
+            _t("Брой симулации", "Число of simulations", lang),
             options=[1_000, 10_000, 50_000, 100_000, 250_000],
             value=100_000,
         )
@@ -904,7 +904,7 @@ def render_simulation_lab_page() -> None:
             disabled=not diversified,
         )
 
-        if st.button(_t('Генерирай моделни фишове', 'Generate model tickets', lang), key='v16_generate_model_tickets'):
+        if st.button(_t('Генерирай моделни фишове', 'Генерирай моделни фишове', lang), key='v16_generate_model_tickets'):
             with st.spinner(_t('Генерирам и оценявам комбинации...', 'Generating and scoring combinations...', lang)):
                 generated = _generate_simulation_optimizer_tickets(
                     df=df,

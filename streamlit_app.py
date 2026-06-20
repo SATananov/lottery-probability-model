@@ -16,235 +16,487 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import pandas as pd
 import streamlit as st
 
-# === LOTTERY BULGARIAN UI STABLE V32 START ===
-# Stable Bulgarian display layer. It translates visible UI text only.
+# === LOTTERY BULGARIAN UI FINAL CLEAN V34 START ===
+# Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
-    import pandas as _bg32_pd
-    import inspect as _bg32_inspect
+    import inspect as _bg34_inspect
 except Exception:  # pragma: no cover
-    _bg32_pd = None
-    _bg32_inspect = None
+    _bg34_inspect = None
 
 
-def _bg32_is_bulgarian() -> bool:
+def _bg34_is_bulgarian() -> bool:
+    """Use the app language key instead of scanning all session values."""
     try:
-        values = [str(v) for v in st.session_state.values()]
-        if any(v == "English" for v in values):
-            return False
-        if any(v == "Български" for v in values):
-            return True
+        return st.session_state.get("language", "bg") == "bg"
     except Exception:
-        pass
-    return True
+        return True
 
 
-_BG32_REPLACE = [
+_BG34_EXACT = {
+    # navigation and page labels
+    "Simulation / Simulation": "Симулация",
+    "Симулация / Simulation": "Симулация",
+    "🎲 Симулация / Simulation": "🎲 Симулация",
+    "Dashboard": "Табло",
+    "Recommendations": "Препоръки",
+    "Combined Model": "Комбиниран модел",
+    "Combined model": "Комбиниран модел",
+    "Advanced Lab": "Разширена лаборатория",
+    "Ticket Analyzer": "Анализ на фиш",
+    "Historical Statistics": "Историческа статистика",
+    "Probability Lab": "Вероятности",
+    "Reports": "Отчети",
+    "Report": "Отчет",
+    "Update Draws": "Добавяне на тираж",
+    "Menu": "Меню",
+    "Language": "Език",
+
+    # model names and cards
+    "Горещ / честотен модел": "Горещ / честотен модел",
+    "Hot / frequency model": "Горещ / честотен модел",
+    "Hot / frequency": "Горещ / честотен модел",
+    "Студен + интервален модел": "Студен + интервален модел",
+    "Cold + gap model": "Студен + интервален модел",
+    "Cold + gap": "Студен + интервален модел",
+    "Среден / балансиран модел": "Среден / балансиран модел",
+    "Среден / балансиран модел": "Среден / балансиран модел",
+    "Middle / balanced model": "Среден / балансиран модел",
+    "Middle / balanced": "Среден / балансиран модел",
+    "Интервален модел": "Интервален модел",
+    "Gap / interval model": "Интервален модел",
+    "Gap / interval": "Интервален модел",
+    "Финален комбиниран модел": "Финален комбиниран модел",
+    "Финален комбиниран модел": "Финален комбиниран модел",
+    "Финален комбиниран модел модел": "Финален комбиниран модел",
+    "Разширен ансамбъл": "Разширен ансамбъл",
+    "Разширен ансамблов модел": "Разширен ансамблов модел",
+    "Разширен ансамбъл модел": "Разширен ансамблов модел",
+    "Frequency stability": "Честотна стабилност",
+    "frequency_stability": "Честотна стабилност",
+    "Случайно генерирана комбинация": "Случайно генерирана комбинация",
+    "Best combined recommendation": "Най-добра комбинирана препоръка",
+    "Recommendations from all models": "Препоръки от всички модели",
+    "Топ препоръки": "Топ препоръки",
+    "Диверсифицирано портфолио": "Диверсифицирано портфолио",
+    "Проверка за честност / хи-квадрат check": "Проверка за честност / хи-квадрат",
+    "Проверка за честност / хи-квадрат test": "Проверка за честност / хи-квадрат",
+    "Проверка за честност / хи-квадрат проверка": "Проверка за честност / хи-квадрат",
+    "Historical check": "Историческа проверка",
+    "Run historical check": "Пусни историческа проверка",
+
+    # simulation / analyzer
+    "Монте Карло": "Монте Карло",
+    "Историческа проверка": "Историческа проверка",
+    "Исторически replay": "Историческа проверка",
+    "Check my ticket": "Провери моя фиш",
+    "Virtual draw": "Виртуален тираж",
+    "Compare with models": "Сравни с моделите",
+    "Generate model numbers": "Генерирай моделни числа",
+    "Generate model tickets": "Генерирай моделни фишове",
+    "Риск от човешки шаблон": "Риск от човешки шаблон",
+    "Human-pattern risk": "Риск от човешки шаблон",
+    "Човешки риск": "Човешки риск",
+    "Подкрепа по двойки": "Подкрепа по двойки",
+    "Подкрепа по тройки": "Подкрепа по тройки",
+    "Structure": "Структура",
+    "Number-by-number": "Число по число",
+    "Model analysis": "Анализ по модели",
+    "Model score": "Моделна оценка",
+    "Model confidence": "Моделна оценка",
+    "Относителна моделна вероятност": "Относителна моделна вероятност",
+    "относителна оценка": "относителна оценка",
+    "Low / Low": "Нисък",
+    "Нисък / Low": "Нисък",
+    "Medium / Medium": "Среден",
+    "Среден / Medium": "Среден",
+    "High / High": "Висок",
+    "Висок / High": "Висок",
+
+    # reports and historical checking
+    "Backtesting": "Историческа проверка",
+    "backtesting": "историческа проверка",
+    "Backtest": "Историческа проверка",
+    "backtest": "историческа проверка",
+    "Report from backtesting": "Отчет от историческа проверка",
+    "Отчет от backtesting": "Отчет от историческа проверка",
+    "Advanced backtesting engine": "Разширен модул за историческа проверка",
+    "Recent tested draws": "Последни тествани тиражи",
+    "Tested draws": "Тествани тиражи",
+    "Best strategy": "Най-добра стратегия",
+    "Average matches": "Средни съвпадения",
+    "Редове за преглед": "Редове за преглед",
+    "Download report": "Свали отчета",
+    "Download full report": "Свали пълния отчет",
+    "Report written to": "Отчетът е записан в",
+    "Not proof": "Не е доказателство",
+
+    # probability and dataframe columns
+    "Общ брой комбинации C(49, 6)": "Общ брой комбинации C(49, 6)",
+    "Real exact-combination odds": "Реален шанс за точна комбинация",
+    "Real chance for exact combination": "Реален шанс за точна комбинация",
+    "Real 6/6 odds": "Реален шанс 6/6",
+    "matches": "Съвпадения",
+    "Matches": "Съвпадения",
+    "probability_%": "Вероятност %",
+    "Probability %": "Вероятност %",
+    "1_in": "1 към",
+    "number": "Число",
+    "Number": "Число",
+    "count": "Брой",
+    "Count": "Брой",
+    "empirical_%": "Емпиричен %",
+    "Empirical %": "Емпиричен %",
+    "expected_%": "Очакван %",
+    "Expected %": "Очакван %",
+    "z_score": "Z-score",
+    "Z-score": "Z-score",
+    "gap": "Интервал",
+    "Gap": "Интервал",
+    "avg_interval": "Среден интервал",
+    "Avg interval": "Среден интервал",
+    "current_gap": "Текущ интервал",
+    "Current gap": "Текущ интервал",
+    "gap_ratio": "Коефициент на интервал",
+    "Gap ratio": "Коефициент на интервал",
+    "category": "Категория",
+    "Category": "Категория",
+    "status": "Статус",
+    "Status": "Статус",
+    "times_drawn": "Появявания",
+    "Times drawn": "Появявания",
+    "Draw": "Тираж",
+    "Actual": "Реални числа",
+    "Actual numbers": "Реални числа",
+    "Advanced": "Разширен модел",
+    "Advanced ticket": "Фиш на разширения модел",
+    "Advanced фиш": "Фиш на разширения модел",
+    "Advanced matches": "Съвпадения на разширения модел",
+    "Advanced съвпадения": "Съвпадения на разширения модел",
+    "Random": "Случаен модел",
+    "Random ticket": "Случаен фиш",
+    "Random фиш": "Случаен фиш",
+    "Random matches": "Съвпадения на случаен фиш",
+    "Random съвпадения": "Съвпадения на случаен фиш",
+    "Strategy": "Стратегия",
+    "Code": "Код",
+    "Average": "Средно",
+    "Mean matches": "Средни съвпадения",
+    "Percent": "Процент",
+    "Score": "Оценка",
+    "Hot": "Горещ сигнал",
+    "Cold+Gap": "Студен + интервал",
+    "Middle": "Баланс",
+    "Pair": "Двойки",
+    "Triple": "Тройки",
+    "Sum": "Сума",
+    "Odd/Even": "Нечетни/четни",
+    "Low/Mid/High": "Ниски/средни/високи",
+
+    # update / upload
+    "Upload": "Качи файл",
+    "Browse files": "Избери файл",
+    "Drag and drop file here": "Пусни файла тук",
+    "Limit 200MB per file": "Лимит 200MB на файл",
+    "Upload draw": "Качи тираж",
+    "Upload draw from file": "Качи тираж от файл",
+    "Date": "Дата",
+    "Draw date": "Дата на теглене",
+    "Year": "Година",
+    "Draw number": "Номер на тираж",
+    "Draw position": "Позиция на теглене",
+    "Position / draw": "Позиция / теглене",
+    "Numbers": "Числа",
+    "Source / note": "Източник / бележка",
+    "Source / note / URL": "Източник / бележка / URL",
+    "Ръчно въвеждане": "Ръчно въвеждане",
+    "Save new draw": "Запази новия тираж",
+    "Delete year": "Година за изтриване",
+    "Delete draw number": "Номер на тираж за изтриване",
+    "Delete position": "Позиция за изтриване",
+    "Delete selected draw": "Изтрий избрания тираж",
+    "Delete specific draw": "Изтрий конкретен тираж",
+    "Correction / delete draw": "Корекция / изтриване на тираж",
+    "Automatically retrain models after saving": "Автоматично обнови моделите след запис",
+    "Refresh data": "Обнови данните",
+    "Retraining models...": "Моделите се обновяват...",
+    "Refresh the page to see updated recommendations.": "Обнови страницата, за да видиш новите препоръки.",
+    "No matching draw found.": "Не е намерен такъв тираж.",
+    "Could not detect exactly 6 unique valid numbers.": "Не успях да разчета точно 6 различни валидни числа.",
+    "This year + draw number + position already exists.": "Тази година + номер на тираж + позиция вече съществува.",
+    "Detected numbers": "Разчетени числа",
+    "Saved draw": "Записан тираж",
+    "Deleted draw": "Изтрит тираж",
+    "Backup": "Резервно копие",
+    "Restored backup": "Възстановено резервно копие",
+
+    # model file labels shown in cards
+    "models/lottery_advanced_ensemble_model.json": "Разширен ансамблов модел",
+    "models/lottery_combined_model.json": "Финален комбиниран модел",
+    "models/lottery_frequency_model.json": "Горещ / честотен модел",
+    "models/lottery_cold_model.json": "Студен + интервален модел",
+    "models/lottery_middle_model.json": "Среден / балансиран модел",
+    "models/lottery_gap_model.json": "Интервален модел",
+    "lottery_advanced_ensemble_model.json": "Разширен ансамблов модел",
+    "lottery_combined_model.json": "Финален комбиниран модел",
+    "lottery_frequency_model.json": "Горещ / честотен модел",
+    "lottery_cold_model.json": "Студен + интервален модел",
+    "lottery_middle_model.json": "Среден / балансиран модел",
+    "lottery_gap_model.json": "Интервален модел",
+
+    # generic widget text
+    "Choose options": "Избери числа",
+    "Choose an option": "Избери опция",
+    "No options to select.": "Няма опции за избор.",
+    "You can only select up to 6 options. Remove an option first.": "Можеш да избереш най-много 6 числа. Премахни едно число първо.",
+    "This is a statistical ranking, not a guaranteed prediction.": "Това е статистическо класиране, не сигурно предсказване.",
+    "No numbers available": "Няма налични числа",
+}
+
+_BG34_REPLACE = [
+    ("🎲 Симулация / Simulation", "🎲 Симулация"),
     ("Симулация / Simulation", "Симулация"),
     ("Simulation / Simulation", "Симулация"),
-    ("Monte Carlo", "Монте Карло"),
-    ("Historical replay", "Историческа проверка"),
+    ("Монте Карло", "Монте Карло"),
+    ("Историческа проверка", "Историческа проверка"),
     ("Исторически replay", "Историческа проверка"),
-    ("backtesting", "историческа проверка"),
-    ("Backtesting", "Историческа проверка"),
-    ("backtest", "историческа проверка"),
-    ("Backtest", "Историческа проверка"),
-    ("Human pattern risk", "Риск от човешки шаблон"),
-    ("Human-pattern risk", "Риск от човешки шаблон"),
-    ("Human risk", "Човешки риск"),
-    ("Low / Low", "Нисък"),
+    ("Риск от човешки шаблон", "Риск от човешки шаблон"),
+    ("Човешки риск", "Човешки риск"),
     ("Нисък / Low", "Нисък"),
+    ("Low / Low", "Нисък"),
+    ("Среден / Medium", "Среден"),
     ("Medium / Medium", "Среден"),
+    ("Висок / High", "Висок"),
     ("High / High", "Висок"),
-    ("Hot / Frequency", "Горещ / честотен модел"),
+    ("Горещ / честотен модел", "Горещ / честотен модел"),
     ("Hot / frequency", "Горещ / честотен модел"),
-    ("Cold + Gap", "Студен + интервален модел"),
+    ("Студен + интервален модел", "Студен + интервален модел"),
     ("Cold + gap", "Студен + интервален модел"),
-    ("Middle / Balance", "Среден / балансиран модел"),
-    ("Middle / Balanced", "Среден / балансиран модел"),
+    ("Среден / балансиран модел", "Среден / балансиран модел"),
+    ("Среден / балансиран модел", "Среден / балансиран модел"),
     ("Middle / balanced", "Среден / балансиран модел"),
-    ("Gap / Interval", "Интервален модел"),
+    ("Интервален модел", "Интервален модел"),
     ("Gap / interval", "Интервален модел"),
-    ("Pair support", "Подкрепа по двойки"),
-    ("Triple support", "Подкрепа по тройки"),
-    ("Structure", "Структура"),
-    ("Number-by-number", "Число по число"),
-    ("Model analysis", "Анализ по модели"),
-    ("Model", "Модел"),
-    ("Numbers", "Числа"),
-    ("Live score", "Текуща оценка"),
-    ("Overlap with your ticket", "Съвпадения с твоя фиш"),
-    ("Relative model probability", "Относителна моделна вероятност"),
-    ("relative:", "относителна оценка:"),
-    ("relative=", "относителна оценка="),
-    ("relative", "относителна оценка"),
-    ("Fairness / chi-square check", "Проверка за честност / хи-квадрат"),
-    ("Fairness / chi-square test", "Проверка за честност / хи-квадрат"),
-    ("Top recommendations", "Топ препоръки"),
-    ("Diversified portfolio", "Диверсифицирано портфолио"),
+    ("Подкрепа по двойки", "Подкрепа по двойки"),
+    ("Подкрепа по тройки", "Подкрепа по тройки"),
+    ("Относителна моделна вероятност", "Относителна моделна вероятност"),
+    ("относителна оценка:", "относителна оценка:"),
+    ("относителна оценка=", "относителна оценка="),
+    ("Проверка за честност / хи-квадрат check", "Проверка за честност / хи-квадрат"),
+    ("Проверка за честност / хи-квадрат test", "Проверка за честност / хи-квадрат"),
+    ("Проверка за честност / хи-квадрат проверка", "Проверка за честност / хи-квадрат"),
     ("Historical check", "Историческа проверка"),
     ("Run historical check", "Пусни историческа проверка"),
-    ("Random generated combination", "Случайно генерирана комбинация"),
-    ("Final combined model", "Финален комбиниран модел"),
-    ("Final combined", "Финален комбиниран модел"),
-    ("Advanced ensemble model", "Разширен ансамблов модел"),
-    ("Advanced ensemble", "Разширен ансамбъл"),
+    ("Отчет от историческа проверка", "Отчет от историческа проверка"),
+    ("Отчет от историческа проверка", "Отчет от историческа проверка"),
+    ("Advanced backtesting engine", "Разширен модул за историческа проверка"),
+    ("историческа проверка", "историческа проверка"),
+    ("Историческа проверка", "Историческа проверка"),
+    ("историческа проверка", "историческа проверка"),
+    ("Историческа проверка", "Историческа проверка"),
+    ("Редове за преглед", "Редове за преглед"),
+    ("Общ брой комбинации C(49, 6)", "Общ брой комбинации C(49, 6)"),
+    ("Случайно генерирана комбинация", "Случайно генерирана комбинация"),
+    ("Финален комбиниран модел", "Финален комбиниран модел"),
+    ("Финален комбиниран модел модел", "Финален комбиниран модел"),
+    ("Финален комбиниран модел", "Финален комбиниран модел"),
+    ("Разширен ансамблов модел", "Разширен ансамблов модел"),
+    ("Разширен ансамбъл модел", "Разширен ансамблов модел"),
+    ("Разширен ансамбъл", "Разширен ансамбъл"),
     ("Most frequent", "Най-често теглени числа"),
     ("Least frequent", "Най-рядко теглени числа"),
-    ("Total combinations C(49, 6)", "Общ брой комбинации C(49, 6)"),
+    ("models/lottery_advanced_ensemble_model.json", "Разширен ансамблов модел"),
+    ("models/lottery_combined_model.json", "Финален комбиниран модел"),
+    ("models/lottery_frequency_model.json", "Горещ / честотен модел"),
+    ("models/lottery_cold_model.json", "Студен + интервален модел"),
+    ("models/lottery_middle_model.json", "Среден / балансиран модел"),
+    ("models/lottery_gap_model.json", "Интервален модел"),
+    ("lottery_advanced_ensemble_model.json", "Разширен ансамблов модел"),
+    ("lottery_combined_model.json", "Финален комбиниран модел"),
+    ("lottery_frequency_model.json", "Горещ / честотен модел"),
+    ("lottery_cold_model.json", "Студен + интервален модел"),
+    ("lottery_middle_model.json", "Среден / балансиран модел"),
+    ("lottery_gap_model.json", "Интервален модел"),
     ("probability_%", "Вероятност %"),
     ("1_in", "1 към"),
     ("1 in ", "1 към "),
-    ("number", "Число"),
-    ("count", "Брой"),
-    ("empirical_%", "Емпиричен %"),
-    ("expected_%", "Очакван %"),
-    ("z_score", "Z-score"),
-    ("avg_interval", "Среден интервал"),
-    ("current_gap", "Текущ интервал"),
-    ("gap_ratio", "Коефициент на интервал"),
-    ("category", "Категория"),
-    ("status", "Статус"),
     ("Choose options", "Избери числа"),
     ("Choose an option", "Избери опция"),
     ("Browse files", "Избери файл"),
-    ("Upload", "Качи файл"),
-    ("Manual entry", "Ръчно въвеждане"),
+    ("Ръчно въвеждане", "Ръчно въвеждане"),
     ("Delete year", "Година за изтриване"),
     ("Delete draw number", "Номер на тираж за изтриване"),
     ("Delete position", "Позиция за изтриване"),
-    ("This is a statistical ranking, not a guaranteed prediction.", "Това е статистическо класиране, не сигурно предсказване."),
 ]
 
 
-def _bg32_text(value):
-    if not _bg32_is_bulgarian() or not isinstance(value, str):
+def _bg34_text(value):
+    if not _bg34_is_bulgarian() or not isinstance(value, str):
         return value
+    if value in _BG34_EXACT:
+        return _BG34_EXACT[value]
     out = value
-    for src, dst in _BG32_REPLACE:
+    for src, dst in _BG34_REPLACE:
         out = out.replace(src, dst)
     return out
 
 
-def _bg32_translate_dataframe(data):
-    if not _bg32_is_bulgarian() or _bg32_pd is None:
+def _bg34_translate_dataframe(data):
+    if not _bg34_is_bulgarian() or not isinstance(data, pd.DataFrame):
         return data
     try:
-        if not isinstance(data, _bg32_pd.DataFrame):
-            return data
         df = data.copy()
-        df = df.rename(columns={col: _bg32_text(str(col)) for col in df.columns})
+        df = df.rename(columns={col: _bg34_text(str(col)) for col in df.columns})
         for col in df.columns:
             if df[col].dtype == "object":
-                df[col] = df[col].map(lambda x: _bg32_text(x) if isinstance(x, str) else x)
+                df[col] = df[col].map(lambda x: _bg34_text(x) if isinstance(x, str) else x)
         return df
     except Exception:
         return data
 
 
-if not getattr(st, "_lottery_bulgarian_ui_stable_v32", False):
-    st._lottery_bulgarian_ui_stable_v32 = True
-    _bg32_orig_markdown = st.markdown
-    _bg32_orig_write = st.write
-    _bg32_orig_caption = st.caption
-    _bg32_orig_info = st.info
-    _bg32_orig_success = st.success
-    _bg32_orig_warning = st.warning
-    _bg32_orig_error = st.error
-    _bg32_orig_title = st.title
-    _bg32_orig_header = st.header
-    _bg32_orig_subheader = st.subheader
-    _bg32_orig_metric = st.metric
-    _bg32_orig_button = st.button
-    _bg32_orig_checkbox = st.checkbox
-    _bg32_orig_radio = st.radio
-    _bg32_orig_tabs = st.tabs
-    _bg32_orig_selectbox = st.selectbox
-    _bg32_orig_slider = st.slider
-    _bg32_orig_select_slider = st.select_slider
-    _bg32_orig_multiselect = st.multiselect
-    _bg32_orig_text_input = st.text_input
-    _bg32_orig_number_input = st.number_input
-    _bg32_orig_file_uploader = st.file_uploader
-    _bg32_orig_download_button = st.download_button
-    _bg32_orig_dataframe = st.dataframe
-    _bg32_orig_table = st.table
+def _bg34_css():
+    if not _bg34_is_bulgarian():
+        return
+    st.markdown("""
+<style>
+div[data-testid="stFileUploader"] button div p { font-size: 0 !important; }
+div[data-testid="stFileUploader"] button div p::after { content: "Качи файл"; font-size: 14px !important; }
+div[data-testid="stFileUploader"] small { font-size: 0 !important; }
+div[data-testid="stFileUploader"] small::after { content: "до 200MB на файл"; font-size: 12px !important; }
+</style>
+""", unsafe_allow_html=True)
 
-    def _bg32_markdown(body, *args, **kwargs): return _bg32_orig_markdown(_bg32_text(body), *args, **kwargs)
-    def _bg32_write(*args, **kwargs): return _bg32_orig_write(*tuple(_bg32_text(a) if isinstance(a, str) else a for a in args), **kwargs)
-    def _bg32_caption(body, *args, **kwargs): return _bg32_orig_caption(_bg32_text(body), *args, **kwargs)
-    def _bg32_info(body, *args, **kwargs): return _bg32_orig_info(_bg32_text(body), *args, **kwargs)
-    def _bg32_success(body, *args, **kwargs): return _bg32_orig_success(_bg32_text(body), *args, **kwargs)
-    def _bg32_warning(body, *args, **kwargs): return _bg32_orig_warning(_bg32_text(body), *args, **kwargs)
-    def _bg32_error(body, *args, **kwargs): return _bg32_orig_error(_bg32_text(body), *args, **kwargs)
-    def _bg32_title(body, *args, **kwargs): return _bg32_orig_title(_bg32_text(body), *args, **kwargs)
-    def _bg32_header(body, *args, **kwargs): return _bg32_orig_header(_bg32_text(body), *args, **kwargs)
-    def _bg32_subheader(body, *args, **kwargs): return _bg32_orig_subheader(_bg32_text(body), *args, **kwargs)
-    def _bg32_metric(label, value, delta=None, *args, **kwargs): return _bg32_orig_metric(_bg32_text(label), _bg32_text(value), _bg32_text(delta), *args, **kwargs)
-    def _bg32_button(label, *args, **kwargs): return _bg32_orig_button(_bg32_text(label), *args, **kwargs)
-    def _bg32_checkbox(label, *args, **kwargs): return _bg32_orig_checkbox(_bg32_text(label), *args, **kwargs)
-    def _bg32_radio(label, options, *args, **kwargs): return _bg32_orig_radio(_bg32_text(label), options, *args, **kwargs)
-    def _bg32_tabs(tabs, *args, **kwargs): return _bg32_orig_tabs([_bg32_text(t) if isinstance(t, str) else t for t in tabs], *args, **kwargs)
-    def _bg32_selectbox(label, options, *args, **kwargs): return _bg32_orig_selectbox(_bg32_text(label), options, *args, **kwargs)
-    def _bg32_slider(label, *args, **kwargs): return _bg32_orig_slider(_bg32_text(label), *args, **kwargs)
-    def _bg32_select_slider(label, *args, **kwargs): return _bg32_orig_select_slider(_bg32_text(label), *args, **kwargs)
-    def _bg32_multiselect(label, options, *args, **kwargs):
-        if _bg32_is_bulgarian() and _bg32_inspect is not None:
+
+if not getattr(st, "_lottery_bulgarian_final_clean_v34", False):
+    st._lottery_bulgarian_final_clean_v34 = True
+
+    _bg34_orig_markdown = st.markdown
+    _bg34_orig_write = st.write
+    _bg34_orig_caption = st.caption
+    _bg34_orig_info = st.info
+    _bg34_orig_success = st.success
+    _bg34_orig_warning = st.warning
+    _bg34_orig_error = st.error
+    _bg34_orig_title = st.title
+    _bg34_orig_header = st.header
+    _bg34_orig_subheader = st.subheader
+    _bg34_orig_metric = st.metric
+    _bg34_orig_button = st.button
+    _bg34_orig_checkbox = st.checkbox
+    _bg34_orig_radio = st.radio
+    _bg34_orig_tabs = st.tabs
+    _bg34_orig_selectbox = st.selectbox
+    _bg34_orig_slider = st.slider
+    _bg34_orig_select_slider = st.select_slider
+    _bg34_orig_multiselect = st.multiselect
+    _bg34_orig_text_input = st.text_input
+    _bg34_orig_number_input = st.number_input
+    _bg34_orig_file_uploader = st.file_uploader
+    _bg34_orig_download_button = st.download_button
+    _bg34_orig_dataframe = st.dataframe
+    _bg34_orig_table = st.table
+
+    def _bg34_markdown(body, *args, **kwargs):
+        return _bg34_orig_markdown(_bg34_text(body), *args, **kwargs)
+    def _bg34_write(*args, **kwargs):
+        args = tuple(_bg34_text(a) if isinstance(a, str) else a for a in args)
+        return _bg34_orig_write(*args, **kwargs)
+    def _bg34_caption(body, *args, **kwargs):
+        return _bg34_orig_caption(_bg34_text(body), *args, **kwargs)
+    def _bg34_info(body, *args, **kwargs):
+        return _bg34_orig_info(_bg34_text(body), *args, **kwargs)
+    def _bg34_success(body, *args, **kwargs):
+        return _bg34_orig_success(_bg34_text(body), *args, **kwargs)
+    def _bg34_warning(body, *args, **kwargs):
+        return _bg34_orig_warning(_bg34_text(body), *args, **kwargs)
+    def _bg34_error(body, *args, **kwargs):
+        return _bg34_orig_error(_bg34_text(body), *args, **kwargs)
+    def _bg34_title(body, *args, **kwargs):
+        return _bg34_orig_title(_bg34_text(body), *args, **kwargs)
+    def _bg34_header(body, *args, **kwargs):
+        return _bg34_orig_header(_bg34_text(body), *args, **kwargs)
+    def _bg34_subheader(body, *args, **kwargs):
+        return _bg34_orig_subheader(_bg34_text(body), *args, **kwargs)
+    def _bg34_metric(label, value, delta=None, *args, **kwargs):
+        return _bg34_orig_metric(_bg34_text(label), _bg34_text(value), _bg34_text(delta), *args, **kwargs)
+    def _bg34_button(label, *args, **kwargs):
+        return _bg34_orig_button(_bg34_text(label), *args, **kwargs)
+    def _bg34_checkbox(label, *args, **kwargs):
+        return _bg34_orig_checkbox(_bg34_text(label), *args, **kwargs)
+    def _bg34_radio(label, options, *args, **kwargs):
+        return _bg34_orig_radio(_bg34_text(label), options, *args, **kwargs)
+    def _bg34_tabs(tabs, *args, **kwargs):
+        return _bg34_orig_tabs([_bg34_text(t) if isinstance(t, str) else t for t in tabs], *args, **kwargs)
+    def _bg34_selectbox(label, options, *args, **kwargs):
+        return _bg34_orig_selectbox(_bg34_text(label), options, *args, **kwargs)
+    def _bg34_slider(label, *args, **kwargs):
+        return _bg34_orig_slider(_bg34_text(label), *args, **kwargs)
+    def _bg34_select_slider(label, *args, **kwargs):
+        return _bg34_orig_select_slider(_bg34_text(label), *args, **kwargs)
+    def _bg34_multiselect(label, options, *args, **kwargs):
+        _bg34_css()
+        if _bg34_is_bulgarian() and _bg34_inspect is not None:
             try:
-                if "placeholder" in _bg32_inspect.signature(_bg32_orig_multiselect).parameters:
+                if "placeholder" in _bg34_inspect.signature(_bg34_orig_multiselect).parameters:
                     kwargs.setdefault("placeholder", "Избери числа")
             except Exception:
                 pass
-        return _bg32_orig_multiselect(_bg32_text(label), options, *args, **kwargs)
-    def _bg32_text_input(label, *args, **kwargs):
-        if "value" in kwargs and isinstance(kwargs.get("value"), str): kwargs["value"] = _bg32_text(kwargs["value"])
-        if "placeholder" in kwargs and isinstance(kwargs.get("placeholder"), str): kwargs["placeholder"] = _bg32_text(kwargs["placeholder"])
-        return _bg32_orig_text_input(_bg32_text(label), *args, **kwargs)
-    def _bg32_number_input(label, *args, **kwargs): return _bg32_orig_number_input(_bg32_text(label), *args, **kwargs)
-    def _bg32_file_uploader(label, *args, **kwargs): return _bg32_orig_file_uploader(_bg32_text(label), *args, **kwargs)
-    def _bg32_download_button(label, *args, **kwargs): return _bg32_orig_download_button(_bg32_text(label), *args, **kwargs)
-    def _bg32_dataframe_widget(data=None, *args, **kwargs): return _bg32_orig_dataframe(_bg32_translate_dataframe(data), *args, **kwargs)
-    def _bg32_table_widget(data=None, *args, **kwargs): return _bg32_orig_table(_bg32_translate_dataframe(data), *args, **kwargs)
+        return _bg34_orig_multiselect(_bg34_text(label), options, *args, **kwargs)
+    def _bg34_text_input(label, *args, **kwargs):
+        if "value" in kwargs and isinstance(kwargs.get("value"), str):
+            kwargs["value"] = _bg34_text(kwargs["value"])
+        if "placeholder" in kwargs and isinstance(kwargs.get("placeholder"), str):
+            kwargs["placeholder"] = _bg34_text(kwargs["placeholder"])
+        return _bg34_orig_text_input(_bg34_text(label), *args, **kwargs)
+    def _bg34_number_input(label, *args, **kwargs):
+        return _bg34_orig_number_input(_bg34_text(label), *args, **kwargs)
+    def _bg34_file_uploader(label, *args, **kwargs):
+        _bg34_css()
+        return _bg34_orig_file_uploader(_bg34_text(label), *args, **kwargs)
+    def _bg34_download_button(label, *args, **kwargs):
+        return _bg34_orig_download_button(_bg34_text(label), *args, **kwargs)
+    def _bg34_dataframe_widget(data=None, *args, **kwargs):
+        return _bg34_orig_dataframe(_bg34_translate_dataframe(data), *args, **kwargs)
+    def _bg34_table_widget(data=None, *args, **kwargs):
+        return _bg34_orig_table(_bg34_translate_dataframe(data), *args, **kwargs)
 
-    st.markdown = _bg32_markdown
-    st.write = _bg32_write
-    st.caption = _bg32_caption
-    st.info = _bg32_info
-    st.success = _bg32_success
-    st.warning = _bg32_warning
-    st.error = _bg32_error
-    st.title = _bg32_title
-    st.header = _bg32_header
-    st.subheader = _bg32_subheader
-    st.metric = _bg32_metric
-    st.button = _bg32_button
-    st.checkbox = _bg32_checkbox
-    st.radio = _bg32_radio
-    st.tabs = _bg32_tabs
-    st.selectbox = _bg32_selectbox
-    st.slider = _bg32_slider
-    st.select_slider = _bg32_select_slider
-    st.multiselect = _bg32_multiselect
-    st.text_input = _bg32_text_input
-    st.number_input = _bg32_number_input
-    st.file_uploader = _bg32_file_uploader
-    st.download_button = _bg32_download_button
-    st.dataframe = _bg32_dataframe_widget
-    st.table = _bg32_table_widget
-# === LOTTERY BULGARIAN UI STABLE V32 END ===
+    st.markdown = _bg34_markdown
+    st.write = _bg34_write
+    st.caption = _bg34_caption
+    st.info = _bg34_info
+    st.success = _bg34_success
+    st.warning = _bg34_warning
+    st.error = _bg34_error
+    st.title = _bg34_title
+    st.header = _bg34_header
+    st.subheader = _bg34_subheader
+    st.metric = _bg34_metric
+    st.button = _bg34_button
+    st.checkbox = _bg34_checkbox
+    st.radio = _bg34_radio
+    st.tabs = _bg34_tabs
+    st.selectbox = _bg34_selectbox
+    st.slider = _bg34_slider
+    st.select_slider = _bg34_select_slider
+    st.multiselect = _bg34_multiselect
+    st.text_input = _bg34_text_input
+    st.number_input = _bg34_number_input
+    st.file_uploader = _bg34_file_uploader
+    st.download_button = _bg34_download_button
+    st.dataframe = _bg34_dataframe_widget
+    st.table = _bg34_table_widget
+# === LOTTERY BULGARIAN UI FINAL CLEAN V34 END ===
 
 
-# === LOTTERY REPORTS VISUAL V23 START ===
-# Safe Bulgarian renderer for advanced историческа проверка reports.
-# This block avoids raw English markdown lines in the Reports page.
+# === LOTTERY REPORTS VISUAL CLEAN V34 START ===
+# Visual Bulgarian renderer for advanced historical-check reports.
 try:
-    import re as _lr23_re
-    import pandas as _lr23_pd
+    import re as _lr34_re
 except Exception:  # pragma: no cover
-    _lr23_re = None
-    _lr23_pd = None
+    _lr34_re = None
 
 
-def _lr23_nums(raw):
+def _lr34_nums(raw):
     numbers = []
     for token in str(raw or "").replace(",", " ").split():
         token = "".join(ch for ch in token if ch.isdigit())
@@ -256,26 +508,7 @@ def _lr23_nums(raw):
     return numbers
 
 
-def _lr23_strategy_label(name):
-    labels = {
-        "advanced": "Разширен ансамбъл",
-        "time_decay": "Time-decay модел",
-        "bayesian": "Bayesian smoothing",
-        "gap": "Gap / интервален модел",
-        "frequency_stability": "Честотна стабилност",
-        "random": "Случаен baseline",
-    }
-    return labels.get(str(name), str(name).replace("_", " "))
-
-
-def _lr23_markdown_safe(body, *args, **kwargs):
-    try:
-        return _lr23_original_markdown(body, *args, **kwargs)
-    except NameError:
-        return st.markdown(body, *args, **kwargs)
-
-
-def _lr23_balls(numbers, size=34):
+def _lr34_balls(numbers, size=34):
     parts = ["<div style='display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 8px;'>"]
     for n in numbers or []:
         parts.append(
@@ -288,21 +521,29 @@ def _lr23_balls(numbers, size=34):
             f"{n}</span>"
         )
     parts.append("</div>")
-    _lr23_markdown_safe("".join(parts), unsafe_allow_html=True)
+    _lr34_original_markdown("".join(parts), unsafe_allow_html=True)
 
 
-def _lr23_parse_strategy_rows(text_value):
-    if not _lr23_re:
+def _lr34_strategy_label(name):
+    labels = {
+        "advanced": "Разширен ансамбъл",
+        "time_decay": "Модел с времево затихване",
+        "bayesian": "Бейсово изглаждане",
+        "gap": "Интервален модел",
+        "frequency_stability": "Честотна стабилност",
+        "random": "Случаен базов модел",
+    }
+    return labels.get(str(name), str(name).replace("_", " "))
+
+
+def _lr34_parse_strategy_rows(text_value):
+    if not _lr34_re:
         return []
     rows = []
-    pattern = _lr23_re.compile(
-        r"^\s*([A-Za-z_]+):\s*avg=([0-9.]+),\s*>=3=([0-9.]+)%,\s*>=4=([0-9.]+)%",
-        _lr23_re.M,
-    )
+    pattern = _lr34_re.compile(r"^\s*([A-Za-z_]+):\s*avg=([0-9.]+),\s*>=3=([0-9.]+)%,\s*>=4=([0-9.]+)%", _lr34_re.M)
     for name, avg, ge3, ge4 in pattern.findall(text_value):
         rows.append({
-            "Стратегия": _lr23_strategy_label(name),
-            "Код": name,
+            "Стратегия": _lr34_strategy_label(name),
             "Средни съвпадения": float(avg),
             ">=3 съвпадения %": float(ge3),
             ">=4 съвпадения %": float(ge4),
@@ -310,146 +551,138 @@ def _lr23_parse_strategy_rows(text_value):
     return rows
 
 
-def _lr23_parse_recent_draws(text_value):
-    if not _lr23_re:
+def _lr34_parse_recent_draws(text_value):
+    if not _lr34_re:
         return []
     rows = []
-    pattern = _lr23_re.compile(
+    pattern = _lr34_re.compile(
         r"Draw\s+(\d+)\s*\(([^)]*)\):\s*"
         r"actual=\[([^\]]*)\],\s*"
         r"advanced=\[([^\]]*)\]\s*\((\d+)\s+matches?\),\s*"
         r"random=\[([^\]]*)\]\s*\((\d+)\s+matches?\)",
-        _lr23_re.I,
+        _lr34_re.I,
     )
-    for draw, date, actual, advanced, adv_matches, random_ticket, rnd_matches in pattern.findall(text_value):
+    for draw, date_value, actual, advanced, adv_matches, random_ticket, rnd_matches in pattern.findall(text_value):
         rows.append({
             "Тираж": int(draw),
-            "Дата": date.strip() or "-",
-            "Реални числа": _lr23_nums(actual),
-            "Advanced фиш": _lr23_nums(advanced),
-            "Advanced съвпадения": int(adv_matches),
-            "Random фиш": _lr23_nums(random_ticket),
-            "Random съвпадения": int(rnd_matches),
+            "Дата": date_value.strip() or "-",
+            "Реални числа": _lr34_nums(actual),
+            "Фиш на разширения модел": _lr34_nums(advanced),
+            "Съвпадения на разширения модел": int(adv_matches),
+            "Случаен фиш": _lr34_nums(random_ticket),
+            "Съвпадения на случаен фиш": int(rnd_matches),
         })
     return rows
 
 
-def _lr23_render_report(text_value):
+def _lr34_render_report(text_value):
     if not isinstance(text_value, str):
         return False
-    if "actual=[" not in text_value and "Recent tested draws" not in text_value and "Advanced историческа проверка engine" not in text_value:
+    if "actual=[" not in text_value and "Recent tested draws" not in text_value and "Advanced backtesting engine" not in text_value:
         return False
 
-    _lr23_markdown_safe("## Отчет от историческа проверка")
-
+    _lr34_original_markdown("## Отчет от историческа проверка")
     tested = None
     best_strategy = None
-    if _lr23_re:
-        tested_match = _lr23_re.search(r"Tested draws:\s*(\d+)", text_value)
+    if _lr34_re:
+        tested_match = _lr34_re.search(r"Tested draws:\s*(\d+)", text_value)
+        best_match = _lr34_re.search(r"Best strategy:\s*([A-Za-z_]+)", text_value)
         if tested_match:
             tested = int(tested_match.group(1))
-        best_match = _lr23_re.search(r"Best strategy:\s*([A-Za-z_]+)", text_value)
         if best_match:
             best_strategy = best_match.group(1)
 
     cols = st.columns(3)
     cols[0].metric("Тествани тиражи", tested if tested is not None else "-")
-    cols[1].metric("Най-добра стратегия", _lr23_strategy_label(best_strategy) if best_strategy else "-")
-    cols[2].metric("Важно", "Не е доказателство", help="Историческа проверка-ът е проверка назад във времето, не гаранция за бъдещи тегления.")
+    cols[1].metric("Най-добра стратегия", _lr34_strategy_label(best_strategy) if best_strategy else "-")
+    cols[2].metric("Важно", "Не е доказателство", help="Историческата проверка гледа назад във времето и не гарантира бъдещи резултати.")
 
-    strategy_rows = _lr23_parse_strategy_rows(text_value)
-    if strategy_rows and _lr23_pd is not None:
-        _lr23_markdown_safe("### Сравнение на стратегиите")
-        strategy_df = _lr23_pd.DataFrame(strategy_rows)
+    strategy_rows = _lr34_parse_strategy_rows(text_value)
+    if strategy_rows:
+        _lr34_original_markdown("### Сравнение на стратегиите")
+        strategy_df = pd.DataFrame(strategy_rows)
         st.dataframe(strategy_df, width="stretch", hide_index=True)
         try:
-            chart_df = strategy_df.set_index("Стратегия")[["Средни съвпадения"]]
-            st.bar_chart(chart_df, height=260)
+            st.bar_chart(strategy_df.set_index("Стратегия")[["Средни съвпадения"]], height=260)
         except Exception:
             pass
 
     if best_strategy:
         st.info(
-            "Най-добрата стратегия в този историческа проверка е: "
-            f"{_lr23_strategy_label(best_strategy)}. "
+            f"Най-добрата стратегия в тази историческа проверка е: {_lr34_strategy_label(best_strategy)}. "
             "Това е проверка на модела, не доказателство, че бъдещи тегления са предсказуеми."
         )
 
-    recent_rows = _lr23_parse_recent_draws(text_value)
+    recent_rows = _lr34_parse_recent_draws(text_value)
     if recent_rows:
-        _lr23_markdown_safe("### Последни тествани тиражи")
-        if _lr23_pd is not None:
-            table_rows = []
-            for row in recent_rows:
-                table_rows.append({
-                    "Тираж": row["Тираж"],
-                    "Дата": row["Дата"],
-                    "Реални числа": ", ".join(map(str, row["Реални числа"])),
-                    "Advanced фиш": ", ".join(map(str, row["Advanced фиш"])),
-                    "Advanced съвпадения": row["Advanced съвпадения"],
-                    "Random фиш": ", ".join(map(str, row["Random фиш"])),
-                    "Random съвпадения": row["Random съвпадения"],
-                })
-            st.dataframe(_lr23_pd.DataFrame(table_rows), width="stretch", hide_index=True)
+        _lr34_original_markdown("### Последни тествани тиражи")
+        table_rows = []
+        for row in recent_rows:
+            table_rows.append({
+                "Тираж": row["Тираж"],
+                "Дата": row["Дата"],
+                "Реални числа": ", ".join(map(str, row["Реални числа"])),
+                "Фиш на разширения модел": ", ".join(map(str, row["Фиш на разширения модел"])),
+                "Съвпадения на разширения модел": row["Съвпадения на разширения модел"],
+                "Случаен фиш": ", ".join(map(str, row["Случаен фиш"])),
+                "Съвпадения на случаен фиш": row["Съвпадения на случаен фиш"],
+            })
+        st.dataframe(pd.DataFrame(table_rows), width="stretch", hide_index=True)
 
         with st.expander("Виж последните тиражи визуално", expanded=False):
             for row in recent_rows[:20]:
-                _lr23_markdown_safe(f"#### Тираж {row['Тираж']} {'' if row['Дата'] == '-' else row['Дата']}")
+                _lr34_original_markdown(f"#### Тираж {row['Тираж']} {'' if row['Дата'] == '-' else row['Дата']}")
                 c1, c2, c3 = st.columns(3)
                 with c1:
                     st.caption("Реални числа")
-                    _lr23_balls(row["Реални числа"])
+                    _lr34_balls(row["Реални числа"])
                 with c2:
-                    st.caption(f"Advanced фиш — {row['Advanced съвпадения']} съвпадения")
-                    _lr23_balls(row["Advanced фиш"])
+                    st.caption(f"Фиш на разширения модел — {row['Съвпадения на разширения модел']} съвпадения")
+                    _lr34_balls(row["Фиш на разширения модел"])
                 with c3:
-                    st.caption(f"Random фиш — {row['Random съвпадения']} съвпадения")
-                    _lr23_balls(row["Random фиш"])
+                    st.caption(f"Случаен фиш — {row['Съвпадения на случаен фиш']} съвпадения")
+                    _lr34_balls(row["Случаен фиш"])
                 st.divider()
 
-    st.download_button(
-        "Свали оригиналния отчет",
-        data=text_value,
-        file_name="advanced_backtest_report.md",
-        mime="text/markdown",
-    )
+    st.download_button("Свали оригиналния отчет", data=text_value, file_name="advanced_backtest_report.md", mime="text/markdown")
     return True
 
 
-if not getattr(st, "_lottery_reports_visual_v23", False):
-    st._lottery_reports_visual_v23 = True
-    _lr23_original_markdown = st.markdown
-    _lr23_original_write = st.write
-    _lr23_original_code = st.code
+if not getattr(st, "_lottery_reports_visual_clean_v34", False):
+    st._lottery_reports_visual_clean_v34 = True
+    _lr34_original_markdown = st.markdown
+    _lr34_original_write = st.write
+    _lr34_original_code = st.code
 
-    def _lr23_markdown(body, *args, **kwargs):
+    def _lr34_markdown(body, *args, **kwargs):
         try:
-            if isinstance(body, str) and _lr23_render_report(body):
+            if isinstance(body, str) and _lr34_render_report(body):
                 return
         except Exception:
             pass
-        return _lr23_original_markdown(body, *args, **kwargs)
+        return _lr34_original_markdown(body, *args, **kwargs)
 
-    def _lr23_write(*args, **kwargs):
+    def _lr34_write(*args, **kwargs):
         try:
-            if len(args) == 1 and isinstance(args[0], str) and _lr23_render_report(args[0]):
+            if len(args) == 1 and isinstance(args[0], str) and _lr34_render_report(args[0]):
                 return
         except Exception:
             pass
-        return _lr23_original_write(*args, **kwargs)
+        return _lr34_original_write(*args, **kwargs)
 
-    def _lr23_code(body, *args, **kwargs):
+    def _lr34_code(body, *args, **kwargs):
         try:
-            if isinstance(body, str) and _lr23_render_report(body):
+            if isinstance(body, str) and _lr34_render_report(body):
                 return
         except Exception:
             pass
-        return _lr23_original_code(body, *args, **kwargs)
+        return _lr34_original_code(body, *args, **kwargs)
 
-    st.markdown = _lr23_markdown
-    st.write = _lr23_write
-    st.code = _lr23_code
-# === LOTTERY REPORTS VISUAL V23 END ===
+    st.markdown = _lr34_markdown
+    st.write = _lr34_write
+    st.code = _lr34_code
+# === LOTTERY REPORTS VISUAL CLEAN V34 END ===
+
 
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "historical_draws.csv"
@@ -484,7 +717,7 @@ TRANSLATIONS = {
         "model_score": "Моделна оценка",
         "real_odds": "Реален шанс за точна комбинация",
         "not_prediction": "Това е статистическо класиране, не сигурно предсказване.",
-        "top_recommendations": "Top recommendations",
+        "top_recommendations": "Топ препоръки",
         "all_models": "Препоръки от всички модели",
         "hot_model": "Горещ / честотен модел",
         "cold_model": "Студен + интервален модел",
@@ -494,7 +727,7 @@ TRANSLATIONS = {
         "advanced_model": "Разширен ансамблов модел",
         "train_advanced": "Обучи разширения ансамбъл",
         "run_backtest": "Пусни историческа проверка",
-        "no_model": "Моделът още не е наличен. Пусни training скрипта.",
+        "no_model": "Моделът още не е наличен. Пусни скрипта за обучение.",
         "numbers": "Числа",
         "confidence": "Оценка",
         "rank": "Ранг",
@@ -515,7 +748,7 @@ TRANSLATIONS = {
         "delete_draw": "Изтрий конкретен тираж",
         "undo": "Върни последната ръчна промяна",
         "retrain_log": "Лог от обновяване на моделите",
-        "portfolio": "Diversified portfolio",
+        "portfolio": "Диверсифицирано портфолио",
         "fairness": "Проверка за честност / хи-квадрат",
         "backtest": "Историческа проверка",
         "status_hot": "Горещо",
@@ -546,14 +779,14 @@ TRANSLATIONS = {
         "model_score": "Model score",
         "real_odds": "Real odds for exact combination",
         "not_prediction": "This is a statistical ranking, not a guaranteed prediction.",
-        "top_recommendations": "Top recommendations",
+        "top_recommendations": "Топ препоръки",
         "all_models": "Recommendations from all models",
         "hot_model": "Hot / frequency model",
         "cold_model": "Cold + gap model",
         "middle_model": "Middle / balanced model",
         "gap_model": "Gap / interval model",
-        "combined_model": "Final combined model",
-        "advanced_model": "Advanced ensemble model",
+        "combined_model": "Финален комбиниран модел",
+        "advanced_model": "Разширен ансамблов модел",
         "train_advanced": "Train advanced ensemble",
         "run_backtest": "Run backtest",
         "no_model": "Model not available yet. Run the training script.",
@@ -577,7 +810,7 @@ TRANSLATIONS = {
         "delete_draw": "Delete selected draw",
         "undo": "Undo last manual change",
         "retrain_log": "Retraining log",
-        "portfolio": "Diversified portfolio",
+        "portfolio": "Диверсифицирано портфолио",
         "fairness": "Fairness / chi-square test",
         "backtest": "Историческа проверка",
         "status_hot": "Hot",
@@ -799,7 +1032,7 @@ def format_number_pills(numbers: Iterable[Any]) -> str:
             pass
     clean = sorted(clean)
     if not clean:
-        return '<div class="small-muted">No numbers available</div>'
+        return '<div class="small-muted">Няма налични числа</div>'
     return '<div class="number-row">' + ''.join(f'<span class="number-pill">{n}</span>' for n in clean) + '</div>'
 
 
@@ -837,8 +1070,8 @@ def render_recommendation_list(title: str, recs: List[Dict[str, Any]], limit: in
             or item.get("final_score")
             or item.get("score")
         )
-        rank = item.get("rank") or item.get("relative_rank") or idx
-        rel_prob = item.get("relative_model_probability") or item.get("relative_probability")
+        rank = item.get("rank") or item.get("относителна оценка_rank") or idx
+        rel_prob = item.get("относителна оценка_model_probability") or item.get("относителна оценка_probability")
         meta_parts = []
         if score is not None:
             try:
@@ -940,12 +1173,12 @@ def main_recommendation(model: Dict[str, Any]) -> Tuple[List[int], Optional[floa
 
 def get_model_cards() -> List[Tuple[str, str, str, str]]:
     return [
-        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Advanced methods: time-decay, Bayesian smoothing, fairness, co-occurrence, portfolio and историческа проверка signals."),
-        (tr("combined_model"), "lottery_combined_model.json", "combined", "Final weighted ranking using the original model family."),
-        (tr("hot_model"), "lottery_frequency_model.json", "hot", "Numbers with stronger historical frequency / stability signal."),
-        (tr("cold_model"), "lottery_cold_model.json", "cold", "Numbers influenced by underrepresentation and current gap."),
-        (tr("middle_model"), "lottery_middle_model.json", "middle", "Numbers close to expected frequency and balanced behavior."),
-        (tr("gap_model"), "lottery_gap_model.json", "gap", "Numbers with stronger interval / overdue signal."),
+        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира времево затихване, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
+        (tr("combined_model"), "lottery_combined_model.json", "combined", "Финално претеглено класиране от основните модели."),
+        (tr("hot_model"), "lottery_frequency_model.json", "hot", "Числа с по-силен исторически честотен сигнал."),
+        (tr("cold_model"), "lottery_cold_model.json", "cold", "Числа, повлияни от по-слаба представеност и текущ интервал."),
+        (tr("middle_model"), "lottery_middle_model.json", "middle", "Числа близо до очакваната честота и балансирано поведение."),
+        (tr("gap_model"), "lottery_gap_model.json", "gap", "Числа с по-силен интервален сигнал."),
     ]
 
 
@@ -999,9 +1232,9 @@ def page_dashboard() -> None:
 
     c1, c2 = st.columns(2)
     with c1:
-        render_ticket_card(tr("main_recommendation") + " · " + tr("advanced_model"), adv_numbers, adv_score, "Advanced ensemble", tr("not_prediction"))
+        render_ticket_card(tr("main_recommendation") + " · " + tr("advanced_model"), adv_numbers, adv_score, tr("advanced_model"), tr("not_prediction"))
     with c2:
-        render_ticket_card(tr("main_recommendation") + " · " + tr("combined_model"), comb_numbers, comb_score, "Final combined", tr("not_prediction"))
+        render_ticket_card(tr("main_recommendation") + " · " + tr("combined_model"), comb_numbers, comb_score, tr("combined_model"), tr("not_prediction"))
 
     st.markdown("### " + tr("all_models"))
     cols = st.columns(3)
@@ -1065,7 +1298,7 @@ def page_combined() -> None:
     render_header()
     model = model_json("lottery_combined_model.json")
     numbers, score = main_recommendation(model)
-    render_ticket_card(tr("combined_model"), numbers, score, "models/lottery_combined_model.json", tr("not_prediction"))
+    render_ticket_card(tr("combined_model"), numbers, score, tr("combined_model"), tr("not_prediction"))
     render_recommendation_list(tr("top_recommendations"), extract_recommendations(model), 15)
 
 
@@ -1106,8 +1339,8 @@ def page_advanced_lab() -> None:
 
     model = model_json("lottery_advanced_ensemble_model.json")
     numbers, score = main_recommendation(model)
-    render_ticket_card(tr("main_recommendation") + " · " + tr("advanced_model"), numbers, score, "models/lottery_advanced_ensemble_model.json", tr("not_prediction"))
-    tabs = st.tabs([tr("top_recommendations"), tr("portfolio"), tr("fairness"), tr("историческа проверка")])
+    render_ticket_card(tr("main_recommendation") + " · " + tr("advanced_model"), numbers, score, tr("advanced_model"), tr("not_prediction"))
+    tabs = st.tabs([tr("top_recommendations"), tr("portfolio"), tr("fairness"), tr("backtest")])
     with tabs[0]:
         render_recommendation_list(tr("top_recommendations"), extract_recommendations(model), 15)
     with tabs[1]:
@@ -1208,7 +1441,7 @@ def page_probability_lab() -> None:
     render_header()
     st.markdown("## " + tr("probability_lab"))
     total = combinations_count(49, 6)
-    st.metric("Total combinations C(49, 6)", f"{total:,}")
+    st.metric("Общ брой комбинации C(49, 6)", f"{total:,}")
     rows = []
     for k in range(0, 7):
         p = probability_exact_matches(k)
@@ -1323,9 +1556,9 @@ def page_update_draws() -> None:
         parsed = parse_uploaded_numbers(raw)
         if parsed:
             st.session_state["uploaded_numbers"] = parsed
-            st.success(f"Detected numbers: {parsed}")
+            st.success(f"Разчетени числа: {parsed}")
         else:
-            st.error("Could not detect exactly 6 unique valid numbers.")
+            st.error("Не успях да разчета точно 6 различни валидни числа.")
 
     detected = st.session_state.get("uploaded_numbers", [])
     default_numbers = detected if detected else [1, 2, 3, 4, 5, 6]
@@ -1336,7 +1569,7 @@ def page_update_draws() -> None:
     draw_number = c3.number_input(tr("draw_number"), min_value=0, max_value=9999, value=1)
     position = st.number_input(tr("draw_position"), min_value=1, max_value=20, value=1)
     numbers = st.multiselect(tr("numbers"), options=list(range(1, 50)), default=default_numbers[:6], max_selections=6)
-    source = st.text_input(tr("source"), value="Manual entry")
+    source = st.text_input(tr("source"), value="Ръчно въвеждане")
 
     if st.button(tr("save_draw"), width="stretch"):
         nums = sorted([int(n) for n in numbers])
@@ -1347,7 +1580,7 @@ def page_update_draws() -> None:
             key = (str(int(year)), str(int(draw_number)), str(int(position)))
             exists = any((str(r.get("year")), str(r.get("draw_number")), str(r.get("draw_position"))) == key for r in rows)
             if exists:
-                st.error("This year + draw number + position already exists.")
+                st.error("Тази година + номер на тираж + позиция вече съществува.")
             else:
                 backup = backup_csv("before_manual_add")
                 row = {field: "" for field in fields}
@@ -1361,57 +1594,57 @@ def page_update_draws() -> None:
                 })
                 rows.append(row)
                 write_csv_rows(rows, fields)
-                st.success(f"Saved draw {year}/{draw_number}/{position}. Backup: {backup.name if backup else 'none'}")
+                st.success(f"Записан тираж {year}/{draw_number}/{position}. Резервно копие: {backup.name if backup else 'няма'}")
                 if auto_retrain:
-                    with st.spinner("Retraining models..."):
+                    with st.spinner("Моделите се обновяват..."):
                         results = retrain_all_models()
                     for script, ok, output in results:
                         st.write(("✅" if ok else "❌") + " " + script)
-                    st.info("Refresh the page to see updated recommendations.")
+                    st.info("Обнови страницата, за да видиш новите препоръки.")
 
     st.divider()
     st.markdown("### Корекция / изтриване на тираж")
     c1, c2, c3 = st.columns(3)
-    del_year = c1.number_input("Delete year", min_value=1958, max_value=2100, value=int(date.today().year))
-    del_draw = c2.number_input("Delete draw number", min_value=0, max_value=9999, value=1)
-    del_pos = c3.number_input("Delete position", min_value=1, max_value=20, value=1)
+    del_year = c1.number_input("Година за изтриване", min_value=1958, max_value=2100, value=int(date.today().year))
+    del_draw = c2.number_input("Номер на тираж за изтриване", min_value=0, max_value=9999, value=1)
+    del_pos = c3.number_input("Позиция за изтриване", min_value=1, max_value=20, value=1)
     if st.button(tr("delete_draw"), width="stretch"):
         rows, fields = read_csv_rows()
         key = (str(int(del_year)), str(int(del_draw)), str(int(del_pos)))
         new_rows = [r for r in rows if (str(r.get("year")), str(r.get("draw_number")), str(r.get("draw_position"))) != key]
         if len(new_rows) == len(rows):
-            st.warning("No matching draw found.")
+            st.warning("Не е намерен такъв тираж.")
         else:
             backup = backup_csv("before_manual_delete")
             write_csv_rows(new_rows, fields)
-            st.success(f"Deleted draw {key}. Backup: {backup.name if backup else 'none'}")
+            st.success(f"Изтрит тираж {key}. Резервно копие: {backup.name if backup else 'няма'}")
             if auto_retrain:
-                with st.spinner("Retraining models..."):
+                with st.spinner("Моделите се обновяват..."):
                     retrain_all_models()
-                st.info("Refresh the page to see updated recommendations.")
+                st.info("Обнови страницата, за да видиш новите препоръки.")
 
     backups = sorted(BACKUP_DIR.glob("*.csv"), reverse=True)
     if backups:
         if st.button(tr("undo"), width="stretch"):
             latest = backups[0]
             shutil.copy2(latest, DATA_PATH)
-            st.success(f"Restored backup: {latest.name}")
+            st.success(f"Възстановено резервно копие: {latest.name}")
             if auto_retrain:
-                with st.spinner("Retraining models..."):
+                with st.spinner("Моделите се обновяват..."):
                     retrain_all_models()
-                st.info("Refresh the page to see updated recommendations.")
+                st.info("Обнови страницата, за да видиш новите препоръки.")
 
 
 def page_glossary() -> None:
     with st.expander(tr("term_help"), expanded=False):
         st.markdown(
             """
-            **Hot / Горещо** — число с по-силен честотен сигнал в историята.  
-            **Cold / Студено** — число под очакваната честота или с по-слаб честотен сигнал.  
-            **Gap / Интервал** — колко тиража са минали от последното излизане.  
-            **Overdue / Отдавна не е излизало** — текущият gap е по-голям от обичайния интервал.  
-            **Среден / балансиран моделd / Балансирано** — близо до очакваната честота.  
-            **Confidence / Оценка** — моделна оценка за ранкинг, не процент шанс за джакпот.
+            **Горещо** — число с по-силен честотен сигнал в историята.  
+            **Студено** — число под очакваната честота или с по-слаб честотен сигнал.  
+            **Интервал** — колко тиража са минали от последното излизане.  
+            **Отдавна не е излизало** — текущият gap е по-голям от обичайния интервал.  
+            **Балансирано** — близо до очакваната честота.  
+            **Моделна оценка** — моделна оценка за ранкинг, не процент шанс за джакпот.
             """
         )
 
