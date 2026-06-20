@@ -11,3 +11,17 @@ venv/
 .DS_Store
 Thumbs.db
 .vscode/
+# Runtime/generated clean-up
+*.zip
+*.log
+*.tmp
+*.bak
+*.backup
+*_before_*
+*backup*
+*patch*
+fix_*.py
+fix_*.ps1
+apply_*.ps1
+data/manual_backups/
+reports/manual_update_retrain_log.md
