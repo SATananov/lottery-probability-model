@@ -1,7 +1,7 @@
 {
   "model_name": "Final Combined Prediction Strategy Model",
   "model_version": "1.0",
-  "training_draws": 10010,
+  "training_draws": 10009,
   "candidate_count": 20000,
   "weights": {
     "hot": 0.12,
@@ -19,6 +19,280 @@
   "recommended_combinations": [
     {
       "numbers": [
+        14,
+        19,
+        23,
+        27,
+        34,
+        42
+      ],
+      "final_score": 0.6412416540075956,
+      "confidence_score": 64.12416540075955,
+      "sub_scores": {
+        "hot_score": 0.36045508310761804,
+        "cold_score": 0.7051509027351025,
+        "middle_score": 0.33426687301866886,
+        "gap_probability_score": 0.7284117776682106,
+        "pair_score": 0.7935353535353535,
+        "triple_score": 0.47200000000000003,
+        "structure_score": 0.8787676943005831,
+        "rolling_window_score": 0.6468696055494499
+      },
+      "structure_details": {
+        "sum": 159,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.858239924969342,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8787676943005831
+      },
+      "pair_details": {
+        "pair_score": 0.7935353535353535,
+        "pair_total_support": 1964,
+        "pair_average_support": 130.93333333333334,
+        "strong_pairs": [
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              34,
+              42
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              23
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              23,
+              34
+            ],
+            "count": 135
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.47200000000000003,
+        "triple_total_support": 236,
+        "strong_triples": [
+          {
+            "triple": [
+              19,
+              23,
+              42
+            ],
+            "count": 16
+          },
+          {
+            "triple": [
+              14,
+              23,
+              34
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              14,
+              27,
+              42
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              19,
+              23,
+              27
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              23,
+              27,
+              42
+            ],
+            "count": 15
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.6468696055494499,
+        "average_recent_frequency": 0.09791666666666667
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00020067346916412292,
+      "relative_rank": 1,
+      "relative_top_percent": 0.005
+    },
+    {
+      "numbers": [
+        10,
+        14,
+        23,
+        27,
+        33,
+        34
+      ],
+      "final_score": 0.6352271147429036,
+      "confidence_score": 63.52271147429036,
+      "sub_scores": {
+        "hot_score": 0.4647398108286171,
+        "cold_score": 0.5530416558137446,
+        "middle_score": 0.4453273938790359,
+        "gap_probability_score": 0.6580243527480175,
+        "pair_score": 0.7519191919191919,
+        "triple_score": 0.434,
+        "structure_score": 0.837812807418032,
+        "rolling_window_score": 0.7316618602285722
+      },
+      "structure_details": {
+        "sum": 141,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 1,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.8552726104294461,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 0.8652462783494855,
+        "bucket_score": 0.8,
+        "last_digit_score": 1.0,
+        "structure_score": 0.837812807418032
+      },
+      "pair_details": {
+        "pair_score": 0.7519191919191919,
+        "pair_total_support": 1861,
+        "pair_average_support": 124.06666666666666,
+        "strong_pairs": [
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              23
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              23,
+              34
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              23,
+              27
+            ],
+            "count": 131
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.434,
+        "triple_total_support": 217,
+        "strong_triples": [
+          {
+            "triple": [
+              23,
+              27,
+              33
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              14,
+              23,
+              34
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              10,
+              14,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              23,
+              33
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              10,
+              14,
+              23
+            ],
+            "count": 12
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7316618602285722,
+        "average_recent_frequency": 0.11666666666666665
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.0001861396716472648,
+      "relative_rank": 2,
+      "relative_top_percent": 0.01
+    },
+    {
+      "numbers": [
         10,
         14,
         23,
@@ -26,17 +300,17 @@
         33,
         36
       ],
-      "final_score": 0.6407329791074856,
-      "confidence_score": 64.07329791074856,
+      "final_score": 0.6350618355725017,
+      "confidence_score": 63.506183557250175,
       "sub_scores": {
-        "hot_score": 0.4970253187631954,
-        "cold_score": 0.44222863178619093,
-        "middle_score": 0.6170361556898054,
-        "gap_probability_score": 0.5518643667788877,
-        "pair_score": 0.7465863453815261,
-        "triple_score": 0.43,
-        "structure_score": 0.8657348367269107,
-        "rolling_window_score": 0.7935714112276613
+        "hot_score": 0.49711789410299684,
+        "cold_score": 0.4453623352877705,
+        "middle_score": 0.6095635331062997,
+        "gap_probability_score": 0.531596459468567,
+        "pair_score": 0.741010101010101,
+        "triple_score": 0.41,
+        "structure_score": 0.8654995122487674,
+        "rolling_window_score": 0.7940957842802588
       },
       "structure_details": {
         "sum": 143,
@@ -48,59 +322,59 @@
         "used_decade_buckets": 3,
         "max_bucket_count": 2,
         "max_same_last_digit_count": 2,
-        "sum_score": 0.8847575287258245,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
+        "sum_score": 0.8851671967620791,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
         "consecutive_score": 1.0,
         "bucket_score": 0.8,
         "last_digit_score": 1.0,
-        "structure_score": 0.8657348367269107
+        "structure_score": 0.8654995122487674
       },
       "pair_details": {
-        "pair_score": 0.7465863453815261,
-        "pair_total_support": 1859,
-        "pair_average_support": 123.93333333333334,
+        "pair_score": 0.741010101010101,
+        "pair_total_support": 1834,
+        "pair_average_support": 122.26666666666667,
         "strong_pairs": [
           {
             "pair": [
               10,
               33
             ],
-            "count": 145
+            "count": 142
           },
           {
             "pair": [
               14,
               23
             ],
-            "count": 139
+            "count": 136
           },
           {
             "pair": [
               27,
               36
             ],
-            "count": 137
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
+            "count": 134
           },
           {
             "pair": [
               14,
               36
             ],
-            "count": 135
+            "count": 133
+          },
+          {
+            "pair": [
+              23,
+              27
+            ],
+            "count": 131
           }
         ]
       },
       "triple_details": {
-        "triple_score": 0.43,
-        "triple_total_support": 215,
+        "triple_score": 0.41,
+        "triple_total_support": 205,
         "strong_triples": [
           {
             "triple": [
@@ -113,318 +387,44 @@
           {
             "triple": [
               10,
+              14,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
               23,
               33
             ],
-            "count": 15
+            "count": 13
           },
           {
             "triple": [
               10,
               14,
-              33
+              23
             ],
-            "count": 14
+            "count": 12
           },
           {
             "triple": [
+              10,
               14,
-              23,
-              36
+              27
             ],
-            "count": 13
-          },
-          {
-            "triple": [
-              14,
-              27,
-              36
-            ],
-            "count": 13
+            "count": 12
           }
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.7935714112276613,
+        "rolling_score": 0.7940957842802588,
         "average_recent_frequency": 0.12875
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.0001901407776014915,
-      "relative_rank": 1,
-      "relative_top_percent": 0.005
-    },
-    {
-      "numbers": [
-        6,
-        14,
-        19,
-        27,
-        33,
-        36
-      ],
-      "final_score": 0.6404683743617511,
-      "confidence_score": 64.04683743617511,
-      "sub_scores": {
-        "hot_score": 0.48706883694106645,
-        "cold_score": 0.38127138116653736,
-        "middle_score": 0.7077476743186525,
-        "gap_probability_score": 0.5318945012087622,
-        "pair_score": 0.7674698795180723,
-        "triple_score": 0.42200000000000004,
-        "structure_score": 0.8573251671085311,
-        "rolling_window_score": 0.7874686771561771
-      },
-      "structure_details": {
-        "sum": 135,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.7711188502523062,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8573251671085311
-      },
-      "pair_details": {
-        "pair_score": 0.7674698795180723,
-        "pair_total_support": 1911,
-        "pair_average_support": 127.4,
-        "strong_pairs": [
-          {
-            "pair": [
-              6,
-              33
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              19,
-              36
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              27,
-              36
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              14,
-              36
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              19,
-              27
-            ],
-            "count": 135
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.42200000000000004,
-        "triple_total_support": 211,
-        "strong_triples": [
-          {
-            "triple": [
-              6,
-              19,
-              27
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              19,
-              27,
-              36
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              14,
-              19,
-              27
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              14,
-              27,
-              36
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              19,
-              33,
-              36
-            ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7874686771561771,
-        "average_recent_frequency": 0.1225
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.0001895129146195322,
-      "relative_rank": 2,
-      "relative_top_percent": 0.01
-    },
-    {
-      "numbers": [
-        9,
-        14,
-        19,
-        27,
-        33,
-        36
-      ],
-      "final_score": 0.6349674444319247,
-      "confidence_score": 63.49674444319247,
-      "sub_scores": {
-        "hot_score": 0.45649756556727744,
-        "cold_score": 0.402170241864098,
-        "middle_score": 0.7340631383139576,
-        "gap_probability_score": 0.5329916434948271,
-        "pair_score": 0.7622489959839357,
-        "triple_score": 0.40399999999999997,
-        "structure_score": 0.8506927365535475,
-        "rolling_window_score": 0.7447683566433567
-      },
-      "structure_details": {
-        "sum": 138,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.8119138033570471,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8506927365535475
-      },
-      "pair_details": {
-        "pair_score": 0.7622489959839357,
-        "pair_total_support": 1898,
-        "pair_average_support": 126.53333333333333,
-        "strong_pairs": [
-          {
-            "pair": [
-              19,
-              36
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              27,
-              36
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              9,
-              14
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              14,
-              36
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              19,
-              27
-            ],
-            "count": 135
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.40399999999999997,
-        "triple_total_support": 202,
-        "strong_triples": [
-          {
-            "triple": [
-              9,
-              19,
-              36
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              19,
-              27,
-              36
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              14,
-              19,
-              27
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              9,
-              19,
-              33
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              9,
-              27,
-              36
-            ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7447683566433567,
-        "average_recent_frequency": 0.11458333333333333
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.0001769196277790943,
+      "relative_model_probability": 0.00018575550599367877,
       "relative_rank": 3,
       "relative_top_percent": 0.015
     },
@@ -432,80 +432,80 @@
       "numbers": [
         9,
         14,
-        23,
         27,
         30,
-        33
+        33,
+        36
       ],
-      "final_score": 0.6345241631039836,
-      "confidence_score": 63.45241631039836,
+      "final_score": 0.6347666689362089,
+      "confidence_score": 63.476666893620894,
       "sub_scores": {
-        "hot_score": 0.47172312760802476,
-        "cold_score": 0.4452759444371941,
-        "middle_score": 0.6034757879508795,
-        "gap_probability_score": 0.6097024655925646,
-        "pair_score": 0.7373493975903614,
+        "hot_score": 0.5219594982047304,
+        "cold_score": 0.3347738136536835,
+        "middle_score": 0.7618698088170125,
+        "gap_probability_score": 0.49777242688442475,
+        "pair_score": 0.7535353535353535,
         "triple_score": 0.384,
-        "structure_score": 0.8438353298760333,
-        "rolling_window_score": 0.7494645979020979
+        "structure_score": 0.8636074907239581,
+        "rolling_window_score": 0.7642701429824269
       },
       "structure_details": {
-        "sum": 136,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 3,
-        "high_count": 3,
+        "sum": 149,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 2,
+        "high_count": 4,
         "consecutive_pairs": 0,
         "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.7844841766469902,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.7811688311688312,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 1,
+        "sum_score": 0.9812678088344885,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
         "consecutive_score": 1.0,
-        "bucket_score": 0.9,
+        "bucket_score": 0.75,
         "last_digit_score": 1.0,
-        "structure_score": 0.8438353298760333
+        "structure_score": 0.8636074907239581
       },
       "pair_details": {
-        "pair_score": 0.7373493975903614,
-        "pair_total_support": 1836,
-        "pair_average_support": 122.4,
+        "pair_score": 0.7535353535353535,
+        "pair_total_support": 1865,
+        "pair_average_support": 124.33333333333333,
         "strong_pairs": [
           {
             "pair": [
-              14,
-              23
+              30,
+              36
             ],
-            "count": 139
-          },
-          {
-            "pair": [
-              9,
-              14
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
+            "count": 137
           },
           {
             "pair": [
               30,
               33
             ],
-            "count": 134
+            "count": 136
           },
           {
             "pair": [
               9,
-              30
+              14
             ],
-            "count": 130
+            "count": 135
+          },
+          {
+            "pair": [
+              9,
+              36
+            ],
+            "count": 134
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
           }
         ]
       },
@@ -515,17 +515,291 @@
         "strong_triples": [
           {
             "triple": [
+              27,
+              30,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
               9,
+              27,
+              36
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              9,
+              30,
+              36
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              27,
+              30,
+              33
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              14,
+              27,
+              36
+            ],
+            "count": 12
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7642701429824269,
+        "average_recent_frequency": 0.12708333333333335
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00018507140843860767,
+      "relative_rank": 4,
+      "relative_top_percent": 0.02
+    },
+    {
+      "numbers": [
+        6,
+        14,
+        19,
+        27,
+        33,
+        34
+      ],
+      "final_score": 0.6345322777982122,
+      "confidence_score": 63.45322777982122,
+      "sub_scores": {
+        "hot_score": 0.45760721411655747,
+        "cold_score": 0.488040465824415,
+        "middle_score": 0.542187364526651,
+        "gap_probability_score": 0.6308332716344354,
+        "pair_score": 0.7701010101010101,
+        "triple_score": 0.43799999999999994,
+        "structure_score": 0.8303584669028137,
+        "rolling_window_score": 0.7248518000466246
+      },
+      "structure_details": {
+        "sum": 133,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 1,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.745455248368573,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 0.8652462783494855,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8303584669028137
+      },
+      "pair_details": {
+        "pair_score": 0.7701010101010101,
+        "pair_total_support": 1906,
+        "pair_average_support": 127.06666666666666,
+        "strong_pairs": [
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              6,
+              33
+            ],
+            "count": 138
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              19,
+              33
+            ],
+            "count": 133
+          },
+          {
+            "pair": [
+              14,
+              19
+            ],
+            "count": 131
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.43799999999999994,
+        "triple_total_support": 219,
+        "strong_triples": [
+          {
+            "triple": [
+              6,
+              19,
+              34
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              6,
+              14,
+              34
+            ],
+            "count": 16
+          },
+          {
+            "triple": [
+              6,
+              19,
+              27
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              6,
+              33,
+              34
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              14,
+              19,
+              27
+            ],
+            "count": 14
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7248518000466246,
+        "average_recent_frequency": 0.11041666666666666
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00018452996328765728,
+      "relative_rank": 5,
+      "relative_top_percent": 0.025
+    },
+    {
+      "numbers": [
+        14,
+        23,
+        27,
+        30,
+        33,
+        36
+      ],
+      "final_score": 0.6327286302905895,
+      "confidence_score": 63.272863029058946,
+      "sub_scores": {
+        "hot_score": 0.5017746459791004,
+        "cold_score": 0.4407151233561983,
+        "middle_score": 0.6133421668582458,
+        "gap_probability_score": 0.572845688413929,
+        "pair_score": 0.7454545454545455,
+        "triple_score": 0.42,
+        "structure_score": 0.7986026591890425,
+        "rolling_window_score": 0.7904013956883249
+      },
+      "structure_details": {
+        "sum": 163,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 2,
+        "high_count": 4,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.8012484826948253,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.6499999999999999,
+        "last_digit_score": 1.0,
+        "structure_score": 0.7986026591890425
+      },
+      "pair_details": {
+        "pair_score": 0.7454545454545455,
+        "pair_total_support": 1845,
+        "pair_average_support": 123.0,
+        "strong_pairs": [
+          {
+            "pair": [
+              30,
+              36
+            ],
+            "count": 137
+          },
+          {
+            "pair": [
               14,
               23
             ],
-            "count": 18
+            "count": 136
           },
+          {
+            "pair": [
+              30,
+              33
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
+          },
+          {
+            "pair": [
+              14,
+              36
+            ],
+            "count": 133
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.42,
+        "triple_total_support": 210,
+        "strong_triples": [
           {
             "triple": [
               23,
               27,
               33
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              27,
+              30,
+              36
             ],
             "count": 17
           },
@@ -541,50 +815,735 @@
             "triple": [
               14,
               23,
-              27
+              36
             ],
             "count": 12
           },
           {
             "triple": [
-              9,
-              30,
-              33
+              14,
+              27,
+              36
             ],
-            "count": 11
+            "count": 12
           }
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.7494645979020979,
-        "average_recent_frequency": 0.12041666666666667
+        "rolling_score": 0.7904013956883249,
+        "average_recent_frequency": 0.13
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00017594202414508478,
-      "relative_rank": 4,
-      "relative_top_percent": 0.02
+      "relative_model_probability": 0.00018041617384910327,
+      "relative_rank": 6,
+      "relative_top_percent": 0.03
     },
     {
       "numbers": [
-        4,
+        10,
         19,
+        23,
+        27,
+        33,
+        34
+      ],
+      "final_score": 0.6305240032465044,
+      "confidence_score": 63.052400324650435,
+      "sub_scores": {
+        "hot_score": 0.39820038034005417,
+        "cold_score": 0.5906933462826072,
+        "middle_score": 0.4481058743483984,
+        "gap_probability_score": 0.6339112141607436,
+        "pair_score": 0.7575757575757576,
+        "triple_score": 0.462,
+        "structure_score": 0.840526884745872,
+        "rolling_window_score": 0.7355813951471454
+      },
+      "structure_details": {
+        "sum": 146,
+        "even_count": 2,
+        "odd_count": 4,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 1,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.931979654079901,
+        "even_odd_score": 0.6712009191727446,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 0.8652462783494855,
+        "bucket_score": 0.8,
+        "last_digit_score": 1.0,
+        "structure_score": 0.840526884745872
+      },
+      "pair_details": {
+        "pair_score": 0.7575757575757576,
+        "pair_total_support": 1875,
+        "pair_average_support": 125.0,
+        "strong_pairs": [
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              23,
+              34
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              19,
+              23
+            ],
+            "count": 134
+          },
+          {
+            "pair": [
+              19,
+              33
+            ],
+            "count": 133
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.462,
+        "triple_total_support": 231,
+        "strong_triples": [
+          {
+            "triple": [
+              10,
+              19,
+              27
+            ],
+            "count": 20
+          },
+          {
+            "triple": [
+              23,
+              27,
+              33
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              19,
+              23,
+              27
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              10,
+              19,
+              33
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              10,
+              23,
+              33
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7355813951471454,
+        "average_recent_frequency": 0.11708333333333333
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00017551217628517,
+      "relative_rank": 7,
+      "relative_top_percent": 0.034999999999999996
+    },
+    {
+      "numbers": [
+        14,
+        19,
+        23,
+        27,
+        34,
+        40
+      ],
+      "final_score": 0.6292561779683353,
+      "confidence_score": 62.925617796833535,
+      "sub_scores": {
+        "hot_score": 0.4167382493320892,
+        "cold_score": 0.5804358903575165,
+        "middle_score": 0.3860477870022237,
+        "gap_probability_score": 0.6158194361002047,
+        "pair_score": 0.7866666666666667,
+        "triple_score": 0.48,
+        "structure_score": 0.8862672702305974,
+        "rolling_window_score": 0.7166062089258555
+      },
+      "structure_details": {
+        "sum": 157,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.888238228689399,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8862672702305974
+      },
+      "pair_details": {
+        "pair_score": 0.7866666666666667,
+        "pair_total_support": 1947,
+        "pair_average_support": 129.8,
+        "strong_pairs": [
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              34,
+              40
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              23
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              23,
+              34
+            ],
+            "count": 135
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.48,
+        "triple_total_support": 240,
+        "strong_triples": [
+          {
+            "triple": [
+              14,
+              34,
+              40
+            ],
+            "count": 20
+          },
+          {
+            "triple": [
+              14,
+              23,
+              34
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              19,
+              23,
+              27
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              14,
+              19,
+              27
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              14,
+              23,
+              40
+            ],
+            "count": 14
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7166062089258555,
+        "average_recent_frequency": 0.11041666666666666
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.000172752615872271,
+      "relative_rank": 8,
+      "relative_top_percent": 0.04
+    },
+    {
+      "numbers": [
+        10,
+        19,
+        27,
+        30,
+        33,
+        36
+      ],
+      "final_score": 0.6285709689576111,
+      "confidence_score": 62.85709689576111,
+      "sub_scores": {
+        "hot_score": 0.48025305385719835,
+        "cold_score": 0.36246448232237866,
+        "middle_score": 0.7594345746210762,
+        "gap_probability_score": 0.46227914855872093,
+        "pair_score": 0.76,
+        "triple_score": 0.434,
+        "structure_score": 0.8281118064240343,
+        "rolling_window_score": 0.8034633395915898
+      },
+      "structure_details": {
+        "sum": 155,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 2,
+        "high_count": 4,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.919285071634793,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.6499999999999999,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8281118064240343
+      },
+      "pair_details": {
+        "pair_score": 0.76,
+        "pair_total_support": 1881,
+        "pair_average_support": 125.4,
+        "strong_pairs": [
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              19,
+              36
+            ],
+            "count": 138
+          },
+          {
+            "pair": [
+              30,
+              36
+            ],
+            "count": 137
+          },
+          {
+            "pair": [
+              30,
+              33
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.434,
+        "triple_total_support": 217,
+        "strong_triples": [
+          {
+            "triple": [
+              10,
+              19,
+              27
+            ],
+            "count": 20
+          },
+          {
+            "triple": [
+              27,
+              30,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              10,
+              30,
+              36
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              19,
+              27,
+              36
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              19,
+              33
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.8034633395915898,
+        "average_recent_frequency": 0.14
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.0001712792888724178,
+      "relative_rank": 9,
+      "relative_top_percent": 0.045
+    },
+    {
+      "numbers": [
+        6,
+        12,
+        14,
+        27,
+        30,
+        34
+      ],
+      "final_score": 0.6268638662597301,
+      "confidence_score": 62.686386625973014,
+      "sub_scores": {
+        "hot_score": 0.4944599168957924,
+        "cold_score": 0.44154425761345434,
+        "middle_score": 0.5540015050223117,
+        "gap_probability_score": 0.600955222820476,
+        "pair_score": 0.8068686868686868,
+        "triple_score": 0.49,
+        "structure_score": 0.7714177242564404,
+        "rolling_window_score": 0.7269242404058569
+      },
+      "structure_details": {
+        "sum": 123,
+        "even_count": 5,
+        "odd_count": 1,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.6277949853462729,
+        "even_odd_score": 0.4493605754820661,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.7714177242564404
+      },
+      "pair_details": {
+        "pair_score": 0.8068686868686868,
+        "pair_total_support": 1997,
+        "pair_average_support": 133.13333333333333,
+        "strong_pairs": [
+          {
+            "pair": [
+              6,
+              30
+            ],
+            "count": 163
+          },
+          {
+            "pair": [
+              30,
+              34
+            ],
+            "count": 153
+          },
+          {
+            "pair": [
+              12,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              6,
+              12
+            ],
+            "count": 136
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.49,
+        "triple_total_support": 245,
+        "strong_triples": [
+          {
+            "triple": [
+              6,
+              30,
+              34
+            ],
+            "count": 20
+          },
+          {
+            "triple": [
+              12,
+              14,
+              34
+            ],
+            "count": 18
+          },
+          {
+            "triple": [
+              6,
+              14,
+              34
+            ],
+            "count": 16
+          },
+          {
+            "triple": [
+              6,
+              14,
+              30
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              6,
+              12,
+              30
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7269242404058569,
+        "average_recent_frequency": 0.12083333333333335
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00016766311674405168,
+      "relative_rank": 10,
+      "relative_top_percent": 0.05
+    },
+    {
+      "numbers": [
+        9,
+        12,
+        19,
+        27,
+        30,
+        34
+      ],
+      "final_score": 0.625946724867144,
+      "confidence_score": 62.5946724867144,
+      "sub_scores": {
+        "hot_score": 0.3971659110847967,
+        "cold_score": 0.5000948087798774,
+        "middle_score": 0.5831647737222814,
+        "gap_probability_score": 0.5838571952484258,
+        "pair_score": 0.7955555555555557,
+        "triple_score": 0.434,
+        "structure_score": 0.8442774949488123,
+        "rolling_window_score": 0.6881435145868718
+      },
+      "structure_details": {
+        "sum": 131,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.7202791275622586,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8442774949488123
+      },
+      "pair_details": {
+        "pair_score": 0.7955555555555557,
+        "pair_total_support": 1969,
+        "pair_average_support": 131.26666666666668,
+        "strong_pairs": [
+          {
+            "pair": [
+              30,
+              34
+            ],
+            "count": 153
+          },
+          {
+            "pair": [
+              12,
+              19
+            ],
+            "count": 144
+          },
+          {
+            "pair": [
+              12,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              9,
+              34
+            ],
+            "count": 140
+          },
+          {
+            "pair": [
+              9,
+              12
+            ],
+            "count": 138
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.434,
+        "triple_total_support": 217,
+        "strong_triples": [
+          {
+            "triple": [
+              9,
+              12,
+              34
+            ],
+            "count": 16
+          },
+          {
+            "triple": [
+              9,
+              12,
+              19
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              9,
+              12,
+              30
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              19,
+              30,
+              34
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              12,
+              19,
+              27
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.6881435145868718,
+        "average_recent_frequency": 0.11333333333333334
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00016575195788926685,
+      "relative_rank": 11,
+      "relative_top_percent": 0.055
+    },
+    {
+      "numbers": [
+        6,
+        17,
         27,
         30,
         33,
         34
       ],
-      "final_score": 0.634311550695005,
-      "confidence_score": 63.4311550695005,
+      "final_score": 0.6241191820146488,
+      "confidence_score": 62.41191820146488,
       "sub_scores": {
-        "hot_score": 0.41092859770709245,
-        "cold_score": 0.5765811737713603,
-        "middle_score": 0.4619828993442599,
-        "gap_probability_score": 0.6707029036106548,
-        "pair_score": 0.7670682730923695,
-        "triple_score": 0.428,
-        "structure_score": 0.8354925863258604,
-        "rolling_window_score": 0.7090697843822844
+        "hot_score": 0.48183932810480795,
+        "cold_score": 0.5153520495145618,
+        "middle_score": 0.46325901420870313,
+        "gap_probability_score": 0.5481006877270839,
+        "pair_score": 0.8008080808080807,
+        "triple_score": 0.504,
+        "structure_score": 0.835109388889717,
+        "rolling_window_score": 0.7361534549461041
       },
       "structure_details": {
         "sum": 147,
@@ -596,1423 +1555,190 @@
         "used_decade_buckets": 4,
         "max_bucket_count": 3,
         "max_same_last_digit_count": 2,
-        "sum_score": 0.9477106050437016,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 0.8655844155844156,
+        "sum_score": 0.9481276344878323,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
+        "consecutive_score": 0.8652462783494855,
         "bucket_score": 0.75,
         "last_digit_score": 1.0,
-        "structure_score": 0.8354925863258604
+        "structure_score": 0.835109388889717
       },
       "pair_details": {
-        "pair_score": 0.7670682730923695,
-        "pair_total_support": 1910,
-        "pair_average_support": 127.33333333333333,
-        "strong_pairs": [
-          {
-            "pair": [
-              30,
-              34
-            ],
-            "count": 150
-          },
-          {
-            "pair": [
-              19,
-              27
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              19,
-              33
-            ],
-            "count": 134
-          },
-          {
-            "pair": [
-              30,
-              33
-            ],
-            "count": 134
-          },
-          {
-            "pair": [
-              4,
-              19
-            ],
-            "count": 133
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.428,
-        "triple_total_support": 214,
-        "strong_triples": [
-          {
-            "triple": [
-              4,
-              19,
-              30
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              19,
-              30,
-              34
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              4,
-              30,
-              33
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              4,
-              33,
-              34
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              19,
-              33,
-              34
-            ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7090697843822844,
-        "average_recent_frequency": 0.11583333333333334
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00017547505172583487,
-      "relative_rank": 5,
-      "relative_top_percent": 0.025
-    },
-    {
-      "numbers": [
-        6,
-        14,
-        19,
-        23,
-        30,
-        33
-      ],
-      "final_score": 0.6305660220639353,
-      "confidence_score": 63.05660220639353,
-      "sub_scores": {
-        "hot_score": 0.3471718155995929,
-        "cold_score": 0.4692942131608518,
-        "middle_score": 0.619696653933627,
-        "gap_probability_score": 0.6393343237650041,
-        "pair_score": 0.7678714859437751,
-        "triple_score": 0.40399999999999997,
-        "structure_score": 0.8061997979182645,
-        "rolling_window_score": 0.7665600718725719
-      },
-      "structure_details": {
-        "sum": 125,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 4,
-        "high_count": 2,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.6493706202444864,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.6432467532467532,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8061997979182645
-      },
-      "pair_details": {
-        "pair_score": 0.7678714859437751,
-        "pair_total_support": 1912,
-        "pair_average_support": 127.46666666666667,
+        "pair_score": 0.8008080808080807,
+        "pair_total_support": 1982,
+        "pair_average_support": 132.13333333333333,
         "strong_pairs": [
           {
             "pair": [
               6,
               30
             ],
-            "count": 164
+            "count": 163
           },
           {
             "pair": [
-              6,
-              33
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              14,
-              23
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              19,
-              23
-            ],
-            "count": 134
-          },
-          {
-            "pair": [
-              19,
-              33
-            ],
-            "count": 134
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.40399999999999997,
-        "triple_total_support": 202,
-        "strong_triples": [
-          {
-            "triple": [
-              6,
-              14,
-              30
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              6,
-              19,
-              30
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              6,
-              23,
-              30
-            ],
-            "count": 12
-          },
-          {
-            "triple": [
-              6,
               30,
+              34
+            ],
+            "count": 153
+          },
+          {
+            "pair": [
+              17,
               33
-            ],
-            "count": 12
-          },
-          {
-            "triple": [
-              14,
-              19,
-              30
-            ],
-            "count": 12
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7665600718725719,
-        "average_recent_frequency": 0.11833333333333333
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00016744882287483582,
-      "relative_rank": 6,
-      "relative_top_percent": 0.03
-    },
-    {
-      "numbers": [
-        6,
-        12,
-        23,
-        27,
-        30,
-        37
-      ],
-      "final_score": 0.6299046511322451,
-      "confidence_score": 62.990465113224516,
-      "sub_scores": {
-        "hot_score": 0.4370262467974531,
-        "cold_score": 0.5308597532334164,
-        "middle_score": 0.4538608196515515,
-        "gap_probability_score": 0.5934428780930513,
-        "pair_score": 0.7859437751004016,
-        "triple_score": 0.466,
-        "structure_score": 0.8573251671085311,
-        "rolling_window_score": 0.7523955905205905
-      },
-      "structure_details": {
-        "sum": 135,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.7711188502523062,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8573251671085311
-      },
-      "pair_details": {
-        "pair_score": 0.7859437751004016,
-        "pair_total_support": 1957,
-        "pair_average_support": 130.46666666666667,
-        "strong_pairs": [
-          {
-            "pair": [
-              6,
-              30
-            ],
-            "count": 164
-          },
-          {
-            "pair": [
-              12,
-              37
             ],
             "count": 143
           },
           {
             "pair": [
-              6,
-              37
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              6,
-              12
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.466,
-        "triple_total_support": 233,
-        "strong_triples": [
-          {
-            "triple": [
-              12,
-              27,
-              37
-            ],
-            "count": 17
-          },
-          {
-            "triple": [
-              12,
-              30,
-              37
-            ],
-            "count": 17
-          },
-          {
-            "triple": [
-              6,
-              27,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              27,
-              30,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              6,
-              12,
+              17,
               30
             ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7523955905205905,
-        "average_recent_frequency": 0.12375000000000001
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00016607020702952998,
-      "relative_rank": 7,
-      "relative_top_percent": 0.034999999999999996
-    },
-    {
-      "numbers": [
-        14,
-        19,
-        27,
-        33,
-        37,
-        42
-      ],
-      "final_score": 0.628546098190124,
-      "confidence_score": 62.854609819012396,
-      "sub_scores": {
-        "hot_score": 0.4131948242203684,
-        "cold_score": 0.6176914229965184,
-        "middle_score": 0.44331931812583364,
-        "gap_probability_score": 0.6931162389613593,
-        "pair_score": 0.7534136546184739,
-        "triple_score": 0.43200000000000005,
-        "structure_score": 0.8035653730711669,
-        "rolling_window_score": 0.6629785839160839
-      },
-      "structure_details": {
-        "sum": 172,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 2,
-        "high_count": 4,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.6866770767002521,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8035653730711669
-      },
-      "pair_details": {
-        "pair_score": 0.7534136546184739,
-        "pair_total_support": 1876,
-        "pair_average_support": 125.06666666666666,
-        "strong_pairs": [
-          {
-            "pair": [
-              33,
-              37
-            ],
-            "count": 149
-          },
-          {
-            "pair": [
-              19,
-              27
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              19,
-              33
-            ],
-            "count": 134
-          },
-          {
-            "pair": [
-              14,
-              19
-            ],
-            "count": 131
-          },
-          {
-            "pair": [
-              14,
-              42
-            ],
-            "count": 129
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.43200000000000005,
-        "triple_total_support": 216,
-        "strong_triples": [
-          {
-            "triple": [
-              19,
-              33,
-              37
-            ],
-            "count": 16
-          },
-          {
-            "triple": [
-              14,
-              27,
-              42
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              14,
-              19,
-              27
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              14,
-              19,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              14,
-              19,
-              42
-            ],
-            "count": 14
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.6629785839160839,
-        "average_recent_frequency": 0.09999999999999999
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00016327382855388446,
-      "relative_rank": 8,
-      "relative_top_percent": 0.04
-    },
-    {
-      "numbers": [
-        6,
-        13,
-        14,
-        27,
-        33,
-        36
-      ],
-      "final_score": 0.627376040183159,
-      "confidence_score": 62.73760401831589,
-      "sub_scores": {
-        "hot_score": 0.48682771375446193,
-        "cold_score": 0.36332696450121477,
-        "middle_score": 0.710042383686043,
-        "gap_probability_score": 0.48760831826645906,
-        "pair_score": 0.7634538152610442,
-        "triple_score": 0.46799999999999997,
-        "structure_score": 0.8182769249120214,
-        "rolling_window_score": 0.8001823523698524
-      },
-      "structure_details": {
-        "sum": 129,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.6955752321156181,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8182769249120214
-      },
-      "pair_details": {
-        "pair_score": 0.7634538152610442,
-        "pair_total_support": 1901,
-        "pair_average_support": 126.73333333333333,
-        "strong_pairs": [
-          {
-            "pair": [
-              13,
-              14
-            ],
-            "count": 140
-          },
-          {
-            "pair": [
-              6,
-              33
-            ],
             "count": 139
           },
           {
             "pair": [
-              27,
-              36
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              14,
-              36
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
               6,
-              13
+              33
             ],
-            "count": 133
+            "count": 138
           }
         ]
       },
       "triple_details": {
-        "triple_score": 0.46799999999999997,
-        "triple_total_support": 234,
+        "triple_score": 0.504,
+        "triple_total_support": 252,
         "strong_triples": [
           {
             "triple": [
               6,
-              13,
-              27
-            ],
-            "count": 19
-          },
-          {
-            "triple": [
-              13,
-              14,
-              36
-            ],
-            "count": 18
-          },
-          {
-            "triple": [
-              6,
-              13,
-              33
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              6,
-              13,
-              36
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              13,
-              27,
-              33
-            ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.8001823523698524,
-        "average_recent_frequency": 0.12416666666666666
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00016090320869916976,
-      "relative_rank": 9,
-      "relative_top_percent": 0.045
-    },
-    {
-      "numbers": [
-        12,
-        14,
-        19,
-        33,
-        34,
-        41
-      ],
-      "final_score": 0.6273362160182467,
-      "confidence_score": 62.73362160182467,
-      "sub_scores": {
-        "hot_score": 0.2794998889673298,
-        "cold_score": 0.593790950784031,
-        "middle_score": 0.5470102093128676,
-        "gap_probability_score": 0.6961370539554249,
-        "pair_score": 0.761847389558233,
-        "triple_score": 0.436,
-        "structure_score": 0.8323338558248847,
-        "rolling_window_score": 0.646847804972805
-      },
-      "structure_details": {
-        "sum": 153,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 3,
-        "max_bucket_count": 3,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.9518029557670717,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.6499999999999999,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8323338558248847
-      },
-      "pair_details": {
-        "pair_score": 0.761847389558233,
-        "pair_total_support": 1897,
-        "pair_average_support": 126.46666666666667,
-        "strong_pairs": [
-          {
-            "pair": [
-              14,
+              30,
               34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              12,
-              34
-            ],
-            "count": 141
-          },
-          {
-            "pair": [
-              12,
-              19
-            ],
-            "count": 140
-          },
-          {
-            "pair": [
-              12,
-              33
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              19,
-              33
-            ],
-            "count": 134
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.436,
-        "triple_total_support": 218,
-        "strong_triples": [
-          {
-            "triple": [
-              14,
-              19,
-              41
             ],
             "count": 20
           },
           {
             "triple": [
-              12,
-              14,
-              34
+              17,
+              30,
+              33
             ],
             "count": 19
           },
           {
             "triple": [
-              12,
-              14,
-              19
-            ],
-            "count": 16
-          },
-          {
-            "triple": [
-              12,
-              33,
+              17,
+              30,
               34
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              19,
-              33,
-              41
-            ],
-            "count": 14
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.646847804972805,
-        "average_recent_frequency": 0.09125
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00016082313068334735,
-      "relative_rank": 10,
-      "relative_top_percent": 0.05
-    },
-    {
-      "numbers": [
-        9,
-        14,
-        19,
-        23,
-        27,
-        34
-      ],
-      "final_score": 0.6268905073311366,
-      "confidence_score": 62.68905073311366,
-      "sub_scores": {
-        "hot_score": 0.36920600040435775,
-        "cold_score": 0.5954161516124191,
-        "middle_score": 0.47255614586122635,
-        "gap_probability_score": 0.6827312625654667,
-        "pair_score": 0.78714859437751,
-        "triple_score": 0.452,
-        "structure_score": 0.7921824139815532,
-        "rolling_window_score": 0.6732685023310023
-      },
-      "structure_details": {
-        "sum": 126,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 4,
-        "high_count": 2,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.660625759822317,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.6432467532467532,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.7921824139815532
-      },
-      "pair_details": {
-        "pair_score": 0.78714859437751,
-        "pair_total_support": 1960,
-        "pair_average_support": 130.66666666666666,
-        "strong_pairs": [
-          {
-            "pair": [
-              14,
-              34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              14,
-              23
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              9,
-              34
-            ],
-            "count": 138
-          },
-          {
-            "pair": [
-              9,
-              14
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.452,
-        "triple_total_support": 226,
-        "strong_triples": [
-          {
-            "triple": [
-              9,
-              14,
-              23
-            ],
-            "count": 18
-          },
-          {
-            "triple": [
-              9,
-              19,
-              23
             ],
             "count": 17
           },
           {
             "triple": [
-              14,
-              23,
-              34
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              19,
-              23,
-              27
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              9,
-              23,
-              34
-            ],
-            "count": 14
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.6732685023310023,
-        "average_recent_frequency": 0.10125
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015992961870196968,
-      "relative_rank": 11,
-      "relative_top_percent": 0.055
-    },
-    {
-      "numbers": [
-        6,
-        14,
-        17,
-        27,
-        30,
-        33
-      ],
-      "final_score": 0.6267442550966218,
-      "confidence_score": 62.67442550966218,
-      "sub_scores": {
-        "hot_score": 0.5155396022047442,
-        "cold_score": 0.42757860717600704,
-        "middle_score": 0.5847123336918044,
-        "gap_probability_score": 0.5291210240641383,
-        "pair_score": 0.7686746987951807,
-        "triple_score": 0.43200000000000005,
-        "structure_score": 0.8325644489898367,
-        "rolling_window_score": 0.7660338966588967
-      },
-      "structure_details": {
-        "sum": 127,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.6720759777775289,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8325644489898367
-      },
-      "pair_details": {
-        "pair_score": 0.7686746987951807,
-        "pair_total_support": 1914,
-        "pair_average_support": 127.6,
-        "strong_pairs": [
-          {
-            "pair": [
-              6,
-              30
-            ],
-            "count": 164
-          },
-          {
-            "pair": [
-              6,
-              33
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              17,
-              30
-            ],
-            "count": 138
-          },
-          {
-            "pair": [
-              17,
-              33
-            ],
-            "count": 137
-          },
-          {
-            "pair": [
-              30,
-              33
-            ],
-            "count": 134
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.43200000000000005,
-        "triple_total_support": 216,
-        "strong_triples": [
-          {
-            "triple": [
-              17,
-              30,
-              33
-            ],
-            "count": 19
-          },
-          {
-            "triple": [
-              6,
-              17,
-              33
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              6,
-              14,
-              30
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
               17,
               27,
               33
             ],
-            "count": 14
+            "count": 16
           },
           {
             "triple": [
+              6,
               17,
-              27,
-              30
+              33
             ],
-            "count": 13
+            "count": 15
           }
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.7660338966588967,
-        "average_recent_frequency": 0.12541666666666668
+        "rolling_score": 0.7361534549461041,
+        "average_recent_frequency": 0.12208333333333334
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015963750999176953,
+      "relative_model_probability": 0.00016200839512408368,
       "relative_rank": 12,
       "relative_top_percent": 0.06
     },
     {
       "numbers": [
         10,
-        12,
-        14,
-        27,
-        30,
-        33
-      ],
-      "final_score": 0.625875571685844,
-      "confidence_score": 62.5875571685844,
-      "sub_scores": {
-        "hot_score": 0.5281061803767155,
-        "cold_score": 0.3663053588614502,
-        "middle_score": 0.6840466371025977,
-        "gap_probability_score": 0.5568966898960341,
-        "pair_score": 0.7514056224899598,
-        "triple_score": 0.42,
-        "structure_score": 0.7598707256698649,
-        "rolling_window_score": 0.7756209935897437
-      },
-      "structure_details": {
-        "sum": 126,
-        "even_count": 4,
-        "odd_count": 2,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 3,
-        "max_bucket_count": 3,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.660625759822317,
-        "even_odd_score": 0.6502597402597403,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.6499999999999999,
-        "last_digit_score": 1.0,
-        "structure_score": 0.7598707256698649
-      },
-      "pair_details": {
-        "pair_score": 0.7514056224899598,
-        "pair_total_support": 1871,
-        "pair_average_support": 124.73333333333333,
-        "strong_pairs": [
-          {
-            "pair": [
-              10,
-              33
-            ],
-            "count": 145
-          },
-          {
-            "pair": [
-              12,
-              33
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              12,
-              27
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              12,
-              30
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              30,
-              33
-            ],
-            "count": 134
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.42,
-        "triple_total_support": 210,
-        "strong_triples": [
-          {
-            "triple": [
-              10,
-              14,
-              33
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              10,
-              12,
-              33
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              12,
-              14,
-              27
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              12,
-              27,
-              33
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              27,
-              30,
-              33
-            ],
-            "count": 13
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.7756209935897437,
-        "average_recent_frequency": 0.13208333333333333
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015791345657711014,
-      "relative_rank": 13,
-      "relative_top_percent": 0.065
-    },
-    {
-      "numbers": [
-        6,
-        10,
-        14,
-        27,
-        33,
-        34
-      ],
-      "final_score": 0.6256803533166018,
-      "confidence_score": 62.56803533166018,
-      "sub_scores": {
-        "hot_score": 0.5148129182368674,
-        "cold_score": 0.4240043873090633,
-        "middle_score": 0.5736856903680132,
-        "gap_probability_score": 0.5951346290530716,
-        "pair_score": 0.7566265060240963,
-        "triple_score": 0.446,
-        "structure_score": 0.7841287569210593,
-        "rolling_window_score": 0.747870168026418
-      },
-      "structure_details": {
-        "sum": 124,
-        "even_count": 4,
-        "odd_count": 2,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.6383072354764449,
-        "even_odd_score": 0.6502597402597403,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.9,
-        "last_digit_score": 1.0,
-        "structure_score": 0.7841287569210593
-      },
-      "pair_details": {
-        "pair_score": 0.7566265060240963,
-        "pair_total_support": 1884,
-        "pair_average_support": 125.6,
-        "strong_pairs": [
-          {
-            "pair": [
-              10,
-              33
-            ],
-            "count": 145
-          },
-          {
-            "pair": [
-              14,
-              34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              6,
-              33
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              6,
-              27
-            ],
-            "count": 129
-          },
-          {
-            "pair": [
-              6,
-              10
-            ],
-            "count": 128
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.446,
-        "triple_total_support": 223,
-        "strong_triples": [
-          {
-            "triple": [
-              6,
-              14,
-              34
-            ],
-            "count": 16
-          },
-          {
-            "triple": [
-              6,
-              33,
-              34
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              10,
-              14,
-              33
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              6,
-              10,
-              14
-            ],
-            "count": 12
-          },
-          {
-            "triple": [
-              10,
-              14,
-              27
-            ],
-            "count": 12
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.747870168026418,
-        "average_recent_frequency": 0.12166666666666666
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015752858126673113,
-      "relative_rank": 14,
-      "relative_top_percent": 0.06999999999999999
-    },
-    {
-      "numbers": [
-        6,
         14,
         27,
         29,
         33,
-        34
+        36
       ],
-      "final_score": 0.6256000715534173,
-      "confidence_score": 62.56000715534174,
+      "final_score": 0.6238584201698887,
+      "confidence_score": 62.38584201698887,
       "sub_scores": {
-        "hot_score": 0.5119716419246104,
-        "cold_score": 0.4024160993127233,
-        "middle_score": 0.522221700010245,
-        "gap_probability_score": 0.5908816014540653,
-        "pair_score": 0.7662650602409639,
+        "hot_score": 0.5423822429561407,
+        "cold_score": 0.3059409109560534,
+        "middle_score": 0.7002227329318815,
+        "gap_probability_score": 0.4442688406784765,
+        "pair_score": 0.753939393939394,
         "triple_score": 0.434,
-        "structure_score": 0.849754317246391,
-        "rolling_window_score": 0.7411810411810412
+        "structure_score": 0.8736074907239582,
+        "rolling_window_score": 0.7957874562199576
       },
       "structure_details": {
-        "sum": 143,
+        "sum": 149,
         "even_count": 3,
         "odd_count": 3,
         "low_count": 2,
         "high_count": 4,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 4,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 3,
         "max_bucket_count": 2,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.8847575287258245,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.9,
+        "max_same_last_digit_count": 1,
+        "sum_score": 0.9812678088344885,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.8,
         "last_digit_score": 1.0,
-        "structure_score": 0.849754317246391
+        "structure_score": 0.8736074907239582
       },
       "pair_details": {
-        "pair_score": 0.7662650602409639,
-        "pair_total_support": 1908,
-        "pair_average_support": 127.2,
+        "pair_score": 0.753939393939394,
+        "pair_total_support": 1866,
+        "pair_average_support": 124.4,
         "strong_pairs": [
           {
             "pair": [
               14,
               29
             ],
-            "count": 148
+            "count": 149
+          },
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
           },
           {
             "pair": [
               14,
-              34
+              36
             ],
-            "count": 143
-          },
-          {
-            "pair": [
-              6,
-              33
-            ],
-            "count": 139
+            "count": 133
           },
           {
             "pair": [
               29,
-              34
+              36
             ],
-            "count": 138
-          },
-          {
-            "pair": [
-              6,
-              27
-            ],
-            "count": 129
+            "count": 132
           }
         ]
       },
@@ -2030,32 +1756,443 @@
           },
           {
             "triple": [
-              6,
               14,
-              34
+              29,
+              36
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              10,
+              14,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              29,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              14,
+              27
+            ],
+            "count": 12
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7957874562199576,
+        "average_recent_frequency": 0.14125000000000001
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.0001614811847183597,
+      "relative_rank": 13,
+      "relative_top_percent": 0.065
+    },
+    {
+      "numbers": [
+        6,
+        10,
+        19,
+        27,
+        33,
+        36
+      ],
+      "final_score": 0.6233587068853512,
+      "confidence_score": 62.335870688535124,
+      "sub_scores": {
+        "hot_score": 0.4815178911624967,
+        "cold_score": 0.3561738553565578,
+        "middle_score": 0.7344848673038217,
+        "gap_probability_score": 0.4253949483365649,
+        "pair_score": 0.7676767676767677,
+        "triple_score": 0.442,
+        "structure_score": 0.8442774949488123,
+        "rolling_window_score": 0.8145843272304926
+      },
+      "structure_details": {
+        "sum": 131,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.7202791275622586,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8442774949488123
+      },
+      "pair_details": {
+        "pair_score": 0.7676767676767677,
+        "pair_total_support": 1900,
+        "pair_average_support": 126.66666666666667,
+        "strong_pairs": [
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              6,
+              33
+            ],
+            "count": 138
+          },
+          {
+            "pair": [
+              19,
+              36
+            ],
+            "count": 138
+          },
+          {
+            "pair": [
+              19,
+              27
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.442,
+        "triple_total_support": 221,
+        "strong_triples": [
+          {
+            "triple": [
+              10,
+              19,
+              27
+            ],
+            "count": 20
+          },
+          {
+            "triple": [
+              6,
+              10,
+              19
+            ],
+            "count": 18
+          },
+          {
+            "triple": [
+              6,
+              19,
+              27
+            ],
+            "count": 15
+          },
+          {
+            "triple": [
+              19,
+              27,
+              36
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              19,
+              33
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.8145843272304926,
+        "average_recent_frequency": 0.13416666666666668
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00016047564981742305,
+      "relative_rank": 14,
+      "relative_top_percent": 0.06999999999999999
+    },
+    {
+      "numbers": [
+        14,
+        17,
+        27,
+        30,
+        33,
+        36
+      ],
+      "final_score": 0.6230910330990312,
+      "confidence_score": 62.30910330990312,
+      "sub_scores": {
+        "hot_score": 0.5167632284262265,
+        "cold_score": 0.442797857827864,
+        "middle_score": 0.6206048634513681,
+        "gap_probability_score": 0.4963181957428473,
+        "pair_score": 0.7547474747474747,
+        "triple_score": 0.42,
+        "structure_score": 0.8203500956876859,
+        "rolling_window_score": 0.763862176818641
+      },
+      "structure_details": {
+        "sum": 157,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 2,
+        "high_count": 4,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.888238228689399,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.6743181136976721,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.6499999999999999,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8203500956876859
+      },
+      "pair_details": {
+        "pair_score": 0.7547474747474747,
+        "pair_total_support": 1868,
+        "pair_average_support": 124.53333333333333,
+        "strong_pairs": [
+          {
+            "pair": [
+              17,
+              33
+            ],
+            "count": 143
+          },
+          {
+            "pair": [
+              17,
+              30
+            ],
+            "count": 139
+          },
+          {
+            "pair": [
+              30,
+              36
+            ],
+            "count": 137
+          },
+          {
+            "pair": [
+              30,
+              33
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.42,
+        "triple_total_support": 210,
+        "strong_triples": [
+          {
+            "triple": [
+              17,
+              30,
+              33
+            ],
+            "count": 19
+          },
+          {
+            "triple": [
+              27,
+              30,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              17,
+              27,
+              33
             ],
             "count": 16
           },
           {
             "triple": [
-              6,
-              33,
+              17,
+              27,
+              30
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              27,
+              30,
+              33
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.763862176818641,
+        "average_recent_frequency": 0.12708333333333335
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00015993960803461436,
+      "relative_rank": 15,
+      "relative_top_percent": 0.075
+    },
+    {
+      "numbers": [
+        4,
+        14,
+        23,
+        27,
+        34,
+        36
+      ],
+      "final_score": 0.6230545637516396,
+      "confidence_score": 62.305456375163956,
+      "sub_scores": {
+        "hot_score": 0.4231181960131127,
+        "cold_score": 0.6347457868752678,
+        "middle_score": 0.36956776552571297,
+        "gap_probability_score": 0.6549014976104589,
+        "pair_score": 0.7672727272727272,
+        "triple_score": 0.41,
+        "structure_score": 0.8127061038053454,
+        "rolling_window_score": 0.7052238679632774
+      },
+      "structure_details": {
+        "sum": 138,
+        "even_count": 4,
+        "odd_count": 2,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 2,
+        "max_same_last_digit_count": 3,
+        "sum_score": 0.8123130754271959,
+        "even_odd_score": 0.6504196223398941,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.9,
+        "last_digit_score": 0.65,
+        "structure_score": 0.8127061038053454
+      },
+      "pair_details": {
+        "pair_score": 0.7672727272727272,
+        "pair_total_support": 1899,
+        "pair_average_support": 126.6,
+        "strong_pairs": [
+          {
+            "pair": [
+              14,
+              34
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              14,
+              23
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              23,
+              34
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              27,
+              36
+            ],
+            "count": 134
+          },
+          {
+            "pair": [
+              14,
+              36
+            ],
+            "count": 133
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.41,
+        "triple_total_support": 205,
+        "strong_triples": [
+          {
+            "triple": [
+              14,
+              34,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              14,
+              23,
               34
             ],
             "count": 15
           },
           {
             "triple": [
-              6,
-              29,
-              34
+              27,
+              34,
+              36
             ],
-            "count": 13
+            "count": 14
           },
           {
             "triple": [
-              14,
-              29,
+              4,
+              23,
+              27
+            ],
+            "count": 12
+          },
+          {
+            "triple": [
+              4,
+              27,
               34
             ],
             "count": 12
@@ -2063,86 +2200,360 @@
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.7411810411810412,
-        "average_recent_frequency": 0.12458333333333334
+        "rolling_score": 0.7052238679632774,
+        "average_recent_frequency": 0.11
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.0001573705771570938,
-      "relative_rank": 15,
-      "relative_top_percent": 0.075
+      "relative_model_probability": 0.00015986671348689163,
+      "relative_rank": 16,
+      "relative_top_percent": 0.08
+    },
+    {
+      "numbers": [
+        1,
+        14,
+        23,
+        30,
+        33,
+        36
+      ],
+      "final_score": 0.6228452578558191,
+      "confidence_score": 62.28452578558191,
+      "sub_scores": {
+        "hot_score": 0.3616189484444467,
+        "cold_score": 0.5017594739976908,
+        "middle_score": 0.5945606182096164,
+        "gap_probability_score": 0.6124573479538538,
+        "pair_score": 0.76,
+        "triple_score": 0.43,
+        "structure_score": 0.8338272662448218,
+        "rolling_window_score": 0.6914790889588259
+      },
+      "structure_details": {
+        "sum": 137,
+        "even_count": 3,
+        "odd_count": 3,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 4,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.7984782127462968,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.75,
+        "last_digit_score": 1.0,
+        "structure_score": 0.8338272662448218
+      },
+      "pair_details": {
+        "pair_score": 0.76,
+        "pair_total_support": 1881,
+        "pair_average_support": 125.4,
+        "strong_pairs": [
+          {
+            "pair": [
+              1,
+              30
+            ],
+            "count": 143
+          },
+          {
+            "pair": [
+              1,
+              36
+            ],
+            "count": 143
+          },
+          {
+            "pair": [
+              30,
+              36
+            ],
+            "count": 137
+          },
+          {
+            "pair": [
+              14,
+              23
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              30,
+              33
+            ],
+            "count": 136
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.43,
+        "triple_total_support": 215,
+        "strong_triples": [
+          {
+            "triple": [
+              1,
+              14,
+              30
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              1,
+              23,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              1,
+              30,
+              36
+            ],
+            "count": 17
+          },
+          {
+            "triple": [
+              1,
+              33,
+              36
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              1,
+              30,
+              33
+            ],
+            "count": 12
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.6914790889588259,
+        "average_recent_frequency": 0.11041666666666668
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00015944899709483885,
+      "relative_rank": 17,
+      "relative_top_percent": 0.08499999999999999
     },
     {
       "numbers": [
         10,
         12,
+        14,
         27,
+        30,
+        33
+      ],
+      "final_score": 0.6227442044581197,
+      "confidence_score": 62.27442044581197,
+      "sub_scores": {
+        "hot_score": 0.5297164423512183,
+        "cold_score": 0.36850245696605627,
+        "middle_score": 0.6766284991527355,
+        "gap_probability_score": 0.5404820437334421,
+        "pair_score": 0.753939393939394,
+        "triple_score": 0.42,
+        "structure_score": 0.7598768849066697,
+        "rolling_window_score": 0.7758187301567477
+      },
+      "structure_details": {
+        "sum": 126,
+        "even_count": 4,
+        "odd_count": 2,
+        "low_count": 3,
+        "high_count": 3,
+        "consecutive_pairs": 0,
+        "used_decade_buckets": 3,
+        "max_bucket_count": 3,
+        "max_same_last_digit_count": 2,
+        "sum_score": 0.6609961998324941,
+        "even_odd_score": 0.6504196223398941,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 1.0,
+        "bucket_score": 0.6499999999999999,
+        "last_digit_score": 1.0,
+        "structure_score": 0.7598768849066697
+      },
+      "pair_details": {
+        "pair_score": 0.753939393939394,
+        "pair_total_support": 1866,
+        "pair_average_support": 124.4,
+        "strong_pairs": [
+          {
+            "pair": [
+              10,
+              33
+            ],
+            "count": 142
+          },
+          {
+            "pair": [
+              12,
+              33
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              30,
+              33
+            ],
+            "count": 136
+          },
+          {
+            "pair": [
+              12,
+              30
+            ],
+            "count": 135
+          },
+          {
+            "pair": [
+              12,
+              27
+            ],
+            "count": 134
+          }
+        ]
+      },
+      "triple_details": {
+        "triple_score": 0.42,
+        "triple_total_support": 210,
+        "strong_triples": [
+          {
+            "triple": [
+              10,
+              12,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              10,
+              14,
+              33
+            ],
+            "count": 14
+          },
+          {
+            "triple": [
+              12,
+              14,
+              27
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              12,
+              27,
+              33
+            ],
+            "count": 13
+          },
+          {
+            "triple": [
+              27,
+              30,
+              33
+            ],
+            "count": 13
+          }
+        ]
+      },
+      "rolling_details": {
+        "rolling_score": 0.7758187301567477,
+        "average_recent_frequency": 0.13208333333333333
+      },
+      "theoretical_jackpot_probability": 7.151123842018516e-08,
+      "theoretical_jackpot_odds": "1 in 13983816",
+      "relative_model_probability": 0.00015924771346261866,
+      "relative_rank": 18,
+      "relative_top_percent": 0.09
+    },
+    {
+      "numbers": [
+        12,
+        19,
+        23,
         33,
         34,
         37
       ],
-      "final_score": 0.62539807592137,
-      "confidence_score": 62.539807592136995,
+      "final_score": 0.6222046913690534,
+      "confidence_score": 62.22046913690534,
       "sub_scores": {
-        "hot_score": 0.45511711460891635,
-        "cold_score": 0.5704596654481325,
-        "middle_score": 0.42775159503120813,
-        "gap_probability_score": 0.6325738319051054,
-        "pair_score": 0.7771084337349398,
-        "triple_score": 0.44799999999999995,
-        "structure_score": 0.816515674006703,
-        "rolling_window_score": 0.7003257332944833
+        "hot_score": 0.25655250131491564,
+        "cold_score": 0.7308956153482974,
+        "middle_score": 0.3239110726090163,
+        "gap_probability_score": 0.7508263700622573,
+        "pair_score": 0.7931313131313131,
+        "triple_score": 0.436,
+        "structure_score": 0.795809534025147,
+        "rolling_window_score": 0.6654496023023723
       },
       "structure_details": {
-        "sum": 153,
-        "even_count": 3,
-        "odd_count": 3,
-        "low_count": 2,
-        "high_count": 4,
+        "sum": 158,
+        "even_count": 2,
+        "odd_count": 4,
+        "low_count": 3,
+        "high_count": 3,
         "consecutive_pairs": 1,
         "used_decade_buckets": 3,
         "max_bucket_count": 3,
         "max_same_last_digit_count": 2,
-        "sum_score": 0.9518029557670717,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 0.8655844155844156,
+        "sum_score": 0.8731102511970014,
+        "even_odd_score": 0.6712009191727446,
+        "low_high_score": 0.7804326106504147,
+        "consecutive_score": 0.8652462783494855,
         "bucket_score": 0.6499999999999999,
         "last_digit_score": 1.0,
-        "structure_score": 0.816515674006703
+        "structure_score": 0.795809534025147
       },
       "pair_details": {
-        "pair_score": 0.7771084337349398,
-        "pair_total_support": 1935,
-        "pair_average_support": 129.0,
+        "pair_score": 0.7931313131313131,
+        "pair_total_support": 1963,
+        "pair_average_support": 130.86666666666667,
         "strong_pairs": [
           {
             "pair": [
               33,
               37
             ],
-            "count": 149
-          },
-          {
-            "pair": [
-              10,
-              33
-            ],
-            "count": 145
+            "count": 147
           },
           {
             "pair": [
               12,
-              37
+              19
             ],
-            "count": 143
+            "count": 144
           },
           {
             "pair": [
               12,
               34
             ],
-            "count": 141
+            "count": 142
+          },
+          {
+            "pair": [
+              12,
+              37
+            ],
+            "count": 142
           },
           {
             "pair": [
@@ -2154,21 +2565,21 @@
         ]
       },
       "triple_details": {
-        "triple_score": 0.44799999999999995,
-        "triple_total_support": 224,
+        "triple_score": 0.436,
+        "triple_total_support": 218,
         "strong_triples": [
           {
             "triple": [
               12,
-              27,
+              34,
               37
             ],
-            "count": 17
+            "count": 16
           },
           {
             "triple": [
-              12,
-              34,
+              19,
+              33,
               37
             ],
             "count": 16
@@ -2191,297 +2602,23 @@
           },
           {
             "triple": [
-              10,
-              12,
-              33
+              19,
+              33,
+              34
             ],
             "count": 13
           }
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.7003257332944833,
-        "average_recent_frequency": 0.11333333333333334
+        "rolling_score": 0.6654496023023723,
+        "average_recent_frequency": 0.09375
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015697372626636668,
-      "relative_rank": 16,
-      "relative_top_percent": 0.08
-    },
-    {
-      "numbers": [
-        1,
-        14,
-        27,
-        33,
-        34,
-        37
-      ],
-      "final_score": 0.6253913485926206,
-      "confidence_score": 62.539134859262056,
-      "sub_scores": {
-        "hot_score": 0.43256671074829384,
-        "cold_score": 0.6288087742271009,
-        "middle_score": 0.3657304367884047,
-        "gap_probability_score": 0.7307079828274928,
-        "pair_score": 0.7791164658634538,
-        "triple_score": 0.444,
-        "structure_score": 0.8146248601168706,
-        "rolling_window_score": 0.595076486013986
-      },
-      "structure_details": {
-        "sum": 146,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 2,
-        "high_count": 4,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 3,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.9315643755324182,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.75,
-        "last_digit_score": 1.0,
-        "structure_score": 0.8146248601168706
-      },
-      "pair_details": {
-        "pair_score": 0.7791164658634538,
-        "pair_total_support": 1940,
-        "pair_average_support": 129.33333333333334,
-        "strong_pairs": [
-          {
-            "pair": [
-              33,
-              37
-            ],
-            "count": 149
-          },
-          {
-            "pair": [
-              1,
-              27
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              14,
-              34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              1,
-              34
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              1,
-              37
-            ],
-            "count": 139
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.444,
-        "triple_total_support": 222,
-        "strong_triples": [
-          {
-            "triple": [
-              1,
-              14,
-              34
-            ],
-            "count": 16
-          },
-          {
-            "triple": [
-              1,
-              33,
-              34
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              1,
-              14,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              1,
-              34,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              14,
-              33,
-              37
-            ],
-            "count": 14
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.595076486013986,
-        "average_recent_frequency": 0.09125
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015696052664809288,
-      "relative_rank": 17,
-      "relative_top_percent": 0.08499999999999999
-    },
-    {
-      "numbers": [
-        4,
-        14,
-        19,
-        27,
-        30,
-        34
-      ],
-      "final_score": 0.6252413665193993,
-      "confidence_score": 62.52413665193993,
-      "sub_scores": {
-        "hot_score": 0.40821824051333544,
-        "cold_score": 0.5714281873854111,
-        "middle_score": 0.47793207767463414,
-        "gap_probability_score": 0.6886309956621651,
-        "pair_score": 0.7642570281124498,
-        "triple_score": 0.408,
-        "structure_score": 0.7806454495350501,
-        "rolling_window_score": 0.6820379273504273
-      },
-      "structure_details": {
-        "sum": 128,
-        "even_count": 4,
-        "odd_count": 2,
-        "low_count": 3,
-        "high_count": 3,
-        "consecutive_pairs": 0,
-        "used_decade_buckets": 4,
-        "max_bucket_count": 2,
-        "max_same_last_digit_count": 3,
-        "sum_score": 0.6837246552830575,
-        "even_odd_score": 0.6502597402597403,
-        "low_high_score": 0.7811688311688312,
-        "consecutive_score": 1.0,
-        "bucket_score": 0.9,
-        "last_digit_score": 0.65,
-        "structure_score": 0.7806454495350501
-      },
-      "pair_details": {
-        "pair_score": 0.7642570281124498,
-        "pair_total_support": 1903,
-        "pair_average_support": 126.86666666666666,
-        "strong_pairs": [
-          {
-            "pair": [
-              30,
-              34
-            ],
-            "count": 150
-          },
-          {
-            "pair": [
-              14,
-              34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              19,
-              27
-            ],
-            "count": 135
-          },
-          {
-            "pair": [
-              4,
-              19
-            ],
-            "count": 133
-          },
-          {
-            "pair": [
-              14,
-              19
-            ],
-            "count": 131
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.408,
-        "triple_total_support": 204,
-        "strong_triples": [
-          {
-            "triple": [
-              4,
-              19,
-              30
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              14,
-              19,
-              27
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              19,
-              30,
-              34
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              4,
-              14,
-              30
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              4,
-              19,
-              34
-            ],
-            "count": 12
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.6820379273504273,
-        "average_recent_frequency": 0.1125
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015666653650201756,
-      "relative_rank": 18,
-      "relative_top_percent": 0.09
+      "relative_model_probability": 0.00015817737383551489,
+      "relative_rank": 19,
+      "relative_top_percent": 0.095
     },
     {
       "numbers": [
@@ -2492,17 +2629,17 @@
         37,
         42
       ],
-      "final_score": 0.625037885887114,
-      "confidence_score": 62.503788588711394,
+      "final_score": 0.6213543723855507,
+      "confidence_score": 62.13543723855507,
       "sub_scores": {
-        "hot_score": 0.3952282467112785,
-        "cold_score": 0.6624990652040347,
-        "middle_score": 0.3446337256725663,
-        "gap_probability_score": 0.6270753116607484,
-        "pair_score": 0.744578313253012,
-        "triple_score": 0.40399999999999997,
-        "structure_score": 0.910816182772987,
-        "rolling_window_score": 0.6861129322066822
+        "hot_score": 0.3937145726435028,
+        "cold_score": 0.6668294159775668,
+        "middle_score": 0.33502184828252246,
+        "gap_probability_score": 0.6164763240406169,
+        "pair_score": 0.7397979797979798,
+        "triple_score": 0.396,
+        "structure_score": 0.9103757770063257,
+        "rolling_window_score": 0.6868817942324131
       },
       "structure_details": {
         "sum": 151,
@@ -2514,46 +2651,46 @@
         "used_decade_buckets": 4,
         "max_bucket_count": 2,
         "max_same_last_digit_count": 2,
-        "sum_score": 0.9850829129101305,
-        "even_odd_score": 0.7824675324675325,
-        "low_high_score": 0.7811688311688312,
+        "sum_score": 0.9846722557923121,
+        "even_odd_score": 0.7809521430712358,
+        "low_high_score": 0.7804326106504147,
         "consecutive_score": 1.0,
         "bucket_score": 0.9,
         "last_digit_score": 1.0,
-        "structure_score": 0.910816182772987
+        "structure_score": 0.9103757770063257
       },
       "pair_details": {
-        "pair_score": 0.744578313253012,
-        "pair_total_support": 1854,
-        "pair_average_support": 123.6,
+        "pair_score": 0.7397979797979798,
+        "pair_total_support": 1831,
+        "pair_average_support": 122.06666666666666,
         "strong_pairs": [
           {
             "pair": [
               12,
               37
             ],
-            "count": 143
+            "count": 142
           },
           {
             "pair": [
               23,
               42
             ],
-            "count": 138
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
+            "count": 135
           },
           {
             "pair": [
               12,
               27
             ],
-            "count": 135
+            "count": 134
+          },
+          {
+            "pair": [
+              23,
+              27
+            ],
+            "count": 131
           },
           {
             "pair": [
@@ -2565,8 +2702,8 @@
         ]
       },
       "triple_details": {
-        "triple_score": 0.40399999999999997,
-        "triple_total_support": 202,
+        "triple_score": 0.396,
+        "triple_total_support": 198,
         "strong_triples": [
           {
             "triple": [
@@ -2582,7 +2719,7 @@
               27,
               42
             ],
-            "count": 16
+            "count": 15
           },
           {
             "triple": [
@@ -2611,149 +2748,12 @@
         ]
       },
       "rolling_details": {
-        "rolling_score": 0.6861129322066822,
+        "rolling_score": 0.6868817942324131,
         "average_recent_frequency": 0.11125
       },
       "theoretical_jackpot_probability": 7.151123842018516e-08,
       "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015626856027060187,
-      "relative_rank": 19,
-      "relative_top_percent": 0.095
-    },
-    {
-      "numbers": [
-        14,
-        23,
-        27,
-        33,
-        34,
-        37
-      ],
-      "final_score": 0.6247768516363663,
-      "confidence_score": 62.47768516363663,
-      "sub_scores": {
-        "hot_score": 0.43216732457666723,
-        "cold_score": 0.6633510125856529,
-        "middle_score": 0.3141798691817772,
-        "gap_probability_score": 0.7548122054325637,
-        "pair_score": 0.7626506024096386,
-        "triple_score": 0.428,
-        "structure_score": 0.74561780414821,
-        "rolling_window_score": 0.6820626942501943
-      },
-      "structure_details": {
-        "sum": 168,
-        "even_count": 2,
-        "odd_count": 4,
-        "low_count": 2,
-        "high_count": 4,
-        "consecutive_pairs": 1,
-        "used_decade_buckets": 3,
-        "max_bucket_count": 3,
-        "max_same_last_digit_count": 2,
-        "sum_score": 0.735536151657775,
-        "even_odd_score": 0.6702597402597402,
-        "low_high_score": 0.6757142857142857,
-        "consecutive_score": 0.8655844155844156,
-        "bucket_score": 0.6499999999999999,
-        "last_digit_score": 1.0,
-        "structure_score": 0.74561780414821
-      },
-      "pair_details": {
-        "pair_score": 0.7626506024096386,
-        "pair_total_support": 1899,
-        "pair_average_support": 126.6,
-        "strong_pairs": [
-          {
-            "pair": [
-              33,
-              37
-            ],
-            "count": 149
-          },
-          {
-            "pair": [
-              14,
-              34
-            ],
-            "count": 143
-          },
-          {
-            "pair": [
-              14,
-              23
-            ],
-            "count": 139
-          },
-          {
-            "pair": [
-              23,
-              27
-            ],
-            "count": 136
-          },
-          {
-            "pair": [
-              23,
-              34
-            ],
-            "count": 134
-          }
-        ]
-      },
-      "triple_details": {
-        "triple_score": 0.428,
-        "triple_total_support": 214,
-        "strong_triples": [
-          {
-            "triple": [
-              23,
-              27,
-              33
-            ],
-            "count": 17
-          },
-          {
-            "triple": [
-              14,
-              23,
-              34
-            ],
-            "count": 15
-          },
-          {
-            "triple": [
-              14,
-              33,
-              37
-            ],
-            "count": 14
-          },
-          {
-            "triple": [
-              23,
-              33,
-              37
-            ],
-            "count": 13
-          },
-          {
-            "triple": [
-              14,
-              23,
-              27
-            ],
-            "count": 12
-          }
-        ]
-      },
-      "rolling_details": {
-        "rolling_score": 0.6820626942501943,
-        "average_recent_frequency": 0.1025
-      },
-      "theoretical_jackpot_probability": 7.151123842018516e-08,
-      "theoretical_jackpot_odds": "1 in 13983816",
-      "relative_model_probability": 0.00015575949815698015,
+      "relative_model_probability": 0.00015650501203960424,
       "relative_rank": 20,
       "relative_top_percent": 0.1
     }

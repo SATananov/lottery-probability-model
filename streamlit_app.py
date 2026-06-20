@@ -724,14 +724,14 @@ TRANSLATIONS = {
         "model_score": "Моделна оценка",
         "real_odds": "Реален шанс за точна комбинация",
         "not_prediction": "Това е статистическо класиране, не сигурно предсказване.",
-        "top_recommendations": "Top recommendations",
+        "top_recommendations": "Топ препоръки",
         "all_models": "Препоръки от всички модели",
         "hot_model": "Горещ / честотен модел",
         "cold_model": "Студен + интервален модел",
         "middle_model": "Среден / балансиран модел",
         "gap_model": "Интервален модел",
-        "combined_model": "Final combined model",
-        "advanced_model": "Advanced ensemble model",
+        "combined_model": "Финален комбиниран модел",
+        "advanced_model": "Разширен ансамблов модел",
         "train_advanced": "Обучи разширения ансамбъл",
         "run_backtest": "Пусни историческа проверка",
         "no_model": "Моделът още не е наличен. Пусни скрипта за обучение.",
@@ -755,9 +755,9 @@ TRANSLATIONS = {
         "delete_draw": "Изтрий конкретен тираж",
         "undo": "Върни последната ръчна промяна",
         "retrain_log": "Лог от обновяване на моделите",
-        "portfolio": "Diversified portfolio",
+        "portfolio": "Диверсифицирано портфолио",
         "fairness": "Проверка за честност / хи-квадрат",
-        "backtest": "Backtesting",
+        "backtest": "Историческа проверка",
         "status_hot": "Горещо",
         "status_cold": "Студено",
         "status_middle": "Балансирано",
@@ -891,7 +891,7 @@ def _v13_simulation_lab_hook() -> None:
                 st.experimental_rerun()
 
         if _render_v13_simulation_lab_page is None:
-            st.error("Simulation Lab could not be loaded.")
+            st.error("Симулационната лаборатория не може да бъде заредена.")
             st.exception(_v13_simulation_import_error)
         else:
             _render_v13_simulation_lab_page()

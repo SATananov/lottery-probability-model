@@ -348,15 +348,33 @@ def parse_archive_bytes(data: bytes, year: int, source_url: str) -> list[DrawRec
 
 
 def year_from_raw_file(path: Path) -> int | None:
-    name = path.name
+    """Return archive year only from deliberate file-name patterns.
 
-    match = re.search(r"(19\d{2}|20\d{2})", name)
-    if match:
-        year = int(match.group(1))
-        if START_YEAR <= year <= END_YEAR:
-            return year
+    Some downloaded raw files are saved under hash-like names. A hash can
+    accidentally contain a 4-digit sequence such as 2016 even when the file
+    belongs to another year. For dataset safety, accept years only from explicit
+    archive names such as 2016.txt, bst_649_2020.txt, 649_2016.txt or 649_58.txt.
+    """
 
-    match = re.search(r"649_(\d{2})(?:\D|$)", name)
+    name = path.name.lower()
+
+    if re.fullmatch(r"[a-f0-9]{32}\.(?:txt|docx)", name):
+        return None
+
+    patterns = (
+        r"^(19\d{2}|20\d{2})(?:\D|$)",
+        r"^(?:bst_)?649[_-](19\d{2}|20\d{2})(?:\D|$)",
+        r"^(19\d{2}|20\d{2})[_-]649(?:\D|$)",
+    )
+
+    for pattern in patterns:
+        match = re.search(pattern, name)
+        if match:
+            year = int(match.group(1))
+            if START_YEAR <= year <= END_YEAR:
+                return year
+
+    match = re.search(r"(?:^|[_-])649[_-](\d{2})(?:\D|$)", name)
     if match:
         yy = int(match.group(1))
         year = 1900 + yy if yy >= 58 else 2000 + yy

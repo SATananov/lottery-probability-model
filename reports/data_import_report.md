@@ -1,16 +1,16 @@
 # BST 6/49 Data Import Report
 
-Generated: 2026-06-20T11:04:43
+Generated: 2026-06-20T19:55:26
 Official statistics page: https://info.toto.bg/statistika/6x49
-Archive links discovered/generated: 63
-Raw parsed records selected: 10010
+Archive links discovered/generated: 68
+Raw parsed records selected: 10009
 Fallback records from backups: 0
-Final records: 10010
+Final records: 10009
 Year range: 1958 to 2025
 Missing years 1958-2025: []
 Duplicate full rows after normalization: 0
 Duplicate year/draw/position keys after normalization: 0
-Backup created: data\historical_draws_before_bst_import_v9_20260620_110442.csv
+Backup created: No previous CSV found
 
 ## Records per year
 
@@ -72,7 +72,7 @@ Backup created: data\historical_draws_before_bst_import_v9_20260620_110442.csv
 - 2013: 210 (bst_649_2013.txt (210 records))
 - 2014: 208 (bst_649_2014.txt (208 records))
 - 2015: 143 (bst_649_2015.txt (143 records))
-- 2016: 105 (8241c0de420163c1fcfd616689d1fa33.txt (105 records))
+- 2016: 104 (bst_649_2016.txt (104 records))
 - 2017: 104 (bst_649_2017.txt (104 records))
 - 2018: 104 (bst_649_2018.txt (104 records))
 - 2019: 104 (bst_649_2019.txt (104 records))
@@ -82,3 +82,7 @@ Backup created: data\historical_draws_before_bst_import_v9_20260620_110442.csv
 - 2023: 105 (bst_649_2023.docx (105 records))
 - 2024: 104 (bst_649_2024.docx (104 records))
 - 2025: 105 (bst_649_2025.docx (105 records))
+
+## Warnings
+
+- Local v37 rebuild from existing raw files; no web download used.

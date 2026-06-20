@@ -5,7 +5,7 @@ This report summarizes the final ensemble-style model.
 Important: this model does not change the real mathematical jackpot probability.
 It ranks generated combinations by statistical profile and model confidence.
 
-Training draws: 10010
+Training draws: 10009
 Generated candidate combinations: 20000
 Theoretical jackpot odds per combination: 1 in 13983816
 
@@ -22,382 +22,382 @@ Theoretical jackpot odds per combination: 1 in 13983816
 
 ## Recommended combinations
 
-### Rank 1: [10, 14, 23, 27, 33, 36]
+### Rank 1: [14, 19, 23, 27, 34, 42]
 
-- Confidence score: 64.07/100
-- Relative model probability inside candidate pool: 0.019014%
+- Confidence score: 64.12/100
+- Relative model probability inside candidate pool: 0.020067%
 - Relative rank: top 0.01%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4970
-- Cold score: 0.4422
-- Middle score: 0.6170
-- Gap probability score: 0.5519
-- Pair score: 0.7466
-- Triple score: 0.4300
-- Structure score: 0.8657
-- Rolling window score: 0.7936
+- Hot score: 0.3605
+- Cold score: 0.7052
+- Middle score: 0.3343
+- Gap probability score: 0.7284
+- Pair score: 0.7935
+- Triple score: 0.4720
+- Structure score: 0.8788
+- Rolling window score: 0.6469
+- Sum: 159
+- Even/Odd: 3/3
+- Low/High: 3/3
+- Consecutive pairs: 0
+
+### Rank 2: [10, 14, 23, 27, 33, 34]
+
+- Confidence score: 63.52/100
+- Relative model probability inside candidate pool: 0.018614%
+- Relative rank: top 0.01%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.4647
+- Cold score: 0.5530
+- Middle score: 0.4453
+- Gap probability score: 0.6580
+- Pair score: 0.7519
+- Triple score: 0.4340
+- Structure score: 0.8378
+- Rolling window score: 0.7317
+- Sum: 141
+- Even/Odd: 3/3
+- Low/High: 3/3
+- Consecutive pairs: 1
+
+### Rank 3: [10, 14, 23, 27, 33, 36]
+
+- Confidence score: 63.51/100
+- Relative model probability inside candidate pool: 0.018576%
+- Relative rank: top 0.01%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.4971
+- Cold score: 0.4454
+- Middle score: 0.6096
+- Gap probability score: 0.5316
+- Pair score: 0.7410
+- Triple score: 0.4100
+- Structure score: 0.8655
+- Rolling window score: 0.7941
 - Sum: 143
 - Even/Odd: 3/3
 - Low/High: 3/3
 - Consecutive pairs: 0
 
-### Rank 2: [6, 14, 19, 27, 33, 36]
+### Rank 4: [9, 14, 27, 30, 33, 36]
 
-- Confidence score: 64.05/100
-- Relative model probability inside candidate pool: 0.018951%
-- Relative rank: top 0.01%
+- Confidence score: 63.48/100
+- Relative model probability inside candidate pool: 0.018507%
+- Relative rank: top 0.02%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4871
-- Cold score: 0.3813
-- Middle score: 0.7077
-- Gap probability score: 0.5319
-- Pair score: 0.7675
-- Triple score: 0.4220
-- Structure score: 0.8573
-- Rolling window score: 0.7875
-- Sum: 135
+- Hot score: 0.5220
+- Cold score: 0.3348
+- Middle score: 0.7619
+- Gap probability score: 0.4978
+- Pair score: 0.7535
+- Triple score: 0.3840
+- Structure score: 0.8636
+- Rolling window score: 0.7643
+- Sum: 149
+- Even/Odd: 3/3
+- Low/High: 2/4
+- Consecutive pairs: 0
+
+### Rank 5: [6, 14, 19, 27, 33, 34]
+
+- Confidence score: 63.45/100
+- Relative model probability inside candidate pool: 0.018453%
+- Relative rank: top 0.03%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.4576
+- Cold score: 0.4880
+- Middle score: 0.5422
+- Gap probability score: 0.6308
+- Pair score: 0.7701
+- Triple score: 0.4380
+- Structure score: 0.8304
+- Rolling window score: 0.7249
+- Sum: 133
+- Even/Odd: 3/3
+- Low/High: 3/3
+- Consecutive pairs: 1
+
+### Rank 6: [14, 23, 27, 30, 33, 36]
+
+- Confidence score: 63.27/100
+- Relative model probability inside candidate pool: 0.018042%
+- Relative rank: top 0.03%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.5018
+- Cold score: 0.4407
+- Middle score: 0.6133
+- Gap probability score: 0.5728
+- Pair score: 0.7455
+- Triple score: 0.4200
+- Structure score: 0.7986
+- Rolling window score: 0.7904
+- Sum: 163
+- Even/Odd: 3/3
+- Low/High: 2/4
+- Consecutive pairs: 0
+
+### Rank 7: [10, 19, 23, 27, 33, 34]
+
+- Confidence score: 63.05/100
+- Relative model probability inside candidate pool: 0.017551%
+- Relative rank: top 0.03%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.3982
+- Cold score: 0.5907
+- Middle score: 0.4481
+- Gap probability score: 0.6339
+- Pair score: 0.7576
+- Triple score: 0.4620
+- Structure score: 0.8405
+- Rolling window score: 0.7356
+- Sum: 146
+- Even/Odd: 2/4
+- Low/High: 3/3
+- Consecutive pairs: 1
+
+### Rank 8: [14, 19, 23, 27, 34, 40]
+
+- Confidence score: 62.93/100
+- Relative model probability inside candidate pool: 0.017275%
+- Relative rank: top 0.04%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.4167
+- Cold score: 0.5804
+- Middle score: 0.3860
+- Gap probability score: 0.6158
+- Pair score: 0.7867
+- Triple score: 0.4800
+- Structure score: 0.8863
+- Rolling window score: 0.7166
+- Sum: 157
 - Even/Odd: 3/3
 - Low/High: 3/3
 - Consecutive pairs: 0
 
-### Rank 3: [9, 14, 19, 27, 33, 36]
+### Rank 9: [10, 19, 27, 30, 33, 36]
 
-- Confidence score: 63.50/100
-- Relative model probability inside candidate pool: 0.017692%
-- Relative rank: top 0.01%
+- Confidence score: 62.86/100
+- Relative model probability inside candidate pool: 0.017128%
+- Relative rank: top 0.04%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4565
-- Cold score: 0.4022
-- Middle score: 0.7341
-- Gap probability score: 0.5330
-- Pair score: 0.7622
-- Triple score: 0.4040
-- Structure score: 0.8507
-- Rolling window score: 0.7448
-- Sum: 138
-- Even/Odd: 2/4
+- Hot score: 0.4803
+- Cold score: 0.3625
+- Middle score: 0.7594
+- Gap probability score: 0.4623
+- Pair score: 0.7600
+- Triple score: 0.4340
+- Structure score: 0.8281
+- Rolling window score: 0.8035
+- Sum: 155
+- Even/Odd: 3/3
+- Low/High: 2/4
+- Consecutive pairs: 0
+
+### Rank 10: [6, 12, 14, 27, 30, 34]
+
+- Confidence score: 62.69/100
+- Relative model probability inside candidate pool: 0.016766%
+- Relative rank: top 0.05%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.4945
+- Cold score: 0.4415
+- Middle score: 0.5540
+- Gap probability score: 0.6010
+- Pair score: 0.8069
+- Triple score: 0.4900
+- Structure score: 0.7714
+- Rolling window score: 0.7269
+- Sum: 123
+- Even/Odd: 5/1
 - Low/High: 3/3
 - Consecutive pairs: 0
 
-### Rank 4: [9, 14, 23, 27, 30, 33]
+### Rank 11: [9, 12, 19, 27, 30, 34]
 
-- Confidence score: 63.45/100
-- Relative model probability inside candidate pool: 0.017594%
-- Relative rank: top 0.02%
+- Confidence score: 62.59/100
+- Relative model probability inside candidate pool: 0.016575%
+- Relative rank: top 0.06%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4717
-- Cold score: 0.4453
-- Middle score: 0.6035
-- Gap probability score: 0.6097
-- Pair score: 0.7373
-- Triple score: 0.3840
-- Structure score: 0.8438
-- Rolling window score: 0.7495
-- Sum: 136
-- Even/Odd: 2/4
+- Hot score: 0.3972
+- Cold score: 0.5001
+- Middle score: 0.5832
+- Gap probability score: 0.5839
+- Pair score: 0.7956
+- Triple score: 0.4340
+- Structure score: 0.8443
+- Rolling window score: 0.6881
+- Sum: 131
+- Even/Odd: 3/3
 - Low/High: 3/3
 - Consecutive pairs: 0
 
-### Rank 5: [4, 19, 27, 30, 33, 34]
+### Rank 12: [6, 17, 27, 30, 33, 34]
 
-- Confidence score: 63.43/100
-- Relative model probability inside candidate pool: 0.017548%
-- Relative rank: top 0.03%
+- Confidence score: 62.41/100
+- Relative model probability inside candidate pool: 0.016201%
+- Relative rank: top 0.06%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4109
-- Cold score: 0.5766
-- Middle score: 0.4620
-- Gap probability score: 0.6707
-- Pair score: 0.7671
-- Triple score: 0.4280
-- Structure score: 0.8355
-- Rolling window score: 0.7091
+- Hot score: 0.4818
+- Cold score: 0.5154
+- Middle score: 0.4633
+- Gap probability score: 0.5481
+- Pair score: 0.8008
+- Triple score: 0.5040
+- Structure score: 0.8351
+- Rolling window score: 0.7362
 - Sum: 147
 - Even/Odd: 3/3
 - Low/High: 2/4
 - Consecutive pairs: 1
 
-### Rank 6: [6, 14, 19, 23, 30, 33]
+### Rank 13: [10, 14, 27, 29, 33, 36]
 
-- Confidence score: 63.06/100
-- Relative model probability inside candidate pool: 0.016745%
-- Relative rank: top 0.03%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.3472
-- Cold score: 0.4693
-- Middle score: 0.6197
-- Gap probability score: 0.6393
-- Pair score: 0.7679
-- Triple score: 0.4040
-- Structure score: 0.8062
-- Rolling window score: 0.7666
-- Sum: 125
-- Even/Odd: 3/3
-- Low/High: 4/2
-- Consecutive pairs: 0
-
-### Rank 7: [6, 12, 23, 27, 30, 37]
-
-- Confidence score: 62.99/100
-- Relative model probability inside candidate pool: 0.016607%
-- Relative rank: top 0.03%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4370
-- Cold score: 0.5309
-- Middle score: 0.4539
-- Gap probability score: 0.5934
-- Pair score: 0.7859
-- Triple score: 0.4660
-- Structure score: 0.8573
-- Rolling window score: 0.7524
-- Sum: 135
-- Even/Odd: 3/3
-- Low/High: 3/3
-- Consecutive pairs: 0
-
-### Rank 8: [14, 19, 27, 33, 37, 42]
-
-- Confidence score: 62.85/100
-- Relative model probability inside candidate pool: 0.016327%
-- Relative rank: top 0.04%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4132
-- Cold score: 0.6177
-- Middle score: 0.4433
-- Gap probability score: 0.6931
-- Pair score: 0.7534
-- Triple score: 0.4320
-- Structure score: 0.8036
-- Rolling window score: 0.6630
-- Sum: 172
-- Even/Odd: 2/4
-- Low/High: 2/4
-- Consecutive pairs: 0
-
-### Rank 9: [6, 13, 14, 27, 33, 36]
-
-- Confidence score: 62.74/100
-- Relative model probability inside candidate pool: 0.016090%
-- Relative rank: top 0.04%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4868
-- Cold score: 0.3633
-- Middle score: 0.7100
-- Gap probability score: 0.4876
-- Pair score: 0.7635
-- Triple score: 0.4680
-- Structure score: 0.8183
-- Rolling window score: 0.8002
-- Sum: 129
-- Even/Odd: 3/3
-- Low/High: 3/3
-- Consecutive pairs: 1
-
-### Rank 10: [12, 14, 19, 33, 34, 41]
-
-- Confidence score: 62.73/100
-- Relative model probability inside candidate pool: 0.016082%
-- Relative rank: top 0.05%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.2795
-- Cold score: 0.5938
-- Middle score: 0.5470
-- Gap probability score: 0.6961
-- Pair score: 0.7618
-- Triple score: 0.4360
-- Structure score: 0.8323
-- Rolling window score: 0.6468
-- Sum: 153
-- Even/Odd: 3/3
-- Low/High: 3/3
-- Consecutive pairs: 1
-
-### Rank 11: [9, 14, 19, 23, 27, 34]
-
-- Confidence score: 62.69/100
-- Relative model probability inside candidate pool: 0.015993%
-- Relative rank: top 0.06%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.3692
-- Cold score: 0.5954
-- Middle score: 0.4726
-- Gap probability score: 0.6827
-- Pair score: 0.7871
-- Triple score: 0.4520
-- Structure score: 0.7922
-- Rolling window score: 0.6733
-- Sum: 126
-- Even/Odd: 2/4
-- Low/High: 4/2
-- Consecutive pairs: 0
-
-### Rank 12: [6, 14, 17, 27, 30, 33]
-
-- Confidence score: 62.67/100
-- Relative model probability inside candidate pool: 0.015964%
-- Relative rank: top 0.06%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.5155
-- Cold score: 0.4276
-- Middle score: 0.5847
-- Gap probability score: 0.5291
-- Pair score: 0.7687
-- Triple score: 0.4320
-- Structure score: 0.8326
-- Rolling window score: 0.7660
-- Sum: 127
-- Even/Odd: 3/3
-- Low/High: 3/3
-- Consecutive pairs: 0
-
-### Rank 13: [10, 12, 14, 27, 30, 33]
-
-- Confidence score: 62.59/100
-- Relative model probability inside candidate pool: 0.015791%
+- Confidence score: 62.39/100
+- Relative model probability inside candidate pool: 0.016148%
 - Relative rank: top 0.07%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.5281
-- Cold score: 0.3663
-- Middle score: 0.6840
-- Gap probability score: 0.5569
-- Pair score: 0.7514
-- Triple score: 0.4200
-- Structure score: 0.7599
-- Rolling window score: 0.7756
-- Sum: 126
-- Even/Odd: 4/2
-- Low/High: 3/3
-- Consecutive pairs: 0
-
-### Rank 14: [6, 10, 14, 27, 33, 34]
-
-- Confidence score: 62.57/100
-- Relative model probability inside candidate pool: 0.015753%
-- Relative rank: top 0.07%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.5148
-- Cold score: 0.4240
-- Middle score: 0.5737
-- Gap probability score: 0.5951
-- Pair score: 0.7566
-- Triple score: 0.4460
-- Structure score: 0.7841
-- Rolling window score: 0.7479
-- Sum: 124
-- Even/Odd: 4/2
-- Low/High: 3/3
-- Consecutive pairs: 1
-
-### Rank 15: [6, 14, 27, 29, 33, 34]
-
-- Confidence score: 62.56/100
-- Relative model probability inside candidate pool: 0.015737%
-- Relative rank: top 0.07%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.5120
-- Cold score: 0.4024
-- Middle score: 0.5222
-- Gap probability score: 0.5909
-- Pair score: 0.7663
+- Hot score: 0.5424
+- Cold score: 0.3059
+- Middle score: 0.7002
+- Gap probability score: 0.4443
+- Pair score: 0.7539
 - Triple score: 0.4340
-- Structure score: 0.8498
-- Rolling window score: 0.7412
-- Sum: 143
+- Structure score: 0.8736
+- Rolling window score: 0.7958
+- Sum: 149
 - Even/Odd: 3/3
 - Low/High: 2/4
-- Consecutive pairs: 1
+- Consecutive pairs: 0
 
-### Rank 16: [10, 12, 27, 33, 34, 37]
+### Rank 14: [6, 10, 19, 27, 33, 36]
 
-- Confidence score: 62.54/100
-- Relative model probability inside candidate pool: 0.015697%
-- Relative rank: top 0.08%
+- Confidence score: 62.34/100
+- Relative model probability inside candidate pool: 0.016048%
+- Relative rank: top 0.07%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4551
-- Cold score: 0.5705
-- Middle score: 0.4278
-- Gap probability score: 0.6326
-- Pair score: 0.7771
-- Triple score: 0.4480
-- Structure score: 0.8165
-- Rolling window score: 0.7003
-- Sum: 153
+- Hot score: 0.4815
+- Cold score: 0.3562
+- Middle score: 0.7345
+- Gap probability score: 0.4254
+- Pair score: 0.7677
+- Triple score: 0.4420
+- Structure score: 0.8443
+- Rolling window score: 0.8146
+- Sum: 131
+- Even/Odd: 3/3
+- Low/High: 3/3
+- Consecutive pairs: 0
+
+### Rank 15: [14, 17, 27, 30, 33, 36]
+
+- Confidence score: 62.31/100
+- Relative model probability inside candidate pool: 0.015994%
+- Relative rank: top 0.07%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.5168
+- Cold score: 0.4428
+- Middle score: 0.6206
+- Gap probability score: 0.4963
+- Pair score: 0.7547
+- Triple score: 0.4200
+- Structure score: 0.8204
+- Rolling window score: 0.7639
+- Sum: 157
 - Even/Odd: 3/3
 - Low/High: 2/4
-- Consecutive pairs: 1
+- Consecutive pairs: 0
 
-### Rank 17: [1, 14, 27, 33, 34, 37]
+### Rank 16: [4, 14, 23, 27, 34, 36]
 
-- Confidence score: 62.54/100
-- Relative model probability inside candidate pool: 0.015696%
+- Confidence score: 62.31/100
+- Relative model probability inside candidate pool: 0.015987%
 - Relative rank: top 0.08%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4326
-- Cold score: 0.6288
-- Middle score: 0.3657
-- Gap probability score: 0.7307
-- Pair score: 0.7791
-- Triple score: 0.4440
-- Structure score: 0.8146
-- Rolling window score: 0.5951
-- Sum: 146
-- Even/Odd: 2/4
-- Low/High: 2/4
-- Consecutive pairs: 1
+- Hot score: 0.4231
+- Cold score: 0.6347
+- Middle score: 0.3696
+- Gap probability score: 0.6549
+- Pair score: 0.7673
+- Triple score: 0.4100
+- Structure score: 0.8127
+- Rolling window score: 0.7052
+- Sum: 138
+- Even/Odd: 4/2
+- Low/High: 3/3
+- Consecutive pairs: 0
 
-### Rank 18: [4, 14, 19, 27, 30, 34]
+### Rank 17: [1, 14, 23, 30, 33, 36]
 
-- Confidence score: 62.52/100
-- Relative model probability inside candidate pool: 0.015667%
+- Confidence score: 62.28/100
+- Relative model probability inside candidate pool: 0.015945%
+- Relative rank: top 0.08%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.3616
+- Cold score: 0.5018
+- Middle score: 0.5946
+- Gap probability score: 0.6125
+- Pair score: 0.7600
+- Triple score: 0.4300
+- Structure score: 0.8338
+- Rolling window score: 0.6915
+- Sum: 137
+- Even/Odd: 3/3
+- Low/High: 3/3
+- Consecutive pairs: 0
+
+### Rank 18: [10, 12, 14, 27, 30, 33]
+
+- Confidence score: 62.27/100
+- Relative model probability inside candidate pool: 0.015925%
 - Relative rank: top 0.09%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4082
-- Cold score: 0.5714
-- Middle score: 0.4779
-- Gap probability score: 0.6886
-- Pair score: 0.7643
-- Triple score: 0.4080
-- Structure score: 0.7806
-- Rolling window score: 0.6820
-- Sum: 128
+- Hot score: 0.5297
+- Cold score: 0.3685
+- Middle score: 0.6766
+- Gap probability score: 0.5405
+- Pair score: 0.7539
+- Triple score: 0.4200
+- Structure score: 0.7599
+- Rolling window score: 0.7758
+- Sum: 126
 - Even/Odd: 4/2
 - Low/High: 3/3
 - Consecutive pairs: 0
 
-### Rank 19: [10, 12, 23, 27, 37, 42]
+### Rank 19: [12, 19, 23, 33, 34, 37]
 
-- Confidence score: 62.50/100
-- Relative model probability inside candidate pool: 0.015627%
+- Confidence score: 62.22/100
+- Relative model probability inside candidate pool: 0.015818%
 - Relative rank: top 0.10%
 - Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.3952
-- Cold score: 0.6625
-- Middle score: 0.3446
-- Gap probability score: 0.6271
-- Pair score: 0.7446
-- Triple score: 0.4040
-- Structure score: 0.9108
-- Rolling window score: 0.6861
+- Hot score: 0.2566
+- Cold score: 0.7309
+- Middle score: 0.3239
+- Gap probability score: 0.7508
+- Pair score: 0.7931
+- Triple score: 0.4360
+- Structure score: 0.7958
+- Rolling window score: 0.6654
+- Sum: 158
+- Even/Odd: 2/4
+- Low/High: 3/3
+- Consecutive pairs: 1
+
+### Rank 20: [10, 12, 23, 27, 37, 42]
+
+- Confidence score: 62.14/100
+- Relative model probability inside candidate pool: 0.015651%
+- Relative rank: top 0.10%
+- Theoretical jackpot odds: 1 in 13983816
+- Hot score: 0.3937
+- Cold score: 0.6668
+- Middle score: 0.3350
+- Gap probability score: 0.6165
+- Pair score: 0.7398
+- Triple score: 0.3960
+- Structure score: 0.9104
+- Rolling window score: 0.6869
 - Sum: 151
 - Even/Odd: 3/3
 - Low/High: 3/3
 - Consecutive pairs: 0
-
-### Rank 20: [14, 23, 27, 33, 34, 37]
-
-- Confidence score: 62.48/100
-- Relative model probability inside candidate pool: 0.015576%
-- Relative rank: top 0.10%
-- Theoretical jackpot odds: 1 in 13983816
-- Hot score: 0.4322
-- Cold score: 0.6634
-- Middle score: 0.3142
-- Gap probability score: 0.7548
-- Pair score: 0.7627
-- Triple score: 0.4280
-- Structure score: 0.7456
-- Rolling window score: 0.6821
-- Sum: 168
-- Even/Odd: 2/4
-- Low/High: 2/4
-- Consecutive pairs: 1
