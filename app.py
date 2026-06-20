@@ -341,6 +341,42 @@ def print_trained_combined_model() -> None:
 
     print()
 
+
+def print_ml_extensions_model() -> None:
+    """Print optional ML extension model summary if it exists."""
+    from pathlib import Path
+    import json
+
+    model_path = Path("models/lottery_ml_extensions_model.json")
+
+    print("ML extensions: classification, clustering and dimensionality reduction")
+    print("-" * 40)
+
+    if not model_path.exists():
+        print("ML extensions model not found. Run: python train_ml_extensions.py")
+        print()
+        return
+
+    with model_path.open("r", encoding="utf-8") as file:
+        model = json.load(file)
+
+    print(f"Model: {model.get('model_name', 'Lottery ML Extensions Ensemble')}")
+    print(f"Training draws: {model.get('training_draws', 'unknown')}")
+    print(f"Candidate combinations: {model.get('candidate_count', 'unknown')}")
+    print(f"Backtest summary: {model.get('backtest_summary', {})}")
+    print("Top ML recommendations:")
+
+    for item in model.get("recommended_combinations", [])[:10]:
+        print(
+            f"Rank {item.get('rank')}: {item.get('numbers')} | "
+            f"score={item.get('confidence_score')}/100 | "
+            f"class={item.get('classification')} | "
+            f"cluster={item.get('cluster_label')}"
+        )
+
+    print()
+
+
 def main() -> None:
     print_jackpot_probability()
     print_match_probabilities()
@@ -353,6 +389,7 @@ def main() -> None:
     print_trained_middle_model()
     print_trained_gap_model()
     print_trained_combined_model()
+    print_ml_extensions_model()
 
 
 if __name__ == "__main__":

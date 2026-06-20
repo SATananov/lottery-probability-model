@@ -1,0 +1,19 @@
+{
+  "random_seed": 20260620,
+  "candidate_count": 1200,
+  "portfolio_size": 15,
+  "cluster_count": 5,
+  "backtest_draws": 20,
+  "backtest_candidate_count": 200,
+  "recent_window": 80,
+  "score_weights": {
+    "frequency": 0.16,
+    "cold_gap": 0.18,
+    "middle_balance": 0.14,
+    "pair_support": 0.12,
+    "triple_support": 0.06,
+    "structure": 0.14,
+    "human_pattern": 0.1,
+    "time_decay": 0.1
+  }
+}

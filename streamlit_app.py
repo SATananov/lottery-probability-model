@@ -704,6 +704,7 @@ TRANSLATIONS = {
         "recommendations": "Препоръки",
         "combined": "Комбиниран модел",
         "advanced_lab": "Разширена лаборатория",
+        "ml_lab": "МЛ лаборатория",
         "ticket_analyzer": "Анализ на фиш",
         "history": "Историческа статистика",
         "probability_lab": "Вероятности",
@@ -727,7 +728,7 @@ TRANSLATIONS = {
         "advanced_model": "Разширен ансамблов модел",
         "train_advanced": "Обучи разширения ансамбъл",
         "run_backtest": "Пусни историческа проверка",
-        "no_model": "Моделът още не е наличен. Пусни скрипта за обучение.",
+        "no_model": "Моделът още не е наличен. Пусни training скрипта.",
         "numbers": "Числа",
         "confidence": "Оценка",
         "rank": "Ранг",
@@ -766,6 +767,7 @@ TRANSLATIONS = {
         "recommendations": "Recommendations",
         "combined": "Combined Model",
         "advanced_lab": "Advanced Lab",
+        "ml_lab": "ML Laboratory",
         "ticket_analyzer": "Ticket Analyzer",
         "history": "Historical Statistics",
         "probability_lab": "Probability Lab",
@@ -1173,7 +1175,8 @@ def main_recommendation(model: Dict[str, Any]) -> Tuple[List[int], Optional[floa
 
 def get_model_cards() -> List[Tuple[str, str, str, str]]:
     return [
-        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира времево затихване, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
+        (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира time-decay, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
+        ("МЛ разширения: класификация, клъстери и 2D карта", "lottery_ml_extensions_model.json", "ml_extensions", "Добавя класификация, клъстеризация, редукция на размерността и карта на модела и допълнителна историческа проверка."),
         (tr("combined_model"), "lottery_combined_model.json", "combined", "Финално претеглено класиране от основните модели."),
         (tr("hot_model"), "lottery_frequency_model.json", "hot", "Числа с по-силен исторически честотен сигнал."),
         (tr("cold_model"), "lottery_cold_model.json", "cold", "Числа, повлияни от по-слаба представеност и текущ интервал."),
@@ -1472,6 +1475,143 @@ def page_reports() -> None:
     render_report_file(selected)
 
 
+
+
+def page_ml_lab() -> None:
+    render_header()
+    st.markdown("## МЛ лаборатория")
+    st.markdown(
+        '<div class="warning-soft">Тази секция добавя класификация, клъстеризация, редукция на размерността и карта на модела и историческа проверка. Това не променя реалния шанс за точна 6/49 комбинация.</div>',
+        unsafe_allow_html=True,
+    )
+
+    col_train, col_report = st.columns(2)
+    with col_train:
+        if st.button("Обучи МЛ разширенията", width="stretch"):
+            with st.spinner("Обучава класификация, клъстеризация и 2D карта..."):
+                ok, output = run_script("train_ml_extensions.py")
+            st.success("Готово" if ok else "Неуспешно")
+            st.code(output[-4000:] if output else "Няма изход")
+            st.cache_data.clear()
+    with col_report:
+        if st.button("Покажи картата на модела", width="stretch"):
+            render_report_file(REPORTS_DIR / "ml_extensions_model_card.md")
+
+    model = model_json("lottery_ml_extensions_model.json")
+    if not model:
+        st.info("МЛ моделът още не е наличен. Натисни 'Обучи МЛ разширенията'.")
+        return
+
+    recs = extract_recommendations(model)
+    numbers, score = main_recommendation(model)
+    render_ticket_card(
+        "Основна МЛ препоръка",
+        numbers,
+        score,
+        "Класификация + клъстеризация + 2D карта",
+        "Моделна оценка за статистическо сравнение. Не е гаранция за бъдещ тираж.",
+    )
+
+    summary = model.get("backtest_summary", {})
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Обучени тиражи", f"{model.get('training_draws', 0):,}")
+    c2.metric("Кандидат-комбинации", f"{model.get('candidate_count', 0):,}")
+    c3.metric("Историческа проверка — средно", summary.get("average_matches", "-"))
+    c4.metric(">=2 съвпадения", f"{summary.get('hit_rate_ge_2', 0)}%")
+
+    tabs = st.tabs([
+        "Топ МЛ препоръки",
+        "Класификация",
+        "Клъстери",
+        "2D карта",
+        "Отчети",
+    ])
+
+    with tabs[0]:
+        st.markdown("### Топ МЛ препоръки")
+        for item in recs[:15]:
+            numbers = item.get("numbers", [])
+            score = item.get("confidence_score")
+            classification = item.get("classification", "-")
+            cluster_label = item.get("cluster_label", "-")
+            html = f"""
+                <div class="rank-card">
+                  <div class="model-title">Ранг {item.get('rank')}</div>
+                  {format_number_pills(numbers)}
+                  <div class="small-muted">Оценка: {score}/100 · Клас: {classification} · Клъстер: {cluster_label}</div>
+                </div>
+                """
+            st.markdown(html, unsafe_allow_html=True)
+
+    with tabs[1]:
+        classifier = model.get("classifier", {})
+        st.markdown("### Класификация на фишове")
+        st.markdown("Класификаторът групира фишовете като слаб, нормален или силен статистически фиш според изчислените характеристики.")
+        classes = classifier.get("classes", [])
+        if classes:
+            st.dataframe(pd.DataFrame({"Класове": classes}), width="stretch", hide_index=True)
+        quantiles = classifier.get("score_quantiles", {})
+        if quantiles:
+            st.dataframe(pd.DataFrame([{"Праг 33%": quantiles.get("q33"), "Праг 66%": quantiles.get("q66")}]), width="stretch", hide_index=True)
+
+    with tabs[2]:
+        st.markdown("### Клъстери на комбинации")
+        clusters = model.get("cluster_model", {}).get("cluster_summaries", [])
+        if clusters:
+            df_clusters = pd.DataFrame(clusters).rename(columns={
+                "cluster": "Клъстер",
+                "label": "Име",
+                "size": "Брой",
+                "average_score": "Средна оценка",
+                "avg_frequency_score": "Среден честотен сигнал",
+                "avg_cold_gap_score": "Среден интервален сигнал",
+                "avg_structure_score": "Средна структура",
+                "avg_human_pattern_score": "Среден риск от шаблон",
+            })
+            st.dataframe(df_clusters, width="stretch", hide_index=True)
+        else:
+            st.info("Няма записани клъстери.")
+
+    with tabs[3]:
+        st.markdown("### 2D карта на комбинациите")
+        reduction = model.get("dimensionality_reduction", {})
+        st.write("Обяснена вариация:", reduction.get("explained_variance_ratio", []))
+        points = model.get("projection_points_sample", [])
+        if points:
+            df_points = pd.DataFrame(points)
+            if "numbers" in df_points.columns:
+                df_points["numbers"] = df_points["numbers"].apply(lambda x: ", ".join(map(str, x)) if isinstance(x, list) else x)
+            df_points = df_points.rename(columns={"numbers": "Числа", "x": "Ос X", "y": "Ос Y", "score": "Оценка"})
+            st.dataframe(df_points, width="stretch", hide_index=True)
+            try:
+                chart_df = pd.DataFrame(points)
+                st.scatter_chart(chart_df, x="x", y="y", size="score", height=360)
+            except Exception:
+                pass
+        else:
+            st.info("Няма записани точки за 2D карта.")
+
+    with tabs[4]:
+        report_files = [
+            "ml_extensions_report.md",
+            "ml_classification_report.md",
+            "ml_clustering_report.md",
+            "ml_dimensionality_reduction_report.md",
+            "ml_extensions_backtest_report.md",
+            "ml_extensions_model_card.md",
+        ]
+        report_labels = {
+            "ml_extensions_report.md": "Общ отчет за МЛ разширенията",
+            "ml_classification_report.md": "Отчет за класификация",
+            "ml_clustering_report.md": "Отчет за клъстеризация",
+            "ml_dimensionality_reduction_report.md": "Отчет за 2D карта",
+            "ml_extensions_backtest_report.md": "Отчет от историческа проверка",
+            "ml_extensions_model_card.md": "Карта на модела",
+        }
+        selected = st.selectbox("МЛ отчет", report_files, format_func=lambda name: report_labels.get(name, name))
+        render_report_file(REPORTS_DIR / selected)
+
+
 def parse_uploaded_numbers(raw: str) -> List[int]:
     numbers = [int(x) for x in re.findall(r"\b\d{1,2}\b", raw)]
     valid = [n for n in numbers if 1 <= n <= 49]
@@ -1524,6 +1664,7 @@ def retrain_all_models() -> List[Tuple[str, bool, str]]:
         "train_gap_model.py",
         "train_combined_model.py",
         "train_advanced_model.py",
+        "train_ml_extensions.py",
     ]
     results = []
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -1656,6 +1797,7 @@ def main() -> None:
         tr("recommendations"): page_recommendations,
         tr("combined"): page_combined,
         tr("advanced_lab"): page_advanced_lab,
+        tr("ml_lab"): page_ml_lab,
         tr("ticket_analyzer"): page_ticket_analyzer,
         tr("history"): page_history,
         tr("probability_lab"): page_probability_lab,
