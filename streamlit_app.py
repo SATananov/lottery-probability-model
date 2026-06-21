@@ -4126,6 +4126,24 @@ def page_v41_rules_aware_analysis() -> None:
 # V41_RULES_AWARE_STREAMLIT_HOOK_END
 
 
+
+# V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_START
+def _v42_bg(hex_text: str) -> str:
+    return bytes.fromhex(hex_text).decode("utf-8")
+
+
+def page_v42_combined_analysis() -> None:
+    try:
+        import importlib
+
+        module = importlib.import_module("src.v42_combined_analysis_section")
+        module = importlib.reload(module)
+        module.render_v42_combined_analysis()
+    except Exception as exc:
+        st.warning(f'{_v42_bg("d094d0b0d0bdd0bdd0b8d182d0b520d0bdd0b02076343220d0bdd0b520d0bcd0bed0b3d0b0d18220d0b4d0b020d181d0b520d0b7d0b0d180d0b5d0b4d18fd182")}: {exc}')
+# V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_END
+
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -4138,6 +4156,7 @@ def main() -> None:
         tr("ticket_analyzer"): page_ticket_analyzer,
         tr("history"): page_history,
         tr("v41_history_analysis"): page_v41_rules_aware_analysis,
+        _v42_bg("d09ad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bd20d0b0d0bdd0b0d0bbd0b8d0b7"): page_v42_combined_analysis,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
