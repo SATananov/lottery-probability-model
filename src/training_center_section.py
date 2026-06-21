@@ -158,6 +158,18 @@ def _render_v45_summary() -> None:
     st.caption(T("\\u041d\\u0430\\u0439-\\u0434\\u043e\\u0431\\u044a\\u0440 \\u0440\\u0435\\u0437\\u0443\\u043b\\u0442\\u0430\\u0442 \\u043e\\u0442 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0430\\u0442\\u0430 \\u043f\\u0440\\u043e\\u0432\\u0435\\u0440\\u043a\\u0430: ") + str(best_model_score))
 
 
+def _training_model_label(model: Any) -> str:
+    labels = {
+        "frequency_baseline": T("\\u0427\\u0435\\u0441\\u0442\\u043e\\u0442\\u0435\\u043d \\u043c\\u043e\\u0434\\u0435\\u043b"),
+        "recency_250_baseline": T("\\u041c\\u043e\\u0434\\u0435\\u043b \\u043f\\u043e \\u0441\\u043a\\u043e\\u0440\\u043e\\u0448\\u043d\\u0430 \\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442"),
+        "gap_rhythm_statistical": T("\\u041c\\u043e\\u0434\\u0435\\u043b \\u043f\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0432\\u0430\\u043b\\u0435\\u043d \\u0440\\u0438\\u0442\\u044a\\u043c"),
+        "random_baseline": T("\\u0421\\u043b\\u0443\\u0447\\u0430\\u0435\\u043d \\u0431\\u0430\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0434\\u0435\\u043b"),
+        "sgd_logistic_probability": T("\\u0412\\u0435\\u0440\\u043e\\u044f\\u0442\\u043d\\u043e\\u0441\\u0442\\u0435\\u043d ML \\u043c\\u043e\\u0434\\u0435\\u043b"),
+        "gaussian_naive_bayes": T("Naive Bayes \\u043c\\u043e\\u0434\\u0435\\u043b"),
+        "v45_pro_ensemble": T("\\u041a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0438\\u0440\\u0430\\u043d Pro \\u0430\\u043d\\u0441\\u0430\\u043c\\u0431\\u044a\\u043b"),
+    }
+    return labels.get(str(model), str(model))
+
 def _render_backtest_preview() -> None:
     if not V45_BY_MODEL_PATH.exists():
         st.info(T("\\u041d\\u044f\\u043c\\u0430 reports/v45_backtest_by_model.csv."))
@@ -169,8 +181,52 @@ def _render_backtest_preview() -> None:
         st.error(T("\\u0413\\u0440\\u0435\\u0448\\u043a\\u0430 \\u043f\\u0440\\u0438 \\u0447\\u0435\\u0442\\u0435\\u043d\\u0435 \\u043d\\u0430 backtest \\u0444\\u0430\\u0439\\u043b\\u0430: ") + str(exc))
         return
 
-    st.dataframe(df, hide_index=True, use_container_width=True)
+    if df.empty:
+        st.info(T("\\u0424\\u0430\\u0439\\u043b\\u044a\\u0442 \\u0437\\u0430 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0430 \\u043f\\u0440\\u043e\\u0432\\u0435\\u0440\\u043a\\u0430 \\u0435 \\u043f\\u0440\\u0430\\u0437\\u0435\\u043d."))
+        return
 
+    shown = df.copy()
+
+    if "model" in shown.columns:
+        shown["model"] = shown["model"].map(_training_model_label)
+
+    rename_map = {
+        "model": T("\\u041c\\u043e\\u0434\\u0435\\u043b"),
+        "test_events": T("\\u0422\\u0435\\u0441\\u0442\\u043e\\u0432\\u0438 \\u0442\\u0438\\u0440\\u0430\\u0436\\u0438"),
+        "average_hits_top6": T("\\u0421\\u0440\\u0435\\u0434\\u043d\\u043e \\u0443\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438"),
+        "median_hits_top6": T("\\u041c\\u0435\\u0434\\u0438\\u0430\\u043d\\u0430 \\u0443\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438"),
+        "max_hits_top6": T("\\u041c\\u0430\\u043a\\u0441. \\u0443\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438"),
+        "hit_distribution": T("\\u0420\\u0430\\u0437\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0435\\u043d\\u0438\\u0435 \\u043d\\u0430 \\u0443\\u0446\\u0435\\u043b\\u0432\\u0430\\u043d\\u0438\\u044f\\u0442\\u0430"),
+        "events_with_3plus_hits": T("\\u0422\\u0438\\u0440\\u0430\\u0436\\u0438 \\u0441 3+ \\u0443\\u0446\\u0435\\u043d\\u0438"),
+        "events_with_4plus_hits": T("\\u0422\\u0438\\u0440\\u0430\\u0436\\u0438 \\u0441 4+ \\u0443\\u0446\\u0435\\u043d\\u0438"),
+        "events_with_5plus_hits": T("\\u0422\\u0438\\u0440\\u0430\\u0436\\u0438 \\u0441 5+ \\u0443\\u0446\\u0435\\u043d\\u0438"),
+        "events_with_6_hits": T("\\u0422\\u0438\\u0440\\u0430\\u0436\\u0438 \\u0441 6 \\u0443\\u0446\\u0435\\u043d\\u0438"),
+    }
+
+    preferred_order = [
+        "model",
+        "test_events",
+        "average_hits_top6",
+        "median_hits_top6",
+        "max_hits_top6",
+        "hit_distribution",
+        "events_with_3plus_hits",
+        "events_with_4plus_hits",
+        "events_with_5plus_hits",
+        "events_with_6_hits",
+    ]
+
+    ordered = [col for col in preferred_order if col in shown.columns]
+    remaining = [col for col in shown.columns if col not in ordered]
+    shown = shown[ordered + remaining].rename(columns=rename_map)
+
+    st.caption(
+        T(
+            "\\u0422\\u0430\\u0431\\u043b\\u0438\\u0446\\u0430\\u0442\\u0430 \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e \\u0441\\u0440\\u0430\\u0432\\u043d\\u0435\\u043d\\u0438\\u0435 \\u043d\\u0430 \\u043c\\u043e\\u0434\\u0435\\u043b\\u0438\\u0442\\u0435. \\u0422\\u043e\\u0432\\u0430 \\u043d\\u0435 \\u0435 \\u0433\\u0430\\u0440\\u0430\\u043d\\u0446\\u0438\\u044f \\u0437\\u0430 \\u0431\\u044a\\u0434\\u0435\\u0449 \\u0440\\u0435\\u0437\\u0443\\u043b\\u0442\\u0430\\u0442."
+        )
+    )
+
+    st.dataframe(shown, hide_index=True, use_container_width=True)
 
 def _render_training_buttons() -> None:
     st.subheader(T("\\u0420\\u044a\\u0447\\u043d\\u043e \\u043e\\u0431\\u043d\\u043e\\u0432\\u044f\\u0432\\u0430\\u043d\\u0435"))
@@ -215,6 +271,92 @@ def _render_training_buttons() -> None:
             st.code("\n\n".join(full_output), language="text")
 
 
+
+def _run_git_command(args: list[str]) -> tuple[bool, str]:
+    try:
+        completed = subprocess.run(
+            args,
+            cwd=str(ROOT),
+            text=True,
+            capture_output=True,
+            timeout=300,
+        )
+    except subprocess.TimeoutExpired:
+        return False, T("\\u041f\\u0440\\u043e\\u0446\\u0435\\u0441\\u044a\\u0442 \\u043d\\u0430 Git \\u043d\\u0430\\u0434\\u0445\\u0432\\u044a\\u0440\\u043b\\u0438 \\u043b\\u0438\\u043c\\u0438\\u0442\\u0430 \\u0437\\u0430 \\u0432\\u0440\\u0435\\u043c\\u0435.")
+    except Exception as exc:
+        return False, str(exc)
+
+    output = []
+    if completed.stdout:
+        output.append(completed.stdout)
+    if completed.stderr:
+        output.append(completed.stderr)
+
+    return completed.returncode == 0, "\\n".join(output).strip()
+
+
+def _render_github_sync() -> None:
+    st.subheader(T("\\u0421\\u0438\\u043d\\u0445\\u0440\\u043e\\u043d\\u0438\\u0437\\u0430\\u0446\\u0438\\u044f \\u0441 GitHub"))
+
+    st.caption(
+        T(
+            "\\u0422\\u043e\\u0437\\u0438 \\u0431\\u0443\\u0442\\u043e\\u043d \\u043a\\u0430\\u0447\\u0432\\u0430 \\u0432 GitHub \\u0441\\u0430\\u043c\\u043e \\u043e\\u0431\\u043d\\u043e\\u0432\\u0435\\u043d\\u0438\\u0442\\u0435 \\u043f\\u0430\\u043f\\u043a\\u0438 models \\u0438 reports. \\u041d\\u0435 \\u0434\\u043e\\u0431\\u0430\\u0432\\u044f \\u0434\\u0440\\u0443\\u0433\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432\\u0435."
+        )
+    )
+
+    commit_message = st.text_input(
+        T("\\u0421\\u044a\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0437\\u0430 commit"),
+        value="Refresh model artifacts from training center",
+    )
+
+    if st.button(T("\\u041a\\u0430\\u0447\\u0438 models/reports \\u0432 GitHub"), type="primary"):
+        logs: list[str] = []
+
+        ok_status, before_status = _run_git_command(["git", "status", "--short", "--", "models", "reports"])
+        logs.append("=== git status --short -- models reports ===\\n" + (before_status or "-"))
+
+        if ok_status and not before_status.strip():
+            st.info(T("\\u041d\\u044f\\u043c\\u0430 \\u043f\\u0440\\u043e\\u043c\\u0435\\u043d\\u0438 \\u0432 models/reports \\u0437\\u0430 \\u043a\\u0430\\u0447\\u0432\\u0430\\u043d\\u0435."))
+            st.code("\\n\\n".join(logs), language="text")
+            return
+
+        ok_add, add_output = _run_git_command(["git", "add", "models", "reports"])
+        logs.append("=== git add models reports ===\\n" + (add_output or "-"))
+
+        if not ok_add:
+            st.error(T("\\u0413\\u0440\\u0435\\u0448\\u043a\\u0430 \\u043f\\u0440\\u0438 git add."))
+            st.code("\\n\\n".join(logs), language="text")
+            return
+
+        ok_diff, diff_output = _run_git_command(["git", "diff", "--cached", "--name-only"])
+        logs.append("=== staged files ===\\n" + (diff_output or "-"))
+
+        if ok_diff and not diff_output.strip():
+            st.info(T("\\u041d\\u044f\\u043c\\u0430 staged \\u043f\\u0440\\u043e\\u043c\\u0435\\u043d\\u0438 \\u0437\\u0430 commit."))
+            st.code("\\n\\n".join(logs), language="text")
+            return
+
+        safe_message = commit_message.strip() or "Refresh model artifacts from training center"
+
+        ok_commit, commit_output = _run_git_command(["git", "commit", "-m", safe_message])
+        logs.append("=== git commit ===\\n" + (commit_output or "-"))
+
+        if not ok_commit:
+            st.error(T("\\u0413\\u0440\\u0435\\u0448\\u043a\\u0430 \\u043f\\u0440\\u0438 git commit."))
+            st.code("\\n\\n".join(logs), language="text")
+            return
+
+        ok_push, push_output = _run_git_command(["git", "push"])
+        logs.append("=== git push ===\\n" + (push_output or "-"))
+
+        if ok_push:
+            st.success(T("\\u0413\\u043e\\u0442\\u043e\\u0432\\u043e: models/reports \\u0441\\u0430 \\u043a\\u0430\\u0447\\u0435\\u043d\\u0438 \\u0432 GitHub."))
+        else:
+            st.error(T("\\u0413\\u0440\\u0435\\u0448\\u043a\\u0430 \\u043f\\u0440\\u0438 git push."))
+
+        st.code("\\n\\n".join(logs), language="text")
+
+
 def render() -> None:
     st.title(T("\\u0426\\u0435\\u043d\\u0442\\u044a\\u0440 \\u0437\\u0430 \\u043e\\u0431\\u0443\\u0447\\u0435\\u043d\\u0438\\u0435 \\u043d\\u0430 \\u043c\\u043e\\u0434\\u0435\\u043b\\u0438\\u0442\\u0435"))
 
@@ -235,6 +377,7 @@ def render() -> None:
             T("\\u041e\\u0431\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0435"),
             T("\\u0410\\u0440\\u0442\\u0435\\u0444\\u0430\\u043a\\u0442\\u0438"),
             T("\\u0420\\u044a\\u0447\\u043d\\u043e \\u043e\\u0431\\u0443\\u0447\\u0435\\u043d\\u0438\\u0435"),
+            T("GitHub"),
             T("Backtest"),
         ]
     )
@@ -251,5 +394,8 @@ def render() -> None:
         _render_training_buttons()
 
     with tabs[3]:
+        _render_github_sync()
+
+    with tabs[4]:
         st.subheader(T("\\u041f\\u0440\\u0435\\u0433\\u043b\\u0435\\u0434 \\u043d\\u0430 Pro backtest"))
         _render_backtest_preview()
