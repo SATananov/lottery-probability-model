@@ -45,6 +45,11 @@ TRAINING_STEPS = [
         "script": "scripts/v50_build_pair_group_intelligence.py",
         "outputs": ["models/v50", "reports/v50_pair_group_summary.json"],
     },
+    {
+        "name": "\\u041e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043d\\u0430 \\u0444\\u0438\\u0448",
+        "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
+        "outputs": ["models/v51", "reports/v51_ticket_portfolio_summary.json"],
+    },
 ]
 
 V45_SUMMARY_PATH = ROOT / "reports" / "v45_training_summary.json"
@@ -254,7 +259,7 @@ def _render_training_buttons() -> None:
             st.code(output or "-", language="text")
 
     with col2:
-        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v50")):
+        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v51")):
             full_output = []
             all_ok = True
 

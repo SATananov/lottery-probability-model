@@ -23,6 +23,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v44_1_refine_final_ensemble_ticket_foundation.py",
     ROOT / "scripts" / "v45_train_prediction_engine_pro.py",
     ROOT / "scripts" / "v50_build_pair_group_intelligence.py",
+    ROOT / "scripts" / "v51_build_ticket_portfolio_intelligence.py",
 ]
 
 
@@ -287,6 +288,7 @@ def sync_to_github(year: int, draw_no: int) -> tuple[bool, str]:
         "models/v44_1",
         "models/v45",
         "models/v50",
+        "models/v51",
         "reports",
     ]
 
