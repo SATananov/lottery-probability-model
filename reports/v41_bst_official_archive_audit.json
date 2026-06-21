@@ -1,0 +1,1368 @@
+{
+  "status": "audit_only_no_model_retrain",
+  "source": "BST official 6/49 archive candidate",
+  "stats_page": "https://info.toto.bg/statistika/6x49",
+  "raw_dir": "data\\raw\\bst_649_official",
+  "candidate_dataset": "data\\v41_bst_official_normalized_draw_events_candidate.csv",
+  "downloaded_files": 55,
+  "skipped_files": [
+    {
+      "year": 2013,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2013.txt",
+      "reason": "no_valid_rows"
+    },
+    {
+      "year": 2014,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2014.txt",
+      "reason": "no_valid_rows"
+    },
+    {
+      "year": 2015,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2015.txt",
+      "reason": "no_valid_rows"
+    },
+    {
+      "year": 2016,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2016.txt",
+      "reason": "no_valid_rows"
+    },
+    {
+      "year": 2017,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2017.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2018,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2018.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2019,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2019.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2020,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2020.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2021,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2021.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2022,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2022.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2023,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2023.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2024,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2024.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2025,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2025.txt",
+      "reason": "download_failed"
+    },
+    {
+      "year": 2026,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2026.txt",
+      "reason": "download_failed"
+    }
+  ],
+  "total_draw_events": 5569,
+  "total_unique_draws": 3768,
+  "drawing_no_counts": {
+    "1": 3768,
+    "2": 1040,
+    "3": 761
+  },
+  "drawings_per_draw_distribution": {
+    "1": 2728,
+    "2": 279,
+    "3": 761
+  },
+  "parser_counts": {
+    "comma_single_or_repeated_draw": 2728,
+    "dash_multi_draw": 2841
+  },
+  "matched_dates_from_existing_data": 0,
+  "bonus_available_rows": 0,
+  "by_year": {
+    "1958": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1959": {
+      "draw_events": 52,
+      "draws": 52,
+      "drawings_per_draw_distribution": {
+        "1": 52
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1960": {
+      "draw_events": 52,
+      "draws": 52,
+      "drawings_per_draw_distribution": {
+        "1": 52
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1961": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1962": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1963": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1964": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1965": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1966": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1967": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1968": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1969": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1970": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1971": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1972": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1973": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1974": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1975": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1976": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1977": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1978": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1979": {
+      "draw_events": 57,
+      "draws": 57,
+      "drawings_per_draw_distribution": {
+        "1": 57
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1980": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1981": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1982": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1983": {
+      "draw_events": 52,
+      "draws": 52,
+      "drawings_per_draw_distribution": {
+        "1": 52
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1984": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1985": {
+      "draw_events": 57,
+      "draws": 57,
+      "drawings_per_draw_distribution": {
+        "1": 57
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1986": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1987": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1988": {
+      "draw_events": 57,
+      "draws": 57,
+      "drawings_per_draw_distribution": {
+        "1": 57
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1989": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1990": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1991": {
+      "draw_events": 53,
+      "draws": 53,
+      "drawings_per_draw_distribution": {
+        "1": 53
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1992": {
+      "draw_events": 55,
+      "draws": 55,
+      "drawings_per_draw_distribution": {
+        "1": 55
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1993": {
+      "draw_events": 54,
+      "draws": 54,
+      "drawings_per_draw_distribution": {
+        "1": 54
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1994": {
+      "draw_events": 57,
+      "draws": 57,
+      "drawings_per_draw_distribution": {
+        "1": 57
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1995": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1996": {
+      "draw_events": 56,
+      "draws": 56,
+      "drawings_per_draw_distribution": {
+        "1": 56
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1997": {
+      "draw_events": 85,
+      "draws": 85,
+      "drawings_per_draw_distribution": {
+        "1": 85
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1998": {
+      "draw_events": 103,
+      "draws": 103,
+      "drawings_per_draw_distribution": {
+        "1": 103
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "1999": {
+      "draw_events": 104,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "1": 104
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "2000": {
+      "draw_events": 104,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "1": 104
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "2001": {
+      "draw_events": 103,
+      "draws": 103,
+      "drawings_per_draw_distribution": {
+        "1": 103
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "2002": {
+      "draw_events": 104,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "1": 104
+      },
+      "max_drawing_no": 1,
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ]
+    },
+    "2003": {
+      "draw_events": 312,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "3": 104
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2004": {
+      "draw_events": 309,
+      "draws": 103,
+      "drawings_per_draw_distribution": {
+        "3": 103
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2005": {
+      "draw_events": 312,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "3": 104
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2006": {
+      "draw_events": 315,
+      "draws": 105,
+      "drawings_per_draw_distribution": {
+        "3": 105
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2007": {
+      "draw_events": 312,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "3": 104
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2008": {
+      "draw_events": 312,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "3": 104
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2009": {
+      "draw_events": 315,
+      "draws": 105,
+      "drawings_per_draw_distribution": {
+        "3": 105
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2010": {
+      "draw_events": 238,
+      "draws": 103,
+      "drawings_per_draw_distribution": {
+        "2": 71,
+        "3": 32
+      },
+      "max_drawing_no": 3,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2011": {
+      "draw_events": 208,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "2": 104
+      },
+      "max_drawing_no": 2,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    },
+    "2012": {
+      "draw_events": 208,
+      "draws": 104,
+      "drawings_per_draw_distribution": {
+        "2": 104
+      },
+      "max_drawing_no": 2,
+      "parser_formats": [
+        "dash_multi_draw"
+      ]
+    }
+  },
+  "downloaded": [
+    {
+      "year": 1958,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_58.txt",
+      "file": "data\\raw\\bst_649_official\\649_1958.txt",
+      "rows": 53,
+      "sha256": "9d214e79b016cabdddf189a5aa17936e289e781aa40187f421715615c3b4601e",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1959,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_59.txt",
+      "file": "data\\raw\\bst_649_official\\649_1959.txt",
+      "rows": 52,
+      "sha256": "fba804bd1d2456297f102c9a5517346b811f0f045a85345f2858a152c4245555",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 52
+    },
+    {
+      "year": 1960,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_60.txt",
+      "file": "data\\raw\\bst_649_official\\649_1960.txt",
+      "rows": 52,
+      "sha256": "c23a6a5869bc13756e39072085f1a9d6fc27c99edffc320ad3432918dec23195",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 52
+    },
+    {
+      "year": 1961,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_61.txt",
+      "file": "data\\raw\\bst_649_official\\649_1961.txt",
+      "rows": 53,
+      "sha256": "a5fa4b5b925deb99564d47c18456dd28b7419b936a19ad69b9a9399a3d802209",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1962,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_62.txt",
+      "file": "data\\raw\\bst_649_official\\649_1962.txt",
+      "rows": 53,
+      "sha256": "1b7ab2cacccb6b6b4776c584798c84f21c3e9074cf80af36f4848cb95636193b",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1963,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_63.txt",
+      "file": "data\\raw\\bst_649_official\\649_1963.txt",
+      "rows": 54,
+      "sha256": "378786ce80a18b18cf4ecb5c3b3a55efede78f78e34c40394aaf62d56e142239",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1964,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_64.txt",
+      "file": "data\\raw\\bst_649_official\\649_1964.txt",
+      "rows": 55,
+      "sha256": "cfad258b6892607ff1bd8874d585f54b8455432860d22011c1beec9eeeb1487a",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1965,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_65.txt",
+      "file": "data\\raw\\bst_649_official\\649_1965.txt",
+      "rows": 56,
+      "sha256": "21458c8306cafa3439a88cd0ee96c3f0743a9f510a52e2377ec4ccb9e37e66f2",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1966,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_66.txt",
+      "file": "data\\raw\\bst_649_official\\649_1966.txt",
+      "rows": 53,
+      "sha256": "9b00ea3afbd508b90f919153c409c64babcb52570380bdad3183718b23750cb6",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1967,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_67.txt",
+      "file": "data\\raw\\bst_649_official\\649_1967.txt",
+      "rows": 53,
+      "sha256": "a73ef9f72105635de6ee575bbce3a479deb80780c335ac1b7a36c6bb71239f87",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1968,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_68.txt",
+      "file": "data\\raw\\bst_649_official\\649_1968.txt",
+      "rows": 53,
+      "sha256": "90cbaff417e1cafe565179bd15879f92ec5245c39adc75c3d693ab3de3d5bfda",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1969,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_69.txt",
+      "file": "data\\raw\\bst_649_official\\649_1969.txt",
+      "rows": 55,
+      "sha256": "9ff8f8c8efae29fdc45e3c6370be17f572441c10afe0532c99f958d914bbc60d",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1970,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_70.txt",
+      "file": "data\\raw\\bst_649_official\\649_1970.txt",
+      "rows": 54,
+      "sha256": "7e801812c52c913636401e7253468639c0bc35d9de271830a245a6fa798d063a",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1971,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_71.txt",
+      "file": "data\\raw\\bst_649_official\\649_1971.txt",
+      "rows": 54,
+      "sha256": "2a39a3da32a0f9f78c4646d085ef780c0b55f3d23962d58f585079c75f9a43eb",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1972,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_72.txt",
+      "file": "data\\raw\\bst_649_official\\649_1972.txt",
+      "rows": 54,
+      "sha256": "04bd57d867823cf249a5631e9a7652224d9d89c9c73cf38a430309f45eea77e0",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1973,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_73.txt",
+      "file": "data\\raw\\bst_649_official\\649_1973.txt",
+      "rows": 55,
+      "sha256": "bf02671ab029d26457ced92fbd450b50147267359f84ef105ae0fa4ae1280a10",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1974,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_74.txt",
+      "file": "data\\raw\\bst_649_official\\649_1974.txt",
+      "rows": 56,
+      "sha256": "23cf1d8e304750b0776ac3093e4afcf6ce99509d4c8b050d163b16e56393fea2",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1975,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_75.txt",
+      "file": "data\\raw\\bst_649_official\\649_1975.txt",
+      "rows": 55,
+      "sha256": "1b4ab46d93ccd4ac13cf51a5d542d3b194a56e36627af67b593d07c370b649c4",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1976,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_76.txt",
+      "file": "data\\raw\\bst_649_official\\649_1976.txt",
+      "rows": 54,
+      "sha256": "e86e549db77e2beb88a79eea514985dcc83a4575930e9d4797c9a8e847143915",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1977,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_77.txt",
+      "file": "data\\raw\\bst_649_official\\649_1977.txt",
+      "rows": 54,
+      "sha256": "245315b7647a6d24eb135d90fa33dfda196be6da8bf8b211b8e331a914452a8b",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1978,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_78.txt",
+      "file": "data\\raw\\bst_649_official\\649_1978.txt",
+      "rows": 55,
+      "sha256": "19ab639edc234d5c6b578139e29f885558947bfc16bc7fa52602e55fda21746f",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1979,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_79.txt",
+      "file": "data\\raw\\bst_649_official\\649_1979.txt",
+      "rows": 57,
+      "sha256": "df607603ee006eda40ee5c87cb0a6223c5edc95d884797ba14f27ec6911266c6",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 57
+    },
+    {
+      "year": 1980,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_80.txt",
+      "file": "data\\raw\\bst_649_official\\649_1980.txt",
+      "rows": 56,
+      "sha256": "271bbd093f04eecd620e63dee16da2af79bdee04e3e24bae077192a0e8758241",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1981,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_81.txt",
+      "file": "data\\raw\\bst_649_official\\649_1981.txt",
+      "rows": 56,
+      "sha256": "274597a6fd681fcf0c670b2715be368e19c6f063fd1abead5fe1d6e1e291d5e8",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1982,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_82.txt",
+      "file": "data\\raw\\bst_649_official\\649_1982.txt",
+      "rows": 54,
+      "sha256": "b2a035043124067099e5506d2b17b56a8ea1c4bd89d4d43c50273202af4bd8be",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1983,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_83.txt",
+      "file": "data\\raw\\bst_649_official\\649_1983.txt",
+      "rows": 52,
+      "sha256": "30b7b6ee1462f0b40bea1451689210071844d8831a44a70b64a9a255fc28865e",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 52
+    },
+    {
+      "year": 1984,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_84.txt",
+      "file": "data\\raw\\bst_649_official\\649_1984.txt",
+      "rows": 54,
+      "sha256": "9dce2e71001df84509b5788613b0144187ebb6da5619b2fdfb2a69ab2a93baf8",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1985,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_85.txt",
+      "file": "data\\raw\\bst_649_official\\649_1985.txt",
+      "rows": 57,
+      "sha256": "319f582f17a15b2be54f6c61d36593cfd0c9f0a9d06411ca11724ba4e5fa41b4",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 57
+    },
+    {
+      "year": 1986,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_86.txt",
+      "file": "data\\raw\\bst_649_official\\649_1986.txt",
+      "rows": 55,
+      "sha256": "0d560a0600cd12c3f654bf01cc9ef0f096bc21285d0ae9d1b61bf4c1c8bcddb1",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1987,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_87.txt",
+      "file": "data\\raw\\bst_649_official\\649_1987.txt",
+      "rows": 55,
+      "sha256": "548acf4afe3466fa615e02dc16ff8066615108cc3b931439afcfe7919efcd2d5",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1988,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_88.txt",
+      "file": "data\\raw\\bst_649_official\\649_1988.txt",
+      "rows": 57,
+      "sha256": "42a868079be3ce991b6560c538862e28e880d12e9c1674f522e15c57cf10eca8",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 57
+    },
+    {
+      "year": 1989,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_89.txt",
+      "file": "data\\raw\\bst_649_official\\649_1989.txt",
+      "rows": 55,
+      "sha256": "d4f2910840a30f936d46630e18783a689204ef2556d12289482bbecff9ba8747",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1990,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_90.txt",
+      "file": "data\\raw\\bst_649_official\\649_1990.txt",
+      "rows": 53,
+      "sha256": "f0e1659fd0f3a3cb00d6182185df7e990e8f4ee380e492aea09cad2bd6ff5fb2",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1991,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_91.txt",
+      "file": "data\\raw\\bst_649_official\\649_1991.txt",
+      "rows": 53,
+      "sha256": "12ec6d4d509ba81fdd8212ac7788caf8eb635dfd011158d7efd7e3f0615d6ff9",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 53
+    },
+    {
+      "year": 1992,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_92.txt",
+      "file": "data\\raw\\bst_649_official\\649_1992.txt",
+      "rows": 55,
+      "sha256": "20bdb6d9666dd82c7b7209debafd4dea551a271f67074c2caedf79311acec817",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 55
+    },
+    {
+      "year": 1993,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_93.txt",
+      "file": "data\\raw\\bst_649_official\\649_1993.txt",
+      "rows": 54,
+      "sha256": "d11c7aa6e8f33ac16e4fde0524331554ffb4854c79c13eb1a41e7e69ed90b9cc",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 54
+    },
+    {
+      "year": 1994,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_94.txt",
+      "file": "data\\raw\\bst_649_official\\649_1994.txt",
+      "rows": 57,
+      "sha256": "cace421f6ff0eeef0d3ad8683f9501c42fbb256986a71f03aef2ffe4b8a01d69",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 57
+    },
+    {
+      "year": 1995,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_95.txt",
+      "file": "data\\raw\\bst_649_official\\649_1995.txt",
+      "rows": 56,
+      "sha256": "4a68debf18f3abca01b675d045c3c8d6a1e5aaab59bfa32064894e2503ebf817",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1996,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_96.txt",
+      "file": "data\\raw\\bst_649_official\\649_1996.txt",
+      "rows": 56,
+      "sha256": "e550dedadab60efb54c0f467a9d4835b6ded3c425175f755269d388277bd033b",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 56
+    },
+    {
+      "year": 1997,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_97.txt",
+      "file": "data\\raw\\bst_649_official\\649_1997.txt",
+      "rows": 85,
+      "sha256": "0691ddcefee555b231e24ce3ed7c58e8b91166d191503b29216681868d5b8715",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 85
+    },
+    {
+      "year": 1998,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_98.txt",
+      "file": "data\\raw\\bst_649_official\\649_1998.txt",
+      "rows": 103,
+      "sha256": "b8ad476c7bfd21302abc007593b5b0e923b2446ccab192c15b812b6a41de484c",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 103
+    },
+    {
+      "year": 1999,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_99.txt",
+      "file": "data\\raw\\bst_649_official\\649_1999.txt",
+      "rows": 104,
+      "sha256": "463658f84b3e9ac185fe4f62695b0dd8255223422fef3837e03debb7f54b89d6",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 104
+    },
+    {
+      "year": 2000,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_00.txt",
+      "file": "data\\raw\\bst_649_official\\649_2000.txt",
+      "rows": 104,
+      "sha256": "cc22bda4dcbe6a7c6fd5290e60717a4352c7dfd60a2c4d90665e85b21df293b0",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 104
+    },
+    {
+      "year": 2001,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_01.txt",
+      "file": "data\\raw\\bst_649_official\\649_2001.txt",
+      "rows": 103,
+      "sha256": "4bc12f5660691e5abac11d75d3cb7702eb99a02f9e8072464c7a67c7f69ea2da",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 103
+    },
+    {
+      "year": 2002,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_02.txt",
+      "file": "data\\raw\\bst_649_official\\649_2002.txt",
+      "rows": 104,
+      "sha256": "d5f44b9adc86739e45095df731387ced3840d72ff18820a9a1779a7b151eb89d",
+      "parser_formats": [
+        "comma_single_or_repeated_draw"
+      ],
+      "max_drawing_no": 1,
+      "draw_count": 104
+    },
+    {
+      "year": 2003,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_03.txt",
+      "file": "data\\raw\\bst_649_official\\649_2003.txt",
+      "rows": 312,
+      "sha256": "b1d39838751b577b97f968ffc048f6100ffeb5c0a311d0626f0bd9e4161ebc25",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 104
+    },
+    {
+      "year": 2004,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_04.txt",
+      "file": "data\\raw\\bst_649_official\\649_2004.txt",
+      "rows": 309,
+      "sha256": "b14ebd9c35c312a268cb7388499f21b630ae7071cac7dc8d2f302f19e19f8d15",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 103
+    },
+    {
+      "year": 2005,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2005.txt",
+      "file": "data\\raw\\bst_649_official\\649_2005.txt",
+      "rows": 312,
+      "sha256": "01a3514e1b4c51220724b9da605a2a6863a1158097d6f8853b9fe3995d7870a4",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 104
+    },
+    {
+      "year": 2006,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2006.txt",
+      "file": "data\\raw\\bst_649_official\\649_2006.txt",
+      "rows": 315,
+      "sha256": "c4ede3b9c71ce6895859f3b0bb4bf8ffb4e9970a4ed3cd51f4016231ad73d116",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 105
+    },
+    {
+      "year": 2007,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2007.txt",
+      "file": "data\\raw\\bst_649_official\\649_2007.txt",
+      "rows": 312,
+      "sha256": "770c22fd05795f222f1ace0f773156c630c962134d1b53f2b6095d23f0714e93",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 104
+    },
+    {
+      "year": 2008,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2008.txt",
+      "file": "data\\raw\\bst_649_official\\649_2008.txt",
+      "rows": 312,
+      "sha256": "f9538b604b7159091814989ebbaeb56f11631e455e1e44fd7c5717503908abbf",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 104
+    },
+    {
+      "year": 2009,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2009.txt",
+      "file": "data\\raw\\bst_649_official\\649_2009.txt",
+      "rows": 315,
+      "sha256": "15a74ddb656aaa886f6ac0abc39892d5ad340345df79063efe9293f8751d216a",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 105
+    },
+    {
+      "year": 2010,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2010.txt",
+      "file": "data\\raw\\bst_649_official\\649_2010.txt",
+      "rows": 238,
+      "sha256": "16ec6f6026409b03aab79ef32ddcaef115527bdc19aa0864f6e1480797cd2536",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 3,
+      "draw_count": 103
+    },
+    {
+      "year": 2011,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2011.txt",
+      "file": "data\\raw\\bst_649_official\\649_2011.txt",
+      "rows": 208,
+      "sha256": "b685c03b3a8434de70502c34d05c84552b70fab0931e66e8e1dd30a592424a49",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 2,
+      "draw_count": 104
+    },
+    {
+      "year": 2012,
+      "url": "https://info.toto.bg/content/files/stats-tiraji/649_2012.txt",
+      "file": "data\\raw\\bst_649_official\\649_2012.txt",
+      "rows": 208,
+      "sha256": "e3d7a8b8b14f3f2d324ed9ca3ce2d661faf9e3db57b553607ae40ea28e1d8e95",
+      "parser_formats": [
+        "dash_multi_draw"
+      ],
+      "max_drawing_no": 2,
+      "draw_count": 104
+    }
+  ]
+}
