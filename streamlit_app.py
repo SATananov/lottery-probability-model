@@ -4141,6 +4141,24 @@ def page_v42_combined_analysis() -> None:
         module.render_v42_combined_analysis()
     except Exception as exc:
         st.warning(f'{_v42_bg("d094d0b0d0bdd0bdd0b8d182d0b520d0bdd0b02076343220d0bdd0b520d0bcd0bed0b3d0b0d18220d0b4d0b020d181d0b520d0b7d0b0d180d0b5d0b4d18fd182")}: {exc}')
+
+def _rhythm_bg(hex_text: str) -> str:
+    return bytes.fromhex(hex_text).decode("utf-8")
+
+
+def page_interval_rhythm_analysis() -> None:
+    import importlib
+
+    module = importlib.import_module("src.v43_interval_rhythm_analysis_section")
+    importlib.reload(module)
+    module.render_interval_rhythm_analysis()
+
+
+def _rhythm_bg(hex_text: str) -> str:
+    return bytes.fromhex(hex_text).decode("utf-8")
+
+
+
 # V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_END
 
 
@@ -4157,6 +4175,7 @@ def main() -> None:
         tr("history"): page_history,
         tr("v41_history_analysis"): page_v41_rules_aware_analysis,
         _v42_bg("d09ad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bd20d0b0d0bdd0b0d0bbd0b8d0b7"): page_v42_combined_analysis,
+        _rhythm_bg("d090d0bdd0b0d0bbd0b8d0b720d0bfd0be20d180d0b8d182d18ad0bc20d0bdd0b020d0bfd0bed18fd0b2d18fd0b2d0b0d0bdd0b5"): page_interval_rhythm_analysis,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
