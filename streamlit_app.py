@@ -359,16 +359,7 @@ def _bg34_translate_dataframe(data):
 
 
 def _bg34_css():
-    if not _bg34_is_bulgarian():
-        return
-    st.markdown("""
-<style>
-div[data-testid="stFileUploader"] button div p { font-size: 0 !important; }
-div[data-testid="stFileUploader"] button div p::after { content: "Качи файл"; font-size: 14px !important; }
-div[data-testid="stFileUploader"] small { font-size: 0 !important; }
-div[data-testid="stFileUploader"] small::after { content: "до 200MB на файл"; font-size: 12px !important; }
-</style>
-""", unsafe_allow_html=True)
+    return None
 
 
 if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
@@ -3059,98 +3050,13 @@ def _v39_render_github_sync_panel() -> None:
             st.code(output[-5000:] if output else "")
 
 
-def page_update_draws() -> None:
-    render_header()
-    st.markdown("## " + tr("update_draws"))
-    auto_retrain = st.checkbox(tr("auto_retrain"), value=True)
+def page_update_draws():
+    from importlib import reload
 
-    st.markdown("### " + tr("upload_draw"))
-    uploaded = st.file_uploader("TXT / CSV / JSON", type=["txt", "csv", "json"])
-    if uploaded and st.button(tr("upload_button"), width="stretch"):
-        raw = uploaded.read().decode("utf-8", errors="replace")
-        parsed = parse_uploaded_numbers(raw)
-        if parsed:
-            st.session_state["uploaded_numbers"] = parsed
-            st.success(f"Разчетени числа: {parsed}")
-        else:
-            st.error("Не успях да разчета точно 6 различни валидни числа.")
+    import src.add_draws_section as add_draws_section
 
-    detected = st.session_state.get("uploaded_numbers", [])
-    default_numbers = detected if detected else [1, 2, 3, 4, 5, 6]
-
-    c1, c2, c3 = st.columns(3)
-    draw_date = c1.date_input(tr("draw_date"), value=date.today())
-    year = c2.number_input(tr("year"), min_value=1958, max_value=2100, value=int(draw_date.year))
-    draw_number = c3.number_input(tr("draw_number"), min_value=0, max_value=9999, value=1)
-    position = st.number_input(tr("draw_position"), min_value=1, max_value=20, value=1)
-    numbers = st.multiselect(tr("numbers"), options=list(range(1, 50)), default=default_numbers[:6], max_selections=6)
-    source = st.text_input(tr("source"), value="Ръчно въвеждане")
-
-    if st.button(tr("save_draw"), width="stretch"):
-        nums = sorted([int(n) for n in numbers])
-        if len(nums) != 6 or len(set(nums)) != 6:
-            st.error(tr("ticket_warning"))
-        else:
-            rows, fields = read_csv_rows()
-            key = (str(int(year)), str(int(draw_number)), str(int(position)))
-            exists = any((str(r.get("year")), str(r.get("draw_number")), str(r.get("draw_position"))) == key for r in rows)
-            if exists:
-                st.error("Тази година + номер на тираж + позиция вече съществува.")
-            else:
-                backup = backup_csv("before_manual_add")
-                row = {field: "" for field in fields}
-                row.update({
-                    "date": str(draw_date),
-                    "year": int(year),
-                    "draw_number": int(draw_number),
-                    "draw_position": int(position),
-                    "n1": nums[0], "n2": nums[1], "n3": nums[2], "n4": nums[3], "n5": nums[4], "n6": nums[5],
-                    "source": source,
-                })
-                rows.append(row)
-                write_csv_rows(rows, fields)
-                st.success(f"Записан тираж {year}/{draw_number}/{position}. Резервно копие: {backup.name if backup else 'няма'}")
-                if auto_retrain:
-                    with st.spinner("Моделите се обновяват..."):
-                        results = retrain_all_models()
-                    for script, ok, output in results:
-                        st.write(("✅" if ok else "❌") + " " + script)
-                    st.info("Обнови страницата, за да видиш новите препоръки.")
-
-    st.divider()
-    st.markdown("### Корекция / изтриване на тираж")
-    c1, c2, c3 = st.columns(3)
-    del_year = c1.number_input("Година за изтриване", min_value=1958, max_value=2100, value=int(date.today().year))
-    del_draw = c2.number_input("Номер на тираж за изтриване", min_value=0, max_value=9999, value=1)
-    del_pos = c3.number_input("Позиция за изтриване", min_value=1, max_value=20, value=1)
-    if st.button(tr("delete_draw"), width="stretch"):
-        rows, fields = read_csv_rows()
-        key = (str(int(del_year)), str(int(del_draw)), str(int(del_pos)))
-        new_rows = [r for r in rows if (str(r.get("year")), str(r.get("draw_number")), str(r.get("draw_position"))) != key]
-        if len(new_rows) == len(rows):
-            st.warning("Не е намерен такъв тираж.")
-        else:
-            backup = backup_csv("before_manual_delete")
-            write_csv_rows(new_rows, fields)
-            st.success(f"Изтрит тираж {key}. Резервно копие: {backup.name if backup else 'няма'}")
-            if auto_retrain:
-                with st.spinner("Моделите се обновяват..."):
-                    retrain_all_models()
-                st.info("Обнови страницата, за да видиш новите препоръки.")
-
-    backups = sorted(BACKUP_DIR.glob("*.csv"), reverse=True)
-    if backups:
-        if st.button(tr("undo"), width="stretch"):
-            latest = backups[0]
-            shutil.copy2(latest, DATA_PATH)
-            st.success(f"Възстановено резервно копие: {latest.name}")
-            if auto_retrain:
-                with st.spinner("Моделите се обновяват..."):
-                    retrain_all_models()
-                st.info("Обнови страницата, за да видиш новите препоръки.")
-
-    st.divider()
-    _v39_render_github_sync_panel()
+    reload(add_draws_section)
+    add_draws_section.render()
 
 def page_glossary() -> None:
     with st.expander(tr("term_help"), expanded=False):
