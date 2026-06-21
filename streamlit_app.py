@@ -897,6 +897,56 @@ _v13_simulation_lab_hook()
 # V13_SIMULATION_LAB_HOOK_END
 
 
+
+# V40_TICKET_CHECKER_UI_HOOK_START
+def _v40_ticket_checker_sidebar_button(label: str, key: str) -> bool:
+    try:
+        return st.sidebar.button(label, key=key, width="stretch")
+    except TypeError:
+        return st.sidebar.button(label, key=key)
+
+
+def _v40_ticket_checker_hook() -> None:
+    ticket_label = "\U0001F3AB \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0444\u0438\u0448"
+    back_label = "\u2190 \u041d\u0430\u0437\u0430\u0434 \u043a\u044a\u043c \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0442\u043e \u043c\u0435\u043d\u044e"
+    load_error = "\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430\u0442\u0430 \u043d\u0430 \u0444\u0438\u0448."
+
+    if "v40_ticket_checker_active" not in st.session_state:
+        st.session_state["v40_ticket_checker_active"] = False
+
+    if _v40_ticket_checker_sidebar_button(ticket_label, "v40_open_ticket_checker"):
+        st.session_state["v40_ticket_checker_active"] = True
+        if hasattr(st, "rerun"):
+            st.rerun()
+        elif hasattr(st, "experimental_rerun"):
+            st.experimental_rerun()
+
+    if st.session_state.get("v40_ticket_checker_active"):
+        if _v40_ticket_checker_sidebar_button(back_label, "v40_close_ticket_checker"):
+            st.session_state["v40_ticket_checker_active"] = False
+            if hasattr(st, "rerun"):
+                st.rerun()
+            elif hasattr(st, "experimental_rerun"):
+                st.experimental_rerun()
+
+        try:
+            import importlib
+            module = importlib.import_module("streamlit_pages.ticket_checker_page")
+            module = importlib.reload(module)
+            module.render_ticket_checker_page()
+        except Exception as exc:
+            st.error(load_error)
+            st.exception(exc)
+
+        st.stop()
+
+
+_v40_ticket_checker_hook()
+# V40_TICKET_CHECKER_UI_HOOK_END
+
+
+
+
 st.markdown(
     """
     <style>
