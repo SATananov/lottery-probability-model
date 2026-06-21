@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -24,7 +24,16 @@ FINAL_SCORES_PATH = ROOT / "models" / "v44_1" / "v44_1_final_ensemble_number_sco
 
 
 def txt(value: str) -> str:
-    return value.encode("utf-8").decode("unicode_escape")
+    """Return safe Bulgarian UI text.
+
+    If the value still contains literal unicode escapes, decode them once.
+    If Python has already decoded the string to Cyrillic, return it unchanged.
+    This prevents double-decoding mojibake such as ?R??...
+    """
+    if "\\u" in value or "\\x" in value:
+        return value.encode("utf-8").decode("unicode_escape")
+
+    return value
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -56,7 +65,45 @@ def numbers_text(numbers: list[Any]) -> str:
     return " ".join(f"{number:02d}" for number in cleaned)
 
 
+def collect_number_lists(value: Any, path: str = "") -> list[tuple[str, list[int]]]:
+    found: list[tuple[str, list[int]]] = []
+
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}" if path else str(key)
+            found.extend(collect_number_lists(child, child_path))
+
+    elif isinstance(value, list):
+        numbers: list[int] = []
+        all_number_like = True
+
+        for item in value:
+            if isinstance(item, bool):
+                all_number_like = False
+                break
+
+            try:
+                number = int(item)
+            except (TypeError, ValueError):
+                all_number_like = False
+                break
+
+            numbers.append(number)
+
+        if all_number_like and 1 <= len(numbers) <= 12 and all(1 <= number <= 49 for number in numbers):
+            found.append((path, numbers))
+        else:
+            for index, child in enumerate(value):
+                found.extend(collect_number_lists(child, f"{path}[{index}]"))
+
+    return found
+
+
 def extract_numbers(payload: dict[str, Any], keys: list[str]) -> list[int]:
+    if not payload:
+        return []
+
+    # First try exact or near-exact top-level keys.
     for key in keys:
         value = payload.get(key)
         if isinstance(value, list):
@@ -70,7 +117,31 @@ def extract_numbers(payload: dict[str, Any], keys: list[str]) -> list[int]:
                     numbers.append(number)
             if numbers:
                 return numbers
-    return []
+
+    # Then search recursively, because some model artifacts store predictions nested.
+    candidates = collect_number_lists(payload)
+    if not candidates:
+        return []
+
+    def rank(candidate: tuple[str, list[int]]) -> tuple[int, int, int]:
+        path_text, numbers = candidate
+        lowered = path_text.lower()
+
+        key_score = 0
+        for key in keys:
+            if key.lower() in lowered:
+                key_score += 8
+
+        for marker in ["sgd", "prediction", "latest", "recency", "frequency", "combined", "final", "numbers"]:
+            if marker in lowered:
+                key_score += 3
+
+        length_score = 6 if len(numbers) == 6 else max(0, 5 - abs(len(numbers) - 6))
+
+        return (key_score, length_score, -len(path_text))
+
+    best_path, best_numbers = sorted(candidates, key=rank, reverse=True)[0]
+    return best_numbers[:6]
 
 
 def number_rows(rows: list[dict[str, Any]], limit: int = 12) -> list[dict[str, Any]]:
@@ -206,6 +277,85 @@ def render_model_card(title: str, description: str, numbers: list[int] | None = 
     )
 
 
+def as_number_set(numbers: list[int]) -> set[int]:
+    return {int(number) for number in numbers if 1 <= int(number) <= 49}
+
+
+def relation_text(base: list[int], other: list[int]) -> str:
+    base_set = as_number_set(base)
+    other_set = as_number_set(other)
+
+    if not base_set or not other_set:
+        return ""
+
+    if base_set == other_set:
+        return txt("\u0421\u044a\u0432\u043f\u0430\u0434\u0430 \u0441 \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u044f \u0440\u0438\u0442\u044a\u043c. \u0422\u043e\u0432\u0430 \u0435 \u043f\u043e\u0442\u0432\u044a\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u043e\u0442 \u043f\u043e\u0434\u0441\u0438\u0433\u043d\u0430\u043b, \u043d\u0435 \u0433\u0440\u0435\u0448\u043a\u0430.")
+
+    added = sorted(other_set - base_set)
+    removed = sorted(base_set - other_set)
+
+    parts = []
+
+    if added:
+        parts.append(
+            txt("\u0414\u043e\u0431\u0430\u0432\u044f: ") + numbers_text(added)
+        )
+
+    if removed:
+        parts.append(
+            txt("\u041e\u0442\u043f\u0430\u0434\u0430: ") + numbers_text(removed)
+        )
+
+    return txt("\u0420\u0430\u0437\u043b\u0438\u043a\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u044f \u0440\u0438\u0442\u044a\u043c: ") + "; ".join(parts)
+
+
+def render_related_model_card(title: str, description: str, numbers: list[int], base_numbers: list[int]) -> None:
+    relation = relation_text(base_numbers, numbers)
+
+    if relation:
+        description = description + " " + relation
+
+    render_model_card(title, description, numbers)
+
+
+def overlap_rows(layers: list[tuple[str, list[int]]], final_rows: list[dict[str, Any]], limit: int = 20) -> list[dict[str, Any]]:
+    score_map = {}
+
+    for row in final_rows:
+        try:
+            number = int(row.get("number", 0))
+        except (TypeError, ValueError):
+            continue
+
+        score_map[number] = safe_float(row.get("final_ensemble_score"))
+
+    layer_hits: dict[int, list[str]] = {}
+
+    for layer_name, numbers in layers:
+        for number in sorted(as_number_set(numbers)):
+            layer_hits.setdefault(number, []).append(layer_name)
+
+    ranked = sorted(
+        layer_hits.items(),
+        key=lambda item: (len(item[1]), score_map.get(item[0], 0), -item[0]),
+        reverse=True,
+    )
+
+    output = []
+
+    for number, names in ranked[:limit]:
+        output.append(
+            {
+                txt("\u0427\u0438\u0441\u043b\u043e"): number,
+                txt("\u0421\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f"): len(names),
+                txt("\u041c\u043e\u0434\u0435\u043b\u043d\u0438 \u0441\u043b\u043e\u0435\u0432\u0435"): ", ".join(names),
+                txt("\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442"): score(score_map.get(number, 0)),
+            }
+        )
+
+    return output
+
+
 def render() -> None:
     render_css()
 
@@ -220,15 +370,15 @@ def render() -> None:
     st.markdown(
         f"""
         <div class="prob-hero">
-            <h1>{txt("\\u0412\\u0435\\u0440\\u043e\\u044f\\u0442\\u043d\\u043e\\u0441\\u0442\\u043d\\u0430 \\u043b\\u0430\\u0431\\u043e\\u0440\\u0430\\u0442\\u043e\\u0440\\u0438\\u044f")}</h1>
-            <p>{txt("\\u0422\\u0430\\u0437\\u0438 \\u0441\\u0435\\u043a\\u0446\\u0438\\u044f \\u043e\\u0431\\u043e\\u0431\\u0449\\u0430\\u0432\\u0430 \\u0432\\u0441\\u0438\\u0447\\u043a\\u0438 \\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u0438 \\u043c\\u043e\\u0434\\u0435\\u043b\\u043d\\u0438 \\u0441\\u043b\\u043e\\u0435\\u0432\\u0435 \\u0432 \\u0430\\u043f\\u0430 \\u0438 \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430 \\u043a\\u0430\\u043a \\u0442\\u0435 \\u0441\\u0435 \\u0441\\u044a\\u0431\\u0438\\u0440\\u0430\\u0442 \\u0432 \\u0444\\u0438\\u043d\\u0430\\u043b\\u043d\\u043e \\u0441\\u0442\\u0430\\u0442\\u0438\\u0441\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0435.")}</p>
+            <h1>{txt("\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u043d\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f")}</h1>
+            <p>{txt("\u0422\u0443\u043a \u0430\u043f\u044a\u0442 \u043e\u0431\u043e\u0431\u0449\u0430\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u043c\u043e\u0434\u0435\u043b\u043d\u0438 \u0441\u043b\u043e\u0435\u0432\u0435, \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043a\u044a\u0434\u0435 \u0442\u0435 \u0441\u044a\u0432\u043f\u0430\u0434\u0430\u0442 \u0438 \u043a\u0430\u043a \u0441\u0435 \u0441\u0442\u0438\u0433\u0430 \u0434\u043e \u0444\u0438\u043d\u0430\u043b\u043d\u043e\u0442\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435.")}</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
     st.markdown(
-        f'<div class="prob-warning">{txt("\\u0412\\u0430\\u0436\\u043d\\u043e: \\u0442\\u043e\\u0432\\u0430 \\u043d\\u0435 \\u0435 \\u043f\\u0435\\u0447\\u0435\\u043b\\u0438\\u0432\\u0448 \\u043c\\u043e\\u0434\\u0435\\u043b \\u0438 \\u043d\\u0435 \\u0434\\u0430\\u0432\\u0430 \\u0433\\u0430\\u0440\\u0430\\u043d\\u0446\\u0438\\u044f. \\u041b\\u043e\\u0442\\u0430\\u0440\\u0438\\u0439\\u043d\\u0438\\u0442\\u0435 \\u0442\\u0435\\u0433\\u043b\\u0435\\u043d\\u0438\\u044f \\u0441\\u0430 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0439\\u043d\\u0438; \\u0442\\u0443\\u043a \\u0438\\u043c\\u0430 \\u0441\\u0430\\u043c\\u043e \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437 \\u043d\\u0430 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438 \\u0441\\u0438\\u0433\\u043d\\u0430\\u043b\\u0438.")}</div>',
+        f'<div class="prob-warning">{txt("\u0412\u0430\u0436\u043d\u043e: \u0442\u043e\u0432\u0430 \u043d\u0435 \u0435 \u043f\u0435\u0447\u0435\u043b\u0438\u0432\u0448 \u043c\u043e\u0434\u0435\u043b \u0438 \u043d\u0435 \u0434\u0430\u0432\u0430 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f. \u041b\u043e\u0442\u0430\u0440\u0438\u0439\u043d\u0438\u0442\u0435 \u0442\u0435\u0433\u043b\u0435\u043d\u0438\u044f \u0441\u0430 \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u0438; \u0442\u0443\u043a \u0438\u043c\u0430 \u0441\u0430\u043c\u043e \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438.")}</div>',
         unsafe_allow_html=True,
     )
 
@@ -237,11 +387,9 @@ def render() -> None:
     final_combos = final_ticket.get("ticket_combinations", [])
 
     cols = st.columns(3)
-    cols[0].metric(txt("\\u0412\\u0430\\u043b\\u0438\\u0434\\u043d\\u0438 \\u0442\\u0438\\u0440\\u0430\\u0436\\u0438"), str(valid_draws))
-    cols[1].metric(txt("\\u041e\\u0446\\u0435\\u043d\\u0435\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"), str(scored_numbers))
-    cols[2].metric(txt("\\u0424\\u0438\\u043d\\u0430\\u043b\\u043d\\u0438 \\u0440\\u0435\\u0434\\u043e\\u0432\\u0435 \\u0432 \\u0444\\u0438\\u0448\\u0430"), str(len(final_combos)))
-
-    st.subheader(txt("\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u0438 \\u043c\\u043e\\u0434\\u0435\\u043b\\u043d\\u0438 \\u0441\\u043b\\u043e\\u0435\\u0432\\u0435"))
+    cols[0].metric(txt("\u0412\u0430\u043b\u0438\u0434\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438"), str(valid_draws))
+    cols[1].metric(txt("\u041e\u0446\u0435\u043d\u0435\u043d\u0438 \u0447\u0438\u0441\u043b\u0430"), str(scored_numbers))
+    cols[2].metric(txt("\u0424\u0438\u043d\u0430\u043b\u043d\u0438 \u0440\u0435\u0434\u043e\u0432\u0435 \u0432\u044a\u0432 \u0444\u0438\u0448\u0430"), str(len(final_combos)))
 
     v41_numbers = extract_numbers(
         v41,
@@ -249,6 +397,8 @@ def render() -> None:
             "sgd_number_classifier",
             "recency_250_baseline",
             "frequency_baseline",
+            "latest_predictions",
+            "prediction",
             "numbers",
         ],
     )
@@ -257,59 +407,72 @@ def render() -> None:
     v43_next = extract_numbers(v43_ticket, ["next_window_numbers"])
     v43_overdue = extract_numbers(v43_ticket, ["overdue_watchlist_numbers"])
 
+    st.subheader(txt("\u0410\u043a\u0442\u0438\u0432\u043d\u0438 \u043c\u043e\u0434\u0435\u043b\u043d\u0438 \u0441\u043b\u043e\u0435\u0432\u0435"))
+
     render_model_card(
-        txt("\\u0418\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438 / rules-aware \\u0441\\u043b\\u043e\\u0439"),
-        txt("\\u0413\\u043b\\u0435\\u0434\\u0430 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u044f, \\u0447\\u0435\\u0441\\u0442\\u043e\\u0442\\u0430, \\u0441\\u043a\\u043e\\u0440\\u043e\\u0448\\u043d\\u043e \\u043f\\u043e\\u044f\\u0432\\u044f\\u0432\\u0430\\u043d\\u0435 \\u0438 \\u0431\\u0430\\u0437\\u043e\\u0432\\u0438 \\u0441\\u0442\\u0430\\u0442\\u0438\\u0441\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438 \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u0430."),
+        txt("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043b\u043e\u0439"),
+        txt("\u0413\u043b\u0435\u0434\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u044f, \u0447\u0435\u0441\u0442\u043e\u0442\u0430, \u0441\u043a\u043e\u0440\u043e\u0448\u043d\u043e \u043f\u043e\u044f\u0432\u044f\u0432\u0430\u043d\u0435 \u0438 \u0431\u0430\u0437\u043e\u0432\u0438 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u0430."),
         v41_numbers,
     )
 
     render_model_card(
-        txt("\\u041a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0438\\u0440\\u0430\\u043d \\u043f\\u043e\\u043b\\u043e\\u0436\\u0438\\u0442\\u0435\\u043b\\u0435\\u043d / \\u043e\\u0442\\u0441\\u044a\\u0441\\u0442\\u0432\\u0435\\u043d \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437"),
-        txt("\\u0421\\u044a\\u0431\\u0438\\u0440\\u0430 \\u043f\\u043e\\u043b\\u043e\\u0436\\u0438\\u0442\\u0435\\u043b\\u0435\\u043d \\u0441\\u0438\\u0433\\u043d\\u0430\\u043b \\u0438 \\u0440\\u0438\\u0441\\u043a \\u043e\\u0442 \\u043e\\u0442\\u0441\\u044a\\u0441\\u0442\\u0432\\u0438\\u0435, \\u0437\\u0430 \\u0434\\u0430 \\u0434\\u0430\\u0434\\u0435 \\u043f\\u043e-\\u0431\\u0430\\u043b\\u0430\\u043d\\u0441\\u0438\\u0440\\u0430\\u043d \\u0441\\u0438\\u0433\\u043d\\u0430\\u043b."),
+        txt("\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437"),
+        txt("\u0421\u044a\u0431\u0438\u0440\u0430 \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b \u0438 \u0440\u0438\u0441\u043a \u043e\u0442 \u043e\u0442\u0441\u044a\u0441\u0442\u0432\u0438\u0435, \u0437\u0430 \u0434\u0430 \u0434\u0430\u0434\u0435 \u043f\u043e-\u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u0441\u0438\u0433\u043d\u0430\u043b."),
         v42_numbers,
     )
 
     render_model_card(
-        txt("\\u0420\\u0438\\u0442\\u044a\\u043c \\u043d\\u0430 \\u043f\\u043e\\u044f\\u0432\\u044f\\u0432\\u0430\\u043d\\u0435"),
-        txt("\\u0413\\u043b\\u0435\\u0434\\u0430 \\u043f\\u0430\\u0443\\u0437\\u0438, \\u0441\\u0440\\u0435\\u0434\\u043d\\u0438 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0432\\u0430\\u043b\\u0438, \\u0437\\u0430\\u043a\\u044a\\u0441\\u043d\\u0435\\u043b\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430 \\u0438 \\u0441\\u043b\\u0435\\u0434\\u0432\\u0430\\u0449 \\u043f\\u0440\\u043e\\u0437\\u043e\\u0440\\u0435\\u0446."),
+        txt("\u0420\u0438\u0442\u044a\u043c \u043d\u0430 \u043f\u043e\u044f\u0432\u044f\u0432\u0430\u043d\u0435"),
+        txt("\u0413\u043b\u0435\u0434\u0430 \u043f\u0430\u0443\u0437\u0438, \u0441\u0440\u0435\u0434\u043d\u0438 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0438, \u0437\u0430\u043a\u044a\u0441\u043d\u0435\u043b\u0438 \u0447\u0438\u0441\u043b\u0430 \u0438 \u0441\u043b\u0435\u0434\u0432\u0430\u0449 \u043f\u0440\u043e\u0437\u043e\u0440\u0435\u0446."),
         v43_final,
     )
 
-    if v43_next or v43_overdue:
-        rhythm_cols = st.columns(2)
-        with rhythm_cols[0]:
-            render_model_card(
-                txt("\\u0421\\u043b\\u0435\\u0434\\u0432\\u0430\\u0449 \\u043f\\u0440\\u043e\\u0437\\u043e\\u0440\\u0435\\u0446"),
-                txt("\\u0427\\u0438\\u0441\\u043b\\u0430, \\u043a\\u043e\\u0438\\u0442\\u043e \\u0440\\u0438\\u0442\\u044a\\u043c\\u044a\\u0442 \\u043e\\u0442\\u0431\\u0435\\u043b\\u044f\\u0437\\u0432\\u0430 \\u043a\\u0430\\u0442\\u043e \\u043f\\u043e-\\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u0438 \\u0437\\u0430 \\u0431\\u043b\\u0438\\u0437\\u043a\\u0438 \\u0445\\u043e\\u0440\\u0438\\u0437\\u043e\\u043d\\u0442."),
-                v43_next,
-            )
-        with rhythm_cols[1]:
-            render_model_card(
-                txt("\\u041d\\u0430\\u0431\\u043b\\u044e\\u0434\\u0430\\u0432\\u0430\\u043d\\u0438 \\u0437\\u0430\\u043a\\u044a\\u0441\\u043d\\u0435\\u043b\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
-                txt("\\u0427\\u0438\\u0441\\u043b\\u0430 \\u0441 \\u043f\\u043e-\\u0433\\u043e\\u043b\\u044f\\u043c\\u0430 \\u0442\\u0435\\u043a\\u0443\\u0449\\u0430 \\u043f\\u0430\\u0443\\u0437\\u0430 \\u0441\\u043f\\u0440\\u044f\\u043c\\u043e \\u0441\\u043e\\u0431\\u0441\\u0442\\u0432\\u0435\\u043d\\u0438\\u044f \\u0438\\u043c \\u0440\\u0438\\u0442\\u044a\\u043c."),
-                v43_overdue,
-            )
+    rhythm_cols = st.columns(2)
+    with rhythm_cols[0]:
+        render_related_model_card(
+            txt("\u0421\u043b\u0435\u0434\u0432\u0430\u0449 \u043f\u0440\u043e\u0437\u043e\u0440\u0435\u0446"),
+            txt("\u0427\u0438\u0441\u043b\u0430, \u043a\u043e\u0438\u0442\u043e \u0440\u0438\u0442\u044a\u043c\u044a\u0442 \u043e\u0442\u0431\u0435\u043b\u044f\u0437\u0432\u0430 \u043a\u0430\u0442\u043e \u043f\u043e-\u0438\u043d\u0442\u0435\u0440\u0435\u0441\u043d\u0438 \u0437\u0430 \u0431\u043b\u0438\u0437\u043a\u0438 \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442."),
+            v43_next,
+            v43_final,
+        )
+    with rhythm_cols[1]:
+        render_related_model_card(
+            txt("\u041d\u0430\u0431\u043b\u044e\u0434\u0430\u0432\u0430\u043d\u0438 \u0437\u0430\u043a\u044a\u0441\u043d\u0435\u043b\u0438 \u0447\u0438\u0441\u043b\u0430"),
+            txt("\u0427\u0438\u0441\u043b\u0430 \u0441 \u043f\u043e-\u0433\u043e\u043b\u044f\u043c\u0430 \u0442\u0435\u043a\u0443\u0449\u0430 \u043f\u0430\u0443\u0437\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u0441\u043e\u0431\u0441\u0442\u0432\u0435\u043d\u0438\u044f \u0438\u043c \u0440\u0438\u0442\u044a\u043c."),
+            v43_overdue,
+            v43_final,
+        )
 
-    st.subheader(txt("\\u0424\\u0438\\u043d\\u0430\\u043b\\u043d\\u043e \\u043e\\u0431\\u0435\\u0434\\u0438\\u043d\\u0435\\u043d\\u043e \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0435"))
+    st.subheader(txt("\u0421\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043c\u0435\u0436\u0434\u0443 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"))
+    overlap_layer_rows = [
+        (txt("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438"), v41_numbers),
+        (txt("\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d"), v42_numbers),
+        (txt("\u0420\u0438\u0442\u044a\u043c"), v43_final),
+        (txt("\u0421\u043b\u0435\u0434\u0432\u0430\u0449 \u043f\u0440\u043e\u0437\u043e\u0440\u0435\u0446"), v43_next),
+        (txt("\u0417\u0430\u043a\u044a\u0441\u043d\u0435\u043b\u0438"), v43_overdue),
+    ]
+    show_table(overlap_rows(overlap_layer_rows, final_ticket.get("top_ensemble_numbers", []), limit=20))
+
+    st.subheader(txt("\u0424\u0438\u043d\u0430\u043b\u043d\u043e \u043e\u0431\u0435\u0434\u0438\u043d\u0435\u043d\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435"))
 
     if final_combos:
         for index, combo in enumerate(final_combos, start=1):
             st.markdown(
                 f"""
                 <div class="combo-card">
-                    <div class="combo-title">{txt("\\u041a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u044f")} {index}</div>
+                    <div class="combo-title">{txt("\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f")} {index}</div>
                     <div class="combo-numbers">{numbers_text(combo.get("numbers", []))}</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
     else:
-        st.info(txt("\\u041d\\u044f\\u043c\\u0430 \\u0444\\u0438\\u043d\\u0430\\u043b\\u043d\\u0438 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438."))
+        st.info(txt("\u041d\u044f\u043c\u0430 \u0444\u0438\u043d\u0430\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438."))
 
-    st.subheader(txt("\\u0422\\u043e\\u043f \\u0447\\u0438\\u0441\\u043b\\u0430 \\u0441\\u043f\\u043e\\u0440\\u0435\\u0434 \\u043e\\u0431\\u0435\\u0434\\u0438\\u043d\\u0435\\u043d\\u0438\\u044f \\u0441\\u0438\\u0433\\u043d\\u0430\\u043b"))
+    st.subheader(txt("\u0422\u043e\u043f \u0447\u0438\u0441\u043b\u0430 \u0441\u043f\u043e\u0440\u0435\u0434 \u043e\u0431\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f \u0441\u0438\u0433\u043d\u0430\u043b"))
     show_table(number_rows(final_ticket.get("top_ensemble_numbers", []), limit=15))
 
-    with st.expander(txt("\\u041a\\u0430\\u043a \\u0434\\u0430 \\u0441\\u0435 \\u0447\\u0435\\u0442\\u0435")):
+    with st.expander(txt("\u041a\u0430\u043a \u0434\u0430 \u0441\u0435 \u0447\u0435\u0442\u0435")):
         st.write(
-            txt("\\u0422\\u0430\\u0437\\u0438 \\u0441\\u0435\\u043a\\u0446\\u0438\\u044f \\u043d\\u0435 \\u0438\\u0437\\u0447\\u0438\\u0441\\u043b\\u044f\\u0432\\u0430 \\u0440\\u0435\\u0430\\u043b\\u0435\\u043d \\u0448\\u0430\\u043d\\u0441 \\u0437\\u0430 \\u043f\\u0435\\u0447\\u0430\\u043b\\u0431\\u0430. \\u0422\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430 \\u043a\\u0430\\u043a \\u043c\\u043e\\u0434\\u0435\\u043b\\u043d\\u0438\\u0442\\u0435 \\u0441\\u043b\\u043e\\u0435\\u0432\\u0435 \\u0441\\u0435 \\u043e\\u0431\\u0435\\u0434\\u0438\\u043d\\u044f\\u0432\\u0430\\u0442 \\u0432 \\u0435\\u0434\\u043d\\u043e \\u0441\\u0442\\u0430\\u0442\\u0438\\u0441\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0435.")
+            txt("\u041f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f\u0442\u0430 \u043c\u0435\u0436\u0434\u0443 \u043f\u043e\u0434\u0441\u0438\u0433\u043d\u0430\u043b\u0438\u0442\u0435 \u043d\u0435 \u0441\u0430 \u0433\u0440\u0435\u0448\u043a\u0430. \u041a\u043e\u0433\u0430\u0442\u043e \u0434\u0432\u0430 \u0441\u043b\u043e\u044f \u0434\u0430\u0432\u0430\u0442 \u0435\u0434\u043d\u0438 \u0438 \u0441\u044a\u0449\u0438 \u0447\u0438\u0441\u043b\u0430, \u0442\u043e\u0432\u0430 \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430 \u043f\u043e\u0442\u0432\u044a\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u043c\u0435\u0436\u0434\u0443 \u043c\u043e\u0434\u0435\u043b\u043d\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438, \u0430 \u043d\u0435 \u043f\u0435\u0447\u0435\u043b\u0438\u0432\u0448\u0430 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f.")
         )
