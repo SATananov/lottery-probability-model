@@ -4071,6 +4071,19 @@ def page_ticket_builder() -> None:
     ticket_builder_section.render()
 
 
+TRAINING_CENTER_LABEL = "\u0426\u0435\u043d\u0442\u044a\u0440 \u0437\u0430 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435"
+
+
+def page_training_center() -> None:
+    from importlib import reload
+
+    import src.training_center_section as training_center_section
+
+    reload(training_center_section)
+    training_center_section.render()
+
+
+
 
 
 
@@ -4102,6 +4115,7 @@ def main() -> None:
         STRATEGY_LAB_LABEL: page_strategy_lab,
         BACKTESTING_CENTER_LABEL: page_backtesting_center,
         TICKET_BUILDER_LABEL: page_ticket_builder,
+        TRAINING_CENTER_LABEL: page_training_center,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
