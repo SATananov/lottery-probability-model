@@ -426,7 +426,7 @@ def render_simulation_lab_page() -> None:
                 f"""
                 <div class="v39-combo-head">
                     {combo_label} {index}
-                    <span class="v39-combo-count"> ? {len(values)}/6</span>
+                    <span class="v39-combo-count"> · {len(values)}/6</span>
                 </div>
                 """,
                 unsafe_allow_html=True,

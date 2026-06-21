@@ -2578,7 +2578,7 @@ def page_ml_lab() -> None:
     c1, c2, c3, c4 = st.columns(4)
     c1.metric(_v39_ml_text("\u041e\u0431\u0443\u0447\u0435\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438", "Training draws"), f"{model.get('training_draws', 0):,}")
     c2.metric(_v39_ml_text("\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Candidate combinations"), f"{model.get('candidate_count', 0):,}")
-    c3.metric(_v39_ml_text("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u2014 \u0441\u0440\u0435\u0434\u043d\u043e", "Historical check ? average"), summary.get("average_matches", "-"))
+    c3.metric(_v39_ml_text("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u2014 \u0441\u0440\u0435\u0434\u043d\u043e", "Historical check \u00b7 average"), summary.get("average_matches", "-"))
     c4.metric(_v39_ml_text(">=2 \u0441\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f", ">=2 matches"), f"{summary.get('hit_rate_ge_2', 0)}%")
 
     tabs = st.tabs([
@@ -2604,7 +2604,7 @@ def page_ml_lab() -> None:
                 <div class="rank-card">
                   <div class="model-title">{_v39_ml_text("\u0420\u0430\u043d\u0433", "Rank")} {item.get('rank')}</div>
                   {format_number_pills(item_numbers)}
-                  <div class="small-muted">{_v39_ml_text("\u041e\u0446\u0435\u043d\u043a\u0430", "Score")}: {score_text} ? {_v39_ml_text("\u041a\u043b\u0430\u0441", "Class")}: {classification} ? {_v39_ml_text("\u041a\u043b\u044a\u0441\u0442\u0435\u0440", "Cluster")}: {cluster_label}</div>
+                  <div class="small-muted">{_v39_ml_text("\u041e\u0446\u0435\u043d\u043a\u0430", "Score")}: {score_text} \u00b7 {_v39_ml_text("\u041a\u043b\u0430\u0441", "Class")}: {classification} \u00b7 {_v39_ml_text("\u041a\u043b\u044a\u0441\u0442\u0435\u0440", "Cluster")}: {cluster_label}</div>
                 </div>
                 """
             st.markdown(html, unsafe_allow_html=True)
@@ -3243,8 +3243,8 @@ def page_ticket_analyzer() -> None:
             else:
                 parts.append(
                     tx(
-                        "\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u0441\u043c\u0435\u0441\u0435\u043d\u0430 ? \u0438\u043c\u0430 \u0447\u0438\u0441\u043b\u0430 \u043e\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0437\u043e\u043d\u0438.",
-                        "The combination is mixed ? it has numbers from different statistical zones.",
+                        "\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u0441\u043c\u0435\u0441\u0435\u043d\u0430 \u2014 \u0438\u043c\u0430 \u0447\u0438\u0441\u043b\u0430 \u043e\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0437\u043e\u043d\u0438.",
+                        "The combination is mixed — it has numbers from different statistical zones.",
                     )
                 )
         else:
@@ -3472,7 +3472,7 @@ def page_ticket_analyzer() -> None:
                 f"""
                 <div class="v39-combo-head">
                     {combo_label} {index}
-                    <span class="v39-combo-count"> ? {count_text}</span>
+                    <span class="v39-combo-count"> · {count_text}</span>
                 </div>
                 """,
                 unsafe_allow_html=True,
