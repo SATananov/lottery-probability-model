@@ -569,3 +569,178 @@ def render() -> None:
             "\\u0424\\u0438\\u0448\\u043e\\u0432\\u0435\\u0442\\u0435 \\u0441\\u0430 \\u043f\\u043e\\u0434\\u0431\\u0440\\u0430\\u043d\\u0438 \\u0447\\u0440\\u0435\\u0437 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0438 \\u043e\\u0442 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438 \\u043c\\u043e\\u0434\\u0435\\u043b, \\u0431\\u0430\\u043b\\u0430\\u043d\\u0441 \\u0438 \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u043e \\u043f\\u0440\\u0438\\u043f\\u043e\\u043a\\u0440\\u0438\\u0432\\u0430\\u043d\\u0435. \\u0422\\u043e\\u0432\\u0430 \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043c\\u0435\\u043d\\u044f \\u043c\\u0430\\u0442\\u0435\\u043c\\u0430\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u044f \\u0448\\u0430\\u043d\\u0441 \\u043d\\u0430 \\u0438\\u0433\\u0440\\u0430\\u0442\\u0430."
         )
     )
+
+# === Step 52 Smart Ticket Builder Integration ===
+from pathlib import Path as _Step52Path
+from typing import Any as _Step52Any
+import json as _step52_json
+
+import pandas as _step52_pd
+import streamlit as _step52_st
+
+
+_STEP52_ROOT = _Step52Path(__file__).resolve().parents[1]
+_STEP52_SUMMARY_JSON = _STEP52_ROOT / "reports" / "v51_ticket_portfolio_summary.json"
+_STEP52_SCORE_CSV = _STEP52_ROOT / "reports" / "v51_current_pro_ticket_score.csv"
+
+
+def _step52_t(value: str) -> str:
+    return value.encode("ascii").decode("unicode_escape")
+
+
+def _step52_read_json(path: _Step52Path) -> dict[str, _Step52Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = _step52_json.loads(path.read_text(encoding="utf-8-sig"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _step52_read_csv(path: _Step52Path) -> _step52_pd.DataFrame:
+    if not path.exists():
+        return _step52_pd.DataFrame()
+    try:
+        return _step52_pd.read_csv(path)
+    except Exception:
+        return _step52_pd.DataFrame()
+
+
+def _step52_rating_label(value: str) -> str:
+    labels = {
+        "strong": _step52_t("\\u0421\\u0438\\u043b\\u0435\\u043d \\u0444\\u0438\\u0448"),
+        "balanced": _step52_t("\\u0411\\u0430\\u043b\\u0430\\u043d\\u0441\\u0438\\u0440\\u0430\\u043d \\u0444\\u0438\\u0448"),
+        "medium": _step52_t("\\u0421\\u0440\\u0435\\u0434\\u0435\\u043d \\u0444\\u0438\\u0448"),
+        "weak": _step52_t("\\u041d\\u0435\\u0431\\u0430\\u043b\\u0430\\u043d\\u0441\\u0438\\u0440\\u0430\\u043d \\u0444\\u0438\\u0448"),
+        "missing": _step52_t("\\u041d\\u044f\\u043c\\u0430 \\u0434\\u0430\\u043d\\u043d\\u0438"),
+    }
+    return labels.get(str(value), str(value))
+
+
+def _step52_warning_label(code: str) -> str:
+    labels = {
+        "missing_combinations": _step52_t("\\u041d\\u044f\\u043c\\u0430 \\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u0438 Pro \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438."),
+        "high_average_overlap": _step52_t("\\u0421\\u0440\\u0435\\u0434\\u043d\\u043e\\u0442\\u043e \\u043f\\u0440\\u0438\\u043f\\u043e\\u043a\\u0440\\u0438\\u0432\\u0430\\u043d\\u0435 \\u043c\\u0435\\u0436\\u0434\\u0443 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438\\u0442\\u0435 \\u0435 \\u0432\\u0438\\u0441\\u043e\\u043a\\u043e."),
+        "high_max_overlap": _step52_t("\\u0418\\u043c\\u0430 \\u0434\\u0432\\u0435 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438 \\u0441 \\u0442\\u0432\\u044a\\u0440\\u0434\\u0435 \\u043c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0431\\u0449\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430."),
+        "too_much_repetition": _step52_t("\\u041d\\u044f\\u043a\\u043e\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430 \\u0441\\u0435 \\u043f\\u043e\\u0432\\u0442\\u0430\\u0440\\u044f\\u0442 \\u0442\\u0432\\u044a\\u0440\\u0434\\u0435 \\u0447\\u0435\\u0441\\u0442\\u043e \\u0432 \\u0446\\u0435\\u043b\\u0438\\u044f \\u0444\\u0438\\u0448."),
+        "weak_combo_structure": _step52_t("\\u0421\\u0440\\u0435\\u0434\\u043d\\u0430\\u0442\\u0430 \\u0441\\u0442\\u0440\\u0443\\u043a\\u0442\\u0443\\u0440\\u043d\\u0430 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043d\\u0430 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438\\u0442\\u0435 \\u0435 \\u043d\\u0438\\u0441\\u043a\\u0430."),
+        "low_number_coverage": _step52_t("\\u0424\\u0438\\u0448\\u044a\\u0442 \\u043f\\u043e\\u043a\\u0440\\u0438\\u0432\\u0430 \\u0442\\u0432\\u044a\\u0440\\u0434\\u0435 \\u043c\\u0430\\u043b\\u043a\\u043e \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430."),
+    }
+    return labels.get(str(code), str(code))
+
+
+def _step52_strength_label(code: str) -> str:
+    labels = {
+        "good_diversity": _step52_t("\\u0414\\u043e\\u0431\\u0440\\u043e \\u0440\\u0430\\u0437\\u043d\\u043e\\u043e\\u0431\\u0440\\u0430\\u0437\\u0438\\u0435 \\u043c\\u0435\\u0436\\u0434\\u0443 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438\\u0442\\u0435."),
+        "controlled_repetition": _step52_t("\\u041f\\u043e\\u0432\\u0442\\u043e\\u0440\\u0435\\u043d\\u0438\\u044f\\u0442\\u0430 \\u043d\\u0430 \\u0447\\u0438\\u0441\\u043b\\u0430 \\u0441\\u0430 \\u043a\\u043e\\u043d\\u0442\\u0440\\u043e\\u043b\\u0438\\u0440\\u0430\\u043d\\u0438."),
+        "solid_combo_structure": _step52_t("\\u041e\\u0442\\u0434\\u0435\\u043b\\u043d\\u0438\\u0442\\u0435 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043c\\u0430\\u0442 \\u0434\\u043e\\u0431\\u0440\\u0430 \\u0441\\u0442\\u0440\\u0443\\u043a\\u0442\\u0443\\u0440\\u0430."),
+        "good_number_coverage": _step52_t("\\u0424\\u0438\\u0448\\u044a\\u0442 \\u043f\\u043e\\u043a\\u0440\\u0438\\u0432\\u0430 \\u0434\\u043e\\u0431\\u044a\\u0440 \\u0431\\u0440\\u043e\\u0439 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430."),
+    }
+    return labels.get(str(code), str(code))
+
+
+def _step52_rename_combo_columns(df: _step52_pd.DataFrame) -> _step52_pd.DataFrame:
+    rename = {
+        "combination": _step52_t("\\u041a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u044f"),
+        "combo_score": _step52_t("\\u041e\\u0446\\u0435\\u043d\\u043a\\u0430"),
+        "pair_average": _step52_t("\\u0421\\u0440\\u0435\\u0434\\u043d\\u0430 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043d\\u0430 \\u0434\\u0432\\u043e\\u0439\\u043a\\u0438"),
+        "strong_pairs": _step52_t("\\u0421\\u0438\\u043b\\u043d\\u0438 \\u0434\\u0432\\u043e\\u0439\\u043a\\u0438"),
+        "group_average": _step52_t("\\u0421\\u0440\\u0435\\u0434\\u043d\\u0430 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043d\\u0430 \\u0442\\u0440\\u043e\\u0439\\u043a\\u0438"),
+        "strong_groups": _step52_t("\\u0421\\u0438\\u043b\\u043d\\u0438 \\u0442\\u0440\\u043e\\u0439\\u043a\\u0438"),
+        "sum": _step52_t("\\u0421\\u0443\\u043c\\u0430"),
+        "even_count": _step52_t("\\u0427\\u0435\\u0442\\u043d\\u0438"),
+        "low_count": _step52_t("\\u041d\\u0438\\u0441\\u043a\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "range_span": _step52_t("\\u0420\\u0430\\u0437\\u043c\\u0430\\u0445"),
+        "consecutive_pairs": _step52_t("\\u041f\\u043e\\u0440\\u0435\\u0434\\u043d\\u0438 \\u0434\\u0432\\u043e\\u0439\\u043a\\u0438"),
+    }
+
+    preferred = [
+        "combination",
+        "combo_score",
+        "pair_average",
+        "strong_pairs",
+        "group_average",
+        "strong_groups",
+        "sum",
+        "even_count",
+        "low_count",
+        "range_span",
+        "consecutive_pairs",
+    ]
+
+    cols = [col for col in preferred if col in df.columns]
+    remaining = [col for col in df.columns if col not in cols]
+    return df[cols + remaining].rename(columns=rename)
+
+
+def _step52_render_smart_ticket_intelligence() -> None:
+    summary = _step52_read_json(_STEP52_SUMMARY_JSON)
+    df = _step52_read_csv(_STEP52_SCORE_CSV)
+
+    _step52_st.divider()
+    _step52_st.subheader(_step52_t("\\u0418\\u043d\\u0442\\u0435\\u043b\\u0438\\u0433\\u0435\\u043d\\u0442\\u043d\\u0430 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043d\\u0430 \\u0442\\u0435\\u043a\\u0443\\u0449\\u0438\\u044f Pro \\u0444\\u0438\\u0448"))
+
+    _step52_st.caption(
+        _step52_t(
+            "\\u0422\\u043e\\u0437\\u0438 \\u043f\\u0430\\u043d\\u0435\\u043b \\u0432\\u0437\\u0435\\u043c\\u0430 v51 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430\\u0442\\u0430 \\u0438 \\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430 \\u0434\\u0438\\u0440\\u0435\\u043a\\u0442\\u043d\\u043e \\u0432 \\u0433\\u0435\\u043d\\u0435\\u0440\\u0430\\u0442\\u043e\\u0440\\u0430. \\u0426\\u0435\\u043b\\u0442\\u0430 \\u0435 \\u043f\\u043e-\\u0434\\u043e\\u0431\\u0440\\u0430 \\u0441\\u0442\\u0440\\u0443\\u043a\\u0442\\u0443\\u0440\\u0430, \\u043d\\u0435 \\u0433\\u0430\\u0440\\u0430\\u043d\\u0446\\u0438\\u044f."
+        )
+    )
+
+    if not summary or df.empty:
+        _step52_st.info(
+            _step52_t(
+                "\\u041d\\u044f\\u043c\\u0430 \\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u0430 v51 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430. \\u041f\\u0443\\u0441\\u043d\\u0438 \\u043f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v51 \\u043e\\u0442 \\u0426\\u0435\\u043d\\u0442\\u044a\\u0440 \\u0437\\u0430 \\u043e\\u0431\\u0443\\u0447\\u0435\\u043d\\u0438\\u0435."
+            )
+        )
+        return
+
+    portfolio = summary.get("portfolio", {})
+    metrics = portfolio.get("metrics", {})
+    score = float(portfolio.get("overall_score", 0.0))
+    rating = str(portfolio.get("rating", "missing"))
+
+    c1, c2, c3, c4 = _step52_st.columns(4)
+    c1.metric(_step52_t("\\u041e\\u0431\\u0449\\u0430 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430"), f"{score:.2f} / 100")
+    c2.metric(_step52_t("\\u041a\\u043b\\u0430\\u0441"), _step52_rating_label(rating))
+    c3.metric(_step52_t("\\u0423\\u043d\\u0438\\u043a\\u0430\\u043b\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"), str(metrics.get("unique_numbers", "-")))
+    c4.metric(_step52_t("\\u041c\\u0430\\u043a\\u0441. \\u043f\\u0440\\u0438\\u043f\\u043e\\u043a\\u0440\\u0438\\u0432\\u0430\\u043d\\u0435"), str(metrics.get("max_overlap", "-")))
+
+    _step52_st.progress(min(max(score / 100.0, 0.0), 1.0))
+
+    with _step52_st.expander(_step52_t("\\u041e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043f\\u043e \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438"), expanded=True):
+        _step52_st.dataframe(_step52_rename_combo_columns(df), hide_index=True, use_container_width=True)
+
+    col_left, col_right = _step52_st.columns(2)
+
+    with col_left:
+        _step52_st.markdown("**" + _step52_t("\\u0421\\u0438\\u043b\\u043d\\u0438 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438") + "**")
+        strengths = portfolio.get("strength_codes", [])
+        if strengths:
+            for code in strengths:
+                _step52_st.success(_step52_strength_label(str(code)))
+        else:
+            _step52_st.info(_step52_t("\\u041d\\u044f\\u043c\\u0430 \\u044f\\u0441\\u043d\\u043e \\u043e\\u0442\\u043a\\u0440\\u043e\\u0435\\u043d\\u0438 \\u0441\\u0438\\u043b\\u043d\\u0438 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438."))
+
+    with col_right:
+        _step52_st.markdown("**" + _step52_t("\\u0412\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435") + "**")
+        warnings = portfolio.get("warning_codes", [])
+        if warnings:
+            for code in warnings:
+                _step52_st.warning(_step52_warning_label(str(code)))
+        else:
+            _step52_st.success(_step52_t("\\u041d\\u044f\\u043c\\u0430 \\u043e\\u0441\\u043d\\u043e\\u0432\\u043d\\u0438 \\u0441\\u0442\\u0440\\u0443\\u043a\\u0442\\u0443\\u0440\\u043d\\u0438 \\u043f\\u0440\\u0435\\u0434\\u0443\\u043f\\u0440\\u0435\\u0436\\u0434\\u0435\\u043d\\u0438\\u044f."))
+
+    _step52_st.caption(
+        _step52_t(
+            "\\u0410\\u043a\\u043e \\u043f\\u0440\\u043e\\u043c\\u0435\\u043d\\u0438\\u0448 \\u0434\\u0430\\u043d\\u043d\\u0438\\u0442\\u0435 \\u0438\\u043b\\u0438 \\u0433\\u0435\\u043d\\u0435\\u0440\\u0438\\u0440\\u0430\\u0448 \\u043d\\u043e\\u0432 Pro \\u0444\\u0438\\u0448, \\u043f\\u0443\\u0441\\u043d\\u0438 refresh \\u0434\\u043e v51, \\u0437\\u0430 \\u0434\\u0430 \\u0441\\u0435 \\u043e\\u0431\\u043d\\u043e\\u0432\\u0438 \\u0442\\u0430\\u0437\\u0438 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0430."
+        )
+    )
+
+
+_step52_original_render = render
+
+
+def render() -> None:
+    _step52_original_render()
+    _step52_render_smart_ticket_intelligence()
