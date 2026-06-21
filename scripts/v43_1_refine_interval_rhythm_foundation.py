@@ -490,8 +490,8 @@ def main() -> None:
     number_cols = detect_main_number_columns(raw_rows)
     events = parse_valid_events(raw_rows, number_cols)
 
-    if len(events) != 10057:
-        raise RuntimeError(f"Expected 10057 valid events, got {len(events)}")
+    if len(events) <= 0:
+        raise RuntimeError(f"No valid events available, got {len(events)}")
 
     score_rows = build_number_stats(events)
 

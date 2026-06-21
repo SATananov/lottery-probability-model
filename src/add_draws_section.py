@@ -324,25 +324,79 @@ def bonus_label(value: int | None) -> str:
 
 
 def draw_block(position: int) -> tuple[list[int], int | None]:
-    st.markdown(f"### Теглене {position}")
-
-    numbers = st.multiselect(
-        f"Основни числа — теглене {position}",
-        options=list(range(1, 50)),
-        default=[],
-        max_selections=6,
-        key=f"add_draw_numbers_{position}",
+    st.markdown(f"### \u0422\u0435\u0433\u043b\u0435\u043d\u0435 {position}")
+    st.caption(
+        "\u0412\u044a\u0432\u0435\u0434\u0438 6 \u043e\u0441\u043d\u043e\u0432\u043d\u0438 \u0447\u0438\u0441\u043b\u0430 \u0432 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u043a\u043b\u0435\u0442\u043a\u0438. "
+        "\u0422\u0430\u043a\u0430 \u0441\u0435 \u0438\u0437\u0431\u044f\u0433\u0432\u0430\u0442 \u0433\u0440\u0435\u0448\u043a\u0438 \u0441\u044a\u0441 \u0437\u0430\u043f\u0435\u0442\u0430\u0438, \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0438 \u0438 \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435."
     )
 
+    number_cols = st.columns(6)
+    raw_values: list[str] = []
+
+    for index, column in enumerate(number_cols, start=1):
+        with column:
+            value = st.text_input(
+                f"\u0427\u0438\u0441\u043b\u043e {index}",
+                value="",
+                max_chars=2,
+                key=f"add_draw_number_cell_{position}_{index}",
+                placeholder="1-49",
+            )
+            raw_values.append(value.strip())
+
+    filled_values = [value for value in raw_values if value]
+    cell_errors: list[str] = []
+    numbers: list[int] = []
+
+    for index, value in enumerate(raw_values, start=1):
+        if not value:
+            continue
+
+        try:
+            number = int(value)
+        except ValueError:
+            cell_errors.append(
+                f"\u0422\u0435\u0433\u043b\u0435\u043d\u0435 {position}, \u0447\u0438\u0441\u043b\u043e {index}: "
+                "\u0432\u044a\u0432\u0435\u0434\u0438 \u0441\u0430\u043c\u043e \u0447\u0438\u0441\u043b\u043e."
+            )
+            continue
+
+        if not 1 <= number <= 49:
+            cell_errors.append(
+                f"\u0422\u0435\u0433\u043b\u0435\u043d\u0435 {position}, \u0447\u0438\u0441\u043b\u043e {index}: "
+                "\u0447\u0438\u0441\u043b\u043e\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043c\u0435\u0436\u0434\u0443 1 \u0438 49."
+            )
+            continue
+
+        numbers.append(number)
+
+    for error in cell_errors:
+        st.error(error)
+
+    if filled_values and not cell_errors:
+        if len(numbers) < 6:
+            st.caption(
+                f"\u041f\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438 \u0441\u0430 {len(numbers)} "
+                "\u043e\u0442 6 \u043e\u0441\u043d\u043e\u0432\u043d\u0438 \u0447\u0438\u0441\u043b\u0430."
+            )
+        elif len(set(numbers)) != len(numbers):
+            st.warning(
+                "\u0418\u043c\u0430 \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u043e \u043e\u0441\u043d\u043e\u0432\u043d\u043e \u0447\u0438\u0441\u043b\u043e. "
+                "\u041f\u0440\u043e\u0432\u0435\u0440\u0438 \u043a\u043b\u0435\u0442\u043a\u0438\u0442\u0435 \u043f\u0440\u0435\u0434\u0438 \u0437\u0430\u043f\u0438\u0441."
+            )
+        elif len(numbers) == 6:
+            st.success(
+                "\u041e\u0441\u043d\u043e\u0432\u043d\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u0430 \u0441\u0430 \u043f\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438 \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u043e."
+            )
+
     bonus = st.selectbox(
-        f"Допълнително число — теглене {position}",
+        f"\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u0447\u0438\u0441\u043b\u043e \u2014 \u0442\u0435\u0433\u043b\u0435\u043d\u0435 {position}",
         options=bonus_options(),
         format_func=bonus_label,
         key=f"add_draw_bonus_{position}",
     )
 
-    return normalize_numbers(numbers), bonus
-
+    return numbers, bonus
 
 def render() -> None:
     st.title("Добавяне на тираж")

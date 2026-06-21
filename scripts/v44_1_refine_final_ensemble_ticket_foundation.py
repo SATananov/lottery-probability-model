@@ -279,8 +279,8 @@ def get_prediction_numbers(payload: dict[str, Any], keys: list[str]) -> set[int]
 def build_ensemble_scores() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     events = parse_valid_events(load_rows(DATA_PATH))
 
-    if len(events) != 10057:
-        raise RuntimeError(f"Expected 10057 valid draws, got {len(events)}")
+    if len(events) <= 0:
+        raise RuntimeError(f"No valid draw events available, got {len(events)}")
 
     history_scores = historical_rules_scores(events)
 
