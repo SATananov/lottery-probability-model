@@ -1,0 +1,240 @@
+{
+  "audit_name": "v40_rules_aware_draw_audit",
+  "audit_status": "PASS",
+  "dataset_path": "data\\historical_draws.csv",
+  "row_count": 10057,
+  "columns": [
+    "draw_id",
+    "date",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "n6",
+    "year",
+    "draw_number",
+    "draw_position",
+    "source_url"
+  ],
+  "missing_required_columns": [],
+  "extra_columns": [],
+  "target_schema_for_v40": [
+    "draw_id",
+    "date",
+    "year",
+    "draw_number",
+    "drawing_no",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "n6",
+    "bonus_number",
+    "source_url",
+    "rules_version"
+  ],
+  "year_min": 1958,
+  "year_max": 2026,
+  "last_valid_date": "2026-06-18",
+  "rows_2026": 48,
+  "max_2026_draw_number": 47,
+  "draw_position_counts": {
+    "1": 5175,
+    "2": 3587,
+    "3": 1280,
+    "4": 15
+  },
+  "recent_year_position_summary": {
+    "2012": {
+      "rows": 208,
+      "positions": {
+        "1": 104,
+        "2": 104
+      }
+    },
+    "2013": {
+      "rows": 210,
+      "positions": {
+        "1": 105,
+        "2": 105
+      }
+    },
+    "2014": {
+      "rows": 208,
+      "positions": {
+        "1": 104,
+        "2": 104
+      }
+    },
+    "2015": {
+      "rows": 143,
+      "positions": {
+        "1": 106,
+        "2": 37
+      }
+    },
+    "2016": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2017": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2018": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2019": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2020": {
+      "rows": 105,
+      "positions": {
+        "1": 105
+      }
+    },
+    "2021": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2022": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2023": {
+      "rows": 105,
+      "positions": {
+        "1": 105
+      }
+    },
+    "2024": {
+      "rows": 104,
+      "positions": {
+        "1": 104
+      }
+    },
+    "2025": {
+      "rows": 105,
+      "positions": {
+        "1": 105
+      }
+    },
+    "2026": {
+      "rows": 48,
+      "positions": {
+        "1": 48
+      }
+    }
+  },
+  "years_with_only_draw_position_1": [
+    1958,
+    1959,
+    1960,
+    1961,
+    1962,
+    1963,
+    1964,
+    1965,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "years_with_multiple_draw_positions": [
+    1966,
+    1967,
+    1968,
+    1969,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976,
+    1977,
+    1978,
+    1979,
+    1980,
+    1981,
+    1982,
+    1983,
+    1984,
+    1985,
+    1986,
+    1987,
+    1988,
+    1989,
+    1990,
+    1991,
+    1992,
+    1993,
+    1994,
+    1995,
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "current_schema_support": {
+    "has_draw_position": true,
+    "has_drawing_no": false,
+    "has_bonus_number": false,
+    "has_rules_version": false
+  },
+  "duplicate_draw_ids": 0,
+  "duplicate_year_draw_position_keys": 0,
+  "out_of_range_rows": 0,
+  "repeated_numbers_rows": 0,
+  "warnings": [
+    "Dataset has no bonus_number column yet.",
+    "Dataset has no rules_version column yet.",
+    "Dataset uses draw_position, but not the clearer v40 name drawing_no yet.",
+    "2026 currently contains only draw_position=1. If 2026 has two official drawings per draw, second-drawing data still needs to be imported separately."
+  ],
+  "recommendation": [
+    "Keep the existing v39 dataset as the stable baseline.",
+    "Do not retrain new two-drawing models until second-drawing and bonus-number data are imported.",
+    "For v40, create a normalized draw-event dataset with drawing_no and bonus_number instead of overwriting historical_draws.csv directly.",
+    "After the normalized dataset is created, train separate models for drawing 1, drawing 2, combined analysis, and bonus number analysis."
+  ]
+}
