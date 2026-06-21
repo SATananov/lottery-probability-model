@@ -40,6 +40,11 @@ TRAINING_STEPS = [
         "script": "scripts/v45_train_prediction_engine_pro.py",
         "outputs": ["models/v45", "reports/v45_training_summary.json"],
     },
+    {
+        "name": "\\u0410\\u043d\\u0430\\u043b\\u0438\\u0437 \\u043d\\u0430 \\u0434\\u0432\\u043e\\u0439\\u043a\\u0438 \\u0438 \\u0433\\u0440\\u0443\\u043f\\u0438",
+        "script": "scripts/v50_build_pair_group_intelligence.py",
+        "outputs": ["models/v50", "reports/v50_pair_group_summary.json"],
+    },
 ]
 
 V45_SUMMARY_PATH = ROOT / "reports" / "v45_training_summary.json"
@@ -249,7 +254,7 @@ def _render_training_buttons() -> None:
             st.code(output or "-", language="text")
 
     with col2:
-        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v45")):
+        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v50")):
             full_output = []
             all_ok = True
 
