@@ -3126,7 +3126,6 @@ def page_glossary() -> None:
 
 
 
-
 def page_ticket_analyzer() -> None:
     render_header()
 
@@ -3135,25 +3134,25 @@ def page_ticket_analyzer() -> None:
     def tx(bg: str, en: str) -> str:
         return bg if lang == "bg" else en
 
-    def rerun_page() -> None:
+    def rerun_page():
         if hasattr(st, "rerun"):
             st.rerun()
         elif hasattr(st, "experimental_rerun"):
             st.experimental_rerun()
 
     def combo_key(index: int) -> str:
-        return f"v39_ticket_slip_combo_{index}"
+        return f"v39_real_slip_combo_{index}"
 
-    def get_combo(index: int) -> list[int]:
-        st.session_state.setdefault(combo_key(index), [])
-        values = st.session_state.get(combo_key(index), [])
-        return sorted([int(x) for x in values])
+    def get_combo(index: int):
+        key = combo_key(index)
+        st.session_state.setdefault(key, [])
+        return sorted([int(x) for x in st.session_state.get(key, [])])
 
-    def set_combo(index: int, values) -> None:
+    def set_combo(index: int, values):
         st.session_state[combo_key(index)] = sorted([int(x) for x in values])
-        st.session_state["v39_ticket_slip_show_analysis"] = False
+        st.session_state["v39_real_slip_show_analysis"] = False
 
-    def toggle_number(index: int, number: int) -> None:
+    def toggle_number(index: int, number: int):
         selected = set(get_combo(index))
 
         if number in selected:
@@ -3163,7 +3162,7 @@ def page_ticket_analyzer() -> None:
             return
 
         if len(selected) >= 6:
-            st.session_state["v39_ticket_slip_message"] = tx(
+            st.session_state["v39_real_slip_message"] = tx(
                 "\u0412 \u0435\u0434\u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u043c\u043e\u0436\u0435 \u0434\u0430 \u0438\u043c\u0430 \u0442\u043e\u0447\u043d\u043e 6 \u0447\u0438\u0441\u043b\u0430. \u041f\u044a\u0440\u0432\u043e \u043c\u0430\u0445\u043d\u0438 \u0435\u0434\u043d\u043e \u0447\u0438\u0441\u043b\u043e.",
                 "One combination can contain exactly 6 numbers. Remove one number first.",
             )
@@ -3174,213 +3173,59 @@ def page_ticket_analyzer() -> None:
         set_combo(index, selected)
         rerun_page()
 
-    def fmt_numbers(values) -> str:
-        values = sorted([int(x) for x in values])
-        return ", ".join(str(x) for x in values) if values else "\u2014"
 
-    def selected_chips(values) -> str:
-        values = sorted([int(x) for x in values])
+    def render_selected_balls(numbers):
+        numbers = sorted([int(x) for x in numbers])
+        return " \u2192 ".join(str(n) for n in numbers) if numbers else "\u2014"
 
-        if not values:
-            return f'<span class="v39-empty">{tx("\u043d\u044f\u043c\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430", "no selected numbers")}</span>'
 
-        chips = ""
-        for value in values:
-            chips += f'<span class="v39-chip">{value}</span>'
+    def render_number_grid(index: int):
+        selected = set(get_combo(index))
 
-        return chips
-
-    def render_page_css() -> None:
         st.markdown(
-            """
-            <style>
-            div[data-testid="stButton"] > button {
-                border: 1px solid rgba(245, 216, 108, 0.36) !important;
-                background: rgba(255, 255, 255, 0.035) !important;
-                color: rgba(255,255,255,0.88) !important;
-                border-radius: 8px !important;
-                min-height: 34px !important;
-                padding: 0.18rem 0.25rem !important;
-                font-size: 0.84rem !important;
-                font-weight: 800 !important;
-                box-shadow: none !important;
-            }
-
-            div[data-testid="stButton"] > button:hover {
-                border-color: rgba(245, 216, 108, 0.82) !important;
-                background: rgba(245, 216, 108, 0.12) !important;
-                color: #f8e6a0 !important;
-            }
-
-            div[data-testid="stButton"] > button[kind="primary"] {
-                border-color: rgba(236, 0, 140, 0.95) !important;
-                background: rgba(236, 0, 140, 0.18) !important;
-                color: #f7d66d !important;
-                font-weight: 950 !important;
-            }
-
-            .v39-slip-wrap {
-                border: 1px solid rgba(245, 216, 108, 0.25);
-                border-radius: 18px;
-                padding: 18px;
-                background:
-                    radial-gradient(circle at top left, rgba(245,216,108,0.11), transparent 30%),
-                    rgba(255,255,255,0.025);
-                margin: 12px 0 18px 0;
-            }
-
-            .v39-slip-title {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 14px;
-                border: 1px solid rgba(245, 216, 108, 0.25);
-                border-radius: 14px;
-                padding: 14px 16px;
-                background: rgba(0,0,0,0.20);
-                margin-bottom: 14px;
-            }
-
-            .v39-slip-title-main {
-                color: #f5ead4;
-                font-size: 1.15rem;
-                font-weight: 900;
-                letter-spacing: 0.2px;
-            }
-
-            .v39-slip-title-sub {
-                color: rgba(255,255,255,0.62);
-                font-size: 0.9rem;
-                margin-top: 3px;
-            }
-
-            .v39-combo-head {
-                border: 1px solid rgba(245,216,108,0.28);
-                border-bottom: 0;
-                border-radius: 14px 14px 0 0;
-                background: linear-gradient(180deg, rgba(245,216,108,0.13), rgba(236,0,140,0.08));
-                color: #f4d36c;
-                text-align: center;
-                font-weight: 900;
-                padding: 9px 10px;
-                font-size: 0.98rem;
-                margin-top: 4px;
-            }
-
-            .v39-combo-count {
-                color: rgba(255,255,255,0.64);
-                font-weight: 700;
-                font-size: 0.86rem;
-            }
-
-            .v39-selected-row {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                flex-wrap: wrap;
-                margin: 10px 0 12px 0;
-                padding: 10px 12px;
-                border-radius: 12px;
-                border: 1px solid rgba(245,216,108,0.22);
-                background: rgba(245,216,108,0.065);
-            }
-
-            .v39-selected-label {
-                color: #f4d36c;
-                font-weight: 900;
-                margin-right: 2px;
-            }
-
-            .v39-chip {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                min-width: 32px;
-                height: 30px;
-                padding: 0 8px;
-                border-radius: 999px;
-                background: linear-gradient(180deg, #f2d66a, #c89b18);
-                color: #111;
-                font-weight: 900;
-                border: 1px solid rgba(255,230,140,0.55);
-                box-shadow: 0 0 10px rgba(245,216,108,0.14);
-            }
-
-            .v39-empty {
-                color: rgba(255,255,255,0.58);
-                font-weight: 700;
-            }
-
-            .v39-slip-summary {
-                border: 1px solid rgba(245,216,108,0.22);
-                background: rgba(255,255,255,0.035);
-                border-radius: 14px;
-                padding: 14px 16px;
-                margin-top: 16px;
-            }
-
-            .v39-summary-line {
-                margin: 7px 0;
-                color: rgba(255,255,255,0.86);
-            }
-
-            .v39-summary-line strong {
-                color: #f4d36c;
-            }
-            </style>
+            f"""
+            <div class="v39-slip-combo-head">
+                {tx('\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f', 'Combination')} {index}
+            </div>
             """,
             unsafe_allow_html=True,
         )
 
-    def render_combo(index: int) -> None:
+        for row in range(7):
+            cols = st.columns(7, gap="small")
+            for col in range(7):
+                number = row * 7 + col + 1
+                is_selected = number in selected
+                label = "\u2715" if is_selected else str(number)
+
+                if cols[col].button(
+                    label,
+                    key=f"v39_real_slip_cell_{index}_{number}",
+                    width="content",
+                ):
+                    toggle_number(index, number)
+
         values = get_combo(index)
-        count_text = f"{len(values)}/6"
+        selected_text = render_selected_balls(values)
 
-        combo_label = tx("\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f", "Combination")
-        selected_label = tx("\u0418\u0437\u0431\u0440\u0430\u043d\u0438", "Selected")
-        clear_label = tx("\u0418\u0437\u0447\u0438\u0441\u0442\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430", "Clear combination")
+        st.markdown(
+            f"""
+            <div class="v39-slip-selected-line">
+                <strong>{tx('\u0418\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430', 'Selected numbers')}:</strong>
+                <span>{selected_text}</span>
+                <em>{len(values)}/6</em>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        with st.container(border=True):
-            st.markdown(
-                f"""
-                <div class="v39-combo-head">
-                    {combo_label} {index}
-                    <span class="v39-combo-count"> ? {count_text}</span>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            for row in range(7):
-                columns = st.columns(7, gap="small")
-
-                for col in range(7):
-                    number = row * 7 + col + 1
-                    selected = number in values
-                    label = "\u2715" if selected else str(number)
-                    button_type = "primary" if selected else "secondary"
-
-                    if columns[col].button(
-                        label,
-                        key=f"v39_ticket_cell_{index}_{number}",
-                        type=button_type,
-                        width="stretch",
-                    ):
-                        toggle_number(index, number)
-
-            st.markdown(
-                f"""
-                <div class="v39-selected-row">
-                    <span class="v39-selected-label">{selected_label}:</span>
-                    {selected_chips(values)}
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            if st.button(clear_label, key=f"v39_ticket_clear_{index}", width="stretch"):
-                set_combo(index, [])
-                rerun_page()
+        if st.button(
+            tx("\u0418\u0437\u0447\u0438\u0441\u0442\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430", "Clear combination"),
+            key=f"v39_clear_combo_{index}",
+            width="stretch",
+        ):
+            set_combo(index, [])
+            rerun_page()
 
     def detect_number_columns(df):
         candidates = [
@@ -3389,25 +3234,23 @@ def page_ticket_analyzer() -> None:
             ["number1", "number2", "number3", "number4", "number5", "number6"],
         ]
 
-        for columns in candidates:
-            if all(column in df.columns for column in columns):
-                return columns
+        for cols in candidates:
+            if all(col in df.columns for col in cols):
+                return cols
 
-        numeric_columns = []
-
-        for column in df.columns:
-            lowered = str(column).lower()
+        numeric_cols = []
+        for col in df.columns:
+            lowered = str(col).lower()
             if lowered in ["year", "draw", "draw_id", "date", "month", "day"]:
                 continue
-
             try:
-                sample = df[column].dropna().head(30).astype(int)
+                sample = df[col].dropna().head(30).astype(int)
                 if len(sample) > 0 and sample.between(1, 49).all():
-                    numeric_columns.append(column)
+                    numeric_cols.append(col)
             except Exception:
                 pass
 
-        return numeric_columns[:6] if len(numeric_columns) >= 6 else []
+        return numeric_cols[:6] if len(numeric_cols) >= 6 else []
 
     def calculate_zones(numbers):
         try:
@@ -3418,31 +3261,30 @@ def page_ticket_analyzer() -> None:
         if df is None or getattr(df, "empty", True):
             return None
 
-        columns = detect_number_columns(df)
-
-        if not columns:
+        cols = detect_number_columns(df)
+        if not cols:
             return None
 
-        frequency = {number: 0 for number in range(1, 50)}
+        freq = {n: 0 for n in range(1, 50)}
 
         for _, row in df.iterrows():
-            for column in columns:
+            for col in cols:
                 try:
-                    value = int(row[column])
+                    value = int(row[col])
                     if 1 <= value <= 49:
-                        frequency[value] += 1
+                        freq[value] += 1
                 except Exception:
                     pass
 
-        ordered = sorted(range(1, 50), key=lambda number: (-frequency[number], number))
+        ordered = sorted(range(1, 50), key=lambda n: (-freq[n], n))
 
         hot_set = set(ordered[:16])
         middle_set = set(ordered[16:33])
         cold_set = set(ordered[33:])
 
-        hot = sorted([number for number in numbers if number in hot_set])
-        middle = sorted([number for number in numbers if number in middle_set])
-        cold = sorted([number for number in numbers if number in cold_set])
+        hot = sorted([n for n in numbers if n in hot_set])
+        middle = sorted([n for n in numbers if n in middle_set])
+        cold = sorted([n for n in numbers if n in cold_set])
 
         if len(hot) >= 3 and len(cold) <= 1:
             kind = tx("\u0411\u043b\u0438\u0437\u043e \u0434\u043e \u0433\u043e\u0440\u0435\u0449\u0430\u0442\u0430 \u0437\u043e\u043d\u0430", "Close to the hot zone")
@@ -3477,9 +3319,84 @@ def page_ticket_analyzer() -> None:
             "explanation": explanation,
         }
 
-    render_page_css()
+    def fmt_numbers(items):
+        return ", ".join(str(x) for x in items) if items else "\u2014"
 
-    st.markdown("## " + tx("\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448", "Ticket analysis"))
+    st.markdown(
+        """
+        <style>
+        div[data-testid="stButton"] > button {
+            border: 1px solid rgba(236, 0, 140, 0.75) !important;
+            color: #f3d36b !important;
+            background: rgba(236, 0, 140, 0.065) !important;
+            font-weight: 800 !important;
+            border-radius: 6px !important;
+            min-height: 42px !important;
+            min-width: 42px !important;
+            padding: 0.25rem 0.55rem !important;
+            box-shadow: none !important;
+        }
+
+        div[data-testid="stButton"] > button:hover {
+            background: rgba(236, 0, 140, 0.16) !important;
+            border-color: rgba(245, 216, 108, 0.8) !important;
+            color: #fff2b8 !important;
+        }
+
+        div[data-testid="stButton"] > button[kind="primary"] {
+            background: linear-gradient(180deg, #f1d06b, #c79a22) !important;
+            color: #111 !important;
+            border-color: rgba(255, 230, 140, 0.75) !important;
+        }
+
+        .v39-slip-combo-head {
+            border: 1px solid rgba(236, 0, 140, 0.75);
+            border-bottom: 0;
+            background: linear-gradient(180deg, rgba(236,0,140,0.20), rgba(236,0,140,0.08));
+            color: #f3d36b;
+            text-align: center;
+            font-weight: 900;
+            padding: 8px 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .v39-slip-selected-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0 14px 0;
+            padding: 10px 12px;
+            border: 1px solid rgba(245, 216, 108, 0.28);
+            background: rgba(245, 216, 108, 0.07);
+            border-radius: 10px;
+            color: #f5ead4;
+        }
+
+        .v39-slip-selected-line strong {
+            color: #f3d36b;
+        }
+
+        .v39-slip-selected-line span {
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        .v39-slip-selected-line em {
+            margin-left: auto;
+            color: rgba(255,255,255,0.72);
+            font-style: normal;
+            font-weight: 800;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+st.markdown("## " + tx("\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448", "Ticket analysis"))
 
     st.markdown(
         '<div class="warning-soft">'
@@ -3491,22 +3408,39 @@ def page_ticket_analyzer() -> None:
         unsafe_allow_html=True,
     )
 
-    message = st.session_state.pop("v39_ticket_slip_message", None)
-    if message:
-        st.warning(message)
+    msg = st.session_state.pop("v39_real_slip_message", None)
+    if msg:
+        st.warning(msg)
 
-    title_main = tx("\u0424\u0438\u0448 6/49", "6/49 ticket")
-    title_sub = tx("\u0415\u0434\u0438\u043d \u0444\u0438\u0448 \u0441 4 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "One ticket with 4 separate combinations")
+    st.markdown("### " + tx("\u0424\u0438\u0448 6/49", "6/49 ticket"))
 
     st.markdown(
         f"""
-        <div class="v39-slip-wrap">
-            <div class="v39-slip-title">
+        <div style="
+            max-width:1180px;
+            background:#ffffff;
+            color:#111;
+            border:1px solid #d8d8d8;
+            padding:18px;
+            margin:10px 0 16px 0;
+            box-shadow:0 10px 30px rgba(0,0,0,0.18);
+        ">
+            <div style="display:flex;align-items:center;gap:18px;">
+                <div style="
+                    width:58px;height:58px;border-radius:50%;
+                    border:6px solid #bfbfbf;
+                    color:#ec008c;
+                    display:flex;align-items:center;justify-content:center;
+                    font-size:22px;font-weight:900;
+                ">?</div>
                 <div>
-                    <div class="v39-slip-title-main">{title_main}</div>
-                    <div class="v39-slip-title-sub">{title_sub}</div>
+                    <div style="font-size:18px;font-weight:900;color:#333;">
+                        {tx('\u0411\u042a\u041b\u0413\u0410\u0420\u0421\u041a\u0418 \u0421\u041f\u041e\u0420\u0422\u0415\u041d \u0422\u041e\u0422\u0410\u041b\u0418\u0417\u0410\u0422\u041e\u0420', 'BULGARIAN SPORTS TOTALISATOR')}
+                    </div>
+                    <div style="font-size:46px;font-weight:900;color:#ec008c;line-height:1;">
+                        {tx('\u0422\u041e\u0422\u041e2 6/49', 'TOTO2 6/49')}
+                    </div>
                 </div>
-                <div class="v39-slip-title-main">\u25ce 6/49</div>
             </div>
         </div>
         """,
@@ -3515,69 +3449,52 @@ def page_ticket_analyzer() -> None:
 
     top_left, top_right = st.columns(2)
     with top_left:
-        render_combo(1)
+        render_number_grid(1)
     with top_right:
-        render_combo(2)
+        render_number_grid(2)
 
     bottom_left, bottom_right = st.columns(2)
     with bottom_left:
-        render_combo(3)
+        render_number_grid(3)
     with bottom_right:
-        render_combo(4)
+        render_number_grid(4)
 
-    st.markdown("### " + tx("\u041e\u0431\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043d\u0430 \u0444\u0438\u0448\u0430", "Ticket summary"))
-
-    summary_lines = ""
+    st.markdown("### " + tx("\u0418\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0442\u043e\u0437\u0438 \u0444\u0438\u0448", "Selected numbers in this ticket"))
 
     for index in range(1, 5):
         values = get_combo(index)
-
         if len(values) == 0:
-            status = tx("\u043d\u044f\u043c\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430", "no selected numbers")
+            status = tx("\u043d\u0435\u043f\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0430", "empty")
         elif len(values) < 6:
-            status = tx(
-                f"\u0438\u0437\u0431\u0440\u0430\u043d\u0438 {len(values)} \u043e\u0442 6: {fmt_numbers(values)}",
-                f"{len(values)} of 6 selected: {fmt_numbers(values)}",
-            )
+            status = tx(f"\u0438\u0437\u0431\u0440\u0430\u043d\u0438 {len(values)} \u043e\u0442 6: {fmt_numbers(values)}", f"{len(values)} of 6 selected: {fmt_numbers(values)}")
         else:
             status = fmt_numbers(values)
 
-        combo_label = tx("\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f", "Combination")
-        summary_lines += f'<div class="v39-summary-line"><strong>{combo_label} {index}:</strong> {status}</div>'
-
-    st.markdown(
-        f"""
-        <div class="v39-slip-summary">
-            {summary_lines}
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        st.markdown(f"**{tx('\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f', 'Combination')} {index}:** {status}")
 
     col_analyze, col_clear = st.columns(2)
 
     with col_analyze:
         if st.button(
             tx("\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0444\u0438\u0448\u0430", "Analyze ticket"),
-            key="v39_ticket_analyze_whole",
-            type="primary",
+            key="v39_analyze_whole_slip",
             width="stretch",
         ):
-            st.session_state["v39_ticket_slip_show_analysis"] = True
+            st.session_state["v39_real_slip_show_analysis"] = True
             rerun_page()
 
     with col_clear:
         if st.button(
             tx("\u0418\u0437\u0447\u0438\u0441\u0442\u0438 \u0446\u0435\u043b\u0438\u044f \u0444\u0438\u0448", "Clear whole ticket"),
-            key="v39_ticket_clear_whole",
+            key="v39_clear_whole_slip",
             width="stretch",
         ):
             for index in range(1, 5):
                 set_combo(index, [])
-            st.session_state["v39_ticket_slip_show_analysis"] = False
+            st.session_state["v39_real_slip_show_analysis"] = False
             rerun_page()
 
-    if not st.session_state.get("v39_ticket_slip_show_analysis", False):
+    if not st.session_state.get("v39_real_slip_show_analysis", False):
         st.info(
             tx(
                 "\u041c\u0430\u0440\u043a\u0438\u0440\u0430\u0439 \u0435\u0434\u043d\u0430 \u0438\u043b\u0438 \u043f\u043e\u0432\u0435\u0447\u0435 \u043f\u044a\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u0438 \u043d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0444\u0438\u0448\u0430\u201c.",
@@ -3586,20 +3503,21 @@ def page_ticket_analyzer() -> None:
         )
         return
 
-    completed = [(index, get_combo(index)) for index in range(1, 5) if len(get_combo(index)) == 6]
-    incomplete = [(index, get_combo(index)) for index in range(1, 5) if 0 < len(get_combo(index)) < 6]
+    completed = [(i, get_combo(i)) for i in range(1, 5) if len(get_combo(i)) == 6]
+    incomplete = [(i, get_combo(i)) for i in range(1, 5) if 0 < len(get_combo(i)) < 6]
 
     st.markdown("## " + tx("\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448\u0430", "Ticket analysis result"))
 
     st.metric(tx("\u041f\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Completed combinations"), f"{len(completed)} / 4")
 
-    for index, values in incomplete:
-        st.warning(
-            tx(
-                f"\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f {index} \u0438\u043c\u0430 {len(values)} \u043e\u0442 6 \u0447\u0438\u0441\u043b\u0430 \u0438 \u043d\u044f\u043c\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430, \u0434\u043e\u043a\u0430\u0442\u043e \u043d\u0435 \u0441\u0435 \u043f\u043e\u043f\u044a\u043b\u043d\u0438.",
-                f"Combination {index} has {len(values)} of 6 numbers and will not be analyzed until completed.",
+    if incomplete:
+        for index, values in incomplete:
+            st.warning(
+                tx(
+                    f"\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f {index} \u0438\u043c\u0430 {len(values)} \u043e\u0442 6 \u0447\u0438\u0441\u043b\u0430 \u0438 \u043d\u044f\u043c\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430, \u0434\u043e\u043a\u0430\u0442\u043e \u043d\u0435 \u0441\u0435 \u043f\u043e\u043f\u044a\u043b\u043d\u0438.",
+                    f"Combination {index} has {len(values)} of 6 numbers and will not be analyzed until completed.",
+                )
             )
-        )
 
     if not completed:
         st.error(
@@ -3611,25 +3529,15 @@ def page_ticket_analyzer() -> None:
         return
 
     for index, values in completed:
-        combo_title = tx(f"\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f {index}", f"Combination {index}")
-        st.markdown("### " + combo_title)
-
-        st.markdown(
-            f"""
-            <div class="v39-selected-row">
-                <span class="v39-selected-label">{tx('\u0427\u0438\u0441\u043b\u0430', 'Numbers')}:</span>
-                {selected_chips(values)}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        st.markdown("### " + tx(f"\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f {index}", f"Combination {index}"))
+        st.markdown(render_selected_balls(values), unsafe_allow_html=True)
 
         total = sum(values)
-        even = sum(1 for number in values if number % 2 == 0)
+        even = sum(1 for n in values if n % 2 == 0)
         odd = 6 - even
-        low = sum(1 for number in values if 1 <= number <= 16)
-        middle_band = sum(1 for number in values if 17 <= number <= 33)
-        high = sum(1 for number in values if 34 <= number <= 49)
+        low = sum(1 for n in values if 1 <= n <= 16)
+        middle_band = sum(1 for n in values if 17 <= n <= 33)
+        high = sum(1 for n in values if 34 <= n <= 49)
 
         c1, c2, c3, c4 = st.columns(4)
         c1.metric(tx("\u0421\u0443\u043c\u0430", "Sum"), total)
@@ -3646,16 +3554,11 @@ def page_ticket_analyzer() -> None:
             z3.metric(tx("\u0421\u0442\u0443\u0434\u0435\u043d\u0430 \u0437\u043e\u043d\u0430", "Cold zone"), len(zone["cold"]))
             z4.metric(tx("\u0422\u0438\u043f", "Type"), zone["kind"])
 
-            hot_label = tx("\u0413\u043e\u0440\u0435\u0449\u0430 \u0437\u043e\u043d\u0430", "Hot zone")
-            middle_label = tx("\u0421\u0440\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430", "Middle zone")
-            cold_label = tx("\u0421\u0442\u0443\u0434\u0435\u043d\u0430 \u0437\u043e\u043d\u0430", "Cold zone")
-
             st.markdown(
-                f"**{hot_label}:** {fmt_numbers(zone['hot'])}  \n"
-                f"**{middle_label}:** {fmt_numbers(zone['middle'])}  \n"
-                f"**{cold_label}:** {fmt_numbers(zone['cold'])}"
+                f"**{tx('\u0413\u043e\u0440\u0435\u0449\u0430 \u0437\u043e\u043d\u0430', 'Hot zone')}:** {fmt_numbers(zone['hot'])}  \n"
+                f"**{tx('\u0421\u0440\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430', 'Middle zone')}:** {fmt_numbers(zone['middle'])}  \n"
+                f"**{tx('\u0421\u0442\u0443\u0434\u0435\u043d\u0430 \u0437\u043e\u043d\u0430', 'Cold zone')}:** {fmt_numbers(zone['cold'])}"
             )
-
             st.success(zone["explanation"])
 
     st.info(

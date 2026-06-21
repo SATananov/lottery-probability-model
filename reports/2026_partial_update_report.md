@@ -1,14 +1,12 @@
-# Partial 2026 Toto 6/49 Data Update
+# Частична актуализация на данните за 2026 г. — Тото 6/49
 
-This update adds the locally provided 2026 Toto 6/49 statistics package.
+Този отчет описва добавянето на локално предоставения статистически пакет за тиражите на Тото 6/49 през 2026 г.
 
-- Added 2026 rows: 48
-- Date range in 2026 package: 2026-01-04 to 2026-06-18
-- Final dataset rows: 10057
-- Final year range: 1958-2026
-- Duplicate year/draw/position keys: 0
-- Repeated full number combinations in whole dataset: 6
+- Добавени редове за 2026 г.: 48
+- Период на данните за 2026 г.: 2026-01-04 до 2026-06-18
+- Краен брой редове в набора от данни: 10057
+- Краен диапазон на годините: 1958–2026
+- Дублирани ключове година/тираж/позиция: 0
+- Повторени пълни комбинации от числа в целия набор от данни: 6
 
-Important: 2026 is a partial year and currently includes draws up to 2026-06-18.
-These data points update the model training dataset, but they do not change the theoretical lottery odds.
-
+Важно: 2026 г. е частична година и към момента включва тиражи до 2026-06-18. Тези данни обновяват набора от данни за обучение на моделите, но не променят теоретичните вероятности в лотарията.

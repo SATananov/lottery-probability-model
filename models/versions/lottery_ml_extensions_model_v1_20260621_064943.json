@@ -1,7 +1,7 @@
 {
   "model_name": "Lottery ML Extensions Ensemble",
   "model_version": "1.0",
-  "created_at": "2026-06-21T06:56:23",
+  "created_at": "2026-06-21T06:49:36",
   "training_draws": 10057,
   "candidate_count": 1200,
   "important_note": "Това е статистическо ранкиране, класификация, клъстеризация и редукция на размерността за анализ. Не променя реалния шанс за джакпот.",

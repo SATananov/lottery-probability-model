@@ -4,12 +4,12 @@
   "candidate_limit": 800,
   "random_seed": 2026,
   "averages": {
-    "advanced": 0.625,
-    "time_decay": 0.725,
-    "bayesian": 0.625,
-    "gap": 0.875,
-    "frequency_stability": 0.95,
-    "random": 0.825
+    "advanced": 0.525,
+    "time_decay": 0.75,
+    "bayesian": 0.6,
+    "gap": 0.775,
+    "frequency_stability": 0.725,
+    "random": 0.75
   },
   "hit_rates": {
     "advanced": {
@@ -17,20 +17,20 @@
       "at_least_4": 0.0
     },
     "time_decay": {
-      "at_least_3": 0.025,
-      "at_least_4": 0.0
-    },
-    "bayesian": {
       "at_least_3": 0.0,
       "at_least_4": 0.0
     },
+    "bayesian": {
+      "at_least_3": 0.025,
+      "at_least_4": 0.0
+    },
     "gap": {
-      "at_least_3": 0.1,
+      "at_least_3": 0.05,
       "at_least_4": 0.0
     },
     "frequency_stability": {
       "at_least_3": 0.025,
-      "at_least_4": 0.025
+      "at_least_4": 0.0
     },
     "random": {
       "at_least_3": 0.025,
@@ -39,15 +39,42 @@
   },
   "distributions": {
     "advanced": {
-      "0": 18,
-      "1": 19,
-      "2": 3,
+      "0": 23,
+      "1": 13,
+      "2": 4,
       "3": 0,
       "4": 0,
       "5": 0,
       "6": 0
     },
     "time_decay": {
+      "0": 15,
+      "1": 20,
+      "2": 5,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "bayesian": {
+      "0": 22,
+      "1": 13,
+      "2": 4,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "gap": {
+      "0": 18,
+      "1": 15,
+      "2": 5,
+      "3": 2,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "frequency_stability": {
       "0": 18,
       "1": 16,
       "2": 5,
@@ -56,66 +83,39 @@
       "5": 0,
       "6": 0
     },
-    "bayesian": {
-      "0": 20,
-      "1": 15,
-      "2": 5,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0
-    },
-    "gap": {
-      "0": 16,
-      "1": 17,
-      "2": 3,
-      "3": 4,
-      "4": 0,
-      "5": 0,
-      "6": 0
-    },
-    "frequency_stability": {
-      "0": 9,
-      "1": 26,
-      "2": 4,
-      "3": 0,
-      "4": 1,
-      "5": 0,
-      "6": 0
-    },
     "random": {
-      "0": 15,
-      "1": 18,
-      "2": 6,
+      "0": 19,
+      "1": 13,
+      "2": 7,
       "3": 1,
       "4": 0,
       "5": 0,
       "6": 0
     }
   },
-  "best_strategy": "frequency_stability",
-  "conclusion": "\u041d\u0430\u0439-\u0434\u043e\u0431\u0440\u0430\u0442\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f \u043f\u043e \u0441\u0440\u0435\u0434\u043d\u0438 \u0441\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f \u0432 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0435: \u0427\u0435\u0441\u0442\u043e\u0442\u043d\u0430 \u0441\u0442\u0430\u0431\u0438\u043b\u043d\u043e\u0441\u0442. \u0422\u043e\u0432\u0430 \u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0430, \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0441\u0442\u0432\u043e, \u0447\u0435 \u0431\u044a\u0434\u0435\u0449\u0438 \u0442\u0435\u0433\u043b\u0435\u043d\u0438\u044f \u0441\u0430 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0443\u0435\u043c\u0438.",
+  "best_strategy": "gap",
+  "conclusion": "\u041d\u0430\u0439-\u0434\u043e\u0431\u0440\u0430\u0442\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f \u043f\u043e \u0441\u0440\u0435\u0434\u043d\u0438 \u0441\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f \u0432 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0435: \u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b. \u0422\u043e\u0432\u0430 \u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0430, \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0441\u0442\u0432\u043e, \u0447\u0435 \u0431\u044a\u0434\u0435\u0449\u0438 \u0442\u0435\u0433\u043b\u0435\u043d\u0438\u044f \u0441\u0430 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0443\u0435\u043c\u0438.",
   "details": [
     {
-      "draw_id": 9971,
-      "date": "",
+      "draw_id": 10018,
+      "date": "2026-02-01",
       "actual_numbers": [
+        3,
         4,
-        10,
-        26,
-        38,
         41,
+        43,
+        44,
         47
       ],
       "tickets": {
         "advanced": {
           "numbers": [
+            1,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            42,
+            45
           ],
           "matches": 0
         },
@@ -128,38 +128,38 @@
             37,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 0
+          "matches": 2
         },
         "gap": {
           "numbers": [
-            7,
-            25,
-            31,
-            32,
-            40,
-            49
+            1,
+            14,
+            23,
+            30,
+            34,
+            45
           ],
           "matches": 0
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -177,27 +177,27 @@
       }
     },
     {
-      "draw_id": 9972,
-      "date": "",
+      "draw_id": 10019,
+      "date": "2026-02-05",
       "actual_numbers": [
-        2,
-        10,
-        17,
-        29,
-        37,
-        43
+        6,
+        12,
+        13,
+        15,
+        23,
+        36
       ],
       "tickets": {
         "advanced": {
           "numbers": [
+            1,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            42,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
@@ -208,40 +208,40 @@
             37,
             42
           ],
-          "matches": 2
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            7,
-            25,
-            31,
-            32,
-            40,
-            49
+            1,
+            14,
+            23,
+            30,
+            34,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -252,32 +252,32 @@
             39,
             40
           ],
-          "matches": 1
+          "matches": 2
         }
       }
     },
     {
-      "draw_id": 9973,
-      "date": "",
+      "draw_id": 10020,
+      "date": "2026-02-08",
       "actual_numbers": [
-        11,
-        17,
-        29,
+        12,
+        20,
+        26,
         30,
-        32,
-        37
+        41,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
             34,
-            44,
-            49
+            42,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
@@ -288,40 +288,40 @@
             37,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            7,
-            25,
-            31,
-            32,
-            40,
-            49
+            1,
+            8,
+            14,
+            30,
+            34,
+            45
           ],
           "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -332,30 +332,30 @@
             38,
             47
           ],
-          "matches": 2
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9974,
-      "date": "",
+      "draw_id": 10021,
+      "date": "2026-02-12",
       "actual_numbers": [
-        7,
-        25,
-        28,
-        37,
-        40,
-        43
+        16,
+        18,
+        23,
+        36,
+        39,
+        44
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
             34,
-            44,
-            49
+            42,
+            45
           ],
           "matches": 0
         },
@@ -372,36 +372,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            7,
-            25,
-            31,
-            40,
-            44,
-            49
+            1,
+            8,
+            14,
+            34,
+            39,
+            45
           ],
-          "matches": 3
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -412,32 +412,32 @@
             19,
             40
           ],
-          "matches": 2
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9975,
-      "date": "",
+      "draw_id": 10022,
+      "date": "2026-02-15",
       "actual_numbers": [
-        14,
+        11,
         16,
-        19,
-        23,
-        30,
-        47
+        18,
+        34,
+        36,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
             34,
-            44,
-            49
+            42,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
@@ -452,36 +452,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 0
+          "matches": 2
         },
         "gap": {
           "numbers": [
-            13,
-            31,
-            35,
-            42,
-            44,
-            49
+            1,
+            8,
+            14,
+            29,
+            34,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -492,32 +492,32 @@
             44,
             47
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9976,
-      "date": "",
+      "draw_id": 10023,
+      "date": "2026-02-19",
       "actual_numbers": [
-        5,
-        11,
-        16,
-        21,
-        23,
-        38
+        22,
+        25,
+        37,
+        44,
+        45,
+        48
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
-            34,
-            44,
-            49
+            29,
+            42,
+            45
           ],
-          "matches": 2
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
@@ -532,34 +532,34 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 2
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            13,
-            31,
-            35,
-            42,
-            44,
-            49
+            1,
+            8,
+            14,
+            29,
+            40,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -577,71 +577,71 @@
       }
     },
     {
-      "draw_id": 9977,
-      "date": "",
+      "draw_id": 10024,
+      "date": "2026-02-22",
       "actual_numbers": [
         9,
-        12,
-        23,
-        34,
-        42,
-        44
+        31,
+        33,
+        37,
+        38,
+        48
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
             34,
-            44,
-            49
+            35,
+            42
           ],
-          "matches": 2
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
-          "matches": 3
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 2
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            31,
-            34,
-            35,
-            42,
-            44,
-            49
+            1,
+            7,
+            8,
+            14,
+            29,
+            40
           ],
-          "matches": 3
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 2
         },
         "random": {
           "numbers": [
@@ -652,74 +652,74 @@
             41,
             48
           ],
-          "matches": 0
+          "matches": 2
         }
       }
     },
     {
-      "draw_id": 9978,
-      "date": "",
+      "draw_id": 10025,
+      "date": "2026-02-26",
       "actual_numbers": [
-        2,
-        4,
-        12,
-        16,
-        19,
-        30
+        10,
+        14,
+        21,
+        24,
+        36,
+        37
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
+            1,
+            8,
             21,
             34,
-            44,
-            49
+            35,
+            42
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
-          "matches": 0
+          "matches": 2
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            13,
-            27,
-            31,
-            35,
-            45,
-            49
+            1,
+            7,
+            8,
+            14,
+            29,
+            40
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             24,
-            30,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -737,34 +737,34 @@
       }
     },
     {
-      "draw_id": 9979,
-      "date": "",
+      "draw_id": 10026,
+      "date": "2026-03-01",
       "actual_numbers": [
-        4,
-        7,
-        16,
-        23,
-        41,
-        45
+        5,
+        18,
+        19,
+        24,
+        37,
+        48
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
-            21,
+            1,
+            8,
+            29,
             34,
-            44,
-            49
+            35,
+            42
           ],
           "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
@@ -772,36 +772,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
             11,
             21,
             34,
-            44,
-            49
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            13,
-            27,
-            31,
+            1,
+            7,
+            8,
+            29,
             35,
-            45,
-            49
+            40
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "random": {
           "numbers": [
@@ -812,39 +812,39 @@
             46,
             48
           ],
-          "matches": 0
+          "matches": 2
         }
       }
     },
     {
-      "draw_id": 9980,
-      "date": "",
+      "draw_id": 10027,
+      "date": "2026-03-05",
       "actual_numbers": [
-        2,
-        13,
-        24,
-        26,
-        35,
-        42
+        5,
+        15,
+        17,
+        36,
+        37,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
-            21,
+            1,
+            8,
+            29,
             34,
-            44,
-            49
+            35,
+            42
           ],
           "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
@@ -852,36 +852,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            13,
-            24,
-            27,
-            31,
+            1,
+            7,
+            8,
+            29,
             35,
-            49
+            40
           ],
-          "matches": 3
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 4
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -892,32 +892,32 @@
             46,
             48
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9981,
-      "date": "",
+      "draw_id": 10028,
+      "date": "2026-03-08",
       "actual_numbers": [
-        11,
-        25,
-        31,
-        38,
-        40,
-        45
+        3,
+        4,
+        13,
+        22,
+        33,
+        48
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            11,
-            21,
+            1,
+            8,
+            29,
             34,
-            44,
-            49
+            35,
+            42
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
@@ -932,34 +932,34 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 1
         },
         "gap": {
           "numbers": [
-            3,
-            27,
-            31,
-            36,
-            46,
-            49
+            1,
+            7,
+            8,
+            29,
+            35,
+            40
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -972,32 +972,32 @@
             36,
             38
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9982,
-      "date": "",
+      "draw_id": 10029,
+      "date": "2026-03-12",
       "actual_numbers": [
-        5,
-        10,
-        14,
-        33,
+        1,
+        4,
+        24,
+        30,
         34,
-        38
+        37
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            21,
-            22,
+            1,
+            8,
+            29,
             34,
-            37,
-            49
+            35,
+            42
           ],
-          "matches": 1
+          "matches": 2
         },
         "time_decay": {
           "numbers": [
@@ -1012,36 +1012,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 1
+          "matches": 3
         },
         "gap": {
           "numbers": [
-            3,
-            27,
-            36,
-            39,
-            46,
-            49
+            1,
+            7,
+            8,
+            29,
+            35,
+            40
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -1052,32 +1052,32 @@
             34,
             39
           ],
-          "matches": 2
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9983,
-      "date": "",
+      "draw_id": 10030,
+      "date": "2026-03-15",
       "actual_numbers": [
-        17,
-        24,
-        25,
-        28,
-        37,
+        1,
+        3,
+        12,
+        40,
+        44,
         49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
             6,
+            8,
             21,
-            22,
-            34,
-            37,
-            49
+            29,
+            35,
+            42
           ],
-          "matches": 2
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
@@ -1088,40 +1088,40 @@
             37,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 1
         },
         "gap": {
           "numbers": [
-            3,
+            7,
+            8,
             27,
-            36,
-            39,
-            46,
-            49
+            29,
+            35,
+            40
           ],
           "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -1132,30 +1132,30 @@
             34,
             37
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9984,
-      "date": "",
+      "draw_id": 10031,
+      "date": "2026-03-19",
       "actual_numbers": [
-        2,
-        8,
-        16,
         23,
-        39,
-        43
+        24,
+        33,
+        38,
+        42,
+        48
       ],
       "tickets": {
         "advanced": {
           "numbers": [
             6,
+            8,
             21,
-            22,
             29,
-            39,
-            46
+            35,
+            42
           ],
           "matches": 1
         },
@@ -1168,40 +1168,40 @@
             37,
             42
           ],
-          "matches": 1
+          "matches": 2
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            3,
-            22,
+            7,
+            8,
             27,
-            36,
-            39,
-            46
+            29,
+            32,
+            35
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 2
+          "matches": 3
         },
         "random": {
           "numbers": [
@@ -1212,74 +1212,74 @@
             37,
             43
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9985,
-      "date": "",
+      "draw_id": 10032,
+      "date": "2026-03-22",
       "actual_numbers": [
-        3,
-        20,
-        24,
+        12,
+        22,
         28,
-        31,
-        46
+        30,
+        33,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
             6,
+            8,
             21,
-            22,
             29,
-            34,
+            35,
             46
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
             23,
             34,
-            35,
             37,
-            42
+            42,
+            48
           ],
           "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            3,
-            18,
-            22,
+            7,
+            8,
             27,
-            36,
-            46
+            29,
+            32,
+            35
           ],
-          "matches": 2
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -1292,74 +1292,74 @@
             40,
             46
           ],
-          "matches": 3
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9986,
-      "date": "",
+      "draw_id": 10033,
+      "date": "2026-03-26",
       "actual_numbers": [
         3,
-        4,
+        12,
         16,
-        25,
-        28,
-        36
+        23,
+        35,
+        40
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            1,
+            6,
+            8,
             21,
-            22,
             29,
-            34,
-            42
+            35,
+            46
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
             23,
             34,
-            35,
             37,
-            42
+            42,
+            48
           ],
-          "matches": 0
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            18,
-            22,
+            7,
+            8,
             27,
-            36
+            29,
+            32,
+            35
           ],
           "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 0
         },
@@ -1377,27 +1377,27 @@
       }
     },
     {
-      "draw_id": 9987,
-      "date": "",
+      "draw_id": 10034,
+      "date": "2026-03-29",
       "actual_numbers": [
-        4,
-        12,
+        20,
+        25,
+        27,
+        29,
         30,
-        42,
-        48,
-        49
+        46
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            9,
+            8,
+            11,
             21,
-            22,
             29,
             34,
-            42
+            46
           ],
-          "matches": 1
+          "matches": 2
         },
         "time_decay": {
           "numbers": [
@@ -1408,40 +1408,40 @@
             37,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            18,
-            22,
+            2,
+            7,
+            8,
             27,
-            48
+            29,
+            32
           ],
-          "matches": 1
+          "matches": 2
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -1452,32 +1452,32 @@
             44,
             46
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9988,
-      "date": "",
+      "draw_id": 10035,
+      "date": "2026-04-02",
       "actual_numbers": [
         13,
-        17,
+        18,
         23,
-        33,
-        34,
-        38
+        38,
+        40,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
+            8,
+            11,
             21,
-            22,
-            29,
             34,
-            37
+            37,
+            42
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
@@ -1488,38 +1488,38 @@
             37,
             42
           ],
-          "matches": 2
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            18,
-            22,
-            27
+            2,
+            7,
+            8,
+            32,
+            43,
+            47
           ],
           "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 1
         },
@@ -1532,30 +1532,30 @@
             42,
             43
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 9989,
-      "date": "",
+      "draw_id": 10036,
+      "date": "2026-04-05",
       "actual_numbers": [
+        1,
+        6,
+        7,
+        12,
         13,
-        17,
-        28,
-        32,
-        46,
-        47
+        19
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
+            8,
+            11,
             21,
-            22,
-            29,
             34,
-            37
+            37,
+            42
           ],
           "matches": 0
         },
@@ -1572,34 +1572,34 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            18,
-            22,
-            27
+            2,
+            7,
+            8,
+            32,
+            43,
+            47
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 0
         },
@@ -1617,25 +1617,25 @@
       }
     },
     {
-      "draw_id": 9990,
-      "date": "",
+      "draw_id": 10037,
+      "date": "2026-04-09",
       "actual_numbers": [
-        5,
-        11,
+        1,
+        6,
         21,
-        28,
+        22,
         39,
-        43
+        45
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
+            8,
+            11,
             21,
-            22,
-            29,
             34,
-            37
+            37,
+            42
           ],
           "matches": 1
         },
@@ -1652,34 +1652,34 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 2
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            18,
-            22,
-            27
+            2,
+            8,
+            26,
+            32,
+            43,
+            47
           ],
           "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
-            24,
-            35,
+            15,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 1
         },
@@ -1692,39 +1692,39 @@
             39,
             42
           ],
-          "matches": 1
+          "matches": 2
         }
       }
     },
     {
-      "draw_id": 9991,
-      "date": "",
+      "draw_id": 10038,
+      "date": "2026-04-12",
       "actual_numbers": [
-        27,
-        33,
-        38,
-        45,
-        46,
-        49
+        2,
+        4,
+        8,
+        14,
+        28,
+        43
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            9,
-            22,
-            29,
-            35,
-            44
+            8,
+            11,
+            17,
+            34,
+            37,
+            42
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
@@ -1732,36 +1732,36 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 1
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            18,
-            22,
-            27
+            2,
+            8,
+            26,
+            32,
+            43,
+            47
           ],
-          "matches": 1
+          "matches": 3
         },
         "frequency_stability": {
           "numbers": [
-            2,
+            15,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -1777,69 +1777,69 @@
       }
     },
     {
-      "draw_id": 9992,
-      "date": "",
+      "draw_id": 10039,
+      "date": "2026-04-16",
       "actual_numbers": [
-        7,
-        17,
+        11,
         18,
-        25,
-        30,
-        42
+        21,
+        38,
+        48,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
             9,
-            22,
-            29,
-            37,
+            11,
+            17,
+            34,
+            42,
             44
           ],
-          "matches": 0
+          "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
+            35,
             37,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 0
+          "matches": 1
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            18,
-            22,
-            29
+            9,
+            11,
+            26,
+            32,
+            41,
+            47
           ],
           "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -1857,27 +1857,27 @@
       }
     },
     {
-      "draw_id": 9993,
-      "date": "",
+      "draw_id": 10040,
+      "date": "2026-04-19",
       "actual_numbers": [
-        12,
-        16,
-        26,
-        34,
+        9,
+        19,
         37,
-        40
+        40,
+        41,
+        47
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
             9,
-            22,
-            29,
+            17,
+            24,
+            34,
             37,
-            44
+            42
           ],
-          "matches": 1
+          "matches": 2
         },
         "time_decay": {
           "numbers": [
@@ -1888,38 +1888,38 @@
             37,
             42
           ],
-          "matches": 2
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 1
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            22,
-            29,
-            44
+            9,
+            26,
+            31,
+            32,
+            41,
+            47
           ],
-          "matches": 0
+          "matches": 3
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 0
         },
@@ -1932,32 +1932,32 @@
             36,
             43
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9994,
-      "date": "",
+      "draw_id": 10041,
+      "date": "2026-04-23",
       "actual_numbers": [
-        4,
-        6,
-        10,
-        18,
+        2,
+        7,
+        11,
+        16,
         23,
-        25
+        30
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            6,
-            9,
-            22,
-            29,
+            10,
+            15,
+            17,
+            34,
             35,
-            44
+            42
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
@@ -1968,38 +1968,38 @@
             37,
             42
           ],
-          "matches": 2
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            6,
-            15,
-            22,
-            29,
-            44
+            10,
+            17,
+            26,
+            31,
+            32,
+            36
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 0
         },
@@ -2012,29 +2012,29 @@
             45,
             46
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9995,
-      "date": "",
+      "draw_id": 10042,
+      "date": "2026-04-26",
       "actual_numbers": [
-        3,
-        14,
-        20,
-        27,
-        33,
-        35
+        8,
+        11,
+        26,
+        30,
+        36,
+        38
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            9,
-            15,
-            22,
-            29,
+            4,
+            6,
+            21,
             34,
+            37,
             44
           ],
           "matches": 0
@@ -2052,34 +2052,34 @@
         },
         "bayesian": {
           "numbers": [
+            4,
             6,
-            11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            9,
-            15,
-            22,
-            29,
-            44
+            10,
+            17,
+            26,
+            31,
+            32,
+            36
           ],
-          "matches": 0
+          "matches": 2
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -2097,34 +2097,34 @@
       }
     },
     {
-      "draw_id": 9996,
-      "date": "",
+      "draw_id": 10043,
+      "date": "2026-04-30",
       "actual_numbers": [
-        3,
-        9,
-        27,
-        31,
-        35,
-        36
+        2,
+        8,
+        18,
+        20,
+        26,
+        42
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            9,
-            15,
-            22,
-            29,
+            4,
+            11,
+            21,
             34,
+            37,
             44
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
+            21,
             23,
             34,
-            35,
             37,
             42
           ],
@@ -2132,34 +2132,34 @@
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
-            9,
+            5,
+            10,
             15,
-            22,
-            29,
-            44
+            17,
+            31,
+            32
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            43,
+            45
           ],
           "matches": 1
         },
@@ -2177,58 +2177,58 @@
       }
     },
     {
-      "draw_id": 9997,
-      "date": "",
+      "draw_id": 10044,
+      "date": "2026-05-03",
       "actual_numbers": [
+        13,
         14,
-        21,
-        32,
-        38,
-        40,
-        49
+        23,
+        27,
+        36,
+        42
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            1,
+            4,
+            11,
             21,
-            22,
-            29,
             34,
+            37,
             44
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
+            18,
             23,
             34,
-            35,
             37,
             42
           ],
-          "matches": 0
+          "matches": 2
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 2
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
+            5,
+            10,
             15,
-            19,
-            22,
-            29,
-            44
+            17,
+            31,
+            32
           ],
           "matches": 0
         },
@@ -2236,10 +2236,10 @@
           "numbers": [
             2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 1
         },
@@ -2257,71 +2257,71 @@
       }
     },
     {
-      "draw_id": 9998,
-      "date": "",
+      "draw_id": 10045,
+      "date": "2026-05-07",
       "actual_numbers": [
-        1,
-        12,
-        24,
-        27,
-        31,
-        43
+        3,
+        8,
+        13,
+        20,
+        42,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            1,
-            15,
-            22,
-            29,
+            4,
+            11,
+            21,
             34,
+            37,
             44
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
+            18,
             23,
             34,
-            35,
             37,
             42
           ],
-          "matches": 0
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            1,
+            5,
+            10,
             15,
-            19,
-            22,
-            29,
-            44
+            17,
+            31,
+            32
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
+            2,
             24,
-            29,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 2
+          "matches": 1
         },
         "random": {
           "numbers": [
@@ -2332,29 +2332,29 @@
             38,
             40
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 9999,
-      "date": "",
+      "draw_id": 10046,
+      "date": "2026-05-10",
       "actual_numbers": [
-        3,
-        15,
-        26,
-        33,
-        47,
-        48
+        2,
+        23,
+        24,
+        27,
+        37,
+        38
       ],
       "tickets": {
         "advanced": {
           "numbers": [
+            4,
             11,
-            15,
-            22,
-            29,
+            21,
             34,
+            37,
             44
           ],
           "matches": 1
@@ -2362,46 +2362,46 @@
         "time_decay": {
           "numbers": [
             10,
+            18,
             23,
             34,
-            35,
             37,
             42
           ],
-          "matches": 0
+          "matches": 2
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
-          ],
-          "matches": 0
-        },
-        "gap": {
-          "numbers": [
-            15,
-            19,
-            22,
-            29,
-            41,
+            37,
             44
           ],
           "matches": 1
         },
-        "frequency_stability": {
+        "gap": {
           "numbers": [
-            24,
-            29,
-            35,
-            38,
-            42,
-            43
+            5,
+            10,
+            15,
+            17,
+            31,
+            32
           ],
           "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            20,
+            24,
+            33,
+            38,
+            42,
+            45
+          ],
+          "matches": 2
         },
         "random": {
           "numbers": [
@@ -2412,29 +2412,29 @@
             40,
             43
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10000,
-      "date": "",
+      "draw_id": 10047,
+      "date": "2026-05-14",
       "actual_numbers": [
-        2,
-        14,
-        21,
-        27,
-        28,
-        48
+        5,
+        7,
+        13,
+        31,
+        38,
+        42
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
+            4,
             11,
-            22,
-            29,
+            21,
             34,
+            37,
             44
           ],
           "matches": 0
@@ -2442,46 +2442,46 @@
         "time_decay": {
           "numbers": [
             10,
+            18,
             23,
             34,
-            35,
             37,
             42
           ],
-          "matches": 0
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
-          ],
-          "matches": 1
-        },
-        "gap": {
-          "numbers": [
-            8,
-            19,
-            22,
-            29,
-            41,
+            37,
             44
           ],
           "matches": 0
         },
+        "gap": {
+          "numbers": [
+            5,
+            10,
+            15,
+            17,
+            31,
+            32
+          ],
+          "matches": 2
+        },
         "frequency_stability": {
           "numbers": [
-            24,
-            29,
-            35,
+            2,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 0
+          "matches": 2
         },
         "random": {
           "numbers": [
@@ -2492,29 +2492,29 @@
             41,
             49
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10001,
-      "date": "",
+      "draw_id": 10048,
+      "date": "2026-05-17",
       "actual_numbers": [
-        10,
-        16,
-        24,
-        27,
-        30,
-        36
+        1,
+        5,
+        7,
+        32,
+        46,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
+            4,
             11,
-            22,
-            29,
+            21,
             34,
+            37,
             44
           ],
           "matches": 0
@@ -2522,46 +2522,46 @@
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            8,
-            19,
-            22,
-            29,
-            41,
+            10,
+            15,
+            17,
+            32,
+            34,
             44
           ],
-          "matches": 0
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             2,
-            24,
-            35,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -2572,29 +2572,29 @@
             43,
             45
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 10002,
-      "date": "",
+      "draw_id": 10049,
+      "date": "2026-05-21",
       "actual_numbers": [
-        2,
-        6,
-        7,
-        19,
-        29,
-        41
+        3,
+        17,
+        33,
+        36,
+        39,
+        45
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
-            11,
-            22,
-            29,
+            12,
+            15,
+            17,
             34,
+            35,
             44
           ],
           "matches": 1
@@ -2602,46 +2602,46 @@
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
           "matches": 0
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            8,
-            19,
-            22,
-            29,
-            41,
+            10,
+            15,
+            17,
+            33,
+            34,
             44
           ],
-          "matches": 3
+          "matches": 2
         },
         "frequency_stability": {
           "numbers": [
-            24,
-            29,
-            35,
+            2,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 1
+          "matches": 2
         },
         "random": {
           "numbers": [
@@ -2652,27 +2652,27 @@
             38,
             39
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 10003,
-      "date": "",
+      "draw_id": 10050,
+      "date": "2026-05-24",
       "actual_numbers": [
-        2,
-        24,
-        31,
-        36,
-        40,
-        48
+        8,
+        9,
+        38,
+        43,
+        45,
+        46
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
+            4,
             11,
-            22,
+            21,
             34,
             37,
             44
@@ -2682,32 +2682,32 @@
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
-          "matches": 0
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            5,
-            8,
-            11,
-            13,
-            22,
+            10,
+            15,
+            29,
+            34,
+            35,
             44
           ],
           "matches": 0
@@ -2715,11 +2715,11 @@
         "frequency_stability": {
           "numbers": [
             2,
-            24,
-            35,
+            20,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 2
         },
@@ -2732,74 +2732,74 @@
             43,
             45
           ],
-          "matches": 0
+          "matches": 2
         }
       }
     },
     {
-      "draw_id": 10004,
-      "date": "",
+      "draw_id": 10051,
+      "date": "2026-05-28",
       "actual_numbers": [
-        3,
-        9,
-        10,
-        13,
-        20,
-        30
+        2,
+        6,
+        15,
+        19,
+        26,
+        35
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
+            4,
             11,
-            22,
+            21,
             34,
             37,
-            42
+            44
           ],
           "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
-          "matches": 1
+          "matches": 0
         },
         "bayesian": {
           "numbers": [
-            6,
+            4,
             11,
             21,
             34,
-            44,
-            49
+            37,
+            44
           ],
           "matches": 0
         },
         "gap": {
           "numbers": [
-            5,
-            8,
-            11,
-            13,
-            22,
+            10,
+            15,
+            29,
+            34,
+            35,
             44
           ],
-          "matches": 1
+          "matches": 2
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            25,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 0
         },
@@ -2812,74 +2812,74 @@
             33,
             38
           ],
-          "matches": 2
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10005,
-      "date": "",
+      "draw_id": 10052,
+      "date": "2026-05-31",
       "actual_numbers": [
-        2,
-        6,
-        7,
-        8,
+        9,
+        17,
         29,
-        39
+        39,
+        42,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            8,
             11,
-            22,
+            12,
+            21,
+            29,
             34,
-            37,
-            42
+            44
           ],
           "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
-          ],
-          "matches": 0
-        },
-        "bayesian": {
-          "numbers": [
-            6,
-            11,
-            21,
-            34,
-            44,
-            49
           ],
           "matches": 1
         },
-        "gap": {
+        "bayesian": {
           "numbers": [
-            5,
-            8,
-            11,
-            22,
-            39,
+            4,
+            6,
+            21,
+            34,
+            37,
             44
           ],
-          "matches": 2
+          "matches": 0
+        },
+        "gap": {
+          "numbers": [
+            10,
+            12,
+            25,
+            29,
+            34,
+            44
+          ],
+          "matches": 1
         },
         "frequency_stability": {
           "numbers": [
             2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
           "matches": 1
         },
@@ -2892,50 +2892,50 @@
             34,
             49
           ],
-          "matches": 0
+          "matches": 1
         }
       }
     },
     {
-      "draw_id": 10006,
-      "date": "",
+      "draw_id": 10053,
+      "date": "2026-06-04",
       "actual_numbers": [
-        11,
-        15,
-        25,
-        38,
-        40,
-        44
+        13,
+        17,
+        28,
+        35,
+        37,
+        49
       ],
       "tickets": {
         "advanced": {
           "numbers": [
             11,
+            12,
             21,
-            22,
             34,
             37,
-            42
+            44
           ],
           "matches": 1
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
-          "matches": 0
+          "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
-            11,
+            4,
             21,
             34,
+            37,
             44,
             49
           ],
@@ -2943,25 +2943,25 @@
         },
         "gap": {
           "numbers": [
-            5,
-            11,
+            10,
+            12,
             22,
-            44,
-            45,
-            46
+            25,
+            34,
+            44
           ],
-          "matches": 2
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
             2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -2972,50 +2972,50 @@
             25,
             42
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10007,
-      "date": "",
+      "draw_id": 10054,
+      "date": "2026-06-07",
       "actual_numbers": [
-        7,
-        16,
-        24,
-        29,
-        31,
-        46
+        1,
+        9,
+        26,
+        30,
+        39,
+        43
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            17,
+            11,
+            12,
             21,
-            22,
             34,
             37,
-            42
+            44
           ],
           "matches": 0
         },
         "time_decay": {
           "numbers": [
-            10,
-            21,
             23,
             34,
+            35,
             37,
+            38,
             42
           ],
           "matches": 0
         },
         "bayesian": {
           "numbers": [
-            6,
-            11,
+            4,
             21,
             34,
+            37,
             44,
             49
           ],
@@ -3023,25 +3023,25 @@
         },
         "gap": {
           "numbers": [
-            5,
-            17,
+            10,
+            12,
             22,
-            42,
-            45,
-            46
+            25,
+            34,
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "frequency_stability": {
           "numbers": [
             2,
             24,
-            35,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 1
+          "matches": 0
         },
         "random": {
           "numbers": [
@@ -3052,50 +3052,50 @@
             33,
             48
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10008,
-      "date": "",
+      "draw_id": 10055,
+      "date": "2026-06-11",
       "actual_numbers": [
-        2,
-        3,
+        1,
+        10,
+        11,
         15,
-        18,
-        21,
-        25
+        16,
+        37
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            17,
+            11,
+            12,
             21,
-            22,
             34,
             37,
-            42
+            44
           ],
-          "matches": 1
+          "matches": 2
         },
         "time_decay": {
           "numbers": [
-            10,
-            21,
             23,
             34,
+            35,
             37,
+            38,
             42
           ],
           "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
-            11,
+            4,
             21,
             34,
+            37,
             44,
             49
           ],
@@ -3103,25 +3103,25 @@
         },
         "gap": {
           "numbers": [
-            5,
-            17,
+            10,
+            12,
             22,
+            25,
             34,
+            44
+          ],
+          "matches": 1
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            25,
+            33,
+            38,
             42,
             45
           ],
           "matches": 0
-        },
-        "frequency_stability": {
-          "numbers": [
-            2,
-            24,
-            35,
-            38,
-            42,
-            43
-          ],
-          "matches": 1
         },
         "random": {
           "numbers": [
@@ -3132,76 +3132,76 @@
             32,
             44
           ],
-          "matches": 1
+          "matches": 0
         }
       }
     },
     {
-      "draw_id": 10009,
-      "date": "",
+      "draw_id": 10056,
+      "date": "2026-06-14",
       "actual_numbers": [
-        20,
-        22,
-        24,
-        32,
-        35,
-        49
+        1,
+        7,
+        8,
+        14,
+        29,
+        42
       ],
       "tickets": {
         "advanced": {
           "numbers": [
-            9,
-            17,
-            22,
+            4,
+            12,
+            21,
             34,
             37,
-            42
+            44
           ],
-          "matches": 1
+          "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
-          ],
-          "matches": 0
-        },
-        "bayesian": {
-          "numbers": [
-            6,
-            11,
-            21,
-            34,
-            44,
-            49
           ],
           "matches": 1
         },
+        "bayesian": {
+          "numbers": [
+            4,
+            21,
+            34,
+            37,
+            44,
+            49
+          ],
+          "matches": 0
+        },
         "gap": {
           "numbers": [
-            5,
-            17,
+            4,
+            12,
             22,
+            25,
             34,
+            44
+          ],
+          "matches": 0
+        },
+        "frequency_stability": {
+          "numbers": [
+            24,
+            25,
+            33,
+            38,
             42,
             45
           ],
           "matches": 1
-        },
-        "frequency_stability": {
-          "numbers": [
-            2,
-            24,
-            35,
-            38,
-            42,
-            43
-          ],
-          "matches": 2
         },
         "random": {
           "numbers": [
@@ -3217,71 +3217,71 @@
       }
     },
     {
-      "draw_id": 10010,
-      "date": "",
+      "draw_id": 10057,
+      "date": "2026-06-18",
       "actual_numbers": [
-        5,
-        21,
+        22,
         26,
         28,
-        46,
-        48
+        29,
+        40,
+        42
       ],
       "tickets": {
         "advanced": {
           "numbers": [
             4,
-            17,
-            23,
+            12,
+            21,
             34,
             37,
-            42
+            44
           ],
           "matches": 0
         },
         "time_decay": {
           "numbers": [
             10,
-            21,
             23,
             34,
             37,
+            38,
             42
           ],
           "matches": 1
         },
         "bayesian": {
           "numbers": [
-            6,
-            11,
+            4,
             21,
             34,
+            37,
             44,
             49
           ],
-          "matches": 1
+          "matches": 0
         },
         "gap": {
           "numbers": [
-            5,
-            17,
+            4,
+            12,
+            22,
+            25,
             34,
-            37,
-            42,
-            45
+            44
           ],
           "matches": 1
         },
         "frequency_stability": {
           "numbers": [
-            2,
             24,
-            35,
+            25,
+            33,
             38,
             42,
-            43
+            45
           ],
-          "matches": 0
+          "matches": 1
         },
         "random": {
           "numbers": [
@@ -3292,7 +3292,7 @@
             34,
             40
           ],
-          "matches": 1
+          "matches": 3
         }
       }
     }
