@@ -1,0 +1,710 @@
+{
+  "status": "v45_prediction_engine_pro_tickets_ready",
+  "created_at_utc": "2026-06-21T15:56:49.226058+00:00",
+  "valid_draws": 10057,
+  "uses_bonus_number": false,
+  "primary_numbers": [
+    4,
+    17,
+    21,
+    24,
+    34,
+    48
+  ],
+  "ticket_combinations": [
+    {
+      "ticket_index": 1,
+      "label": "primary_rule_aware_ml_ensemble",
+      "numbers": [
+        4,
+        17,
+        21,
+        24,
+        34,
+        48
+      ],
+      "average_score": 0.7042857142857143,
+      "structure": {
+        "odd_count": 2,
+        "even_count": 4,
+        "low_count": 4,
+        "high_count": 2,
+        "sum": 148,
+        "consecutive_pairs": 0,
+        "max_zone_count": 2,
+        "zones": {
+          "0": 1,
+          "1": 1,
+          "2": 2,
+          "3": 1,
+          "4": 1
+        }
+      },
+      "number_details": [
+        {
+          "number": 4,
+          "pro_ensemble_score": 0.7040816326530613,
+          "prior_frequency": 0.12687680222730435,
+          "rolling_250_frequency": 0.108,
+          "gap_rhythm_score": 0.29838898856603807,
+          "sgd_log_probability": 0.5286693745039869,
+          "gaussian_nb_probability": 0.14160577990497394,
+          "current_gap": 20,
+          "average_gap": 7.854901960784313,
+          "median_gap": 6.0,
+          "total_hits": 1276,
+          "reasons": [
+            "strong_ensemble_rank",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 17,
+          "pro_ensemble_score": 0.6587755102040816,
+          "prior_frequency": 0.12598190315203342,
+          "rolling_250_frequency": 0.128,
+          "gap_rhythm_score": 0.14259575303197256,
+          "sgd_log_probability": 0.48775856069506635,
+          "gaussian_nb_probability": 0.1652319356349437,
+          "current_gap": 5,
+          "average_gap": 7.9281200631911535,
+          "median_gap": 6.0,
+          "total_hits": 1267,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency"
+          ]
+        },
+        {
+          "number": 21,
+          "pro_ensemble_score": 0.7036734693877551,
+          "prior_frequency": 0.12816943422491797,
+          "rolling_250_frequency": 0.1,
+          "gap_rhythm_score": 0.3072079524972003,
+          "sgd_log_probability": 0.5074565278028752,
+          "gaussian_nb_probability": 0.15378111297028144,
+          "current_gap": 19,
+          "average_gap": 7.791149068322981,
+          "median_gap": 5.5,
+          "total_hits": 1289,
+          "reasons": [
+            "strong_ensemble_rank",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 24,
+          "pro_ensemble_score": 0.7048979591836735,
+          "prior_frequency": 0.12329720592622054,
+          "rolling_250_frequency": 0.144,
+          "gap_rhythm_score": 0.2010064917626643,
+          "sgd_log_probability": 0.505224103503945,
+          "gaussian_nb_probability": 0.15338290014300585,
+          "current_gap": 12,
+          "average_gap": 8.103309120258272,
+          "median_gap": 6.0,
+          "total_hits": 1240,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 34,
+          "pro_ensemble_score": 0.7661224489795918,
+          "prior_frequency": 0.1283683006860893,
+          "rolling_250_frequency": 0.132,
+          "gap_rhythm_score": 0.41090603617649013,
+          "sgd_log_probability": 0.5219265931479199,
+          "gaussian_nb_probability": 0.12936000467695008,
+          "current_gap": 29,
+          "average_gap": 7.765116279069767,
+          "median_gap": 5.0,
+          "total_hits": 1291,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 48,
+          "pro_ensemble_score": 0.6881632653061225,
+          "prior_frequency": 0.12618076961320474,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.2961031302312555,
+          "sgd_log_probability": 0.501632842576806,
+          "gaussian_nb_probability": 0.14471785665294576,
+          "current_gap": 19,
+          "average_gap": 7.906940063091483,
+          "median_gap": 6.0,
+          "total_hits": 1269,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        }
+      ]
+    },
+    {
+      "ticket_index": 2,
+      "label": "coverage_low_overlap",
+      "numbers": [
+        6,
+        11,
+        12,
+        21,
+        34,
+        44
+      ],
+      "average_score": 0.6889795918367346,
+      "structure": {
+        "odd_count": 2,
+        "even_count": 4,
+        "low_count": 4,
+        "high_count": 2,
+        "sum": 128,
+        "consecutive_pairs": 1,
+        "max_zone_count": 2,
+        "zones": {
+          "0": 1,
+          "1": 2,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      },
+      "number_details": [
+        {
+          "number": 6,
+          "pro_ensemble_score": 0.6877551020408164,
+          "prior_frequency": 0.12647906930496172,
+          "rolling_250_frequency": 0.108,
+          "gap_rhythm_score": 0.15855934763881527,
+          "sgd_log_probability": 0.4956073892494876,
+          "gaussian_nb_probability": 0.1628483532007647,
+          "current_gap": 7,
+          "average_gap": 7.906372934697089,
+          "median_gap": 6.0,
+          "total_hits": 1272,
+          "reasons": [
+            "strong_ensemble_rank",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 11,
+          "pro_ensemble_score": 0.6155102040816327,
+          "prior_frequency": 0.1265785025355474,
+          "rolling_250_frequency": 0.124,
+          "gap_rhythm_score": 0.13009701205545987,
+          "sgd_log_probability": 0.48543247551912483,
+          "gaussian_nb_probability": 0.16461591070852238,
+          "current_gap": 3,
+          "average_gap": 7.89622641509434,
+          "median_gap": 6.0,
+          "total_hits": 1273,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency"
+          ]
+        },
+        {
+          "number": 12,
+          "pro_ensemble_score": 0.6987755102040816,
+          "prior_frequency": 0.1241921050014915,
+          "rolling_250_frequency": 0.124,
+          "gap_rhythm_score": 0.3100969226263034,
+          "sgd_log_probability": 0.5285819191759817,
+          "gaussian_nb_probability": 0.13850978065013678,
+          "current_gap": 22,
+          "average_gap": 8.040865384615385,
+          "median_gap": 6.0,
+          "total_hits": 1249,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 21,
+          "pro_ensemble_score": 0.7036734693877551,
+          "prior_frequency": 0.12816943422491797,
+          "rolling_250_frequency": 0.1,
+          "gap_rhythm_score": 0.3072079524972003,
+          "sgd_log_probability": 0.5074565278028752,
+          "gaussian_nb_probability": 0.15378111297028144,
+          "current_gap": 19,
+          "average_gap": 7.791149068322981,
+          "median_gap": 5.5,
+          "total_hits": 1289,
+          "reasons": [
+            "strong_ensemble_rank",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 34,
+          "pro_ensemble_score": 0.7661224489795918,
+          "prior_frequency": 0.1283683006860893,
+          "rolling_250_frequency": 0.132,
+          "gap_rhythm_score": 0.41090603617649013,
+          "sgd_log_probability": 0.5219265931479199,
+          "gaussian_nb_probability": 0.12936000467695008,
+          "current_gap": 29,
+          "average_gap": 7.765116279069767,
+          "median_gap": 5.0,
+          "total_hits": 1291,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 44,
+          "pro_ensemble_score": 0.6620408163265307,
+          "prior_frequency": 0.12826886745550362,
+          "rolling_250_frequency": 0.096,
+          "gap_rhythm_score": 0.39884751656286227,
+          "sgd_log_probability": 0.5140074827727098,
+          "gaussian_nb_probability": 0.13336748495467776,
+          "current_gap": 28,
+          "average_gap": 7.7750193948797515,
+          "median_gap": 5.0,
+          "total_hits": 1290,
+          "reasons": [
+            "strong_ensemble_rank",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        }
+      ]
+    },
+    {
+      "ticket_index": 3,
+      "label": "rhythm_weighted_alternative",
+      "numbers": [
+        2,
+        18,
+        21,
+        23,
+        34,
+        36
+      ],
+      "average_score": 0.6755782312925169,
+      "structure": {
+        "odd_count": 2,
+        "even_count": 4,
+        "low_count": 4,
+        "high_count": 2,
+        "sum": 134,
+        "consecutive_pairs": 0,
+        "max_zone_count": 2,
+        "zones": {
+          "0": 1,
+          "1": 1,
+          "2": 2,
+          "3": 2
+        }
+      },
+      "number_details": [
+        {
+          "number": 2,
+          "pro_ensemble_score": 0.6726530612244898,
+          "prior_frequency": 0.12150740777567863,
+          "rolling_250_frequency": 0.148,
+          "gap_rhythm_score": 0.152280483014862,
+          "sgd_log_probability": 0.5025669637069532,
+          "gaussian_nb_probability": 0.15933601270611716,
+          "current_gap": 7,
+          "average_gap": 8.22932022932023,
+          "median_gap": 6.0,
+          "total_hits": 1222,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 18,
+          "pro_ensemble_score": 0.6775510204081633,
+          "prior_frequency": 0.11892214378045143,
+          "rolling_250_frequency": 0.152,
+          "gap_rhythm_score": 0.23391142857142855,
+          "sgd_log_probability": 0.5170986016290466,
+          "gaussian_nb_probability": 0.14666113533332775,
+          "current_gap": 15,
+          "average_gap": 8.4,
+          "median_gap": 6.0,
+          "total_hits": 1196,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 21,
+          "pro_ensemble_score": 0.7036734693877551,
+          "prior_frequency": 0.12816943422491797,
+          "rolling_250_frequency": 0.1,
+          "gap_rhythm_score": 0.3072079524972003,
+          "sgd_log_probability": 0.5074565278028752,
+          "gaussian_nb_probability": 0.15378111297028144,
+          "current_gap": 19,
+          "average_gap": 7.791149068322981,
+          "median_gap": 5.5,
+          "total_hits": 1289,
+          "reasons": [
+            "strong_ensemble_rank",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 23,
+          "pro_ensemble_score": 0.5893877551020408,
+          "prior_frequency": 0.11623744655463857,
+          "rolling_250_frequency": 0.176,
+          "gap_rhythm_score": 0.21387081980276923,
+          "sgd_log_probability": 0.5016983409664311,
+          "gaussian_nb_probability": 0.13857159556263612,
+          "current_gap": 12,
+          "average_gap": 8.595034246575343,
+          "median_gap": 6.0,
+          "total_hits": 1169,
+          "reasons": [
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 34,
+          "pro_ensemble_score": 0.7661224489795918,
+          "prior_frequency": 0.1283683006860893,
+          "rolling_250_frequency": 0.132,
+          "gap_rhythm_score": 0.41090603617649013,
+          "sgd_log_probability": 0.5219265931479199,
+          "gaussian_nb_probability": 0.12936000467695008,
+          "current_gap": 29,
+          "average_gap": 7.765116279069767,
+          "median_gap": 5.0,
+          "total_hits": 1291,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 36,
+          "pro_ensemble_score": 0.6440816326530612,
+          "prior_frequency": 0.12140797454509297,
+          "rolling_250_frequency": 0.148,
+          "gap_rhythm_score": 0.1714682957942994,
+          "sgd_log_probability": 0.4905681773338533,
+          "gaussian_nb_probability": 0.1565895958633025,
+          "current_gap": 9,
+          "average_gap": 8.224590163934426,
+          "median_gap": 6.0,
+          "total_hits": 1221,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile"
+          ]
+        }
+      ]
+    },
+    {
+      "ticket_index": 4,
+      "label": "historical_signal_alternative",
+      "numbers": [
+        12,
+        18,
+        24,
+        25,
+        34,
+        37
+      ],
+      "average_score": 0.6652380952380953,
+      "structure": {
+        "odd_count": 2,
+        "even_count": 4,
+        "low_count": 3,
+        "high_count": 3,
+        "sum": 150,
+        "consecutive_pairs": 1,
+        "max_zone_count": 2,
+        "zones": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        }
+      },
+      "number_details": [
+        {
+          "number": 12,
+          "pro_ensemble_score": 0.6987755102040816,
+          "prior_frequency": 0.1241921050014915,
+          "rolling_250_frequency": 0.124,
+          "gap_rhythm_score": 0.3100969226263034,
+          "sgd_log_probability": 0.5285819191759817,
+          "gaussian_nb_probability": 0.13850978065013678,
+          "current_gap": 22,
+          "average_gap": 8.040865384615385,
+          "median_gap": 6.0,
+          "total_hits": 1249,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 18,
+          "pro_ensemble_score": 0.6775510204081633,
+          "prior_frequency": 0.11892214378045143,
+          "rolling_250_frequency": 0.152,
+          "gap_rhythm_score": 0.23391142857142855,
+          "sgd_log_probability": 0.5170986016290466,
+          "gaussian_nb_probability": 0.14666113533332775,
+          "current_gap": 15,
+          "average_gap": 8.4,
+          "median_gap": 6.0,
+          "total_hits": 1196,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 24,
+          "pro_ensemble_score": 0.7048979591836735,
+          "prior_frequency": 0.12329720592622054,
+          "rolling_250_frequency": 0.144,
+          "gap_rhythm_score": 0.2010064917626643,
+          "sgd_log_probability": 0.505224103503945,
+          "gaussian_nb_probability": 0.15338290014300585,
+          "current_gap": 12,
+          "average_gap": 8.103309120258272,
+          "median_gap": 6.0,
+          "total_hits": 1240,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 25,
+          "pro_ensemble_score": 0.5648979591836736,
+          "prior_frequency": 0.12329720592622054,
+          "rolling_250_frequency": 0.088,
+          "gap_rhythm_score": 0.3007159794493143,
+          "sgd_log_probability": 0.5104647960158687,
+          "gaussian_nb_probability": 0.12252563788639699,
+          "current_gap": 24,
+          "average_gap": 8.09765940274415,
+          "median_gap": 6.0,
+          "total_hits": 1240,
+          "reasons": [
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 34,
+          "pro_ensemble_score": 0.7661224489795918,
+          "prior_frequency": 0.1283683006860893,
+          "rolling_250_frequency": 0.132,
+          "gap_rhythm_score": 0.41090603617649013,
+          "sgd_log_probability": 0.5219265931479199,
+          "gaussian_nb_probability": 0.12936000467695008,
+          "current_gap": 29,
+          "average_gap": 7.765116279069767,
+          "median_gap": 5.0,
+          "total_hits": 1291,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "interesting_interval_profile",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 37,
+          "pro_ensemble_score": 0.5791836734693877,
+          "prior_frequency": 0.12687680222730435,
+          "rolling_250_frequency": 0.168,
+          "gap_rhythm_score": 0.15497997173830727,
+          "sgd_log_probability": 0.48311255661483676,
+          "gaussian_nb_probability": 0.1471160430136926,
+          "current_gap": 3,
+          "average_gap": 7.88078431372549,
+          "median_gap": 6.0,
+          "total_hits": 1276,
+          "reasons": [
+            "above_expected_recent_frequency"
+          ]
+        }
+      ]
+    }
+  ],
+  "selection_rules": {
+    "max_overlap_between_generated_tickets": 2,
+    "preferred_odd_count": "2..4",
+    "preferred_low_count_1_to_24": "2..4",
+    "preferred_sum_range": "110..190 soft, 95..205 hard",
+    "max_zone_concentration_soft": 3
+  },
+  "model_metrics": [
+    {
+      "model": "frequency_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7095972153157633,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 894,
+        "1": 836,
+        "2": 253,
+        "3": 27,
+        "4": 1
+      },
+      "events_with_3plus_hits": 28,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "recency_250_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7473893585280955,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 864,
+        "1": 828,
+        "2": 283,
+        "3": 35,
+        "4": 1
+      },
+      "events_with_3plus_hits": 36,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "gap_rhythm_statistical",
+      "test_events": 2011,
+      "average_hits_top6": 0.6986573843858777,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 920,
+        "1": 814,
+        "2": 242,
+        "3": 33,
+        "4": 2
+      },
+      "events_with_3plus_hits": 35,
+      "events_with_4plus_hits": 2,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "random_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7245151665837891,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 884,
+        "1": 839,
+        "2": 250,
+        "3": 34,
+        "4": 4
+      },
+      "events_with_3plus_hits": 38,
+      "events_with_4plus_hits": 4,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "sgd_logistic_probability",
+      "test_events": 2011,
+      "average_hits_top6": 0.7175534559920438,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 898,
+        "1": 824,
+        "2": 249,
+        "3": 39,
+        "4": 1
+      },
+      "events_with_3plus_hits": 40,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "gaussian_naive_bayes",
+      "test_events": 2011,
+      "average_hits_top6": 0.7359522625559424,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 882,
+        "1": 820,
+        "2": 269,
+        "3": 38,
+        "4": 2
+      },
+      "events_with_3plus_hits": 40,
+      "events_with_4plus_hits": 2,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "v45_pro_ensemble",
+      "test_events": 2011,
+      "average_hits_top6": 0.6842366981601193,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 929,
+        "1": 824,
+        "2": 225,
+        "3": 30,
+        "4": 3
+      },
+      "events_with_3plus_hits": 33,
+      "events_with_4plus_hits": 3,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    }
+  ],
+  "warning": "Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers."
+}

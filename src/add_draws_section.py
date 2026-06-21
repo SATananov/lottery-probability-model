@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import csv
 import json
@@ -21,6 +21,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v42_build_combined_positive_negative_foundation.py",
     ROOT / "scripts" / "v43_1_refine_interval_rhythm_foundation.py",
     ROOT / "scripts" / "v44_1_refine_final_ensemble_ticket_foundation.py",
+    ROOT / "scripts" / "v45_train_prediction_engine_pro.py",
 ]
 
 
@@ -283,6 +284,7 @@ def sync_to_github(year: int, draw_no: int) -> tuple[bool, str]:
         "models/v42",
         "models/v43_1",
         "models/v44_1",
+        "models/v45",
         "reports",
     ]
 

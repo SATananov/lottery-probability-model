@@ -4023,6 +4023,19 @@ def page_final_ensemble_analysis():
     final_ensemble_section.render()
 
 
+PREDICTION_DASHBOARD_PRO_LABEL = "Прогнозно табло Pro"
+
+
+def page_prediction_dashboard_pro() -> None:
+    from importlib import reload
+
+    import src.v45_prediction_dashboard_pro_section as prediction_dashboard_pro_section
+
+    reload(prediction_dashboard_pro_section)
+    prediction_dashboard_pro_section.render()
+
+
+
 def _rhythm_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
 
@@ -4046,6 +4059,7 @@ def main() -> None:
         _v42_bg("d09ad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bd20d0b0d0bdd0b0d0bbd0b8d0b7"): page_v42_combined_analysis,
         _rhythm_bg("d090d0bdd0b0d0bbd0b8d0b720d0bfd0be20d180d0b8d182d18ad0bc20d0bdd0b020d0bfd0bed18fd0b2d18fd0b2d0b0d0bdd0b5"): page_interval_rhythm_analysis,
         FINAL_ENSEMBLE_LABEL: page_final_ensemble_analysis,
+        PREDICTION_DASHBOARD_PRO_LABEL: page_prediction_dashboard_pro,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,

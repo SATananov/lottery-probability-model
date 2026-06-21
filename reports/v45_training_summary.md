@@ -1,0 +1,45 @@
+# v45 Prediction Engine Pro Training Summary
+
+Status: v45 training pipeline completed.
+
+## Safety note
+
+Lottery draws are random. These outputs are statistical rankings and rule-aware ticket suggestions, not guaranteed winning numbers.
+
+## Dataset
+
+- Source: `data\v41_canonical_draw_events.csv`
+- Valid draw events: 10057
+- Years: 1958–2026
+- Train events: 8046
+- Test events: 2011
+- Bonus numbers used: False
+
+## Best historical-check model
+
+- Model: `recency_250_baseline`
+- Average hits in top 6: 0.7474
+- Max hits in top 6: 4
+
+## Current primary rule-aware suggestion
+
+- Numbers: **4 17 21 24 34 48**
+
+## Models compared
+
+- `frequency_baseline`: avg=0.7096, max=4, 3+ events=28
+- `recency_250_baseline`: avg=0.7474, max=4, 3+ events=36
+- `gap_rhythm_statistical`: avg=0.6987, max=4, 3+ events=35
+- `random_baseline`: avg=0.7245, max=4, 3+ events=38
+- `sgd_logistic_probability`: avg=0.7176, max=4, 3+ events=40
+- `gaussian_naive_bayes`: avg=0.7360, max=4, 3+ events=40
+- `v45_pro_ensemble`: avg=0.6842, max=4, 3+ events=33
+
+## Output files
+
+- `models\v45\v45_latest_number_scores.json`
+- `models\v45\v45_final_prediction_tickets.json`
+- `models\v45\v45_model_metadata.json`
+- `reports\v45_backtest_results.csv`
+- `reports\v45_backtest_by_model.csv`
+- `reports\v45_feature_importance.csv`

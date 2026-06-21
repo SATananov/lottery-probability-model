@@ -1,0 +1,212 @@
+{
+  "status": "v45_training_pipeline_completed",
+  "created_at_utc": "2026-06-21T15:56:49.222725+00:00",
+  "dataset_source": "data\\v41_canonical_draw_events.csv",
+  "total_draw_events": 10057,
+  "year_min": 1958,
+  "year_max": 2026,
+  "train_events": 8046,
+  "test_events": 2011,
+  "uses_bonus_number": false,
+  "bonus_model_trained": false,
+  "feature_rows": 492793,
+  "feature_columns": [
+    "number_scaled",
+    "number_zone_scaled",
+    "year_scaled",
+    "draw_number_scaled",
+    "drawing_no_scaled",
+    "prior_frequency",
+    "drawing_no_prior_frequency",
+    "rolling_25_frequency",
+    "rolling_50_frequency",
+    "rolling_100_frequency",
+    "rolling_250_frequency",
+    "rolling_25_vs_250_trend",
+    "current_gap_scaled",
+    "gap_to_average_scaled",
+    "gap_to_median_scaled",
+    "average_gap_scaled",
+    "median_gap_scaled",
+    "frequency_zscore_scaled",
+    "recent_presence_score"
+  ],
+  "sklearn_status": {
+    "sklearn_available": true,
+    "models": {
+      "sgd_logistic_probability": "trained",
+      "gaussian_naive_bayes": "trained"
+    }
+  },
+  "next_model_status": {
+    "sgd_logistic_probability": "scored",
+    "gaussian_naive_bayes": "scored"
+  },
+  "model_metrics": [
+    {
+      "model": "frequency_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7095972153157633,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 894,
+        "1": 836,
+        "2": 253,
+        "3": 27,
+        "4": 1
+      },
+      "events_with_3plus_hits": 28,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "recency_250_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7473893585280955,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 864,
+        "1": 828,
+        "2": 283,
+        "3": 35,
+        "4": 1
+      },
+      "events_with_3plus_hits": 36,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "gap_rhythm_statistical",
+      "test_events": 2011,
+      "average_hits_top6": 0.6986573843858777,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 920,
+        "1": 814,
+        "2": 242,
+        "3": 33,
+        "4": 2
+      },
+      "events_with_3plus_hits": 35,
+      "events_with_4plus_hits": 2,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "random_baseline",
+      "test_events": 2011,
+      "average_hits_top6": 0.7245151665837891,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 884,
+        "1": 839,
+        "2": 250,
+        "3": 34,
+        "4": 4
+      },
+      "events_with_3plus_hits": 38,
+      "events_with_4plus_hits": 4,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "sgd_logistic_probability",
+      "test_events": 2011,
+      "average_hits_top6": 0.7175534559920438,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 898,
+        "1": 824,
+        "2": 249,
+        "3": 39,
+        "4": 1
+      },
+      "events_with_3plus_hits": 40,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "gaussian_naive_bayes",
+      "test_events": 2011,
+      "average_hits_top6": 0.7359522625559424,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 882,
+        "1": 820,
+        "2": 269,
+        "3": 38,
+        "4": 2
+      },
+      "events_with_3plus_hits": 40,
+      "events_with_4plus_hits": 2,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "v45_pro_ensemble",
+      "test_events": 2011,
+      "average_hits_top6": 0.6842366981601193,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 929,
+        "1": 824,
+        "2": 225,
+        "3": 30,
+        "4": 3
+      },
+      "events_with_3plus_hits": 33,
+      "events_with_4plus_hits": 3,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    }
+  ],
+  "best_model_by_average_hits_top6": {
+    "model": "recency_250_baseline",
+    "test_events": 2011,
+    "average_hits_top6": 0.7473893585280955,
+    "median_hits_top6": 1.0,
+    "max_hits_top6": 4,
+    "hit_distribution": {
+      "0": 864,
+      "1": 828,
+      "2": 283,
+      "3": 35,
+      "4": 1
+    },
+    "events_with_3plus_hits": 36,
+    "events_with_4plus_hits": 1,
+    "events_with_5plus_hits": 0,
+    "events_with_6_hits": 0
+  },
+  "primary_numbers": [
+    4,
+    17,
+    21,
+    24,
+    34,
+    48
+  ],
+  "ticket_count": 4,
+  "outputs": [
+    "models\\v45\\v45_number_score_model.joblib",
+    "models\\v45\\v45_latest_number_scores.json",
+    "models\\v45\\v45_final_prediction_tickets.json",
+    "models\\v45\\v45_model_metadata.json",
+    "reports\\v45_training_summary.json",
+    "reports\\v45_training_summary.md",
+    "reports\\v45_backtest_results.csv",
+    "reports\\v45_backtest_by_model.csv",
+    "reports\\v45_feature_importance.csv"
+  ],
+  "warning": "Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers."
+}
