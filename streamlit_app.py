@@ -44,7 +44,7 @@ _BG34_EXACT = {
     "Advanced Lab": "Разширена лаборатория",
     "Ticket Analyzer": "Анализ на фиш",
     "Historical Statistics": "Историческа статистика",
-    "Probability Lab": "Вероятности",
+    "Вероятностна лаборатория": "Вероятности",
     "Reports": "Отчети",
     "Report": "Отчет",
     "Update Draws": "Добавяне на тираж",
@@ -142,7 +142,7 @@ _BG34_EXACT = {
     "matches": "Съвпадения",
     "Matches": "Съвпадения",
     "probability_%": "Вероятност %",
-    "Probability %": "Вероятност %",
+    "Вероятност %": "Вероятност %",
     "1_in": "1 към",
     "number": "Число",
     "Number": "Число",
@@ -780,7 +780,7 @@ TRANSLATIONS = {
         "ticket_analyzer": "Ticket Analyzer",
         "history": "Historical Statistics",
         "v41_history_analysis": "Historical Draw Analysis",
-        "probability_lab": "Probability Lab",
+        "probability_lab": "Вероятностна лаборатория",
         "reports": "Reports",
         "update_draws": "Update Draws",
         "draws": "Draws",
@@ -3853,7 +3853,7 @@ def page_ticket_analyzer() -> None:
 def page_probability_lab() -> None:
     render_header()
     lang = st.session_state.get("language", globals().get("LANG", "bg"))
-    title = "Probability Lab" if lang == "bg" else "Probability Lab"
+    title = "Вероятностна лаборатория" if lang == "bg" else "Вероятностна лаборатория"
     st.markdown("## " + title)
 
     if "page_probability_lab" == "page_history":
@@ -3902,7 +3902,7 @@ def page_probability_lab() -> None:
         return
 
     st.info(
-        "\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u0435 \u0432\u044a\u0437\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0430 \u0432 \u0431\u0430\u0437\u043e\u0432 \u0440\u0435\u0436\u0438\u043c, \u0437\u0430 \u0434\u0430 \u043c\u043e\u0436\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0434\u0430 \u0441\u0442\u0430\u0440\u0442\u0438\u0440\u0430." if lang == "bg" else "This section has been restored in basic mode so the app can start."
+        "\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u0435 \u0432\u044a\u0437\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0430 \u0432 \u0431\u0430\u0437\u043e\u0432 \u0440\u0435\u0436\u0438\u043c, \u0437\u0430 \u0434\u0430 \u043c\u043e\u0436\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0434\u0430 \u0441\u0442\u0430\u0440\u0442\u0438\u0440\u0430." if lang == "bg" else "Тази секция е възстановена в базов режим, за да може приложението да стартира. in basic mode so the app can start."
     )
 
 
@@ -4152,6 +4152,16 @@ def page_interval_rhythm_analysis() -> None:
     module = importlib.import_module("src.v43_interval_rhythm_analysis_section")
     importlib.reload(module)
     module.render_interval_rhythm_analysis()
+FINAL_ENSEMBLE_LABEL = "\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043e\u0431\u043e\u0431\u0449\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437"
+
+
+def page_final_ensemble_analysis():
+    from importlib import reload
+
+    import src.v44_final_ensemble_analysis_section as final_ensemble_section
+
+    reload(final_ensemble_section)
+    final_ensemble_section.render()
 
 
 def _rhythm_bg(hex_text: str) -> str:
@@ -4176,6 +4186,7 @@ def main() -> None:
         tr("v41_history_analysis"): page_v41_rules_aware_analysis,
         _v42_bg("d09ad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bd20d0b0d0bdd0b0d0bbd0b8d0b7"): page_v42_combined_analysis,
         _rhythm_bg("d090d0bdd0b0d0bbd0b8d0b720d0bfd0be20d180d0b8d182d18ad0bc20d0bdd0b020d0bfd0bed18fd0b2d18fd0b2d0b0d0bdd0b5"): page_interval_rhythm_analysis,
+        FINAL_ENSEMBLE_LABEL: page_final_ensemble_analysis,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
