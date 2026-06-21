@@ -3190,6 +3190,138 @@ def page_ticket_analyzer() -> None:
 
         return chips
 
+
+
+    def build_ticket_explanation(values, zone):
+        values = sorted([int(x) for x in values])
+
+        total = sum(values)
+        even = sum(1 for number in values if number % 2 == 0)
+        odd = 6 - even
+        low = sum(1 for number in values if 1 <= number <= 16)
+        middle_band = sum(1 for number in values if 17 <= number <= 33)
+        high = sum(1 for number in values if 34 <= number <= 49)
+
+        parts = []
+
+        if zone:
+            hot_count = len(zone.get("hot", []))
+            middle_count = len(zone.get("middle", []))
+            cold_count = len(zone.get("cold", []))
+            kind = zone.get("kind", "")
+
+            parts.append(
+                tx(
+                    f"**\u041e\u0431\u0449 \u0438\u0437\u0432\u043e\u0434:** \u0442\u0430\u0437\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u0435 **{kind}**.",
+                    f"**Overall:** this combination is **{kind}**.",
+                )
+            )
+
+            parts.append(
+                tx(
+                    f"**\u0417\u043e\u043d\u043e\u0432 \u0430\u043d\u0430\u043b\u0438\u0437:** {hot_count} \u0447\u0438\u0441\u043b\u0430 \u0441\u0430 \u0432 \u0433\u043e\u0440\u0435\u0449\u0430\u0442\u0430 \u0437\u043e\u043d\u0430, {middle_count} \u0441\u0430 \u0432 \u0441\u0440\u0435\u0434\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430 \u0438 {cold_count} \u0441\u0430 \u0432 \u0441\u0442\u0443\u0434\u0435\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430.",
+                    f"**Zone analysis:** {hot_count} numbers are in the hot zone, {middle_count} are in the middle zone, and {cold_count} are in the cold zone.",
+                )
+            )
+
+            if hot_count >= 3:
+                parts.append(
+                    tx(
+                        "\u0422\u043e\u0432\u0430 \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430, \u0447\u0435 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u043f\u043e-\u0431\u043b\u0438\u0437\u043e \u0434\u043e \u043f\u043e-\u0430\u043a\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430.",
+                        "This means the combination is closer to the more active numbers in the historical statistics.",
+                    )
+                )
+            elif cold_count >= 3:
+                parts.append(
+                    tx(
+                        "\u0422\u043e\u0432\u0430 \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430, \u0447\u0435 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u043f\u043e-\u0431\u043b\u0438\u0437\u043e \u0434\u043e \u043f\u043e-\u0441\u043b\u0430\u0431\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0442\u0435\u043a\u0443\u0449\u0430\u0442\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430.",
+                        "This means the combination is closer to the less active numbers in the current statistics.",
+                    )
+                )
+            elif middle_count >= 3:
+                parts.append(
+                    tx(
+                        "\u0422\u043e\u0432\u0430 \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430, \u0447\u0435 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0438\u043c\u0430 \u043f\u043e-\u0443\u043c\u0435\u0440\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u0438 \u043d\u0435 \u0435 \u043f\u0440\u0435\u043a\u0430\u043b\u0435\u043d\u043e \u043a\u0440\u0430\u0439\u043d\u0430.",
+                        "This means the combination has a more moderate profile and is not too extreme.",
+                    )
+                )
+            else:
+                parts.append(
+                    tx(
+                        "\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u0441\u043c\u0435\u0441\u0435\u043d\u0430 ? \u0438\u043c\u0430 \u0447\u0438\u0441\u043b\u0430 \u043e\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0437\u043e\u043d\u0438.",
+                        "The combination is mixed ? it has numbers from different statistical zones.",
+                    )
+                )
+        else:
+            parts.append(
+                tx(
+                    "**\u041e\u0431\u0449 \u0438\u0437\u0432\u043e\u0434:** \u0437\u043e\u043d\u043e\u0432\u0438\u044f\u0442 \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0435 \u0435 \u043d\u0430\u043b\u0438\u0447\u0435\u043d, \u043d\u043e \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u0442\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 \u043f\u043e-\u0434\u043e\u043b\u0443 \u0434\u0430\u0432\u0430\u0442 \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440 \u0437\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430.",
+                    "**Overall:** zone analysis is not available, but the basic indicators below still describe the combination.",
+                )
+            )
+
+        if even in [2, 3, 4]:
+            parts.append(
+                tx(
+                    f"**\u0427\u0435\u0442\u043d\u0438/\u043d\u0435\u0447\u0435\u0442\u043d\u0438:** \u0431\u0430\u043b\u0430\u043d\u0441\u044a\u0442 \u0435 {even}/{odd}, \u043a\u043e\u0435\u0442\u043e \u0435 \u043d\u043e\u0440\u043c\u0430\u043b\u043d\u043e \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e \u0440\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435.",
+                    f"**Even/odd:** the balance is {even}/{odd}, which is a normal statistical distribution.",
+                )
+            )
+        else:
+            parts.append(
+                tx(
+                    f"**\u0427\u0435\u0442\u043d\u0438/\u043d\u0435\u0447\u0435\u0442\u043d\u0438:** \u0431\u0430\u043b\u0430\u043d\u0441\u044a\u0442 \u0435 {even}/{odd}, \u043a\u043e\u0435\u0442\u043e \u0435 \u043f\u043e-\u043a\u0440\u0430\u0439\u043d\u043e \u0440\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435.",
+                    f"**Even/odd:** the balance is {even}/{odd}, which is a more extreme distribution.",
+                )
+            )
+
+        if low > 0 and middle_band > 0 and high > 0:
+            parts.append(
+                tx(
+                    f"**\u041d\u0438\u0441\u043a\u0438/\u0441\u0440\u0435\u0434\u043d\u0438/\u0432\u0438\u0441\u043e\u043a\u0438:** \u0440\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435\u0442\u043e \u0435 {low}/{middle_band}/{high}, \u0442\u043e\u0435\u0441\u0442 \u0438\u043c\u0430 \u0447\u0438\u0441\u043b\u0430 \u043e\u0442 \u0432\u0441\u0438\u0447\u043a\u0438 \u043e\u0441\u043d\u043e\u0432\u043d\u0438 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u0438.",
+                    f"**Low/middle/high:** the distribution is {low}/{middle_band}/{high}, so it includes numbers from all main ranges.",
+                )
+            )
+        else:
+            parts.append(
+                tx(
+                    f"**\u041d\u0438\u0441\u043a\u0438/\u0441\u0440\u0435\u0434\u043d\u0438/\u0432\u0438\u0441\u043e\u043a\u0438:** \u0440\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435\u0442\u043e \u0435 {low}/{middle_band}/{high}, \u0442\u043e\u0435\u0441\u0442 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u043f\u043e-\u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0438\u0440\u0430\u043d\u0430 \u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d.",
+                    f"**Low/middle/high:** the distribution is {low}/{middle_band}/{high}, so the combination is more concentrated in one range.",
+                )
+            )
+
+        if 110 <= total <= 190:
+            parts.append(
+                tx(
+                    f"**\u0421\u0443\u043c\u0430:** \u043e\u0431\u0449\u0430\u0442\u0430 \u0441\u0443\u043c\u0430 \u0435 {total}, \u043a\u043e\u0435\u0442\u043e \u0435 \u0443\u043c\u0435\u0440\u0435\u043d \u0447\u0438\u0441\u043b\u043e\u0432 \u043f\u0440\u043e\u0444\u0438\u043b.",
+                    f"**Sum:** the total is {total}, which is a moderate number profile.",
+                )
+            )
+        elif total < 110:
+            parts.append(
+                tx(
+                    f"**\u0421\u0443\u043c\u0430:** \u043e\u0431\u0449\u0430\u0442\u0430 \u0441\u0443\u043c\u0430 \u0435 {total}, \u043a\u043e\u0435\u0442\u043e \u043f\u0440\u0430\u0432\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u043f\u043e-\u043d\u0438\u0441\u043a\u0430 \u043a\u0430\u0442\u043e \u0447\u0438\u0441\u043b\u043e\u0432 \u043f\u0440\u043e\u0444\u0438\u043b.",
+                    f"**Sum:** the total is {total}, which makes the combination lower in number profile.",
+                )
+            )
+        else:
+            parts.append(
+                tx(
+                    f"**\u0421\u0443\u043c\u0430:** \u043e\u0431\u0449\u0430\u0442\u0430 \u0441\u0443\u043c\u0430 \u0435 {total}, \u043a\u043e\u0435\u0442\u043e \u043f\u0440\u0430\u0432\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u043f\u043e-\u0432\u0438\u0441\u043e\u043a\u0430 \u043a\u0430\u0442\u043e \u0447\u0438\u0441\u043b\u043e\u0432 \u043f\u0440\u043e\u0444\u0438\u043b.",
+                    f"**Sum:** the total is {total}, which makes the combination higher in number profile.",
+                )
+            )
+
+        parts.append(
+            tx(
+                "**\u0412\u0430\u0436\u043d\u043e:** \u0442\u043e\u0432\u0430 \u0435 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435. \u0422\u043e \u043d\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f \u0440\u0435\u0430\u043b\u043d\u0438\u044f \u0448\u0430\u043d\u0441 \u0437\u0430 \u0442\u043e\u0447\u043d\u0430 6/49 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f: **1:13,983,816**.",
+                "**Important:** this is a statistical description. It does not change the real odds for an exact 6/49 combination: **1:13,983,816**.",
+            )
+        )
+
+        return "\n\n".join(parts)
+
+
     def render_page_css() -> None:
         st.markdown(
             """
@@ -3638,6 +3770,9 @@ def page_ticket_analyzer() -> None:
         c4.metric(tx("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441", "Real odds"), "1:13,983,816")
 
         zone = calculate_zones(values)
+
+        st.markdown("#### " + tx("\u041e\u0431\u044f\u0441\u043d\u0435\u043d\u0438\u0435", "Explanation"))
+        st.info(build_ticket_explanation(values, zone))
 
         if zone:
             z1, z2, z3, z4 = st.columns(4)
