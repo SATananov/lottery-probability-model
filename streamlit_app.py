@@ -4059,6 +4059,19 @@ def page_backtesting_center() -> None:
     backtesting_center_section.render()
 
 
+TICKET_BUILDER_LABEL = "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438"
+
+
+def page_ticket_builder() -> None:
+    from importlib import reload
+
+    import src.ticket_builder_section as ticket_builder_section
+
+    reload(ticket_builder_section)
+    ticket_builder_section.render()
+
+
+
 
 
 
@@ -4088,6 +4101,7 @@ def main() -> None:
         PREDICTION_DASHBOARD_PRO_LABEL: page_prediction_dashboard_pro,
         STRATEGY_LAB_LABEL: page_strategy_lab,
         BACKTESTING_CENTER_LABEL: page_backtesting_center,
+        TICKET_BUILDER_LABEL: page_ticket_builder,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
