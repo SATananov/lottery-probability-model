@@ -4035,6 +4035,19 @@ def page_prediction_dashboard_pro() -> None:
     prediction_dashboard_pro_section.render()
 
 
+STRATEGY_LAB_LABEL = "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f"
+
+
+def page_strategy_lab() -> None:
+    from importlib import reload
+
+    import src.strategy_lab_section as strategy_lab_section
+
+    reload(strategy_lab_section)
+    strategy_lab_section.render()
+
+
+
 
 def _rhythm_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
@@ -4060,6 +4073,7 @@ def main() -> None:
         _rhythm_bg("d090d0bdd0b0d0bbd0b8d0b720d0bfd0be20d180d0b8d182d18ad0bc20d0bdd0b020d0bfd0bed18fd0b2d18fd0b2d0b0d0bdd0b5"): page_interval_rhythm_analysis,
         FINAL_ENSEMBLE_LABEL: page_final_ensemble_analysis,
         PREDICTION_DASHBOARD_PRO_LABEL: page_prediction_dashboard_pro,
+        STRATEGY_LAB_LABEL: page_strategy_lab,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
