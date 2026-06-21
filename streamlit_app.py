@@ -3908,65 +3908,206 @@ def page_probability_lab() -> None:
 
 
 
-def page_history() -> None:
-    render_header()
 
-    lang = st.session_state.get("language", globals().get("LANG", "bg"))
 
-    def tx(bg: str, en: str) -> str:
-        return bg if lang == "bg" else en
+# HISTORY_LOAD_DATA_COMPAT_START
+def load_data():
+    """Compatibility loader for the Historical Statistics page.
 
-    st.markdown("## " + tx("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430", "Historical Statistics"))
+    Reads the active historical 6/49 dataset.
+    This is analysis data only and does not guarantee lottery winnings.
+    """
+    data_path = Path("data") / "historical_draws.csv"
 
-    st.markdown(
-        '<div class="warning-soft">'
-        + tx(
-            "\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043e\u0441\u043d\u043e\u0432\u043d\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043e\u0442 \u043d\u0430\u0431\u043e\u0440\u0430 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438. \u0422\u044f \u0435 \u0437\u0430 \u0430\u043d\u0430\u043b\u0438\u0437, \u043d\u0435 \u0437\u0430 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f \u0437\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430.",
-            "This section shows basic historical statistics from the dataset. It is for analysis, not a guarantee of winning.",
+    if not data_path.exists():
+        fallback_path = Path(__file__).resolve().parent / "data" / "historical_draws.csv"
+        if fallback_path.exists():
+            data_path = fallback_path
+
+    if not data_path.exists():
+        raise FileNotFoundError("Missing data/historical_draws.csv")
+
+    df = pd.read_csv(data_path)
+
+    # Normalize common numeric columns without changing the source file.
+    numeric_candidates = [
+        "year",
+        "draw",
+        "draw_no",
+        "draw_number",
+        "drawing_no",
+        "draw_position",
+        "position",
+        "n1",
+        "n2",
+        "n3",
+        "n4",
+        "n5",
+        "n6",
+        "num1",
+        "num2",
+        "num3",
+        "num4",
+        "num5",
+        "num6",
+        "number_1",
+        "number_2",
+        "number_3",
+        "number_4",
+        "number_5",
+        "number_6",
+        "bonus",
+        "bonus_number",
+    ]
+
+    for column in numeric_candidates:
+        if column in df.columns:
+            df[column] = pd.to_numeric(df[column], errors="coerce")
+
+    if "date" in df.columns:
+        df["date"] = df["date"].astype(str)
+
+    return df
+# HISTORY_LOAD_DATA_COMPAT_END
+
+
+
+
+
+# BG_TEXT_RUNTIME_HELPER_START
+def _bg(hex_text: str) -> str:
+    return bytes.fromhex(hex_text).decode("utf-8")
+# BG_TEXT_RUNTIME_HELPER_END
+
+
+
+# HISTORY_RECENT_DRAWS_DISPLAY_START
+def _format_history_recent_draws(df, rows: int = 10):
+    if df is None or len(df) == 0:
+        return pd.DataFrame()
+
+    work = df.copy()
+
+    for column in [
+        "draw_id", "year", "draw_number", "draw_no", "draw",
+        "draw_position", "drawing_no", "position",
+        "n1", "n2", "n3", "n4", "n5", "n6",
+        "num1", "num2", "num3", "num4", "num5", "num6",
+        "number_1", "number_2", "number_3", "number_4", "number_5", "number_6",
+    ]:
+        if column in work.columns:
+            work[column] = pd.to_numeric(work[column], errors="coerce")
+
+    number_sets = [
+        ["n1", "n2", "n3", "n4", "n5", "n6"],
+        ["num1", "num2", "num3", "num4", "num5", "num6"],
+        ["number_1", "number_2", "number_3", "number_4", "number_5", "number_6"],
+    ]
+
+    number_columns = []
+    for columns in number_sets:
+        if all(column in work.columns for column in columns):
+            number_columns = columns
+            break
+
+    sort_columns = [
+        column for column in [
+            "year", "draw_number", "draw_no", "draw",
+            "draw_position", "drawing_no", "position", "draw_id"
+        ]
+        if column in work.columns
+    ]
+
+    recent = work.sort_values(sort_columns, na_position="first").tail(rows).copy() if sort_columns else work.tail(rows).copy()
+
+    display = pd.DataFrame(index=recent.index)
+
+    if "date" in recent.columns:
+        display[_bg("d094d0b0d182d0b0")] = (
+            recent["date"]
+            .astype(str)
+            .replace({"None": "-", "nan": "-", "NaT": "-", "": "-"})
         )
-        + "</div>",
-        unsafe_allow_html=True,
+
+    if "year" in recent.columns:
+        display[_bg("d093d0bed0b4d0b8d0bdd0b0")] = recent["year"].apply(
+            lambda value: "-" if pd.isna(value) else str(int(value))
+        )
+
+    draw_column = next((column for column in ["draw_number", "draw_no", "draw"] if column in recent.columns), None)
+    if draw_column:
+        display[_bg("d0a2d0b8d180d0b0d0b620e28496")] = recent[draw_column].apply(
+            lambda value: "-" if pd.isna(value) else str(int(value))
+        )
+
+    position_column = next((column for column in ["draw_position", "drawing_no", "position"] if column in recent.columns), None)
+    if position_column:
+        display[_bg("d0a2d0b5d0b3d0bbd0b5d0bdd0b5")] = recent[position_column].apply(
+            lambda value: "-" if pd.isna(value) else str(int(value))
+        )
+
+    if number_columns:
+        def format_numbers(row):
+            values = []
+            for column in number_columns:
+                value = row.get(column)
+                if pd.isna(value):
+                    continue
+                values.append(str(int(value)))
+            return " - ".join(values)
+
+        display[_bg("d09ad0bed0bcd0b1d0b8d0bdd0b0d186d0b8d18f")] = recent.apply(format_numbers, axis=1)
+
+    return display.reset_index(drop=True)
+# HISTORY_RECENT_DRAWS_DISPLAY_END
+
+
+
+def page_history() -> None:
+    st.title(_bg("d098d181d182d0bed180d0b8d187d0b5d181d0bad0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b0"))
+
+    st.info(
+        _bg("d0a2d0b0d0b7d0b820d181d0b5d0bad186d0b8d18f20d0bfd0bed0bad0b0d0b7d0b2d0b020d0bed181d0bdd0bed0b2d0bdd0b020d0b8d181d182d0bed180d0b8d187d0b5d181d0bad0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b020d0bed18220d0bdd0b0d0b1d0bed180d0b020d0bed18220d0b4d0b0d0bdd0bdd0b82e20d0a2d18f20d0b520d0b7d0b020d0b0d0bdd0b0d0bbd0b8d0b72c20d0bdd0b520d0b7d0b020d0b3d0b0d180d0b0d0bdd186d0b8d18f20d0b7d0b020d0bfd0b5d187d0b0d0bbd0b1d0b02e")
     )
 
     try:
-        df = load_data()
+        data = load_data()
     except Exception as exc:
-        st.error(tx("\u0414\u0430\u043d\u043d\u0438\u0442\u0435 \u043d\u0435 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0441\u0435 \u0437\u0430\u0440\u0435\u0434\u044f\u0442: ", "Data could not be loaded: ") + str(exc))
+        st.error(f'{_bg("d094d0b0d0bdd0bdd0b8d182d0b520d0bdd0b520d0bcd0bed0b3d0b0d18220d0b4d0b020d181d0b520d0b7d0b0d180d0b5d0b4d18fd182")}: {exc}')
         return
 
-    if df is None or getattr(df, "empty", True):
-        st.info(tx("\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u043d\u0435.", "No data to show."))
+    if data is None or len(data) == 0:
+        st.warning(_bg("d09dd18fd0bcd0b020d0bdd0b0d0bbd0b8d187d0bdd0b820d0b8d181d182d0bed180d0b8d187d0b5d181d0bad0b820d0b4d0b0d0bdd0bdd0b820d0b7d0b020d0bfd0bed0bad0b0d0b7d0b2d0b0d0bdd0b52e"))
         return
 
-    c1, c2, c3 = st.columns(3)
-    c1.metric(tx("\u041e\u0431\u0449 \u0431\u0440\u043e\u0439 \u0442\u0438\u0440\u0430\u0436\u0438", "Total draws"), f"{len(df):,}")
+    year_series = pd.to_numeric(data["year"], errors="coerce") if "year" in data.columns else None
 
-    year_col = None
-    for col in df.columns:
-        if str(col).lower() in ["year", "draw", "draw_number"]:
-            year_col = col
-            break
+    total_draws = len(data)
+    first_year = int(year_series.min()) if year_series is not None and not year_series.dropna().empty else "-"
+    last_year = int(year_series.max()) if year_series is not None and not year_series.dropna().empty else "-"
 
-    if year_col is not None:
-        try:
-            c2.metric(tx("\u041f\u044a\u0440\u0432\u0430 \u0433\u043e\u0434\u0438\u043d\u0430", "First year"), int(df[year_col].min()))
-            c3.metric(tx("\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0430 \u0433\u043e\u0434\u0438\u043d\u0430", "Last year"), int(df[year_col].max()))
-        except Exception:
-            c2.metric(tx("\u041a\u043e\u043b\u043e\u043d\u0438", "Columns"), len(df.columns))
-            c3.metric(tx("\u0420\u0435\u0434\u043e\u0432\u0435", "Rows"), len(df))
+    metric_col_1, metric_col_2, metric_col_3 = st.columns(3)
+    metric_col_1.metric(_bg("d09ed0b1d18920d0b1d180d0bed0b920d182d0b8d180d0b0d0b6d0b8"), f"{total_draws:,}")
+    metric_col_2.metric(_bg("d09fd18ad180d0b2d0b020d0b3d0bed0b4d0b8d0bdd0b0"), first_year)
+    metric_col_3.metric(_bg("d09fd0bed181d0bbd0b5d0b4d0bdd0b020d0b3d0bed0b4d0b8d0bdd0b0"), last_year)
+
+    st.subheader(_bg("d09fd0bed181d0bbd0b5d0b4d0bdd0b820d182d0b8d180d0b0d0b6d0b8"))
+    recent_display = _format_history_recent_draws(data, rows=10)
+
+    if recent_display.empty:
+        st.warning(_bg("d09dd18fd0bcd0b020d0b4d0bed181d182d0b0d182d18ad187d0bdd0be20d0b4d0b0d0bdd0bdd0b820d0b7d0b020d0bfd0bed181d0bbd0b5d0b4d0bdd0b820d182d0b8d180d0b0d0b6d0b82e"))
     else:
-        c2.metric(tx("\u041a\u043e\u043b\u043e\u043d\u0438", "Columns"), len(df.columns))
-        c3.metric(tx("\u0420\u0435\u0434\u043e\u0432\u0435", "Rows"), len(df))
-
-    st.markdown("### " + tx("\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438", "Latest draws"))
-    st.dataframe(df.tail(100), width="stretch", hide_index=True)
+        st.dataframe(recent_display, hide_index=True, use_container_width=True)
 
     st.info(
-        tx(
-            "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e\u043c\u0430\u0433\u0430 \u0437\u0430 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435, \u043d\u043e \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0432\u0430 \u0431\u044a\u0434\u0435\u0449 \u0442\u0438\u0440\u0430\u0436.",
-            "Historical statistics help with comparison, but they do not predict a future draw.",
-        )
+        _bg("d098d181d182d0bed180d0b8d187d0b5d181d0bad0b0d182d0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b020d0bfd0bed0bcd0b0d0b3d0b020d0b7d0b020d181d180d0b0d0b2d0bdd0b5d0bdd0b8d0b520d0b820d0bed0b1d183d187d0b5d0bdd0b8d0b52c20d0bdd0be20d0bdd0b520d0bfd180d0b5d0b4d181d0bad0b0d0b7d0b2d0b020d0b1d18ad0b4d0b5d18920d182d0b8d180d0b0d0b620d0b820d0bdd0b520d0b3d0b0d180d0b0d0bdd182d0b8d180d0b020d0bfd0b5d187d0b0d0bbd0b1d0b02e")
     )
+
+
+
+
+
+
 
 
 
