@@ -1,0 +1,30 @@
+{
+  "version": "v51",
+  "type": "ticket_portfolio_intelligence",
+  "portfolio": {
+    "overall_score": 60.68,
+    "rating": "medium",
+    "warning_codes": [
+      "too_much_repetition"
+    ],
+    "strength_codes": [
+      "good_diversity",
+      "solid_combo_structure",
+      "good_number_coverage"
+    ],
+    "metrics": {
+      "combination_count": 4,
+      "average_combo_score": 71.99,
+      "unique_numbers": 16,
+      "max_repeat": 4,
+      "average_overlap": 2.0,
+      "max_overlap": 2,
+      "coverage_score": 0.66667,
+      "overlap_score": 0.33333,
+      "repeat_score": 0.0
+    }
+  },
+  "current_score_file": "reports\\v51_current_pro_ticket_score.csv",
+  "summary_file": "reports\\v51_ticket_portfolio_summary.json",
+  "warning": "Statistical analysis only. Lottery draws remain random and there is no winning guarantee."
+}

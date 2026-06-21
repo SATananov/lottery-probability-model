@@ -1,0 +1,92 @@
+{
+  "status": "v51_ticket_portfolio_intelligence_completed",
+  "created_at": "2026-06-21T20:11:19",
+  "source_tickets": "models\\v45\\v45_final_prediction_tickets.json",
+  "pair_source": "reports\\v50_pair_scores.csv",
+  "group_source": "reports\\v50_group_scores.csv",
+  "sum_bounds": {
+    "min_sum": 40.0,
+    "low_sum": 106.0,
+    "median_sum": 150.0,
+    "high_sum": 193.0,
+    "max_sum": 264.0
+  },
+  "portfolio": {
+    "overall_score": 60.68,
+    "rating": "medium",
+    "warning_codes": [
+      "too_much_repetition"
+    ],
+    "strength_codes": [
+      "good_diversity",
+      "solid_combo_structure",
+      "good_number_coverage"
+    ],
+    "metrics": {
+      "combination_count": 4,
+      "average_combo_score": 71.99,
+      "unique_numbers": 16,
+      "max_repeat": 4,
+      "average_overlap": 2.0,
+      "max_overlap": 2,
+      "coverage_score": 0.66667,
+      "overlap_score": 0.33333,
+      "repeat_score": 0.0
+    }
+  },
+  "combination_scores": [
+    {
+      "combination": "4 17 21 24 34 48",
+      "combo_score": 73.64,
+      "pair_average": 0.68812,
+      "strong_pairs": 10,
+      "group_average": 0.43218,
+      "strong_groups": 0,
+      "sum": 148,
+      "even_count": 4,
+      "low_count": 4,
+      "range_span": 44,
+      "consecutive_pairs": 0
+    },
+    {
+      "combination": "6 11 12 21 34 44",
+      "combo_score": 68.37,
+      "pair_average": 0.65464,
+      "strong_pairs": 9,
+      "group_average": 0.41366,
+      "strong_groups": 0,
+      "sum": 128,
+      "even_count": 4,
+      "low_count": 4,
+      "range_span": 38,
+      "consecutive_pairs": 1
+    },
+    {
+      "combination": "2 18 21 23 34 36",
+      "combo_score": 73.21,
+      "pair_average": 0.73135,
+      "strong_pairs": 14,
+      "group_average": 0.46733,
+      "strong_groups": 2,
+      "sum": 134,
+      "even_count": 4,
+      "low_count": 4,
+      "range_span": 34,
+      "consecutive_pairs": 0
+    },
+    {
+      "combination": "12 18 24 25 34 37",
+      "combo_score": 72.73,
+      "pair_average": 0.69023,
+      "strong_pairs": 10,
+      "group_average": 0.40176,
+      "strong_groups": 1,
+      "sum": 150,
+      "even_count": 4,
+      "low_count": 3,
+      "range_span": 25,
+      "consecutive_pairs": 1
+    }
+  ],
+  "warning": "Statistical analysis only. Lottery draws remain random and there is no winning guarantee."
+}
