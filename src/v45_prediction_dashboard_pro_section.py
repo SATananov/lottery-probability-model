@@ -51,7 +51,7 @@ def _reason_label(reason: str) -> str:
 
 def _ticket_label(label: str) -> str:
     labels = {
-        "primary_rule_aware_ml_ensemble": "Основен rule-aware ML ансамбъл",
+        "primary_rule_aware_ml_ensemble": "Основен балансиран ансамбъл",
         "coverage_low_overlap": "Покритие с ниско припокриване",
         "rhythm_weighted_alternative": "Алтернатива с по-силен ритъм",
         "historical_signal_alternative": "Алтернатива с исторически сигнал",
@@ -59,6 +59,18 @@ def _ticket_label(label: str) -> str:
     }
     return labels.get(str(label), str(label))
 
+
+def _model_label(model: Any) -> str:
+    labels = {
+        "recency_250_baseline": "\u041c\u043e\u0434\u0435\u043b \u043f\u043e \u0441\u043a\u043e\u0440\u043e\u0448\u043d\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442",
+        "frequency_baseline": "\u0427\u0435\u0441\u0442\u043e\u0442\u0435\u043d \u043c\u043e\u0434\u0435\u043b",
+        "gap_rhythm_statistical": "\u041c\u043e\u0434\u0435\u043b \u043f\u043e \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u0440\u0438\u0442\u044a\u043c",
+        "random_baseline": "\u0421\u043b\u0443\u0447\u0430\u0435\u043d \u0431\u0430\u0437\u043e\u0432 \u043c\u043e\u0434\u0435\u043b",
+        "sgd_logistic_probability": "\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0435\u043d ML \u043c\u043e\u0434\u0435\u043b",
+        "gaussian_naive_bayes": "Naive Bayes \u043c\u043e\u0434\u0435\u043b",
+        "v45_pro_ensemble": "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d Pro \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b",
+    }
+    return labels.get(str(model), str(model))
 
 def _show_dataframe(rows: list[dict[str, Any]]) -> None:
     if not rows:
@@ -84,9 +96,9 @@ def _model_rows(summary: dict[str, Any]) -> list[dict[str, Any]]:
     for item in summary.get("model_metrics", []):
         rows.append(
             {
-                "Модел": item.get("model", "-"),
+                "Модел": _model_label(item.get("model", "-")),
                 "Тестови тиражи": item.get("test_events", 0),
-                "Средни съвпадения / top 6": _score(item.get("average_hits_top6"), 4),
+                "Средно уцелени числа / top 6": _score(item.get("average_hits_top6"), 4),
                 "Максимум": item.get("max_hits_top6", 0),
                 "3+ съвпадения": item.get("events_with_3plus_hits", 0),
                 "4+ съвпадения": item.get("events_with_4plus_hits", 0),
@@ -103,9 +115,9 @@ def _top_score_rows(scores: dict[str, Any], limit: int = 20) -> list[dict[str, A
             {
                 "Ранг": row.get("rank"),
                 "Число": row.get("number"),
-                "Pro ensemble": _score(row.get("pro_ensemble_score")),
-                "Честота": _score(row.get("prior_frequency")),
-                "Скорошност 250": _score(row.get("rolling_250_frequency")),
+                "Комбинирана оценка": _score(row.get("pro_ensemble_score")),
+                "Обща честота": _score(row.get("prior_frequency")),
+                "Скорошна активност 250": _score(row.get("rolling_250_frequency")),
                 "Ритъм": _score(row.get("gap_rhythm_score")),
                 "SGD ML": _score(row.get("sgd_log_probability")),
                 "Naive Bayes": _score(row.get("gaussian_nb_probability")),
@@ -123,9 +135,9 @@ def _ticket_detail_rows(ticket: dict[str, Any]) -> list[dict[str, Any]]:
         rows.append(
             {
                 "Число": row.get("number"),
-                "Pro ensemble": _score(row.get("pro_ensemble_score")),
-                "Честота": _score(row.get("prior_frequency")),
-                "Скорошност 250": _score(row.get("rolling_250_frequency")),
+                "Комбинирана оценка": _score(row.get("pro_ensemble_score")),
+                "Обща честота": _score(row.get("prior_frequency")),
+                "Скорошна активност 250": _score(row.get("rolling_250_frequency")),
                 "Ритъм": _score(row.get("gap_rhythm_score")),
                 "SGD ML": _score(row.get("sgd_log_probability")),
                 "Пауза": row.get("current_gap"),
@@ -143,11 +155,11 @@ def render() -> None:
 
     st.title("Прогнозно табло Pro")
     st.caption(
-        "v45 тренира 49 отделни вероятностни оценки, сравнява ги с историческа проверка и избира фишове чрез правила за баланс и ниско припокриване."
+        "Системата анализира всяко число поотделно, сравнява исторически модели и избира комбинации чрез правила за баланс и ниско припокриване."
     )
 
     if not tickets or not scores or not summary:
-        st.info("Пусни `python scripts/v45_train_prediction_engine_pro.py`, за да се генерират v45 артефактите.")
+        st.info("Пусни `python scripts/v45_train_prediction_engine_pro.py`, за да се обновят прогнозните артефакти.")
         return
 
     st.warning(
@@ -161,12 +173,14 @@ def render() -> None:
     metric_cols = st.columns(4)
     metric_cols[0].metric("Валидни тиражи", tickets.get("valid_draws", summary.get("total_draw_events", "-")))
     metric_cols[1].metric("Тестови тиражи", summary.get("test_events", "-"))
-    metric_cols[2].metric("Най-добър исторически модел", best_model.get("model", "-"))
-    metric_cols[3].metric("Средни съвпадения", _score(best_model.get("average_hits_top6"), 4))
+    metric_cols[2].metric("Най-добър исторически модел", _model_label(best_model.get("model", "-")))
+    metric_cols[3].metric("Средно уцелени числа", _score(best_model.get("average_hits_top6"), 4))
+    st.caption("\u0422\u043e\u0432\u0430 \u0435 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0432\u044a\u0440\u0445\u0443 \u043c\u0438\u043d\u0430\u043b\u0438 \u0442\u0438\u0440\u0430\u0436\u0438, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f \u0437\u0430 \u0431\u044a\u0434\u0435\u0449 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442.")
 
     st.markdown("### Основно предложение")
     if primary:
         _render_number_cards(primary)
+        st.caption("\u0418\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0440\u0435\u0437 \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0430\u043b\u0438\u0437, \u0430 \u043d\u0435 \u043a\u0430\u0442\u043e \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0440\u0430\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430.")
     else:
         st.info("Няма основно предложение.")
 
@@ -177,7 +191,7 @@ def render() -> None:
     tabs = st.tabs(["Фишове", "Сравнение на модели", "Топ числа", "Фактори", "Как работи"])
 
     with tabs[0]:
-        st.subheader("Rule-aware фишове")
+        st.subheader("Фишове с балансирана структура")
         st.caption("Комбинациите са подбрани така, че да не се повтарят прекалено много помежду си и да пазят нормална структура.")
         for ticket in tickets.get("ticket_combinations", []):
             numbers = [int(number) for number in ticket.get("numbers", [])]
@@ -200,10 +214,12 @@ def render() -> None:
         if BACKTEST_BY_MODEL_PATH.exists() and pd is not None:
             with st.expander("CSV отчет от проверката"):
                 df = pd.read_csv(BACKTEST_BY_MODEL_PATH)
+                if "model" in df.columns:
+                    df["model"] = df["model"].map(_model_label)
                 st.dataframe(df, hide_index=True, use_container_width=True)
 
     with tabs[2]:
-        st.subheader("Топ числа по v45 ensemble оценка")
+        st.subheader("Топ числа по комбинирана оценка")
         _show_dataframe(_top_score_rows(scores, limit=25))
 
     with tabs[3]:
@@ -220,13 +236,13 @@ def render() -> None:
     with tabs[4]:
         st.markdown(
             """
-**Какво прави v45:**
+**Какво прави прогнозното табло:**
 
 1. Подрежда данните хронологично и не разбърква тиражите.
 2. За всяко число от 1 до 49 създава prior-only характеристики: честота, скорошност, ритъм, пауза, среден интервал и позиция на теглене.
 3. Тренира бързи вероятностни модели за въпроса: „дали това число ще присъства в следващия тираж?“
 4. Сравнява моделите с random baseline върху последните тестови тиражи.
-5. Прави ensemble score и избира фишове с правила за баланс, сума, зони и ниско припокриване.
+5. Обединява оценките и избира фишове с правила за баланс, сума, зони и ниско припокриване.
 
 **Какво не прави:** не доказва бъдещ резултат, не използва бонус число и не обещава печалба.
 """
