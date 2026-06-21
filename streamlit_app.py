@@ -4083,6 +4083,19 @@ def page_training_center() -> None:
     training_center_section.render()
 
 
+PAIR_GROUP_LABEL = "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0434\u0432\u043e\u0439\u043a\u0438 \u0438 \u0433\u0440\u0443\u043f\u0438"
+
+
+def page_pair_group_analysis() -> None:
+    from importlib import reload
+
+    import src.v50_pair_group_analysis_section as pair_group_analysis_section
+
+    reload(pair_group_analysis_section)
+    pair_group_analysis_section.render()
+
+
+
 
 
 
@@ -4116,6 +4129,7 @@ def main() -> None:
         BACKTESTING_CENTER_LABEL: page_backtesting_center,
         TICKET_BUILDER_LABEL: page_ticket_builder,
         TRAINING_CENTER_LABEL: page_training_center,
+        PAIR_GROUP_LABEL: page_pair_group_analysis,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
