@@ -5,7 +5,7 @@ This report is based on historical 6/49 draw data.
 **Important:** This is not a prediction system. Lottery draws are random.
 The analysis is useful for training, statistics, and understanding probability.
 
-Total historical draws analyzed: **10010**
+Total historical draws analyzed: **10057**
 
 ## Most frequent numbers
 
