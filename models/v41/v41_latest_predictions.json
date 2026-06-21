@@ -1,0 +1,45 @@
+{
+  "status": "v41_predictions_generated_from_canonical_draw_events",
+  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
+  "uses_bonus_number": false,
+  "latest_seen_event": {
+    "year": 2026,
+    "draw_number": 47,
+    "drawing_no": 1,
+    "numbers": [
+      22,
+      26,
+      28,
+      29,
+      40,
+      42
+    ]
+  },
+  "prediction_sets": {
+    "frequency_baseline": [
+      34,
+      44,
+      21,
+      4,
+      37,
+      49
+    ],
+    "recency_250_baseline": [
+      23,
+      37,
+      38,
+      18,
+      22,
+      2
+    ],
+    "sgd_number_classifier": [
+      37,
+      49,
+      48,
+      38,
+      36,
+      24
+    ]
+  },
+  "warning": "Lottery draws are random. These are ranking-based model outputs, not guaranteed winning numbers."
+}

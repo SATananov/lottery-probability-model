@@ -1,0 +1,93 @@
+{
+  "status": "v41_model_retraining_completed",
+  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
+  "total_draw_events": 10057,
+  "train_events": 8045,
+  "test_events": 2012,
+  "uses_bonus_number": false,
+  "bonus_model_trained": false,
+  "drawing_no_used": true,
+  "models_created": [
+    "models\\v41\\v41_frequency_main_numbers_model.json",
+    "models\\v41\\v41_recency_main_numbers_model.json",
+    "models\\v41\\v41_latest_predictions.json"
+  ],
+  "sgd_model_trained": true,
+  "sgd_status": "trained",
+  "sgd_model_path": "models\\v41\\v41_sgd_number_model.joblib",
+  "model_metrics": [
+    {
+      "model": "frequency_baseline",
+      "test_events": 2012,
+      "average_hits_top6": 0.7102385685884692,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 894,
+        "1": 836,
+        "2": 254,
+        "3": 27,
+        "4": 1
+      },
+      "events_with_3plus_hits": 28,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "recency_250_baseline",
+      "test_events": 2012,
+      "average_hits_top6": 0.7470178926441352,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 865,
+        "1": 828,
+        "2": 283,
+        "3": 35,
+        "4": 1
+      },
+      "events_with_3plus_hits": 36,
+      "events_with_4plus_hits": 1,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    },
+    {
+      "model": "sgd_number_classifier",
+      "test_events": 2012,
+      "average_hits_top6": 0.7475149105367793,
+      "median_hits_top6": 1.0,
+      "max_hits_top6": 4,
+      "hit_distribution": {
+        "0": 864,
+        "1": 839,
+        "2": 266,
+        "3": 39,
+        "4": 4
+      },
+      "events_with_3plus_hits": 43,
+      "events_with_4plus_hits": 4,
+      "events_with_5plus_hits": 0,
+      "events_with_6_hits": 0
+    }
+  ],
+  "best_model_by_average_hits_top6": {
+    "model": "sgd_number_classifier",
+    "test_events": 2012,
+    "average_hits_top6": 0.7475149105367793,
+    "median_hits_top6": 1.0,
+    "max_hits_top6": 4,
+    "hit_distribution": {
+      "0": 864,
+      "1": 839,
+      "2": 266,
+      "3": 39,
+      "4": 4
+    },
+    "events_with_3plus_hits": 43,
+    "events_with_4plus_hits": 4,
+    "events_with_5plus_hits": 0,
+    "events_with_6_hits": 0
+  },
+  "important_warning": "Lottery draws are random. Backtest metrics are evaluation diagnostics, not a guarantee of future outcomes."
+}

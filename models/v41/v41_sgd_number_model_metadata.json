@@ -1,0 +1,39 @@
+{
+  "model_name": "sgd_number_classifier",
+  "model_type": "per_number_binary_classifier",
+  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
+  "feature_columns": [
+    "number_scaled",
+    "drawing_no_scaled",
+    "year_scaled",
+    "draw_number_scaled",
+    "prior_frequency",
+    "drawing_no_prior_frequency",
+    "rolling_50_frequency",
+    "rolling_250_frequency",
+    "since_seen_scaled"
+  ],
+  "uses_bonus_number": false,
+  "uses_drawing_no": true,
+  "train_events": 8045,
+  "test_events": 2012,
+  "metrics": {
+    "model": "sgd_number_classifier",
+    "test_events": 2012,
+    "average_hits_top6": 0.7475149105367793,
+    "median_hits_top6": 1.0,
+    "max_hits_top6": 4,
+    "hit_distribution": {
+      "0": 864,
+      "1": 839,
+      "2": 266,
+      "3": 39,
+      "4": 4
+    },
+    "events_with_3plus_hits": 43,
+    "events_with_4plus_hits": 4,
+    "events_with_5plus_hits": 0,
+    "events_with_6_hits": 0
+  },
+  "warning": "Lottery draws are random. This model provides ranking scores, not guaranteed predictions."
+}
