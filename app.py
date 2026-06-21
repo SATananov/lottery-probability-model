@@ -394,16 +394,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-# === V41 RULES-AWARE ANALYSIS SECTION START ===
-# V41 is added as an analytical section only.
-# It does not retrain models and does not promise winning numbers.
-try:
-    import importlib
-
-    _v41_module = importlib.import_module("src.v41_rules_aware_analysis_section")
-    _v41_module.render_v41_rules_aware_analysis()
-except Exception as exc:
-    st.warning(f"V41 анализът не може да бъде показан в момента: {exc}")
-# === V41 RULES-AWARE ANALYSIS SECTION END ===
-

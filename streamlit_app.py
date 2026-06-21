@@ -713,6 +713,7 @@ TRANSLATIONS = {
         "prediction": "Прогноза",
         "ticket_analyzer": "Анализ на фиш",
         "history": "Историческа статистика",
+        "v41_history_analysis": "Анализ на минали тегления",
         "probability_lab": "Вероятности",
         "reports": "Отчети",
         "update_draws": "Добавяне на тираж",
@@ -778,6 +779,7 @@ TRANSLATIONS = {
         "prediction": "Prediction",
         "ticket_analyzer": "Ticket Analyzer",
         "history": "Historical Statistics",
+        "v41_history_analysis": "Historical Draw Analysis",
         "probability_lab": "Probability Lab",
         "reports": "Reports",
         "update_draws": "Update Draws",
@@ -3968,6 +3970,21 @@ def page_history() -> None:
 
 
 
+
+# V41_RULES_AWARE_STREAMLIT_HOOK_START
+def page_v41_rules_aware_analysis() -> None:
+    """Render the user-friendly rules-aware historical analysis section."""
+    try:
+        import importlib
+
+        module = importlib.import_module("src.v41_rules_aware_analysis_section")
+        module = importlib.reload(module)
+        module.render_v41_rules_aware_analysis()
+    except Exception as exc:
+        st.warning(f"Историческият анализ не може да бъде показан в момента: {exc}")
+# V41_RULES_AWARE_STREAMLIT_HOOK_END
+
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3979,6 +3996,7 @@ def main() -> None:
         tr("prediction"): page_prediction,
         tr("ticket_analyzer"): page_ticket_analyzer,
         tr("history"): page_history,
+        tr("v41_history_analysis"): page_v41_rules_aware_analysis,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,

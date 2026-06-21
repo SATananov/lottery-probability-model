@@ -168,6 +168,12 @@ def _find_first_value(payload: Any, candidate_keys: list[str]) -> Any:
 
 
 def _extract_metric(summary: Any, model_key: str, metric_key: str) -> Any:
+    metric_aliases = {
+        "avg_hits_top6": ["average_hits_top6", "avg_hits_top6"],
+        "average_hits_top6": ["average_hits_top6", "avg_hits_top6"],
+        "max_hits_top6": ["max_hits_top6"],
+    }
+    metric_keys = metric_aliases.get(metric_key, [metric_key])
     if summary is None:
         return None
 
@@ -176,8 +182,10 @@ def _extract_metric(summary: Any, model_key: str, metric_key: str) -> Any:
             root_value = summary.get(root_key)
             if isinstance(root_value, dict):
                 model_data = root_value.get(model_key)
-                if isinstance(model_data, dict) and metric_key in model_data:
-                    return model_data.get(metric_key)
+                if isinstance(model_data, dict):
+                    for candidate_key in metric_keys:
+                        if candidate_key in model_data:
+                            return model_data.get(candidate_key)
 
     for node in _iter_nodes(summary):
         if not isinstance(node, dict):
@@ -191,13 +199,16 @@ def _extract_metric(summary: Any, model_key: str, metric_key: str) -> Any:
             or node.get("artifact_key")
         )
 
-        if str(name) == model_key and metric_key in node:
-            return node.get(metric_key)
+        if str(name) == model_key:
+            for candidate_key in metric_keys:
+                if candidate_key in node:
+                    return node.get(candidate_key)
 
         if model_key in node and isinstance(node.get(model_key), dict):
             model_data = node.get(model_key)
-            if metric_key in model_data:
-                return model_data.get(metric_key)
+            for candidate_key in metric_keys:
+                if candidate_key in model_data:
+                    return model_data.get(candidate_key)
 
     return None
 
@@ -321,7 +332,7 @@ def _render_method_card(
                 "но не казва какво ще стане в следващия тираж."
             )
 
-            avg_hits = _extract_metric(summary_payload, model_key, "avg_hits_top6")
+            avg_hits = _extract_metric(summary_payload, model_key, "average_hits_top6")
             max_hits = _extract_metric(summary_payload, model_key, "max_hits_top6")
 
             col1, col2 = st.columns(2)

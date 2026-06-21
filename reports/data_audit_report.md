@@ -1,10 +1,13 @@
-# BST Dataset Audit
+# Current Dataset Audit
 
-Rows: 10010
-Years: 1958 to 2025
-Missing 1958-2025: []
-Duplicate full rows: 0
-Duplicate year/draw/position keys: 0
+This report was refreshed after the v41 rules-aware historical analysis integration.
+
+**Important:** This is not a prediction guarantee. Lottery draws are random.
+The report is used for data quality checks, historical statistics, and probability education.
+
+Rows: 10057
+Years: 1958 to 2026
+Latest available draw date: 2026-06-18
 
 ## Rows by year
 
@@ -66,7 +69,7 @@ Duplicate year/draw/position keys: 0
 - 2013: 210
 - 2014: 208
 - 2015: 143
-- 2016: 105
+- 2016: 104
 - 2017: 104
 - 2018: 104
 - 2019: 104
@@ -76,3 +79,4 @@ Duplicate year/draw/position keys: 0
 - 2023: 105
 - 2024: 104
 - 2025: 105
+- 2026: 48
