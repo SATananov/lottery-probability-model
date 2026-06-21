@@ -3891,7 +3891,7 @@ def page_history() -> None:
 
     year_col = None
     for col in df.columns:
-        if str(col).lower() in ["year", "??????"]:
+        if str(col).lower() in ["year", "draw", "draw_number"]:
             year_col = col
             break
 
