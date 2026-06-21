@@ -4047,6 +4047,19 @@ def page_strategy_lab() -> None:
     strategy_lab_section.render()
 
 
+BACKTESTING_CENTER_LABEL = "\u0426\u0435\u043d\u0442\u044a\u0440 \u0437\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"
+
+
+def page_backtesting_center() -> None:
+    from importlib import reload
+
+    import src.backtesting_center_section as backtesting_center_section
+
+    reload(backtesting_center_section)
+    backtesting_center_section.render()
+
+
+
 
 
 def _rhythm_bg(hex_text: str) -> str:
@@ -4074,6 +4087,7 @@ def main() -> None:
         FINAL_ENSEMBLE_LABEL: page_final_ensemble_analysis,
         PREDICTION_DASHBOARD_PRO_LABEL: page_prediction_dashboard_pro,
         STRATEGY_LAB_LABEL: page_strategy_lab,
+        BACKTESTING_CENTER_LABEL: page_backtesting_center,
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
