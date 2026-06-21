@@ -47,6 +47,7 @@ T = {
     "latest_draw": "\u041f\u043e\u0441\u043b\u0435\u0434\u0435\u043d \u0442\u0438\u0440\u0430\u0436 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438\u0442\u0435",
     "demo_draw_name": "\u0414\u0435\u043c\u043e \u0442\u0438\u0440\u0430\u0436",
     "demo_date": "\u0422\u0435\u0441\u0442",
+    "no_data": "\u043d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438",
     "drawing": "\u0422\u0435\u0433\u043b\u0435\u043d\u0435",
     "draw": "\u0422\u0438\u0440\u0430\u0436",
     "date": "\u0414\u0430\u0442\u0430",
@@ -69,7 +70,7 @@ T = {
     "result": "\u0420\u0435\u0437\u0443\u043b\u0442\u0430\u0442",
     "download_csv": "\u0421\u0432\u0430\u043b\u0438 CSV",
     "download_json": "\u0421\u0432\u0430\u043b\u0438 JSON",
-    "missing_full_data": "\u0417\u0430 \u0442\u043e\u0437\u0438 \u0442\u0438\u0440\u0430\u0436 \u0438\u043c\u0430 \u0441\u0430\u043c\u043e \u043d\u0430\u043b\u0438\u0447\u043d\u043e\u0442\u043e \u0442\u0435\u0433\u043b\u0435\u043d\u0435. \u041f\u044a\u043b\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u0449\u0435 \u0441\u0435 \u0434\u043e\u0431\u0430\u0432\u044f\u0442 \u0441\u043b\u0435\u0434 \u0438\u043c\u043f\u043e\u0440\u0442.",
+    "missing_full_data": "\u0417\u0430 \u0442\u043e\u0437\u0438 \u0442\u0438\u0440\u0430\u0436 \u0432 \u0442\u0435\u043a\u0443\u0449\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u043e \u0441\u0430\u043c\u043e \u0435\u0434\u043d\u043e \u0442\u0435\u0433\u043b\u0435\u043d\u0435. \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430\u0442\u0430 \u0449\u0435 \u0441\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u0438 \u0441\u0430\u043c\u043e \u043f\u043e \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u0430.",
     "error": "\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430\u0442\u0430.",
 }
 
@@ -268,21 +269,48 @@ def _combo(row: pd.Series) -> str:
     return " ".join(values) if values else "\u2014"
 
 
+def _display_value(value: object, empty: str | None = None) -> str:
+    if empty is None:
+        empty = T["no_data"]
+
+    if value is None:
+        return empty
+
+    try:
+        if pd.isna(value):
+            return empty
+    except TypeError:
+        pass
+
+    text_value = str(value).strip()
+
+    if not text_value or text_value.lower() in {"nan", "none", "nat"}:
+        return empty
+
+    if text_value.endswith(".0"):
+        try:
+            return str(int(float(text_value)))
+        except ValueError:
+            return text_value
+
+    return text_value
+
+
 def _draw_cards(draws: pd.DataFrame, is_demo: bool) -> None:
     if draws.empty:
         return
 
     for _, row in draws.iterrows():
-        draw_label = T["demo_draw_name"] if is_demo else str(row.get("draw_number", ""))
-        date_label = T["demo_date"] if is_demo else str(row.get("date", ""))
-        drawing_label = str(int(float(row.get("drawing_no", 0))))
+        draw_label = T["demo_draw_name"] if is_demo else _display_value(row.get("draw_number", ""))
+        date_label = T["demo_date"] if is_demo else _display_value(row.get("date", ""))
+        drawing_label = _display_value(row.get("drawing_no", ""))
         numbers = _combo(row)
-        bonus = str(row.get("bonus_number", "\u2014"))
+        bonus = _display_value(row.get("bonus_number", None))
 
         st.markdown(
             f"""
             <div class="v40-draw-card">
-                <strong>{draw_label}</strong> ? {T['date']}: {date_label} ? {T['drawing']} {drawing_label}<br/>
+                <strong>{draw_label}</strong> | {T['date']}: {date_label} | {T['drawing']} {drawing_label}<br/>
                 <span>{T['numbers']}: {numbers}</span><br/>
                 <span>{T['bonus']}: {bonus}</span>
             </div>
@@ -339,7 +367,7 @@ def _results_preview(df: pd.DataFrame, is_demo: bool) -> pd.DataFrame:
 
     for col in ["chosen_numbers", "drawn_numbers", "bonus_number", "matched_numbers"]:
         if col in out.columns:
-            out[col] = out[col].map(lambda value: str(value).strip() if str(value).strip() else "\u2014")
+            out[col] = out[col].map(lambda value: _display_value(value, "\u2014"))
 
     if "bonus_match_bg" not in out.columns and "bonus_match" in out.columns:
         out["bonus_match_bg"] = out["bonus_match"].map(lambda x: "\u0434\u0430" if bool(x) else "\u043d\u0435")
@@ -393,8 +421,8 @@ def _render_best_result(results: pd.DataFrame, is_demo: bool) -> None:
         st.markdown(
             f"""
             <div class="v40-result-card">
-                <strong>{T['combo']} {int(row['ticket_table_no'])}</strong> ? {draw_label} ? {T['drawing']} {int(row['drawing_no'])}<br/>
-                {T['match_count']}: <strong>{int(row['match_count'])}</strong> ? {T['matched_numbers']}: {row.get('matched_numbers') or "\u2014"} ? {T['bonus_match']}: {bonus_text}<br/>
+                <strong>{T['combo']} {int(row['ticket_table_no'])}</strong> | {draw_label} | {T['drawing']} {int(row['drawing_no'])}<br/>
+                {T['match_count']}: <strong>{int(row['match_count'])}</strong> | {T['matched_numbers']}: {row.get('matched_numbers') or "\u2014"} | {T['bonus_match']}: {bonus_text}<br/>
                 <span>{row.get('result_label_bg', '')}</span>
             </div>
             """,
