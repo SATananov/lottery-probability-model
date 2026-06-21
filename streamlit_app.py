@@ -3850,60 +3850,13 @@ def page_ticket_analyzer() -> None:
 
 
 
-def page_probability_lab() -> None:
-    render_header()
-    lang = st.session_state.get("language", globals().get("LANG", "bg"))
-    title = "Вероятностна лаборатория" if lang == "bg" else "Вероятностна лаборатория"
-    st.markdown("## " + title)
+def page_probability_lab():
+    from importlib import reload
 
-    if "page_probability_lab" == "page_history":
-        try:
-            df = load_data()
-            st.markdown(
-                '<div class="warning-soft">' +
-                ("\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043e\u0441\u043d\u043e\u0432\u043d\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043e\u0442 \u043d\u0430\u0431\u043e\u0440\u0430 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438." if lang == "bg" else "This section shows basic historical statistics from the dataset.") +
-                '</div>',
-                unsafe_allow_html=True,
-            )
-            if df is not None and not df.empty:
-                c1, c2, c3 = st.columns(3)
-                c1.metric("\u0422\u0438\u0440\u0430\u0436\u0438" if lang == "bg" else "Draws", f"{len(df):,}")
-                if "year" in df.columns:
-                    c2.metric("\u041f\u044a\u0440\u0432\u0430 \u0433\u043e\u0434\u0438\u043d\u0430" if lang == "bg" else "First year", int(df["year"].min()))
-                    c3.metric("\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0430 \u0433\u043e\u0434\u0438\u043d\u0430" if lang == "bg" else "Last year", int(df["year"].max()))
-                st.dataframe(df.tail(50), width="stretch", hide_index=True)
-            else:
-                st.info("\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u043d\u0435." if lang == "bg" else "No data to show.")
-        except Exception as exc:
-            st.error(("\u0421\u0435\u043a\u0446\u0438\u044f\u0442\u0430 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u0437\u0430\u0440\u0435\u0434\u0438: " if lang == "bg" else "This section could not be loaded: ") + str(exc))
-        return
+    import src.probability_lab_section as probability_lab_section
 
-    if "page_probability_lab" == "page_ticket_analyzer":
-        st.info("\u0421\u0435\u043a\u0446\u0438\u044f\u0442\u0430 \u0437\u0430 \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448 \u0435 \u0432\u044a\u0437\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0430 \u0432 \u0431\u0430\u0437\u043e\u0432 \u0440\u0435\u0436\u0438\u043c." if lang == "bg" else "Ticket analyzer has been restored in basic mode.")
-        raw = st.text_input("\u0412\u044a\u0432\u0435\u0434\u0438 6 \u0447\u0438\u0441\u043b\u0430" if lang == "bg" else "Enter 6 numbers", key="emergency_ticket_input")
-        nums = [int(x) for x in re.findall(r"\d+", raw)] if raw else []
-        if nums:
-            if len(nums) == 6 and len(set(nums)) == 6 and all(1 <= n <= 49 for n in nums):
-                nums = sorted(nums)
-                st.markdown(format_number_pills(nums), unsafe_allow_html=True)
-                st.info("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441: 1:13,983,816" if lang == "bg" else "Real odds: 1:13,983,816")
-            else:
-                st.warning("\u0412\u044a\u0432\u0435\u0434\u0438 \u0442\u043e\u0447\u043d\u043e 6 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0447\u0438\u0441\u043b\u0430 \u043c\u0435\u0436\u0434\u0443 1 \u0438 49." if lang == "bg" else "Enter exactly 6 different numbers between 1 and 49.")
-        return
-
-    if "page_probability_lab" in ["page_probability", "page_probabilities"]:
-        st.markdown(
-            '<div class="warning-soft">' +
-            ("\u0412\u0441\u044f\u043a\u0430 \u0442\u043e\u0447\u043d\u0430 6/49 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u0438\u043c\u0430 \u0440\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441 1:13,983,816." if lang == "bg" else "Every exact 6/49 combination has real odds of 1:13,983,816.") +
-            '</div>',
-            unsafe_allow_html=True,
-        )
-        st.metric("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441" if lang == "bg" else "Real odds", "1:13,983,816")
-        return
-
-    st.info(
-        "\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u0435 \u0432\u044a\u0437\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0430 \u0432 \u0431\u0430\u0437\u043e\u0432 \u0440\u0435\u0436\u0438\u043c, \u0437\u0430 \u0434\u0430 \u043c\u043e\u0436\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0434\u0430 \u0441\u0442\u0430\u0440\u0442\u0438\u0440\u0430." if lang == "bg" else "Тази секция е възстановена в базов режим, за да може приложението да стартира. in basic mode so the app can start."
-    )
+    reload(probability_lab_section)
+    probability_lab_section.render()
 
 
 
