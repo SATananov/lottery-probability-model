@@ -19,6 +19,7 @@ from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
 from src.v54_pattern_balance_section import render_v54_pattern_balance_section
 from src.v55_number_profile_section import render_v55_number_profile_section
 from src.v56_draw_similarity_section import render_v56_draw_similarity_section
+from src.v57_hot_cold_stable_section import render_v57_hot_cold_stable_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4154,6 +4155,7 @@ def main() -> None:
         "Покритие на фиша": render_v53_ticket_coverage_section,
         "Баланс на комбинациите": render_v54_pattern_balance_section,
         "Профил на число": render_v55_number_profile_section,
+        "Горещи, студени и стабилни числа": render_v57_hot_cold_stable_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     choice = st.sidebar.radio(tr("menu"), list(pages.keys()))

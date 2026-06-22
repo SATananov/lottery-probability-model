@@ -1,0 +1,1964 @@
+{
+  "total_draws": 10058,
+  "numbers_profiled": 49,
+  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "summary_rows": [
+    {
+      "group": "Горещи напоследък",
+      "count": 10,
+      "numbers": [
+        18,
+        24,
+        36,
+        38,
+        49,
+        37,
+        30,
+        28,
+        13,
+        42
+      ]
+    },
+    {
+      "group": "Студени напоследък",
+      "count": 1,
+      "numbers": [
+        32
+      ]
+    },
+    {
+      "group": "Закъснели",
+      "count": 9,
+      "numbers": [
+        34,
+        25,
+        12,
+        4,
+        21,
+        48,
+        47,
+        41,
+        20
+      ]
+    },
+    {
+      "group": "Стабилни",
+      "count": 0,
+      "numbers": []
+    },
+    {
+      "group": "Исторически силни",
+      "count": 0,
+      "numbers": []
+    },
+    {
+      "group": "Исторически слаби",
+      "count": 2,
+      "numbers": [
+        23,
+        40
+      ]
+    },
+    {
+      "group": "Неутрални",
+      "count": 27,
+      "numbers": [
+        33,
+        2,
+        17,
+        46,
+        3,
+        11,
+        5,
+        27,
+        22,
+        43,
+        1,
+        31,
+        9,
+        26,
+        8,
+        16,
+        45,
+        39,
+        6,
+        15,
+        35,
+        10,
+        29,
+        19,
+        14,
+        44,
+        7
+      ]
+    }
+  ],
+  "classified_numbers": [
+    {
+      "number": 1,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 57.98,
+      "historical_strength_score": 50.79,
+      "recent_activity_score": 100.0,
+      "overdue_score": 10.5,
+      "stability_score": 57.88,
+      "profile_score": 45.0,
+      "appearances": 1251,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0158,
+      "recent_50": 8,
+      "recent_100": 10,
+      "recent_250": 22,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 0.8167,
+      "recent_250_ratio": 0.7187,
+      "draws_since_last_seen": 2,
+      "average_interval": 8.04,
+      "current_gap_ratio": 0.25,
+      "interval_stability_score": 57.88,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 1 има 1251 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 10 появи.",
+        "От последната поява са минали 2 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 2,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 64.51,
+      "historical_strength_score": 49.61,
+      "recent_activity_score": 100.0,
+      "overdue_score": 35.7,
+      "stability_score": 57.99,
+      "profile_score": 62.71,
+      "appearances": 1222,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9922,
+      "recent_50": 6,
+      "recent_100": 16,
+      "recent_250": 37,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 1.3067,
+      "recent_250_ratio": 1.2087,
+      "draws_since_last_seen": 7,
+      "average_interval": 8.23,
+      "current_gap_ratio": 0.85,
+      "interval_stability_score": 57.99,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 2 има 1222 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 16 появи.",
+        "От последната поява са минали 7 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 3,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 62.6,
+      "historical_strength_score": 47.98,
+      "recent_activity_score": 100.0,
+      "overdue_score": 44.52,
+      "stability_score": 57.11,
+      "profile_score": 31.35,
+      "appearances": 1182,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9597,
+      "recent_50": 7,
+      "recent_100": 15,
+      "recent_250": 28,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.225,
+      "recent_250_ratio": 0.9147,
+      "draws_since_last_seen": 9,
+      "average_interval": 8.5,
+      "current_gap_ratio": 1.06,
+      "interval_stability_score": 57.11,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 3 има 1182 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 15 появи.",
+        "От последната поява са минали 9 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 4,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 74.84,
+      "historical_strength_score": 51.8,
+      "recent_activity_score": 87.38,
+      "overdue_score": 100.0,
+      "stability_score": 57.93,
+      "profile_score": 69.9,
+      "appearances": 1276,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0361,
+      "recent_50": 5,
+      "recent_100": 12,
+      "recent_250": 26,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 0.8493,
+      "draws_since_last_seen": 20,
+      "average_interval": 7.85,
+      "current_gap_ratio": 2.55,
+      "interval_stability_score": 57.93,
+      "source_status": "Закъсняло",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 4 има 1276 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 20 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 5,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 61.15,
+      "historical_strength_score": 49.49,
+      "recent_activity_score": 82.48,
+      "overdue_score": 51.24,
+      "stability_score": 58.42,
+      "profile_score": 50.21,
+      "appearances": 1219,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9898,
+      "recent_50": 5,
+      "recent_100": 10,
+      "recent_250": 26,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.8167,
+      "recent_250_ratio": 0.8493,
+      "draws_since_last_seen": 10,
+      "average_interval": 8.23,
+      "current_gap_ratio": 1.22,
+      "interval_stability_score": 58.42,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 5 има 1219 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 10 появи.",
+        "От последната поява са минали 10 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 6,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 53.31,
+      "historical_strength_score": 51.68,
+      "recent_activity_score": 86.57,
+      "overdue_score": 0.0,
+      "stability_score": 58.24,
+      "profile_score": 56.88,
+      "appearances": 1273,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0336,
+      "recent_50": 5,
+      "recent_100": 11,
+      "recent_250": 28,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.9147,
+      "draws_since_last_seen": 0,
+      "average_interval": 7.91,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 58.24,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 6 има 1273 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 7,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 50.3,
+      "historical_strength_score": 49.33,
+      "recent_activity_score": 81.67,
+      "overdue_score": 10.08,
+      "stability_score": 57.74,
+      "profile_score": 27.92,
+      "appearances": 1215,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9865,
+      "recent_50": 5,
+      "recent_100": 11,
+      "recent_250": 22,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.7187,
+      "draws_since_last_seen": 2,
+      "average_interval": 8.28,
+      "current_gap_ratio": 0.24,
+      "interval_stability_score": 57.74,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 7 има 1215 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 2 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 8,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 56.71,
+      "historical_strength_score": 50.59,
+      "recent_activity_score": 91.47,
+      "overdue_score": 10.5,
+      "stability_score": 58.19,
+      "profile_score": 57.92,
+      "appearances": 1246,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0117,
+      "recent_50": 6,
+      "recent_100": 9,
+      "recent_250": 31,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 0.735,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 2,
+      "average_interval": 8.08,
+      "current_gap_ratio": 0.25,
+      "interval_stability_score": 58.19,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 8 има 1246 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 9 появи.",
+        "От последната поява са минали 2 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 9,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 57.13,
+      "historical_strength_score": 50.83,
+      "recent_activity_score": 87.38,
+      "overdue_score": 21.0,
+      "stability_score": 58.14,
+      "profile_score": 52.91,
+      "appearances": 1252,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0166,
+      "recent_50": 6,
+      "recent_100": 10,
+      "recent_250": 23,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 0.8167,
+      "recent_250_ratio": 0.7513,
+      "draws_since_last_seen": 4,
+      "average_interval": 8.03,
+      "current_gap_ratio": 0.5,
+      "interval_stability_score": 58.14,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 9 има 1252 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 10 появи.",
+        "От последната поява са минали 4 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 10,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 52.69,
+      "historical_strength_score": 48.76,
+      "recent_activity_score": 84.12,
+      "overdue_score": 15.12,
+      "stability_score": 57.49,
+      "profile_score": 36.15,
+      "appearances": 1201,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9752,
+      "recent_50": 4,
+      "recent_100": 12,
+      "recent_250": 31,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 3,
+      "average_interval": 8.38,
+      "current_gap_ratio": 0.36,
+      "interval_stability_score": 57.49,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 10 има 1201 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 3 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 11,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 61.53,
+      "historical_strength_score": 51.68,
+      "recent_activity_score": 100.0,
+      "overdue_score": 15.96,
+      "stability_score": 58.26,
+      "profile_score": 66.77,
+      "appearances": 1273,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0336,
+      "recent_50": 7,
+      "recent_100": 13,
+      "recent_250": 31,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.0617,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 3,
+      "average_interval": 7.9,
+      "current_gap_ratio": 0.38,
+      "interval_stability_score": 58.26,
+      "source_status": "Нормален ритъм",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 11 има 1273 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 13 появи.",
+        "От последната поява са минали 3 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 12,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 77.15,
+      "historical_strength_score": 50.7,
+      "recent_activity_score": 100.0,
+      "overdue_score": 100.0,
+      "stability_score": 56.48,
+      "profile_score": 60.0,
+      "appearances": 1249,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0141,
+      "recent_50": 7,
+      "recent_100": 14,
+      "recent_250": 31,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 22,
+      "average_interval": 8.04,
+      "current_gap_ratio": 2.74,
+      "interval_stability_score": 56.48,
+      "source_status": "Закъсняло",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 12 има 1249 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 22 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 13,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 55.37,
+      "historical_strength_score": 49.33,
+      "recent_activity_score": 100.0,
+      "overdue_score": 0.0,
+      "stability_score": 57.83,
+      "profile_score": 43.65,
+      "appearances": 1215,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9865,
+      "recent_50": 10,
+      "recent_100": 14,
+      "recent_250": 36,
+      "recent_50_ratio": 1.6333,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.176,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.28,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 57.83,
+      "source_status": "Активно напоследък",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 13 има 1215 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 10 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 14,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 50.48,
+      "historical_strength_score": 49.0,
+      "recent_activity_score": 79.22,
+      "overdue_score": 10.08,
+      "stability_score": 58.27,
+      "profile_score": 37.08,
+      "appearances": 1207,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.98,
+      "recent_50": 4,
+      "recent_100": 11,
+      "recent_250": 28,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.9147,
+      "draws_since_last_seen": 2,
+      "average_interval": 8.33,
+      "current_gap_ratio": 0.24,
+      "interval_stability_score": 58.27,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 14 има 1207 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 2 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 15,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 53.1,
+      "historical_strength_score": 49.57,
+      "recent_activity_score": 81.67,
+      "overdue_score": 15.12,
+      "stability_score": 57.14,
+      "profile_score": 46.15,
+      "appearances": 1221,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9914,
+      "recent_50": 4,
+      "recent_100": 10,
+      "recent_250": 34,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.8167,
+      "recent_250_ratio": 1.1107,
+      "draws_since_last_seen": 3,
+      "average_interval": 8.24,
+      "current_gap_ratio": 0.36,
+      "interval_stability_score": 57.14,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 15 има 1221 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 10 появи.",
+        "От последната поява са минали 3 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 16,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 55.22,
+      "historical_strength_score": 48.8,
+      "recent_activity_score": 100.0,
+      "overdue_score": 0.0,
+      "stability_score": 58.37,
+      "profile_score": 42.6,
+      "appearances": 1202,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.976,
+      "recent_50": 6,
+      "recent_100": 16,
+      "recent_250": 34,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 1.3067,
+      "recent_250_ratio": 1.1107,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.36,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 58.37,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 16 има 1202 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 16 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 17,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 64.47,
+      "historical_strength_score": 51.43,
+      "recent_activity_score": 99.63,
+      "overdue_score": 26.46,
+      "stability_score": 59.18,
+      "profile_score": 75.52,
+      "appearances": 1267,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0287,
+      "recent_50": 6,
+      "recent_100": 12,
+      "recent_250": 32,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 1.0453,
+      "draws_since_last_seen": 5,
+      "average_interval": 7.93,
+      "current_gap_ratio": 0.63,
+      "interval_stability_score": 59.18,
+      "source_status": "Нормален ритъм",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 17 има 1267 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 5 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 18,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък",
+        "Закъсняло",
+        "Скорошно активно, но не силно исторически"
+      ],
+      "categories_text": "Горещо напоследък, Закъсняло, Скорошно активно, но не силно исторически",
+      "combined_score": 72.13,
+      "historical_strength_score": 48.55,
+      "recent_activity_score": 100.0,
+      "overdue_score": 75.18,
+      "stability_score": 58.54,
+      "profile_score": 61.77,
+      "appearances": 1196,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9711,
+      "recent_50": 9,
+      "recent_100": 16,
+      "recent_250": 37,
+      "recent_50_ratio": 1.47,
+      "recent_100_ratio": 1.3067,
+      "recent_250_ratio": 1.2087,
+      "draws_since_last_seen": 15,
+      "average_interval": 8.4,
+      "current_gap_ratio": 1.79,
+      "interval_stability_score": 58.54,
+      "source_status": "Закъсняло",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 18 има 1196 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 9 появи, а в последните 100 тиража има 16 появи.",
+        "От последната поява са минали 15 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 19,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 52.56,
+      "historical_strength_score": 48.31,
+      "recent_activity_score": 98.82,
+      "overdue_score": 0.0,
+      "stability_score": 57.03,
+      "profile_score": 22.81,
+      "appearances": 1190,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9662,
+      "recent_50": 6,
+      "recent_100": 12,
+      "recent_250": 31,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.45,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 57.03,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 19 има 1190 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 20,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 70.16,
+      "historical_strength_score": 49.57,
+      "recent_activity_score": 100.0,
+      "overdue_score": 66.36,
+      "stability_score": 59.02,
+      "profile_score": 56.46,
+      "appearances": 1221,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9914,
+      "recent_50": 7,
+      "recent_100": 12,
+      "recent_250": 27,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 0.882,
+      "draws_since_last_seen": 13,
+      "average_interval": 8.22,
+      "current_gap_ratio": 1.58,
+      "interval_stability_score": 59.02,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 20 има 1221 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 13 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 21,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 71.63,
+      "historical_strength_score": 52.33,
+      "recent_activity_score": 79.22,
+      "overdue_score": 100.0,
+      "stability_score": 56.9,
+      "profile_score": 62.5,
+      "appearances": 1289,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0466,
+      "recent_50": 4,
+      "recent_100": 12,
+      "recent_250": 25,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 0.8167,
+      "draws_since_last_seen": 19,
+      "average_interval": 7.79,
+      "current_gap_ratio": 2.44,
+      "interval_stability_score": 56.9,
+      "source_status": "Закъсняло",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 21 има 1289 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 19 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 22,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 58.79,
+      "historical_strength_score": 50.74,
+      "recent_activity_score": 100.0,
+      "overdue_score": 5.04,
+      "stability_score": 57.93,
+      "profile_score": 64.06,
+      "appearances": 1250,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0149,
+      "recent_50": 7,
+      "recent_100": 11,
+      "recent_250": 38,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 1.2413,
+      "draws_since_last_seen": 1,
+      "average_interval": 8.05,
+      "current_gap_ratio": 0.12,
+      "interval_stability_score": 57.93,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 22 има 1250 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 1 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 23,
+      "main_group": "Исторически слаби",
+      "categories": [
+        "Исторически слабо"
+      ],
+      "categories_text": "Исторически слабо",
+      "combined_score": 66.43,
+      "historical_strength_score": 47.46,
+      "recent_activity_score": 100.0,
+      "overdue_score": 58.8,
+      "stability_score": 55.99,
+      "profile_score": 44.06,
+      "appearances": 1169,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9492,
+      "recent_50": 8,
+      "recent_100": 16,
+      "recent_250": 44,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 1.3067,
+      "recent_250_ratio": 1.4373,
+      "draws_since_last_seen": 12,
+      "average_interval": 8.6,
+      "current_gap_ratio": 1.4,
+      "interval_stability_score": 55.99,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 23 има 1169 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 16 появи.",
+        "От последната поява са минали 12 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 24,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 69.58,
+      "historical_strength_score": 50.34,
+      "recent_activity_score": 100.0,
+      "overdue_score": 62.16,
+      "stability_score": 56.53,
+      "profile_score": 60.83,
+      "appearances": 1240,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0068,
+      "recent_50": 8,
+      "recent_100": 17,
+      "recent_250": 36,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 1.3883,
+      "recent_250_ratio": 1.176,
+      "draws_since_last_seen": 12,
+      "average_interval": 8.1,
+      "current_gap_ratio": 1.48,
+      "interval_stability_score": 56.53,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 24 има 1240 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 17 появи.",
+        "От последната поява са минали 12 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 25,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 62.86,
+      "historical_strength_score": 50.34,
+      "recent_activity_score": 56.35,
+      "overdue_score": 100.0,
+      "stability_score": 57.25,
+      "profile_score": 47.81,
+      "appearances": 1240,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0068,
+      "recent_50": 2,
+      "recent_100": 10,
+      "recent_250": 21,
+      "recent_50_ratio": 0.3267,
+      "recent_100_ratio": 0.8167,
+      "recent_250_ratio": 0.686,
+      "draws_since_last_seen": 24,
+      "average_interval": 8.1,
+      "current_gap_ratio": 2.96,
+      "interval_stability_score": 57.25,
+      "source_status": "Закъсняло",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 25 има 1240 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 2 появи, а в последните 100 тиража има 10 появи.",
+        "От последната поява са минали 24 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 26,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 56.72,
+      "historical_strength_score": 49.49,
+      "recent_activity_score": 100.0,
+      "overdue_score": 5.04,
+      "stability_score": 58.18,
+      "profile_score": 46.14,
+      "appearances": 1219,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9898,
+      "recent_50": 8,
+      "recent_100": 14,
+      "recent_250": 32,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.0453,
+      "draws_since_last_seen": 1,
+      "average_interval": 8.25,
+      "current_gap_ratio": 0.12,
+      "interval_stability_score": 58.18,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 26 има 1219 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 1 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 27,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 59.89,
+      "historical_strength_score": 48.68,
+      "recent_activity_score": 80.85,
+      "overdue_score": 60.06,
+      "stability_score": 55.2,
+      "profile_score": 31.77,
+      "appearances": 1199,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9735,
+      "recent_50": 4,
+      "recent_100": 11,
+      "recent_250": 30,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.98,
+      "draws_since_last_seen": 12,
+      "average_interval": 8.38,
+      "current_gap_ratio": 1.43,
+      "interval_stability_score": 55.2,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 27 има 1199 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 12 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 28,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 57.62,
+      "historical_strength_score": 50.79,
+      "recent_activity_score": 100.0,
+      "overdue_score": 5.04,
+      "stability_score": 58.02,
+      "profile_score": 52.09,
+      "appearances": 1251,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0158,
+      "recent_50": 8,
+      "recent_100": 17,
+      "recent_250": 30,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 1.3883,
+      "recent_250_ratio": 0.98,
+      "draws_since_last_seen": 1,
+      "average_interval": 8.04,
+      "current_gap_ratio": 0.12,
+      "interval_stability_score": 58.02,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 28 има 1251 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 17 появи.",
+        "От последната поява са минали 1 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 29,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 52.67,
+      "historical_strength_score": 50.99,
+      "recent_activity_score": 80.85,
+      "overdue_score": 5.04,
+      "stability_score": 58.58,
+      "profile_score": 58.75,
+      "appearances": 1256,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0198,
+      "recent_50": 4,
+      "recent_100": 11,
+      "recent_250": 30,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.98,
+      "draws_since_last_seen": 1,
+      "average_interval": 8.01,
+      "current_gap_ratio": 0.12,
+      "interval_stability_score": 58.58,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 29 има 1256 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 1 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 30,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 59.89,
+      "historical_strength_score": 50.59,
+      "recent_activity_score": 100.0,
+      "overdue_score": 21.0,
+      "stability_score": 56.09,
+      "profile_score": 46.25,
+      "appearances": 1246,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0117,
+      "recent_50": 7,
+      "recent_100": 17,
+      "recent_250": 31,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.3883,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 4,
+      "average_interval": 8.07,
+      "current_gap_ratio": 0.5,
+      "interval_stability_score": 56.09,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 30 има 1246 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 17 появи.",
+        "От последната поява са минали 4 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 31,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 57.87,
+      "historical_strength_score": 47.87,
+      "recent_activity_score": 70.23,
+      "overdue_score": 54.18,
+      "stability_score": 58.97,
+      "profile_score": 51.56,
+      "appearances": 1179,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9573,
+      "recent_50": 3,
+      "recent_100": 9,
+      "recent_250": 32,
+      "recent_50_ratio": 0.49,
+      "recent_100_ratio": 0.735,
+      "recent_250_ratio": 1.0453,
+      "draws_since_last_seen": 11,
+      "average_interval": 8.53,
+      "current_gap_ratio": 1.29,
+      "interval_stability_score": 58.97,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 31 има 1179 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 3 появи, а в последните 100 тиража има 9 появи.",
+        "От последната поява са минали 11 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 32,
+      "main_group": "Студени напоследък",
+      "categories": [
+        "Студено напоследък"
+      ],
+      "categories_text": "Студено напоследък",
+      "combined_score": 50.37,
+      "historical_strength_score": 48.88,
+      "recent_activity_score": 54.72,
+      "overdue_score": 50.4,
+      "stability_score": 57.52,
+      "profile_score": 30.21,
+      "appearances": 1204,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9776,
+      "recent_50": 3,
+      "recent_100": 7,
+      "recent_250": 19,
+      "recent_50_ratio": 0.49,
+      "recent_100_ratio": 0.5717,
+      "recent_250_ratio": 0.6207,
+      "draws_since_last_seen": 10,
+      "average_interval": 8.35,
+      "current_gap_ratio": 1.2,
+      "interval_stability_score": 57.52,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 32 има 1204 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 3 появи, а в последните 100 тиража има 7 появи.",
+        "От последната поява са минали 10 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 33,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 65.46,
+      "historical_strength_score": 49.81,
+      "recent_activity_score": 100.0,
+      "overdue_score": 46.2,
+      "stability_score": 57.17,
+      "profile_score": 51.88,
+      "appearances": 1227,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9963,
+      "recent_50": 7,
+      "recent_100": 14,
+      "recent_250": 32,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.0453,
+      "draws_since_last_seen": 9,
+      "average_interval": 8.19,
+      "current_gap_ratio": 1.1,
+      "interval_stability_score": 57.17,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 33 има 1227 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 9 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 34,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло",
+        "Силно исторически, но тихо напоследък"
+      ],
+      "categories_text": "Закъсняло, Силно исторически, но тихо напоследък",
+      "combined_score": 66.29,
+      "historical_strength_score": 52.41,
+      "recent_activity_score": 58.8,
+      "overdue_score": 100.0,
+      "stability_score": 54.96,
+      "profile_score": 73.02,
+      "appearances": 1291,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0482,
+      "recent_50": 2,
+      "recent_100": 7,
+      "recent_250": 33,
+      "recent_50_ratio": 0.3267,
+      "recent_100_ratio": 0.5717,
+      "recent_250_ratio": 1.078,
+      "draws_since_last_seen": 29,
+      "average_interval": 7.77,
+      "current_gap_ratio": 3.73,
+      "interval_stability_score": 54.96,
+      "source_status": "Силно закъсняло",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 34 има 1291 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 2 появи, а в последните 100 тиража има 7 появи.",
+        "От последната поява са минали 29 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 35,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 52.95,
+      "historical_strength_score": 50.47,
+      "recent_activity_score": 68.6,
+      "overdue_score": 26.04,
+      "stability_score": 57.39,
+      "profile_score": 59.38,
+      "appearances": 1243,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0093,
+      "recent_50": 3,
+      "recent_100": 7,
+      "recent_250": 36,
+      "recent_50_ratio": 0.49,
+      "recent_100_ratio": 0.5717,
+      "recent_250_ratio": 1.176,
+      "draws_since_last_seen": 5,
+      "average_interval": 8.08,
+      "current_gap_ratio": 0.62,
+      "interval_stability_score": 57.39,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 35 има 1243 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 3 появи, а в последните 100 тиража има 7 появи.",
+        "От последната поява са минали 5 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 36,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 66.81,
+      "historical_strength_score": 49.57,
+      "recent_activity_score": 100.0,
+      "overdue_score": 45.78,
+      "stability_score": 58.4,
+      "profile_score": 65.0,
+      "appearances": 1221,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9914,
+      "recent_50": 10,
+      "recent_100": 15,
+      "recent_250": 37,
+      "recent_50_ratio": 1.6333,
+      "recent_100_ratio": 1.225,
+      "recent_250_ratio": 1.2087,
+      "draws_since_last_seen": 9,
+      "average_interval": 8.22,
+      "current_gap_ratio": 1.09,
+      "interval_stability_score": 58.4,
+      "source_status": "Активно напоследък",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 36 има 1221 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 10 появи, а в последните 100 тиража има 15 появи.",
+        "От последната поява са минали 9 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 37,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 62.24,
+      "historical_strength_score": 51.8,
+      "recent_activity_score": 100.0,
+      "overdue_score": 15.96,
+      "stability_score": 57.92,
+      "profile_score": 74.06,
+      "appearances": 1276,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0361,
+      "recent_50": 12,
+      "recent_100": 19,
+      "recent_250": 42,
+      "recent_50_ratio": 1.96,
+      "recent_100_ratio": 1.5517,
+      "recent_250_ratio": 1.372,
+      "draws_since_last_seen": 3,
+      "average_interval": 7.88,
+      "current_gap_ratio": 0.38,
+      "interval_stability_score": 57.92,
+      "source_status": "Активно напоследък",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 37 има 1276 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 12 появи, а в последните 100 тиража има 19 появи.",
+        "От последната поява са минали 3 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 38,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 65.08,
+      "historical_strength_score": 49.98,
+      "recent_activity_score": 100.0,
+      "overdue_score": 41.16,
+      "stability_score": 56.64,
+      "profile_score": 58.54,
+      "appearances": 1231,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9995,
+      "recent_50": 9,
+      "recent_100": 17,
+      "recent_250": 40,
+      "recent_50_ratio": 1.47,
+      "recent_100_ratio": 1.3883,
+      "recent_250_ratio": 1.3067,
+      "draws_since_last_seen": 8,
+      "average_interval": 8.17,
+      "current_gap_ratio": 0.98,
+      "interval_stability_score": 56.64,
+      "source_status": "Активно напоследък",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 38 има 1231 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 9 появи, а в последните 100 тиража има 17 появи.",
+        "От последната поява са минали 8 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 39,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 55.19,
+      "historical_strength_score": 49.12,
+      "recent_activity_score": 91.47,
+      "overdue_score": 20.16,
+      "stability_score": 55.83,
+      "profile_score": 30.63,
+      "appearances": 1210,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9825,
+      "recent_50": 5,
+      "recent_100": 12,
+      "recent_250": 31,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.98,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 4,
+      "average_interval": 8.29,
+      "current_gap_ratio": 0.48,
+      "interval_stability_score": 55.83,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 39 има 1210 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 12 появи.",
+        "От последната поява са минали 4 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 40,
+      "main_group": "Исторически слаби",
+      "categories": [
+        "Исторически слабо"
+      ],
+      "categories_text": "Исторически слабо",
+      "combined_score": 45.67,
+      "historical_strength_score": 47.34,
+      "recent_activity_score": 80.03,
+      "overdue_score": 5.04,
+      "stability_score": 55.69,
+      "profile_score": 4.69,
+      "appearances": 1166,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9467,
+      "recent_50": 5,
+      "recent_100": 11,
+      "recent_250": 20,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 0.6533,
+      "draws_since_last_seen": 1,
+      "average_interval": 8.63,
+      "current_gap_ratio": 0.12,
+      "interval_stability_score": 55.69,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 40 има 1166 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 1 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 41,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 60.27,
+      "historical_strength_score": 47.62,
+      "recent_activity_score": 66.97,
+      "overdue_score": 88.2,
+      "stability_score": 54.84,
+      "profile_score": 24.06,
+      "appearances": 1173,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9524,
+      "recent_50": 4,
+      "recent_100": 7,
+      "recent_250": 25,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.5717,
+      "recent_250_ratio": 0.8167,
+      "draws_since_last_seen": 18,
+      "average_interval": 8.56,
+      "current_gap_ratio": 2.1,
+      "interval_stability_score": 54.84,
+      "source_status": "Закъсняло",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 41 има 1173 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 7 появи.",
+        "От последната поява са минали 18 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 42,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 55.34,
+      "historical_strength_score": 50.18,
+      "recent_activity_score": 100.0,
+      "overdue_score": 0.0,
+      "stability_score": 56.63,
+      "profile_score": 43.02,
+      "appearances": 1236,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0036,
+      "recent_50": 10,
+      "recent_100": 14,
+      "recent_250": 36,
+      "recent_50_ratio": 1.6333,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.176,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.14,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 56.63,
+      "source_status": "Активно напоследък",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 42 има 1236 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 10 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 43,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 58.14,
+      "historical_strength_score": 49.61,
+      "recent_activity_score": 93.1,
+      "overdue_score": 20.58,
+      "stability_score": 57.4,
+      "profile_score": 50.83,
+      "appearances": 1222,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9922,
+      "recent_50": 5,
+      "recent_100": 11,
+      "recent_250": 36,
+      "recent_50_ratio": 0.8167,
+      "recent_100_ratio": 0.8983,
+      "recent_250_ratio": 1.176,
+      "draws_since_last_seen": 4,
+      "average_interval": 8.21,
+      "current_gap_ratio": 0.49,
+      "interval_stability_score": 57.4,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 43 има 1222 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 5 появи, а в последните 100 тиража има 11 появи.",
+        "От последната поява са минали 4 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 44,
+      "main_group": "Неутрални",
+      "categories": [
+        "Силно исторически, но тихо напоследък"
+      ],
+      "categories_text": "Силно исторически, но тихо напоследък",
+      "combined_score": 50.37,
+      "historical_strength_score": 52.41,
+      "recent_activity_score": 84.12,
+      "overdue_score": 0.0,
+      "stability_score": 54.61,
+      "profile_score": 38.44,
+      "appearances": 1291,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0482,
+      "recent_50": 6,
+      "recent_100": 8,
+      "recent_250": 25,
+      "recent_50_ratio": 0.98,
+      "recent_100_ratio": 0.6533,
+      "recent_250_ratio": 0.8167,
+      "draws_since_last_seen": 0,
+      "average_interval": 7.79,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 54.61,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 44 има 1291 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 6 появи, а в последните 100 тиража има 8 появи.",
+        "От последната поява са минали 0 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 45,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 55.22,
+      "historical_strength_score": 50.26,
+      "recent_activity_score": 69.42,
+      "overdue_score": 41.58,
+      "stability_score": 58.08,
+      "profile_score": 48.02,
+      "appearances": 1238,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0052,
+      "recent_50": 4,
+      "recent_100": 8,
+      "recent_250": 25,
+      "recent_50_ratio": 0.6533,
+      "recent_100_ratio": 0.6533,
+      "recent_250_ratio": 0.8167,
+      "draws_since_last_seen": 8,
+      "average_interval": 8.11,
+      "current_gap_ratio": 0.99,
+      "interval_stability_score": 58.08,
+      "source_status": "Нормален ритъм",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 45 има 1238 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 4 появи, а в последните 100 тиража има 8 появи.",
+        "От последната поява са минали 8 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 46,
+      "main_group": "Неутрални",
+      "categories": [
+        "Неутрален профил"
+      ],
+      "categories_text": "Неутрален профил",
+      "combined_score": 63.8,
+      "historical_strength_score": 50.59,
+      "recent_activity_score": 100.0,
+      "overdue_score": 41.58,
+      "stability_score": 56.4,
+      "profile_score": 43.75,
+      "appearances": 1246,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0117,
+      "recent_50": 7,
+      "recent_100": 13,
+      "recent_250": 28,
+      "recent_50_ratio": 1.1433,
+      "recent_100_ratio": 1.0617,
+      "recent_250_ratio": 0.9147,
+      "draws_since_last_seen": 8,
+      "average_interval": 8.07,
+      "current_gap_ratio": 0.99,
+      "interval_stability_score": 56.4,
+      "source_status": "Нормален ритъм",
+      "source_band": "По-слаб профил",
+      "explanation": [
+        "Число 46 има 1246 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 7 появи, а в последните 100 тиража има 13 появи.",
+        "От последната поява са минали 8 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 47,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 63.15,
+      "historical_strength_score": 49.29,
+      "recent_activity_score": 64.52,
+      "overdue_score": 91.14,
+      "stability_score": 58.22,
+      "profile_score": 45.1,
+      "appearances": 1214,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 0.9857,
+      "recent_50": 3,
+      "recent_100": 9,
+      "recent_250": 25,
+      "recent_50_ratio": 0.49,
+      "recent_100_ratio": 0.735,
+      "recent_250_ratio": 0.8167,
+      "draws_since_last_seen": 18,
+      "average_interval": 8.28,
+      "current_gap_ratio": 2.17,
+      "interval_stability_score": 58.22,
+      "source_status": "Закъсняло",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 47 има 1214 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 3 появи, а в последните 100 тиража има 9 появи.",
+        "От последната поява са минали 18 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 48,
+      "main_group": "Закъснели",
+      "categories": [
+        "Закъсняло"
+      ],
+      "categories_text": "Закъсняло",
+      "combined_score": 79.06,
+      "historical_strength_score": 51.52,
+      "recent_activity_score": 100.0,
+      "overdue_score": 100.0,
+      "stability_score": 57.56,
+      "profile_score": 75.42,
+      "appearances": 1269,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0304,
+      "recent_50": 8,
+      "recent_100": 14,
+      "recent_250": 35,
+      "recent_50_ratio": 1.3067,
+      "recent_100_ratio": 1.1433,
+      "recent_250_ratio": 1.1433,
+      "draws_since_last_seen": 19,
+      "average_interval": 7.91,
+      "current_gap_ratio": 2.4,
+      "interval_stability_score": 57.56,
+      "source_status": "Закъсняло",
+      "source_band": "Силен профил",
+      "explanation": [
+        "Число 48 има 1269 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 8 появи, а в последните 100 тиража има 14 появи.",
+        "От последната поява са минали 19 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    },
+    {
+      "number": 49,
+      "main_group": "Горещи напоследък",
+      "categories": [
+        "Горещо напоследък"
+      ],
+      "categories_text": "Горещо напоследък",
+      "combined_score": 63.35,
+      "historical_strength_score": 51.72,
+      "recent_activity_score": 100.0,
+      "overdue_score": 26.46,
+      "stability_score": 57.95,
+      "profile_score": 64.37,
+      "appearances": 1274,
+      "expected_appearances": 1231.59,
+      "appearance_vs_expected_ratio": 1.0344,
+      "recent_50": 11,
+      "recent_100": 16,
+      "recent_250": 31,
+      "recent_50_ratio": 1.7967,
+      "recent_100_ratio": 1.3067,
+      "recent_250_ratio": 1.0127,
+      "draws_since_last_seen": 5,
+      "average_interval": 7.89,
+      "current_gap_ratio": 0.63,
+      "interval_stability_score": 57.95,
+      "source_status": "Активно напоследък",
+      "source_band": "Нормален профил",
+      "explanation": [
+        "Число 49 има 1274 исторически появи при очаквани около 1231.59.",
+        "В последните 50 тиража има 11 появи, а в последните 100 тиража има 16 появи.",
+        "От последната поява са минали 5 тиража."
+      ],
+      "recommendations": [
+        "Използвай групата като статистически контекст, не като прогноза.",
+        "Сравни числото с профила му, баланса на комбинацията и покритието на фиша."
+      ]
+    }
+  ],
+  "safety_note_bg": "Това е историческа статистическа класификация, не предсказание. Групите показват минало поведение и текущ ритъм, но не гарантират бъдещо теглене."
+}

@@ -1,0 +1,225 @@
+{
+  "status": "completed",
+  "module": "Hot / Cold / Stable Number Center",
+  "version": "v57",
+  "total_draws": 10058,
+  "numbers_profiled": 49,
+  "group_summary": [
+    {
+      "group": "Горещи напоследък",
+      "count": 10,
+      "numbers": [
+        18,
+        24,
+        36,
+        38,
+        49,
+        37,
+        30,
+        28,
+        13,
+        42
+      ]
+    },
+    {
+      "group": "Студени напоследък",
+      "count": 1,
+      "numbers": [
+        32
+      ]
+    },
+    {
+      "group": "Закъснели",
+      "count": 9,
+      "numbers": [
+        34,
+        25,
+        12,
+        4,
+        21,
+        48,
+        47,
+        41,
+        20
+      ]
+    },
+    {
+      "group": "Стабилни",
+      "count": 0,
+      "numbers": []
+    },
+    {
+      "group": "Исторически силни",
+      "count": 0,
+      "numbers": []
+    },
+    {
+      "group": "Исторически слаби",
+      "count": 2,
+      "numbers": [
+        23,
+        40
+      ]
+    },
+    {
+      "group": "Неутрални",
+      "count": 27,
+      "numbers": [
+        33,
+        2,
+        17,
+        46,
+        3,
+        11,
+        5,
+        27,
+        22,
+        43,
+        1,
+        31,
+        9,
+        26,
+        8,
+        16,
+        45,
+        39,
+        6,
+        15,
+        35,
+        10,
+        29,
+        19,
+        14,
+        44,
+        7
+      ]
+    }
+  ],
+  "top_hot": [
+    {
+      "number": 1,
+      "score": 100.0
+    },
+    {
+      "number": 2,
+      "score": 100.0
+    },
+    {
+      "number": 3,
+      "score": 100.0
+    },
+    {
+      "number": 11,
+      "score": 100.0
+    },
+    {
+      "number": 12,
+      "score": 100.0
+    },
+    {
+      "number": 13,
+      "score": 100.0
+    },
+    {
+      "number": 16,
+      "score": 100.0
+    },
+    {
+      "number": 18,
+      "score": 100.0
+    },
+    {
+      "number": 20,
+      "score": 100.0
+    },
+    {
+      "number": 22,
+      "score": 100.0
+    }
+  ],
+  "top_cold": [
+    {
+      "number": 32,
+      "recent_100_ratio": 0.5717
+    },
+    {
+      "number": 41,
+      "recent_100_ratio": 0.5717
+    },
+    {
+      "number": 34,
+      "recent_100_ratio": 0.5717
+    },
+    {
+      "number": 35,
+      "recent_100_ratio": 0.5717
+    },
+    {
+      "number": 44,
+      "recent_100_ratio": 0.6533
+    },
+    {
+      "number": 45,
+      "recent_100_ratio": 0.6533
+    },
+    {
+      "number": 47,
+      "recent_100_ratio": 0.735
+    },
+    {
+      "number": 8,
+      "recent_100_ratio": 0.735
+    },
+    {
+      "number": 31,
+      "recent_100_ratio": 0.735
+    },
+    {
+      "number": 25,
+      "recent_100_ratio": 0.8167
+    }
+  ],
+  "top_overdue": [
+    {
+      "number": 34,
+      "draws_since_last_seen": 29
+    },
+    {
+      "number": 25,
+      "draws_since_last_seen": 24
+    },
+    {
+      "number": 12,
+      "draws_since_last_seen": 22
+    },
+    {
+      "number": 4,
+      "draws_since_last_seen": 20
+    },
+    {
+      "number": 21,
+      "draws_since_last_seen": 19
+    },
+    {
+      "number": 48,
+      "draws_since_last_seen": 19
+    },
+    {
+      "number": 41,
+      "draws_since_last_seen": 18
+    },
+    {
+      "number": 47,
+      "draws_since_last_seen": 18
+    },
+    {
+      "number": 18,
+      "draws_since_last_seen": 15
+    },
+    {
+      "number": 20,
+      "draws_since_last_seen": 13
+    }
+  ],
+  "safety_bg": "Това е историческа статистическа класификация, не предсказание. Групите показват минало поведение и текущ ритъм, но не гарантират бъдещо теглене."
+}
