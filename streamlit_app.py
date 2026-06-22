@@ -4168,7 +4168,71 @@ def main() -> None:
         "Надеждност на моделите": render_v63_model_reliability_dashboard_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
-    choice = st.sidebar.radio(tr("menu"), list(pages.keys()))
+    # STEP64_GROUPED_NAVIGATION_START
+    navigation_groups = {
+        '🏠 Начало': [
+            'Табло',
+            'Препоръки',
+            'Прогноза',
+            'Прогнозно табло Pro',
+            'Отчети',
+        ],
+        '🎫 Фишове и генератори': [
+            'Проверка на фиш',
+            'Анализ на фиш',
+            'Оценка на фиш',
+            'Генератор на комбинации',
+            'Интелигентен генератор 2',
+            'Покритие на фиша',
+            'Баланс на комбинациите',
+            'Обединена оценка',
+        ],
+        '📊 Исторически анализи': [
+            'Историческа статистика',
+            'Анализ на минали тегления',
+            'Подобни исторически тиражи',
+            'Център за историческа проверка',
+            'Профил на число',
+            'Горещи, студени и стабилни числа',
+            'Анализ по ритъм на появяване',
+            'Анализ на двойки и групи',
+        ],
+        '🧠 Модели и ML': [
+            'Комбиниран модел',
+            'Комбиниран анализ',
+            'Разширена лаборатория',
+            'ML лаборатория',
+            'Център за обучение',
+            'Стратегическа лаборатория',
+            'Вероятности',
+            'Финален обобщен анализ',
+        ],
+        '✅ Контрол след тираж': [
+            'Добавяне на тираж',
+            'Анализ на нов тираж',
+            'История на моделите',
+            'Надеждност на моделите',
+        ],
+    }
+    used_navigation_pages = set()
+    visible_navigation_groups = {}
+    for group_name, group_pages in navigation_groups.items():
+        available_pages = [page for page in group_pages if page in pages]
+        if available_pages:
+            visible_navigation_groups[group_name] = available_pages
+            used_navigation_pages.update(available_pages)
+    other_pages = [page for page in pages.keys() if page not in used_navigation_pages]
+    if other_pages:
+        visible_navigation_groups['🗂️ Други'] = other_pages
+    if not visible_navigation_groups:
+        visible_navigation_groups['📋 Всички страници'] = list(pages.keys())
+    selected_navigation_group = st.sidebar.selectbox(
+        'Главен раздел',
+        list(visible_navigation_groups.keys()),
+    )
+    available_navigation_pages = visible_navigation_groups.get(selected_navigation_group, list(pages.keys()))
+    choice = st.sidebar.radio('Страница', available_navigation_pages)
+    # STEP64_GROUPED_NAVIGATION_END
     if st.sidebar.button(tr("refresh")):
         st.cache_data.clear()
         st.rerun()
