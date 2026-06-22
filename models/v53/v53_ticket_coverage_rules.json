@@ -1,0 +1,25 @@
+{
+  "module": "ticket_coverage_intelligence",
+  "version": "v53",
+  "user_facing_name_bg": "Покритие на фиша",
+  "purpose_bg": "Оценява дали няколко комбинации във фиш са достатъчно разнообразни или се припокриват прекалено много.",
+  "not_a_prediction_bg": "Този модул не предсказва печеливши числа и не увеличава математическата гаранция за печалба.",
+  "metrics": [
+    "unique_numbers_count",
+    "coverage_efficiency",
+    "average_pairwise_overlap",
+    "maximum_pairwise_overlap",
+    "repeated_pairs_count",
+    "repeated_triples_count",
+    "duplicate_tickets_count",
+    "odd_even_distribution",
+    "low_high_distribution",
+    "range_distribution"
+  ],
+  "score_bands": {
+    "80_100": "Отлично покритие",
+    "65_79": "Добро покритие",
+    "45_64": "Средно покритие",
+    "0_44": "Прекалено концентриран фиш"
+  }
+}

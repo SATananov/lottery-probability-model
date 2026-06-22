@@ -15,6 +15,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import pandas as pd
 import streamlit as st
+from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -1473,7 +1474,7 @@ def _v39_adv_sanitize_output(output):
     if not output:
         return _v39_adv_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
 
-    clean = str(output).replace("\ufffd", "?")
+    clean = str(output).replace(chr(0xFFFD), "?")
     clean = re.sub(r"\?{3,}", _v39_adv_text("[\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u0442\u0435\u043a\u0441\u0442]", "[unreadable text]"), clean)
     return clean
 
@@ -1801,7 +1802,7 @@ def _v39_pred_odds():
 def _v39_pred_sanitize_output(output):
     if not output:
         return _v39_pred_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
-    clean = str(output).replace("\ufffd", "?")
+    clean = str(output).replace(chr(0xFFFD), "?")
     clean = re.sub(r"\?{3,}", _v39_pred_text("[\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u0442\u0435\u043a\u0441\u0442]", "[unreadable text]"), clean)
     return clean
 
@@ -2453,7 +2454,7 @@ def _v39_ml_placeholder(kind: str) -> str:
 
 def _v39_ml_translate_value(value: Any) -> str:
     s = str(value or "").strip()
-    if not s or "\ufffd" in s or "????" in s or "\uFFFD" in s:
+    if not s or chr(0xFFFD) in s or ("?" * 4) in s or chr(0xFFFD) in s:
         return s
 
     bg_to_en = {
@@ -2474,7 +2475,7 @@ def _v39_ml_translate_value(value: Any) -> str:
 
 def _v39_ml_clean_label(value: Any, kind: str = "class") -> str:
     s = str(value or "").strip()
-    if not s or "\ufffd" in s or "????" in s or "\uFFFD" in s:
+    if not s or chr(0xFFFD) in s or ("?" * 4) in s or chr(0xFFFD) in s:
         return _v39_ml_placeholder(kind)
     return _v39_ml_translate_value(s)
 
@@ -2482,7 +2483,7 @@ def _v39_ml_clean_label(value: Any, kind: str = "class") -> str:
 def _v39_ml_sanitize_output(output: str) -> str:
     if not output:
         return _v39_ml_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
-    clean = str(output).replace("\ufffd", "?")
+    clean = str(output).replace(chr(0xFFFD), "?")
     class_placeholder = _v39_ml_placeholder("class")
     cluster_placeholder = _v39_ml_placeholder("cluster")
     clean = re.sub(r"class=\?+", f"class={class_placeholder}", clean)
@@ -4147,6 +4148,7 @@ def main() -> None:
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
+        "Покритие на фиша": render_v53_ticket_coverage_section,
     }
     choice = st.sidebar.radio(tr("menu"), list(pages.keys()))
     if st.sidebar.button(tr("refresh")):
