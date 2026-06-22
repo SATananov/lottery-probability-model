@@ -1,0 +1,4 @@
+﻿ticket_id,strategy_label,removed_numbers,added_numbers,original_numbers,applied_numbers,average_score_delta,safe_note
+2,Фиш с висок weighted score,21,36,"1,4,21,34,38,44","1,4,34,36,38,44",-5.175,Приложена статистическа промяна от Step 69 candidate portfolio.
+4,Odd/Even балансиран фиш,23,11,"2,17,23,34,37,44","2,11,17,34,37,44",-4.204,Приложена статистическа промяна от Step 69 candidate portfolio.
+8,Разширен статистически фиш,34,16,"1,18,21,23,34,37","1,16,18,21,23,37",-4.127,Приложена статистическа промяна от Step 69 candidate portfolio.
