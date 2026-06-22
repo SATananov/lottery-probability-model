@@ -1,0 +1,57 @@
+{
+  "step": "68",
+  "name": "Weighted Portfolio Optimizer",
+  "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
+  "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
+  "tickets_analyzed": 8,
+  "unique_numbers_covered": 18,
+  "coverage_percent": 36.73,
+  "covered_top10_numbers": 10,
+  "covered_top20_numbers": 17,
+  "average_ticket_step66_score": 79.245,
+  "average_ticket_overlap": 1.893,
+  "max_ticket_overlap": 3,
+  "repeated_pairs_count": 25,
+  "repeated_triples_count": 4,
+  "coverage_score": 36.735,
+  "top20_coverage_score": 85.0,
+  "diversity_score": 65.929,
+  "repetition_score": 5.5,
+  "portfolio_score": 60.684,
+  "portfolio_status": "приемлив портфейл с нужда от наблюдение",
+  "undercovered_top20_numbers": [
+    {
+      "number": 16,
+      "step66_rank": 18,
+      "weighted_score_percent": 48.824
+    },
+    {
+      "number": 11,
+      "step66_rank": 19,
+      "weighted_score_percent": 48.158
+    },
+    {
+      "number": 36,
+      "step66_rank": 20,
+      "weighted_score_percent": 47.981
+    }
+  ],
+  "recommendations": [
+    "Портфолиото покрива сравнително малко уникални числа. Следваща оптимизация може да увеличи diversity.",
+    "Има силни Step 66 числа, които не са покрити в портфолиото: 16, 11, 36.",
+    "Има повторени двойки. Това не е грешка, но portfolio optimizer може да намали повторенията.",
+    "Има повторени тройки. Това повишава концентрацията и може да се оптимизира."
+  ],
+  "generated_at": "2026-06-22T08:06:23+00:00",
+  "generated_reports": [
+    "reports/v68_weighted_portfolio_summary.json",
+    "reports/v68_weighted_portfolio_summary.md",
+    "reports/v68_weighted_portfolio_tickets.csv",
+    "reports/v68_weighted_portfolio_coverage.csv",
+    "reports/v68_weighted_portfolio_overlaps.csv",
+    "reports/v68_weighted_portfolio_repeated_pairs.csv",
+    "reports/v68_weighted_portfolio_repeated_triples.csv",
+    "models/v68/v68_weighted_portfolio_optimizer_model.json"
+  ],
+  "safe_note": "This is a statistical portfolio optimizer. It is not a winning guarantee or a promise of future lottery results."
+}
