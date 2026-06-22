@@ -101,4 +101,11 @@ data/historical_draws.csv,Step 76,dataset,Dataset вход
 reports/v75_neural_meta_number_scores.csv,Step 76,artifact,Входен model/report artifact
 reports/v75_neural_candidate_tickets.csv,Step 76,artifact,Входен model/report artifact
 reports/v75_neural_meta_learner_summary.json,Step 76,artifact,Входен model/report artifact
-Step 76,Step 74,feeds,Изходът помага на следващ слой
+Step 76,Step 77,feeds,Изходът помага на следващ слой
+data/v41_canonical_draw_events.csv,Step 77,dataset,Dataset вход
+data/historical_draws.csv,Step 77,dataset,Dataset вход
+reports/v76_explainability_validation_summary.json,Step 77,artifact,Входен model/report artifact
+reports/v76_ticket_validation.csv,Step 77,artifact,Входен model/report artifact
+reports/v76_number_explanations.csv,Step 77,artifact,Входен model/report artifact
+reports/v76_validation_warnings.csv,Step 77,artifact,Входен model/report artifact
+Step 77,Step 74,feeds,Изходът помага на следващ слой

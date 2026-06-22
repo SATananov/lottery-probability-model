@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import csv
 import json
 import math
@@ -12,11 +11,9 @@ from collections import Counter
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
-
 import pandas as pd
 import streamlit as st
 from src.bg_ui_helpers import install_streamlit_bg_table_patch
-
 install_streamlit_bg_table_patch(st)
 from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
 from src.v54_pattern_balance_section import render_v54_pattern_balance_section
@@ -40,23 +37,19 @@ from src.v72_pipeline_refresh_section import render_v72_pipeline_refresh_section
 from src.v74_model_dependency_sync_center_section import render_v74_model_dependency_sync_center_section
 from src.v75_neural_meta_learner_section import render_v75_neural_meta_learner_section
 from src.v76_explainability_validation_section import render_v76_explainability_validation_section
-
+from src.v77_decision_recommendation_section import render_v77_decision_recommendation_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
     import inspect as _bg34_inspect
 except Exception:  # pragma: no cover
     _bg34_inspect = None
-
-
 def _bg34_is_bulgarian() -> bool:
     """Use the app language key instead of scanning all session values."""
     try:
         return st.session_state.get("language", "bg") == "bg"
     except Exception:
         return True
-
-
 _BG34_EXACT = {
     # navigation and page labels
     "Simulation / Simulation": "Симулация",
@@ -79,7 +72,6 @@ _BG34_EXACT = {
     "Прогнозен статистически модул": "Прогнозен статистически модул",
     "Menu": "Меню",
     "Language": "Език",
-
     # model names and cards
     "Горещ / честотен модел": "Горещ / честотен модел",
     "Hot / frequency model": "Горещ / честотен модел",
@@ -112,7 +104,6 @@ _BG34_EXACT = {
     "Проверка за честност / хи-квадрат проверка": "Проверка за честност / хи-квадрат",
     "Historical check": "Историческа проверка",
     "Run historical check": "Пусни историческа проверка",
-
     # simulation / analyzer
     "Монте Карло": "Монте Карло",
     "Историческа проверка": "Историческа проверка",
@@ -140,7 +131,6 @@ _BG34_EXACT = {
     "Среден / Medium": "Среден",
     "High / High": "Висок",
     "Висок / High": "Висок",
-
     # reports and historical checking
     "Backtesting": "Историческа проверка",
     "backtesting": "историческа проверка",
@@ -158,7 +148,6 @@ _BG34_EXACT = {
     "Download full report": "Свали пълния отчет",
     "Report written to": "Отчетът е записан в",
     "Not proof": "Не е доказателство",
-
     # probability and dataframe columns
     "Общ брой комбинации C(49, 6)": "Общ брой комбинации C(49, 6)",
     "Real exact-combination odds": "Реален шанс за точна комбинация",
@@ -220,7 +209,6 @@ _BG34_EXACT = {
     "Sum": "Сума",
     "Odd/Even": "Нечетни/четни",
     "Low/Mid/High": "Ниски/средни/високи",
-
     # update / upload
     "Upload": "Качи файл",
     "Browse files": "Избери файл",
@@ -257,7 +245,6 @@ _BG34_EXACT = {
     "Deleted draw": "Изтрит тираж",
     "Backup": "Резервно копие",
     "Restored backup": "Възстановено резервно копие",
-
     # model file labels shown in cards
     "models/lottery_advanced_ensemble_model.json": "Разширен ансамблов модел",
     "models/lottery_combined_model.json": "Финален комбиниран модел",
@@ -271,7 +258,6 @@ _BG34_EXACT = {
     "lottery_cold_model.json": "Студен + интервален модел",
     "lottery_middle_model.json": "Среден / балансиран модел",
     "lottery_gap_model.json": "Интервален модел",
-
     # generic widget text
     "Choose options": "Избери числа",
     "Choose an option": "Избери опция",
@@ -280,7 +266,6 @@ _BG34_EXACT = {
     "This is a statistical ranking, not a guaranteed prediction.": "Това е статистическо класиране, не сигурно предсказване.",
     "No numbers available": "Няма налични числа",
 }
-
 _BG34_REPLACE = [
     ("🎲 Симулация / Simulation", "🎲 Симулация"),
     ("Симулация / Simulation", "Симулация"),
@@ -356,8 +341,6 @@ _BG34_REPLACE = [
     ("Delete draw number", "Номер на тираж за изтриване"),
     ("Delete position", "Позиция за изтриване"),
 ]
-
-
 def _bg34_text(value):
     if not _bg34_is_bulgarian() or not isinstance(value, str):
         return value
@@ -367,8 +350,6 @@ def _bg34_text(value):
     for src, dst in _BG34_REPLACE:
         out = out.replace(src, dst)
     return out
-
-
 def _bg34_translate_dataframe(data):
     if not _bg34_is_bulgarian() or not isinstance(data, pd.DataFrame):
         return data
@@ -381,15 +362,10 @@ def _bg34_translate_dataframe(data):
         return df
     except Exception:
         return data
-
-
 def _bg34_css():
     return None
-
-
 if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
     st._lottery_bulgarian_final_clean_v36 = True
-
     _bg34_orig_markdown = st.markdown
     _bg34_orig_write = st.write
     _bg34_orig_caption = st.caption
@@ -415,7 +391,6 @@ if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
     _bg34_orig_download_button = st.download_button
     _bg34_orig_dataframe = st.dataframe
     _bg34_orig_table = st.table
-
     def _bg34_markdown(body, *args, **kwargs):
         return _bg34_orig_markdown(_bg34_text(body), *args, **kwargs)
     def _bg34_write(*args, **kwargs):
@@ -479,7 +454,6 @@ if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
         return _bg34_orig_dataframe(_bg34_translate_dataframe(data), *args, **kwargs)
     def _bg34_table_widget(data=None, *args, **kwargs):
         return _bg34_orig_table(_bg34_translate_dataframe(data), *args, **kwargs)
-
     st.markdown = _bg34_markdown
     st.write = _bg34_write
     st.caption = _bg34_caption
@@ -506,16 +480,12 @@ if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
     st.dataframe = _bg34_dataframe_widget
     st.table = _bg34_table_widget
 # === LOTTERY BULGARIAN UI FINAL CLEAN V34 END ===
-
-
 # === LOTTERY REPORTS VISUAL CLEAN V34 START ===
 # Visual Bulgarian renderer for advanced historical-check reports.
 try:
     import re as _lr34_re
 except Exception:  # pragma: no cover
     _lr34_re = None
-
-
 def _lr34_nums(raw):
     numbers = []
     for token in str(raw or "").replace(",", " ").split():
@@ -526,8 +496,6 @@ def _lr34_nums(raw):
             except Exception:
                 pass
     return numbers
-
-
 def _lr34_balls(numbers, size=34):
     parts = ["<div style='display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 8px;'>"]
     for n in numbers or []:
@@ -542,8 +510,6 @@ def _lr34_balls(numbers, size=34):
         )
     parts.append("</div>")
     _lr34_original_markdown("".join(parts), unsafe_allow_html=True)
-
-
 def _lr34_strategy_label(name):
     labels = {
         "advanced": "Разширен ансамбъл",
@@ -554,8 +520,6 @@ def _lr34_strategy_label(name):
         "random": "Случаен базов модел",
     }
     return labels.get(str(name), str(name).replace("_", " "))
-
-
 def _lr34_parse_strategy_rows(text_value):
     if not _lr34_re:
         return []
@@ -569,8 +533,6 @@ def _lr34_parse_strategy_rows(text_value):
             ">=4 съвпадения %": float(ge4),
         })
     return rows
-
-
 def _lr34_parse_recent_draws(text_value):
     if not _lr34_re:
         return []
@@ -593,14 +555,11 @@ def _lr34_parse_recent_draws(text_value):
             "Съвпадения на случаен фиш": int(rnd_matches),
         })
     return rows
-
-
 def _lr34_render_report(text_value):
     if not isinstance(text_value, str):
         return False
     if "actual=[" not in text_value and "Recent tested draws" not in text_value and "Advanced backtesting engine" not in text_value:
         return False
-
     _lr34_original_markdown("## Отчет от историческа проверка")
     tested = None
     best_strategy = None
@@ -611,12 +570,10 @@ def _lr34_render_report(text_value):
             tested = int(tested_match.group(1))
         if best_match:
             best_strategy = best_match.group(1)
-
     cols = st.columns(3)
     cols[0].metric("Тествани тиражи", tested if tested is not None else "-")
     cols[1].metric("Най-добра стратегия", _lr34_strategy_label(best_strategy) if best_strategy else "-")
     cols[2].metric("Важно", "Не е доказателство", help="Историческата проверка гледа назад във времето и не гарантира бъдещи резултати.")
-
     strategy_rows = _lr34_parse_strategy_rows(text_value)
     if strategy_rows:
         _lr34_original_markdown("### Сравнение на стратегиите")
@@ -626,13 +583,11 @@ def _lr34_render_report(text_value):
             st.bar_chart(strategy_df.set_index("Стратегия")[["Средни съвпадения"]], height=260)
         except Exception:
             pass
-
     if best_strategy:
         st.info(
             f"Най-добрата стратегия в тази историческа проверка е: {_lr34_strategy_label(best_strategy)}. "
             "Това е проверка на модела, не доказателство, че бъдещи тегления са предсказуеми."
         )
-
     recent_rows = _lr34_parse_recent_draws(text_value)
     if recent_rows:
         _lr34_original_markdown("### Последни тествани тиражи")
@@ -648,7 +603,6 @@ def _lr34_render_report(text_value):
                 "Съвпадения на случаен фиш": row["Съвпадения на случаен фиш"],
             })
         st.dataframe(pd.DataFrame(table_rows), width="stretch", hide_index=True)
-
         with st.expander("Виж последните тиражи визуално", expanded=False):
             for row in recent_rows[:20]:
                 _lr34_original_markdown(f"#### Тираж {row['Тираж']} {'' if row['Дата'] == '-' else row['Дата']}")
@@ -663,17 +617,13 @@ def _lr34_render_report(text_value):
                     st.caption(f"Случаен фиш — {row['Съвпадения на случаен фиш']} съвпадения")
                     _lr34_balls(row["Случаен фиш"])
                 st.divider()
-
     st.download_button("Свали оригиналния отчет", data=text_value, file_name="advanced_backtest_report.md", mime="text/markdown")
     return True
-
-
 if not getattr(st, "_lottery_reports_visual_clean_v34", False):
     st._lottery_reports_visual_clean_v34 = True
     _lr34_original_markdown = st.markdown
     _lr34_original_write = st.write
     _lr34_original_code = st.code
-
     def _lr34_markdown(body, *args, **kwargs):
         try:
             if isinstance(body, str) and _lr34_render_report(body):
@@ -681,7 +631,6 @@ if not getattr(st, "_lottery_reports_visual_clean_v34", False):
         except Exception:
             pass
         return _lr34_original_markdown(body, *args, **kwargs)
-
     def _lr34_write(*args, **kwargs):
         try:
             if len(args) == 1 and isinstance(args[0], str) and _lr34_render_report(args[0]):
@@ -689,7 +638,6 @@ if not getattr(st, "_lottery_reports_visual_clean_v34", False):
         except Exception:
             pass
         return _lr34_original_write(*args, **kwargs)
-
     def _lr34_code(body, *args, **kwargs):
         try:
             if isinstance(body, str) and _lr34_render_report(body):
@@ -697,23 +645,18 @@ if not getattr(st, "_lottery_reports_visual_clean_v34", False):
         except Exception:
             pass
         return _lr34_original_code(body, *args, **kwargs)
-
     st.markdown = _lr34_markdown
     st.write = _lr34_write
     st.code = _lr34_code
 # === LOTTERY REPORTS VISUAL CLEAN V34 END ===
-
-
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "historical_draws.csv"
 MODELS_DIR = ROOT / "models"
 REPORTS_DIR = ROOT / "reports"
 BACKUP_DIR = ROOT / "data" / "manual_backups"
 BACKUP_DIR.mkdir(parents=True, exist_ok=True)
-
 THEORETICAL_ODDS_TEXT = "1 към 13,983,816"
 EXPECTED_NUMBER_PROB = 6 / 49
-
 TRANSLATIONS = {
     "bg": {
         "language": "Език",
@@ -848,14 +791,12 @@ TRANSLATIONS = {
         "term_help": "Речник",
     },
 }
-
 st.set_page_config(
     page_title="Lottery 6/49 Lab",
     page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
 # V15_HIDE_NATIVE_STREAMLIT_NAV_START
 try:
     st.markdown(
@@ -870,27 +811,21 @@ try:
 except Exception:
     pass
 # V15_HIDE_NATIVE_STREAMLIT_NAV_END
-
-
 # V13_SIMULATION_LAB_HOOK_START
 def _v13_sidebar_button(label: str, key: str) -> bool:
     try:
         return st.sidebar.button(label, key=key, width="stretch")
     except TypeError:
         return st.sidebar.button(label, key=key)
-
-
 def _v13_simulation_lab_hook() -> None:
     if "v13_simulation_lab_active" not in st.session_state:
         st.session_state["v13_simulation_lab_active"] = False
-
     if _v13_sidebar_button("\U0001f3b2 \u0421\u0438\u043c\u0443\u043b\u0430\u0446\u0438\u044f", "v13_open_simulation_lab"):
         st.session_state["v13_simulation_lab_active"] = True
         if hasattr(st, "rerun"):
             st.rerun()
         elif hasattr(st, "experimental_rerun"):
             st.experimental_rerun()
-
     if st.session_state.get("v13_simulation_lab_active"):
         if _v13_sidebar_button("\u2190 \u041d\u0430\u0437\u0430\u0434 \u043a\u044a\u043c \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0442\u043e \u043c\u0435\u043d\u044e", "v13_close_simulation_lab"):
             st.session_state["v13_simulation_lab_active"] = False
@@ -898,7 +833,6 @@ def _v13_simulation_lab_hook() -> None:
                 st.rerun()
             elif hasattr(st, "experimental_rerun"):
                 st.experimental_rerun()
-
         try:
             import importlib
             module = importlib.import_module("streamlit_pages.simulation_lab_page")
@@ -907,38 +841,27 @@ def _v13_simulation_lab_hook() -> None:
         except Exception as exc:
             st.error("\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0441\u0438\u043c\u0443\u043b\u0430\u0446\u0438\u044f\u0442\u0430.")
             st.exception(exc)
-
         st.stop()
-
-
 _v13_simulation_lab_hook()
 # V13_SIMULATION_LAB_HOOK_END
-
-
-
 # V40_TICKET_CHECKER_UI_HOOK_START
 def _v40_ticket_checker_sidebar_button(label: str, key: str) -> bool:
     try:
         return st.sidebar.button(label, key=key, width="stretch")
     except TypeError:
         return st.sidebar.button(label, key=key)
-
-
 def _v40_ticket_checker_hook() -> None:
     ticket_label = "\U0001F3AB \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0444\u0438\u0448"
     back_label = "\u2190 \u041d\u0430\u0437\u0430\u0434 \u043a\u044a\u043c \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0442\u043e \u043c\u0435\u043d\u044e"
     load_error = "\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430\u0442\u0430 \u043d\u0430 \u0444\u0438\u0448."
-
     if "v40_ticket_checker_active" not in st.session_state:
         st.session_state["v40_ticket_checker_active"] = False
-
     if _v40_ticket_checker_sidebar_button(ticket_label, "v40_open_ticket_checker"):
         st.session_state["v40_ticket_checker_active"] = True
         if hasattr(st, "rerun"):
             st.rerun()
         elif hasattr(st, "experimental_rerun"):
             st.experimental_rerun()
-
     if st.session_state.get("v40_ticket_checker_active"):
         if _v40_ticket_checker_sidebar_button(back_label, "v40_close_ticket_checker"):
             st.session_state["v40_ticket_checker_active"] = False
@@ -946,7 +869,6 @@ def _v40_ticket_checker_hook() -> None:
                 st.rerun()
             elif hasattr(st, "experimental_rerun"):
                 st.experimental_rerun()
-
         try:
             import importlib
             module = importlib.import_module("streamlit_pages.ticket_checker_page")
@@ -955,16 +877,9 @@ def _v40_ticket_checker_hook() -> None:
         except Exception as exc:
             st.error(load_error)
             st.exception(exc)
-
         st.stop()
-
-
 _v40_ticket_checker_hook()
 # V40_TICKET_CHECKER_UI_HOOK_END
-
-
-
-
 st.markdown(
     """
     <style>
@@ -1040,8 +955,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-
 def language() -> str:
     default_lang = st.session_state.get("language", "bg")
     return st.sidebar.radio(
@@ -1051,16 +964,10 @@ def language() -> str:
         format_func=lambda value: "Български" if value == "bg" else "English",
         key="language",
     )
-
-
 LANG = language()
 T = TRANSLATIONS[LANG]
-
-
 def tr(key: str) -> str:
     return T.get(key, key)
-
-
 @st.cache_data(show_spinner=False)
 def load_draws() -> pd.DataFrame:
     if not DATA_PATH.exists():
@@ -1070,8 +977,6 @@ def load_draws() -> pd.DataFrame:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce").astype("Int64")
     return df
-
-
 @st.cache_data(show_spinner=False)
 def load_json(path: str) -> Dict[str, Any]:
     p = Path(path)
@@ -1082,20 +987,14 @@ def load_json(path: str) -> Dict[str, Any]:
             return json.load(file)
     except Exception:
         return {}
-
-
 def model_json(filename: str) -> Dict[str, Any]:
     return load_json(str(MODELS_DIR / filename))
-
-
 def numbers_from_row(row: pd.Series) -> List[int]:
     nums = []
     for col in ["n1", "n2", "n3", "n4", "n5", "n6"]:
         if col in row and pd.notna(row[col]):
             nums.append(int(row[col]))
     return nums
-
-
 def format_number_pills(numbers: Iterable[Any]) -> str:
     clean = []
     for number in numbers or []:
@@ -1107,8 +1006,6 @@ def format_number_pills(numbers: Iterable[Any]) -> str:
     if not clean:
         return '<div class="small-muted">Няма налични числа</div>'
     return '<div class="number-row">' + ''.join(f'<span class="number-pill">{n}</span>' for n in clean) + '</div>'
-
-
 def render_ticket_card(title: str, numbers: List[int], score: Optional[float] = None, meta: str = "", explanation: str = "") -> None:
     score_html = ""
     if score is not None:
@@ -1128,8 +1025,6 @@ def render_ticket_card(title: str, numbers: List[int], score: Optional[float] = 
         """,
         unsafe_allow_html=True,
     )
-
-
 def render_recommendation_list(title: str, recs: List[Dict[str, Any]], limit: int = 10) -> None:
     st.markdown(f"### {title}")
     if not recs:
@@ -1168,8 +1063,6 @@ def render_recommendation_list(title: str, recs: List[Dict[str, Any]], limit: in
             """,
             unsafe_allow_html=True,
         )
-
-
 def extract_single_ticket(model: Dict[str, Any]) -> List[int]:
     if not model:
         return []
@@ -1212,8 +1105,6 @@ def extract_single_ticket(model: Dict[str, Any]) -> List[int]:
                 if len(nums) == 6:
                     return sorted(nums)
     return []
-
-
 def extract_recommendations(model: Dict[str, Any]) -> List[Dict[str, Any]]:
     if not model:
         return []
@@ -1233,8 +1124,6 @@ def extract_recommendations(model: Dict[str, Any]) -> List[Dict[str, Any]]:
     if ticket:
         return [{"rank": 1, "numbers": ticket, "confidence_score": model.get("confidence_score") or model.get("score")}]
     return []
-
-
 def main_recommendation(model: Dict[str, Any]) -> Tuple[List[int], Optional[float]]:
     recs = extract_recommendations(model)
     if recs:
@@ -1243,8 +1132,6 @@ def main_recommendation(model: Dict[str, Any]) -> Tuple[List[int], Optional[floa
         score = item.get("confidence_score") or item.get("confidence") or item.get("final_score") or item.get("prediction_score") or item.get("score")
         return sorted([int(x) for x in numbers]) if numbers else [], score
     return extract_single_ticket(model), model.get("confidence_score") or model.get("score") if model else None
-
-
 def get_model_cards() -> List[Tuple[str, str, str, str]]:
     return [
         (tr("advanced_model"), "lottery_advanced_ensemble_model.json", "advanced", "Комбинира времево затихване, бейсово изглаждане, проверка за честност, съвместна поява, портфолио и историческа проверка."),
@@ -1256,8 +1143,6 @@ def get_model_cards() -> List[Tuple[str, str, str, str]]:
         (tr("middle_model"), "lottery_middle_model.json", "middle", "Числа близо до очакваната честота и балансирано поведение."),
         (tr("gap_model"), "lottery_gap_model.json", "gap", "Числа с по-силен интервален сигнал."),
     ]
-
-
 def get_dataset_metrics() -> Dict[str, Any]:
     df = load_draws()
     if df.empty:
@@ -1276,10 +1161,6 @@ def get_dataset_metrics() -> Dict[str, Any]:
         "dup_full": dup_full,
         "dup_keys": dup_keys,
     }
-
-
-
-
 def _v39_apply_wide_layout_patch() -> None:
     st.markdown(
         """
@@ -1290,7 +1171,6 @@ def _v39_apply_wide_layout_patch() -> None:
             padding-left: 1.5rem !important;
             padding-right: 1.5rem !important;
         }
-
         @media (min-width: 1400px) {
             .main .block-container {
                 max-width: 98% !important;
@@ -1302,7 +1182,6 @@ def _v39_apply_wide_layout_patch() -> None:
         """,
         unsafe_allow_html=True,
     )
-
 def render_header() -> None:
     _v39_apply_wide_layout_patch()
     st.markdown(
@@ -1314,8 +1193,6 @@ def render_header() -> None:
         """,
         unsafe_allow_html=True,
     )
-
-
 def page_dashboard() -> None:
     render_header()
     metrics = get_dataset_metrics()
@@ -1324,20 +1201,16 @@ def page_dashboard() -> None:
     col2.metric(tr("years"), f'{metrics["year_min"]}–{metrics["year_max"]}')
     col3.metric(tr("missing"), len(metrics["missing"]))
     col4.metric(tr("duplicates"), metrics["dup_keys"] + metrics["dup_full"])
-
     st.markdown(f'<div class="warning-soft">{tr("not_prediction")} {tr("real_odds")}: <b>{THEORETICAL_ODDS_TEXT}</b>.</div>', unsafe_allow_html=True)
-
     advanced = model_json("lottery_advanced_ensemble_model.json")
     combined = model_json("lottery_combined_model.json")
     adv_numbers, adv_score = main_recommendation(advanced)
     comb_numbers, comb_score = main_recommendation(combined)
-
     c1, c2 = st.columns(2)
     with c1:
         render_ticket_card(tr("main_recommendation") + " · " + tr("advanced_model"), adv_numbers, adv_score, tr("advanced_model"), tr("not_prediction"))
     with c2:
         render_ticket_card(tr("main_recommendation") + " · " + tr("combined_model"), comb_numbers, comb_score, tr("combined_model"), tr("not_prediction"))
-
     st.markdown("### " + tr("all_models"))
     cols = st.columns(3)
     for i, (title, filename, _, explanation) in enumerate(get_model_cards()[2:]):
@@ -1345,13 +1218,10 @@ def page_dashboard() -> None:
             model = model_json(filename)
             numbers, score = main_recommendation(model)
             render_ticket_card(title, numbers, score, filename, explanation)
-
-
 def page_recommendations() -> None:
     render_header()
     st.markdown("## " + tr("all_models"))
     st.markdown(f'<div class="warning-soft">{tr("not_prediction")} {tr("real_odds")}: <b>{THEORETICAL_ODDS_TEXT}</b>.</div>', unsafe_allow_html=True)
-
     for title, filename, kind, explanation in get_model_cards():
         model = model_json(filename)
         numbers, score = main_recommendation(model)
@@ -1365,8 +1235,6 @@ def page_recommendations() -> None:
             if not top_df.empty:
                 with st.expander(tr("details"), expanded=False):
                     st.dataframe(top_df, width="stretch", hide_index=True)
-
-
 def top_numbers_dataframe(model: Dict[str, Any]) -> pd.DataFrame:
     rows = []
     if not model:
@@ -1394,16 +1262,12 @@ def top_numbers_dataframe(model: Dict[str, Any]) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     preferred = [c for c in ["number", "score", "cold_score", "middle_score", "next_prob", "empirical_probability", "expected_probability", "gap", "z_score", "status", "signal"] if c in df.columns]
     return df[preferred] if preferred else df
-
-
 def page_combined() -> None:
     render_header()
     model = model_json("lottery_combined_model.json")
     numbers, score = main_recommendation(model)
     render_ticket_card(tr("combined_model"), numbers, score, tr("combined_model"), tr("not_prediction"))
     render_recommendation_list(tr("top_recommendations"), extract_recommendations(model), 15)
-
-
 def run_script(script_name: str) -> Tuple[bool, str]:
     script = ROOT / script_name
     if not script.exists():
@@ -1418,25 +1282,15 @@ def run_script(script_name: str) -> Tuple[bool, str]:
     )
     output = (process.stdout or "") + ("\n" + process.stderr if process.stderr else "")
     return process.returncode == 0, output.strip()
-
-
-
-
 def _v39_adv_lang():
     try:
         return st.session_state.get("language", globals().get("LANG", "bg"))
     except Exception:
         return globals().get("LANG", "bg")
-
-
 def _v39_adv_text(bg, en):
     return bg if _v39_adv_lang() == "bg" else en
-
-
 def _v39_adv_odds():
     return "1:13,983,816"
-
-
 def _v39_adv_find_script(kind):
     candidates = [
         "train_advanced_ensemble.py",
@@ -1450,7 +1304,6 @@ def _v39_adv_find_script(kind):
         "backtest_advanced_model.py",
         "run_advanced_lab_backtest.py",
     ]
-
     for name in candidates:
         p = ROOT / name
         if p.exists():
@@ -1458,7 +1311,6 @@ def _v39_adv_find_script(kind):
         p = ROOT / "scripts" / name
         if p.exists():
             return p
-
     words = ["advanced", "train"] if kind == "train" else ["advanced", "backtest"]
     for p in ROOT.rglob("*.py"):
         rel = str(p.relative_to(ROOT)).lower().replace("\\", "/")
@@ -1466,21 +1318,16 @@ def _v39_adv_find_script(kind):
             continue
         if all(word in p.name.lower() for word in words):
             return p
-
     return None
-
-
 def _v39_adv_run(kind):
     import subprocess
     import sys
-
     script = _v39_adv_find_script(kind)
     if script is None:
         return False, _v39_adv_text(
             "\u041d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449 Python \u0441\u043a\u0440\u0438\u043f\u0442 \u0437\u0430 \u0442\u0430\u0437\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044f.",
             "No suitable Python script was found for this operation.",
         )
-
     completed = subprocess.run(
         [sys.executable, str(script)],
         cwd=str(ROOT),
@@ -1492,17 +1339,12 @@ def _v39_adv_run(kind):
     )
     output = (completed.stdout or "") + (completed.stderr or "")
     return completed.returncode == 0, output.strip()
-
-
 def _v39_adv_sanitize_output(output):
     if not output:
         return _v39_adv_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
-
     clean = str(output).replace(chr(0xFFFD), "?")
     clean = re.sub(r"\?{3,}", _v39_adv_text("[\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u0442\u0435\u043a\u0441\u0442]", "[unreadable text]"), clean)
     return clean
-
-
 def _v39_adv_parse_int(output, label):
     try:
         match = re.search(label + r"\s*:\s*([0-9,]+)", output or "", flags=re.IGNORECASE)
@@ -1511,8 +1353,6 @@ def _v39_adv_parse_int(output, label):
     except Exception:
         pass
     return None
-
-
 def _v39_adv_parse_float(output, label):
     try:
         match = re.search(label + r"\s*:\s*([0-9.]+)", output or "", flags=re.IGNORECASE)
@@ -1521,21 +1361,16 @@ def _v39_adv_parse_float(output, label):
     except Exception:
         pass
     return None
-
-
 def _v39_adv_load_model():
     import json
-
     if not MODELS_DIR.exists():
         return {}
-
     preferred = [
         "lottery_advanced_model.json",
         "lottery_advanced_ensemble_model.json",
         "advanced_statistical_ensemble_model.json",
         "advanced_model.json",
     ]
-
     for name in preferred:
         p = MODELS_DIR / name
         if p.exists():
@@ -1543,16 +1378,12 @@ def _v39_adv_load_model():
                 return json.loads(p.read_text(encoding="utf-8"))
             except Exception:
                 pass
-
     for p in MODELS_DIR.glob("*advanced*.json"):
         try:
             return json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-
     return {}
-
-
 def _v39_adv_recommendations(model):
     for key in [
         "recommendations",
@@ -1565,8 +1396,6 @@ def _v39_adv_recommendations(model):
         if isinstance(value, list):
             return value
     return []
-
-
 def _v39_adv_numbers(item):
     if isinstance(item, dict):
         for key in ["numbers", "combination", "ticket", "values"]:
@@ -1576,32 +1405,24 @@ def _v39_adv_numbers(item):
     if isinstance(item, list):
         return item
     return []
-
-
 def _v39_adv_score(item):
     if isinstance(item, dict):
         for key in ["confidence", "confidence_score", "score", "model_score"]:
             if key in item:
                 return item.get(key)
     return None
-
-
 def _v39_adv_model_value(model, *keys):
     for key in keys:
         value = model.get(key)
         if value is not None:
             return value
     return None
-
-
 def _v39_adv_render_metrics(training_draws, candidate_count, fairness=None):
     c1, c2 = st.columns(2)
     c1.metric(_v39_adv_text("\u041e\u0431\u0443\u0447\u0435\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438", "Training draws"), f"{int(training_draws):,}" if training_draws else "-")
     c2.metric(_v39_adv_text("\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Candidate combinations"), f"{int(candidate_count):,}" if candidate_count else "-")
-
     odds_label = _v39_adv_text("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441", "Real odds")
     st.markdown(f"**{odds_label}:** `{_v39_adv_odds()}`")
-
     if fairness is not None:
         st.caption(
             _v39_adv_text(
@@ -1609,40 +1430,30 @@ def _v39_adv_render_metrics(training_draws, candidate_count, fairness=None):
                 f"Fairness p-value: {fairness}. This is a statistical check, not a promise of winning.",
             )
         )
-
-
 def _v39_adv_render_overview(model):
     st.markdown("### " + _v39_adv_text("\u041a\u0430\u043a\u0432\u043e \u043f\u0440\u0430\u0432\u0438 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0430\u0442\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f", "What the Advanced Lab Does"))
-
     st.markdown(
         _v39_adv_text(
             "\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0430\u0442\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f \u0435 \u043f\u043e-\u0442\u0435\u0436\u044a\u043a \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b. \u0422\u044f \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430 \u043d\u044f\u043a\u043e\u043b\u043a\u043e \u0432\u0438\u0434\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044a\u0440\u0445\u0443 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0442\u0435 \u0442\u0438\u0440\u0430\u0436\u0438 \u0438 \u043a\u043b\u0430\u0441\u0438\u0440\u0430 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438. \u0422\u043e\u0432\u0430 \u0435 \u0430\u043d\u0430\u043b\u0438\u0437, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f \u0437\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430.",
             "The Advanced Lab is a heavier statistical ensemble. It combines several checks over the historical draws and ranks candidate combinations. This is analysis, not a guarantee of winning.",
         )
     )
-
     training_draws = _v39_adv_model_value(model, "training_draws", "dataset_rows", "rows")
     candidate_count = _v39_adv_model_value(model, "candidate_count", "candidate_combinations")
     fairness = _v39_adv_model_value(model, "fairness_p_value", "fairness_pvalue")
     _v39_adv_render_metrics(training_draws, candidate_count, fairness)
-
-
 def _v39_adv_render_top(model):
     recs = _v39_adv_recommendations(model)
     if not recs:
         return
-
     st.markdown("### " + _v39_adv_text("\u0422\u043e\u043f \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438", "Top Advanced Recommendations"))
-
     for idx, item in enumerate(recs[:10], start=1):
         numbers = _v39_adv_numbers(item)
         score = _v39_adv_score(item)
-
         try:
             score_text = f"{float(score):.2f}/100" if score is not None else "-"
         except Exception:
             score_text = str(score)
-
         st.markdown(
             f"""
             <div class="rank-card">
@@ -1653,12 +1464,9 @@ def _v39_adv_render_top(model):
             """,
             unsafe_allow_html=True,
         )
-
-
 def page_advanced_lab() -> None:
     render_header()
     st.markdown("## " + _v39_adv_text("\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f", "Advanced Laboratory"))
-
     st.markdown(
         '<div class="warning-soft">'
         + _v39_adv_text(
@@ -1668,9 +1476,7 @@ def page_advanced_lab() -> None:
         + "</div>",
         unsafe_allow_html=True,
     )
-
     col_train, col_check = st.columns(2)
-
     with col_train:
         if st.button(
             _v39_adv_text("\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b", "Recalculate Advanced Model"),
@@ -1679,25 +1485,19 @@ def page_advanced_lab() -> None:
         ):
             with st.spinner(_v39_adv_text("\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u044f\u0432\u0430\u043d\u0435...", "Recalculating...")):
                 ok, output = _v39_adv_run("train")
-
             st.cache_data.clear()
-
             training_draws = _v39_adv_parse_int(output, "Training draws")
             candidate_count = _v39_adv_parse_int(output, "Candidate combinations")
             fairness = _v39_adv_parse_float(output, "Fairness p-value")
-
             if ok:
                 st.success(_v39_adv_text("\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f\u0442 \u043c\u043e\u0434\u0435\u043b \u0435 \u043f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0435\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e.", "The advanced model was recalculated successfully."))
                 _v39_adv_render_metrics(training_draws, candidate_count, fairness)
                 st.info(_v39_adv_text("\u0422\u043e\u043f \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438\u0442\u0435 \u0441\u0430 \u043e\u0431\u043d\u043e\u0432\u0435\u043d\u0438 \u043f\u043e \u0442\u0435\u043a\u0443\u0449\u0438\u044f \u043d\u0430\u0431\u043e\u0440 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438. \u0422\u043e\u0432\u0430 \u0435 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e \u043a\u043b\u0430\u0441\u0438\u0440\u0430\u043d\u0435, \u043d\u0435 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430 \u0441\u044a\u0441 \u0441\u0438\u0433\u0443\u0440\u043d\u043e\u0441\u0442.", "The top recommendations were updated using the current dataset. This is a statistical ranking, not a certain prediction."))
             else:
                 st.error(_v39_adv_text("\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u044f\u0432\u0430\u043d\u0435\u0442\u043e \u043d\u0435 \u0443\u0441\u043f\u044f.", "Recalculation failed."))
-
             with st.expander(_v39_adv_text("\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0434\u0435\u0442\u0430\u0439\u043b\u0438", "Technical details"), expanded=False):
                 st.code(_v39_adv_sanitize_output(output)[-5000:])
-
         st.caption(_v39_adv_text("\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u044f\u0432\u0430 \u043f\u043e-\u0442\u0435\u0436\u044a\u043a \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b \u0432\u044a\u0440\u0445\u0443 \u0442\u0435\u043a\u0443\u0449\u0438\u044f \u043d\u0430\u0431\u043e\u0440 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438.", "Recalculates a heavier ensemble using the current dataset."))
-
     with col_check:
         if st.button(
             _v39_adv_text("\u041f\u0443\u0441\u043d\u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", "Run Historical Check"),
@@ -1706,33 +1506,24 @@ def page_advanced_lab() -> None:
         ):
             with st.spinner(_v39_adv_text("\u0418\u0437\u043f\u044a\u043b\u043d\u044f\u0432\u0430\u043d\u0435...", "Running...")):
                 ok, output = _v39_adv_run("backtest")
-
             if ok:
                 st.success(_v39_adv_text("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0435 \u0437\u0430\u0432\u044a\u0440\u0448\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e.", "The historical check completed successfully."))
                 st.info(_v39_adv_text("\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430\u0442\u0430 \u0441\u0440\u0430\u0432\u043d\u044f\u0432\u0430 \u043a\u0430\u043a \u0431\u0438 \u0441\u0435 \u0434\u044a\u0440\u0436\u0430\u043b \u043c\u043e\u0434\u0435\u043b\u044a\u0442 \u0432\u044a\u0440\u0445\u0443 \u043c\u0438\u043d\u0430\u043b\u0438 \u0442\u0438\u0440\u0430\u0436\u0438. \u0422\u043e\u0432\u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430 \u0431\u044a\u0434\u0435\u0449\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430.", "The check compares how the model would have behaved on past draws. It does not prove future winnings."))
             else:
                 st.error(_v39_adv_text("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0435 \u0443\u0441\u043f\u044f.", "The historical check failed."))
-
             with st.expander(_v39_adv_text("\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0434\u0435\u0442\u0430\u0439\u043b\u0438", "Technical details"), expanded=False):
                 st.code(_v39_adv_sanitize_output(output)[-5000:])
-
         st.caption(_v39_adv_text("\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u043c\u043e\u0434\u0435\u043b\u0430 \u043d\u0430\u0437\u0430\u0434 \u0432\u044a\u0432 \u0432\u0440\u0435\u043c\u0435\u0442\u043e \u0432\u044a\u0440\u0445\u0443 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438.", "Checks the model backwards on historical draws."))
-
     model = _v39_adv_load_model()
     if not model:
         st.info(_v39_adv_text("\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u043c\u043e\u0434\u0435\u043b. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b\u201c.", "No advanced model was found yet. Click ?Recalculate Advanced Model?."))
         return
-
     _v39_adv_render_overview(model)
     _v39_adv_render_top(model)
-
     report = REPORTS_DIR / "advanced_backtest_report.md"
     if report.exists():
         with st.expander(_v39_adv_text("\u041e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", "Historical Check Report"), expanded=False):
             render_report_file(report)
-
-
-
 def compute_number_stats(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return pd.DataFrame()
@@ -1762,16 +1553,11 @@ def compute_number_stats(df: pd.DataFrame) -> pd.DataFrame:
             status = tr("status_middle")
         rows.append({"number": n, "count": count, "empirical_%": empirical * 100, "expected_%": EXPECTED_NUMBER_PROB * 100, "z_score": z, "gap": gap, "status": status})
     return pd.DataFrame(rows)
-
-
-
 def _prediction_reason_html(reasons: List[str]) -> str:
     if not reasons:
         return '<div class="small-muted">Няма записано обяснение.</div>'
     items = ''.join(f'<li>{reason}</li>' for reason in reasons)
     return f'<ul class="small-muted" style="margin-top:8px;">{items}</ul>'
-
-
 def render_prediction_card(item: Dict[str, Any], title: str = "Прогнозна комбинация") -> None:
     numbers = item.get("numbers", []) if isinstance(item, dict) else []
     score = item.get("prediction_score") or item.get("confidence_score") or item.get("score") if isinstance(item, dict) else None
@@ -1798,43 +1584,26 @@ def render_prediction_card(item: Dict[str, Any], title: str = "Прогнозн�
         """,
         unsafe_allow_html=True,
     )
-
-
-
 _V39_PRED_GENERATE_SCRIPT = 'predict_next_draw.py'
-
-
-
 _V39_PRED_GENERATE_SCRIPT = ''
-
-
 def _v39_pred_lang():
     try:
         return st.session_state.get("language", globals().get("LANG", "bg"))
     except Exception:
         return globals().get("LANG", "bg")
-
-
 def _v39_pred_text(bg, en):
     return bg if _v39_pred_lang() == "bg" else en
-
-
 def _v39_pred_odds():
     return "1:13,983,816"
-
-
 def _v39_pred_sanitize_output(output):
     if not output:
         return _v39_pred_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
     clean = str(output).replace(chr(0xFFFD), "?")
     clean = re.sub(r"\?{3,}", _v39_pred_text("[\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u0442\u0435\u043a\u0441\u0442]", "[unreadable text]"), clean)
     return clean
-
-
 def _v39_pred_is_bad_script_path(p):
     rel = str(p.relative_to(ROOT)).lower().replace("\\", "/")
     name = p.name.lower()
-
     blocked_parts = [
         ".venv/",
         "__pycache__",
@@ -1848,10 +1617,7 @@ def _v39_pred_is_bad_script_path(p):
         "audit",
         "streamlit_app.py",
     ]
-
     return any(part in rel or part in name for part in blocked_parts)
-
-
 def _v39_pred_find_script():
     known_names = [
         "prediction_engine_v36.py",
@@ -1865,13 +1631,10 @@ def _v39_pred_find_script():
         "create_prediction.py",
         "train_prediction_engine.py",
     ]
-
     if _V39_PRED_GENERATE_SCRIPT:
         known_names.insert(0, _V39_PRED_GENERATE_SCRIPT)
-
     seen = set()
     candidates = []
-
     for name in known_names:
         if not name or name in seen:
             continue
@@ -1879,11 +1642,9 @@ def _v39_pred_find_script():
         for p in [ROOT / name, ROOT / "scripts" / name, ROOT / "src" / name]:
             if p.exists() and p.is_file() and not _v39_pred_is_bad_script_path(p):
                 candidates.append(p)
-
     for p in ROOT.rglob("*.py"):
         if not p.is_file() or _v39_pred_is_bad_script_path(p):
             continue
-
         name = p.name.lower()
         if (
             "prediction" in name
@@ -1893,7 +1654,6 @@ def _v39_pred_find_script():
         ):
             if p not in candidates:
                 candidates.append(p)
-
     # Prefer files that look like real generators, not helpers.
     def rank(p):
         name = p.name.lower()
@@ -1911,12 +1671,8 @@ def _v39_pred_find_script():
         if "train" in name:
             score += 5
         return score, len(str(p))
-
     candidates = sorted(candidates, key=rank)
     return candidates[0] if candidates else None
-
-
-
 def _v39_pred_run_generate():
     model = _v39_pred_load_model()
     if model:
@@ -1924,53 +1680,41 @@ def _v39_pred_run_generate():
             "\u0417\u0430\u0440\u0435\u0434\u0435\u043d\u0430 \u0435 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430.",
             "The latest saved prediction was loaded.",
         )
-
     return False, _v39_pred_text(
         "\u041d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430.",
         "No saved prediction was found.",
     )
-
 def _v39_pred_load_json(p):
     import json
     try:
         return json.loads(p.read_text(encoding="utf-8"))
     except Exception:
         return {}
-
-
 def _v39_pred_load_model():
     if not MODELS_DIR.exists():
         return {}
-
     preferred = [
         "lottery_prediction_model.json",
         "lottery_prediction_model_v36.json",
         "prediction_model.json",
         "prediction_engine_model.json",
     ]
-
     for name in preferred:
         p = MODELS_DIR / name
         if p.exists():
             model = _v39_pred_load_json(p)
             if model:
                 return model
-
     candidates = list(MODELS_DIR.glob("*prediction*.json"))
     versions = MODELS_DIR / "versions"
     if versions.exists():
         candidates.extend(list(versions.glob("*prediction*.json")))
-
     candidates = sorted(candidates, key=lambda p: p.stat().st_mtime if p.exists() else 0, reverse=True)
-
     for p in candidates:
         model = _v39_pred_load_json(p)
         if model:
             return model
-
     return {}
-
-
 def _v39_pred_model_value(model, *keys):
     if not isinstance(model, dict):
         return None
@@ -1979,8 +1723,6 @@ def _v39_pred_model_value(model, *keys):
         if value is not None:
             return value
     return None
-
-
 def _v39_pred_is_ticket(value):
     if not isinstance(value, list) or len(value) != 6:
         return False
@@ -1989,12 +1731,9 @@ def _v39_pred_is_ticket(value):
     except Exception:
         return False
     return len(set(nums)) == 6 and all(1 <= n <= 49 for n in nums)
-
-
 def _v39_pred_find_first_ticket(obj):
     if _v39_pred_is_ticket(obj):
         return sorted([int(x) for x in obj])
-
     if isinstance(obj, dict):
         priority_keys = [
             "numbers",
@@ -2010,28 +1749,21 @@ def _v39_pred_find_first_ticket(obj):
             "top_prediction",
             "top_recommendation",
         ]
-
         for key in priority_keys:
             if key in obj:
                 found = _v39_pred_find_first_ticket(obj.get(key))
                 if found:
                     return found
-
         for value in obj.values():
             found = _v39_pred_find_first_ticket(value)
             if found:
                 return found
-
     if isinstance(obj, list):
         for value in obj:
             found = _v39_pred_find_first_ticket(value)
             if found:
                 return found
-
     return []
-
-
-
 def _v39_pred_find_first_score(obj):
     preferred_keys = [
         "model_score",
@@ -2044,7 +1776,6 @@ def _v39_pred_find_first_score(obj):
         "rating",
         "statistical_score",
     ]
-
     def normalize(value):
         try:
             num = float(value)
@@ -2053,38 +1784,31 @@ def _v39_pred_find_first_score(obj):
         if 0 < num <= 1:
             return num * 100
         return num
-
     if isinstance(obj, dict):
         for key in preferred_keys:
             if key in obj:
                 num = normalize(obj.get(key))
                 if num is not None:
                     return num
-
         for key, value in obj.items():
             lowered = str(key).lower()
             if any(word in lowered for word in ["score", "confidence", "rating"]):
                 num = normalize(value)
                 if num is not None:
                     return num
-
         for value in obj.values():
             found = _v39_pred_find_first_score(value)
             if found is not None:
                 return found
-
     if isinstance(obj, list):
         for value in obj:
             found = _v39_pred_find_first_score(value)
             if found is not None:
                 return found
-
     return None
-
 def _v39_pred_recommendations(model):
     if not isinstance(model, dict):
         return []
-
     for key in [
         "recommendations",
         "top_recommendations",
@@ -2102,14 +1826,10 @@ def _v39_pred_recommendations(model):
             return value
         if isinstance(value, dict):
             return [value]
-
     ticket = _v39_pred_find_first_ticket(model)
     if ticket:
         return [{"numbers": ticket, "score": _v39_pred_find_first_score(model)}]
-
     return []
-
-
 def _v39_pred_numbers(item):
     if isinstance(item, dict):
         for key in ["numbers", "combination", "ticket", "values"]:
@@ -2119,32 +1839,24 @@ def _v39_pred_numbers(item):
     if isinstance(item, list):
         return sorted([int(x) for x in item]) if _v39_pred_is_ticket(item) else item
     return []
-
-
 def _v39_pred_score(item):
     if isinstance(item, dict):
         for key in ["score", "confidence", "confidence_score", "model_score"]:
             if key in item:
                 return item.get(key)
     return None
-
-
-
-
 def _v39_pred_report_score():
     candidates = [
         REPORTS_DIR / "prediction_report.md",
         REPORTS_DIR / "prediction_model_card.md",
         REPORTS_DIR / "prediction_methodology_report.md",
     ]
-
     patterns = [
         r"\u041c\u043e\u0434\u0435\u043b\u043d\u0430\s+\u043e\u0446\u0435\u043d\u043a\u0430\s*[:\-]\s*([0-9]+(?:\.[0-9]+)?)",
         r"Model\s+score\s*[:\-]\s*([0-9]+(?:\.[0-9]+)?)",
         r"score\s*[:\-]\s*([0-9]+(?:\.[0-9]+)?)",
         r"confidence\s*[:\-]\s*([0-9]+(?:\.[0-9]+)?)",
     ]
-
     for p in candidates:
         if not p.exists():
             continue
@@ -2152,7 +1864,6 @@ def _v39_pred_report_score():
             content = p.read_text(encoding="utf-8", errors="replace")
         except Exception:
             continue
-
         for pattern in patterns:
             match = re.search(pattern, content, flags=re.IGNORECASE)
             if match:
@@ -2163,54 +1874,37 @@ def _v39_pred_report_score():
                     return value
                 except Exception:
                     pass
-
     return None
-
 def _v39_pred_main_result(model):
     recs = _v39_pred_recommendations(model)
     main = recs[0] if recs else {}
     numbers = _v39_pred_numbers(main)
     score = _v39_pred_score(main)
-
     if not numbers:
         numbers = _v39_pred_find_first_ticket(model)
-
     if score is None:
         score = _v39_pred_find_first_score(model)
-
     if score is None:
         score = _v39_pred_report_score()
-
     return numbers, score
-
-
 def _v39_pred_score_text(score):
     try:
         return f"{float(score):.2f}/100" if score is not None else "-"
     except Exception:
         return str(score)
-
-
 def _v39_pred_render_metrics(model):
     training_draws = _v39_pred_model_value(model, "training_draws", "dataset_rows", "rows")
     candidate_count = _v39_pred_model_value(model, "candidate_count", "candidate_combinations")
-
     c1, c2 = st.columns(2)
     c1.metric(_v39_pred_text("\u041e\u0431\u0443\u0447\u0435\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438", "Training draws"), f"{int(training_draws):,}" if training_draws else "-")
     c2.metric(_v39_pred_text("\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Candidate combinations"), f"{int(candidate_count):,}" if candidate_count else "-")
-
     odds_label = _v39_pred_text("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441", "Real odds")
     st.markdown(f"**{odds_label}:** `{_v39_pred_odds()}`")
-
-
 def _v39_pred_render_recommendation(model, title=None):
     numbers, score = _v39_pred_main_result(model)
-
     if title is None:
         title = _v39_pred_text("\u041f\u0440\u0435\u043f\u043e\u0440\u044a\u0447\u0430\u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f", "Recommended Combination")
-
     st.markdown("### " + title)
-
     if numbers:
         st.markdown(format_number_pills(numbers), unsafe_allow_html=True)
     else:
@@ -2218,37 +1912,27 @@ def _v39_pred_render_recommendation(model, title=None):
             "\u041d\u0435 \u0441\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442.",
             "No numbers were found in the saved prediction result.",
         ))
-
     score_label = _v39_pred_text("\u041c\u043e\u0434\u0435\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430", "Model score")
     st.markdown(f"**{score_label}:** `{_v39_pred_score_text(score)}`")
-
-
 def _v39_pred_render_plain_explanation(model):
     numbers, score = _v39_pred_main_result(model)
-
     st.markdown("### " + _v39_pred_text(
         "\u041e\u0431\u044f\u0441\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430\u0442\u0430",
         "Prediction Explanation",
     ))
-
     st.markdown(_v39_pred_text(
         "\u0422\u043e\u0432\u0430 \u043d\u0435 \u0435 \u043e\u0431\u0435\u0449\u0430\u043d\u0438\u0435, \u0447\u0435 \u0447\u0438\u0441\u043b\u0430\u0442\u0430 \u0449\u0435 \u0441\u0435 \u043f\u0430\u0434\u043d\u0430\u0442. \u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u043f\u0440\u043e\u0441\u0442\u043e \u043a\u043b\u0430\u0441\u0438\u0440\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u0435\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u043f\u043e \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438.",
         "This is not a promise that the numbers will be drawn. The app simply ranks checked combinations using statistical criteria.",
     ))
-
     _v39_pred_render_metrics(model)
     _v39_pred_render_recommendation(model)
-
     st.info(_v39_pred_text(
         "\u041c\u043e\u0434\u0435\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0435 \u0441\u0430\u043c\u043e \u0437\u0430 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043c\u0435\u0436\u0434\u0443 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438. \u0420\u0435\u0430\u043b\u043d\u0438\u044f\u0442 \u0448\u0430\u043d\u0441 \u043e\u0441\u0442\u0430\u0432\u0430 1:13,983,816.",
         "The model score is only for comparing candidate combinations. The real odds remain 1:13,983,816.",
     ))
-
-
 def page_prediction() -> None:
     render_header()
     st.markdown("## " + _v39_pred_text("\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u0430", "Prediction"))
-
     st.markdown(
         '<div class="warning-soft">'
         + _v39_pred_text(
@@ -2258,10 +1942,8 @@ def page_prediction() -> None:
         + "</div>",
         unsafe_allow_html=True,
     )
-
     generated_now = False
     col_generate, col_explain = st.columns(2)
-
     with col_generate:
         if st.button(
             _v39_pred_text("\u0417\u0430\u0440\u0435\u0434\u0438 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430", "Load Latest Prediction"),
@@ -2270,11 +1952,9 @@ def page_prediction() -> None:
         ):
             with st.spinner(_v39_pred_text("\u0417\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435...", "Loading...")):
                 ok, output = _v39_pred_run_generate()
-
             st.cache_data.clear()
             model = _v39_pred_load_model()
             generated_now = True
-
             if ok:
                 st.success(_v39_pred_text(
                     "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430 \u0435 \u0437\u0430\u0440\u0435\u0434\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e.",
@@ -2301,15 +1981,12 @@ def page_prediction() -> None:
                     ))
                 else:
                     st.error(_v39_pred_text("\u0413\u0435\u043d\u0435\u0440\u0438\u0440\u0430\u043d\u0435\u0442\u043e \u043d\u0435 \u0443\u0441\u043f\u044f.", "Generation failed."))
-
             with st.expander(_v39_pred_text("\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0434\u0435\u0442\u0430\u0439\u043b\u0438", "Technical details"), expanded=False):
                 st.code(_v39_pred_sanitize_output(output)[-5000:])
-
         st.caption(_v39_pred_text(
             "\u0417\u0430\u0440\u0435\u0436\u0434\u0430 \u043d\u0430\u0439-\u043d\u043e\u0432\u0430\u0442\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430.",
             "Loads the latest saved statistical prediction.",
         ))
-
     with col_explain:
         if st.button(
             _v39_pred_text("\u041e\u0431\u044f\u0441\u043d\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430\u0442\u0430", "Explain Prediction"),
@@ -2317,14 +1994,11 @@ def page_prediction() -> None:
             key="v39_explain_prediction_button",
         ):
             st.session_state["v39_prediction_explain_visible"] = not st.session_state.get("v39_prediction_explain_visible", False)
-
         st.caption(_v39_pred_text(
             "\u041e\u0431\u044f\u0441\u043d\u044f\u0432\u0430 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0430 \u043d\u0430 \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0435\u0437\u0438\u043a, \u0431\u0435\u0437 \u0442\u0435\u0445\u043d\u0438\u0447\u043d\u0438 \u0442\u0435\u0440\u043c\u0438\u043d\u0438.",
             "Explains the result in plain language without technical wording.",
         ))
-
     model = _v39_pred_load_model()
-
     if st.session_state.get("v39_prediction_explain_visible", False):
         _v39_pred_render_plain_explanation(model)
     elif not generated_now:
@@ -2336,49 +2010,35 @@ def page_prediction() -> None:
                 "\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u0417\u0430\u0440\u0435\u0434\u0438 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430\u201c.",
                 "No prediction result was found yet. Click ?Load Latest Prediction?.",
             ))
-
-
 def report_language() -> str:
     try:
         return st.session_state.get("language", "bg")
     except Exception:
         return "bg"
-
-
 def localized_2026_partial_update_report() -> str:
     if report_language() == "en":
         return """# Partial 2026 Toto 6/49 Data Update
-
 This report describes the locally provided 2026 Toto 6/49 statistics package added to the project.
-
 - Added 2026 rows: 48
 - 2026 data range: 2026-01-04 to 2026-06-18
 - Final dataset rows: 10057
 - Final year range: 1958-2026
 - Duplicate year/draw/position keys: 0
 - Repeated full number combinations in the whole dataset: 6
-
 Important: 2026 is a partial year and currently includes draws up to 2026-06-18. These data points update the model training dataset, but they do not change the theoretical lottery odds.
 """
-
     return """# \u0427\u0430\u0441\u0442\u0438\u0447\u043d\u0430 \u0430\u043a\u0442\u0443\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u0437\u0430 2026 \u0433. \u2014 \u0422\u043e\u0442\u043e 6/49
-
 \u0422\u043e\u0437\u0438 \u043e\u0442\u0447\u0435\u0442 \u043e\u043f\u0438\u0441\u0432\u0430 \u0434\u043e\u0431\u0430\u0432\u044f\u043d\u0435\u0442\u043e \u043d\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0435\u043d\u0438\u044f \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0430\u043a\u0435\u0442 \u0437\u0430 \u0442\u0438\u0440\u0430\u0436\u0438\u0442\u0435 \u043d\u0430 \u0422\u043e\u0442\u043e 6/49 \u043f\u0440\u0435\u0437 2026 \u0433.
-
 - \u0414\u043e\u0431\u0430\u0432\u0435\u043d\u0438 \u0440\u0435\u0434\u043e\u0432\u0435 \u0437\u0430 2026 \u0433.: 48
 - \u041f\u0435\u0440\u0438\u043e\u0434 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u0437\u0430 2026 \u0433.: 2026-01-04 \u0434\u043e 2026-06-18
 - \u041a\u0440\u0430\u0435\u043d \u0431\u0440\u043e\u0439 \u0440\u0435\u0434\u043e\u0432\u0435 \u0432 \u043d\u0430\u0431\u043e\u0440\u0430 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438: 10057
 - \u041a\u0440\u0430\u0435\u043d \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d \u043d\u0430 \u0433\u043e\u0434\u0438\u043d\u0438\u0442\u0435: 1958\u20132026
 - \u0414\u0443\u0431\u043b\u0438\u0440\u0430\u043d\u0438 \u043a\u043b\u044e\u0447\u043e\u0432\u0435 \u0433\u043e\u0434\u0438\u043d\u0430/\u0442\u0438\u0440\u0430\u0436/\u043f\u043e\u0437\u0438\u0446\u0438\u044f: 0
 - \u041f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438 \u043f\u044a\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u043e\u0442 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0446\u0435\u043b\u0438\u044f \u043d\u0430\u0431\u043e\u0440 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438: 6
-
 \u0412\u0430\u0436\u043d\u043e: 2026 \u0433. \u0435 \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u0430 \u0433\u043e\u0434\u0438\u043d\u0430 \u0438 \u043a\u044a\u043c \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u0432\u043a\u043b\u044e\u0447\u0432\u0430 \u0442\u0438\u0440\u0430\u0436\u0438 \u0434\u043e 2026-06-18. \u0422\u0435\u0437\u0438 \u0434\u0430\u043d\u043d\u0438 \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u0442 \u043d\u0430\u0431\u043e\u0440\u0430 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435, \u043d\u043e \u043d\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f\u0442 \u0442\u0435\u043e\u0440\u0435\u0442\u0438\u0447\u043d\u0438\u0442\u0435 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0438 \u0432 \u043b\u043e\u0442\u0430\u0440\u0438\u044f\u0442\u0430.
 """
-
-
 def render_report_file(path: Path) -> None:
     lang = report_language()
-
     if path.name == "2026_partial_update_report.md":
         text = localized_2026_partial_update_report()
     else:
@@ -2387,9 +2047,7 @@ def render_report_file(path: Path) -> None:
             st.info(f"{missing_message}: {path.name}")
             return
         text = path.read_text(encoding="utf-8", errors="replace")
-
     lines = text.splitlines()
-
     if not lines:
         empty_message = "\u041e\u0442\u0447\u0435\u0442\u044a\u0442 \u0435 \u043f\u0440\u0430\u0437\u0435\u043d." if lang == "bg" else "The report is empty."
         download_label = "\u0421\u0432\u0430\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u0430" if lang == "bg" else "Download report"
@@ -2402,14 +2060,12 @@ def render_report_file(path: Path) -> None:
             key=f"download_{path.name}",
         )
         return
-
     if len(lines) <= 20:
         st.markdown(text)
     else:
         max_rows = min(len(lines), 800)
         default_rows = min(120, max_rows)
         slider_label = "\u0420\u0435\u0434\u043e\u0432\u0435 \u0437\u0430 \u043f\u0440\u0435\u0433\u043b\u0435\u0434" if lang == "bg" else "Rows to preview"
-
         limit = st.slider(
             slider_label,
             min_value=20,
@@ -2417,9 +2073,7 @@ def render_report_file(path: Path) -> None:
             value=default_rows,
             key=f"slider_{path.name}",
         )
-
         st.markdown("\n".join(lines[:limit]))
-
     download_label = "\u0421\u0432\u0430\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u0430" if lang == "bg" else "Download report"
     st.download_button(
         download_label,
@@ -2428,8 +2082,6 @@ def render_report_file(path: Path) -> None:
         mime="text/markdown",
         key=f"download_{path.name}",
     )
-
-
 def page_reports() -> None:
     render_header()
     st.markdown("## " + tr("reports"))
@@ -2451,36 +2103,23 @@ def page_reports() -> None:
     }
     selected = st.selectbox("Отчет", files, format_func=lambda p: report_labels.get(p.name, p.name))
     render_report_file(selected)
-
-
-
-
-
 def _v39_ml_lang() -> str:
     try:
         return st.session_state.get("language", globals().get("LANG", "bg"))
     except Exception:
         return globals().get("LANG", "bg")
-
-
 def _v39_ml_text(bg: str, en: str) -> str:
     return bg if _v39_ml_lang() == "bg" else en
-
-
 def _v39_ml_odds_text() -> str:
     return _v39_ml_text("1:13,983,816", "1:13,983,816")
-
 def _v39_ml_placeholder(kind: str) -> str:
     if kind == "cluster":
         return _v39_ml_text("\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u043a\u043b\u044a\u0441\u0442\u0435\u0440", "unreadable cluster")
     return _v39_ml_text("\u043d\u0435\u0440\u0430\u0437\u0447\u0435\u0442\u0435\u043d \u043a\u043b\u0430\u0441", "unreadable class")
-
-
 def _v39_ml_translate_value(value: Any) -> str:
     s = str(value or "").strip()
     if not s or chr(0xFFFD) in s or ("?" * 4) in s or chr(0xFFFD) in s:
         return s
-
     bg_to_en = {
         "\u0441\u0438\u043b\u0435\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0444\u0438\u0448": "strong statistical ticket",
         "\u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0444\u0438\u0448": "normal statistical ticket",
@@ -2491,19 +2130,14 @@ def _v39_ml_translate_value(value: Any) -> str:
         "\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u0438 \u0444\u0438\u0448\u043e\u0432\u0435": "structure-based tickets",
     }
     en_to_bg = {v: k for k, v in bg_to_en.items()}
-
     if _v39_ml_lang() == "en":
         return bg_to_en.get(s, s)
     return en_to_bg.get(s, s)
-
-
 def _v39_ml_clean_label(value: Any, kind: str = "class") -> str:
     s = str(value or "").strip()
     if not s or chr(0xFFFD) in s or ("?" * 4) in s or chr(0xFFFD) in s:
         return _v39_ml_placeholder(kind)
     return _v39_ml_translate_value(s)
-
-
 def _v39_ml_sanitize_output(output: str) -> str:
     if not output:
         return _v39_ml_text("\u041d\u044f\u043c\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0438\u0437\u0445\u043e\u0434.", "No technical output.")
@@ -2515,8 +2149,6 @@ def _v39_ml_sanitize_output(output: str) -> str:
     clean = re.sub(r"class=[^|\n]*\?[^|\n]*", f"class={class_placeholder}", clean)
     clean = re.sub(r"cluster=[^|\n]*\?[^|\n]*", f"cluster={cluster_placeholder}", clean)
     return clean
-
-
 def _v39_ml_extract_output_int(output: str, label: str) -> Optional[int]:
     try:
         match = re.search(label + r"\s*:\s*([0-9,]+)", output or "", flags=re.IGNORECASE)
@@ -2525,38 +2157,26 @@ def _v39_ml_extract_output_int(output: str, label: str) -> Optional[int]:
     except Exception:
         pass
     return None
-
-
 def _v39_ml_render_model_explanation() -> None:
     st.markdown("### " + _v39_ml_text("\u041a\u0430\u043a \u0440\u0430\u0431\u043e\u0442\u0438 \u041c\u041b \u043c\u043e\u0434\u0435\u043b\u044a\u0442", "How the ML Model Works"))
     st.markdown(
         _v39_ml_text(
             """
 **\u0426\u0435\u043b:** \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043c\u043e\u0434\u0435\u043b \u0437\u0430 \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u043e \u0442\u043e\u0442\u043e 6/49.
-
 **\u041a\u0430\u043a\u0432\u043e \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430:** \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438, \u0447\u0435\u0441\u0442\u043e\u0442\u0438, \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438, \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438 \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430.
-
 **\u0422\u0435\u0445\u043d\u0438\u043a\u0438:** \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0438\u043d\u0433 \u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438, \u0430\u043d\u0430\u043b\u0438\u0437 \u0432\u044a\u0432 \u0432\u0440\u0435\u043c\u0435\u0432\u0438 \u0440\u0435\u0434, \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f, \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f, \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430 \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430.
-
 **\u041a\u0430\u043a\u0432\u043e \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430 \u043e\u0446\u0435\u043d\u043a\u0430\u0442\u0430:** \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0435\u043b\u043d\u043e \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e \u043a\u043b\u0430\u0441\u0438\u0440\u0430\u043d\u0435 \u043c\u0435\u0436\u0434\u0443 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438.
-
 **\u041e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u0435:** \u0432\u0441\u044f\u043a\u0430 6-\u0447\u0438\u0441\u043b\u043e\u0432\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u043e\u0441\u0442\u0430\u0432\u0430 \u0441 \u0440\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441 1 \u043a\u044a\u043c 13,983,816. \u041c\u043e\u0434\u0435\u043b\u044a\u0442 \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0440\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430 \u0438 \u043d\u0435 \u043f\u0440\u0435\u0434\u0432\u0438\u0436\u0434\u0430 \u0431\u044a\u0434\u0435\u0449 \u0442\u0438\u0440\u0430\u0436 \u0441\u044a\u0441 \u0441\u0438\u0433\u0443\u0440\u043d\u043e\u0441\u0442.
 """,
             """
 **Purpose:** educational statistical model for Bulgarian Toto 6/49 analysis.
-
 **Inputs:** historical draws, frequencies, combinations, statistical features, and historical checks.
-
 **Techniques:** feature engineering, time-series analysis, classification, clustering, dimensionality reduction, and backtesting.
-
 **Score meaning:** relative statistical ranking between candidate combinations.
-
 **Limitation:** every 6-number combination still has real odds of 1 in 13,983,816. The model does not guarantee a win and does not predict a future draw with certainty.
 """,
         )
     )
-
-
 def _v39_ml_render_main_card(numbers: List[int], score: Optional[float]) -> None:
     title = _v39_ml_text("\u041e\u0441\u043d\u043e\u0432\u043d\u0430 \u041c\u041b \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430", "Main ML Recommendation")
     meta = _v39_ml_text("\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f + \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f + 2D \u043a\u0430\u0440\u0442\u0430", "Classification + clustering + 2D map")
@@ -2582,8 +2202,6 @@ def _v39_ml_render_main_card(numbers: List[int], score: Optional[float]) -> None
         """,
         unsafe_allow_html=True,
     )
-
-
 def page_ml_lab() -> None:
     render_header()
     st.markdown("## " + _v39_ml_text("\u041c\u041b \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f", "ML Laboratory"))
@@ -2594,7 +2212,6 @@ def page_ml_lab() -> None:
         ) + '</div>',
         unsafe_allow_html=True,
     )
-
     col_train, col_report = st.columns([1.45, 0.55])
     with col_train:
         train_label = _v39_ml_text("\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u041c\u041b \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438\u0442\u0435", "Recalculate ML Recommendations")
@@ -2629,26 +2246,21 @@ def page_ml_lab() -> None:
             "\u041f\u043e\u043a\u0430\u0437\u0432\u0430 \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u0435\u043c\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043d\u0430 \u0442\u0435\u0445\u043d\u0438\u043a\u0438\u0442\u0435, \u0446\u0435\u043b\u0442\u0430 \u0438 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u044f\u0442\u0430 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0430.",
             "Shows a clear explanation of the model purpose, techniques, and limitations.",
         ))
-
     if st.session_state.get("v39_show_ml_model_explanation", False):
         _v39_ml_render_model_explanation()
-
     model = model_json("lottery_ml_extensions_model.json")
     if not model:
         st.info(_v39_ml_text("\u041c\u041b \u043c\u043e\u0434\u0435\u043b\u044a\u0442 \u043e\u0449\u0435 \u043d\u0435 \u0435 \u043d\u0430\u043b\u0438\u0447\u0435\u043d. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 '\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u041c\u041b \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438\u0442\u0435'.", "The ML model is not available yet. Click 'Recalculate ML Recommendations'."))
         return
-
     recs = extract_recommendations(model)
     numbers, score = main_recommendation(model)
     _v39_ml_render_main_card(numbers, score)
-
     summary = model.get("backtest_summary", {})
     c1, c2, c3, c4 = st.columns(4)
     c1.metric(_v39_ml_text("\u041e\u0431\u0443\u0447\u0435\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438", "Training draws"), f"{model.get('training_draws', 0):,}")
     c2.metric(_v39_ml_text("\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Candidate combinations"), f"{model.get('candidate_count', 0):,}")
     c3.metric(_v39_ml_text("\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u2014 \u0441\u0440\u0435\u0434\u043d\u043e", "Historical check \u00b7 average"), summary.get("average_matches", "-"))
     c4.metric(_v39_ml_text(">=2 \u0441\u044a\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u044f", ">=2 matches"), f"{summary.get('hit_rate_ge_2', 0)}%")
-
     tabs = st.tabs([
         _v39_ml_text("\u0422\u043e\u043f \u041c\u041b \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438", "Top ML Recommendations"),
         _v39_ml_text("\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f", "Classification"),
@@ -2656,7 +2268,6 @@ def page_ml_lab() -> None:
         _v39_ml_text("2D \u043a\u0430\u0440\u0442\u0430", "2D Map"),
         _v39_ml_text("\u041e\u0442\u0447\u0435\u0442\u0438", "Reports"),
     ])
-
     with tabs[0]:
         st.markdown("### " + _v39_ml_text("\u0422\u043e\u043f \u041c\u041b \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438", "Top ML Recommendations"))
         for item in recs[:15]:
@@ -2676,7 +2287,6 @@ def page_ml_lab() -> None:
                 </div>
                 """
             st.markdown(html, unsafe_allow_html=True)
-
     with tabs[1]:
         classifier = model.get("classifier", {})
         st.markdown("### " + _v39_ml_text("\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u043d\u0430 \u0444\u0438\u0448\u043e\u0432\u0435", "Ticket Classification"))
@@ -2693,7 +2303,6 @@ def page_ml_lab() -> None:
                 _v39_ml_text("\u041f\u0440\u0430\u0433 33%", "33% threshold"): quantiles.get("q33"),
                 _v39_ml_text("\u041f\u0440\u0430\u0433 66%", "66% threshold"): quantiles.get("q66"),
             }]), width="stretch", hide_index=True)
-
     with tabs[2]:
         st.markdown("### " + _v39_ml_text("\u041a\u043b\u044a\u0441\u0442\u0435\u0440\u0438 \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Combination Clusters"))
         clusters = model.get("cluster_model", {}).get("cluster_summaries", [])
@@ -2714,7 +2323,6 @@ def page_ml_lab() -> None:
             st.dataframe(df_clusters, width="stretch", hide_index=True)
         else:
             st.info(_v39_ml_text("\u041d\u044f\u043c\u0430 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u0438 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438.", "No saved clusters."))
-
     with tabs[3]:
         st.markdown("### " + _v39_ml_text("2D \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438\u0442\u0435", "2D Map of Combinations"))
         reduction = model.get("dimensionality_reduction", {})
@@ -2733,7 +2341,6 @@ def page_ml_lab() -> None:
             ))
         else:
             st.caption(_v39_ml_text("\u041d\u044f\u043c\u0430 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u0438 \u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442\u0438 \u0437\u0430 \u043e\u0431\u044f\u0441\u043d\u0435\u043d\u0430 \u0432\u0430\u0440\u0438\u0430\u0446\u0438\u044f.", "No explained-variance values saved."))
-
         points = model.get("projection_points_sample", [])
         if points:
             chart_df = pd.DataFrame(points)
@@ -2782,7 +2389,6 @@ def page_ml_lab() -> None:
             st.dataframe(chart_df[table_cols], width="stretch", hide_index=True)
         else:
             st.info(_v39_ml_text("\u041d\u044f\u043c\u0430 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u0438 \u0442\u043e\u0447\u043a\u0438 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430.", "No saved points for the 2D map."))
-
     with tabs[4]:
         report_files = [
             "ml_extensions_report.md",
@@ -2802,8 +2408,6 @@ def page_ml_lab() -> None:
         }
         selected = st.selectbox(_v39_ml_text("\u041c\u041b \u043e\u0442\u0447\u0435\u0442", "ML report"), report_files, format_func=lambda name: report_labels.get(name, name), key="v39_ml_report_select")
         render_report_file(REPORTS_DIR / selected)
-
-
 def parse_uploaded_numbers(raw: str) -> List[int]:
     numbers = [int(x) for x in re.findall(r"\b\d{1,2}\b", raw)]
     valid = [n for n in numbers if 1 <= n <= 49]
@@ -2812,8 +2416,6 @@ def parse_uploaded_numbers(raw: str) -> List[int]:
         if len(chunk) == 6 and len(set(chunk)) == 6:
             return sorted(chunk)
     return []
-
-
 def backup_csv(prefix: str) -> Optional[Path]:
     if not DATA_PATH.exists():
         return None
@@ -2821,8 +2423,6 @@ def backup_csv(prefix: str) -> Optional[Path]:
     backup = BACKUP_DIR / f"{prefix}_{stamp}.csv"
     shutil.copy2(DATA_PATH, backup)
     return backup
-
-
 def read_csv_rows() -> Tuple[List[Dict[str, str]], List[str]]:
     if not DATA_PATH.exists():
         fields = ["date", "year", "draw_number", "draw_position", "n1", "n2", "n3", "n4", "n5", "n6", "source"]
@@ -2837,8 +2437,6 @@ def read_csv_rows() -> Tuple[List[Dict[str, str]], List[str]]:
             for row in rows:
                 row.setdefault(field, "")
     return rows, fields
-
-
 def write_csv_rows(rows: List[Dict[str, Any]], fields: List[str]) -> None:
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     with DATA_PATH.open("w", encoding="utf-8-sig", newline="") as file:
@@ -2846,8 +2444,6 @@ def write_csv_rows(rows: List[Dict[str, Any]], fields: List[str]) -> None:
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in fields})
-
-
 def retrain_all_models() -> List[Tuple[str, bool, str]]:
     scripts = [
         "train_model.py",
@@ -2876,21 +2472,13 @@ def retrain_all_models() -> List[Tuple[str, bool, str]]:
     (REPORTS_DIR / "manual_update_retrain_log.md").write_text("\n".join(log_lines), encoding="utf-8")
     st.cache_data.clear()
     return results
-
-
-
-
 def _v39_git_lang() -> str:
     try:
         return st.session_state.get("language", globals().get("LANG", "bg"))
     except Exception:
         return globals().get("LANG", "bg")
-
-
 def _v39_git_text(bg: str, en: str) -> str:
     return bg if _v39_git_lang() == "bg" else en
-
-
 def _v39_git_run(args: List[str]) -> Tuple[bool, str]:
     try:
         completed = subprocess.run(
@@ -2906,23 +2494,17 @@ def _v39_git_run(args: List[str]) -> Tuple[bool, str]:
         return completed.returncode == 0, output.strip()
     except Exception as exc:
         return False, str(exc)
-
-
 def _v39_git_collect_sync_paths() -> List[str]:
     paths: List[Path] = []
-
     app_file = ROOT / "streamlit_app.py"
     if app_file.exists():
         paths.append(app_file)
-
     if DATA_PATH.exists():
         paths.append(DATA_PATH)
-
     if MODELS_DIR.exists():
         for item in MODELS_DIR.rglob("*.json"):
             if item.is_file():
                 paths.append(item)
-
     if REPORTS_DIR.exists():
         allowed_suffixes = {".md", ".json", ".csv", ".svg", ".png"}
         for item in REPORTS_DIR.rglob("*"):
@@ -2937,7 +2519,6 @@ def _v39_git_collect_sync_paths() -> List[str]:
             if ".bak" in lowered_name or ".tmp" in lowered_name:
                 continue
             paths.append(item)
-
     clean_paths: List[str] = []
     seen = set()
     for item in paths:
@@ -2951,38 +2532,28 @@ def _v39_git_collect_sync_paths() -> List[str]:
         if rel not in seen:
             seen.add(rel)
             clean_paths.append(rel)
-
     return sorted(clean_paths)
-
-
 def _v39_git_filtered_status() -> str:
     ok, output = _v39_git_run(["status", "--short"])
     if not ok:
         return output or "git status failed"
-
     visible_lines: List[str] = []
     for line in output.splitlines():
         lowered = line.lower()
         if "backup" in lowered or ".v39_local_backups" in lowered or "__pycache__" in lowered:
             continue
         visible_lines.append(line)
-
     return "\n".join(visible_lines).strip()
-
-
 def _v39_git_sync(commit_message: str) -> Tuple[bool, str]:
     repo_ok, repo_output = _v39_git_run(["rev-parse", "--is-inside-work-tree"])
     if not repo_ok:
         return False, "Git repository was not detected.\n" + repo_output
-
     sync_paths = _v39_git_collect_sync_paths()
     if not sync_paths:
         return False, "No sync paths were found."
-
     add_ok, add_output = _v39_git_run(["add", "--", *sync_paths])
     if not add_ok:
         return False, "git add failed:\n" + add_output
-
     diff_check = subprocess.run(
         ["git", "diff", "--cached", "--quiet"],
         cwd=str(ROOT),
@@ -2992,21 +2563,17 @@ def _v39_git_sync(commit_message: str) -> Tuple[bool, str]:
         errors="replace",
         shell=False,
     )
-
     if diff_check.returncode == 0:
         return True, _v39_git_text(
             "\u041d\u044f\u043c\u0430 \u043d\u043e\u0432\u0438 \u043f\u0440\u043e\u043c\u0435\u043d\u0438 \u0437\u0430 \u043a\u0430\u0447\u0432\u0430\u043d\u0435 \u0432 GitHub.",
             "There are no new changes to upload to GitHub.",
         )
-
     commit_ok, commit_output = _v39_git_run(["commit", "-m", commit_message])
     if not commit_ok:
         return False, "git commit failed:\n" + commit_output
-
     push_ok, push_output = _v39_git_run(["push"])
     if not push_ok:
         return False, "git push failed:\n" + push_output
-
     final_output = "\n\n".join(
         part for part in [
             "git commit:",
@@ -3017,8 +2584,6 @@ def _v39_git_sync(commit_message: str) -> Tuple[bool, str]:
         if part
     )
     return True, final_output
-
-
 def _v39_render_github_sync_panel() -> None:
     st.markdown("### " + _v39_git_text("GitHub \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u044f", "GitHub Sync"))
     st.caption(
@@ -3027,7 +2592,6 @@ def _v39_render_github_sync_panel() -> None:
             "After adding a draw and recalculating the models, you can save and upload the changes to GitHub with one button.",
         )
     )
-
     status_text = _v39_git_filtered_status()
     if status_text:
         with st.expander(_v39_git_text("\u041f\u0440\u043e\u043c\u0435\u043d\u0438, \u043a\u043e\u0438\u0442\u043e \u0449\u0435 \u0441\u0435 \u043a\u0430\u0447\u0430\u0442", "Changes that can be uploaded"), expanded=False):
@@ -3039,14 +2603,12 @@ def _v39_render_github_sync_panel() -> None:
                 "There are no visible GitHub changes.",
             )
         )
-
     default_message = "Update lottery data and model artifacts"
     commit_message = st.text_input(
         _v39_git_text("\u0421\u044a\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0437\u0430 GitHub commit", "GitHub commit message"),
         value=default_message,
         key="v39_github_commit_message",
     )
-
     if st.button(
         _v39_git_text("\u041a\u0430\u0447\u0438 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435\u0442\u043e \u0432 GitHub", "Upload update to GitHub"),
         width="stretch",
@@ -3055,7 +2617,6 @@ def _v39_render_github_sync_panel() -> None:
         message = commit_message.strip() or default_message
         with st.spinner(_v39_git_text("\u041a\u0430\u0447\u0432\u0430\u043d\u0435 \u0432 GitHub...", "Uploading to GitHub...")):
             ok, output = _v39_git_sync(message)
-
         if ok:
             st.success(
                 _v39_git_text(
@@ -3070,19 +2631,13 @@ def _v39_render_github_sync_panel() -> None:
                     "The update could not be uploaded to GitHub.",
                 )
             )
-
         with st.expander(_v39_git_text("\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 GitHub \u0438\u0437\u0445\u043e\u0434", "Technical GitHub output"), expanded=False):
             st.code(output[-5000:] if output else "")
-
-
 def page_update_draws():
     from importlib import reload
-
     import src.add_draws_section as add_draws_section
-
     reload(add_draws_section)
     add_draws_section.render()
-
 def page_glossary() -> None:
     with st.expander(tr("term_help"), expanded=False):
         st.markdown(
@@ -3095,51 +2650,32 @@ def page_glossary() -> None:
             **Моделна оценка** — моделна оценка за ранкинг, не процент шанс за джакпот.
             """
         )
-
-
-
-
-
-
-
-
-
-
 def page_ticket_analyzer() -> None:
     render_header()
-
     lang = st.session_state.get("language", globals().get("LANG", "bg"))
-
     def tx(bg: str, en: str) -> str:
         return bg if lang == "bg" else en
-
     def rerun_page() -> None:
         if hasattr(st, "rerun"):
             st.rerun()
         elif hasattr(st, "experimental_rerun"):
             st.experimental_rerun()
-
     def combo_key(index: int) -> str:
         return f"v39_ticket_slip_combo_{index}"
-
     def get_combo(index: int) -> list[int]:
         st.session_state.setdefault(combo_key(index), [])
         values = st.session_state.get(combo_key(index), [])
         return sorted([int(x) for x in values])
-
     def set_combo(index: int, values) -> None:
         st.session_state[combo_key(index)] = sorted([int(x) for x in values])
         st.session_state["v39_ticket_slip_show_analysis"] = False
-
     def toggle_number(index: int, number: int) -> None:
         selected = set(get_combo(index))
-
         if number in selected:
             selected.remove(number)
             set_combo(index, selected)
             rerun_page()
             return
-
         if len(selected) >= 6:
             st.session_state["v39_ticket_slip_message"] = tx(
                 "\u0412 \u0435\u0434\u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u043c\u043e\u0436\u0435 \u0434\u0430 \u0438\u043c\u0430 \u0442\u043e\u0447\u043d\u043e 6 \u0447\u0438\u0441\u043b\u0430. \u041f\u044a\u0440\u0432\u043e \u043c\u0430\u0445\u043d\u0438 \u0435\u0434\u043d\u043e \u0447\u0438\u0441\u043b\u043e.",
@@ -3147,61 +2683,46 @@ def page_ticket_analyzer() -> None:
             )
             rerun_page()
             return
-
         selected.add(number)
         set_combo(index, selected)
         rerun_page()
-
     def fmt_numbers(values) -> str:
         values = sorted([int(x) for x in values])
         return ", ".join(str(x) for x in values) if values else "\u2014"
-
     def selected_chips(values) -> str:
         values = sorted([int(x) for x in values])
-
         if not values:
             return f'<span class="v39-empty">{tx("\u043d\u044f\u043c\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430", "no selected numbers")}</span>'
-
         chips = ""
         for value in values:
             chips += f'<span class="v39-chip">{value}</span>'
-
         return chips
-
-
-
     def build_ticket_explanation(values, zone):
         values = sorted([int(x) for x in values])
-
         total = sum(values)
         even = sum(1 for number in values if number % 2 == 0)
         odd = 6 - even
         low = sum(1 for number in values if 1 <= number <= 16)
         middle_band = sum(1 for number in values if 17 <= number <= 33)
         high = sum(1 for number in values if 34 <= number <= 49)
-
         parts = []
-
         if zone:
             hot_count = len(zone.get("hot", []))
             middle_count = len(zone.get("middle", []))
             cold_count = len(zone.get("cold", []))
             kind = zone.get("kind", "")
-
             parts.append(
                 tx(
                     f"**\u041e\u0431\u0449 \u0438\u0437\u0432\u043e\u0434:** \u0442\u0430\u0437\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u0435 **{kind}**.",
                     f"**Overall:** this combination is **{kind}**.",
                 )
             )
-
             parts.append(
                 tx(
                     f"**\u0417\u043e\u043d\u043e\u0432 \u0430\u043d\u0430\u043b\u0438\u0437:** {hot_count} \u0447\u0438\u0441\u043b\u0430 \u0441\u0430 \u0432 \u0433\u043e\u0440\u0435\u0449\u0430\u0442\u0430 \u0437\u043e\u043d\u0430, {middle_count} \u0441\u0430 \u0432 \u0441\u0440\u0435\u0434\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430 \u0438 {cold_count} \u0441\u0430 \u0432 \u0441\u0442\u0443\u0434\u0435\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430.",
                     f"**Zone analysis:** {hot_count} numbers are in the hot zone, {middle_count} are in the middle zone, and {cold_count} are in the cold zone.",
                 )
             )
-
             if hot_count >= 3:
                 parts.append(
                     tx(
@@ -3237,7 +2758,6 @@ def page_ticket_analyzer() -> None:
                     "**Overall:** zone analysis is not available, but the basic indicators below still describe the combination.",
                 )
             )
-
         if even in [2, 3, 4]:
             parts.append(
                 tx(
@@ -3252,7 +2772,6 @@ def page_ticket_analyzer() -> None:
                     f"**Even/odd:** the balance is {even}/{odd}, which is a more extreme distribution.",
                 )
             )
-
         if low > 0 and middle_band > 0 and high > 0:
             parts.append(
                 tx(
@@ -3267,7 +2786,6 @@ def page_ticket_analyzer() -> None:
                     f"**Low/middle/high:** the distribution is {low}/{middle_band}/{high}, so the combination is more concentrated in one range.",
                 )
             )
-
         if 110 <= total <= 190:
             parts.append(
                 tx(
@@ -3289,17 +2807,13 @@ def page_ticket_analyzer() -> None:
                     f"**Sum:** the total is {total}, which makes the combination higher in number profile.",
                 )
             )
-
         parts.append(
             tx(
                 "**\u0412\u0430\u0436\u043d\u043e:** \u0442\u043e\u0432\u0430 \u0435 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435. \u0422\u043e \u043d\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f \u0440\u0435\u0430\u043b\u043d\u0438\u044f \u0448\u0430\u043d\u0441 \u0437\u0430 \u0442\u043e\u0447\u043d\u0430 6/49 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f: **1:13,983,816**.",
                 "**Important:** this is a statistical description. It does not change the real odds for an exact 6/49 combination: **1:13,983,816**.",
             )
         )
-
         return "\n\n".join(parts)
-
-
     def render_page_css() -> None:
         st.markdown(
             """
@@ -3315,20 +2829,17 @@ def page_ticket_analyzer() -> None:
                 font-weight: 800 !important;
                 box-shadow: none !important;
             }
-
             div[data-testid="stButton"] > button:hover {
                 border-color: rgba(245, 216, 108, 0.82) !important;
                 background: rgba(245, 216, 108, 0.12) !important;
                 color: #f8e6a0 !important;
             }
-
             div[data-testid="stButton"] > button[kind="primary"] {
                 border-color: rgba(236, 0, 140, 0.95) !important;
                 background: rgba(236, 0, 140, 0.18) !important;
                 color: #f7d66d !important;
                 font-weight: 950 !important;
             }
-
             .v39-slip-wrap {
                 border: 1px solid rgba(245, 216, 108, 0.25);
                 border-radius: 18px;
@@ -3338,7 +2849,6 @@ def page_ticket_analyzer() -> None:
                     rgba(255,255,255,0.025);
                 margin: 12px 0 18px 0;
             }
-
             .v39-slip-title {
                 display: flex;
                 align-items: center;
@@ -3350,20 +2860,17 @@ def page_ticket_analyzer() -> None:
                 background: rgba(0,0,0,0.20);
                 margin-bottom: 14px;
             }
-
             .v39-slip-title-main {
                 color: #f5ead4;
                 font-size: 1.15rem;
                 font-weight: 900;
                 letter-spacing: 0.2px;
             }
-
             .v39-slip-title-sub {
                 color: rgba(255,255,255,0.62);
                 font-size: 0.9rem;
                 margin-top: 3px;
             }
-
             .v39-combo-head {
                 border: 1px solid rgba(245,216,108,0.28);
                 border-bottom: 0;
@@ -3376,13 +2883,11 @@ def page_ticket_analyzer() -> None:
                 font-size: 0.98rem;
                 margin-top: 4px;
             }
-
             .v39-combo-count {
                 color: rgba(255,255,255,0.64);
                 font-weight: 700;
                 font-size: 0.86rem;
             }
-
             .v39-selected-row {
                 display: flex;
                 align-items: center;
@@ -3394,13 +2899,11 @@ def page_ticket_analyzer() -> None:
                 border: 1px solid rgba(245,216,108,0.22);
                 background: rgba(245,216,108,0.065);
             }
-
             .v39-selected-label {
                 color: #f4d36c;
                 font-weight: 900;
                 margin-right: 2px;
             }
-
             .v39-chip {
                 display: inline-flex;
                 align-items: center;
@@ -3415,12 +2918,10 @@ def page_ticket_analyzer() -> None:
                 border: 1px solid rgba(255,230,140,0.55);
                 box-shadow: 0 0 10px rgba(245,216,108,0.14);
             }
-
             .v39-empty {
                 color: rgba(255,255,255,0.58);
                 font-weight: 700;
             }
-
             .v39-slip-summary {
                 border: 1px solid rgba(245,216,108,0.22);
                 background: rgba(255,255,255,0.035);
@@ -3428,12 +2929,10 @@ def page_ticket_analyzer() -> None:
                 padding: 14px 16px;
                 margin-top: 16px;
             }
-
             .v39-summary-line {
                 margin: 7px 0;
                 color: rgba(255,255,255,0.86);
             }
-
             .v39-summary-line strong {
                 color: #f4d36c;
             }
@@ -3441,15 +2940,12 @@ def page_ticket_analyzer() -> None:
             """,
             unsafe_allow_html=True,
         )
-
     def render_combo(index: int) -> None:
         values = get_combo(index)
         count_text = f"{len(values)}/6"
-
         combo_label = tx("\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f", "Combination")
         selected_label = tx("\u0418\u0437\u0431\u0440\u0430\u043d\u0438", "Selected")
         clear_label = tx("\u0418\u0437\u0447\u0438\u0441\u0442\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430", "Clear combination")
-
         with st.container(border=True):
             st.markdown(
                 f"""
@@ -3460,16 +2956,13 @@ def page_ticket_analyzer() -> None:
                 """,
                 unsafe_allow_html=True,
             )
-
             for row in range(7):
                 columns = st.columns(7, gap="small")
-
                 for col in range(7):
                     number = row * 7 + col + 1
                     selected = number in values
                     label = "\u2715" if selected else str(number)
                     button_type = "primary" if selected else "secondary"
-
                     if columns[col].button(
                         label,
                         key=f"v39_ticket_cell_{index}_{number}",
@@ -3477,7 +2970,6 @@ def page_ticket_analyzer() -> None:
                         width="stretch",
                     ):
                         toggle_number(index, number)
-
             st.markdown(
                 f"""
                 <div class="v39-selected-row">
@@ -3487,54 +2979,41 @@ def page_ticket_analyzer() -> None:
                 """,
                 unsafe_allow_html=True,
             )
-
             if st.button(clear_label, key=f"v39_ticket_clear_{index}", width="stretch"):
                 set_combo(index, [])
                 rerun_page()
-
     def detect_number_columns(df):
         candidates = [
             ["n1", "n2", "n3", "n4", "n5", "n6"],
             ["num1", "num2", "num3", "num4", "num5", "num6"],
             ["number1", "number2", "number3", "number4", "number5", "number6"],
         ]
-
         for columns in candidates:
             if all(column in df.columns for column in columns):
                 return columns
-
         numeric_columns = []
-
         for column in df.columns:
             lowered = str(column).lower()
             if lowered in ["year", "draw", "draw_id", "date", "month", "day"]:
                 continue
-
             try:
                 sample = df[column].dropna().head(30).astype(int)
                 if len(sample) > 0 and sample.between(1, 49).all():
                     numeric_columns.append(column)
             except Exception:
                 pass
-
         return numeric_columns[:6] if len(numeric_columns) >= 6 else []
-
     def calculate_zones(numbers):
         try:
             df = load_data()
         except Exception:
             return None
-
         if df is None or getattr(df, "empty", True):
             return None
-
         columns = detect_number_columns(df)
-
         if not columns:
             return None
-
         frequency = {number: 0 for number in range(1, 50)}
-
         for _, row in df.iterrows():
             for column in columns:
                 try:
@@ -3543,17 +3022,13 @@ def page_ticket_analyzer() -> None:
                         frequency[value] += 1
                 except Exception:
                     pass
-
         ordered = sorted(range(1, 50), key=lambda number: (-frequency[number], number))
-
         hot_set = set(ordered[:16])
         middle_set = set(ordered[16:33])
         cold_set = set(ordered[33:])
-
         hot = sorted([number for number in numbers if number in hot_set])
         middle = sorted([number for number in numbers if number in middle_set])
         cold = sorted([number for number in numbers if number in cold_set])
-
         if len(hot) >= 3 and len(cold) <= 1:
             kind = tx("\u0411\u043b\u0438\u0437\u043e \u0434\u043e \u0433\u043e\u0440\u0435\u0449\u0430\u0442\u0430 \u0437\u043e\u043d\u0430", "Close to the hot zone")
             explanation = tx(
@@ -3578,7 +3053,6 @@ def page_ticket_analyzer() -> None:
                 "\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f\u0442\u0430 \u0435 \u0441\u0440\u0430\u0432\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u0437\u043e\u043d\u0438\u0442\u0435.",
                 "The combination is relatively balanced across the zones.",
             )
-
         return {
             "hot": hot,
             "middle": middle,
@@ -3586,11 +3060,8 @@ def page_ticket_analyzer() -> None:
             "kind": kind,
             "explanation": explanation,
         }
-
     render_page_css()
-
     st.markdown("## " + tx("\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448", "Ticket analysis"))
-
     st.markdown(
         '<div class="warning-soft">'
         + tx(
@@ -3600,14 +3071,11 @@ def page_ticket_analyzer() -> None:
         + "</div>",
         unsafe_allow_html=True,
     )
-
     message = st.session_state.pop("v39_ticket_slip_message", None)
     if message:
         st.warning(message)
-
     title_main = tx("\u0424\u0438\u0448 6/49", "6/49 ticket")
     title_sub = tx("\u0415\u0434\u0438\u043d \u0444\u0438\u0448 \u0441 4 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "One ticket with 4 separate combinations")
-
     st.markdown(
         f"""
         <div class="v39-slip-wrap">
@@ -3622,26 +3090,20 @@ def page_ticket_analyzer() -> None:
         """,
         unsafe_allow_html=True,
     )
-
     top_left, top_right = st.columns(2)
     with top_left:
         render_combo(1)
     with top_right:
         render_combo(2)
-
     bottom_left, bottom_right = st.columns(2)
     with bottom_left:
         render_combo(3)
     with bottom_right:
         render_combo(4)
-
     st.markdown("### " + tx("\u041e\u0431\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043d\u0430 \u0444\u0438\u0448\u0430", "Ticket summary"))
-
     summary_lines = ""
-
     for index in range(1, 5):
         values = get_combo(index)
-
         if len(values) == 0:
             status = tx("\u043d\u044f\u043c\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u0447\u0438\u0441\u043b\u0430", "no selected numbers")
         elif len(values) < 6:
@@ -3651,10 +3113,8 @@ def page_ticket_analyzer() -> None:
             )
         else:
             status = fmt_numbers(values)
-
         combo_label = tx("\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f", "Combination")
         summary_lines += f'<div class="v39-summary-line"><strong>{combo_label} {index}:</strong> {status}</div>'
-
     st.markdown(
         f"""
         <div class="v39-slip-summary">
@@ -3663,9 +3123,7 @@ def page_ticket_analyzer() -> None:
         """,
         unsafe_allow_html=True,
     )
-
     col_analyze, col_clear = st.columns(2)
-
     with col_analyze:
         if st.button(
             tx("\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0444\u0438\u0448\u0430", "Analyze ticket"),
@@ -3675,7 +3133,6 @@ def page_ticket_analyzer() -> None:
         ):
             st.session_state["v39_ticket_slip_show_analysis"] = True
             rerun_page()
-
     with col_clear:
         if st.button(
             tx("\u0418\u0437\u0447\u0438\u0441\u0442\u0438 \u0446\u0435\u043b\u0438\u044f \u0444\u0438\u0448", "Clear whole ticket"),
@@ -3686,7 +3143,6 @@ def page_ticket_analyzer() -> None:
                 set_combo(index, [])
             st.session_state["v39_ticket_slip_show_analysis"] = False
             rerun_page()
-
     if not st.session_state.get("v39_ticket_slip_show_analysis", False):
         st.info(
             tx(
@@ -3695,14 +3151,10 @@ def page_ticket_analyzer() -> None:
             )
         )
         return
-
     completed = [(index, get_combo(index)) for index in range(1, 5) if len(get_combo(index)) == 6]
     incomplete = [(index, get_combo(index)) for index in range(1, 5) if 0 < len(get_combo(index)) < 6]
-
     st.markdown("## " + tx("\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0444\u0438\u0448\u0430", "Ticket analysis result"))
-
     st.metric(tx("\u041f\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Completed combinations"), f"{len(completed)} / 4")
-
     for index, values in incomplete:
         st.warning(
             tx(
@@ -3710,7 +3162,6 @@ def page_ticket_analyzer() -> None:
                 f"Combination {index} has {len(values)} of 6 numbers and will not be analyzed until completed.",
             )
         )
-
     if not completed:
         st.error(
             tx(
@@ -3719,11 +3170,9 @@ def page_ticket_analyzer() -> None:
             )
         )
         return
-
     for index, values in completed:
         combo_title = tx(f"\u041a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f {index}", f"Combination {index}")
         st.markdown("### " + combo_title)
-
         st.markdown(
             f"""
             <div class="v39-selected-row">
@@ -3733,86 +3182,60 @@ def page_ticket_analyzer() -> None:
             """,
             unsafe_allow_html=True,
         )
-
         total = sum(values)
         even = sum(1 for number in values if number % 2 == 0)
         odd = 6 - even
         low = sum(1 for number in values if 1 <= number <= 16)
         middle_band = sum(1 for number in values if 17 <= number <= 33)
         high = sum(1 for number in values if 34 <= number <= 49)
-
         c1, c2, c3, c4 = st.columns(4)
         c1.metric(tx("\u0421\u0443\u043c\u0430", "Sum"), total)
         c2.metric(tx("\u0427\u0435\u0442\u043d\u0438 / \u043d\u0435\u0447\u0435\u0442\u043d\u0438", "Even / odd"), f"{even} / {odd}")
         c3.metric(tx("\u041d\u0438\u0441\u043a\u0438 / \u0441\u0440\u0435\u0434\u043d\u0438 / \u0432\u0438\u0441\u043e\u043a\u0438", "Low / middle / high"), f"{low} / {middle_band} / {high}")
         c4.metric(tx("\u0420\u0435\u0430\u043b\u0435\u043d \u0448\u0430\u043d\u0441", "Real odds"), "1:13,983,816")
-
         zone = calculate_zones(values)
-
         st.markdown("#### " + tx("\u041e\u0431\u044f\u0441\u043d\u0435\u043d\u0438\u0435", "Explanation"))
         st.info(build_ticket_explanation(values, zone))
-
         if zone:
             z1, z2, z3, z4 = st.columns(4)
             z1.metric(tx("\u0413\u043e\u0440\u0435\u0449\u0430 \u0437\u043e\u043d\u0430", "Hot zone"), len(zone["hot"]))
             z2.metric(tx("\u0421\u0440\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430", "Middle zone"), len(zone["middle"]))
             z3.metric(tx("\u0421\u0442\u0443\u0434\u0435\u043d\u0430 \u0437\u043e\u043d\u0430", "Cold zone"), len(zone["cold"]))
             z4.metric(tx("\u0422\u0438\u043f", "Type"), zone["kind"])
-
             hot_label = tx("\u0413\u043e\u0440\u0435\u0449\u0430 \u0437\u043e\u043d\u0430", "Hot zone")
             middle_label = tx("\u0421\u0440\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430", "Middle zone")
             cold_label = tx("\u0421\u0442\u0443\u0434\u0435\u043d\u0430 \u0437\u043e\u043d\u0430", "Cold zone")
-
             st.markdown(
                 f"**{hot_label}:** {fmt_numbers(zone['hot'])}  \n"
                 f"**{middle_label}:** {fmt_numbers(zone['middle'])}  \n"
                 f"**{cold_label}:** {fmt_numbers(zone['cold'])}"
             )
-
             st.success(zone["explanation"])
-
     st.info(
         tx(
             "\u0412\u0441\u0438\u0447\u043a\u0438 \u0442\u0435\u0437\u0438 \u0438\u0437\u0432\u043e\u0434\u0438 \u0441\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438. \u0422\u0435 \u043d\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f\u0442 \u0440\u0435\u0430\u043b\u043d\u0438\u044f \u0448\u0430\u043d\u0441 \u0437\u0430 \u0442\u043e\u0447\u043d\u0430 6/49 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f: 1:13,983,816.",
             "All these conclusions are statistical. They do not change the real odds for an exact 6/49 combination: 1:13,983,816.",
         )
     )
-
-
-
-
 def page_probability_lab():
     from importlib import reload
-
     import src.probability_lab_section as probability_lab_section
-
     reload(probability_lab_section)
     probability_lab_section.render()
-
-
-
-
-
-
 # HISTORY_LOAD_DATA_COMPAT_START
 def load_data():
     """Compatibility loader for the Historical Statistics page.
-
     Reads the active historical 6/49 dataset.
     This is analysis data only and does not guarantee lottery winnings.
     """
     data_path = Path("data") / "historical_draws.csv"
-
     if not data_path.exists():
         fallback_path = Path(__file__).resolve().parent / "data" / "historical_draws.csv"
         if fallback_path.exists():
             data_path = fallback_path
-
     if not data_path.exists():
         raise FileNotFoundError("Missing data/historical_draws.csv")
-
     df = pd.read_csv(data_path)
-
     # Normalize common numeric columns without changing the source file.
     numeric_candidates = [
         "year",
@@ -3843,35 +3266,22 @@ def load_data():
         "bonus",
         "bonus_number",
     ]
-
     for column in numeric_candidates:
         if column in df.columns:
             df[column] = pd.to_numeric(df[column], errors="coerce")
-
     if "date" in df.columns:
         df["date"] = df["date"].astype(str)
-
     return df
 # HISTORY_LOAD_DATA_COMPAT_END
-
-
-
-
-
 # BG_TEXT_RUNTIME_HELPER_START
 def _bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
 # BG_TEXT_RUNTIME_HELPER_END
-
-
-
 # HISTORY_RECENT_DRAWS_DISPLAY_START
 def _format_history_recent_draws(df, rows: int = 10):
     if df is None or len(df) == 0:
         return pd.DataFrame()
-
     work = df.copy()
-
     for column in [
         "draw_id", "year", "draw_number", "draw_no", "draw",
         "draw_position", "drawing_no", "position",
@@ -3881,19 +3291,16 @@ def _format_history_recent_draws(df, rows: int = 10):
     ]:
         if column in work.columns:
             work[column] = pd.to_numeric(work[column], errors="coerce")
-
     number_sets = [
         ["n1", "n2", "n3", "n4", "n5", "n6"],
         ["num1", "num2", "num3", "num4", "num5", "num6"],
         ["number_1", "number_2", "number_3", "number_4", "number_5", "number_6"],
     ]
-
     number_columns = []
     for columns in number_sets:
         if all(column in work.columns for column in columns):
             number_columns = columns
             break
-
     sort_columns = [
         column for column in [
             "year", "draw_number", "draw_no", "draw",
@@ -3901,35 +3308,28 @@ def _format_history_recent_draws(df, rows: int = 10):
         ]
         if column in work.columns
     ]
-
     recent = work.sort_values(sort_columns, na_position="first").tail(rows).copy() if sort_columns else work.tail(rows).copy()
-
     display = pd.DataFrame(index=recent.index)
-
     if "date" in recent.columns:
         display[_bg("d094d0b0d182d0b0")] = (
             recent["date"]
             .astype(str)
             .replace({"None": "-", "nan": "-", "NaT": "-", "": "-"})
         )
-
     if "year" in recent.columns:
         display[_bg("d093d0bed0b4d0b8d0bdd0b0")] = recent["year"].apply(
             lambda value: "-" if pd.isna(value) else str(int(value))
         )
-
     draw_column = next((column for column in ["draw_number", "draw_no", "draw"] if column in recent.columns), None)
     if draw_column:
         display[_bg("d0a2d0b8d180d0b0d0b620e28496")] = recent[draw_column].apply(
             lambda value: "-" if pd.isna(value) else str(int(value))
         )
-
     position_column = next((column for column in ["draw_position", "drawing_no", "position"] if column in recent.columns), None)
     if position_column:
         display[_bg("d0a2d0b5d0b3d0bbd0b5d0bdd0b5")] = recent[position_column].apply(
             lambda value: "-" if pd.isna(value) else str(int(value))
         )
-
     if number_columns:
         def format_numbers(row):
             values = []
@@ -3939,214 +3339,119 @@ def _format_history_recent_draws(df, rows: int = 10):
                     continue
                 values.append(str(int(value)))
             return " - ".join(values)
-
         display[_bg("d09ad0bed0bcd0b1d0b8d0bdd0b0d186d0b8d18f")] = recent.apply(format_numbers, axis=1)
-
     return display.reset_index(drop=True)
 # HISTORY_RECENT_DRAWS_DISPLAY_END
-
-
-
 def page_history() -> None:
     st.title(_bg("d098d181d182d0bed180d0b8d187d0b5d181d0bad0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b0"))
-
     st.info(
         _bg("d0a2d0b0d0b7d0b820d181d0b5d0bad186d0b8d18f20d0bfd0bed0bad0b0d0b7d0b2d0b020d0bed181d0bdd0bed0b2d0bdd0b020d0b8d181d182d0bed180d0b8d187d0b5d181d0bad0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b020d0bed18220d0bdd0b0d0b1d0bed180d0b020d0bed18220d0b4d0b0d0bdd0bdd0b82e20d0a2d18f20d0b520d0b7d0b020d0b0d0bdd0b0d0bbd0b8d0b72c20d0bdd0b520d0b7d0b020d0b3d0b0d180d0b0d0bdd186d0b8d18f20d0b7d0b020d0bfd0b5d187d0b0d0bbd0b1d0b02e")
     )
-
     try:
         data = load_data()
     except Exception as exc:
         st.error(f'{_bg("d094d0b0d0bdd0bdd0b8d182d0b520d0bdd0b520d0bcd0bed0b3d0b0d18220d0b4d0b020d181d0b520d0b7d0b0d180d0b5d0b4d18fd182")}: {exc}')
         return
-
     if data is None or len(data) == 0:
         st.warning(_bg("d09dd18fd0bcd0b020d0bdd0b0d0bbd0b8d187d0bdd0b820d0b8d181d182d0bed180d0b8d187d0b5d181d0bad0b820d0b4d0b0d0bdd0bdd0b820d0b7d0b020d0bfd0bed0bad0b0d0b7d0b2d0b0d0bdd0b52e"))
         return
-
     year_series = pd.to_numeric(data["year"], errors="coerce") if "year" in data.columns else None
-
     total_draws = len(data)
     first_year = int(year_series.min()) if year_series is not None and not year_series.dropna().empty else "-"
     last_year = int(year_series.max()) if year_series is not None and not year_series.dropna().empty else "-"
-
     metric_col_1, metric_col_2, metric_col_3 = st.columns(3)
     metric_col_1.metric(_bg("d09ed0b1d18920d0b1d180d0bed0b920d182d0b8d180d0b0d0b6d0b8"), f"{total_draws:,}")
     metric_col_2.metric(_bg("d09fd18ad180d0b2d0b020d0b3d0bed0b4d0b8d0bdd0b0"), first_year)
     metric_col_3.metric(_bg("d09fd0bed181d0bbd0b5d0b4d0bdd0b020d0b3d0bed0b4d0b8d0bdd0b0"), last_year)
-
     st.subheader(_bg("d09fd0bed181d0bbd0b5d0b4d0bdd0b820d182d0b8d180d0b0d0b6d0b8"))
     recent_display = _format_history_recent_draws(data, rows=10)
-
     if recent_display.empty:
         st.warning(_bg("d09dd18fd0bcd0b020d0b4d0bed181d182d0b0d182d18ad187d0bdd0be20d0b4d0b0d0bdd0bdd0b820d0b7d0b020d0bfd0bed181d0bbd0b5d0b4d0bdd0b820d182d0b8d180d0b0d0b6d0b82e"))
     else:
         st.dataframe(recent_display, hide_index=True, use_container_width=True)
-
     st.info(
         _bg("d098d181d182d0bed180d0b8d187d0b5d181d0bad0b0d182d0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b020d0bfd0bed0bcd0b0d0b3d0b020d0b7d0b020d181d180d0b0d0b2d0bdd0b5d0bdd0b8d0b520d0b820d0bed0b1d183d187d0b5d0bdd0b8d0b52c20d0bdd0be20d0bdd0b520d0bfd180d0b5d0b4d181d0bad0b0d0b7d0b2d0b020d0b1d18ad0b4d0b5d18920d182d0b8d180d0b0d0b620d0b820d0bdd0b520d0b3d0b0d180d0b0d0bdd182d0b8d180d0b020d0bfd0b5d187d0b0d0bbd0b1d0b02e")
     )
-
-
-
-
-
-
-
-
-
-
 # V41_RULES_AWARE_STREAMLIT_HOOK_START
 def page_v41_rules_aware_analysis() -> None:
     """Render the user-friendly rules-aware historical analysis section."""
     try:
         import importlib
-
         module = importlib.import_module("src.v41_rules_aware_analysis_section")
         module = importlib.reload(module)
         module.render_v41_rules_aware_analysis()
     except Exception as exc:
         st.warning(f"Историческият анализ не може да бъде показан в момента: {exc}")
 # V41_RULES_AWARE_STREAMLIT_HOOK_END
-
-
-
 # V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_START
 def _v42_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
-
-
 def page_v42_combined_analysis() -> None:
     try:
         import importlib
-
         module = importlib.import_module("src.v42_combined_analysis_section")
         module = importlib.reload(module)
         module.render_v42_combined_analysis()
     except Exception as exc:
         st.warning(f'{_v42_bg("d094d0b0d0bdd0bdd0b8d182d0b520d0bdd0b02076343220d0bdd0b520d0bcd0bed0b3d0b0d18220d0b4d0b020d181d0b520d0b7d0b0d180d0b5d0b4d18fd182")}: {exc}')
-
 def _rhythm_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
-
-
 def page_interval_rhythm_analysis() -> None:
     import importlib
-
     module = importlib.import_module("src.v43_interval_rhythm_analysis_section")
     importlib.reload(module)
     module.render_interval_rhythm_analysis()
 FINAL_ENSEMBLE_LABEL = "\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043e\u0431\u043e\u0431\u0449\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437"
-
-
 def page_final_ensemble_analysis():
     from importlib import reload
-
     import src.v44_final_ensemble_analysis_section as final_ensemble_section
-
     reload(final_ensemble_section)
     final_ensemble_section.render()
-
-
 PREDICTION_DASHBOARD_PRO_LABEL = "Прогнозно табло Pro"
-
-
 def page_prediction_dashboard_pro() -> None:
     from importlib import reload
-
     import src.v45_prediction_dashboard_pro_section as prediction_dashboard_pro_section
-
     reload(prediction_dashboard_pro_section)
     prediction_dashboard_pro_section.render()
-
-
 STRATEGY_LAB_LABEL = "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f"
-
-
 def page_strategy_lab() -> None:
     from importlib import reload
-
     import src.strategy_lab_section as strategy_lab_section
-
     reload(strategy_lab_section)
     strategy_lab_section.render()
-
-
 BACKTESTING_CENTER_LABEL = "\u0426\u0435\u043d\u0442\u044a\u0440 \u0437\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"
-
-
 def page_backtesting_center() -> None:
     from importlib import reload
-
     import src.backtesting_center_section as backtesting_center_section
-
     reload(backtesting_center_section)
     backtesting_center_section.render()
-
-
 TICKET_BUILDER_LABEL = "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438"
-
-
 def page_ticket_builder() -> None:
     from importlib import reload
-
     import src.ticket_builder_section as ticket_builder_section
-
     reload(ticket_builder_section)
     ticket_builder_section.render()
-
-
 TRAINING_CENTER_LABEL = "\u0426\u0435\u043d\u0442\u044a\u0440 \u0437\u0430 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435"
-
-
 def page_training_center() -> None:
     from importlib import reload
-
     import src.training_center_section as training_center_section
-
     reload(training_center_section)
     training_center_section.render()
-
-
 PAIR_GROUP_LABEL = "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0434\u0432\u043e\u0439\u043a\u0438 \u0438 \u0433\u0440\u0443\u043f\u0438"
-
-
 def page_pair_group_analysis() -> None:
     from importlib import reload
-
     import src.v50_pair_group_analysis_section as pair_group_analysis_section
-
     reload(pair_group_analysis_section)
     pair_group_analysis_section.render()
-
-
 TICKET_PORTFOLIO_LABEL = "\u041e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0444\u0438\u0448"
-
-
 def page_ticket_portfolio() -> None:
     from importlib import reload
-
     import src.v51_ticket_portfolio_section as ticket_portfolio_section
-
     reload(ticket_portfolio_section)
     ticket_portfolio_section.render()
-
-
-
-
-
-
-
-
-
 def _rhythm_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
-
-
-
 # V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_END
-
-
 def main() -> None:
     page_glossary()
     pages = {
@@ -4193,6 +3498,7 @@ def main() -> None:
         "Контрол на синхрона": render_v74_model_dependency_sync_center_section,
         "Невронна лаборатория": render_v75_neural_meta_learner_section,
         "Обяснимост и валидация": render_v76_explainability_validation_section,
+        "Решение и препоръка": render_v77_decision_recommendation_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -4247,6 +3553,7 @@ def main() -> None:
             'Пакет за игра',
             'Представяне на пакета',
             'Обновяване на анализите',
+            "Решение и препоръка",
             'Контрол на синхрона',
             "Невронна лаборатория",
             'Обяснимост и валидация',
@@ -4275,7 +3582,5 @@ def main() -> None:
         st.cache_data.clear()
         st.rerun()
     pages[choice]()
-
-
 if __name__ == "__main__":
     main()

@@ -615,6 +615,48 @@
     {
       "description": "Изходът помага на следващ слой",
       "from": "Step 76",
+      "to": "Step 77",
+      "type": "feeds"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 77",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/historical_draws.csv",
+      "to": "Step 77",
+      "type": "dataset"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v76_explainability_validation_summary.json",
+      "to": "Step 77",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v76_ticket_validation.csv",
+      "to": "Step 77",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v76_number_explanations.csv",
+      "to": "Step 77",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v76_validation_warnings.csv",
+      "to": "Step 77",
+      "type": "artifact"
+    },
+    {
+      "description": "Изходът помага на следващ слой",
+      "from": "Step 77",
       "to": "Step 74",
       "type": "feeds"
     }
@@ -1180,7 +1222,7 @@
       ],
       "ensemble_source": false,
       "feeds": [
-        "Step 74"
+        "Step 77"
       ],
       "inputs": [
         "reports/v75_neural_meta_number_scores.csv",
@@ -1199,6 +1241,35 @@
       "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
       "script": "scripts/v76_build_explainability_validation_center.py",
       "step": "76"
+    },
+    {
+      "category": "Решение и препоръка",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "inputs": [
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_validation_warnings.csv"
+      ],
+      "label": "Решение и препоръка",
+      "outputs": [
+        "models/v77/v77_decision_recommendation_model.json",
+        "reports/v77_decision_recommendation_summary.json",
+        "reports/v77_decision_recommendation_summary.md",
+        "reports/v77_ticket_recommendations.csv",
+        "reports/v77_decision_recommendations.json",
+        "reports/v77_decision_warnings.csv"
+      ],
+      "role": "Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.",
+      "script": "scripts/v77_build_decision_recommendation_center.py",
+      "step": "77"
     }
   ],
   "primary_datasets": [
@@ -1280,7 +1351,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T14:47:28+00:00",
+    "generated_at": "2026-06-22T15:02:40+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1290,7 +1361,7 @@
       "models/v74/v74_model_dependency_sync_center_model.json"
     ],
     "missing_models": 0,
-    "models_checked": 25,
+    "models_checked": 26,
     "name": "Контрол на синхрона между моделите",
     "pipeline_chain": [
       "Данни от тиражи",
@@ -1307,10 +1378,10 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "6cd9cb484134a46705004cbcf01eec78798997daf3b1fffde18821c552d9b6d3",
+    "state_hash": "56dea79abb0758643aefb7bf6100b2ebe8b23fcaba47bbe1542c3bd20967dda7",
     "status": "Синхронизиран",
     "step": "74",
-    "synced_models": 25
+    "synced_models": 26
   },
   "sync_status": [
     {
@@ -1846,7 +1917,7 @@
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
-      "feeds": "Step 74",
+      "feeds": "Step 77",
       "inputs": "reports/v75_neural_meta_number_scores.csv; reports/v75_neural_candidate_tickets.csv; reports/v75_neural_meta_learner_summary.json",
       "label": "Обяснимост и валидация",
       "latest_input_mtime": "2026-06-22T17:05:12",
@@ -1861,6 +1932,28 @@
       "script_exists": true,
       "status_rank": 2,
       "step": "76",
+      "sync_status": "Синхронизиран"
+    },
+    {
+      "category": "Решение и препоръка",
+      "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
+      "dependencies_present": true,
+      "ensemble_source": false,
+      "feeds": "Step 74",
+      "inputs": "reports/v76_explainability_validation_summary.json; reports/v76_ticket_validation.csv; reports/v76_number_explanations.csv; reports/v76_validation_warnings.csv",
+      "label": "Решение и препоръка",
+      "latest_input_mtime": "2026-06-22T17:47:27",
+      "latest_output_mtime": "2026-06-22T18:02:39",
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "outputs": "models/v77/v77_decision_recommendation_model.json; reports/v77_decision_recommendation_summary.json; reports/v77_decision_recommendation_summary.md; reports/v77_ticket_recommendations.csv; reports/v77_decision_recommendations.json; reports/v77_decision_warnings.csv",
+      "outputs_present": true,
+      "role": "Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
+      "script": "scripts/v77_build_decision_recommendation_center.py",
+      "script_exists": true,
+      "status_rank": 2,
+      "step": "77",
       "sync_status": "Синхронизиран"
     }
   ]

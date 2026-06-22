@@ -945,3 +945,41 @@ for _node in MODEL_NODES:
             _feeds.append("Step 76")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 76 EXPLAINABILITY VALIDATION WIRING END
+
+# STEP 77 DECISION RECOMMENDATION WIRING START
+_STEP77_NODE = {
+    "step": "77",
+    "label": "Решение и препоръка",
+    "category": "Решение и препоръка",
+    "script": "scripts/v77_build_decision_recommendation_center.py",
+    "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+    "inputs": [
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_validation_warnings.csv",
+    ],
+    "outputs": [
+        "models/v77/v77_decision_recommendation_model.json",
+        "reports/v77_decision_recommendation_summary.json",
+        "reports/v77_decision_recommendation_summary.md",
+        "reports/v77_ticket_recommendations.csv",
+        "reports/v77_decision_recommendations.json",
+        "reports/v77_decision_warnings.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "77" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP77_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "76":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 77" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 77" not in _feeds:
+            _feeds.append("Step 77")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 77 DECISION RECOMMENDATION WIRING END

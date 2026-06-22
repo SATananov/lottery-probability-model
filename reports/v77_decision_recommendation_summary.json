@@ -1,0 +1,36 @@
+{
+  "best_decision_score": 62.744,
+  "best_numbers": "2,21,25,34,43,45",
+  "best_recommendation_level": "резервен кандидат",
+  "best_ticket_id": "5",
+  "decision_warnings": 0,
+  "latest_date": "2026-06-21",
+  "latest_draw_no": "1",
+  "latest_numbers": "6,13,16,19,42,44",
+  "leading_count": 0,
+  "name": "Решение и препоръка",
+  "next_step": "74",
+  "recommendations_count": 8,
+  "reserve_count": 8,
+  "safe_note": "Step 77 подрежда и препоръчва кандидат фишове според статистически сигнали, обяснимост и структурна валидация. Това не е гаранция за печалба.",
+  "source_step": "76",
+  "state_hash": "fb903823e50ef03e",
+  "status": "OK",
+  "step": 77,
+  "strong_count": 0,
+  "top3_numbers": [
+    "2,21,25,34,43,45",
+    "2,21,30,40,42,45",
+    "7,21,27,28,34,45"
+  ],
+  "top3_ticket_ids": [
+    "5",
+    "8",
+    "4"
+  ],
+  "unsuitable_count": 0,
+  "v76_numbers_explained": 49,
+  "v76_warning_items": 10,
+  "valid_draws": 10058,
+  "watch_count": 0
+}
