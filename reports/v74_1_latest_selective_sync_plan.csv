@@ -1,25 +1,3 @@
 ﻿order,step,label,category,script,script_exists,role
-1,41,Правилово-съзнати модели,Базов модел,scripts/v41_train_rules_aware_models.py,True,Дава rules-aware прогнозни сигнали върху основните числа.
-2,42,Комбиниран позитивен/негативен анализ,Комбиниран анализ,scripts/v42_build_combined_positive_negative_foundation.py,True,Комбинира позитивни и негативни статистически сигнали.
-3,43.1,Интервален ритъм,Интервален анализ,scripts/v43_1_refine_interval_rhythm_foundation.py,True,"Следи ритъм на поява, интервали и закъснели числа."
-4,44.1,Финален ensemble фиш foundation,Ensemble,scripts/v44_1_refine_final_ensemble_ticket_foundation.py,True,Обединява по-ранни сигнали във финален ensemble фиш.
-5,45,Прогнозно табло Pro,ML модел,scripts/v45_train_prediction_engine_pro.py,True,Тренира prediction engine с feature matrix и backtest.
-6,50,Анализ на двойки и групи,Групова статистика,scripts/v50_build_pair_group_intelligence.py,True,"Анализира двойки, групи и съвместни появи."
-7,51,Интелигентна оценка на портфейл от фишове,Портфолио,scripts/v51_build_ticket_portfolio_intelligence.py,True,Оценява фишове и портфолио чрез покритие и групова логика.
-8,55,Профил на число,Профилиране,scripts/v55_build_number_profile_center.py,True,"Профилира всяко число по честота, интервали, двойки и стабилност."
-9,56,Подобни исторически тиражи,Similarity search,scripts/v56_build_draw_similarity_search.py,True,Сравнява комбинации с исторически тиражи.
-10,57,"Горещи, студени и стабилни числа",Сигнален център,scripts/v57_build_hot_cold_stable_center.py,True,Извлича hot/cold/stable сигнали за числа.
-11,58,Умна обединена оценка 2,Smart ensemble,scripts/v58_build_smart_ensemble_score_2.py,True,"Обединява профили, hot/cold/stable и pattern сигнали."
-12,59,Умен генератор на фишове 2,Генератор,scripts/v59_build_smart_ticket_builder_2.py,True,Генерира кандидат комбинации по различни стратегии.
-13,61,Анализ на нов тираж,Проверка след тираж,scripts/v61_build_draw_result_analyzer.py,True,Проверява сигналите срещу последния реален тираж.
-14,62,История на моделите,Performance tracker,scripts/v62_build_model_performance_tracker.py,True,Събира история на представянето на моделите.
-15,63,Надеждност на моделите,Reliability,scripts/v63_build_model_reliability_dashboard.py,True,Изчислява reliability score за следените модели.
-16,65,Умно тегло на моделите,Adaptive weighting,scripts/v65_build_model_weighting_center.py,True,Превръща надеждността в адаптивни тегла.
-17,66,Претеглен ensemble анализ,Weighted ensemble,scripts/v66_build_weighted_smart_ensemble.py,True,Обединява активните сигнали според адаптивните тегла.
-18,67,Умен генератор с тегла,Weighted ticket builder,scripts/v67_build_weighted_ticket_builder.py,True,Строи фишове върху Step 66 weighted scores.
-19,68,Умен оптимизатор на портфейл,Portfolio optimizer,scripts/v68_build_weighted_portfolio_optimizer.py,True,"Оценява портфейл, покритие, повторения и концентрация."
-20,69,Подобряване на портфолио,Improvement suggestions,scripts/v69_build_portfolio_improvement_suggestions.py,True,Предлага подобрения без да презаписва основния пакет.
-21,70,Приложен подобрен портфейл,Applied portfolio,scripts/v70_build_applied_candidate_portfolio.py,True,Фиксира подобрения пакет като отделна статистическа референция.
-22,71,Пакет за игра,Ticket pack export,scripts/v71_build_ticket_pack_export.py,True,Подготвя printable/export пакет за игра с физически фишове.
-23,73,Представяне на пакета,Performance after draw,scripts/v73_build_ticket_pack_performance_tracker.py,True,Проверява активния пакет срещу реални тиражи преди dataset refresh.
-24,74,Контрол на синхрона,Контролен център,scripts/v74_build_model_dependency_sync_center.py,True,Преизчислява централния audit след обновяване.
+1,75,Невронен мета-обучител,Невронен мета-обучител,scripts/v75_build_neural_meta_learner.py,True,Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.
+2,74,Контрол на синхрона,Контролен център,scripts/v74_build_model_dependency_sync_center.py,True,Преизчислява централния audit след обновяване.

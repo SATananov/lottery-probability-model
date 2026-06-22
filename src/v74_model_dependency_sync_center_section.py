@@ -144,7 +144,7 @@ def _show_git_result(result):
         with st.expander("Оставащи локални промени след GitHub синхрон"):
             st.code(remaining, language="text")
 
-    with st.expander("?????? ???? GitHub ????????????????", expanded=status not in {"OK", "Няма промени"}):
+    with st.expander("Детайли от GitHub синхронизацията", expanded=status not in {"OK", "Няма промени"}):
         for step in result.get("steps", []) or []:
             st.markdown(f"**{step.get('name', 'git')}** — code {step.get('returncode')}")
             stdout = str(step.get("stdout", "") or "").strip()
