@@ -45,7 +45,7 @@
     }
   ],
   "ensemble_sources": 8,
-  "generated_at": "2026-06-22T17:01:56+00:00",
+  "generated_at": "2026-06-22T17:09:45+00:00",
   "generated_reports": [
     "reports/v74_model_dependency_summary.json",
     "reports/v74_model_dependency_summary.md",
@@ -72,7 +72,7 @@
   ],
   "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
   "stale_models": 0,
-  "state_hash": "67014305c6924c737547f55ead6ecc158fd4619fcc6d71648c6cd66efc0f1710",
+  "state_hash": "97f517dd51980f4a450284e36d778b87204768a5a97a7576abe36c7141c27644",
   "status": "Синхронизиран",
   "step": "74",
   "synced_models": 32

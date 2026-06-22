@@ -419,8 +419,8 @@ src/v81_final_ux_navigation_engine.py,file,11556,True,Included in release manife
 src/v81_final_ux_navigation_section.py,file,3733,True,Included in release manifest
 src/v82_final_release_package_engine.py,file,18814,True,Included in release manifest
 src/v82_final_release_package_section.py,file,4131,True,Included in release manifest
-src/v83_final_user_manual_engine.py,file,17829,True,Included in release manifest
-src/v83_final_user_manual_section.py,file,4177,True,Included in release manifest
+src/v83_final_user_manual_engine.py,file,18240,True,Included in release manifest
+src/v83_final_user_manual_section.py,file,6475,True,Included in release manifest
 scripts/audit_bst_dataset.py,file,2439,True,Included in release manifest
 scripts/download_bst_649_history.py,file,1165,True,Included in release manifest
 scripts/v40_create_normalized_draw_events.py,file,8756,True,Included in release manifest
@@ -476,7 +476,7 @@ models/lottery_gap_model.json,file,34239,True,Included in release manifest
 models/lottery_middle_model.json,file,35048,True,Included in release manifest
 models/lottery_ml_extensions_model.json,file,37760,True,Included in release manifest
 models/lottery_prediction_model.json,file,51777,True,Included in release manifest
-models/model_registry.json,file,96739,True,Included in release manifest
+models/model_registry.json,file,100864,True,Included in release manifest
 models/v41/v41_frequency_main_numbers_model.json,file,1987,True,Included in release manifest
 models/v41/v41_latest_predictions.json,file,800,True,Included in release manifest
 models/v41/v41_recency_main_numbers_model.json,file,1297,True,Included in release manifest
@@ -514,7 +514,7 @@ models/v70/v70_applied_candidate_portfolio_model.json,file,17983,True,Included i
 models/v71/v71_ticket_pack_export_model.json,file,9725,True,Included in release manifest
 models/v72/v72_pipeline_refresh_model.json,file,6873,True,Included in release manifest
 models/v73/v73_ticket_pack_performance_tracker_model.json,file,5201,True,Included in release manifest
-models/v74/v74_model_dependency_sync_center_model.json,file,96739,True,Included in release manifest
+models/v74/v74_model_dependency_sync_center_model.json,file,100864,True,Included in release manifest
 models/v75/v75_neural_meta_learner_model.json,file,10846,True,Included in release manifest
 models/v76/v76_explainability_validation_model.json,file,55262,True,Included in release manifest
 models/v77/v77_decision_recommendation_model.json,file,11638,True,Included in release manifest
@@ -523,7 +523,7 @@ models/v79/v79_ticket_pack_export_model.json,file,12828,True,Included in release
 models/v80/v80_final_system_audit_model.json,file,31195,True,Included in release manifest
 models/v81/v81_final_ux_navigation_model.json,file,42690,True,Included in release manifest
 models/v82/v82_final_release_package_model.json,file,19825,True,Included in release manifest
-models/v83/v83_final_user_manual_model.json,file,15476,True,Included in release manifest
+models/v83/v83_final_user_manual_model.json,file,15776,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260620_205905.json,file,37760,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260620_210331.json,file,37760,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260621_062313.json,file,37760,True,Included in release manifest
@@ -692,10 +692,10 @@ reports/v73_ticket_pack_performance_summary.json,file,1128,True,Included in rele
 reports/v73_ticket_pack_performance_summary.md,file,1568,True,Included in release manifest
 reports/v74_1_latest_selective_sync_plan.csv,file,1430,True,Included in release manifest
 reports/v74_1_latest_selective_sync_result.json,file,13538,True,Included in release manifest
-reports/v74_model_dependency_map.csv,file,11409,True,Included in release manifest
+reports/v74_model_dependency_map.csv,file,12045,True,Included in release manifest
 reports/v74_model_dependency_summary.json,file,2662,True,Included in release manifest
-reports/v74_model_dependency_summary.md,file,5721,True,Included in release manifest
-reports/v74_model_sync_status.csv,file,26657,True,Included in release manifest
+reports/v74_model_dependency_summary.md,file,5844,True,Included in release manifest
+reports/v74_model_sync_status.csv,file,27755,True,Included in release manifest
 reports/v75_neural_candidate_tickets.csv,file,431,True,Included in release manifest
 reports/v75_neural_candidate_tickets.json,file,1922,True,Included in release manifest
 reports/v75_neural_meta_learner_summary.json,file,3251,True,Included in release manifest
@@ -738,10 +738,10 @@ reports/v81_streamlit_label_audit.csv,file,2793,True,Included in release manifes
 reports/v82_clean_zip_exclusion_plan.csv,file,3011,True,Included in release manifest
 reports/v82_final_release_summary.json,file,2405,True,Included in release manifest
 reports/v82_final_release_summary.md,file,872,True,Included in release manifest
-reports/v82_release_file_manifest.csv,file,62501,True,Included in release manifest
+reports/v82_release_file_manifest.csv,file,63254,True,Included in release manifest
 reports/v82_release_readiness_checklist.csv,file,9716,True,Included in release manifest
-reports/v83_app_guide_sections.csv,file,6240,True,Included in release manifest
+reports/v83_app_guide_sections.csv,file,6377,True,Included in release manifest
 reports/v83_final_user_manual_summary.json,file,1127,True,Included in release manifest
-reports/v83_final_user_manual_summary.md,file,4257,True,Included in release manifest
-reports/v83_recommended_workflow.csv,file,3152,True,Included in release manifest
-reports/v83_safe_usage_checklist.csv,file,1573,True,Included in release manifest
+reports/v83_final_user_manual_summary.md,file,4433,True,Included in release manifest
+reports/v83_recommended_workflow.csv,file,3281,True,Included in release manifest
+reports/v83_safe_usage_checklist.csv,file,1607,True,Included in release manifest
