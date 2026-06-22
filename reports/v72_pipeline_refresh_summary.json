@@ -1,14 +1,14 @@
 {
   "step": "72",
   "name": "Full Weighted Pipeline Refresh Integration",
-  "mode": "audit",
+  "mode": "run",
   "include_core": false,
   "steps_planned": 10,
   "steps_reported": 10,
   "all_scripts_present": true,
   "all_outputs_present": true,
-  "run_pipeline": false,
-  "run_ok": "",
+  "run_pipeline": true,
+  "run_ok": true,
   "stopped_at": "",
   "weighted_steps": [
     "61",
@@ -23,7 +23,7 @@
     "71"
   ],
   "core_steps_included": [],
-  "generated_at": "2026-06-22T09:55:46+00:00",
+  "generated_at": "2026-06-22T10:00:43+00:00",
   "generated_reports": [
     "reports/v72_pipeline_refresh_summary.json",
     "reports/v72_pipeline_refresh_summary.md",

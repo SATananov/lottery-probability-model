@@ -2,14 +2,14 @@
   "summary": {
     "step": "72",
     "name": "Full Weighted Pipeline Refresh Integration",
-    "mode": "audit",
+    "mode": "run",
     "include_core": false,
     "steps_planned": 10,
     "steps_reported": 10,
     "all_scripts_present": true,
     "all_outputs_present": true,
-    "run_pipeline": false,
-    "run_ok": "",
+    "run_pipeline": true,
+    "run_ok": true,
     "stopped_at": "",
     "weighted_steps": [
       "61",
@@ -24,7 +24,7 @@
       "71"
     ],
     "core_steps_included": [],
-    "generated_at": "2026-06-22T09:55:46+00:00",
+    "generated_at": "2026-06-22T10:00:43+00:00",
     "generated_reports": [
       "reports/v72_pipeline_refresh_summary.json",
       "reports/v72_pipeline_refresh_summary.md",
@@ -41,10 +41,10 @@
       "script_exists": true,
       "outputs": "models/v61; reports/v61_draw_result_analyzer_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T09:14:50",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "V61_DRAW_RESULT_ANALYZER_OK\nTOTAL_DRAWS 10058\nLATEST_DATE 2026-06-21\nLATEST_DRAW 48.0\nLATEST_NUMBERS 6, 13, 16, 19, 42, 44\nBEST_SIGNAL_HITS 3\nSIGNALS_CHECKED 27"
     },
     {
       "step": "62",
@@ -53,10 +53,10 @@
       "script_exists": true,
       "outputs": "models/v62; reports/v62_model_performance_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T09:36:32",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP62_BUILD_OK\nTOTAL_DRAWS 10058\nLATEST_DRAW {'date': '2026-06-21', 'year': '2026', 'draw_number': '48', 'draw_position': '1', 'numbers': [6, 13, 16, 19, 42, 44]}\nMODELS_EVALUATED 10\nBEST_HITS 6"
     },
     {
       "step": "63",
@@ -65,10 +65,10 @@
       "script_exists": true,
       "outputs": "models/v63; reports/v63_model_reliability_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T09:52:52",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP63_BUILD_OK\nHISTORY_ROWS 10\nTRACKED_DRAWS 1\nMODELS_RANKED 10\nBEST_MODEL v41 � �������� ��������� �������\nBEST_SCORE 100.0"
     },
     {
       "step": "65",
@@ -77,10 +77,10 @@
       "script_exists": true,
       "outputs": "models/v65; reports/v65_model_weighting_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T10:48:46",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP65_BUILD_OK\nMODELS_WEIGHTED 10\nTOP_MODEL v41 � �������� ��������� �������\nTOP_WEIGHT 25.91"
     },
     {
       "step": "66",
@@ -89,10 +89,10 @@
       "script_exists": true,
       "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T10:57:02",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T12:59:04",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP66_BUILD_OK\nSOURCES_USED 8\nNUMBERS_SCORED 49\nTOP_NUMBER 1\nTOP_SCORE 100.0"
     },
     {
       "step": "67",
@@ -101,10 +101,10 @@
       "script_exists": true,
       "outputs": "models/v67; reports/v67_weighted_ticket_builder_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T11:06:23",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T13:00:42",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP67_BUILD_OK\nTICKETS_GENERATED 8\nTOP_TICKET_ID 1\nTOP_AVG_SCORE 88.116"
     },
     {
       "step": "68",
@@ -113,10 +113,10 @@
       "script_exists": true,
       "outputs": "models/v68; reports/v68_weighted_portfolio_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T11:06:23",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T13:00:42",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP68_BUILD_OK\nTICKETS_ANALYZED 8\nUNIQUE_NUMBERS_COVERED 18\nPORTFOLIO_SCORE 60.684\nPORTFOLIO_STATUS �������� �������� � ����� �� ����������"
     },
     {
       "step": "69",
@@ -125,10 +125,10 @@
       "script_exists": true,
       "outputs": "models/v69; reports/v69_portfolio_improvement_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T11:25:19",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T13:00:43",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP69_BUILD_OK\nSUGGESTIONS_GENERATED 60\nCANDIDATE_CHANGES 3\nBASELINE_SCORE 60.684\nCANDIDATE_SCORE 70.118"
     },
     {
       "step": "70",
@@ -137,10 +137,10 @@
       "script_exists": true,
       "outputs": "models/v70; reports/v70_applied_candidate_portfolio_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T11:33:03",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T13:00:43",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP70_BUILD_OK\nAPPLIED_TICKETS 8\nAPPLIED_CHANGES 3\nORIGINAL_SCORE 60.684\nAPPLIED_SCORE 70.118"
     },
     {
       "step": "71",
@@ -149,10 +149,10 @@
       "script_exists": true,
       "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T12:42:56",
-      "run_status": "planned",
-      "run_ok": "",
-      "run_output_tail": ""
+      "latest_output_mtime": "2026-06-22T13:00:43",
+      "run_status": "OK",
+      "run_ok": true,
+      "run_output_tail": "STEP71_BUILD_OK\nTICKETS_EXPORTED 8\nCHANGES_INCLUDED 3\nAPPLIED_SCORE 70.118"
     }
   ]
 }

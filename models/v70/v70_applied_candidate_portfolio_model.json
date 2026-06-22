@@ -21,7 +21,7 @@
     "applied_historical_exact_matches": 0,
     "decision": "candidate portfolio accepted as improved statistical reference",
     "undercovered_top20_after_apply": [],
-    "generated_at": "2026-06-22T08:33:03+00:00",
+    "generated_at": "2026-06-22T10:00:43+00:00",
     "generated_reports": [
       "reports/v70_applied_candidate_portfolio_summary.json",
       "reports/v70_applied_candidate_portfolio_summary.md",
