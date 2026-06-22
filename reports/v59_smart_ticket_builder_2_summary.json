@@ -1,0 +1,54 @@
+{
+  "status": "completed",
+  "module": "Smart Ticket Builder 2",
+  "version": "v59",
+  "total_draws": 10058,
+  "selected_count": 5,
+  "average_final_score": 80.56,
+  "best_score": 81.22,
+  "weakest_score": 79.38,
+  "coverage_score": 88.0,
+  "selected_tickets": [
+    [
+      2,
+      17,
+      24,
+      31,
+      35,
+      38
+    ],
+    [
+      2,
+      13,
+      17,
+      29,
+      34,
+      47
+    ],
+    [
+      4,
+      8,
+      13,
+      29,
+      37,
+      38
+    ],
+    [
+      4,
+      9,
+      25,
+      37,
+      44,
+      46
+    ],
+    [
+      1,
+      16,
+      21,
+      42,
+      43,
+      48
+    ]
+  ],
+  "safety_bg": "Smart Ticket Builder 2 генерира статистически балансирани предложения. Той не предсказва печеливши числа и не гарантира печалба."
+}
