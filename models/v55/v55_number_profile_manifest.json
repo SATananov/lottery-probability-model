@@ -1,0 +1,28 @@
+{
+  "module": "number_profile_center",
+  "version": "v55",
+  "user_facing_name_bg": "Профил на число",
+  "total_draws": 10058,
+  "numbers_profiled": 49,
+  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "purpose_bg": "Създава статистически профил за всяко число от 1 до 49: честота, последна поява, интервали, скорошна активност и участие в двойки/тройки.",
+  "not_a_prediction_bg": "Модулът не предсказва печеливши числа и не гарантира печалба. Той анализира само историческото поведение на числата.",
+  "metrics": [
+    "appearances",
+    "expected_appearances",
+    "appearance_vs_expected_ratio",
+    "draw_frequency_pct",
+    "draws_since_last_seen",
+    "average_interval",
+    "median_interval",
+    "max_interval",
+    "recent_50",
+    "recent_100",
+    "recent_250",
+    "recent_500",
+    "interval_stability_score",
+    "top_pairs",
+    "top_triples",
+    "profile_score"
+  ]
+}

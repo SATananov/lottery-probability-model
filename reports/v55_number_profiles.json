@@ -1,0 +1,6372 @@
+[
+  {
+    "number": 1,
+    "total_draws": 10058,
+    "appearances": 1251,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0158,
+    "draw_frequency_pct": 12.4379,
+    "slot_frequency_pct": 2.073,
+    "first_seen_index": 10,
+    "last_seen_index": 10056,
+    "draws_since_last_seen": 2,
+    "average_interval": 8.04,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 60,
+    "current_gap_ratio": 0.25,
+    "recent_50": 8,
+    "recent_100": 10,
+    "recent_250": 22,
+    "recent_500": 50,
+    "interval_stability_score": 57.88,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 5,
+        "count": 153
+      },
+      {
+        "partner": 21,
+        "count": 152
+      },
+      {
+        "partner": 11,
+        "count": 145
+      },
+      {
+        "partner": 30,
+        "count": 145
+      },
+      {
+        "partner": 9,
+        "count": 144
+      },
+      {
+        "partner": 27,
+        "count": 143
+      },
+      {
+        "partner": 36,
+        "count": 143
+      },
+      {
+        "partner": 16,
+        "count": 141
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          21,
+          34
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          19,
+          25
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          30,
+          34
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          28,
+          37
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          18,
+          30
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          9,
+          21
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          39
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          10,
+          16
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 1 се е появило 1251 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 2 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 75.0,
+    "recent_rank_score": 8.33,
+    "overdue_rank_score": 29.17,
+    "stability_rank_score": 54.17,
+    "profile_score": 45.0,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 2,
+    "total_draws": 10058,
+    "appearances": 1222,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9922,
+    "draw_frequency_pct": 12.1495,
+    "slot_frequency_pct": 2.0249,
+    "first_seen_index": 3,
+    "last_seen_index": 10051,
+    "draws_since_last_seen": 7,
+    "average_interval": 8.23,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 66,
+    "current_gap_ratio": 0.85,
+    "recent_50": 6,
+    "recent_100": 16,
+    "recent_250": 37,
+    "recent_500": 65,
+    "interval_stability_score": 57.99,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 17,
+        "count": 148
+      },
+      {
+        "partner": 24,
+        "count": 148
+      },
+      {
+        "partner": 37,
+        "count": 145
+      },
+      {
+        "partner": 13,
+        "count": 144
+      },
+      {
+        "partner": 34,
+        "count": 143
+      },
+      {
+        "partner": 7,
+        "count": 141
+      },
+      {
+        "partner": 19,
+        "count": 140
+      },
+      {
+        "partner": 39,
+        "count": 139
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          17,
+          37
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          34,
+          42
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          9,
+          45
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          7,
+          14
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          24,
+          34
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          34,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          28,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          19,
+          29
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 2 се е появило 1222 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 7 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 45.83,
+    "recent_rank_score": 91.67,
+    "overdue_rank_score": 54.17,
+    "stability_rank_score": 64.58,
+    "profile_score": 62.71,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 3,
+    "total_draws": 10058,
+    "appearances": 1182,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9597,
+    "draw_frequency_pct": 11.7518,
+    "slot_frequency_pct": 1.9586,
+    "first_seen_index": 16,
+    "last_seen_index": 10049,
+    "draws_since_last_seen": 9,
+    "average_interval": 8.5,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 69,
+    "current_gap_ratio": 1.06,
+    "recent_50": 7,
+    "recent_100": 15,
+    "recent_250": 28,
+    "recent_500": 59,
+    "interval_stability_score": 57.11,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 14,
+        "count": 141
+      },
+      {
+        "partner": 31,
+        "count": 139
+      },
+      {
+        "partner": 4,
+        "count": 135
+      },
+      {
+        "partner": 44,
+        "count": 134
+      },
+      {
+        "partner": 28,
+        "count": 134
+      },
+      {
+        "partner": 15,
+        "count": 134
+      },
+      {
+        "partner": 26,
+        "count": 133
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          14,
+          34
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          9,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          44,
+          49
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          20,
+          31
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          5,
+          45
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          23,
+          28
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          33,
+          47
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          28,
+          34
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 3 се е появило 1182 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 9 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 8.33,
+    "recent_rank_score": 35.42,
+    "overdue_rank_score": 66.67,
+    "stability_rank_score": 31.25,
+    "profile_score": 31.35,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 4,
+    "total_draws": 10058,
+    "appearances": 1276,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0361,
+    "draw_frequency_pct": 12.6864,
+    "slot_frequency_pct": 2.1144,
+    "first_seen_index": 23,
+    "last_seen_index": 10038,
+    "draws_since_last_seen": 20,
+    "average_interval": 7.85,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 57,
+    "current_gap_ratio": 2.55,
+    "recent_50": 5,
+    "recent_100": 12,
+    "recent_250": 26,
+    "recent_500": 56,
+    "interval_stability_score": 57.93,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 11,
+        "count": 162
+      },
+      {
+        "partner": 6,
+        "count": 161
+      },
+      {
+        "partner": 44,
+        "count": 157
+      },
+      {
+        "partner": 47,
+        "count": 156
+      },
+      {
+        "partner": 24,
+        "count": 156
+      },
+      {
+        "partner": 25,
+        "count": 150
+      },
+      {
+        "partner": 42,
+        "count": 145
+      },
+      {
+        "partner": 17,
+        "count": 145
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          6,
+          22
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          37,
+          44
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          11,
+          46
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          42,
+          44
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          25,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          6,
+          45
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          21,
+          46
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 4 се е появило 1276 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 20 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 93.75,
+    "recent_rank_score": 25.0,
+    "overdue_rank_score": 93.75,
+    "stability_rank_score": 60.42,
+    "profile_score": 69.9,
+    "band": "Силен профил"
+  },
+  {
+    "number": 5,
+    "total_draws": 10058,
+    "appearances": 1219,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9898,
+    "draw_frequency_pct": 12.1197,
+    "slot_frequency_pct": 2.02,
+    "first_seen_index": 18,
+    "last_seen_index": 10048,
+    "draws_since_last_seen": 10,
+    "average_interval": 8.23,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 77,
+    "current_gap_ratio": 1.22,
+    "recent_50": 5,
+    "recent_100": 10,
+    "recent_250": 26,
+    "recent_500": 59,
+    "interval_stability_score": 58.42,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 1,
+        "count": 153
+      },
+      {
+        "partner": 46,
+        "count": 148
+      },
+      {
+        "partner": 28,
+        "count": 148
+      },
+      {
+        "partner": 35,
+        "count": 145
+      },
+      {
+        "partner": 9,
+        "count": 144
+      },
+      {
+        "partner": 22,
+        "count": 141
+      },
+      {
+        "partner": 30,
+        "count": 141
+      },
+      {
+        "partner": 16,
+        "count": 138
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          26,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          10,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          12,
+          29
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          21,
+          48
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          3,
+          45
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          34,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          13,
+          25
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          22,
+          48
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 5 се е появило 1219 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 10 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 35.42,
+    "recent_rank_score": 22.92,
+    "overdue_rank_score": 70.83,
+    "stability_rank_score": 89.58,
+    "profile_score": 50.21,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 6,
+    "total_draws": 10058,
+    "appearances": 1273,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0336,
+    "draw_frequency_pct": 12.6566,
+    "slot_frequency_pct": 2.1094,
+    "first_seen_index": 2,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 7.91,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 60,
+    "current_gap_ratio": 0.0,
+    "recent_50": 5,
+    "recent_100": 11,
+    "recent_250": 28,
+    "recent_500": 58,
+    "interval_stability_score": 58.24,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 30,
+        "count": 163
+      },
+      {
+        "partner": 4,
+        "count": 161
+      },
+      {
+        "partner": 22,
+        "count": 158
+      },
+      {
+        "partner": 48,
+        "count": 152
+      },
+      {
+        "partner": 45,
+        "count": 149
+      },
+      {
+        "partner": 42,
+        "count": 147
+      },
+      {
+        "partner": 38,
+        "count": 144
+      },
+      {
+        "partner": 7,
+        "count": 143
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          4,
+          22
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          18,
+          22
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          8,
+          33
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          33,
+          49
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          21,
+          37
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          42,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          24
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          30,
+          45
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 6 се е появило 1273 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 87.5,
+    "recent_rank_score": 33.33,
+    "overdue_rank_score": 10.42,
+    "stability_rank_score": 79.17,
+    "profile_score": 56.88,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 7,
+    "total_draws": 10058,
+    "appearances": 1215,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9865,
+    "draw_frequency_pct": 12.0799,
+    "slot_frequency_pct": 2.0133,
+    "first_seen_index": 3,
+    "last_seen_index": 10056,
+    "draws_since_last_seen": 2,
+    "average_interval": 8.28,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 60,
+    "current_gap_ratio": 0.24,
+    "recent_50": 5,
+    "recent_100": 11,
+    "recent_250": 22,
+    "recent_500": 57,
+    "interval_stability_score": 57.74,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 26,
+        "count": 145
+      },
+      {
+        "partner": 6,
+        "count": 143
+      },
+      {
+        "partner": 2,
+        "count": 141
+      },
+      {
+        "partner": 48,
+        "count": 141
+      },
+      {
+        "partner": 12,
+        "count": 140
+      },
+      {
+        "partner": 45,
+        "count": 140
+      },
+      {
+        "partner": 35,
+        "count": 140
+      },
+      {
+        "partner": 14,
+        "count": 136
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          44,
+          48
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          2,
+          14
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          10,
+          39
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          10,
+          30
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          10,
+          21
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          2,
+          30
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          39
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          27,
+          36
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 7 се е появило 1215 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 2 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 31.25,
+    "recent_rank_score": 6.25,
+    "overdue_rank_score": 27.08,
+    "stability_rank_score": 50.0,
+    "profile_score": 27.92,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 8,
+    "total_draws": 10058,
+    "appearances": 1246,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0117,
+    "draw_frequency_pct": 12.3881,
+    "slot_frequency_pct": 2.0647,
+    "first_seen_index": 1,
+    "last_seen_index": 10056,
+    "draws_since_last_seen": 2,
+    "average_interval": 8.08,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 53,
+    "current_gap_ratio": 0.25,
+    "recent_50": 6,
+    "recent_100": 9,
+    "recent_250": 31,
+    "recent_500": 61,
+    "interval_stability_score": 58.19,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 37,
+        "count": 152
+      },
+      {
+        "partner": 29,
+        "count": 147
+      },
+      {
+        "partner": 44,
+        "count": 147
+      },
+      {
+        "partner": 42,
+        "count": 144
+      },
+      {
+        "partner": 45,
+        "count": 141
+      },
+      {
+        "partner": 30,
+        "count": 140
+      },
+      {
+        "partner": 33,
+        "count": 139
+      },
+      {
+        "partner": 18,
+        "count": 137
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          6,
+          33
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          18,
+          29
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          25,
+          48
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          4,
+          33
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          25,
+          42
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          41,
+          42
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          22,
+          41
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          36,
+          46
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 8 се е появило 1246 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 2 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 66.67,
+    "recent_rank_score": 58.33,
+    "overdue_rank_score": 25.0,
+    "stability_rank_score": 75.0,
+    "profile_score": 57.92,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 9,
+    "total_draws": 10058,
+    "appearances": 1252,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0166,
+    "draw_frequency_pct": 12.4478,
+    "slot_frequency_pct": 2.0746,
+    "first_seen_index": 10,
+    "last_seen_index": 10054,
+    "draws_since_last_seen": 4,
+    "average_interval": 8.03,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 58,
+    "current_gap_ratio": 0.5,
+    "recent_50": 6,
+    "recent_100": 10,
+    "recent_250": 23,
+    "recent_500": 58,
+    "interval_stability_score": 58.14,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 21,
+        "count": 146
+      },
+      {
+        "partner": 43,
+        "count": 145
+      },
+      {
+        "partner": 1,
+        "count": 144
+      },
+      {
+        "partner": 28,
+        "count": 144
+      },
+      {
+        "partner": 5,
+        "count": 144
+      },
+      {
+        "partner": 4,
+        "count": 143
+      },
+      {
+        "partner": 20,
+        "count": 143
+      },
+      {
+        "partner": 17,
+        "count": 142
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          3,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          2,
+          45
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          28,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          2,
+          31
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          24
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          1,
+          21
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          4,
+          25
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          10,
+          28
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 9 се е появило 1252 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 4 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 77.08,
+    "recent_rank_score": 10.42,
+    "overdue_rank_score": 45.83,
+    "stability_rank_score": 70.83,
+    "profile_score": 52.91,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 10,
+    "total_draws": 10058,
+    "appearances": 1201,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9752,
+    "draw_frequency_pct": 11.9407,
+    "slot_frequency_pct": 1.9901,
+    "first_seen_index": 4,
+    "last_seen_index": 10055,
+    "draws_since_last_seen": 3,
+    "average_interval": 8.38,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 63,
+    "current_gap_ratio": 0.36,
+    "recent_50": 4,
+    "recent_100": 12,
+    "recent_250": 31,
+    "recent_500": 72,
+    "interval_stability_score": 57.49,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 33,
+        "count": 142
+      },
+      {
+        "partner": 20,
+        "count": 141
+      },
+      {
+        "partner": 16,
+        "count": 137
+      },
+      {
+        "partner": 46,
+        "count": 137
+      },
+      {
+        "partner": 49,
+        "count": 136
+      },
+      {
+        "partner": 35,
+        "count": 136
+      },
+      {
+        "partner": 44,
+        "count": 136
+      },
+      {
+        "partner": 48,
+        "count": 135
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          5,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          7,
+          39
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          7,
+          30
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          7,
+          21
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          9,
+          28
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          35,
+          37
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          19,
+          27
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 10 се е появило 1201 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 3 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 16.67,
+    "recent_rank_score": 56.25,
+    "overdue_rank_score": 37.5,
+    "stability_rank_score": 43.75,
+    "profile_score": 36.15,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 11,
+    "total_draws": 10058,
+    "appearances": 1273,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0336,
+    "draw_frequency_pct": 12.6566,
+    "slot_frequency_pct": 2.1094,
+    "first_seen_index": 11,
+    "last_seen_index": 10055,
+    "draws_since_last_seen": 3,
+    "average_interval": 7.9,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 55,
+    "current_gap_ratio": 0.38,
+    "recent_50": 7,
+    "recent_100": 13,
+    "recent_250": 31,
+    "recent_500": 60,
+    "interval_stability_score": 58.26,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 4,
+        "count": 162
+      },
+      {
+        "partner": 32,
+        "count": 156
+      },
+      {
+        "partner": 35,
+        "count": 152
+      },
+      {
+        "partner": 34,
+        "count": 151
+      },
+      {
+        "partner": 46,
+        "count": 150
+      },
+      {
+        "partner": 24,
+        "count": 146
+      },
+      {
+        "partner": 1,
+        "count": 145
+      },
+      {
+        "partner": 17,
+        "count": 144
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          34,
+          36
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          32,
+          41
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          4,
+          46
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          18,
+          22
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          6,
+          24
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          10,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          30,
+          33
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          34,
+          46
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 11 се е появило 1273 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 3 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 85.42,
+    "recent_rank_score": 54.17,
+    "overdue_rank_score": 35.42,
+    "stability_rank_score": 81.25,
+    "profile_score": 66.77,
+    "band": "Силен профил"
+  },
+  {
+    "number": 12,
+    "total_draws": 10058,
+    "appearances": 1249,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0141,
+    "draw_frequency_pct": 12.418,
+    "slot_frequency_pct": 2.0697,
+    "first_seen_index": 1,
+    "last_seen_index": 10036,
+    "draws_since_last_seen": 22,
+    "average_interval": 8.04,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 58,
+    "current_gap_ratio": 2.74,
+    "recent_50": 7,
+    "recent_100": 14,
+    "recent_250": 31,
+    "recent_500": 59,
+    "interval_stability_score": 56.48,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 19,
+        "count": 146
+      },
+      {
+        "partner": 44,
+        "count": 145
+      },
+      {
+        "partner": 4,
+        "count": 145
+      },
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 36,
+        "count": 142
+      },
+      {
+        "partner": 37,
+        "count": 142
+      },
+      {
+        "partner": 18,
+        "count": 142
+      },
+      {
+        "partner": 7,
+        "count": 140
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          14,
+          36
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          22,
+          34
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          20,
+          22
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          22,
+          36
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          20
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          21,
+          31
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          5,
+          29
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          22,
+          30
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 12 се е появило 1249 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 22 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 68.75,
+    "recent_rank_score": 52.08,
+    "overdue_rank_score": 95.83,
+    "stability_rank_score": 18.75,
+    "profile_score": 60.0,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 13,
+    "total_draws": 10058,
+    "appearances": 1215,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9865,
+    "draw_frequency_pct": 12.0799,
+    "slot_frequency_pct": 2.0133,
+    "first_seen_index": 2,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 8.28,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 55,
+    "current_gap_ratio": 0.0,
+    "recent_50": 10,
+    "recent_100": 14,
+    "recent_250": 36,
+    "recent_500": 65,
+    "interval_stability_score": 57.83,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 34,
+        "count": 149
+      },
+      {
+        "partner": 2,
+        "count": 144
+      },
+      {
+        "partner": 25,
+        "count": 142
+      },
+      {
+        "partner": 11,
+        "count": 141
+      },
+      {
+        "partner": 14,
+        "count": 140
+      },
+      {
+        "partner": 4,
+        "count": 138
+      },
+      {
+        "partner": 6,
+        "count": 136
+      },
+      {
+        "partner": 46,
+        "count": 135
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          23,
+          34
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          14,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          43,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          17
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          17,
+          47
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          35
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          5,
+          25
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          16,
+          34
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 13 се е появило 1215 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 29.17,
+    "recent_rank_score": 85.42,
+    "overdue_rank_score": 8.33,
+    "stability_rank_score": 52.08,
+    "profile_score": 43.65,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 14,
+    "total_draws": 10058,
+    "appearances": 1207,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.98,
+    "draw_frequency_pct": 12.0004,
+    "slot_frequency_pct": 2.0001,
+    "first_seen_index": 5,
+    "last_seen_index": 10056,
+    "draws_since_last_seen": 2,
+    "average_interval": 8.33,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 56,
+    "current_gap_ratio": 0.24,
+    "recent_50": 4,
+    "recent_100": 11,
+    "recent_250": 28,
+    "recent_500": 50,
+    "interval_stability_score": 58.27,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 29,
+        "count": 150
+      },
+      {
+        "partner": 49,
+        "count": 144
+      },
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 3,
+        "count": 141
+      },
+      {
+        "partner": 13,
+        "count": 140
+      },
+      {
+        "partner": 20,
+        "count": 138
+      },
+      {
+        "partner": 23,
+        "count": 137
+      },
+      {
+        "partner": 26,
+        "count": 137
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          3,
+          34
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          12,
+          36
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          13,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          21,
+          23
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          26,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          2,
+          7
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          23,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          27,
+          29
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 14 се е появило 1207 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 2 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 22.92,
+    "recent_rank_score": 31.25,
+    "overdue_rank_score": 22.92,
+    "stability_rank_score": 83.33,
+    "profile_score": 37.08,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 15,
+    "total_draws": 10058,
+    "appearances": 1221,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9914,
+    "draw_frequency_pct": 12.1396,
+    "slot_frequency_pct": 2.0233,
+    "first_seen_index": 3,
+    "last_seen_index": 10055,
+    "draws_since_last_seen": 3,
+    "average_interval": 8.24,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 53,
+    "current_gap_ratio": 0.36,
+    "recent_50": 4,
+    "recent_100": 10,
+    "recent_250": 34,
+    "recent_500": 64,
+    "interval_stability_score": 57.14,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 49,
+        "count": 149
+      },
+      {
+        "partner": 33,
+        "count": 144
+      },
+      {
+        "partner": 22,
+        "count": 143
+      },
+      {
+        "partner": 35,
+        "count": 140
+      },
+      {
+        "partner": 11,
+        "count": 139
+      },
+      {
+        "partner": 40,
+        "count": 138
+      },
+      {
+        "partner": 34,
+        "count": 137
+      },
+      {
+        "partner": 4,
+        "count": 137
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          22,
+          40
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          47
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          12,
+          20
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          35
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          23,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          30
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          23,
+          39
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          17,
+          22
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 15 се е появило 1221 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 3 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 41.67,
+    "recent_rank_score": 72.92,
+    "overdue_rank_score": 33.33,
+    "stability_rank_score": 33.33,
+    "profile_score": 46.15,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 16,
+    "total_draws": 10058,
+    "appearances": 1202,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.976,
+    "draw_frequency_pct": 11.9507,
+    "slot_frequency_pct": 1.9918,
+    "first_seen_index": 12,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 8.36,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 55,
+    "current_gap_ratio": 0.0,
+    "recent_50": 6,
+    "recent_100": 16,
+    "recent_250": 34,
+    "recent_500": 51,
+    "interval_stability_score": 58.37,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 24,
+        "count": 146
+      },
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 1,
+        "count": 141
+      },
+      {
+        "partner": 32,
+        "count": 140
+      },
+      {
+        "partner": 38,
+        "count": 140
+      },
+      {
+        "partner": 37,
+        "count": 139
+      },
+      {
+        "partner": 5,
+        "count": 138
+      },
+      {
+        "partner": 45,
+        "count": 138
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          38,
+          43
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          38,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          1,
+          10
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          19,
+          32
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          13,
+          34
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          6,
+          45
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          44,
+          49
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          4,
+          11
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 16 се е появило 1202 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 18.75,
+    "recent_rank_score": 70.83,
+    "overdue_rank_score": 6.25,
+    "stability_rank_score": 85.42,
+    "profile_score": 42.6,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 17,
+    "total_draws": 10058,
+    "appearances": 1267,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0287,
+    "draw_frequency_pct": 12.5969,
+    "slot_frequency_pct": 2.0995,
+    "first_seen_index": 16,
+    "last_seen_index": 10053,
+    "draws_since_last_seen": 5,
+    "average_interval": 7.93,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 48,
+    "current_gap_ratio": 0.63,
+    "recent_50": 6,
+    "recent_100": 12,
+    "recent_250": 32,
+    "recent_500": 62,
+    "interval_stability_score": 59.18,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 35,
+        "count": 151
+      },
+      {
+        "partner": 2,
+        "count": 148
+      },
+      {
+        "partner": 25,
+        "count": 146
+      },
+      {
+        "partner": 4,
+        "count": 145
+      },
+      {
+        "partner": 33,
+        "count": 145
+      },
+      {
+        "partner": 11,
+        "count": 144
+      },
+      {
+        "partner": 18,
+        "count": 144
+      },
+      {
+        "partner": 49,
+        "count": 142
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          2,
+          37
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          18,
+          38
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          35,
+          47
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          24,
+          49
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          25,
+          32
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          35,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          35
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 17 се е появило 1267 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 5 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 81.25,
+    "recent_rank_score": 66.67,
+    "overdue_rank_score": 52.08,
+    "stability_rank_score": 100.0,
+    "profile_score": 75.52,
+    "band": "Силен профил"
+  },
+  {
+    "number": 18,
+    "total_draws": 10058,
+    "appearances": 1196,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9711,
+    "draw_frequency_pct": 11.891,
+    "slot_frequency_pct": 1.9818,
+    "first_seen_index": 5,
+    "last_seen_index": 10043,
+    "draws_since_last_seen": 15,
+    "average_interval": 8.4,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 69,
+    "current_gap_ratio": 1.79,
+    "recent_50": 9,
+    "recent_100": 16,
+    "recent_250": 37,
+    "recent_500": 74,
+    "interval_stability_score": 58.54,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 22,
+        "count": 157
+      },
+      {
+        "partner": 49,
+        "count": 148
+      },
+      {
+        "partner": 17,
+        "count": 144
+      },
+      {
+        "partner": 12,
+        "count": 142
+      },
+      {
+        "partner": 23,
+        "count": 141
+      },
+      {
+        "partner": 27,
+        "count": 138
+      },
+      {
+        "partner": 8,
+        "count": 137
+      },
+      {
+        "partner": 34,
+        "count": 137
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          6,
+          22
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          17,
+          38
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          11,
+          22
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          22,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          21,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          22,
+          36
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          22,
+          48
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          8,
+          29
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 18 се е появило 1196 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 15 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 12.5,
+    "recent_rank_score": 89.58,
+    "overdue_rank_score": 83.33,
+    "stability_rank_score": 91.67,
+    "profile_score": 61.77,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 19,
+    "total_draws": 10058,
+    "appearances": 1190,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9662,
+    "draw_frequency_pct": 11.8314,
+    "slot_frequency_pct": 1.9719,
+    "first_seen_index": 6,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 8.45,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 53,
+    "current_gap_ratio": 0.0,
+    "recent_50": 6,
+    "recent_100": 12,
+    "recent_250": 31,
+    "recent_500": 65,
+    "interval_stability_score": 57.03,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 12,
+        "count": 146
+      },
+      {
+        "partner": 21,
+        "count": 144
+      },
+      {
+        "partner": 49,
+        "count": 140
+      },
+      {
+        "partner": 2,
+        "count": 140
+      },
+      {
+        "partner": 32,
+        "count": 140
+      },
+      {
+        "partner": 36,
+        "count": 138
+      },
+      {
+        "partner": 4,
+        "count": 136
+      },
+      {
+        "partner": 27,
+        "count": 135
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          1,
+          25
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          33,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          25,
+          28
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          2,
+          29
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          27,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          2,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          39,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          2,
+          12
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 19 се е появило 1190 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 10.42,
+    "recent_rank_score": 50.0,
+    "overdue_rank_score": 4.17,
+    "stability_rank_score": 29.17,
+    "profile_score": 22.81,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 20,
+    "total_draws": 10058,
+    "appearances": 1221,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9914,
+    "draw_frequency_pct": 12.1396,
+    "slot_frequency_pct": 2.0233,
+    "first_seen_index": 14,
+    "last_seen_index": 10045,
+    "draws_since_last_seen": 13,
+    "average_interval": 8.22,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 59,
+    "current_gap_ratio": 1.58,
+    "recent_50": 7,
+    "recent_100": 12,
+    "recent_250": 27,
+    "recent_500": 67,
+    "interval_stability_score": 59.02,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 35,
+        "count": 143
+      },
+      {
+        "partner": 9,
+        "count": 143
+      },
+      {
+        "partner": 39,
+        "count": 142
+      },
+      {
+        "partner": 10,
+        "count": 141
+      },
+      {
+        "partner": 17,
+        "count": 140
+      },
+      {
+        "partner": 12,
+        "count": 139
+      },
+      {
+        "partner": 14,
+        "count": 138
+      },
+      {
+        "partner": 48,
+        "count": 138
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          22,
+          49
+        ],
+        "count": 25
+      },
+      {
+        "partners": [
+          23,
+          45
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          12,
+          22
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          26,
+          29
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          12,
+          15
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          3,
+          31
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          35
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          35,
+          45
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 20 се е появило 1221 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 13 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 39.58,
+    "recent_rank_score": 27.08,
+    "overdue_rank_score": 81.25,
+    "stability_rank_score": 97.92,
+    "profile_score": 56.46,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 21,
+    "total_draws": 10058,
+    "appearances": 1289,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0466,
+    "draw_frequency_pct": 12.8157,
+    "slot_frequency_pct": 2.1359,
+    "first_seen_index": 4,
+    "last_seen_index": 10039,
+    "draws_since_last_seen": 19,
+    "average_interval": 7.79,
+    "median_interval": 5.5,
+    "min_interval": 1,
+    "max_interval": 47,
+    "current_gap_ratio": 2.44,
+    "recent_50": 4,
+    "recent_100": 12,
+    "recent_250": 25,
+    "recent_500": 60,
+    "interval_stability_score": 56.9,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 46,
+        "count": 154
+      },
+      {
+        "partner": 1,
+        "count": 152
+      },
+      {
+        "partner": 36,
+        "count": 152
+      },
+      {
+        "partner": 32,
+        "count": 151
+      },
+      {
+        "partner": 49,
+        "count": 151
+      },
+      {
+        "partner": 37,
+        "count": 150
+      },
+      {
+        "partner": 48,
+        "count": 147
+      },
+      {
+        "partner": 34,
+        "count": 147
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          1,
+          34
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          39,
+          46
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          14,
+          23
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          37
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          34,
+          36
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          12,
+          31
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          44,
+          49
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          46
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 21 се е появило 1289 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 19 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 95.83,
+    "recent_rank_score": 20.83,
+    "overdue_rank_score": 91.67,
+    "stability_rank_score": 27.08,
+    "profile_score": 62.5,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 22,
+    "total_draws": 10058,
+    "appearances": 1250,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0149,
+    "draw_frequency_pct": 12.4279,
+    "slot_frequency_pct": 2.0713,
+    "first_seen_index": 5,
+    "last_seen_index": 10057,
+    "draws_since_last_seen": 1,
+    "average_interval": 8.05,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 73,
+    "current_gap_ratio": 0.12,
+    "recent_50": 7,
+    "recent_100": 11,
+    "recent_250": 38,
+    "recent_500": 68,
+    "interval_stability_score": 57.93,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 6,
+        "count": 158
+      },
+      {
+        "partner": 18,
+        "count": 157
+      },
+      {
+        "partner": 4,
+        "count": 145
+      },
+      {
+        "partner": 24,
+        "count": 145
+      },
+      {
+        "partner": 48,
+        "count": 144
+      },
+      {
+        "partner": 29,
+        "count": 144
+      },
+      {
+        "partner": 25,
+        "count": 143
+      },
+      {
+        "partner": 15,
+        "count": 143
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          20,
+          49
+        ],
+        "count": 25
+      },
+      {
+        "partners": [
+          4,
+          6
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          6,
+          18
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          12,
+          34
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          15,
+          40
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          12,
+          20
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          25,
+          42
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          11,
+          18
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 22 се е появило 1250 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 1 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 70.83,
+    "recent_rank_score": 93.75,
+    "overdue_rank_score": 20.83,
+    "stability_rank_score": 58.33,
+    "profile_score": 64.06,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 23,
+    "total_draws": 10058,
+    "appearances": 1169,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9492,
+    "draw_frequency_pct": 11.6226,
+    "slot_frequency_pct": 1.9371,
+    "first_seen_index": 7,
+    "last_seen_index": 10046,
+    "draws_since_last_seen": 12,
+    "average_interval": 8.6,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 71,
+    "current_gap_ratio": 1.4,
+    "recent_50": 8,
+    "recent_100": 16,
+    "recent_250": 44,
+    "recent_500": 78,
+    "interval_stability_score": 55.99,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 18,
+        "count": 141
+      },
+      {
+        "partner": 21,
+        "count": 140
+      },
+      {
+        "partner": 42,
+        "count": 137
+      },
+      {
+        "partner": 14,
+        "count": 137
+      },
+      {
+        "partner": 28,
+        "count": 136
+      },
+      {
+        "partner": 45,
+        "count": 135
+      },
+      {
+        "partner": 34,
+        "count": 135
+      },
+      {
+        "partner": 13,
+        "count": 135
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          13,
+          34
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          14,
+          21
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          20,
+          45
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          15,
+          39
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          3,
+          28
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          38,
+          42
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 23 се е появило 1169 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 12 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 2.08,
+    "recent_rank_score": 100.0,
+    "overdue_rank_score": 79.17,
+    "stability_rank_score": 12.5,
+    "profile_score": 44.06,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 24,
+    "total_draws": 10058,
+    "appearances": 1240,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0068,
+    "draw_frequency_pct": 12.3285,
+    "slot_frequency_pct": 2.0547,
+    "first_seen_index": 6,
+    "last_seen_index": 10046,
+    "draws_since_last_seen": 12,
+    "average_interval": 8.1,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 62,
+    "current_gap_ratio": 1.48,
+    "recent_50": 8,
+    "recent_100": 17,
+    "recent_250": 36,
+    "recent_500": 67,
+    "interval_stability_score": 56.53,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 4,
+        "count": 156
+      },
+      {
+        "partner": 30,
+        "count": 148
+      },
+      {
+        "partner": 2,
+        "count": 148
+      },
+      {
+        "partner": 16,
+        "count": 146
+      },
+      {
+        "partner": 11,
+        "count": 146
+      },
+      {
+        "partner": 38,
+        "count": 146
+      },
+      {
+        "partner": 22,
+        "count": 145
+      },
+      {
+        "partner": 49,
+        "count": 143
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          2,
+          34
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          49
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          6,
+          11
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          6,
+          9
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          30,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          18,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          43,
+          46
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          22,
+          29
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 24 се е появило 1240 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 12 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 58.33,
+    "recent_rank_score": 83.33,
+    "overdue_rank_score": 77.08,
+    "stability_rank_score": 20.83,
+    "profile_score": 60.83,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 25,
+    "total_draws": 10058,
+    "appearances": 1240,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0068,
+    "draw_frequency_pct": 12.3285,
+    "slot_frequency_pct": 2.0547,
+    "first_seen_index": 1,
+    "last_seen_index": 10034,
+    "draws_since_last_seen": 24,
+    "average_interval": 8.1,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 73,
+    "current_gap_ratio": 2.96,
+    "recent_50": 2,
+    "recent_100": 10,
+    "recent_250": 21,
+    "recent_500": 53,
+    "interval_stability_score": 57.25,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 4,
+        "count": 150
+      },
+      {
+        "partner": 48,
+        "count": 146
+      },
+      {
+        "partner": 17,
+        "count": 146
+      },
+      {
+        "partner": 28,
+        "count": 144
+      },
+      {
+        "partner": 22,
+        "count": 143
+      },
+      {
+        "partner": 13,
+        "count": 142
+      },
+      {
+        "partner": 24,
+        "count": 142
+      },
+      {
+        "partner": 9,
+        "count": 139
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          34,
+          44
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          1,
+          19
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          22,
+          42
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          4,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          19,
+          28
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          32
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          9
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          20,
+          28
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 25 се е появило 1240 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 24 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 56.25,
+    "recent_rank_score": 4.17,
+    "overdue_rank_score": 97.92,
+    "stability_rank_score": 37.5,
+    "profile_score": 47.81,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 26,
+    "total_draws": 10058,
+    "appearances": 1219,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9898,
+    "draw_frequency_pct": 12.1197,
+    "slot_frequency_pct": 2.02,
+    "first_seen_index": 3,
+    "last_seen_index": 10057,
+    "draws_since_last_seen": 1,
+    "average_interval": 8.25,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 57,
+    "current_gap_ratio": 0.12,
+    "recent_50": 8,
+    "recent_100": 14,
+    "recent_250": 32,
+    "recent_500": 57,
+    "interval_stability_score": 58.18,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 29,
+        "count": 162
+      },
+      {
+        "partner": 7,
+        "count": 145
+      },
+      {
+        "partner": 34,
+        "count": 140
+      },
+      {
+        "partner": 47,
+        "count": 140
+      },
+      {
+        "partner": 37,
+        "count": 137
+      },
+      {
+        "partner": 14,
+        "count": 137
+      },
+      {
+        "partner": 15,
+        "count": 136
+      },
+      {
+        "partner": 11,
+        "count": 136
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          14,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          28,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          29,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          5,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          20,
+          29
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          38
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          34,
+          47
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          15,
+          49
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 26 се е появило 1219 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 1 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 33.33,
+    "recent_rank_score": 64.58,
+    "overdue_rank_score": 18.75,
+    "stability_rank_score": 72.92,
+    "profile_score": 46.14,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 27,
+    "total_draws": 10058,
+    "appearances": 1199,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9735,
+    "draw_frequency_pct": 11.9209,
+    "slot_frequency_pct": 1.9868,
+    "first_seen_index": 3,
+    "last_seen_index": 10046,
+    "draws_since_last_seen": 12,
+    "average_interval": 8.38,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 80,
+    "current_gap_ratio": 1.43,
+    "recent_50": 4,
+    "recent_100": 11,
+    "recent_250": 30,
+    "recent_500": 59,
+    "interval_stability_score": 55.2,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 1,
+        "count": 143
+      },
+      {
+        "partner": 28,
+        "count": 139
+      },
+      {
+        "partner": 24,
+        "count": 139
+      },
+      {
+        "partner": 18,
+        "count": 138
+      },
+      {
+        "partner": 5,
+        "count": 137
+      },
+      {
+        "partner": 19,
+        "count": 135
+      },
+      {
+        "partner": 36,
+        "count": 135
+      },
+      {
+        "partner": 49,
+        "count": 134
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          14,
+          29
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          19,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          18,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          28,
+          46
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          10,
+          19
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          28,
+          45
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          42,
+          47
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          7,
+          36
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 27 се е появило 1199 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 12 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 14.58,
+    "recent_rank_score": 41.67,
+    "overdue_rank_score": 75.0,
+    "stability_rank_score": 6.25,
+    "profile_score": 31.77,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 28,
+    "total_draws": 10058,
+    "appearances": 1251,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0158,
+    "draw_frequency_pct": 12.4379,
+    "slot_frequency_pct": 2.073,
+    "first_seen_index": 2,
+    "last_seen_index": 10057,
+    "draws_since_last_seen": 1,
+    "average_interval": 8.04,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 53,
+    "current_gap_ratio": 0.12,
+    "recent_50": 8,
+    "recent_100": 17,
+    "recent_250": 30,
+    "recent_500": 61,
+    "interval_stability_score": 58.02,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 5,
+        "count": 148
+      },
+      {
+        "partner": 45,
+        "count": 146
+      },
+      {
+        "partner": 43,
+        "count": 145
+      },
+      {
+        "partner": 25,
+        "count": 144
+      },
+      {
+        "partner": 9,
+        "count": 144
+      },
+      {
+        "partner": 46,
+        "count": 143
+      },
+      {
+        "partner": 48,
+        "count": 142
+      },
+      {
+        "partner": 22,
+        "count": 140
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          26,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          42,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          9,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          19,
+          25
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          34,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          2,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          1,
+          37
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          9,
+          10
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 28 се е появило 1251 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 1 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 72.92,
+    "recent_rank_score": 39.58,
+    "overdue_rank_score": 16.67,
+    "stability_rank_score": 66.67,
+    "profile_score": 52.09,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 29,
+    "total_draws": 10058,
+    "appearances": 1256,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0198,
+    "draw_frequency_pct": 12.4876,
+    "slot_frequency_pct": 2.0813,
+    "first_seen_index": 7,
+    "last_seen_index": 10057,
+    "draws_since_last_seen": 1,
+    "average_interval": 8.01,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 52,
+    "current_gap_ratio": 0.12,
+    "recent_50": 4,
+    "recent_100": 11,
+    "recent_250": 30,
+    "recent_500": 66,
+    "interval_stability_score": 58.58,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 26,
+        "count": 162
+      },
+      {
+        "partner": 14,
+        "count": 150
+      },
+      {
+        "partner": 43,
+        "count": 148
+      },
+      {
+        "partner": 8,
+        "count": 147
+      },
+      {
+        "partner": 32,
+        "count": 145
+      },
+      {
+        "partner": 22,
+        "count": 144
+      },
+      {
+        "partner": 30,
+        "count": 142
+      },
+      {
+        "partner": 48,
+        "count": 139
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          13,
+          14
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          26
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          26,
+          30
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          5,
+          26
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          27
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          20,
+          26
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          2,
+          19
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          8,
+          18
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 29 се е появило 1256 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 1 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 79.17,
+    "recent_rank_score": 37.5,
+    "overdue_rank_score": 14.58,
+    "stability_rank_score": 93.75,
+    "profile_score": 58.75,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 30,
+    "total_draws": 10058,
+    "appearances": 1246,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0117,
+    "draw_frequency_pct": 12.3881,
+    "slot_frequency_pct": 2.0647,
+    "first_seen_index": 11,
+    "last_seen_index": 10054,
+    "draws_since_last_seen": 4,
+    "average_interval": 8.07,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 69,
+    "current_gap_ratio": 0.5,
+    "recent_50": 7,
+    "recent_100": 17,
+    "recent_250": 31,
+    "recent_500": 63,
+    "interval_stability_score": 56.09,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 6,
+        "count": 163
+      },
+      {
+        "partner": 34,
+        "count": 154
+      },
+      {
+        "partner": 42,
+        "count": 149
+      },
+      {
+        "partner": 24,
+        "count": 148
+      },
+      {
+        "partner": 1,
+        "count": 145
+      },
+      {
+        "partner": 29,
+        "count": 142
+      },
+      {
+        "partner": 11,
+        "count": 141
+      },
+      {
+        "partner": 5,
+        "count": 141
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          3,
+          9
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          26,
+          28
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          26,
+          29
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          45
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          7,
+          10
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          33
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          15
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          1,
+          34
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 30 се е появило 1246 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 4 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 64.58,
+    "recent_rank_score": 47.92,
+    "overdue_rank_score": 43.75,
+    "stability_rank_score": 14.58,
+    "profile_score": 46.25,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 31,
+    "total_draws": 10058,
+    "appearances": 1179,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9573,
+    "draw_frequency_pct": 11.722,
+    "slot_frequency_pct": 1.9537,
+    "first_seen_index": 1,
+    "last_seen_index": 10047,
+    "draws_since_last_seen": 11,
+    "average_interval": 8.53,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 51,
+    "current_gap_ratio": 1.29,
+    "recent_50": 3,
+    "recent_100": 9,
+    "recent_250": 32,
+    "recent_500": 65,
+    "interval_stability_score": 58.97,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 24,
+        "count": 141
+      },
+      {
+        "partner": 9,
+        "count": 140
+      },
+      {
+        "partner": 3,
+        "count": 139
+      },
+      {
+        "partner": 48,
+        "count": 138
+      },
+      {
+        "partner": 14,
+        "count": 135
+      },
+      {
+        "partner": 12,
+        "count": 134
+      },
+      {
+        "partner": 18,
+        "count": 134
+      },
+      {
+        "partner": 17,
+        "count": 133
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          43,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          12,
+          21
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          3,
+          20
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          2,
+          9
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          4,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          14,
+          42
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          14,
+          48
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          29,
+          34
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 31 се е появило 1179 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 11 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 6.25,
+    "recent_rank_score": 62.5,
+    "overdue_rank_score": 72.92,
+    "stability_rank_score": 95.83,
+    "profile_score": 51.56,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 32,
+    "total_draws": 10058,
+    "appearances": 1204,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9776,
+    "draw_frequency_pct": 11.9706,
+    "slot_frequency_pct": 1.9951,
+    "first_seen_index": 4,
+    "last_seen_index": 10048,
+    "draws_since_last_seen": 10,
+    "average_interval": 8.35,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 67,
+    "current_gap_ratio": 1.2,
+    "recent_50": 3,
+    "recent_100": 7,
+    "recent_250": 19,
+    "recent_500": 56,
+    "interval_stability_score": 57.52,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 11,
+        "count": 156
+      },
+      {
+        "partner": 21,
+        "count": 151
+      },
+      {
+        "partner": 29,
+        "count": 145
+      },
+      {
+        "partner": 44,
+        "count": 141
+      },
+      {
+        "partner": 16,
+        "count": 140
+      },
+      {
+        "partner": 19,
+        "count": 140
+      },
+      {
+        "partner": 17,
+        "count": 139
+      },
+      {
+        "partner": 39,
+        "count": 136
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          11,
+          41
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          39,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          25
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          47
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          4,
+          37
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          38
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          14,
+          34
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          16,
+          19
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 32 се е появило 1204 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 10 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 20.83,
+    "recent_rank_score": 0.0,
+    "overdue_rank_score": 68.75,
+    "stability_rank_score": 45.83,
+    "profile_score": 30.21,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 33,
+    "total_draws": 10058,
+    "appearances": 1227,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9963,
+    "draw_frequency_pct": 12.1992,
+    "slot_frequency_pct": 2.0332,
+    "first_seen_index": 6,
+    "last_seen_index": 10049,
+    "draws_since_last_seen": 9,
+    "average_interval": 8.19,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 74,
+    "current_gap_ratio": 1.1,
+    "recent_50": 7,
+    "recent_100": 14,
+    "recent_250": 32,
+    "recent_500": 55,
+    "interval_stability_score": 57.17,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 37,
+        "count": 148
+      },
+      {
+        "partner": 17,
+        "count": 145
+      },
+      {
+        "partner": 15,
+        "count": 144
+      },
+      {
+        "partner": 10,
+        "count": 142
+      },
+      {
+        "partner": 49,
+        "count": 142
+      },
+      {
+        "partner": 21,
+        "count": 140
+      },
+      {
+        "partner": 8,
+        "count": 139
+      },
+      {
+        "partner": 24,
+        "count": 139
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          6,
+          8
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          6,
+          49
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          37,
+          48
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          37,
+          49
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          19,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          11,
+          30
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          17,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          39,
+          46
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 33 се е появило 1227 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 9 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 47.92,
+    "recent_rank_score": 60.42,
+    "overdue_rank_score": 64.58,
+    "stability_rank_score": 35.42,
+    "profile_score": 51.88,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 34,
+    "total_draws": 10058,
+    "appearances": 1291,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0482,
+    "draw_frequency_pct": 12.8356,
+    "slot_frequency_pct": 2.1393,
+    "first_seen_index": 12,
+    "last_seen_index": 10029,
+    "draws_since_last_seen": 29,
+    "average_interval": 7.77,
+    "median_interval": 5.0,
+    "min_interval": 1,
+    "max_interval": 78,
+    "current_gap_ratio": 3.73,
+    "recent_50": 2,
+    "recent_100": 7,
+    "recent_250": 33,
+    "recent_500": 71,
+    "interval_stability_score": 54.96,
+    "status": "Силно закъсняло",
+    "top_pairs": [
+      {
+        "partner": 44,
+        "count": 165
+      },
+      {
+        "partner": 30,
+        "count": 154
+      },
+      {
+        "partner": 38,
+        "count": 152
+      },
+      {
+        "partner": 11,
+        "count": 151
+      },
+      {
+        "partner": 13,
+        "count": 149
+      },
+      {
+        "partner": 21,
+        "count": 147
+      },
+      {
+        "partner": 2,
+        "count": 143
+      },
+      {
+        "partner": 16,
+        "count": 142
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          3,
+          14
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          1,
+          21
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          11,
+          36
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          25,
+          44
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          13,
+          23
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          2,
+          42
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          12,
+          22
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          21,
+          36
+        ],
+        "count": 22
+      }
+    ],
+    "notes": [
+      "Число 34 се е появило 1291 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 29 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 100.0,
+    "recent_rank_score": 68.75,
+    "overdue_rank_score": 100.0,
+    "stability_rank_score": 4.17,
+    "profile_score": 73.02,
+    "band": "Силен профил"
+  },
+  {
+    "number": 35,
+    "total_draws": 10058,
+    "appearances": 1243,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0093,
+    "draw_frequency_pct": 12.3583,
+    "slot_frequency_pct": 2.0597,
+    "first_seen_index": 17,
+    "last_seen_index": 10053,
+    "draws_since_last_seen": 5,
+    "average_interval": 8.08,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 51,
+    "current_gap_ratio": 0.62,
+    "recent_50": 3,
+    "recent_100": 7,
+    "recent_250": 36,
+    "recent_500": 64,
+    "interval_stability_score": 57.39,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 11,
+        "count": 152
+      },
+      {
+        "partner": 17,
+        "count": 151
+      },
+      {
+        "partner": 37,
+        "count": 146
+      },
+      {
+        "partner": 5,
+        "count": 145
+      },
+      {
+        "partner": 20,
+        "count": 143
+      },
+      {
+        "partner": 47,
+        "count": 143
+      },
+      {
+        "partner": 6,
+        "count": 142
+      },
+      {
+        "partner": 9,
+        "count": 141
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          17,
+          47
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          17
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          36,
+          41
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          20
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          13
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          37
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 35 се е появило 1243 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 5 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 60.42,
+    "recent_rank_score": 81.25,
+    "overdue_rank_score": 50.0,
+    "stability_rank_score": 39.58,
+    "profile_score": 59.38,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 36,
+    "total_draws": 10058,
+    "appearances": 1221,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9914,
+    "draw_frequency_pct": 12.1396,
+    "slot_frequency_pct": 2.0233,
+    "first_seen_index": 15,
+    "last_seen_index": 10049,
+    "draws_since_last_seen": 9,
+    "average_interval": 8.22,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 57,
+    "current_gap_ratio": 1.09,
+    "recent_50": 10,
+    "recent_100": 15,
+    "recent_250": 37,
+    "recent_500": 64,
+    "interval_stability_score": 58.4,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 37,
+        "count": 153
+      },
+      {
+        "partner": 21,
+        "count": 152
+      },
+      {
+        "partner": 48,
+        "count": 145
+      },
+      {
+        "partner": 1,
+        "count": 143
+      },
+      {
+        "partner": 12,
+        "count": 142
+      },
+      {
+        "partner": 11,
+        "count": 140
+      },
+      {
+        "partner": 19,
+        "count": 138
+      },
+      {
+        "partner": 30,
+        "count": 138
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          11,
+          34
+        ],
+        "count": 24
+      },
+      {
+        "partners": [
+          12,
+          14
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          45,
+          46
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          21,
+          34
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          12,
+          22
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          18,
+          22
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          35,
+          41
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          21
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 36 се е появило 1221 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 9 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 37.5,
+    "recent_rank_score": 87.5,
+    "overdue_rank_score": 62.5,
+    "stability_rank_score": 87.5,
+    "profile_score": 65.0,
+    "band": "Силен профил"
+  },
+  {
+    "number": 37,
+    "total_draws": 10058,
+    "appearances": 1276,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0361,
+    "draw_frequency_pct": 12.6864,
+    "slot_frequency_pct": 2.1144,
+    "first_seen_index": 7,
+    "last_seen_index": 10055,
+    "draws_since_last_seen": 3,
+    "average_interval": 7.88,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 56,
+    "current_gap_ratio": 0.38,
+    "recent_50": 12,
+    "recent_100": 19,
+    "recent_250": 42,
+    "recent_500": 77,
+    "interval_stability_score": 57.92,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 49,
+        "count": 153
+      },
+      {
+        "partner": 36,
+        "count": 153
+      },
+      {
+        "partner": 8,
+        "count": 152
+      },
+      {
+        "partner": 44,
+        "count": 151
+      },
+      {
+        "partner": 21,
+        "count": 150
+      },
+      {
+        "partner": 33,
+        "count": 148
+      },
+      {
+        "partner": 47,
+        "count": 147
+      },
+      {
+        "partner": 35,
+        "count": 146
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          2,
+          17
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          4,
+          44
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          33,
+          48
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          33,
+          49
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          21
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          22,
+          42
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          6,
+          35
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          10,
+          11
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 37 се е появило 1276 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 3 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 91.67,
+    "recent_rank_score": 97.92,
+    "overdue_rank_score": 31.25,
+    "stability_rank_score": 56.25,
+    "profile_score": 74.06,
+    "band": "Силен профил"
+  },
+  {
+    "number": 38,
+    "total_draws": 10058,
+    "appearances": 1231,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9995,
+    "draw_frequency_pct": 12.239,
+    "slot_frequency_pct": 2.0398,
+    "first_seen_index": 2,
+    "last_seen_index": 10050,
+    "draws_since_last_seen": 8,
+    "average_interval": 8.17,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 64,
+    "current_gap_ratio": 0.98,
+    "recent_50": 9,
+    "recent_100": 17,
+    "recent_250": 40,
+    "recent_500": 70,
+    "interval_stability_score": 56.64,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 34,
+        "count": 152
+      },
+      {
+        "partner": 24,
+        "count": 146
+      },
+      {
+        "partner": 6,
+        "count": 144
+      },
+      {
+        "partner": 44,
+        "count": 144
+      },
+      {
+        "partner": 42,
+        "count": 143
+      },
+      {
+        "partner": 48,
+        "count": 142
+      },
+      {
+        "partner": 22,
+        "count": 141
+      },
+      {
+        "partner": 45,
+        "count": 141
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          16,
+          43
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          17,
+          18
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          6,
+          12
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          17,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          16,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          32
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          26
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          37
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 38 се е появило 1231 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 8 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 50.0,
+    "recent_rank_score": 95.83,
+    "overdue_rank_score": 60.42,
+    "stability_rank_score": 25.0,
+    "profile_score": 58.54,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 39,
+    "total_draws": 10058,
+    "appearances": 1210,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9825,
+    "draw_frequency_pct": 12.0302,
+    "slot_frequency_pct": 2.005,
+    "first_seen_index": 30,
+    "last_seen_index": 10054,
+    "draws_since_last_seen": 4,
+    "average_interval": 8.29,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 53,
+    "current_gap_ratio": 0.48,
+    "recent_50": 5,
+    "recent_100": 12,
+    "recent_250": 31,
+    "recent_500": 65,
+    "interval_stability_score": 55.83,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 44,
+        "count": 145
+      },
+      {
+        "partner": 20,
+        "count": 142
+      },
+      {
+        "partner": 21,
+        "count": 141
+      },
+      {
+        "partner": 2,
+        "count": 139
+      },
+      {
+        "partner": 48,
+        "count": 138
+      },
+      {
+        "partner": 25,
+        "count": 138
+      },
+      {
+        "partner": 43,
+        "count": 137
+      },
+      {
+        "partner": 49,
+        "count": 137
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          21,
+          46
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          7,
+          10
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          32,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          23
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          33,
+          46
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          19,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          1,
+          11
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          7,
+          11
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 39 се е появило 1210 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 4 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 25.0,
+    "recent_rank_score": 45.83,
+    "overdue_rank_score": 41.67,
+    "stability_rank_score": 10.42,
+    "profile_score": 30.63,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 40,
+    "total_draws": 10058,
+    "appearances": 1166,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9467,
+    "draw_frequency_pct": 11.5928,
+    "slot_frequency_pct": 1.9321,
+    "first_seen_index": 1,
+    "last_seen_index": 10057,
+    "draws_since_last_seen": 1,
+    "average_interval": 8.63,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 86,
+    "current_gap_ratio": 0.12,
+    "recent_50": 5,
+    "recent_100": 11,
+    "recent_250": 20,
+    "recent_500": 40,
+    "interval_stability_score": 55.69,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 15,
+        "count": 138
+      },
+      {
+        "partner": 6,
+        "count": 137
+      },
+      {
+        "partner": 2,
+        "count": 135
+      },
+      {
+        "partner": 38,
+        "count": 134
+      },
+      {
+        "partner": 35,
+        "count": 133
+      },
+      {
+        "partner": 39,
+        "count": 132
+      },
+      {
+        "partner": 29,
+        "count": 132
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          15,
+          22
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          34
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          6,
+          39
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          11,
+          38
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          6,
+          26
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          9,
+          34
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          26,
+          42
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          1,
+          27
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 40 се е появило 1166 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 1 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 0.0,
+    "recent_rank_score": 2.08,
+    "overdue_rank_score": 12.5,
+    "stability_rank_score": 8.33,
+    "profile_score": 4.69,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 41,
+    "total_draws": 10058,
+    "appearances": 1173,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9524,
+    "draw_frequency_pct": 11.6624,
+    "slot_frequency_pct": 1.9437,
+    "first_seen_index": 8,
+    "last_seen_index": 10040,
+    "draws_since_last_seen": 18,
+    "average_interval": 8.56,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 80,
+    "current_gap_ratio": 2.1,
+    "recent_50": 4,
+    "recent_100": 7,
+    "recent_250": 25,
+    "recent_500": 50,
+    "interval_stability_score": 54.84,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 49,
+        "count": 155
+      },
+      {
+        "partner": 37,
+        "count": 145
+      },
+      {
+        "partner": 21,
+        "count": 138
+      },
+      {
+        "partner": 35,
+        "count": 138
+      },
+      {
+        "partner": 45,
+        "count": 134
+      },
+      {
+        "partner": 8,
+        "count": 133
+      },
+      {
+        "partner": 43,
+        "count": 133
+      },
+      {
+        "partner": 32,
+        "count": 131
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          11,
+          32
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          22,
+          49
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          35,
+          36
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          15,
+          35
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          14,
+          19
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          8,
+          42
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          8,
+          22
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          33,
+          49
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 41 се е появило 1173 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 18 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 4.17,
+    "recent_rank_score": 18.75,
+    "overdue_rank_score": 87.5,
+    "stability_rank_score": 2.08,
+    "profile_score": 24.06,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 42,
+    "total_draws": 10058,
+    "appearances": 1236,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0036,
+    "draw_frequency_pct": 12.2887,
+    "slot_frequency_pct": 2.0481,
+    "first_seen_index": 1,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 8.14,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 60,
+    "current_gap_ratio": 0.0,
+    "recent_50": 10,
+    "recent_100": 14,
+    "recent_250": 36,
+    "recent_500": 80,
+    "interval_stability_score": 56.63,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 30,
+        "count": 149
+      },
+      {
+        "partner": 6,
+        "count": 147
+      },
+      {
+        "partner": 4,
+        "count": 145
+      },
+      {
+        "partner": 8,
+        "count": 144
+      },
+      {
+        "partner": 38,
+        "count": 143
+      },
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 48,
+        "count": 142
+      },
+      {
+        "partner": 47,
+        "count": 140
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          2,
+          34
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          4,
+          44
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          22,
+          25
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          28,
+          48
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          22,
+          37
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          21,
+          47
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          2,
+          19
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 42 се е появило 1236 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 52.08,
+    "recent_rank_score": 79.17,
+    "overdue_rank_score": 2.08,
+    "stability_rank_score": 22.92,
+    "profile_score": 43.02,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 43,
+    "total_draws": 10058,
+    "appearances": 1222,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9922,
+    "draw_frequency_pct": 12.1495,
+    "slot_frequency_pct": 2.0249,
+    "first_seen_index": 26,
+    "last_seen_index": 10054,
+    "draws_since_last_seen": 4,
+    "average_interval": 8.21,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 88,
+    "current_gap_ratio": 0.49,
+    "recent_50": 5,
+    "recent_100": 11,
+    "recent_250": 36,
+    "recent_500": 67,
+    "interval_stability_score": 57.4,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 29,
+        "count": 148
+      },
+      {
+        "partner": 45,
+        "count": 147
+      },
+      {
+        "partner": 28,
+        "count": 145
+      },
+      {
+        "partner": 9,
+        "count": 145
+      },
+      {
+        "partner": 46,
+        "count": 142
+      },
+      {
+        "partner": 49,
+        "count": 141
+      },
+      {
+        "partner": 24,
+        "count": 140
+      },
+      {
+        "partner": 1,
+        "count": 140
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          16,
+          38
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          5,
+          10
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          9,
+          28
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          13,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          31,
+          46
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          24,
+          46
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          15,
+          30
+        ],
+        "count": 19
+      },
+      {
+        "partners": [
+          5,
+          28
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 43 се е появило 1222 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 4 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 43.75,
+    "recent_rank_score": 77.08,
+    "overdue_rank_score": 39.58,
+    "stability_rank_score": 41.67,
+    "profile_score": 50.83,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 44,
+    "total_draws": 10058,
+    "appearances": 1291,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0482,
+    "draw_frequency_pct": 12.8356,
+    "slot_frequency_pct": 2.1393,
+    "first_seen_index": 8,
+    "last_seen_index": 10058,
+    "draws_since_last_seen": 0,
+    "average_interval": 7.79,
+    "median_interval": 5.5,
+    "min_interval": 1,
+    "max_interval": 78,
+    "current_gap_ratio": 0.0,
+    "recent_50": 6,
+    "recent_100": 8,
+    "recent_250": 25,
+    "recent_500": 54,
+    "interval_stability_score": 54.61,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 34,
+        "count": 165
+      },
+      {
+        "partner": 49,
+        "count": 159
+      },
+      {
+        "partner": 4,
+        "count": 157
+      },
+      {
+        "partner": 37,
+        "count": 151
+      },
+      {
+        "partner": 8,
+        "count": 147
+      },
+      {
+        "partner": 12,
+        "count": 145
+      },
+      {
+        "partner": 39,
+        "count": 145
+      },
+      {
+        "partner": 38,
+        "count": 144
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          7,
+          48
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          25,
+          34
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          4,
+          37
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          4,
+          42
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          19,
+          33
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          32,
+          39
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          3,
+          49
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          25
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 44 се е появило 1291 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 0 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 97.92,
+    "recent_rank_score": 16.67,
+    "overdue_rank_score": 0.0,
+    "stability_rank_score": 0.0,
+    "profile_score": 38.44,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 45,
+    "total_draws": 10058,
+    "appearances": 1238,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0052,
+    "draw_frequency_pct": 12.3086,
+    "slot_frequency_pct": 2.0514,
+    "first_seen_index": 22,
+    "last_seen_index": 10050,
+    "draws_since_last_seen": 8,
+    "average_interval": 8.11,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 66,
+    "current_gap_ratio": 0.99,
+    "recent_50": 4,
+    "recent_100": 8,
+    "recent_250": 25,
+    "recent_500": 53,
+    "interval_stability_score": 58.08,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 6,
+        "count": 149
+      },
+      {
+        "partner": 43,
+        "count": 147
+      },
+      {
+        "partner": 28,
+        "count": 146
+      },
+      {
+        "partner": 4,
+        "count": 142
+      },
+      {
+        "partner": 38,
+        "count": 141
+      },
+      {
+        "partner": 8,
+        "count": 141
+      },
+      {
+        "partner": 48,
+        "count": 141
+      },
+      {
+        "partner": 7,
+        "count": 140
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          36,
+          46
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          20,
+          23
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          2,
+          9
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          30
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          6
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          3,
+          5
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          20,
+          35
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          27,
+          28
+        ],
+        "count": 19
+      }
+    ],
+    "notes": [
+      "Число 45 се е появило 1238 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 8 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 54.17,
+    "recent_rank_score": 14.58,
+    "overdue_rank_score": 58.33,
+    "stability_rank_score": 68.75,
+    "profile_score": 48.02,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 46,
+    "total_draws": 10058,
+    "appearances": 1246,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0117,
+    "draw_frequency_pct": 12.3881,
+    "slot_frequency_pct": 2.0647,
+    "first_seen_index": 2,
+    "last_seen_index": 10050,
+    "draws_since_last_seen": 8,
+    "average_interval": 8.07,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 58,
+    "current_gap_ratio": 0.99,
+    "recent_50": 7,
+    "recent_100": 13,
+    "recent_250": 28,
+    "recent_500": 56,
+    "interval_stability_score": 56.4,
+    "status": "Нормален ритъм",
+    "top_pairs": [
+      {
+        "partner": 21,
+        "count": 154
+      },
+      {
+        "partner": 11,
+        "count": 150
+      },
+      {
+        "partner": 5,
+        "count": 148
+      },
+      {
+        "partner": 49,
+        "count": 145
+      },
+      {
+        "partner": 28,
+        "count": 143
+      },
+      {
+        "partner": 43,
+        "count": 142
+      },
+      {
+        "partner": 4,
+        "count": 139
+      },
+      {
+        "partner": 33,
+        "count": 139
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          21,
+          39
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          36,
+          45
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          4,
+          11
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          4,
+          17
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          13,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          31,
+          43
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          17,
+          35
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          18,
+          22
+        ],
+        "count": 21
+      }
+    ],
+    "notes": [
+      "Число 46 се е появило 1246 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 8 тиража.",
+      "Ритъмът не показва сериозна крайност."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 62.5,
+    "recent_rank_score": 29.17,
+    "overdue_rank_score": 56.25,
+    "stability_rank_score": 16.67,
+    "profile_score": 43.75,
+    "band": "По-слаб профил"
+  },
+  {
+    "number": 47,
+    "total_draws": 10058,
+    "appearances": 1214,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 0.9857,
+    "draw_frequency_pct": 12.07,
+    "slot_frequency_pct": 2.0117,
+    "first_seen_index": 2,
+    "last_seen_index": 10040,
+    "draws_since_last_seen": 18,
+    "average_interval": 8.28,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 64,
+    "current_gap_ratio": 2.17,
+    "recent_50": 3,
+    "recent_100": 9,
+    "recent_250": 25,
+    "recent_500": 53,
+    "interval_stability_score": 58.22,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 4,
+        "count": 156
+      },
+      {
+        "partner": 37,
+        "count": 147
+      },
+      {
+        "partner": 35,
+        "count": 143
+      },
+      {
+        "partner": 17,
+        "count": 141
+      },
+      {
+        "partner": 42,
+        "count": 140
+      },
+      {
+        "partner": 26,
+        "count": 140
+      },
+      {
+        "partner": 29,
+        "count": 138
+      },
+      {
+        "partner": 21,
+        "count": 136
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          17,
+          35
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          14,
+          15
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          4,
+          44
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          21,
+          42
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          13,
+          17
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          11,
+          32
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          4,
+          6
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          26,
+          34
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 47 се е появило 1214 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 18 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 27.08,
+    "recent_rank_score": 12.5,
+    "overdue_rank_score": 85.42,
+    "stability_rank_score": 77.08,
+    "profile_score": 45.1,
+    "band": "Нормален профил"
+  },
+  {
+    "number": 48,
+    "total_draws": 10058,
+    "appearances": 1269,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0304,
+    "draw_frequency_pct": 12.6168,
+    "slot_frequency_pct": 2.1028,
+    "first_seen_index": 13,
+    "last_seen_index": 10039,
+    "draws_since_last_seen": 19,
+    "average_interval": 7.91,
+    "median_interval": 6.0,
+    "min_interval": 1,
+    "max_interval": 58,
+    "current_gap_ratio": 2.4,
+    "recent_50": 8,
+    "recent_100": 14,
+    "recent_250": 35,
+    "recent_500": 64,
+    "interval_stability_score": 57.56,
+    "status": "Закъсняло",
+    "top_pairs": [
+      {
+        "partner": 6,
+        "count": 152
+      },
+      {
+        "partner": 21,
+        "count": 147
+      },
+      {
+        "partner": 25,
+        "count": 146
+      },
+      {
+        "partner": 36,
+        "count": 145
+      },
+      {
+        "partner": 22,
+        "count": 144
+      },
+      {
+        "partner": 28,
+        "count": 142
+      },
+      {
+        "partner": 34,
+        "count": 142
+      },
+      {
+        "partner": 42,
+        "count": 142
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          7,
+          44
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          33,
+          37
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          6,
+          42
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          28,
+          42
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          14,
+          23
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          34,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          18,
+          22
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          5,
+          21
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 48 се е появило 1269 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 19 тиража.",
+      "Статусът показва по-дълга пауза спрямо средния му ритъм."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 83.33,
+    "recent_rank_score": 75.0,
+    "overdue_rank_score": 89.58,
+    "stability_rank_score": 47.92,
+    "profile_score": 75.42,
+    "band": "Силен профил"
+  },
+  {
+    "number": 49,
+    "total_draws": 10058,
+    "appearances": 1274,
+    "expected_appearances": 1231.59,
+    "appearance_vs_expected_ratio": 1.0344,
+    "draw_frequency_pct": 12.6665,
+    "slot_frequency_pct": 2.1111,
+    "first_seen_index": 3,
+    "last_seen_index": 10053,
+    "draws_since_last_seen": 5,
+    "average_interval": 7.89,
+    "median_interval": 6,
+    "min_interval": 1,
+    "max_interval": 50,
+    "current_gap_ratio": 0.63,
+    "recent_50": 11,
+    "recent_100": 16,
+    "recent_250": 31,
+    "recent_500": 52,
+    "interval_stability_score": 57.95,
+    "status": "Активно напоследък",
+    "top_pairs": [
+      {
+        "partner": 44,
+        "count": 159
+      },
+      {
+        "partner": 41,
+        "count": 155
+      },
+      {
+        "partner": 37,
+        "count": 153
+      },
+      {
+        "partner": 21,
+        "count": 151
+      },
+      {
+        "partner": 15,
+        "count": 149
+      },
+      {
+        "partner": 18,
+        "count": 148
+      },
+      {
+        "partner": 46,
+        "count": 145
+      },
+      {
+        "partner": 14,
+        "count": 144
+      }
+    ],
+    "top_triples": [
+      {
+        "partners": [
+          20,
+          22
+        ],
+        "count": 25
+      },
+      {
+        "partners": [
+          6,
+          33
+        ],
+        "count": 23
+      },
+      {
+        "partners": [
+          33,
+          37
+        ],
+        "count": 22
+      },
+      {
+        "partners": [
+          17,
+          24
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          3,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          21,
+          44
+        ],
+        "count": 21
+      },
+      {
+        "partners": [
+          15,
+          23
+        ],
+        "count": 20
+      },
+      {
+        "partners": [
+          18,
+          21
+        ],
+        "count": 20
+      }
+    ],
+    "notes": [
+      "Число 49 се е появило 1274 пъти в 10058 анализирани тиража.",
+      "Последната поява е преди 5 тиража.",
+      "Числото има по-висока активност в последните 50 тиража."
+    ],
+    "recommendations": [
+      "Използвай профила като статистически контекст, не като гаранция за бъдещо теглене.",
+      "Сравни числото с други числа чрез честота, интервал и участие в двойки/тройки."
+    ],
+    "frequency_rank_score": 89.58,
+    "recent_rank_score": 43.75,
+    "overdue_rank_score": 47.92,
+    "stability_rank_score": 62.5,
+    "profile_score": 64.37,
+    "band": "Нормален профил"
+  }
+]
