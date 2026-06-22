@@ -2,7 +2,7 @@
 
 This report studies the historical interval rhythm of each main lottery number.
 
-**Important:** This is statistical analysis, not a гаранция за печалба. Lottery draws are random.
+**Important:** This is statistical analysis, not a winning guarantee. Lottery draws are random.
 
 Valid historical draws analyzed: **10058**
 Bonus number used: **False**

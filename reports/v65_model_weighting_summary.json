@@ -10,7 +10,7 @@
   "top_adaptive_weight_percent": 25.91,
   "top_reliability_score": 100.0,
   "total_weight": 0.999998,
-  "generated_at": "2026-06-22T09:59:03+00:00",
+  "generated_at": "2026-06-22T12:18:35+00:00",
   "generated_reports": [
     "reports/v65_model_weighting_summary.json",
     "reports/v65_model_weighting_summary.md",

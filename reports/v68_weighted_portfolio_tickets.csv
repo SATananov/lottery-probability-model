@@ -1,4 +1,4 @@
-ticket_id,strategy_label,numbers,average_step66_score,average_step67_score,unique_help_count,top20_numbers_count,max_overlap_with_other_ticket,average_overlap_with_other_tickets,portfolio_contribution_score,balance_status,risk_note
+﻿ticket_id,strategy_label,numbers,average_step66_score,average_step67_score,unique_help_count,top20_numbers_count,max_overlap_with_other_ticket,average_overlap_with_other_tickets,portfolio_contribution_score,balance_status,risk_note
 5,Балансиран фиш по ниски/високи числа,"1,3,22,38,42,49",75.825,75.825,2,6,2,1.571,61.704,добър структурен баланс,Контролиран статистически фиш.
 1,Балансиран претеглен фиш,"1,2,4,18,37,49",88.116,88.116,0,6,3,2.143,54.464,добър структурен баланс,Контролиран статистически фиш.
 3,Диверсифициран претеглен фиш,"2,13,21,23,38,49",78.881,78.881,0,6,2,1.857,53.384,добър структурен баланс,Контролиран статистически фиш.

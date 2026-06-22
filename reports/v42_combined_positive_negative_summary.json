@@ -3,8 +3,8 @@
     "average_absence_risk_score": 8.51,
     "average_combined_score": 60.69,
     "average_positive_signal_score": 88.003,
-    "created_at": "2026-06-22T07:58:09",
-    "important_warning": "This is a statistical analysis artifact, not a гаранция за печалба. Lottery draws are random.",
+    "created_at": "2026-06-22T15:17:14",
+    "important_warning": "This is a statistical analysis artifact, not a winning guarantee. Lottery draws are random.",
     "method": "combined_positive_negative_foundation",
     "numbers": [
       2,
@@ -132,7 +132,7 @@
     ],
     "version": "v42"
   },
-  "created_at": "2026-06-22T07:58:09",
+  "created_at": "2026-06-22T15:17:14",
   "dataset": {
     "expected_hits_per_number": 1231.592,
     "invalid_rows": 0,
@@ -148,7 +148,7 @@
     "uses_bonus": false,
     "valid_draw_events": 10058
   },
-  "important_warning": "This is a statistical analysis artifact, not a гаранция за печалба. Lottery draws are random.",
+  "important_warning": "This is a statistical analysis artifact, not a winning guarantee. Lottery draws are random.",
   "top_absence_risk_numbers": [
     {
       "absence_risk_level": "low",
