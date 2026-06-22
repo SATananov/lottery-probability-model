@@ -39,6 +39,7 @@ from src.v73_ticket_pack_performance_tracker_section import render_v73_ticket_pa
 from src.v72_pipeline_refresh_section import render_v72_pipeline_refresh_section
 from src.v74_model_dependency_sync_center_section import render_v74_model_dependency_sync_center_section
 from src.v75_neural_meta_learner_section import render_v75_neural_meta_learner_section
+from src.v76_explainability_validation_section import render_v76_explainability_validation_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4190,7 +4191,8 @@ def main() -> None:
         "Представяне на пакета": render_v73_ticket_pack_performance_tracker_section,
         "Обновяване на анализите": render_v72_pipeline_refresh_section,
         "Контрол на синхрона": render_v74_model_dependency_sync_center_section,
-    "Невронна лаборатория": render_v75_neural_meta_learner_section,
+        "Невронна лаборатория": render_v75_neural_meta_learner_section,
+        "Обяснимост и валидация": render_v76_explainability_validation_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -4246,7 +4248,9 @@ def main() -> None:
             'Представяне на пакета',
             'Обновяване на анализите',
             'Контрол на синхрона',
-        "Невронна лаборатория",
+            "Невронна лаборатория",
+            'Обяснимост и валидация',
+            "Обяснимост и валидация",
         ],
     }
     used_navigation_pages = set()

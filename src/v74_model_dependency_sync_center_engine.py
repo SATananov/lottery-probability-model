@@ -907,3 +907,41 @@ if __name__ == "__main__":
     print("SYNCED_MODELS", result.get("synced_models"))
     print("STALE_MODELS", result.get("stale_models"))
     print("MISSING_MODELS", result.get("missing_models"))
+
+# STEP 76 EXPLAINABILITY VALIDATION WIRING START
+# Added as a safe extension after MODEL_NODES is defined.
+_STEP76_NODE = {
+    "step": "76",
+    "label": "Обяснимост и валидация",
+    "category": "Обяснимост и валидация",
+    "script": "scripts/v76_build_explainability_validation_center.py",
+    "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+    "inputs": [
+        "reports/v75_neural_meta_number_scores.csv",
+        "reports/v75_neural_candidate_tickets.csv",
+        "reports/v75_neural_meta_learner_summary.json",
+    ],
+    "outputs": [
+        "models/v76/v76_explainability_validation_model.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_explainability_validation_summary.md",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_validation_warnings.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "76" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP76_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "75":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 76" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 76" not in _feeds:
+            _feeds.append("Step 76")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 76 EXPLAINABILITY VALIDATION WIRING END

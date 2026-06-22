@@ -6,57 +6,133 @@
   "executed_actions": 2,
   "successful_actions": 2,
   "failed_actions": 0,
-  "generated_at": "2026-06-22T14:05:13+00:00",
+  "generated_at": "2026-06-22T14:47:28+00:00",
   "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
   "plan": [
     {
-      "order": 1,
-      "step": "75",
-      "label": "Невронен мета-обучител",
-      "category": "Невронен мета-обучител",
-      "script": "scripts/v75_build_neural_meta_learner.py",
-      "script_exists": true,
-      "role": "Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове."
+      "step": "76",
+      "label": "Обяснимост и валидация",
+      "category": "Обяснимост и валидация",
+      "script": "scripts/v76_build_explainability_validation_center.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v75_neural_meta_number_scores.csv",
+        "reports/v75_neural_candidate_tickets.csv",
+        "reports/v75_neural_meta_learner_summary.json"
+      ],
+      "outputs": [
+        "models/v76/v76_explainability_validation_model.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_explainability_validation_summary.md",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_validation_warnings.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
+      "ensemble_source": false,
+      "order": 1
     },
     {
-      "order": 2,
       "step": "74",
       "label": "Контрол на синхрона",
-      "category": "Контролен център",
+      "category": "Контрол на синхрона",
       "script": "scripts/v74_build_model_dependency_sync_center.py",
-      "script_exists": true,
-      "role": "Преизчислява централния audit след обновяване."
+      "datasets": [
+        "data/historical_draws.csv",
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "models/model_registry.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv"
+      ],
+      "outputs": [
+        "models/v74/v74_model_dependency_sync_center_model.json",
+        "reports/v74_model_dependency_summary.json",
+        "reports/v74_model_dependency_summary.md",
+        "reports/v74_model_dependency_map.csv",
+        "reports/v74_model_sync_status.csv"
+      ],
+      "feeds": [],
+      "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+      "ensemble_source": false,
+      "order": 2
     }
   ],
   "results": [
     {
+      "step": "76",
+      "label": "Обяснимост и валидация",
+      "category": "Обяснимост и валидация",
+      "script": "scripts/v76_build_explainability_validation_center.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v75_neural_meta_number_scores.csv",
+        "reports/v75_neural_candidate_tickets.csv",
+        "reports/v75_neural_meta_learner_summary.json"
+      ],
+      "outputs": [
+        "models/v76/v76_explainability_validation_model.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_explainability_validation_summary.md",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_validation_warnings.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
+      "ensemble_source": false,
       "order": 1,
-      "step": "75",
-      "label": "Невронен мета-обучител",
-      "category": "Невронен мета-обучител",
-      "script": "scripts/v75_build_neural_meta_learner.py",
-      "script_exists": true,
-      "role": "Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.",
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T14:04:56+00:00",
-      "finished_at": "2026-06-22T14:05:12+00:00",
-      "stdout_tail": "STEP75_BUILD_OK\nSTATUS Готово\nVALID_DRAWS 10058\nAVG_HITS_TOP6 0.7465\nMAX_HITS_TOP6 4\nTOP_NUMBERS 21,34,45,40,2,25\n",
+      "started_at": "2026-06-22T14:47:27+00:00",
+      "finished_at": "2026-06-22T14:47:28+00:00",
+      "stdout_tail": "STEP76_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nNUMBERS_EXPLAINED 49\nTICKETS_VALIDATED 8\nWARNING_ITEMS 10\n",
       "stderr_tail": ""
     },
     {
-      "order": 2,
       "step": "74",
       "label": "Контрол на синхрона",
-      "category": "Контролен център",
+      "category": "Контрол на синхрона",
       "script": "scripts/v74_build_model_dependency_sync_center.py",
-      "script_exists": true,
-      "role": "Преизчислява централния audit след обновяване.",
+      "datasets": [
+        "data/historical_draws.csv",
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "models/model_registry.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv"
+      ],
+      "outputs": [
+        "models/v74/v74_model_dependency_sync_center_model.json",
+        "reports/v74_model_dependency_summary.json",
+        "reports/v74_model_dependency_summary.md",
+        "reports/v74_model_dependency_map.csv",
+        "reports/v74_model_sync_status.csv"
+      ],
+      "feeds": [],
+      "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+      "ensemble_source": false,
+      "order": 2,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T14:05:12+00:00",
-      "finished_at": "2026-06-22T14:05:13+00:00",
-      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 24\nSYNCED_MODELS 24\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
+      "started_at": "2026-06-22T14:47:28+00:00",
+      "finished_at": "2026-06-22T14:47:28+00:00",
+      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 25\nSYNCED_MODELS 25\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
       "stderr_tail": ""
     }
   ]

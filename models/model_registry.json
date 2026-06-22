@@ -579,6 +579,42 @@
     {
       "description": "Изходът помага на следващ слой",
       "from": "Step 75",
+      "to": "Step 76",
+      "type": "feeds"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 76",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/historical_draws.csv",
+      "to": "Step 76",
+      "type": "dataset"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v75_neural_meta_number_scores.csv",
+      "to": "Step 76",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v75_neural_candidate_tickets.csv",
+      "to": "Step 76",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v75_neural_meta_learner_summary.json",
+      "to": "Step 76",
+      "type": "artifact"
+    },
+    {
+      "description": "Изходът помага на следващ слой",
+      "from": "Step 76",
       "to": "Step 74",
       "type": "feeds"
     }
@@ -1119,7 +1155,7 @@
       ],
       "ensemble_source": false,
       "feeds": [
-        "Step 74"
+        "Step 76"
       ],
       "inputs": [
         "data/v41_canonical_draw_events.csv"
@@ -1135,6 +1171,34 @@
       "role": "Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.",
       "script": "scripts/v75_build_neural_meta_learner.py",
       "step": "75"
+    },
+    {
+      "category": "Обяснимост и валидация",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "inputs": [
+        "reports/v75_neural_meta_number_scores.csv",
+        "reports/v75_neural_candidate_tickets.csv",
+        "reports/v75_neural_meta_learner_summary.json"
+      ],
+      "label": "Обяснимост и валидация",
+      "outputs": [
+        "models/v76/v76_explainability_validation_model.json",
+        "reports/v76_explainability_validation_summary.json",
+        "reports/v76_explainability_validation_summary.md",
+        "reports/v76_number_explanations.csv",
+        "reports/v76_ticket_validation.csv",
+        "reports/v76_validation_warnings.csv"
+      ],
+      "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
+      "script": "scripts/v76_build_explainability_validation_center.py",
+      "step": "76"
     }
   ],
   "primary_datasets": [
@@ -1216,7 +1280,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T14:05:13+00:00",
+    "generated_at": "2026-06-22T14:47:28+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1226,7 +1290,7 @@
       "models/v74/v74_model_dependency_sync_center_model.json"
     ],
     "missing_models": 0,
-    "models_checked": 24,
+    "models_checked": 25,
     "name": "Контрол на синхрона между моделите",
     "pipeline_chain": [
       "Данни от тиражи",
@@ -1243,10 +1307,10 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "d406ebe080340ccba9a24fcfb45fed63782c3dba144df1b5d70930fe0d8b7ab5",
+    "state_hash": "6cd9cb484134a46705004cbcf01eec78798997daf3b1fffde18821c552d9b6d3",
     "status": "Синхронизиран",
     "step": "74",
-    "synced_models": 24
+    "synced_models": 25
   },
   "sync_status": [
     {
@@ -1760,7 +1824,7 @@
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
-      "feeds": "Step 74",
+      "feeds": "Step 76",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Невронен мета-обучител",
       "latest_input_mtime": "2026-06-22T07:57:50",
@@ -1775,6 +1839,28 @@
       "script_exists": true,
       "status_rank": 2,
       "step": "75",
+      "sync_status": "Синхронизиран"
+    },
+    {
+      "category": "Обяснимост и валидация",
+      "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
+      "dependencies_present": true,
+      "ensemble_source": false,
+      "feeds": "Step 74",
+      "inputs": "reports/v75_neural_meta_number_scores.csv; reports/v75_neural_candidate_tickets.csv; reports/v75_neural_meta_learner_summary.json",
+      "label": "Обяснимост и валидация",
+      "latest_input_mtime": "2026-06-22T17:05:12",
+      "latest_output_mtime": "2026-06-22T17:47:27",
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "outputs": "models/v76/v76_explainability_validation_model.json; reports/v76_explainability_validation_summary.json; reports/v76_explainability_validation_summary.md; reports/v76_number_explanations.csv; reports/v76_ticket_validation.csv; reports/v76_validation_warnings.csv",
+      "outputs_present": true,
+      "role": "Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
+      "script": "scripts/v76_build_explainability_validation_center.py",
+      "script_exists": true,
+      "status_rank": 2,
+      "step": "76",
       "sync_status": "Синхронизиран"
     }
   ]

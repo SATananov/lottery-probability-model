@@ -1,0 +1,445 @@
+{
+  "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+  "tickets": [
+    {
+      "average_hot_cold_score": 59.132,
+      "average_pair_support": 130.667,
+      "average_weighted_percent": 62.946,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "102",
+        "draw_numbers": [
+          17,
+          21,
+          29,
+          34,
+          42,
+          44
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          21,
+          29,
+          42,
+          44
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 не показва особено силен общ профил; има умерена историческа близост, без точен повтор; има сигнал за преглед преди практическо използване.",
+      "five_match_count": 0,
+      "four_match_count": 9,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.516563,
+      "numbers": [
+        2,
+        21,
+        29,
+        41,
+        42,
+        44
+      ],
+      "odd_count": 3,
+      "overlap_distribution": {
+        "0": 4337,
+        "1": 4180,
+        "2": 1345,
+        "3": 187,
+        "4": 9,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "среден",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 179,
+      "ticket_id": 1,
+      "validation_label": "умерена обща подкрепа",
+      "validation_score": 50.389
+    },
+    {
+      "average_hot_cold_score": 63.312,
+      "average_pair_support": 135.733,
+      "average_weighted_percent": 58.438,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "11",
+        "draw_numbers": [
+          20,
+          21,
+          25,
+          34,
+          40,
+          44
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          20,
+          21,
+          34,
+          44
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 дава добър общ исторически/скорошен профил; има умерена историческа близост, без точен повтор; има сигнал за преглед преди практическо използване.",
+      "five_match_count": 0,
+      "four_match_count": 10,
+      "low_count": 3,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.51528,
+      "numbers": [
+        11,
+        20,
+        21,
+        27,
+        34,
+        44
+      ],
+      "odd_count": 3,
+      "overlap_distribution": {
+        "0": 4309,
+        "1": 4145,
+        "2": 1403,
+        "3": 191,
+        "4": 10,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "среден",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 157,
+      "ticket_id": 2,
+      "validation_label": "умерена обща подкрепа",
+      "validation_score": 47.594
+    },
+    {
+      "average_hot_cold_score": 61.515,
+      "average_pair_support": 130.667,
+      "average_weighted_percent": 55.638,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "14",
+        "draw_numbers": [
+          2,
+          10,
+          11,
+          35,
+          38,
+          45
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          2,
+          11,
+          38,
+          45
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 дава добър общ исторически/скорошен профил; има умерена историческа близост, без точен повтор; балансът е приемлив за статистически референтен фиш.",
+      "five_match_count": 0,
+      "four_match_count": 11,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.520419,
+      "numbers": [
+        2,
+        11,
+        25,
+        27,
+        38,
+        45
+      ],
+      "odd_count": 4,
+      "overlap_distribution": {
+        "0": 4401,
+        "1": 4114,
+        "2": 1351,
+        "3": 181,
+        "4": 11,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "нисък",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 148,
+      "ticket_id": 3,
+      "validation_label": "добре балансиран статистически фиш",
+      "validation_score": 55.817
+    },
+    {
+      "average_hot_cold_score": 60.158,
+      "average_pair_support": 129.467,
+      "average_weighted_percent": 50.428,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "1",
+        "draw_numbers": [
+          3,
+          21,
+          27,
+          28,
+          40,
+          45
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          21,
+          27,
+          28,
+          45
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 дава добър общ исторически/скорошен профил; има умерена историческа близост, без точен повтор; балансът е приемлив за статистически референтен фиш.",
+      "five_match_count": 0,
+      "four_match_count": 13,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.520892,
+      "numbers": [
+        7,
+        21,
+        27,
+        28,
+        34,
+        45
+      ],
+      "odd_count": 4,
+      "overlap_distribution": {
+        "0": 4309,
+        "1": 4210,
+        "2": 1357,
+        "3": 169,
+        "4": 13,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "нисък",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 162,
+      "ticket_id": 4,
+      "validation_label": "добре балансиран статистически фиш",
+      "validation_score": 55.157
+    },
+    {
+      "average_hot_cold_score": 63.108,
+      "average_pair_support": 129.467,
+      "average_weighted_percent": 59.497,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "1",
+        "draw_numbers": [
+          2,
+          18,
+          21,
+          34,
+          41,
+          43
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          2,
+          21,
+          34,
+          43
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 дава добър общ исторически/скорошен профил; има умерена историческа близост, без точен повтор; балансът е приемлив за статистически референтен фиш.",
+      "five_match_count": 0,
+      "four_match_count": 9,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.534294,
+      "numbers": [
+        2,
+        21,
+        25,
+        34,
+        43,
+        45
+      ],
+      "odd_count": 4,
+      "overlap_distribution": {
+        "0": 4305,
+        "1": 4188,
+        "2": 1390,
+        "3": 166,
+        "4": 9,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "нисък",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 170,
+      "ticket_id": 5,
+      "validation_label": "добре балансиран статистически фиш",
+      "validation_score": 81.841
+    },
+    {
+      "average_hot_cold_score": 57.593,
+      "average_pair_support": 128.8,
+      "average_weighted_percent": 57.367,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "12",
+        "draw_numbers": [
+          2,
+          13,
+          22,
+          25,
+          32,
+          44
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          2,
+          13,
+          25,
+          44
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 не показва особено силен общ профил; има умерена историческа близост, без точен повтор; има сигнал за преглед преди практическо използване.",
+      "five_match_count": 0,
+      "four_match_count": 10,
+      "low_count": 3,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.519335,
+      "numbers": [
+        2,
+        13,
+        19,
+        25,
+        30,
+        44
+      ],
+      "odd_count": 3,
+      "overlap_distribution": {
+        "0": 4370,
+        "1": 4178,
+        "2": 1314,
+        "3": 186,
+        "4": 10,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "среден",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 133,
+      "ticket_id": 6,
+      "validation_label": "умерена обща подкрепа",
+      "validation_score": 53.722
+    },
+    {
+      "average_hot_cold_score": 59.362,
+      "average_pair_support": 125.533,
+      "average_weighted_percent": 58.203,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "24",
+        "draw_numbers": [
+          3,
+          4,
+          13,
+          17,
+          25,
+          44
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          3,
+          13,
+          25,
+          44
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 не показва особено силен общ профил; има умерена историческа близост, без точен повтор; има сигнал за преглед преди практическо използване.",
+      "five_match_count": 0,
+      "four_match_count": 6,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.514728,
+      "numbers": [
+        3,
+        13,
+        25,
+        30,
+        38,
+        44
+      ],
+      "odd_count": 3,
+      "overlap_distribution": {
+        "0": 4343,
+        "1": 4212,
+        "2": 1322,
+        "3": 175,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "среден",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 153,
+      "ticket_id": 7,
+      "validation_label": "умерена обща подкрепа",
+      "validation_score": 45.955
+    },
+    {
+      "average_hot_cold_score": 58.71,
+      "average_pair_support": 128.133,
+      "average_weighted_percent": 56.301,
+      "closest_historical_draw": {
+        "date": "",
+        "draw_number": "1",
+        "draw_numbers": [
+          2,
+          19,
+          22,
+          30,
+          40,
+          42
+        ],
+        "hits": 4,
+        "matched_numbers": [
+          2,
+          30,
+          40,
+          42
+        ]
+      },
+      "exact_historical_matches": 0,
+      "explanation": "числата имат умерена ensemble подкрепа; Step 57 не показва особено силен общ профил; има умерена историческа близост, без точен повтор; балансът е приемлив за статистически референтен фиш.",
+      "five_match_count": 0,
+      "four_match_count": 6,
+      "low_count": 2,
+      "max_historical_overlap": 4,
+      "neural_ticket_score": 0.527801,
+      "numbers": [
+        2,
+        21,
+        30,
+        40,
+        42,
+        45
+      ],
+      "odd_count": 2,
+      "overlap_distribution": {
+        "0": 4377,
+        "1": 4165,
+        "2": 1322,
+        "3": 188,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      },
+      "risk_level": "нисък",
+      "safe_note": "Step 76 е обяснителен и валидационен слой. Той показва защо дадени числа или фишове са получили по-висока статистическа оценка, но не е прогноза и не е гаранция за печалба.",
+      "sum": 180,
+      "ticket_id": 8,
+      "validation_label": "добре балансиран статистически фиш",
+      "validation_score": 68.767
+    }
+  ]
+}

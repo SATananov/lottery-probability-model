@@ -1,3 +1,3 @@
 ﻿order,step,label,category,script,script_exists,role
-1,75,Невронен мета-обучител,Невронен мета-обучител,scripts/v75_build_neural_meta_learner.py,True,Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.
-2,74,Контрол на синхрона,Контролен център,scripts/v74_build_model_dependency_sync_center.py,True,Преизчислява централния audit след обновяване.
+1,76,Обяснимост и валидация,Обяснимост и валидация,scripts/v76_build_explainability_validation_center.py,,Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат фишовете преди финалния sync audit.
+2,74,Контрол на синхрона,Контрол на синхрона,scripts/v74_build_model_dependency_sync_center.py,,"Финален контролен слой за проверка на model artifacts, dependency map и sync status."

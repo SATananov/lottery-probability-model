@@ -95,4 +95,10 @@ reports/v71_ticket_pack.csv,Step 73,artifact,Входен model/report artifact
 Step 73,Step 75,feeds,Изходът помага на следващ слой
 data/v41_canonical_draw_events.csv,Step 75,dataset,Dataset вход
 data/historical_draws.csv,Step 75,dataset,Dataset вход
-Step 75,Step 74,feeds,Изходът помага на следващ слой
+Step 75,Step 76,feeds,Изходът помага на следващ слой
+data/v41_canonical_draw_events.csv,Step 76,dataset,Dataset вход
+data/historical_draws.csv,Step 76,dataset,Dataset вход
+reports/v75_neural_meta_number_scores.csv,Step 76,artifact,Входен model/report artifact
+reports/v75_neural_candidate_tickets.csv,Step 76,artifact,Входен model/report artifact
+reports/v75_neural_meta_learner_summary.json,Step 76,artifact,Входен model/report artifact
+Step 76,Step 74,feeds,Изходът помага на следващ слой

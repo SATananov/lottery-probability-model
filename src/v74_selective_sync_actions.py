@@ -248,3 +248,94 @@ def run_sync_plan(plan: list[dict[str, Any]], stop_on_error: bool = True) -> dic
         build_model_dependency_sync_center()
 
     return summary
+
+# STEP 76 EXPLAINABILITY VALIDATION WIRING START
+# Safe wrapper around the original planner so Step 76 sits between Step 75 and Step 74.
+_STEP76_ORIGINAL_BUILD_SYNC_PLAN = build_sync_plan
+
+def _step76_find_node(step: str):
+    for _node in MODEL_NODES:
+        if str(_node.get("step")) == str(step):
+            return dict(_node)
+
+    if str(step) == "74":
+        return {
+            "step": "74",
+            "label": "Контрол на синхрона",
+            "category": "Контрол на синхрона",
+            "script": "scripts/v74_build_model_dependency_sync_center.py",
+            "datasets": ["data/historical_draws.csv", "data/v41_canonical_draw_events.csv"],
+            "inputs": [
+                "models/model_registry.json",
+                "reports/v76_explainability_validation_summary.json",
+                "reports/v76_number_explanations.csv",
+                "reports/v76_ticket_validation.csv",
+            ],
+            "outputs": [
+                "models/v74/v74_model_dependency_sync_center_model.json",
+                "reports/v74_model_dependency_summary.json",
+                "reports/v74_model_dependency_summary.md",
+                "reports/v74_model_dependency_map.csv",
+                "reports/v74_model_sync_status.csv",
+            ],
+            "feeds": [],
+            "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+            "ensemble_source": False,
+        }
+
+    raise ValueError(f"Missing model node for Step {step}")
+
+def _step76_with_order(plan: list[dict]) -> list[dict]:
+    _ordered = []
+    for _index, _item in enumerate(plan, start=1):
+        _copy = dict(_item)
+        _copy["order"] = _index
+        _ordered.append(_copy)
+    return _ordered
+
+def _step76_insert_before_74(plan: list[dict], step: str = "76") -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+
+    if step in _steps:
+        return _step76_with_order(plan)
+
+    _step76_node = _step76_find_node(step)
+    _new_plan = []
+    _inserted = False
+
+    for _item in plan:
+        if str(_item.get("step")) == "74" and not _inserted:
+            _new_plan.append(_step76_node)
+            _inserted = True
+        _new_plan.append(dict(_item))
+
+    if not _inserted:
+        _new_plan.append(_step76_node)
+
+    return _step76_with_order(_new_plan)
+
+def _step76_ensure_final_74(plan: list[dict]) -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+
+    if "74" in _steps:
+        return _step76_with_order(plan)
+
+    return _step76_with_order([*plan, _step76_find_node("74")])
+
+def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
+    _selected = "" if selected_step is None else str(selected_step)
+    _mode = str(mode)
+
+    if _selected == "76" and _mode == "selected_and_downstream":
+        return _step76_with_order([_step76_find_node("76"), _step76_find_node("74")])
+
+    _plan = _STEP76_ORIGINAL_BUILD_SYNC_PLAN(selected_step, mode)
+
+    if _selected == "75" and _mode == "selected_and_downstream":
+        return _step76_ensure_final_74(_step76_insert_before_74(_plan, "76"))
+
+    if _mode == "full_chain":
+        return _step76_ensure_final_74(_step76_insert_before_74(_plan, "76"))
+
+    return _step76_with_order(_plan)
+# STEP 76 EXPLAINABILITY VALIDATION WIRING END
