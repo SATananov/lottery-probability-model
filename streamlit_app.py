@@ -29,6 +29,7 @@ from src.v65_model_weighting_section import render_v65_model_weighting_section
 from src.v66_weighted_smart_ensemble_section import render_v66_weighted_smart_ensemble_section
 from src.v67_weighted_ticket_builder_section import render_v67_weighted_ticket_builder_section
 from src.v68_weighted_portfolio_optimizer_section import render_v68_weighted_portfolio_optimizer_section
+from src.v69_portfolio_improvement_section import render_v69_portfolio_improvement_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4174,6 +4175,7 @@ def main() -> None:
         "Претеглен ensemble анализ": render_v66_weighted_smart_ensemble_section,
         "Умен генератор с тегла": render_v67_weighted_ticket_builder_section,
         "Умен portfolio optimizer": render_v68_weighted_portfolio_optimizer_section,
+        "Подобряване на портфолио": render_v69_portfolio_improvement_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -4223,6 +4225,7 @@ def main() -> None:
             'Претеглен ensemble анализ',
             'Умен генератор с тегла',
             'Умен portfolio optimizer',
+            'Подобряване на портфолио',
         ],
     }
     used_navigation_pages = set()

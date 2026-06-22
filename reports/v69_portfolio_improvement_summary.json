@@ -1,0 +1,48 @@
+{
+  "step": "69",
+  "name": "Portfolio Improvement Suggestions",
+  "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
+  "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
+  "source_portfolio": "reports/v68_weighted_portfolio_summary.json",
+  "suggestions_generated": 60,
+  "candidate_changes_applied": 3,
+  "baseline_portfolio_score": 60.684,
+  "candidate_portfolio_score": 70.118,
+  "portfolio_score_delta": 9.434,
+  "baseline_top20_coverage": 17,
+  "candidate_top20_coverage": 20,
+  "baseline_unique_numbers": 18,
+  "candidate_unique_numbers": 21,
+  "baseline_repeated_pairs": 25,
+  "candidate_repeated_pairs": 19,
+  "baseline_repeated_triples": 4,
+  "candidate_repeated_triples": 1,
+  "undercovered_top20_before": [
+    {
+      "number": 16,
+      "step66_rank": 18,
+      "weighted_score_percent": 48.824
+    },
+    {
+      "number": 11,
+      "step66_rank": 19,
+      "weighted_score_percent": 48.158
+    },
+    {
+      "number": 36,
+      "step66_rank": 20,
+      "weighted_score_percent": 47.981
+    }
+  ],
+  "undercovered_top20_after": [],
+  "generated_at": "2026-06-22T08:25:19+00:00",
+  "generated_reports": [
+    "reports/v69_portfolio_improvement_summary.json",
+    "reports/v69_portfolio_improvement_summary.md",
+    "reports/v69_portfolio_improvement_suggestions.csv",
+    "reports/v69_candidate_portfolio_tickets.csv",
+    "reports/v69_candidate_portfolio_tickets.json",
+    "models/v69/v69_portfolio_improvement_model.json"
+  ],
+  "safe_note": "These are statistical improvement suggestions. They are not winning guarantees or promises of future lottery results."
+}
