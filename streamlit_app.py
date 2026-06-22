@@ -43,6 +43,7 @@ from src.v79_ticket_pack_export_section import render_v79_ticket_pack_export_sec
 from src.v80_final_system_audit_section import render_v80_final_system_audit_section
 from src.v81_final_ux_navigation_section import render_v81_final_ux_navigation_section
 from src.v82_final_release_package_section import render_v82_final_release_package_section
+from src.v83_final_user_manual_section import render_v83_final_user_manual_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3509,12 +3510,14 @@ def main() -> None:
         "Финален системен одит": render_v80_final_system_audit_section,
         "Финален UX контрол": render_v81_final_ux_navigation_section,
         "Финален release пакет": render_v82_final_release_package_section,
+        "Ръководство за апа": render_v83_final_user_manual_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
     navigation_groups = {
         '🏠 Начало и отчети': [
             'Табло',
+            'Ръководство за апа',
             'Препоръки',
             'Прогноза',
             'Прогнозно табло Pro',

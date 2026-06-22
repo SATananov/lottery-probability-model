@@ -4,7 +4,7 @@
       "expected_group": true,
       "group_name": "🏠 Начало и отчети",
       "group_order": 1,
-      "pages_count": 5,
+      "pages_count": 6,
       "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
     },
@@ -139,6 +139,7 @@
     ],
     "🏠 Начало и отчети": [
       "Табло",
+      "Ръководство за апа",
       "Препоръки",
       "Прогноза",
       "Прогнозно табло Pro",
@@ -187,7 +188,7 @@
       "duplicate_groups": "🏠 Начало и отчети",
       "group_name": "🏠 Начало и отчети",
       "literal_page_key_found": true,
-      "page_label": "Препоръки",
+      "page_label": "Ръководство за апа",
       "page_order": 2,
       "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
@@ -196,7 +197,7 @@
       "duplicate_groups": "🏠 Начало и отчети",
       "group_name": "🏠 Начало и отчети",
       "literal_page_key_found": true,
-      "page_label": "Прогноза",
+      "page_label": "Препоръки",
       "page_order": 3,
       "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
@@ -205,7 +206,7 @@
       "duplicate_groups": "🏠 Начало и отчети",
       "group_name": "🏠 Начало и отчети",
       "literal_page_key_found": true,
-      "page_label": "Прогнозно табло Pro",
+      "page_label": "Прогноза",
       "page_order": 4,
       "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
@@ -214,8 +215,17 @@
       "duplicate_groups": "🏠 Начало и отчети",
       "group_name": "🏠 Начало и отчети",
       "literal_page_key_found": true,
-      "page_label": "Отчети",
+      "page_label": "Прогнозно табло Pro",
       "page_order": 5,
+      "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "duplicate_groups": "🏠 Начало и отчети",
+      "group_name": "🏠 Начало и отчети",
+      "literal_page_key_found": true,
+      "page_label": "Отчети",
+      "page_order": 6,
       "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
     },
@@ -628,7 +638,7 @@
   "summary": {
     "duplicate_pages_count": 0,
     "expected_groups_missing": [],
-    "generated_at": "2026-06-22T16:31:52+00:00",
+    "generated_at": "2026-06-22T17:01:55+00:00",
     "generated_reports": [
       "reports/v81_final_ux_navigation_summary.json",
       "reports/v81_final_ux_navigation_summary.md",
@@ -640,9 +650,9 @@
     "groups_count": 7,
     "issues_found": 0,
     "issues_preview": [],
-    "literal_page_keys_detected": 28,
+    "literal_page_keys_detected": 29,
     "name": "Финален UX контрол",
-    "navigation_pages_count": 50,
+    "navigation_pages_count": 51,
     "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
     "status": "OK",
     "step": "81",

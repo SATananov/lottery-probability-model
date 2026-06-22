@@ -849,6 +849,54 @@
     {
       "description": "Изходът помага на следващ слой",
       "from": "Step 82",
+      "to": "Step 83",
+      "type": "feeds"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/historical_draws.csv",
+      "to": "Step 83",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v40_normalized_draw_events.csv",
+      "to": "Step 83",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 83",
+      "type": "dataset"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "streamlit_app.py",
+      "to": "Step 83",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v82_final_release_summary.json",
+      "to": "Step 83",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v81_final_ux_navigation_summary.json",
+      "to": "Step 83",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v79_ticket_pack_export_summary.json",
+      "to": "Step 83",
+      "type": "artifact"
+    },
+    {
+      "description": "Изходът помага на следващ слой",
+      "from": "Step 83",
       "to": "Step 74",
       "type": "feeds"
     }
@@ -1586,7 +1634,7 @@
       ],
       "ensemble_source": false,
       "feeds": [
-        "Step 74"
+        "Step 83"
       ],
       "inputs": [
         "streamlit_app.py",
@@ -1606,6 +1654,36 @@
       "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
       "script": "scripts/v82_build_final_release_package_center.py",
       "step": "82"
+    },
+    {
+      "category": "Помощ и ръководство",
+      "datasets": [
+        "data/historical_draws.csv",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "inputs": [
+        "streamlit_app.py",
+        "reports/v82_final_release_summary.json",
+        "reports/v81_final_ux_navigation_summary.json",
+        "reports/v79_ticket_pack_export_summary.json"
+      ],
+      "label": "Ръководство за апа",
+      "outputs": [
+        "models/v83/v83_final_user_manual_model.json",
+        "reports/v83_final_user_manual_summary.json",
+        "reports/v83_final_user_manual_summary.md",
+        "reports/v83_app_guide_sections.csv",
+        "reports/v83_recommended_workflow.csv",
+        "reports/v83_safe_usage_checklist.csv"
+      ],
+      "role": "Финално потребителско ръководство, безопасен workflow и guide center върху release пакета.",
+      "script": "scripts/v83_build_final_user_manual_center.py",
+      "step": "83"
     }
   ],
   "primary_datasets": [
@@ -1687,7 +1765,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T16:31:52+00:00",
+    "generated_at": "2026-06-22T17:01:56+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1697,7 +1775,7 @@
       "models/v74/v74_model_dependency_sync_center_model.json"
     ],
     "missing_models": 0,
-    "models_checked": 31,
+    "models_checked": 32,
     "name": "Контрол на синхрона между моделите",
     "pipeline_chain": [
       "Данни от тиражи",
@@ -1714,10 +1792,10 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "e312ce15b9ca5b6738ee8876ec1816ca2652e26ddfd7eb1ad465c4cbdb2b15a0",
+    "state_hash": "67014305c6924c737547f55ead6ecc158fd4619fcc6d71648c6cd66efc0f1710",
     "status": "Синхронизиран",
     "step": "74",
-    "synced_models": 31
+    "synced_models": 32
   },
   "sync_status": [
     {
@@ -2366,8 +2444,8 @@
       "feeds": "Step 82",
       "inputs": "streamlit_app.py; reports/v80_final_system_audit_summary.json; reports/v80_sync_plan_audit.csv",
       "label": "Финален UX контрол",
-      "latest_input_mtime": "2026-06-22T19:31:51",
-      "latest_output_mtime": "2026-06-22T19:31:52",
+      "latest_input_mtime": "2026-06-22T20:01:55",
+      "latest_output_mtime": "2026-06-22T20:01:55",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v81/v81_final_ux_navigation_model.json; reports/v81_final_ux_navigation_summary.json; reports/v81_final_ux_navigation_summary.md; reports/v81_navigation_groups.csv; reports/v81_navigation_page_audit.csv; reports/v81_streamlit_label_audit.csv",
@@ -2385,11 +2463,11 @@
       "datasets": "data/historical_draws.csv; data/v40_normalized_draw_events.csv; data/v41_canonical_draw_events.csv",
       "dependencies_present": true,
       "ensemble_source": false,
-      "feeds": "Step 74",
+      "feeds": "Step 83",
       "inputs": "streamlit_app.py; reports/v79_ticket_pack_export_summary.json; reports/v80_final_system_audit_summary.json; reports/v81_final_ux_navigation_summary.json",
       "label": "Финален release пакет",
-      "latest_input_mtime": "2026-06-22T19:31:52",
-      "latest_output_mtime": "2026-06-22T19:31:52",
+      "latest_input_mtime": "2026-06-22T20:01:55",
+      "latest_output_mtime": "2026-06-22T20:01:56",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v82/v82_final_release_package_model.json; reports/v82_final_release_summary.json; reports/v82_final_release_summary.md; reports/v82_release_file_manifest.csv; reports/v82_release_readiness_checklist.csv; reports/v82_clean_zip_exclusion_plan.csv",
@@ -2400,6 +2478,28 @@
       "script_exists": true,
       "status_rank": 2,
       "step": "82",
+      "sync_status": "Синхронизиран"
+    },
+    {
+      "category": "Помощ и ръководство",
+      "datasets": "data/historical_draws.csv; data/v40_normalized_draw_events.csv; data/v41_canonical_draw_events.csv",
+      "dependencies_present": true,
+      "ensemble_source": false,
+      "feeds": "Step 74",
+      "inputs": "streamlit_app.py; reports/v82_final_release_summary.json; reports/v81_final_ux_navigation_summary.json; reports/v79_ticket_pack_export_summary.json",
+      "label": "Ръководство за апа",
+      "latest_input_mtime": "2026-06-22T20:01:56",
+      "latest_output_mtime": "2026-06-22T20:01:56",
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "outputs": "models/v83/v83_final_user_manual_model.json; reports/v83_final_user_manual_summary.json; reports/v83_final_user_manual_summary.md; reports/v83_app_guide_sections.csv; reports/v83_recommended_workflow.csv; reports/v83_safe_usage_checklist.csv",
+      "outputs_present": true,
+      "role": "Финално потребителско ръководство, безопасен workflow и guide center върху release пакета.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
+      "script": "scripts/v83_build_final_user_manual_center.py",
+      "script_exists": true,
+      "status_rank": 2,
+      "step": "83",
       "sync_status": "Синхронизиран"
     }
   ]

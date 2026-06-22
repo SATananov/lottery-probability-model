@@ -140,4 +140,12 @@ streamlit_app.py,Step 82,artifact,Входен model/report artifact
 reports/v79_ticket_pack_export_summary.json,Step 82,artifact,Входен model/report artifact
 reports/v80_final_system_audit_summary.json,Step 82,artifact,Входен model/report artifact
 reports/v81_final_ux_navigation_summary.json,Step 82,artifact,Входен model/report artifact
-Step 82,Step 74,feeds,Изходът помага на следващ слой
+Step 82,Step 83,feeds,Изходът помага на следващ слой
+data/historical_draws.csv,Step 83,dataset,Dataset вход
+data/v40_normalized_draw_events.csv,Step 83,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 83,dataset,Dataset вход
+streamlit_app.py,Step 83,artifact,Входен model/report artifact
+reports/v82_final_release_summary.json,Step 83,artifact,Входен model/report artifact
+reports/v81_final_ux_navigation_summary.json,Step 83,artifact,Входен model/report artifact
+reports/v79_ticket_pack_export_summary.json,Step 83,artifact,Входен model/report artifact
+Step 83,Step 74,feeds,Изходът помага на следващ слой

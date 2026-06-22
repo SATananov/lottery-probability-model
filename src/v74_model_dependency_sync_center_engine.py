@@ -1176,3 +1176,44 @@ for _node in MODEL_NODES:
             _feeds.append("Step 82")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 82 FINAL RELEASE PACKAGE WIRING END
+# STEP 83 FINAL USER MANUAL WIRING START
+_STEP83_NODE = {
+    "step": "83",
+    "label": "Ръководство за апа",
+    "category": "Помощ и ръководство",
+    "script": "scripts/v83_build_final_user_manual_center.py",
+    "datasets": [
+        "data/historical_draws.csv",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv",
+    ],
+    "inputs": [
+        "streamlit_app.py",
+        "reports/v82_final_release_summary.json",
+        "reports/v81_final_ux_navigation_summary.json",
+        "reports/v79_ticket_pack_export_summary.json",
+    ],
+    "outputs": [
+        "models/v83/v83_final_user_manual_model.json",
+        "reports/v83_final_user_manual_summary.json",
+        "reports/v83_final_user_manual_summary.md",
+        "reports/v83_app_guide_sections.csv",
+        "reports/v83_recommended_workflow.csv",
+        "reports/v83_safe_usage_checklist.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Финално потребителско ръководство, безопасен workflow и guide center върху release пакета.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "83" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP83_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "82":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 83" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 83" not in _feeds:
+            _feeds.append("Step 83")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 83 FINAL USER MANUAL WIRING END
