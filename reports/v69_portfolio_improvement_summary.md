@@ -2,7 +2,7 @@
 
 This report proposes concrete statistical improvements for the Step 67 ticket portfolio, using Step 66 scores and Step 68 portfolio analysis.
 
-**Important:** These are improvement suggestions only. They are not predictions and not winning guarantees.
+**Important:** These are improvement suggestions only. They are not predictions and not гаранция за печалбаs.
 
 Suggestions generated: **60**
 Candidate changes applied: **3**
@@ -43,10 +43,10 @@ Candidate repeated triples: **1**
 | Ticket | Strategy | Numbers | Avg Step 66 score | Changed |
 |---:|---|---|---:|---|
 | 1 | Балансиран претеглен фиш | 1,2,4,18,37,49 | 88.116% | False |
-| 2 | Фиш с висок weighted score | 1,4,34,36,38,44 | 77.405% | True |
+| 2 | Фиш с висока претеглена оценка | 1,4,34,36,38,44 | 77.405% | True |
 | 3 | Диверсифициран претеглен фиш | 2,13,21,23,38,49 | 78.881% | False |
-| 4 | Odd/Even балансиран фиш | 2,11,17,34,37,44 | 72.663% | True |
-| 5 | Low/High балансиран фиш | 1,3,22,38,42,49 | 75.825% | False |
+| 4 | Балансиран фиш по нечетни/четни числа | 2,11,17,34,37,44 | 72.663% | True |
+| 5 | Балансиран фиш по ниски/високи числа | 1,3,22,38,42,49 | 75.825% | False |
 | 6 | Разпределен range фиш | 1,13,22,34,37,48 | 74.847% | False |
 | 7 | Консервативно ядро | 2,4,17,22,29,38 | 74.595% | False |
 | 8 | Разширен статистически фиш | 1,16,18,21,23,37 | 78.128% | True |

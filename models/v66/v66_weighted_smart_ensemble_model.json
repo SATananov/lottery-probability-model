@@ -26,7 +26,7 @@
       "reports/v66_weighted_smart_ensemble_scores.csv",
       "models/v66/v66_weighted_smart_ensemble_model.json"
     ],
-    "safe_note": "This is a weighted statistical ensemble layer. It is not a winning guarantee or a promise of future lottery results."
+    "safe_note": "This is a weighted statistical ensemble layer. It is not a гаранция за печалба or a promise of future lottery results."
   },
   "source_models": [
     {
@@ -622,5 +622,5 @@
     "weighted_score": "sum(normalized_source_score * used_weight)",
     "weighted_score_percent": "weighted_score normalized against the top weighted number."
   },
-  "safe_note": "This is a weighted statistical ensemble layer. It is not a winning guarantee or a promise of future lottery results."
+  "safe_note": "This is a weighted statistical ensemble layer. It is not a гаранция за печалба or a promise of future lottery results."
 }

@@ -246,7 +246,7 @@ def build_recommendations(summary_core, undercovered_top, repeated_pairs, repeat
 
     if not recommendations:
         recommendations.append(
-            "Портфолиото има добър баланс между покритие, overlap и weighted score. Няма критични структурни предупреждения."
+            "Портфолиото има добър баланс между покритие, overlap и претеглена оценка. Няма критични структурни предупреждения."
         )
 
     return recommendations
@@ -468,7 +468,7 @@ def build_weighted_portfolio_optimizer():
             "reports/v68_weighted_portfolio_repeated_triples.csv",
             "models/v68/v68_weighted_portfolio_optimizer_model.json",
         ],
-        "safe_note": "This is a statistical portfolio optimizer. It is not a winning guarantee or a promise of future lottery results.",
+        "safe_note": "This is a statistical portfolio optimizer. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     write_csv(
@@ -551,7 +551,7 @@ def build_weighted_portfolio_optimizer():
         "",
         "This report evaluates the Step 67 ticket set as one statistical portfolio.",
         "",
-        "**Important:** This is a portfolio analysis tool. It is not a prediction and not a winning guarantee.",
+        "**Important:** This is a portfolio analysis tool. It is not a prediction and not a гаранция за печалба.",
         "",
         f"Tickets analyzed: **{summary['tickets_analyzed']}**",
         f"Unique numbers covered: **{summary['unique_numbers_covered']} / 49**",
@@ -608,7 +608,7 @@ def build_weighted_portfolio_optimizer():
         "",
         "## Safety note",
         "",
-        "Lottery draws are random. This step only evaluates structure, coverage and overlap inside a statistical reference portfolio.",
+        "Lottery draws are random. This step only evaluates structure, coverage and overlap inside a статистическа референция portfolio.",
     ])
 
     (REPORTS_DIR / "v68_weighted_portfolio_summary.md").write_text(

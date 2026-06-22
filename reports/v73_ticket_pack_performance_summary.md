@@ -1,22 +1,24 @@
-# Step 73 — Ticket Pack Performance Tracker
+# Step 73 — Представяне на пакета
 
-This step tracks how the active Step 71 ticket pack performs against real draws.
+Тази стъпка проверява как вече активният Step 71 пакет се справя срещу реални тиражи.
 
-**Important:** Step 73 evaluates an existing ticket pack. It does not generate new numbers and it is not a winning guarantee.
+**Важно:** Step 73 не генерира нови числа. Той проверява стария пакет преди новият тираж да обнови dataset-а.
 
-Active pack snapshot: **8cd2504445106232**
-Active pack tickets: **8**
-History rows: **0**
-Status: **ready_for_next_draw_evaluation**
+Активен snapshot на пакета: **49cbc83e12549109**
+Комбинации в пакета: **8**
+Физически фишове за попълване: **2**
+Комбинации в един физически фиш: **4**
+Записи в историята: **0**
+Статус: **Готово за следваща проверка**
 
-## Correct flow
+## Правилен ред на работа
 
-1. Keep the current Step 71 ticket pack as the active pack.
-2. When a new draw appears, evaluate this active pack against the new draw first.
-3. Save the Step 73 performance result.
-4. Then add the draw to the dataset.
-5. Then refresh the pipeline and create the next Step 71 pack.
+1. Запазва се текущият Step 71 пакет като активен пакет.
+2. Когато излезе нов тираж, първо активният пакет се проверява срещу новите числа.
+3. Резултатът от Step 73 се записва в историята.
+4. След това новият тираж се добавя в dataset-а.
+5. После pipeline-ът се обновява и се създава следващият Step 71 пакет.
 
-## Safety note
+## Бележка за безопасност
 
-Step 73 evaluates an existing ticket pack against a draw. It is not a prediction and not a winning guarantee.
+Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба.

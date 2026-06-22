@@ -4,6 +4,7 @@ from pathlib import Path
 import csv
 import html
 import json
+import math
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,8 +15,21 @@ STEP70_SUMMARY_PATH = REPORTS_DIR / "v70_applied_candidate_portfolio_summary.jso
 STEP70_TICKETS_PATH = REPORTS_DIR / "v70_applied_candidate_portfolio_tickets.csv"
 STEP70_CHANGES_PATH = REPORTS_DIR / "v70_applied_candidate_portfolio_changes.csv"
 
-SAFE_NOTE_BG = "Статистически reference пакет. Не е прогноза и не е гаранция за печалба."
-SAFE_NOTE_EN = "Statistical reference pack only. Not a prediction and not a winning guarantee."
+SAFE_NOTE_BG = "Статистически референтен пакет. Не е прогноза и не е гаранция за печалба."
+SAFE_NOTE_EN = "Статистически референтен пакет. Не е прогноза и не е гаранция за печалба."
+COMBINATIONS_PER_PHYSICAL_TICKET = 4
+
+
+def physical_ticket_id(combination_id):
+    return ((int(combination_id) - 1) // COMBINATIONS_PER_PHYSICAL_TICKET) + 1
+
+
+def combination_in_ticket(combination_id):
+    return ((int(combination_id) - 1) % COMBINATIONS_PER_PHYSICAL_TICKET) + 1
+
+
+def combination_label(combination_id):
+    return f"Фиш {physical_ticket_id(combination_id)} / Комбинация {combination_in_ticket(combination_id)}"
 
 
 def as_float(value, default=0.0):
@@ -97,8 +111,13 @@ def load_step70_tickets():
         if len(numbers) != 6:
             continue
 
+        ticket_id = as_int(row.get("ticket_id"), index)
         tickets.append({
-            "ticket_id": as_int(row.get("ticket_id"), index),
+            "ticket_id": ticket_id,
+            "combination_id": ticket_id,
+            "physical_ticket_id": physical_ticket_id(ticket_id),
+            "combination_in_ticket": combination_in_ticket(ticket_id),
+            "combination_label": combination_label(ticket_id),
             "strategy_label": row.get("strategy_label", ""),
             "numbers": numbers,
             "numbers_display": " ".join(f"{number:02d}" for number in numbers),
@@ -135,13 +154,13 @@ def build_txt(summary, tickets, changes):
         "",
         SAFE_NOTE_BG,
         "",
-        "ФИШОВЕ",
+        "КОМБИНАЦИИ ЗА ПОПЪЛВАНЕ (4 комбинации в един физически фиш)",
         "",
     ]
 
     for ticket in tickets:
         lines.append(
-            f"Фиш {ticket['ticket_id']}: {ticket['numbers_display']} "
+            f"{ticket['combination_label']}: {ticket['numbers_display']} "
             f"| оценка {ticket['average_step66_score']} "
             f"| {ticket['strategy_label']}"
         )
@@ -175,13 +194,13 @@ def build_markdown(summary, tickets, changes):
         "",
         "## Фишове",
         "",
-        "| Фиш | Числа | Средна Step 66 оценка | Стратегия |",
+        "| Фиш / комбинация | Числа | Средна Step 66 оценка | Стратегия |",
         "|---:|---|---:|---|",
     ]
 
     for ticket in tickets:
         lines.append(
-            f"| {ticket['ticket_id']} | {ticket['numbers_display']} | "
+            f"| {ticket['combination_label']} | {ticket['numbers_display']} | "
             f"{ticket['average_step66_score']} | {ticket['strategy_label']} |"
         )
 
@@ -212,7 +231,7 @@ def build_html(summary, tickets, changes):
     for ticket in tickets:
         ticket_rows.append(
             "<tr>"
-            f"<td>{ticket['ticket_id']}</td>"
+            f"<td>{html.escape(ticket['combination_label'])}</td>"
             f"<td class='numbers'>{html.escape(ticket['numbers_display'])}</td>"
             f"<td>{ticket['average_step66_score']}</td>"
             f"<td>{html.escape(ticket['strategy_label'])}</td>"
@@ -323,7 +342,7 @@ def build_html(summary, tickets, changes):
   <table>
     <thead>
       <tr>
-        <th>Фиш</th>
+        <th>Фиш / комбинация</th>
         <th>Числа</th>
         <th>Средна Step 66 оценка</th>
         <th>Стратегия</th>
@@ -371,6 +390,10 @@ def build_ticket_pack_export():
     for ticket in tickets:
         export_rows.append({
             "ticket_id": ticket["ticket_id"],
+            "combination_id": ticket["combination_id"],
+            "physical_ticket_id": ticket["physical_ticket_id"],
+            "combination_in_ticket": ticket["combination_in_ticket"],
+            "combination_label": ticket["combination_label"],
             "numbers": ticket["numbers_csv"],
             "numbers_display": ticket["numbers_display"],
             "average_step66_score": ticket["average_step66_score"],
@@ -390,6 +413,10 @@ def build_ticket_pack_export():
         export_rows,
         [
             "ticket_id",
+            "combination_id",
+            "physical_ticket_id",
+            "combination_in_ticket",
+            "combination_label",
             "numbers",
             "numbers_display",
             "average_step66_score",
@@ -411,6 +438,8 @@ def build_ticket_pack_export():
         "source_applied_portfolio": "reports/v70_applied_candidate_portfolio_tickets.csv",
         "source_summary": "reports/v70_applied_candidate_portfolio_summary.json",
         "tickets_exported": len(tickets),
+        "physical_tickets_exported": math.ceil(len(tickets) / COMBINATIONS_PER_PHYSICAL_TICKET),
+        "combinations_per_physical_ticket": COMBINATIONS_PER_PHYSICAL_TICKET,
         "changes_included": len(changes),
         "applied_portfolio_score": step70_summary.get("applied_portfolio_score"),
         "applied_top20_coverage": step70_summary.get("applied_top20_coverage"),

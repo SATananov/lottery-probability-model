@@ -7,7 +7,7 @@ This report combines available number-score sources with Step 65 adaptive model 
 Sources used: **8**
 Numbers scored: **49**
 Top weighted number: **1**
-Top weighted score: **100.0%**
+Top претеглена оценка: **100.0%**
 
 ## Sources used
 
@@ -24,7 +24,7 @@ Top weighted score: **100.0%**
 
 ## Top weighted numbers
 
-| Rank | Number | Weighted score % | Source count | Status |
+| Rank | Number | Претеглена оценка % | Source count | Status |
 |---:|---:|---:|---:|---|
 | 1 | 1 | 100.0% | 7 | водещ претеглен сигнал |
 | 2 | 2 | 98.108% | 8 | водещ претеглен сигнал |
@@ -44,7 +44,7 @@ Top weighted score: **100.0%**
 
 ## Reference combinations
 
-These are reference combinations built from weighted statistical signals. They are not winning guarantees.
+These are референтни комбинации built from weighted statistical signals. They are not гаранция за печалбаs.
 
 - Ticket 1: 1, 2, 4, 18, 37, 38
 - Ticket 2: 2, 3, 4, 22, 23, 48

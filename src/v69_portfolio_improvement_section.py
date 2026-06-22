@@ -193,7 +193,7 @@ def render_v69_portfolio_improvement_section():
         st.markdown(
             """
 1. Чете текущите фишове от **Step 67**.
-2. Чете weighted scores от **Step 66**.
+2. Чете претеглена оценкаs от **Step 66**.
 3. Чете portfolio анализа от **Step 68**.
 4. Търси замени, които:
    - покриват непокрити top20 числа;

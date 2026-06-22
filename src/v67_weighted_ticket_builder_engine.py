@@ -26,7 +26,7 @@ TICKET_STRATEGIES = [
     },
     {
         "strategy": "high_confidence",
-        "label": "Фиш с висок weighted score",
+        "label": "Фиш с висока претеглена оценка",
         "pool_size": 16,
         "description": "Предпочита най-силните числа от Step 66, с минимален структурен контрол.",
     },
@@ -38,13 +38,13 @@ TICKET_STRATEGIES = [
     },
     {
         "strategy": "odd_even_balanced",
-        "label": "Odd/Even балансиран фиш",
+        "label": "Балансиран фиш по нечетни/четни числа",
         "pool_size": 28,
         "description": "Търси 3/3 или 2/4 баланс между четни и нечетни числа.",
     },
     {
         "strategy": "low_high_balanced",
-        "label": "Low/High балансиран фиш",
+        "label": "Балансиран фиш по ниски/високи числа",
         "pool_size": 28,
         "description": "Търси баланс между ниски числа 1–24 и високи числа 25–49.",
     },
@@ -540,7 +540,7 @@ def build_weighted_ticket_builder():
             "reports/v67_weighted_ticket_builder_tickets.json",
             "models/v67/v67_weighted_ticket_builder_model.json",
         ],
-        "safe_note": "This is a weighted statistical ticket builder. It is not a winning guarantee or a promise of future lottery results.",
+        "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     model_payload = {
@@ -564,13 +564,13 @@ def build_weighted_ticket_builder():
     md = [
         "# Step 67 — Weighted Ticket Builder Integration",
         "",
-        "This report turns Step 66 weighted number scores into a small portfolio of statistical reference tickets.",
+        "This report turns Step 66 weighted number scores into a small portfolio of статистическа референция tickets.",
         "",
-        "**Important:** These combinations are not predictions and not winning guarantees.",
+        "**Important:** These combinations are not predictions and not гаранция за печалбаs.",
         "",
         f"Tickets generated: **{summary['tickets_generated']}**",
-        f"Best average weighted score ticket: **#{summary['top_average_weighted_score_ticket_id']}**",
-        f"Best average weighted score: **{summary['top_average_weighted_score']}%**",
+        f"Best average претеглена оценка ticket: **#{summary['top_average_weighted_score_ticket_id']}**",
+        f"Best average претеглена оценка: **{summary['top_average_weighted_score']}%**",
         f"Historical exact matches: **{summary['historical_exact_matches']}**",
         "",
         "## Generated tickets",
@@ -590,7 +590,7 @@ def build_weighted_ticket_builder():
         "",
         "## Safety note",
         "",
-        "Lottery draws are random. This step only converts weighted statistical signals into structured reference combinations.",
+        "Lottery draws are random. This step only converts weighted statistical signals into structured референтни комбинации.",
     ])
 
     (REPORTS_DIR / "v67_weighted_ticket_builder_summary.md").write_text(

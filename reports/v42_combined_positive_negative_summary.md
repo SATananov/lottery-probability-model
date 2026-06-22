@@ -3,7 +3,7 @@
 This report introduces a reverse analysis layer for the lottery project.
 It compares positive historical signals with negative absence-risk signals.
 
-**Important:** This is not a winning guarantee. Lottery draws are random.
+**Important:** This is not a гаранция за печалба. Lottery draws are random.
 The output is a statistical learning artifact, not a promise of future results.
 
 ## Dataset

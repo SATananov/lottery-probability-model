@@ -19,7 +19,7 @@
     "original_repeated_triples": 4,
     "applied_repeated_triples": 1,
     "applied_historical_exact_matches": 0,
-    "decision": "candidate portfolio accepted as improved statistical reference",
+    "decision": "candidate portfolio accepted as improved статистическа референция",
     "undercovered_top20_after_apply": [],
     "generated_at": "2026-06-22T10:00:43+00:00",
     "generated_reports": [
@@ -31,7 +31,7 @@
       "reports/v70_applied_candidate_portfolio_changes.csv",
       "models/v70/v70_applied_candidate_portfolio_model.json"
     ],
-    "safe_note": "This is an applied statistical reference portfolio. It is not a winning guarantee or a promise of future lottery results."
+    "safe_note": "This is an applied статистическа референция portfolio. It is not a гаранция за печалба or a promise of future lottery results."
   },
   "original_metrics": {
     "tickets_analyzed": 8,
@@ -118,7 +118,7 @@
     },
     {
       "ticket_id": 2,
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "numbers": "1,4,34,36,38,44",
       "n1": 1,
       "n2": 4,
@@ -158,7 +158,7 @@
     },
     {
       "ticket_id": 4,
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "numbers": "2,11,17,34,37,44",
       "n1": 2,
       "n2": 11,
@@ -178,7 +178,7 @@
     },
     {
       "ticket_id": 5,
-      "strategy_label": "Low/High балансиран фиш",
+      "strategy_label": "Балансиран фиш по ниски/високи числа",
       "numbers": "1,3,22,38,42,49",
       "n1": 1,
       "n2": 3,
@@ -272,7 +272,7 @@
     },
     {
       "ticket_id": 2,
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "original_numbers": "1,4,21,34,38,44",
       "candidate_numbers": "1,4,34,36,38,44",
       "removed_numbers": "21",
@@ -296,7 +296,7 @@
     },
     {
       "ticket_id": 4,
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "original_numbers": "2,17,23,34,37,44",
       "candidate_numbers": "2,11,17,34,37,44",
       "removed_numbers": "23",
@@ -308,7 +308,7 @@
     },
     {
       "ticket_id": 5,
-      "strategy_label": "Low/High балансиран фиш",
+      "strategy_label": "Балансиран фиш по ниски/високи числа",
       "original_numbers": "1,3,22,38,42,49",
       "candidate_numbers": "1,3,22,38,42,49",
       "removed_numbers": "",
@@ -358,7 +358,7 @@
   "applied_changes": [
     {
       "ticket_id": 2,
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "removed_numbers": "21",
       "added_numbers": "36",
       "original_numbers": "1,4,21,34,38,44",
@@ -368,7 +368,7 @@
     },
     {
       "ticket_id": 4,
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "removed_numbers": "23",
       "added_numbers": "11",
       "original_numbers": "2,17,23,34,37,44",
@@ -427,7 +427,7 @@
     {
       "rank": 12,
       "ticket_id": 4,
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "current_numbers": "2,17,23,34,37,44",
       "suggested_numbers": "2,11,17,34,37,44",
       "remove_number": 23,
@@ -457,7 +457,7 @@
     {
       "rank": 20,
       "ticket_id": 2,
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "current_numbers": "1,4,21,34,38,44",
       "suggested_numbers": "1,4,34,36,38,44",
       "remove_number": 21,
@@ -485,5 +485,5 @@
       "safe_note": "Статистическа препоръка за подобрение, не гаранция за печалба."
     }
   ],
-  "safe_note": "This is an applied statistical reference portfolio. It is not a winning guarantee or a promise of future lottery results."
+  "safe_note": "This is an applied статистическа референция portfolio. It is not a гаранция за печалба or a promise of future lottery results."
 }

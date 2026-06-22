@@ -494,7 +494,7 @@ def build_weighted_smart_ensemble():
         })
 
     if not source_models:
-        raise RuntimeError("No usable weighted score sources were found for Step 66.")
+        raise RuntimeError("No usable претеглена оценка sources were found for Step 66.")
 
     usable_weight_sum = sum(item["original_adaptive_weight"] for item in source_models)
 
@@ -604,7 +604,7 @@ def build_weighted_smart_ensemble():
             "reports/v66_weighted_smart_ensemble_scores.csv",
             "models/v66/v66_weighted_smart_ensemble_model.json",
         ],
-        "safe_note": "This is a weighted statistical ensemble layer. It is not a winning guarantee or a promise of future lottery results.",
+        "safe_note": "This is a weighted statistical ensemble layer. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     model_payload = {
@@ -643,7 +643,7 @@ def build_weighted_smart_ensemble():
         f"Sources used: **{summary['sources_used']}**",
         f"Numbers scored: **{summary['numbers_scored']}**",
         f"Top weighted number: **{summary['top_number']}**",
-        f"Top weighted score: **{summary['top_weighted_score_percent']}%**",
+        f"Top претеглена оценка: **{summary['top_weighted_score_percent']}%**",
         "",
         "## Sources used",
         "",
@@ -662,7 +662,7 @@ def build_weighted_smart_ensemble():
         "",
         "## Top weighted numbers",
         "",
-        "| Rank | Number | Weighted score % | Source count | Status |",
+        "| Rank | Number | Претеглена оценка % | Source count | Status |",
         "|---:|---:|---:|---:|---|",
     ])
 
@@ -677,7 +677,7 @@ def build_weighted_smart_ensemble():
             "",
             "## Reference combinations",
             "",
-            "These are reference combinations built from weighted statistical signals. They are not winning guarantees.",
+            "These are референтни комбинации built from weighted statistical signals. They are not гаранция за печалбаs.",
             "",
         ])
         for ticket in tickets:

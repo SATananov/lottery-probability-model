@@ -4,6 +4,7 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import math
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,8 @@ HISTORY_PATH = REPORTS_DIR / "v73_ticket_pack_performance_history.csv"
 LATEST_RESULT_PATH = REPORTS_DIR / "v73_latest_ticket_pack_result.csv"
 MODEL_PATH = MODELS_DIR / "v73_ticket_pack_performance_tracker_model.json"
 
-SAFE_NOTE = "Step 73 evaluates an existing ticket pack against a draw. It is not a prediction and not a winning guarantee."
+COMBINATIONS_PER_PHYSICAL_TICKET = 4
+SAFE_NOTE = "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба."
 
 HISTORY_FIELDS = [
     "evaluated_at",
@@ -29,7 +31,10 @@ HISTORY_FIELDS = [
     "draw_number",
     "draw_numbers",
     "tickets_evaluated",
+    "physical_tickets_evaluated",
+    "combinations_per_physical_ticket",
     "best_ticket_id",
+    "best_combination_label",
     "best_hit_count",
     "package_unique_hits",
     "package_unique_hit_numbers",
@@ -45,6 +50,10 @@ HISTORY_FIELDS = [
 
 LATEST_FIELDS = [
     "ticket_id",
+    "combination_id",
+    "physical_ticket_id",
+    "combination_in_ticket",
+    "combination_label",
     "strategy_label",
     "ticket_numbers",
     "draw_numbers",
@@ -53,6 +62,18 @@ LATEST_FIELDS = [
     "average_step66_score",
     "safe_note",
 ]
+
+
+def physical_ticket_id(combination_id):
+    return ((int(combination_id) - 1) // COMBINATIONS_PER_PHYSICAL_TICKET) + 1
+
+
+def combination_in_ticket(combination_id):
+    return ((int(combination_id) - 1) % COMBINATIONS_PER_PHYSICAL_TICKET) + 1
+
+
+def combination_label(combination_id):
+    return f"Фиш {physical_ticket_id(combination_id)} / Комбинация {combination_in_ticket(combination_id)}"
 
 
 def as_int(value, default=None):
@@ -85,7 +106,7 @@ def read_csv_rows(path):
 def write_csv(path, rows, fieldnames):
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n", extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -94,7 +115,7 @@ def append_csv(path, row, fieldnames):
     path.parent.mkdir(parents=True, exist_ok=True)
     exists = path.exists() and path.stat().st_size > 0
     with path.open("a", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n", extrasaction="ignore")
         if not exists:
             writer.writeheader()
         writer.writerow(row)
@@ -114,7 +135,7 @@ def read_json(path):
 def normalize_numbers(numbers):
     clean = sorted({int(number) for number in numbers if 1 <= int(number) <= 49})
     if len(clean) != 6:
-        raise ValueError("Expected exactly 6 unique numbers in range 1..49.")
+        raise ValueError("Очакват се точно 6 различни числа в диапазон 1..49.")
     return clean
 
 
@@ -138,13 +159,18 @@ def parse_numbers_from_row(row):
 def load_active_ticket_pack():
     rows = read_csv_rows(V71_PACK_PATH)
     if not rows:
-        raise FileNotFoundError("Missing reports/v71_ticket_pack.csv. Run Step 71 first.")
+        raise FileNotFoundError("Липсва reports/v71_ticket_pack.csv. Пусни Step 71 първо.")
 
     tickets = []
     for index, row in enumerate(rows, start=1):
         numbers = parse_numbers_from_row(row)
+        combination_id = as_int(row.get("combination_id") or row.get("ticket_id"), index)
         tickets.append({
-            "ticket_id": as_int(row.get("ticket_id"), index),
+            "ticket_id": as_int(row.get("ticket_id"), combination_id),
+            "combination_id": combination_id,
+            "physical_ticket_id": as_int(row.get("physical_ticket_id"), physical_ticket_id(combination_id)),
+            "combination_in_ticket": as_int(row.get("combination_in_ticket"), combination_in_ticket(combination_id)),
+            "combination_label": row.get("combination_label") or combination_label(combination_id),
             "strategy_label": row.get("strategy_label", ""),
             "numbers": numbers,
             "numbers_display": " ".join(f"{number:02d}" for number in numbers),
@@ -152,7 +178,7 @@ def load_active_ticket_pack():
         })
 
     if len(tickets) < 6:
-        raise RuntimeError(f"Expected at least 6 tickets in Step 71 pack, got {len(tickets)}.")
+        raise RuntimeError(f"Очакват се поне 6 комбинации от Step 71, намерени са {len(tickets)}.")
 
     return tickets
 
@@ -160,7 +186,7 @@ def load_active_ticket_pack():
 def build_pack_snapshot_id(tickets):
     payload = [
         {
-            "ticket_id": ticket["ticket_id"],
+            "combination_id": ticket["combination_id"],
             "numbers": ticket["numbers"],
             "strategy_label": ticket["strategy_label"],
         }
@@ -199,6 +225,10 @@ def evaluate_current_pack_against_draw(
 
         result_rows.append({
             "ticket_id": ticket["ticket_id"],
+            "combination_id": ticket["combination_id"],
+            "physical_ticket_id": ticket["physical_ticket_id"],
+            "combination_in_ticket": ticket["combination_in_ticket"],
+            "combination_label": ticket["combination_label"],
             "strategy_label": ticket["strategy_label"],
             "ticket_numbers": ",".join(str(number) for number in ticket["numbers"]),
             "draw_numbers": ",".join(str(number) for number in draw),
@@ -218,7 +248,10 @@ def evaluate_current_pack_against_draw(
         "draw_number": str(draw_number or ""),
         "draw_numbers": ",".join(str(number) for number in draw),
         "tickets_evaluated": len(tickets),
+        "physical_tickets_evaluated": math.ceil(len(tickets) / COMBINATIONS_PER_PHYSICAL_TICKET),
+        "combinations_per_physical_ticket": COMBINATIONS_PER_PHYSICAL_TICKET,
         "best_ticket_id": best["ticket_id"],
+        "best_combination_label": best["combination_label"],
         "best_hit_count": best["hit_count"],
         "package_unique_hits": len(package_hit_numbers),
         "package_unique_hit_numbers": ",".join(str(number) for number in sorted(package_hit_numbers)),
@@ -249,6 +282,43 @@ def evaluate_current_pack_against_draw(
     return evaluation
 
 
+def migrate_existing_latest_result():
+    if not LATEST_RESULT_PATH.exists():
+        write_csv(LATEST_RESULT_PATH, [], LATEST_FIELDS)
+        return
+
+    rows = read_csv_rows(LATEST_RESULT_PATH)
+    migrated = []
+    for index, row in enumerate(rows, start=1):
+        combination_id = as_int(row.get("combination_id") or row.get("ticket_id"), index)
+        row["combination_id"] = combination_id
+        row["physical_ticket_id"] = as_int(row.get("physical_ticket_id"), physical_ticket_id(combination_id))
+        row["combination_in_ticket"] = as_int(row.get("combination_in_ticket"), combination_in_ticket(combination_id))
+        row["combination_label"] = row.get("combination_label") or combination_label(combination_id)
+        row["safe_note"] = SAFE_NOTE
+        migrated.append(row)
+    write_csv(LATEST_RESULT_PATH, migrated, LATEST_FIELDS)
+
+
+def migrate_existing_history():
+    if not HISTORY_PATH.exists():
+        write_csv(HISTORY_PATH, [], HISTORY_FIELDS)
+        return
+
+    rows = read_csv_rows(HISTORY_PATH)
+    migrated = []
+    for row in rows:
+        tickets_count = as_int(row.get("tickets_evaluated"), 0)
+        row["physical_tickets_evaluated"] = row.get("physical_tickets_evaluated") or math.ceil(tickets_count / COMBINATIONS_PER_PHYSICAL_TICKET)
+        row["combinations_per_physical_ticket"] = row.get("combinations_per_physical_ticket") or COMBINATIONS_PER_PHYSICAL_TICKET
+        if not row.get("best_combination_label"):
+            best_id = as_int(row.get("best_ticket_id"), 1)
+            row["best_combination_label"] = combination_label(best_id)
+        row["safe_note"] = SAFE_NOTE
+        migrated.append(row)
+    write_csv(HISTORY_PATH, migrated, HISTORY_FIELDS)
+
+
 def build_ticket_pack_performance_tracker():
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
@@ -256,21 +326,29 @@ def build_ticket_pack_performance_tracker():
     tickets = load_active_ticket_pack()
     pack_snapshot_id = build_pack_snapshot_id(tickets)
     ensure_history_file()
+    migrate_existing_history()
+    migrate_existing_latest_result()
 
     history_rows = read_csv_rows(HISTORY_PATH)
     latest_history = history_rows[-1] if history_rows else {}
 
+    physical_tickets_count = math.ceil(len(tickets) / COMBINATIONS_PER_PHYSICAL_TICKET)
+
     summary = {
         "step": "73",
-        "name": "Ticket Pack Performance Tracker",
+        "name": "Представяне на пакета",
         "active_pack_source": "reports/v71_ticket_pack.csv",
         "active_pack_snapshot_id": pack_snapshot_id,
         "active_pack_tickets": len(tickets),
+        "active_pack_combinations": len(tickets),
+        "active_pack_physical_tickets": physical_tickets_count,
+        "combinations_per_physical_ticket": COMBINATIONS_PER_PHYSICAL_TICKET,
         "history_rows": len(history_rows),
         "latest_best_hit_count": latest_history.get("best_hit_count", ""),
+        "latest_best_combination_label": latest_history.get("best_combination_label", ""),
         "latest_package_unique_hits": latest_history.get("package_unique_hits", ""),
         "latest_draw_numbers": latest_history.get("draw_numbers", ""),
-        "status": "ready_for_next_draw_evaluation",
+        "status": "Готово за следваща проверка",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generated_reports": [
             "reports/v73_ticket_pack_performance_summary.json",
@@ -284,9 +362,6 @@ def build_ticket_pack_performance_tracker():
 
     write_json(SUMMARY_PATH, summary)
 
-    if not LATEST_RESULT_PATH.exists():
-        write_csv(LATEST_RESULT_PATH, [], LATEST_FIELDS)
-
     model_payload = {
         "summary": summary,
         "active_pack": tickets,
@@ -296,26 +371,28 @@ def build_ticket_pack_performance_tracker():
     write_json(MODEL_PATH, model_payload)
 
     md = [
-        "# Step 73 — Ticket Pack Performance Tracker",
+        "# Step 73 — Представяне на пакета",
         "",
-        "This step tracks how the active Step 71 ticket pack performs against real draws.",
+        "Тази стъпка проверява как вече активният Step 71 пакет се справя срещу реални тиражи.",
         "",
-        "**Important:** Step 73 evaluates an existing ticket pack. It does not generate new numbers and it is not a winning guarantee.",
+        "**Важно:** Step 73 не генерира нови числа. Той проверява стария пакет преди новият тираж да обнови dataset-а.",
         "",
-        f"Active pack snapshot: **{pack_snapshot_id}**",
-        f"Active pack tickets: **{len(tickets)}**",
-        f"History rows: **{len(history_rows)}**",
-        f"Status: **{summary['status']}**",
+        f"Активен snapshot на пакета: **{pack_snapshot_id}**",
+        f"Комбинации в пакета: **{len(tickets)}**",
+        f"Физически фишове за попълване: **{physical_tickets_count}**",
+        f"Комбинации в един физически фиш: **{COMBINATIONS_PER_PHYSICAL_TICKET}**",
+        f"Записи в историята: **{len(history_rows)}**",
+        f"Статус: **{summary['status']}**",
         "",
-        "## Correct flow",
+        "## Правилен ред на работа",
         "",
-        "1. Keep the current Step 71 ticket pack as the active pack.",
-        "2. When a new draw appears, evaluate this active pack against the new draw first.",
-        "3. Save the Step 73 performance result.",
-        "4. Then add the draw to the dataset.",
-        "5. Then refresh the pipeline and create the next Step 71 pack.",
+        "1. Запазва се текущият Step 71 пакет като активен пакет.",
+        "2. Когато излезе нов тираж, първо активният пакет се проверява срещу новите числа.",
+        "3. Резултатът от Step 73 се записва в историята.",
+        "4. След това новият тираж се добавя в dataset-а.",
+        "5. После pipeline-ът се обновява и се създава следващият Step 71 пакет.",
         "",
-        "## Safety note",
+        "## Бележка за безопасност",
         "",
         SAFE_NOTE,
     ]
@@ -328,6 +405,7 @@ def build_ticket_pack_performance_tracker():
 if __name__ == "__main__":
     result = build_ticket_pack_performance_tracker()
     print("STEP73_OK")
-    print("ACTIVE_PACK_TICKETS", result["active_pack_tickets"])
+    print("ACTIVE_COMBINATIONS", result["active_pack_combinations"])
+    print("ACTIVE_PHYSICAL_TICKETS", result["active_pack_physical_tickets"])
     print("HISTORY_ROWS", result["history_rows"])
     print("STATUS", result["status"])

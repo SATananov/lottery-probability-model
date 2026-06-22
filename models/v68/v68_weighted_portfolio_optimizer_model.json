@@ -54,12 +54,12 @@
       "reports/v68_weighted_portfolio_repeated_triples.csv",
       "models/v68/v68_weighted_portfolio_optimizer_model.json"
     ],
-    "safe_note": "This is a statistical portfolio optimizer. It is not a winning guarantee or a promise of future lottery results."
+    "safe_note": "This is a statistical portfolio optimizer. It is not a гаранция за печалба or a promise of future lottery results."
   },
   "ticket_analysis": [
     {
       "ticket_id": 5,
-      "strategy_label": "Low/High балансиран фиш",
+      "strategy_label": "Балансиран фиш по ниски/високи числа",
       "numbers": "1,3,22,38,42,49",
       "average_step66_score": 75.825,
       "average_step67_score": 75.825,
@@ -129,7 +129,7 @@
     },
     {
       "ticket_id": 2,
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "numbers": "1,4,21,34,38,44",
       "average_step66_score": 82.579,
       "average_step67_score": 82.579,
@@ -157,7 +157,7 @@
     },
     {
       "ticket_id": 4,
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "numbers": "2,17,23,34,37,44",
       "average_step66_score": 76.866,
       "average_step67_score": 76.866,
@@ -1077,5 +1077,5 @@
     "repetition_score": "100 - repeated_pairs*2.5 - repeated_triples*8",
     "portfolio_score": "0.25*coverage + 0.25*top20_coverage + 0.25*avg_ticket_score + 0.15*diversity + 0.10*repetition"
   },
-  "safe_note": "This is a statistical portfolio optimizer. It is not a winning guarantee or a promise of future lottery results."
+  "safe_note": "This is a statistical portfolio optimizer. It is not a гаранция за печалба or a promise of future lottery results."
 }

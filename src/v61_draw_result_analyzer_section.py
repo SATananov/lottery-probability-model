@@ -178,7 +178,7 @@ def render_v61_draw_result_analyzer_section() -> None:
     g1.metric("Горещи", group_counts.get("hot_count", 0))
     g2.metric("Студени", group_counts.get("cold_count", 0))
     g3.metric("Стабилни", group_counts.get("stable_count", 0))
-    g4.metric("Overdue", group_counts.get("overdue_count", 0))
+    g4.metric("Закъснели", group_counts.get("overdue_count", 0))
 
     number_df = number_rows_to_dataframe(result)
     if not number_df.empty:
@@ -210,8 +210,8 @@ def render_v61_draw_result_analyzer_section() -> None:
     pair_context = result.get("pair_group_context", {})
     q1, q2, q3 = st.columns(3)
     q1.metric("Двойки в тиража", pair_context.get("actual_pair_count", 0))
-    q2.metric("Top pair hits", pair_context.get("top_pair_hits_count", 0))
-    q3.metric("Watch pair hits", pair_context.get("watch_pair_hits_count", 0))
+    q2.metric("Попадения в top двойки", pair_context.get("top_pair_hits_count", 0))
+    q3.metric("Попадения в наблюдавани двойки", pair_context.get("watch_pair_hits_count", 0))
 
     pair_rows = pair_context.get("top_pair_hits", []) + pair_context.get("watch_pair_hits", [])
     if pair_rows:

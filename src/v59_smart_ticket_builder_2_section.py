@@ -122,7 +122,7 @@ def render_v59_smart_ticket_builder_2_section() -> None:
 
     with col_c:
         seed = st.number_input(
-            "Seed",
+            "Начална стойност",
             min_value=1,
             max_value=999999,
             value=59,

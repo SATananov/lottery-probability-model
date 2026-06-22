@@ -451,7 +451,7 @@ def decision_note(original_metrics, candidate_metrics):
         and triple_delta <= 0
         and score_delta >= -1.5
     ):
-        return "candidate portfolio accepted as improved statistical reference"
+        return "candidate portfolio accepted as improved статистическа референция"
 
     if score_delta >= 0:
         return "candidate portfolio accepted because overall portfolio score improved"
@@ -513,7 +513,7 @@ def build_applied_candidate_portfolio():
             "reports/v70_applied_candidate_portfolio_changes.csv",
             "models/v70/v70_applied_candidate_portfolio_model.json",
         ],
-        "safe_note": "This is an applied statistical reference portfolio. It is not a winning guarantee or a promise of future lottery results.",
+        "safe_note": "This is an applied статистическа референция portfolio. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     write_csv(
@@ -598,9 +598,9 @@ def build_applied_candidate_portfolio():
     md = [
         "# Step 70 — Apply Candidate Portfolio",
         "",
-        "This report turns the Step 69 candidate portfolio into a separate applied statistical reference portfolio.",
+        "This report turns the Step 69 candidate portfolio into a separate applied статистическа референция portfolio.",
         "",
-        "**Important:** This does not overwrite Step 67. It creates a v70 applied portfolio layer. It is not a prediction and not a winning guarantee.",
+        "**Important:** This does not overwrite Step 67. It creates a v70 applied portfolio layer. It is not a prediction and not a гаранция за печалба.",
         "",
         f"Applied portfolio tickets: **{summary['applied_portfolio_tickets']}**",
         f"Applied changes: **{summary['applied_changes_count']}**",
@@ -649,7 +649,7 @@ def build_applied_candidate_portfolio():
         "",
         "## Safety note",
         "",
-        "Lottery draws are random. This step only applies a statistical reference candidate portfolio for review and future comparison.",
+        "Lottery draws are random. This step only applies a статистическа референция candidate portfolio for review and future comparison.",
     ])
 
     (REPORTS_DIR / "v70_applied_candidate_portfolio_summary.md").write_text(

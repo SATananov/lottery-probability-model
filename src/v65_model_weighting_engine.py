@@ -228,7 +228,7 @@ def build_model_weighting_center():
             "reports/v65_model_weights.csv",
             "models/v65/v65_model_weighting_center_model.json",
         ],
-        "safe_note": "Adaptive weighting is a statistical signal-management layer. It is not a winning guarantee or a promise of future lottery results.",
+        "safe_note": "Adaptive weighting is a statistical signal-management layer. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     write_json(REPORTS_DIR / "v65_model_weighting_summary.json", summary)

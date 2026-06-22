@@ -2,7 +2,7 @@
 
 This report evaluates the Step 67 ticket set as one statistical portfolio.
 
-**Important:** This is a portfolio analysis tool. It is not a prediction and not a winning guarantee.
+**Important:** This is a portfolio analysis tool. It is not a prediction and not a гаранция за печалба.
 
 Tickets analyzed: **8**
 Unique numbers covered: **18 / 49**
@@ -28,14 +28,14 @@ Portfolio status: **приемлив портфейл с нужда от наб�
 
 | Ticket | Strategy | Numbers | Avg Step 66 score | Unique help | Top20 count | Max overlap | Portfolio contribution |
 |---:|---|---|---:|---:|---:|---:|---:|
-| 5 | Low/High балансиран фиш | 1,3,22,38,42,49 | 75.825% | 2 | 6 | 2 | 61.704 |
+| 5 | Балансиран фиш по ниски/високи числа | 1,3,22,38,42,49 | 75.825% | 2 | 6 | 2 | 61.704 |
 | 1 | Балансиран претеглен фиш | 1,2,4,18,37,49 | 88.116% | 0 | 6 | 3 | 54.464 |
 | 3 | Диверсифициран претеглен фиш | 2,13,21,23,38,49 | 78.881% | 0 | 6 | 2 | 53.384 |
 | 7 | Консервативно ядро | 2,4,17,22,29,38 | 74.595% | 1 | 5 | 2 | 53.027 |
 | 6 | Разпределен range фиш | 1,13,22,34,37,48 | 74.847% | 1 | 6 | 3 | 52.166 |
-| 2 | Фиш с висок weighted score | 1,4,21,34,38,44 | 82.579% | 0 | 6 | 3 | 51.419 |
+| 2 | Фиш с висока претеглена оценка | 1,4,21,34,38,44 | 82.579% | 0 | 6 | 3 | 51.419 |
 | 8 | Разширен статистически фиш | 1,18,21,23,34,37 | 82.255% | 0 | 6 | 3 | 51.24 |
-| 4 | Odd/Even балансиран фиш | 2,17,23,34,37,44 | 76.866% | 0 | 6 | 3 | 48.276 |
+| 4 | Балансиран фиш по нечетни/четни числа | 2,17,23,34,37,44 | 76.866% | 0 | 6 | 3 | 48.276 |
 
 ## Under-covered top Step 66 numbers
 
@@ -45,4 +45,4 @@ Portfolio status: **приемлив портфейл с нужда от наб�
 
 ## Safety note
 
-Lottery draws are random. This step only evaluates structure, coverage and overlap inside a statistical reference portfolio.
+Lottery draws are random. This step only evaluates structure, coverage and overlap inside a статистическа референция portfolio.

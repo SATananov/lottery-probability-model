@@ -502,7 +502,7 @@ def render() -> None:
 
     include_second = st.checkbox(
         "Добави второ теглене към същия тираж",
-        value=True,
+        value=False,
         key="add_draw_include_second",
     )
 

@@ -2,7 +2,7 @@
 
 This foundation combines historical/rules-style signals, combined positive/negative analysis, and interval rhythm analysis.
 
-**Important:** This is statistical analysis, not a winning guarantee. Lottery draws are random.
+**Important:** This is statistical analysis, not a гаранция за печалба. Lottery draws are random.
 
 Valid historical draws analyzed: **10058**
 Bonus number used: **False**

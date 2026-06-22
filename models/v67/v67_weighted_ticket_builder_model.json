@@ -25,7 +25,7 @@
       "reports/v67_weighted_ticket_builder_tickets.json",
       "models/v67/v67_weighted_ticket_builder_model.json"
     ],
-    "safe_note": "This is a weighted statistical ticket builder. It is not a winning guarantee or a promise of future lottery results."
+    "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results."
   },
   "source_top_numbers": [
     {
@@ -289,7 +289,7 @@
     {
       "ticket_id": 2,
       "strategy": "high_confidence",
-      "strategy_label": "Фиш с висок weighted score",
+      "strategy_label": "Фиш с висока претеглена оценка",
       "numbers": "1,4,21,34,38,44",
       "n1": 1,
       "n2": 4,
@@ -351,7 +351,7 @@
     {
       "ticket_id": 4,
       "strategy": "odd_even_balanced",
-      "strategy_label": "Odd/Even балансиран фиш",
+      "strategy_label": "Балансиран фиш по нечетни/четни числа",
       "numbers": "2,17,23,34,37,44",
       "n1": 2,
       "n2": 17,
@@ -382,7 +382,7 @@
     {
       "ticket_id": 5,
       "strategy": "low_high_balanced",
-      "strategy_label": "Low/High балансиран фиш",
+      "strategy_label": "Балансиран фиш по ниски/високи числа",
       "numbers": "1,3,22,38,42,49",
       "n1": 1,
       "n2": 3,
@@ -513,7 +513,7 @@
     },
     {
       "strategy": "high_confidence",
-      "label": "Фиш с висок weighted score",
+      "label": "Фиш с висока претеглена оценка",
       "pool_size": 16,
       "description": "Предпочита най-силните числа от Step 66, с минимален структурен контрол."
     },
@@ -525,13 +525,13 @@
     },
     {
       "strategy": "odd_even_balanced",
-      "label": "Odd/Even балансиран фиш",
+      "label": "Балансиран фиш по нечетни/четни числа",
       "pool_size": 28,
       "description": "Търси 3/3 или 2/4 баланс между четни и нечетни числа."
     },
     {
       "strategy": "low_high_balanced",
-      "label": "Low/High балансиран фиш",
+      "label": "Балансиран фиш по ниски/високи числа",
       "pool_size": 28,
       "description": "Търси баланс между ниски числа 1–24 и високи числа 25–49."
     },
@@ -561,5 +561,5 @@
     "historical_exact_match_policy": "avoid exact historical draw combinations when historical data can be parsed",
     "portfolio_overlap_policy": "penalize 4+ and strongly penalize 5+ overlaps with previously generated tickets"
   },
-  "safe_note": "This is a weighted statistical ticket builder. It is not a winning guarantee or a promise of future lottery results."
+  "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results."
 }

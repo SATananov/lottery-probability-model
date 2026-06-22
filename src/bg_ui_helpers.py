@@ -67,6 +67,10 @@ BG_COLUMN_LABELS = {
 
     # Ticket / portfolio columns
     "ticket_id": "Фиш",
+    "combination_id": "Комбинация",
+    "physical_ticket_id": "Физически фиш",
+    "combination_in_ticket": "Комбинация във фиша",
+    "combination_label": "Фиш / комбинация",
     "ticket": "Фиш",
     "ticket_index": "Фиш",
     "ticket_numbers": "Числа във фиша",
@@ -176,6 +180,9 @@ BG_VALUE_LABELS = {
     "ok": "OK",
     "error": "Грешка",
     "planned": "Планирано",
+    "manual_preview": "Ръчна проверка",
+    "add_draw_pre_save": "Проверка преди запис на тираж",
+    "ready_for_next_draw_evaluation": "Готово за следваща проверка",
     "run": "Изпълнение",
     "audit": "Проверка",
     "high": "Високо",
@@ -184,9 +191,9 @@ BG_VALUE_LABELS = {
     "stable": "Стабилно",
     "hot": "Горещо",
     "cold": "Студено",
-    "candidate portfolio accepted as improved statistical reference": "Кандидат портфейлът е приет като подобрена статистическа референция",
-    "applied statistical reference portfolio": "Приложен статистически референтен портфейл",
-    "improved statistical reference": "Подобрена статистическа референция",
+    "candidate portfolio accepted as improved статистическа референция": "Кандидат портфейлът е приет като подобрена статистическа референция",
+    "applied статистическа референция portfolio": "Приложен статистически референтен портфейл",
+    "improved статистическа референция": "Подобрена статистическа референция",
 }
 
 

@@ -2,7 +2,7 @@
   "model_name": "interval_rhythm_refined_foundation",
   "internal_version": "v43.1",
   "purpose": "Compare balanced rhythm, next-window rhythm, and overdue rhythm signals for the 49 main numbers.",
-  "important_warning": "This is a statistical analysis artifact, not a winning guarantee. Lottery draws are random.",
+  "important_warning": "This is a statistical analysis artifact, not a гаранция за печалба. Lottery draws are random.",
   "uses_bonus": false,
   "valid_draws": 10058,
   "number_columns": [
