@@ -41,6 +41,7 @@ FINAL_FLOW_LABELS = [
     "Експорт и изпълнение",
     "Финален системен одит",
     "Финален UX контрол",
+    "Финален release пакет",
     "Контрол на синхрона",
 ]
 
@@ -168,7 +169,7 @@ def build_final_ux_navigation_center() -> dict[str, Any]:
     issues.extend([f"Липсва навигационна група: {group}" for group in expected_group_missing])
     issues.extend([f"Повторена страница: {page}" for page in duplicates])
     if not system_order_ok:
-        issues.append("Системната група не е в очаквания ред: обновяване -> Step 80 -> Step 81 -> Step 74")
+        issues.append("Системната група не е в очаквания ред: обновяване -> Step 80 -> Step 81 -> Step 82 -> Step 74")
     for row in page_rows:
         if row["status"] != "OK":
             issues.append(f"Страница без открит ключ: {row['page_label']}")

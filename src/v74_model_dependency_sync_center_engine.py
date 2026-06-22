@@ -1135,3 +1135,44 @@ for _node in MODEL_NODES:
             _feeds.append("Step 81")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 81 FINAL UX NAVIGATION WIRING END
+# STEP 82 FINAL RELEASE PACKAGE WIRING START
+_STEP82_NODE = {
+    "step": "82",
+    "label": "Финален release пакет",
+    "category": "Финален release пакет",
+    "script": "scripts/v82_build_final_release_package_center.py",
+    "datasets": [
+        "data/historical_draws.csv",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv",
+    ],
+    "inputs": [
+        "streamlit_app.py",
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v81_final_ux_navigation_summary.json",
+    ],
+    "outputs": [
+        "models/v82/v82_final_release_package_model.json",
+        "reports/v82_final_release_summary.json",
+        "reports/v82_final_release_summary.md",
+        "reports/v82_release_file_manifest.csv",
+        "reports/v82_release_readiness_checklist.csv",
+        "reports/v82_clean_zip_exclusion_plan.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "82" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP82_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "81":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 82" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 82" not in _feeds:
+            _feeds.append("Step 82")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 82 FINAL RELEASE PACKAGE WIRING END

@@ -798,3 +798,114 @@ def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
         return _step81_ensure_final_74(_step81_insert_before_74(_plan, "81"))
     return _step81_with_order(_plan)
 # STEP 81 FINAL UX NAVIGATION WIRING END
+# STEP 82 FINAL RELEASE PACKAGE WIRING START
+_STEP82_ORIGINAL_BUILD_SYNC_PLAN = build_sync_plan
+
+
+def _step82_find_node(step: str):
+    for _node in MODEL_NODES:
+        if str(_node.get("step")) == str(step):
+            return dict(_node)
+
+    if str(step) == "82":
+        return {
+            "step": "82",
+            "label": "Финален release пакет",
+            "category": "Финален release пакет",
+            "script": "scripts/v82_build_final_release_package_center.py",
+            "datasets": [
+                "data/historical_draws.csv",
+                "data/v40_normalized_draw_events.csv",
+                "data/v41_canonical_draw_events.csv",
+            ],
+            "inputs": [
+                "streamlit_app.py",
+                "reports/v79_ticket_pack_export_summary.json",
+                "reports/v80_final_system_audit_summary.json",
+                "reports/v81_final_ux_navigation_summary.json",
+            ],
+            "outputs": [
+                "models/v82/v82_final_release_package_model.json",
+                "reports/v82_final_release_summary.json",
+                "reports/v82_final_release_summary.md",
+                "reports/v82_release_file_manifest.csv",
+                "reports/v82_release_readiness_checklist.csv",
+                "reports/v82_clean_zip_exclusion_plan.csv",
+            ],
+            "feeds": ["Step 74"],
+            "role": "Финален release readiness и clean ZIP контролен слой.",
+            "ensemble_source": False,
+        }
+
+    if str(step) == "74":
+        return {
+            "step": "74",
+            "label": "Контрол на синхрона",
+            "category": "Контрол на синхрона",
+            "script": "scripts/v74_build_model_dependency_sync_center.py",
+            "datasets": ["data/historical_draws.csv", "data/v41_canonical_draw_events.csv"],
+            "inputs": [
+                "models/model_registry.json",
+                "reports/v82_final_release_summary.json",
+                "reports/v82_release_readiness_checklist.csv",
+            ],
+            "outputs": [
+                "models/v74/v74_model_dependency_sync_center_model.json",
+                "reports/v74_model_dependency_summary.json",
+                "reports/v74_model_dependency_summary.md",
+                "reports/v74_model_dependency_map.csv",
+                "reports/v74_model_sync_status.csv",
+            ],
+            "feeds": [],
+            "role": "Финален контролен слой за dependency map и sync status.",
+            "ensemble_source": False,
+        }
+
+    raise ValueError(f"Missing model node for Step {step}")
+
+
+def _step82_with_order(plan: list[dict]) -> list[dict]:
+    _ordered = []
+    for _index, _item in enumerate(plan, start=1):
+        _copy = dict(_item)
+        _copy["order"] = _index
+        _ordered.append(_copy)
+    return _ordered
+
+
+def _step82_insert_before_74(plan: list[dict], step: str = "82") -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if step in _steps:
+        return _step82_with_order(plan)
+    _node = _step82_find_node(step)
+    _new_plan = []
+    _inserted = False
+    for _item in plan:
+        if str(_item.get("step")) == "74" and not _inserted:
+            _new_plan.append(_node)
+            _inserted = True
+        _new_plan.append(dict(_item))
+    if not _inserted:
+        _new_plan.append(_node)
+    return _step82_with_order(_new_plan)
+
+
+def _step82_ensure_final_74(plan: list[dict]) -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if "74" in _steps:
+        return _step82_with_order(plan)
+    return _step82_with_order([*plan, _step82_find_node("74")])
+
+
+def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
+    _selected = "" if selected_step is None else str(selected_step)
+    _mode = str(mode)
+    if _selected == "82" and _mode == "selected_and_downstream":
+        return _step82_with_order([_step82_find_node("82"), _step82_find_node("74")])
+    _plan = _STEP82_ORIGINAL_BUILD_SYNC_PLAN(selected_step, mode)
+    if _selected in {"75", "76", "77", "78", "79", "80", "81"} and _mode == "selected_and_downstream":
+        return _step82_ensure_final_74(_step82_insert_before_74(_plan, "82"))
+    if _mode == "full_chain":
+        return _step82_ensure_final_74(_step82_insert_before_74(_plan, "82"))
+    return _step82_with_order(_plan)
+# STEP 82 FINAL RELEASE PACKAGE WIRING END
