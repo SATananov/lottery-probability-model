@@ -5,8 +5,8 @@ Status: v41 model retraining completed on canonical draw events.
 ## Dataset
 
 - Canonical dataset: `data\v41_canonical_draw_events.csv`
-- Total draw events: 10057
-- Train events: 8045
+- Total draw events: 10058
+- Train events: 8046
 - Test events: 2012
 - Uses drawing_no: True
 - Bonus model trained: False
@@ -21,10 +21,10 @@ Status: v41 model retraining completed on canonical draw events.
 
 ### frequency_baseline
 
-- Average hits top 6: 0.7102
+- Average hits top 6: 0.7097
 - Median hits top 6: 1.0000
 - Max hits top 6: 4
-- Hit distribution: {'0': 894, '1': 836, '2': 254, '3': 27, '4': 1}
+- Hit distribution: {'0': 894, '1': 837, '2': 253, '3': 27, '4': 1}
 - Events with 3+ hits: 28
 - Events with 4+ hits: 1
 - Events with 5+ hits: 0
@@ -43,12 +43,12 @@ Status: v41 model retraining completed on canonical draw events.
 
 ### sgd_number_classifier
 
-- Average hits top 6: 0.7475
+- Average hits top 6: 0.7416
 - Median hits top 6: 1.0000
 - Max hits top 6: 4
-- Hit distribution: {'0': 864, '1': 839, '2': 266, '3': 39, '4': 4}
-- Events with 3+ hits: 43
-- Events with 4+ hits: 4
+- Hit distribution: {'0': 878, '1': 814, '2': 283, '3': 36, '4': 1}
+- Events with 3+ hits: 37
+- Events with 4+ hits: 1
 - Events with 5+ hits: 0
 - Events with 6 hits: 0
 

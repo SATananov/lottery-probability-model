@@ -1,29 +1,29 @@
 {
   "status": "training_ready_review_required_no_retrain",
   "canonical_dataset": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10057,
-  "total_unique_draws": 5175,
+  "total_draw_events": 10058,
+  "total_unique_draws": 5176,
   "years": {
     "min": 1958,
     "max": 2026,
     "count": 69
   },
   "drawing_no_counts": {
-    "1": 5175,
+    "1": 5176,
     "2": 3587,
     "3": 1280,
     "4": 15
   },
   "drawings_per_draw_distribution": {
-    "1": 1588,
+    "1": 1589,
     "2": 2307,
     "3": 1265,
     "4": 15
   },
-  "date_available_rows": 48,
+  "date_available_rows": 49,
   "date_missing_rows": 10009,
   "bonus_available_rows": 0,
-  "bonus_missing_rows": 10057,
+  "bonus_missing_rows": 10058,
   "invalid_number_rows": 0,
   "duplicate_number_rows": 0,
   "duplicate_keys": 0,
@@ -1757,13 +1757,13 @@
       "max_drawing_no": 1
     },
     "2026": {
-      "draw_events": 48,
-      "unique_draws": 48,
+      "draw_events": 49,
+      "unique_draws": 49,
       "drawing_no_counts": {
-        "1": 48
+        "1": 49
       },
       "drawings_per_draw_distribution": {
-        "1": 48
+        "1": 49
       },
       "max_drawing_no": 1
     }

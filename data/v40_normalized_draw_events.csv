@@ -10056,3 +10056,4 @@ draw_event_id,source_draw_id,date,year,draw_number,drawing_no,n1,n2,n3,n4,n5,n6,
 2026-045-1,10055,2026-06-11,2026,45,1,1,10,11,15,16,37,,local:toto49_6_49_2026_statistics_package/draws_2026.csv,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
 2026-046-1,10056,2026-06-14,2026,46,1,1,7,8,14,29,42,,local:toto49_6_49_2026_statistics_package/draws_2026.csv,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
 2026-047-1,10057,2026-06-18,2026,47,1,22,26,28,29,40,42,,local:toto49_6_49_2026_statistics_package/draws_2026.csv,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
+2026-048-1,10058,2026-06-21,2026,48,1,6,13,16,19,42,44,,,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing

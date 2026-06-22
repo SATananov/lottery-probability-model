@@ -5,28 +5,28 @@ Status: review required. No model retraining was performed.
 ## Summary
 
 - Canonical dataset: `data\v41_canonical_draw_events.csv`
-- Total draw events: 10057
-- Total unique draws: 5175
+- Total draw events: 10058
+- Total unique draws: 5176
 - Years: 1958–2026 (69 years)
 - Invalid number rows: 0
 - Duplicate number rows: 0
 - Duplicate keys: 0
-- Date available rows: 48
+- Date available rows: 49
 - Date missing rows: 10009
 - Bonus available rows: 0
-- Bonus missing rows: 10057
+- Bonus missing rows: 10058
 - Draw groups with drawing_no=4: 15
 
 ## Drawing number counts
 
-- drawing_no=1: 5175
+- drawing_no=1: 5176
 - drawing_no=2: 3587
 - drawing_no=3: 1280
 - drawing_no=4: 15
 
 ## Drawings per draw distribution
 
-- 1 drawing(s) per draw: 1588 draws
+- 1 drawing(s) per draw: 1589 draws
 - 2 drawing(s) per draw: 2307 draws
 - 3 drawing(s) per draw: 1265 draws
 - 4 drawing(s) per draw: 15 draws

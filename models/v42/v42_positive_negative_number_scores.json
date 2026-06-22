@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-06-21T21:01:10",
+  "created_at": "2026-06-22T07:58:09",
   "dataset": {
     "expected_hits_per_number": 1231.592,
     "invalid_rows": 0,
@@ -19,7 +19,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 7.071,
-      "combined_score": 51.853,
+      "combined_score": 58.053,
       "current_absence_gap": 2,
       "difference_from_expected": 19.408,
       "expected_hits": 1231.592,
@@ -31,14 +31,14 @@
       "last_50_hits": 8,
       "max_absence_gap": 59,
       "number": 1,
-      "positive_signal_score": 72.855,
+      "positive_signal_score": 82.855,
       "total_hits": 1251,
-      "v41_vote_count": 1
+      "v41_vote_count": 2
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 11.807,
-      "combined_score": 57.419,
+      "combined_score": 58.969,
       "current_absence_gap": 7,
       "difference_from_expected": -9.592,
       "expected_hits": 1231.592,
@@ -50,14 +50,14 @@
       "last_50_hits": 6,
       "max_absence_gap": 65,
       "number": 2,
-      "positive_signal_score": 84.221,
+      "positive_signal_score": 86.721,
       "total_hits": 1222,
       "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 20.056,
-      "combined_score": 46.718,
+      "combined_score": 51.368,
       "current_absence_gap": 9,
       "difference_from_expected": -49.592,
       "expected_hits": 1231.592,
@@ -69,14 +69,14 @@
       "last_50_hits": 7,
       "max_absence_gap": 68,
       "number": 3,
-      "positive_signal_score": 74.113,
+      "positive_signal_score": 81.613,
       "total_hits": 1182,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 17.167,
-      "combined_score": 48.265,
+      "combined_score": 49.815,
       "current_absence_gap": 20,
       "difference_from_expected": 44.408,
       "expected_hits": 1231.592,
@@ -88,7 +88,7 @@
       "last_50_hits": 5,
       "max_absence_gap": 56,
       "number": 4,
-      "positive_signal_score": 74.566,
+      "positive_signal_score": 77.066,
       "total_hits": 1276,
       "v41_vote_count": 1
     },
@@ -114,7 +114,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 9.988,
-      "combined_score": 49.694,
+      "combined_score": 54.344,
       "current_absence_gap": 0,
       "difference_from_expected": 41.408,
       "expected_hits": 1231.592,
@@ -126,14 +126,14 @@
       "last_50_hits": 5,
       "max_absence_gap": 59,
       "number": 6,
-      "positive_signal_score": 72.313,
+      "positive_signal_score": 79.813,
       "total_hits": 1273,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 13.882,
-      "combined_score": 46.594,
+      "combined_score": 51.244,
       "current_absence_gap": 2,
       "difference_from_expected": -16.592,
       "expected_hits": 1231.592,
@@ -145,9 +145,9 @@
       "last_50_hits": 5,
       "max_absence_gap": 59,
       "number": 7,
-      "positive_signal_score": 68.4,
+      "positive_signal_score": 75.9,
       "total_hits": 1215,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -171,7 +171,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 8.007,
-      "combined_score": 48.414,
+      "combined_score": 53.064,
       "current_absence_gap": 4,
       "difference_from_expected": 20.408,
       "expected_hits": 1231.592,
@@ -183,9 +183,9 @@
       "last_50_hits": 6,
       "max_absence_gap": 57,
       "number": 9,
-      "positive_signal_score": 67.935,
+      "positive_signal_score": 75.435,
       "total_hits": 1252,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -209,7 +209,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 6.911,
-      "combined_score": 52.903,
+      "combined_score": 57.553,
       "current_absence_gap": 3,
       "difference_from_expected": 41.408,
       "expected_hits": 1231.592,
@@ -221,9 +221,9 @@
       "last_50_hits": 7,
       "max_absence_gap": 54,
       "number": 11,
-      "positive_signal_score": 75.603,
+      "positive_signal_score": 83.103,
       "total_hits": 1273,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -247,7 +247,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 8.929,
-      "combined_score": 54.515,
+      "combined_score": 59.165,
       "current_absence_gap": 0,
       "difference_from_expected": -16.592,
       "expected_hits": 1231.592,
@@ -259,9 +259,9 @@
       "last_50_hits": 10,
       "max_absence_gap": 54,
       "number": 13,
-      "positive_signal_score": 78.141,
+      "positive_signal_score": 85.641,
       "total_hits": 1215,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -304,7 +304,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 11.792,
-      "combined_score": 53.407,
+      "combined_score": 58.057,
       "current_absence_gap": 0,
       "difference_from_expected": -29.592,
       "expected_hits": 1231.592,
@@ -316,9 +316,9 @@
       "last_50_hits": 6,
       "max_absence_gap": 54,
       "number": 16,
-      "positive_signal_score": 78.788,
+      "positive_signal_score": 86.288,
       "total_hits": 1202,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -342,7 +342,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 19.654,
-      "combined_score": 52.425,
+      "combined_score": 53.975,
       "current_absence_gap": 15,
       "difference_from_expected": -35.592,
       "expected_hits": 1231.592,
@@ -354,14 +354,14 @@
       "last_50_hits": 9,
       "max_absence_gap": 68,
       "number": 18,
-      "positive_signal_score": 82.337,
+      "positive_signal_score": 84.837,
       "total_hits": 1196,
       "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 13.851,
-      "combined_score": 48.669,
+      "combined_score": 53.319,
       "current_absence_gap": 0,
       "difference_from_expected": -41.592,
       "expected_hits": 1231.592,
@@ -373,9 +373,9 @@
       "last_50_hits": 6,
       "max_absence_gap": 52,
       "number": 19,
-      "positive_signal_score": 73.038,
+      "positive_signal_score": 80.538,
       "total_hits": 1190,
-      "v41_vote_count": 0
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -399,7 +399,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 18.987,
-      "combined_score": 47.183,
+      "combined_score": 53.383,
       "current_absence_gap": 19,
       "difference_from_expected": 57.408,
       "expected_hits": 1231.592,
@@ -411,14 +411,14 @@
       "last_50_hits": 4,
       "max_absence_gap": 46,
       "number": 21,
-      "positive_signal_score": 74.616,
+      "positive_signal_score": 84.616,
       "total_hits": 1289,
-      "v41_vote_count": 1
+      "v41_vote_count": 2
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 8.089,
-      "combined_score": 59.388,
+      "combined_score": 57.838,
       "current_absence_gap": 1,
       "difference_from_expected": 18.408,
       "expected_hits": 1231.592,
@@ -430,14 +430,14 @@
       "last_50_hits": 7,
       "max_absence_gap": 72,
       "number": 22,
-      "positive_signal_score": 85.58,
+      "positive_signal_score": 83.08,
       "total_hits": 1250,
-      "v41_vote_count": 2
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 23.858,
-      "combined_score": 50.213,
+      "combined_score": 51.763,
       "current_absence_gap": 12,
       "difference_from_expected": -62.592,
       "expected_hits": 1231.592,
@@ -449,14 +449,14 @@
       "last_50_hits": 8,
       "max_absence_gap": 70,
       "number": 23,
-      "positive_signal_score": 82.761,
+      "positive_signal_score": 85.261,
       "total_hits": 1169,
       "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 11.036,
-      "combined_score": 57.227,
+      "combined_score": 54.127,
       "current_absence_gap": 12,
       "difference_from_expected": 8.408,
       "expected_hits": 1231.592,
@@ -468,9 +468,9 @@
       "last_50_hits": 8,
       "max_absence_gap": 61,
       "number": 24,
-      "positive_signal_score": 83.377,
+      "positive_signal_score": 78.377,
       "total_hits": 1240,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "low",
@@ -494,7 +494,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 8.761,
-      "combined_score": 56.786,
+      "combined_score": 53.686,
       "current_absence_gap": 1,
       "difference_from_expected": -12.592,
       "expected_hits": 1231.592,
@@ -506,9 +506,9 @@
       "last_50_hits": 8,
       "max_absence_gap": 56,
       "number": 26,
-      "positive_signal_score": 81.491,
+      "positive_signal_score": 76.491,
       "total_hits": 1219,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "low",
@@ -532,7 +532,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 5.946,
-      "combined_score": 58.627,
+      "combined_score": 55.527,
       "current_absence_gap": 1,
       "difference_from_expected": 19.408,
       "expected_hits": 1231.592,
@@ -544,14 +544,14 @@
       "last_50_hits": 8,
       "max_absence_gap": 52,
       "number": 28,
-      "positive_signal_score": 83.091,
+      "positive_signal_score": 78.091,
       "total_hits": 1251,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 12.773,
-      "combined_score": 52.447,
+      "combined_score": 49.347,
       "current_absence_gap": 1,
       "difference_from_expected": 24.408,
       "expected_hits": 1231.592,
@@ -563,9 +563,9 @@
       "last_50_hits": 4,
       "max_absence_gap": 51,
       "number": 29,
-      "positive_signal_score": 77.571,
+      "positive_signal_score": 72.571,
       "total_hits": 1256,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "very_low",
@@ -646,7 +646,7 @@
     {
       "absence_risk_level": "low",
       "absence_risk_score": 32.592,
-      "combined_score": 38.834,
+      "combined_score": 40.384,
       "current_absence_gap": 29,
       "difference_from_expected": 59.408,
       "expected_hits": 1231.592,
@@ -658,7 +658,7 @@
       "last_50_hits": 2,
       "max_absence_gap": 77,
       "number": 34,
-      "positive_signal_score": 69.595,
+      "positive_signal_score": 72.095,
       "total_hits": 1291,
       "v41_vote_count": 1
     },
@@ -684,7 +684,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 11.382,
-      "combined_score": 57.08,
+      "combined_score": 53.98,
       "current_absence_gap": 9,
       "difference_from_expected": -10.592,
       "expected_hits": 1231.592,
@@ -696,9 +696,9 @@
       "last_50_hits": 10,
       "max_absence_gap": 56,
       "number": 36,
-      "positive_signal_score": 83.467,
+      "positive_signal_score": 78.467,
       "total_hits": 1221,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "very_low",
@@ -717,12 +717,12 @@
       "number": 37,
       "positive_signal_score": 96.528,
       "total_hits": 1276,
-      "v41_vote_count": 3
+      "v41_vote_count": 2
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 9.862,
-      "combined_score": 61.873,
+      "combined_score": 60.323,
       "current_absence_gap": 8,
       "difference_from_expected": -0.592,
       "expected_hits": 1231.592,
@@ -734,9 +734,9 @@
       "last_50_hits": 9,
       "max_absence_gap": 63,
       "number": 38,
-      "positive_signal_score": 89.741,
+      "positive_signal_score": 87.241,
       "total_hits": 1231,
-      "v41_vote_count": 2
+      "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
@@ -760,7 +760,7 @@
     {
       "absence_risk_level": "low",
       "absence_risk_score": 25.576,
-      "combined_score": 42.632,
+      "combined_score": 39.532,
       "current_absence_gap": 1,
       "difference_from_expected": -65.592,
       "expected_hits": 1231.592,
@@ -772,9 +772,9 @@
       "last_50_hits": 5,
       "max_absence_gap": 85,
       "number": 40,
-      "positive_signal_score": 71.744,
+      "positive_signal_score": 66.744,
       "total_hits": 1166,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "low",
@@ -798,7 +798,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 6.321,
-      "combined_score": 59.278,
+      "combined_score": 60.828,
       "current_absence_gap": 0,
       "difference_from_expected": 4.408,
       "expected_hits": 1231.592,
@@ -810,7 +810,7 @@
       "last_50_hits": 10,
       "max_absence_gap": 59,
       "number": 42,
-      "positive_signal_score": 83.586,
+      "positive_signal_score": 86.086,
       "total_hits": 1236,
       "v41_vote_count": 1
     },
@@ -836,7 +836,7 @@
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 8.65,
-      "combined_score": 49.795,
+      "combined_score": 55.995,
       "current_absence_gap": 0,
       "difference_from_expected": 59.408,
       "expected_hits": 1231.592,
@@ -848,9 +848,9 @@
       "last_50_hits": 6,
       "max_absence_gap": 77,
       "number": 44,
-      "positive_signal_score": 72.599,
+      "positive_signal_score": 82.599,
       "total_hits": 1291,
-      "v41_vote_count": 1
+      "v41_vote_count": 2
     },
     {
       "absence_risk_level": "very_low",
@@ -893,7 +893,7 @@
     {
       "absence_risk_level": "low",
       "absence_risk_score": 27.033,
-      "combined_score": 42.106,
+      "combined_score": 39.006,
       "current_absence_gap": 18,
       "difference_from_expected": -17.592,
       "expected_hits": 1231.592,
@@ -905,14 +905,14 @@
       "last_50_hits": 3,
       "max_absence_gap": 63,
       "number": 47,
-      "positive_signal_score": 69.274,
+      "positive_signal_score": 64.274,
       "total_hits": 1214,
-      "v41_vote_count": 1
+      "v41_vote_count": 0
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 13.232,
-      "combined_score": 53.807,
+      "combined_score": 55.357,
       "current_absence_gap": 19,
       "difference_from_expected": 37.408,
       "expected_hits": 1231.592,
@@ -924,14 +924,14 @@
       "last_50_hits": 8,
       "max_absence_gap": 57,
       "number": 48,
-      "positive_signal_score": 80.726,
+      "positive_signal_score": 83.226,
       "total_hits": 1269,
       "v41_vote_count": 1
     },
     {
       "absence_risk_level": "very_low",
       "absence_risk_score": 7.125,
-      "combined_score": 60.664,
+      "combined_score": 59.114,
       "current_absence_gap": 5,
       "difference_from_expected": 42.408,
       "expected_hits": 1231.592,
@@ -943,9 +943,9 @@
       "last_50_hits": 11,
       "max_absence_gap": 49,
       "number": 49,
-      "positive_signal_score": 88.304,
+      "positive_signal_score": 85.804,
       "total_hits": 1274,
-      "v41_vote_count": 2
+      "v41_vote_count": 1
     }
   ],
   "score_explanation": {

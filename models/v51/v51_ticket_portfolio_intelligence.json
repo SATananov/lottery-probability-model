@@ -2,26 +2,23 @@
   "version": "v51",
   "type": "ticket_portfolio_intelligence",
   "portfolio": {
-    "overall_score": 60.68,
+    "overall_score": 62.78,
     "rating": "medium",
-    "warning_codes": [
-      "too_much_repetition"
-    ],
+    "warning_codes": [],
     "strength_codes": [
       "good_diversity",
-      "solid_combo_structure",
-      "good_number_coverage"
+      "solid_combo_structure"
     ],
     "metrics": {
       "combination_count": 4,
-      "average_combo_score": 71.99,
-      "unique_numbers": 16,
-      "max_repeat": 4,
+      "average_combo_score": 72.53,
+      "unique_numbers": 14,
+      "max_repeat": 3,
       "average_overlap": 2.0,
       "max_overlap": 2,
-      "coverage_score": 0.66667,
+      "coverage_score": 0.58333,
       "overlap_score": 0.33333,
-      "repeat_score": 0.0
+      "repeat_score": 0.33333
     }
   },
   "current_score_file": "reports\\v51_current_pro_ticket_score.csv",

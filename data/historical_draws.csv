@@ -1,4 +1,4 @@
-draw_id,date,n1,n2,n3,n4,n5,n6,year,draw_number,draw_position,source_url,draw_no,bonus_number,source
+﻿draw_id,date,n1,n2,n3,n4,n5,n6,year,draw_number,draw_position,source_url,draw_no,bonus_number,source
 1,,8,12,25,31,40,42,1958,0,1,raw:bst_649_1958.txt,,,
 2,,6,13,28,38,46,47,1958,1,1,raw:bst_649_1958.txt,,,
 3,,2,7,15,26,27,49,1958,2,1,raw:bst_649_1958.txt,,,
@@ -10056,4 +10056,4 @@ draw_id,date,n1,n2,n3,n4,n5,n6,year,draw_number,draw_position,source_url,draw_no
 10055,2026-06-11,1,10,11,15,16,37,2026,45,1,local:toto49_6_49_2026_statistics_package/draws_2026.csv,,,
 10056,2026-06-14,1,7,8,14,29,42,2026,46,1,local:toto49_6_49_2026_statistics_package/draws_2026.csv,,,
 10057,2026-06-18,22,26,28,29,40,42,2026,47,1,local:toto49_6_49_2026_statistics_package/draws_2026.csv,,,
-,2026-06-21,6,13,16,19,42,44,2026,,1,,48,,Ръчно въвеждане
+10058,2026-06-21,6,13,16,19,42,44,2026,48,1,,48,,Ръчно въвеждане

@@ -1,15 +1,15 @@
 {
   "status": "v45_training_pipeline_completed",
-  "created_at_utc": "2026-06-21T18:01:29.580658+00:00",
+  "created_at_utc": "2026-06-22T04:58:18.703916+00:00",
   "dataset_source": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10057,
+  "total_draw_events": 10058,
   "year_min": 1958,
   "year_max": 2026,
   "train_events": 8046,
-  "test_events": 2011,
+  "test_events": 2012,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
-  "feature_rows": 492793,
+  "feature_rows": 492842,
   "feature_columns": [
     "number_scaled",
     "number_zone_scaled",
@@ -45,13 +45,13 @@
   "model_metrics": [
     {
       "model": "frequency_baseline",
-      "test_events": 2011,
-      "average_hits_top6": 0.7095972153157633,
+      "test_events": 2012,
+      "average_hits_top6": 0.709741550695825,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 894,
-        "1": 836,
+        "1": 837,
         "2": 253,
         "3": 27,
         "4": 1
@@ -63,12 +63,12 @@
     },
     {
       "model": "recency_250_baseline",
-      "test_events": 2011,
-      "average_hits_top6": 0.7473893585280955,
+      "test_events": 2012,
+      "average_hits_top6": 0.7470178926441352,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 864,
+        "0": 865,
         "1": 828,
         "2": 283,
         "3": 35,
@@ -81,13 +81,13 @@
     },
     {
       "model": "gap_rhythm_statistical",
-      "test_events": 2011,
-      "average_hits_top6": 0.6986573843858777,
+      "test_events": 2012,
+      "average_hits_top6": 0.6988071570576541,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 920,
-        "1": 814,
+        "1": 815,
         "2": 242,
         "3": 33,
         "4": 2
@@ -99,13 +99,13 @@
     },
     {
       "model": "random_baseline",
-      "test_events": 2011,
-      "average_hits_top6": 0.7245151665837891,
+      "test_events": 2012,
+      "average_hits_top6": 0.7246520874751491,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 884,
-        "1": 839,
+        "1": 840,
         "2": 250,
         "3": 34,
         "4": 4
@@ -117,13 +117,13 @@
     },
     {
       "model": "sgd_logistic_probability",
-      "test_events": 2011,
-      "average_hits_top6": 0.7175534559920438,
+      "test_events": 2012,
+      "average_hits_top6": 0.7176938369781312,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 898,
-        "1": 824,
+        "1": 825,
         "2": 249,
         "3": 39,
         "4": 1
@@ -135,13 +135,13 @@
     },
     {
       "model": "gaussian_naive_bayes",
-      "test_events": 2011,
-      "average_hits_top6": 0.7359522625559424,
+      "test_events": 2012,
+      "average_hits_top6": 0.7360834990059643,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 882,
-        "1": 820,
+        "1": 821,
         "2": 269,
         "3": 38,
         "4": 2
@@ -153,13 +153,13 @@
     },
     {
       "model": "v45_pro_ensemble",
-      "test_events": 2011,
-      "average_hits_top6": 0.6842366981601193,
+      "test_events": 2012,
+      "average_hits_top6": 0.6843936381709742,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 929,
-        "1": 824,
+        "1": 825,
         "2": 225,
         "3": 30,
         "4": 3
@@ -172,12 +172,12 @@
   ],
   "best_model_by_average_hits_top6": {
     "model": "recency_250_baseline",
-    "test_events": 2011,
-    "average_hits_top6": 0.7473893585280955,
+    "test_events": 2012,
+    "average_hits_top6": 0.7470178926441352,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 864,
+      "0": 865,
       "1": 828,
       "2": 283,
       "3": 35,
@@ -189,7 +189,7 @@
     "events_with_6_hits": 0
   },
   "primary_numbers": [
-    4,
+    12,
     17,
     21,
     24,
