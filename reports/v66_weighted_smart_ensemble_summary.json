@@ -1,0 +1,29 @@
+{
+  "step": "66",
+  "name": "Weighted Smart Ensemble Integration",
+  "source_weights": "reports/v65_model_weights.csv",
+  "numbers_scored": 49,
+  "sources_used": 8,
+  "skipped_sources": [
+    {
+      "model_name": "v50_pair_group_intelligence",
+      "reason": "no parseable score source files found"
+    },
+    {
+      "model_name": "v61_latest_draw_signal_hits",
+      "reason": "post-draw analyzer; used for reliability context, not direct score source"
+    }
+  ],
+  "top_number": 1,
+  "top_weighted_score_percent": 100.0,
+  "top_number_status": "водещ претеглен сигнал",
+  "reference_tickets_count": 4,
+  "generated_at": "2026-06-22T07:48:47+00:00",
+  "generated_reports": [
+    "reports/v66_weighted_smart_ensemble_summary.json",
+    "reports/v66_weighted_smart_ensemble_summary.md",
+    "reports/v66_weighted_smart_ensemble_scores.csv",
+    "models/v66/v66_weighted_smart_ensemble_model.json"
+  ],
+  "safe_note": "This is a weighted statistical ensemble layer. It is not a winning guarantee or a promise of future lottery results."
+}
