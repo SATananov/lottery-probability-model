@@ -1,0 +1,39 @@
+{
+  "step": "74.1",
+  "name": "Избирателно синхронизиране на модели",
+  "status": "OK",
+  "planned_actions": 1,
+  "executed_actions": 1,
+  "successful_actions": 1,
+  "failed_actions": 0,
+  "generated_at": "2026-06-22T12:12:48+00:00",
+  "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
+  "plan": [
+    {
+      "order": 1,
+      "step": "74",
+      "label": "Контрол на синхрона",
+      "category": "Контролен център",
+      "script": "scripts/v74_build_model_dependency_sync_center.py",
+      "script_exists": true,
+      "role": "Преизчислява централния audit след обновяване."
+    }
+  ],
+  "results": [
+    {
+      "order": 1,
+      "step": "74",
+      "label": "Контрол на синхрона",
+      "category": "Контролен център",
+      "script": "scripts/v74_build_model_dependency_sync_center.py",
+      "script_exists": true,
+      "role": "Преизчислява централния audit след обновяване.",
+      "returncode": 0,
+      "status": "OK",
+      "started_at": "2026-06-22T12:12:48+00:00",
+      "finished_at": "2026-06-22T12:12:48+00:00",
+      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 23\nSYNCED_MODELS 23\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
+      "stderr_tail": ""
+    }
+  ]
+}

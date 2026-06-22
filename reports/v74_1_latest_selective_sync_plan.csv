@@ -1,0 +1,2 @@
+﻿order,step,label,category,script,script_exists,role
+1,74,Контрол на синхрона,Контролен център,scripts/v74_build_model_dependency_sync_center.py,True,Преизчислява централния audit след обновяване.
