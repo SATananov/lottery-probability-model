@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import csv
 import json
+import hashlib
 from datetime import datetime, timezone
 from typing import Any
 
@@ -316,17 +317,50 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(f))
 
 
-def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
+def _write_text_if_changed(path: Path, content: str, encoding: str = "utf-8") -> bool:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n", extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows(rows)
+    if path.exists():
+        try:
+            if path.read_text(encoding=encoding) == content:
+                return False
+        except UnicodeError:
+            pass
+    path.write_text(content, encoding=encoding)
+    return True
+
+
+def _stable_json_text(data: Any) -> str:
+    return json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True)
+
+
+def _state_hash(data: Any) -> str:
+    payload = json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _read_json_if_exists(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
+    import io
+
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator="\n", extrasaction="ignore")
+    writer.writeheader()
+    writer.writerows(rows)
+    content = "\ufeff" + output.getvalue()
+    _write_text_if_changed(path, content, encoding="utf-8")
 
 
 def write_json(path: Path, data: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    _write_text_if_changed(path, _stable_json_text(data) + "\n", encoding="utf-8")
 
 
 def rel_exists(rel_path: str) -> bool:
@@ -505,7 +539,8 @@ def build_model_dependency_sync_center() -> dict[str, Any]:
         "datasets": dataset_infos,
         "dataset_sync": dataset_sync,
         "pipeline_chain": pipeline_chain,
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": "",
+        "state_hash": "",
         "generated_reports": [
             "reports/v74_model_dependency_summary.json",
             "reports/v74_model_dependency_summary.md",
@@ -516,6 +551,24 @@ def build_model_dependency_sync_center() -> dict[str, Any]:
         ],
         "safe_note": SAFE_NOTE,
     }
+
+    stable_payload = {
+        "summary_without_runtime": {
+            key: value
+            for key, value in summary.items()
+            if key not in {"generated_at", "state_hash"}
+        },
+        "sync_status": statuses,
+        "dependency_edges": edges,
+    }
+    state_hash = _state_hash(stable_payload)
+    existing_summary = _read_json_if_exists(SUMMARY_PATH)
+    if existing_summary.get("state_hash") == state_hash and existing_summary.get("generated_at"):
+        generated_at = str(existing_summary.get("generated_at"))
+    else:
+        generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    summary["generated_at"] = generated_at
+    summary["state_hash"] = state_hash
 
     registry = {
         "summary": summary,
@@ -563,7 +616,7 @@ def build_model_dependency_sync_center() -> dict[str, Any]:
     for index, item in enumerate(pipeline_chain, start=1):
         md.append(f"{index}. {item}")
 
-    SUMMARY_MD_PATH.write_text("\n".join(md) + "\n", encoding="utf-8")
+    _write_text_if_changed(SUMMARY_MD_PATH, "\n".join(md) + "\n", encoding="utf-8")
     return summary
 
 

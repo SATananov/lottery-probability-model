@@ -17,6 +17,7 @@ from src.v74_selective_sync_actions import (
     build_sync_plan,
     run_sync_plan,
 )
+from src.v74_git_sync_actions import commit_and_push_model_outputs, git_status_short
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY_PATH = ROOT / "reports" / "v74_model_dependency_summary.json"
@@ -121,6 +122,37 @@ def _show_run_result(result):
                 st.code(stderr, language="text")
 
 
+
+def _show_git_result(result):
+    if not result:
+        return
+    status = result.get("status", "")
+    if status == "OK":
+        st.success(result.get("message", "GitHub sync мина успешно."))
+    elif status == "Няма промени":
+        st.info(result.get("message", "Няма промени за качване."))
+    else:
+        st.error(result.get("message", "GitHub sync спря с проблем."))
+
+    latest_commit = str(result.get("latest_commit", "") or "").strip()
+    if latest_commit:
+        st.caption(f"Последен commit: {latest_commit}")
+
+    remaining = str(result.get("remaining_status", "") or "").strip()
+    if remaining:
+        with st.expander("Оставащи локални промени след GitHub sync"):
+            st.code(remaining, language="text")
+
+    with st.expander("GitHub sync log", expanded=status not in {"OK", "Няма промени"}):
+        for step in result.get("steps", []) or []:
+            st.markdown(f"**{step.get('name', 'git')}** — code {step.get('returncode')}")
+            stdout = str(step.get("stdout", "") or "").strip()
+            stderr = str(step.get("stderr", "") or "").strip()
+            if stdout:
+                st.code(stdout[-3000:], language="text")
+            if stderr:
+                st.code(stderr[-3000:], language="text")
+
 def render_v74_model_dependency_sync_center_section():
     st.title("Контрол на синхрона")
     st.caption(
@@ -218,6 +250,28 @@ def render_v74_model_dependency_sync_center_section():
                 f"{latest_result.get('planned_actions', 0)}"
             )
             st.write(f"Генерирано: {latest_result.get('generated_at', '')}")
+
+    st.subheader("GitHub синхрон")
+    st.caption(
+        "След локална синхронизация можеш оттук да commit-неш и push-неш обновените models/reports/data artifacts. "
+        "Бутонът не заменя проверката на логовете, но спестява ръчното търсене на git командите."
+    )
+    current_git_status = git_status_short()
+    if current_git_status:
+        with st.expander("Локални промени за преглед", expanded=False):
+            st.code(current_git_status, language="text")
+    else:
+        st.success("Няма локални промени за качване към GitHub.")
+
+    commit_message = st.text_input(
+        "Commit съобщение",
+        value="Sync model dependency center outputs",
+        key="v74_2_git_commit_message",
+    )
+    if st.button("Commit & push models/reports/data към GitHub", key="v74_2_git_commit_push"):
+        with st.spinner("Комитвам и качвам обновените artifacts към GitHub..."):
+            git_result = commit_and_push_model_outputs(commit_message=commit_message)
+        _show_git_result(git_result)
 
     st.subheader("Главни dataset-и")
     dataset_rows = []

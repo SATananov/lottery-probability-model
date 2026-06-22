@@ -1,57 +1,62 @@
 {
-  "step": "74",
-  "name": "Контрол на синхрона между моделите",
-  "status": "Синхронизиран",
   "all_synced": true,
-  "models_checked": 23,
-  "synced_models": 23,
-  "stale_models": 0,
-  "missing_models": 0,
-  "ensemble_sources": 8,
-  "datasets": [
-    {
-      "path": "data/historical_draws.csv",
-      "exists": true,
-      "rows": 10058,
-      "latest_date": "2026-06-21",
-      "latest_year": "2026",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
-      "mtime": "2026-06-22T07:57:49"
-    },
-    {
-      "path": "data/v40_normalized_draw_events.csv",
-      "exists": true,
-      "rows": 10058,
-      "latest_date": "2026-06-21",
-      "latest_year": "2026",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
-      "mtime": "2026-06-22T07:57:50"
-    },
-    {
-      "path": "data/v41_canonical_draw_events.csv",
-      "exists": true,
-      "rows": 10058,
-      "latest_date": "2026-06-21",
-      "latest_year": "2026",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
-      "mtime": "2026-06-22T07:57:50"
-    }
-  ],
   "dataset_sync": {
     "datasets_checked": 3,
     "datasets_existing": 3,
-    "row_counts": [
-      10058
-    ],
     "latest_draw_signatures": [
       "2026-06-21 | 48 | 6,13,16,19,42,44"
     ],
-    "rows_synced": true,
-    "latest_draw_synced": true
+    "latest_draw_synced": true,
+    "row_counts": [
+      10058
+    ],
+    "rows_synced": true
   },
+  "datasets": [
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_year": "2026",
+      "mtime": "2026-06-22T07:57:49",
+      "path": "data/historical_draws.csv",
+      "rows": 10058
+    },
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_year": "2026",
+      "mtime": "2026-06-22T07:57:50",
+      "path": "data/v40_normalized_draw_events.csv",
+      "rows": 10058
+    },
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_year": "2026",
+      "mtime": "2026-06-22T07:57:50",
+      "path": "data/v41_canonical_draw_events.csv",
+      "rows": 10058
+    }
+  ],
+  "ensemble_sources": 8,
+  "generated_at": "2026-06-22T12:36:58+00:00",
+  "generated_reports": [
+    "reports/v74_model_dependency_summary.json",
+    "reports/v74_model_dependency_summary.md",
+    "reports/v74_model_dependency_map.csv",
+    "reports/v74_model_sync_status.csv",
+    "models/model_registry.json",
+    "models/v74/v74_model_dependency_sync_center_model.json"
+  ],
+  "missing_models": 0,
+  "models_checked": 23,
+  "name": "Контрол на синхрона между моделите",
   "pipeline_chain": [
     "Данни от тиражи",
     "Базови модели и статистики",
@@ -65,14 +70,10 @@
     "Проверка след реален тираж",
     "Model Dependency & Sync Center"
   ],
-  "generated_at": "2026-06-22T12:26:38+00:00",
-  "generated_reports": [
-    "reports/v74_model_dependency_summary.json",
-    "reports/v74_model_dependency_summary.md",
-    "reports/v74_model_dependency_map.csv",
-    "reports/v74_model_sync_status.csv",
-    "models/model_registry.json",
-    "models/v74/v74_model_dependency_sync_center_model.json"
-  ],
-  "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+  "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+  "stale_models": 0,
+  "state_hash": "ce6454b2ddcb45c7c4299e5097565ea8dde1cc9734335d3845eb6513e81fbc20",
+  "status": "Синхронизиран",
+  "step": "74",
+  "synced_models": 23
 }
