@@ -23,7 +23,7 @@ SYNC_PLAN_AUDIT_CSV = REPORTS_DIR / "v80_sync_plan_audit.csv"
 MODEL_JSON = V80_MODELS_DIR / "v80_final_system_audit_model.json"
 
 SAFE_NOTE = (
-    "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. "
+    "Step 80 е финален системен одит на данни, артефакти, планове за синхронизация и файлово качество. "
     "Това е контролен слой, не прогноза и не гаранция за печалба."
 )
 
@@ -84,12 +84,13 @@ REQUIRED_STREAMLIT_LABELS = [
     "Финален системен одит",
     "Финален UX контрол",
     "Финален release пакет",
+    "Ръководство за апа",
 ]
 
 SYNC_PLAN_EXPECTATIONS = [
-    {"name": "79 -> 80 -> 81 -> 82 -> 74", "step": "79", "mode": "selected_and_downstream", "expected": ["79", "80", "81", "82", "74"]},
-    {"name": "78 -> 79 -> 80 -> 81 -> 82 -> 74", "step": "78", "mode": "selected_and_downstream", "expected": ["78", "79", "80", "81", "82", "74"]},
-    {"name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 74", "step": "75", "mode": "selected_and_downstream", "expected": ["75", "76", "77", "78", "79", "80", "81", "82", "74"]},
+    {"name": "79 -> 80 -> 81 -> 82 -> 83 -> 74", "step": "79", "mode": "selected_and_downstream", "expected": ["79", "80", "81", "82", "83", "74"]},
+    {"name": "78 -> 79 -> 80 -> 81 -> 82 -> 83 -> 74", "step": "78", "mode": "selected_and_downstream", "expected": ["78", "79", "80", "81", "82", "83", "74"]},
+    {"name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 83 -> 74", "step": "75", "mode": "selected_and_downstream", "expected": ["75", "76", "77", "78", "79", "80", "81", "82", "83", "74"]},
 ]
 
 CHECK_PY_FILES = [
@@ -114,6 +115,9 @@ CHECK_PY_FILES = [
     "src/v82_final_release_package_engine.py",
     "src/v82_final_release_package_section.py",
     "scripts/v82_build_final_release_package_center.py",
+    "src/v83_final_user_manual_engine.py",
+    "src/v83_final_user_manual_section.py",
+    "scripts/v83_build_final_user_manual_center.py",
 ]
 
 QUALITY_TEXT_EXTENSIONS = {".py", ".md", ".json", ".csv", ".txt", ".html", ".toml"}
@@ -305,6 +309,9 @@ def _audit_compile_and_text_quality() -> list[dict[str, Any]]:
         rel = path.relative_to(ROOT).as_posix()
         if any(part in {".git", ".venv", "__pycache__", ".pytest_cache"} for part in path.parts):
             continue
+        base_name = path.name.lower()
+        if base_name.startswith(("apply_", "fix_", "patch_")) and path.suffix.lower() in {".py", ".ps1"}:
+            continue
         if rel.startswith("data/raw/"):
             continue
         if rel.startswith("reports/v80_") or rel.startswith("models/v80/"):
@@ -454,7 +461,7 @@ def build_final_system_audit_center() -> dict[str, Any]:
         f"Проверени datasets: **{summary['datasets_checked']}**",
         f"Проверени артефакти: **{summary['artifacts_checked']}**",
         f"Проверки на файлово качество: **{summary['quality_checks']}**",
-        f"Проверени sync планове: **{summary['sync_plans_checked']}**",
+        f"Проверени планове за синхронизация: **{summary['sync_plans_checked']}**",
         f"Намерени проблеми: **{summary['issues_found']}**",
         "",
         "**Важно:** Step 80 е контролен слой. Той не е прогноза и не е гаранция за печалба.",

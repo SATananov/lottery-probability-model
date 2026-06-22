@@ -46,11 +46,11 @@ def _show_rows(title: str, rows: list[dict[str, str]]) -> None:
 
 def render_v82_final_release_package_section() -> None:
     st.title("Финален release пакет")
-    st.caption("Step 82 — финален release readiness и clean ZIP контрол преди checkpoint.")
+    st.caption("Step 82 — финална готовност на пакета и чист ZIP контрол преди checkpoint.")
     st.warning("Този модул подготвя clean release checkpoint. Той не е прогноза и не е гаранция за печалба.")
 
     if st.button("Обнови финалния release контрол"):
-        with st.spinner("Обновяване на release readiness проверките..."):
+        with st.spinner("Обновяване на проверките за готовност на финалния пакет..."):
             summary = build_final_release_package_center()
         if summary.get("status") == "OK":
             st.success("Финалният release контрол е обновен успешно.")

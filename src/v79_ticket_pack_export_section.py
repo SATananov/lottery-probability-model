@@ -81,7 +81,7 @@ def render_v79_ticket_pack_export_section() -> None:
         copy_text = V79_COPY_TEXT_TXT.read_text(encoding="utf-8")
         st.text_area("Копирай финалния пакет", copy_text, height=260)
     else:
-        st.info("Още няма готов copy text. Натисни бутона за обновяване.")
+        st.info("Още няма готов текст за копиране. Натисни бутона за обновяване.")
 
     st.subheader("Фишове за изпълнение")
     export_df = _read_csv(V79_EXPORT_TICKETS_CSV)
