@@ -426,3 +426,90 @@ def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
 
     return _step77_with_order(_plan)
 # STEP 77 DECISION RECOMMENDATION WIRING END
+
+# STEP 78 FINAL PLAY PLAN WIRING START
+_STEP78_ORIGINAL_BUILD_SYNC_PLAN = build_sync_plan
+
+def _step78_find_node(step: str):
+    for _node in MODEL_NODES:
+        if str(_node.get("step")) == str(step):
+            return dict(_node)
+
+    if str(step) == "74":
+        return {
+            "step": "74",
+            "label": "Контрол на синхрона",
+            "category": "Контрол на синхрона",
+            "script": "scripts/v74_build_model_dependency_sync_center.py",
+            "datasets": ["data/historical_draws.csv", "data/v41_canonical_draw_events.csv"],
+            "inputs": [
+                "models/model_registry.json",
+                "reports/v78_final_play_plan_summary.json",
+                "reports/v78_selected_ticket_plan.csv",
+                "reports/v78_final_play_plan.json",
+            ],
+            "outputs": [
+                "models/v74/v74_model_dependency_sync_center_model.json",
+                "reports/v74_model_dependency_summary.json",
+                "reports/v74_model_dependency_summary.md",
+                "reports/v74_model_dependency_map.csv",
+                "reports/v74_model_sync_status.csv",
+            ],
+            "feeds": [],
+            "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+            "ensemble_source": False,
+        }
+
+    raise ValueError(f"Missing model node for Step {step}")
+
+def _step78_with_order(plan: list[dict]) -> list[dict]:
+    _ordered = []
+    for _index, _item in enumerate(plan, start=1):
+        _copy = dict(_item)
+        _copy["order"] = _index
+        _ordered.append(_copy)
+    return _ordered
+
+def _step78_insert_before_74(plan: list[dict], step: str = "78") -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if step in _steps:
+        return _step78_with_order(plan)
+
+    _node = _step78_find_node(step)
+    _new_plan = []
+    _inserted = False
+
+    for _item in plan:
+        if str(_item.get("step")) == "74" and not _inserted:
+            _new_plan.append(_node)
+            _inserted = True
+        _new_plan.append(dict(_item))
+
+    if not _inserted:
+        _new_plan.append(_node)
+
+    return _step78_with_order(_new_plan)
+
+def _step78_ensure_final_74(plan: list[dict]) -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if "74" in _steps:
+        return _step78_with_order(plan)
+    return _step78_with_order([*plan, _step78_find_node("74")])
+
+def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
+    _selected = "" if selected_step is None else str(selected_step)
+    _mode = str(mode)
+
+    if _selected == "78" and _mode == "selected_and_downstream":
+        return _step78_with_order([_step78_find_node("78"), _step78_find_node("74")])
+
+    _plan = _STEP78_ORIGINAL_BUILD_SYNC_PLAN(selected_step, mode)
+
+    if _selected in {"75", "76", "77"} and _mode == "selected_and_downstream":
+        return _step78_ensure_final_74(_step78_insert_before_74(_plan, "78"))
+
+    if _mode == "full_chain":
+        return _step78_ensure_final_74(_step78_insert_before_74(_plan, "78"))
+
+    return _step78_with_order(_plan)
+# STEP 78 FINAL PLAY PLAN WIRING END

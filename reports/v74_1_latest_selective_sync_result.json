@@ -6,36 +6,37 @@
   "executed_actions": 2,
   "successful_actions": 2,
   "failed_actions": 0,
-  "generated_at": "2026-06-22T15:02:40+00:00",
+  "generated_at": "2026-06-22T15:15:41+00:00",
   "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
   "plan": [
     {
-      "step": "77",
-      "label": "Решение и препоръка",
-      "category": "Решение и препоръка",
-      "script": "scripts/v77_build_decision_recommendation_center.py",
+      "step": "78",
+      "label": "Финален план",
+      "category": "Финален план",
+      "script": "scripts/v78_build_final_play_plan_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
       ],
       "inputs": [
-        "reports/v76_explainability_validation_summary.json",
-        "reports/v76_ticket_validation.csv",
-        "reports/v76_number_explanations.csv",
-        "reports/v76_validation_warnings.csv"
-      ],
-      "outputs": [
-        "models/v77/v77_decision_recommendation_model.json",
         "reports/v77_decision_recommendation_summary.json",
-        "reports/v77_decision_recommendation_summary.md",
         "reports/v77_ticket_recommendations.csv",
         "reports/v77_decision_recommendations.json",
         "reports/v77_decision_warnings.csv"
       ],
+      "outputs": [
+        "models/v78/v78_final_play_plan_model.json",
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_final_play_plan_summary.md",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_play_plan_actions.csv",
+        "reports/v78_play_plan_warnings.csv",
+        "reports/v78_final_play_plan.json"
+      ],
       "feeds": [
         "Step 74"
       ],
-      "role": "Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.",
+      "role": "Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия.",
       "ensemble_source": false,
       "order": 1
     },
@@ -50,9 +51,9 @@
       ],
       "inputs": [
         "models/model_registry.json",
-        "reports/v77_decision_recommendation_summary.json",
-        "reports/v77_ticket_recommendations.csv",
-        "reports/v77_decision_recommendations.json"
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_final_play_plan.json"
       ],
       "outputs": [
         "models/v74/v74_model_dependency_sync_center_model.json",
@@ -69,39 +70,40 @@
   ],
   "results": [
     {
-      "step": "77",
-      "label": "Решение и препоръка",
-      "category": "Решение и препоръка",
-      "script": "scripts/v77_build_decision_recommendation_center.py",
+      "step": "78",
+      "label": "Финален план",
+      "category": "Финален план",
+      "script": "scripts/v78_build_final_play_plan_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
       ],
       "inputs": [
-        "reports/v76_explainability_validation_summary.json",
-        "reports/v76_ticket_validation.csv",
-        "reports/v76_number_explanations.csv",
-        "reports/v76_validation_warnings.csv"
-      ],
-      "outputs": [
-        "models/v77/v77_decision_recommendation_model.json",
         "reports/v77_decision_recommendation_summary.json",
-        "reports/v77_decision_recommendation_summary.md",
         "reports/v77_ticket_recommendations.csv",
         "reports/v77_decision_recommendations.json",
         "reports/v77_decision_warnings.csv"
       ],
+      "outputs": [
+        "models/v78/v78_final_play_plan_model.json",
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_final_play_plan_summary.md",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_play_plan_actions.csv",
+        "reports/v78_play_plan_warnings.csv",
+        "reports/v78_final_play_plan.json"
+      ],
       "feeds": [
         "Step 74"
       ],
-      "role": "Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.",
+      "role": "Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия.",
       "ensemble_source": false,
       "order": 1,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T15:02:39+00:00",
-      "finished_at": "2026-06-22T15:02:39+00:00",
-      "stdout_tail": "STEP77_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nRECOMMENDATIONS 8\nBEST_TICKET 5\nBEST_SCORE 62.744\n",
+      "started_at": "2026-06-22T15:15:41+00:00",
+      "finished_at": "2026-06-22T15:15:41+00:00",
+      "stdout_tail": "STEP78_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nCANDIDATES 8\nACTIVE_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5\n",
       "stderr_tail": ""
     },
     {
@@ -115,9 +117,9 @@
       ],
       "inputs": [
         "models/model_registry.json",
-        "reports/v77_decision_recommendation_summary.json",
-        "reports/v77_ticket_recommendations.csv",
-        "reports/v77_decision_recommendations.json"
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_final_play_plan.json"
       ],
       "outputs": [
         "models/v74/v74_model_dependency_sync_center_model.json",
@@ -132,9 +134,9 @@
       "order": 2,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T15:02:39+00:00",
-      "finished_at": "2026-06-22T15:02:40+00:00",
-      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 26\nSYNCED_MODELS 26\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
+      "started_at": "2026-06-22T15:15:41+00:00",
+      "finished_at": "2026-06-22T15:15:41+00:00",
+      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 27\nSYNCED_MODELS 27\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
       "stderr_tail": ""
     }
   ]

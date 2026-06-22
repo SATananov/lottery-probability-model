@@ -1,3 +1,3 @@
 ﻿order,step,label,category,script,script_exists,role
-1,77,Решение и препоръка,Решение и препоръка,scripts/v77_build_decision_recommendation_center.py,,Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат фишовете.
+1,78,Финален план,Финален план,scripts/v78_build_final_play_plan_center.py,,"Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия."
 2,74,Контрол на синхрона,Контрол на синхрона,scripts/v74_build_model_dependency_sync_center.py,,"Финален контролен слой за проверка на model artifacts, dependency map и sync status."

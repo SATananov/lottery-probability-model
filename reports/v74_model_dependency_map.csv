@@ -108,4 +108,11 @@ reports/v76_explainability_validation_summary.json,Step 77,artifact,Входен
 reports/v76_ticket_validation.csv,Step 77,artifact,Входен model/report artifact
 reports/v76_number_explanations.csv,Step 77,artifact,Входен model/report artifact
 reports/v76_validation_warnings.csv,Step 77,artifact,Входен model/report artifact
-Step 77,Step 74,feeds,Изходът помага на следващ слой
+Step 77,Step 78,feeds,Изходът помага на следващ слой
+data/v41_canonical_draw_events.csv,Step 78,dataset,Dataset вход
+data/historical_draws.csv,Step 78,dataset,Dataset вход
+reports/v77_decision_recommendation_summary.json,Step 78,artifact,Входен model/report artifact
+reports/v77_ticket_recommendations.csv,Step 78,artifact,Входен model/report artifact
+reports/v77_decision_recommendations.json,Step 78,artifact,Входен model/report artifact
+reports/v77_decision_warnings.csv,Step 78,artifact,Входен model/report artifact
+Step 78,Step 74,feeds,Изходът помага на следващ слой

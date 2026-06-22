@@ -983,3 +983,42 @@ for _node in MODEL_NODES:
             _feeds.append("Step 77")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 77 DECISION RECOMMENDATION WIRING END
+
+# STEP 78 FINAL PLAY PLAN WIRING START
+_STEP78_NODE = {
+    "step": "78",
+    "label": "Финален план",
+    "category": "Финален план",
+    "script": "scripts/v78_build_final_play_plan_center.py",
+    "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+    "inputs": [
+        "reports/v77_decision_recommendation_summary.json",
+        "reports/v77_ticket_recommendations.csv",
+        "reports/v77_decision_recommendations.json",
+        "reports/v77_decision_warnings.csv",
+    ],
+    "outputs": [
+        "models/v78/v78_final_play_plan_model.json",
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_final_play_plan_summary.md",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_play_plan_actions.csv",
+        "reports/v78_play_plan_warnings.csv",
+        "reports/v78_final_play_plan.json",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "78" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP78_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "77":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 78" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 78" not in _feeds:
+            _feeds.append("Step 78")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 78 FINAL PLAY PLAN WIRING END
