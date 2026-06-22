@@ -1,0 +1,195 @@
+{
+  "candidate_tickets": [
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.516563,
+      "numbers": [
+        2,
+        21,
+        29,
+        41,
+        42,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 179,
+      "ticket_id": 1
+    },
+    {
+      "low_count": 3,
+      "neural_ticket_score": 0.51528,
+      "numbers": [
+        11,
+        20,
+        21,
+        27,
+        34,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 157,
+      "ticket_id": 2
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.520419,
+      "numbers": [
+        2,
+        11,
+        25,
+        27,
+        38,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 148,
+      "ticket_id": 3
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.520892,
+      "numbers": [
+        7,
+        21,
+        27,
+        28,
+        34,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 162,
+      "ticket_id": 4
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.534294,
+      "numbers": [
+        2,
+        21,
+        25,
+        34,
+        43,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 170,
+      "ticket_id": 5
+    },
+    {
+      "low_count": 3,
+      "neural_ticket_score": 0.519335,
+      "numbers": [
+        2,
+        13,
+        19,
+        25,
+        30,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 133,
+      "ticket_id": 6
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.514728,
+      "numbers": [
+        3,
+        13,
+        25,
+        30,
+        38,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 153,
+      "ticket_id": 7
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.527801,
+      "numbers": [
+        2,
+        21,
+        30,
+        40,
+        42,
+        45
+      ],
+      "odd_count": 2,
+      "sum": 180,
+      "ticket_id": 8
+    }
+  ],
+  "dataset_source": "data\\v41_canonical_draw_events.csv",
+  "epochs": 90,
+  "feature_count": 13,
+  "hidden_units": 18,
+  "kind": "neural_meta_learner",
+  "metrics": {
+    "avg_hits_top6": 0.7464859437751004,
+    "balanced_loss_end": 0.694233742811003,
+    "balanced_loss_start": 0.6951551606078616,
+    "binary_accuracy": 0.5439513154659454,
+    "hit_distribution_top6": {
+      "0": 867,
+      "1": 805,
+      "2": 281,
+      "3": 36,
+      "4": 3,
+      "5": 0,
+      "6": 0
+    },
+    "max_hits_top6": 4,
+    "positive_rate": 0.12244897959183673,
+    "test_draws": 1992,
+    "test_samples": 97608,
+    "train_draws": 7966,
+    "train_samples": 390334
+  },
+  "name": "Невронна лаборатория",
+  "number_columns": [
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "n6"
+  ],
+  "random_seed": 75,
+  "safe_note": "Статистически neural meta-layer. Не е гаранция за печалба и не отменя случайността на лотарията.",
+  "state_hash": "760bbfb3d861f1c4",
+  "status": "Готово",
+  "step": 75,
+  "top20_numbers": [
+    21,
+    34,
+    45,
+    40,
+    2,
+    25,
+    43,
+    47,
+    38,
+    30,
+    13,
+    19,
+    44,
+    27,
+    41,
+    28,
+    42,
+    29,
+    3,
+    15
+  ],
+  "top_numbers": [
+    21,
+    34,
+    45,
+    40,
+    2,
+    25
+  ],
+  "valid_draws": 10058
+}

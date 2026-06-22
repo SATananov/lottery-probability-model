@@ -1,0 +1,125 @@
+{
+  "state_hash": "760bbfb3d861f1c4",
+  "tickets": [
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.516563,
+      "numbers": [
+        2,
+        21,
+        29,
+        41,
+        42,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 179,
+      "ticket_id": 1
+    },
+    {
+      "low_count": 3,
+      "neural_ticket_score": 0.51528,
+      "numbers": [
+        11,
+        20,
+        21,
+        27,
+        34,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 157,
+      "ticket_id": 2
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.520419,
+      "numbers": [
+        2,
+        11,
+        25,
+        27,
+        38,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 148,
+      "ticket_id": 3
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.520892,
+      "numbers": [
+        7,
+        21,
+        27,
+        28,
+        34,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 162,
+      "ticket_id": 4
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.534294,
+      "numbers": [
+        2,
+        21,
+        25,
+        34,
+        43,
+        45
+      ],
+      "odd_count": 4,
+      "sum": 170,
+      "ticket_id": 5
+    },
+    {
+      "low_count": 3,
+      "neural_ticket_score": 0.519335,
+      "numbers": [
+        2,
+        13,
+        19,
+        25,
+        30,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 133,
+      "ticket_id": 6
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.514728,
+      "numbers": [
+        3,
+        13,
+        25,
+        30,
+        38,
+        44
+      ],
+      "odd_count": 3,
+      "sum": 153,
+      "ticket_id": 7
+    },
+    {
+      "low_count": 2,
+      "neural_ticket_score": 0.527801,
+      "numbers": [
+        2,
+        21,
+        30,
+        40,
+        42,
+        45
+      ],
+      "odd_count": 2,
+      "sum": 180,
+      "ticket_id": 8
+    }
+  ]
+}
