@@ -17,6 +17,34 @@ WORKFLOW_CSV = REPORTS_DIR / "v83_recommended_workflow.csv"
 SAFE_CHECKLIST_CSV = REPORTS_DIR / "v83_safe_usage_checklist.csv"
 
 
+V83_COLUMN_LABELS = {
+    "section_order": "Ред",
+    "section": "Раздел",
+    "purpose": "Предназначение",
+    "user_action": "Действие за потребителя",
+    "safe_note": "Важно уточнение",
+    "step_order": "Ред",
+    "page": "Страница",
+    "when_to_use": "Кога се използва",
+    "expected_result": "Очакван резултат",
+    "caution": "Внимание",
+    "check_order": "Ред",
+    "check_item": "Проверка",
+    "recommended_behavior": "Препоръчително поведение",
+    "risk_if_ignored": "Риск при игнориране",
+}
+
+
+def _translate_table_columns(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    translated_rows: list[dict[str, str]] = []
+    for row in rows:
+        translated_rows.append({
+            V83_COLUMN_LABELS.get(str(key), str(key)): value
+            for key, value in row.items()
+        })
+    return translated_rows
+
+
 def _load_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
@@ -36,7 +64,7 @@ def _load_rows(path: Path) -> list[dict[str, str]]:
 def _show_rows(title: str, rows: list[dict[str, str]]) -> None:
     st.subheader(title)
     if rows:
-        st.dataframe(rows, use_container_width=True, hide_index=True)
+        st.dataframe(_translate_table_columns(rows), use_container_width=True, hide_index=True)
     else:
         st.info("Няма налични редове за показване.")
 
@@ -89,5 +117,5 @@ def render_v83_final_user_manual_section() -> None:
         st.success("Ръководството е синхронизирано и готово за използване.")
 
     _show_rows("Раздели в ръководството", _load_rows(GUIDE_SECTIONS_CSV))
-    _show_rows("Препоръчителен workflow", _load_rows(WORKFLOW_CSV))
-    _show_rows("Safe usage checklist", _load_rows(SAFE_CHECKLIST_CSV))
+    _show_rows("Препоръчителна последователност", _load_rows(WORKFLOW_CSV))
+    _show_rows("Контролен списък за безопасно използване", _load_rows(SAFE_CHECKLIST_CSV))
