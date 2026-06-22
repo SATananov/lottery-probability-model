@@ -1,0 +1,31 @@
+LOTTERY PROBABILITY MODEL — STEP 71 TICKET PACK
+ПАКЕТ ЗА ИГРА — СТАТИСТИЧЕСКИ REFERENCE ПАКЕТ
+
+Източник: Step 70 applied candidate portfolio
+Applied portfolio score: 70.118 / 100
+Top20 coverage: 20 / 20
+Unique numbers: 21
+Repeated pairs: 19
+Repeated triples: 1
+Historical exact matches: 0
+
+Статистически reference пакет. Не е прогноза и не е гаранция за печалба.
+
+ФИШОВЕ
+
+Фиш 1: 01 02 04 18 37 49 | score 88.116 | Балансиран претеглен фиш
+Фиш 2: 01 04 34 36 38 44 | score 77.405 | Фиш с висок weighted score
+Фиш 3: 02 13 21 23 38 49 | score 78.881 | Диверсифициран претеглен фиш
+Фиш 4: 02 11 17 34 37 44 | score 72.663 | Odd/Even балансиран фиш
+Фиш 5: 01 03 22 38 42 49 | score 75.825 | Low/High балансиран фиш
+Фиш 6: 01 13 22 34 37 48 | score 74.847 | Разпределен range фиш
+Фиш 7: 02 04 17 22 29 38 | score 74.595 | Консервативно ядро
+Фиш 8: 01 16 18 21 23 37 | score 78.128 | Разширен статистически фиш
+
+ПРИЛОЖЕНИ ПРОМЕНИ
+
+Фиш 2: махнати [21], добавени [36]
+Фиш 4: махнати [23], добавени [11]
+Фиш 8: махнати [34], добавени [16]
+
+Statistical reference pack only. Not a prediction and not a winning guarantee.

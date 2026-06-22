@@ -1,0 +1,26 @@
+{
+  "step": "71",
+  "name": "Export / Print Ticket Pack",
+  "source_applied_portfolio": "reports/v70_applied_candidate_portfolio_tickets.csv",
+  "source_summary": "reports/v70_applied_candidate_portfolio_summary.json",
+  "tickets_exported": 8,
+  "changes_included": 3,
+  "applied_portfolio_score": 70.118,
+  "applied_top20_coverage": 20,
+  "applied_unique_numbers": 21,
+  "applied_repeated_pairs": 19,
+  "applied_repeated_triples": 1,
+  "applied_historical_exact_matches": 0,
+  "generated_at": "2026-06-22T09:42:56+00:00",
+  "generated_reports": [
+    "reports/v71_ticket_pack_summary.json",
+    "reports/v71_ticket_pack_summary.md",
+    "reports/v71_ticket_pack.csv",
+    "reports/v71_ticket_pack.json",
+    "reports/v71_ticket_pack.txt",
+    "reports/v71_ticket_pack_printable.md",
+    "reports/v71_ticket_pack_printable.html",
+    "models/v71/v71_ticket_pack_export_model.json"
+  ],
+  "safe_note": "Statistical reference pack only. Not a prediction and not a winning guarantee."
+}
