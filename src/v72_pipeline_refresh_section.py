@@ -11,7 +11,11 @@ try:
 except Exception:  # pragma: no cover
     pd = None
 
-from src.v72_pipeline_refresh_engine import build_pipeline_refresh_plan
+from src.v72_pipeline_refresh_engine import (
+    build_pipeline_refresh_plan,
+    git_status_short,
+    git_sync_data_models_reports,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY_PATH = ROOT / "reports" / "v72_pipeline_refresh_summary.json"
@@ -122,6 +126,56 @@ def render_v72_pipeline_refresh_section():
                 st.error(f"Пълният refresh спря при: {result.get('stopped_at')}")
             st.json(result)
             st.rerun()
+
+
+
+    st.subheader("GitHub sync след refresh")
+
+    git_info = git_status_short()
+    current_status = str(git_info.get("status", "") or "").strip()
+
+    if current_status:
+        st.warning("Има локални промени. Този бутон commit-ва само data/, models/ и reports/.")
+        st.code(current_status, language="text")
+    else:
+        st.success("Git status е clean. Няма чакащи локални промени.")
+
+    commit_message = st.text_input(
+        "Commit message",
+        value="Refresh lottery data models and reports after pipeline update",
+        key="v72_github_sync_commit_message",
+    )
+
+    confirm_sync = st.checkbox(
+        "Потвърждавам: commit/push само на data/, models/ и reports/",
+        key="v72_github_sync_confirm",
+    )
+
+    if st.button(
+        "Commit & push data/models/reports към GitHub",
+        key="v72_github_sync_button",
+        disabled=not confirm_sync,
+    ):
+        with st.spinner("Изпълнявам git add / commit / push за data/models/reports..."):
+            result = git_sync_data_models_reports(commit_message)
+
+        if result.get("ok"):
+            if result.get("status") == "nothing_to_commit":
+                st.info(result.get("message"))
+            else:
+                st.success(result.get("message"))
+                st.write("Commit:", result.get("commit", ""))
+        else:
+            st.error(result.get("message", "GitHub sync failed."))
+
+        staged = result.get("staged_files") or []
+        if staged:
+            st.write("Файлове:")
+            st.code("\\n".join(staged), language="text")
+
+        with st.expander("Git details"):
+            st.json(result)
+
 
     with st.expander("Как работи Step 72"):
         st.markdown(

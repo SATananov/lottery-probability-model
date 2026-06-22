@@ -346,3 +346,130 @@ if __name__ == "__main__":
     print("STEPS_PLANNED", result["steps_planned"])
     print("ALL_SCRIPTS_PRESENT", result["all_scripts_present"])
     print("ALL_OUTPUTS_PRESENT", result["all_outputs_present"])
+
+
+GIT_SYNC_PATHS = ["data", "models", "reports"]
+
+
+def _run_git_command(args: list[str]) -> dict[str, object]:
+    completed = subprocess.run(
+        ["git", *args],
+        cwd=str(ROOT),
+        text=True,
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+
+    return {
+        "ok": completed.returncode == 0,
+        "returncode": completed.returncode,
+        "stdout": (completed.stdout or "").strip(),
+        "stderr": (completed.stderr or "").strip(),
+        "command": "git " + " ".join(args),
+    }
+
+
+def git_status_short() -> dict[str, object]:
+    repo_check = _run_git_command(["rev-parse", "--is-inside-work-tree"])
+
+    if not repo_check["ok"]:
+        return {
+            "ok": False,
+            "status": "",
+            "message": "Тази папка не изглежда като Git repository.",
+            "details": repo_check,
+        }
+
+    status = _run_git_command(["status", "--short"])
+
+    return {
+        "ok": bool(status["ok"]),
+        "status": status["stdout"],
+        "message": "OK" if status["ok"] else "Git status failed.",
+        "details": status,
+    }
+
+
+def git_sync_data_models_reports(commit_message: str | None = None) -> dict[str, object]:
+    message = (commit_message or "").strip()
+    if not message:
+        message = "Refresh lottery data models and reports after pipeline update"
+
+    repo_check = _run_git_command(["rev-parse", "--is-inside-work-tree"])
+    if not repo_check["ok"]:
+        return {
+            "ok": False,
+            "status": "not_git_repo",
+            "message": "Тази папка не изглежда като Git repository.",
+            "steps": [repo_check],
+        }
+
+    before_status = _run_git_command(["status", "--short"])
+    add_result = _run_git_command(["add", "--", *GIT_SYNC_PATHS])
+    staged_result = _run_git_command(["diff", "--cached", "--name-only"])
+
+    steps = [before_status, add_result, staged_result]
+
+    if not add_result["ok"]:
+        return {
+            "ok": False,
+            "status": "git_add_failed",
+            "message": "Git add failed.",
+            "steps": steps,
+        }
+
+    staged_files = [
+        line.strip()
+        for line in str(staged_result["stdout"]).splitlines()
+        if line.strip()
+    ]
+
+    if not staged_files:
+        after_status = _run_git_command(["status", "--short"])
+        return {
+            "ok": True,
+            "status": "nothing_to_commit",
+            "message": "Няма промени в data/models/reports за commit.",
+            "staged_files": [],
+            "steps": steps + [after_status],
+            "after_status": after_status["stdout"],
+        }
+
+    commit_result = _run_git_command(["commit", "-m", message])
+    steps.append(commit_result)
+
+    if not commit_result["ok"]:
+        return {
+            "ok": False,
+            "status": "commit_failed",
+            "message": "Git commit failed.",
+            "staged_files": staged_files,
+            "steps": steps,
+        }
+
+    push_result = _run_git_command(["push"])
+    steps.append(push_result)
+
+    if not push_result["ok"]:
+        return {
+            "ok": False,
+            "status": "push_failed",
+            "message": "Commit е направен, но git push failed. Провери GitHub authentication/remote.",
+            "staged_files": staged_files,
+            "steps": steps,
+        }
+
+    head_result = _run_git_command(["rev-parse", "--short", "HEAD"])
+    after_status = _run_git_command(["status", "--short"])
+
+    return {
+        "ok": True,
+        "status": "pushed",
+        "message": "Промените в data/models/reports са commit-нати и push-нати към GitHub.",
+        "commit": head_result["stdout"],
+        "staged_files": staged_files,
+        "after_status": after_status["stdout"],
+        "steps": steps + [head_result, after_status],
+    }
+
