@@ -92,4 +92,7 @@ reports/v70_applied_candidate_portfolio_tickets.csv,Step 71,artifact,Входе�
 Step 71,Step 73,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 73,dataset,Dataset вход
 reports/v71_ticket_pack.csv,Step 73,artifact,Входен model/report artifact
-Step 73,Step 74,feeds,Изходът помага на следващ слой
+Step 73,Step 75,feeds,Изходът помага на следващ слой
+data/v41_canonical_draw_events.csv,Step 75,dataset,Dataset вход
+data/historical_draws.csv,Step 75,dataset,Dataset вход
+Step 75,Step 74,feeds,Изходът помага на следващ слой

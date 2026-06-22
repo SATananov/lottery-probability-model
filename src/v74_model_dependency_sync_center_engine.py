@@ -303,8 +303,27 @@ MODEL_NODES: list[dict[str, Any]] = [
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v71_ticket_pack.csv"],
         "outputs": ["models/v73/v73_ticket_pack_performance_tracker_model.json", "reports/v73_ticket_pack_performance_summary.json", "reports/v73_ticket_pack_performance_history.csv"],
-        "feeds": ["Step 74"],
+        "feeds": ["Step 75"],
         "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
+        "ensemble_source": False,
+    },
+
+    {
+        "step": "75",
+        "label": "Невронен meta learner",
+        "category": "Neural meta learner",
+        "script": "scripts/v75_build_neural_meta_learner.py",
+        "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+        "inputs": ["data/v41_canonical_draw_events.csv"],
+        "outputs": [
+            "models/v75/v75_neural_meta_learner_model.json",
+            "reports/v75_neural_meta_learner_summary.json",
+            "reports/v75_neural_meta_number_scores.csv",
+            "reports/v75_neural_candidate_tickets.csv",
+            "reports/v75_neural_candidate_tickets.json",
+        ],
+        "feeds": ["Step 74"],
+        "role": "Тренира лек невронен meta learner върху исторически feature-и и изгражда статистически кандидат фишове.",
         "ensemble_source": False,
     },
 ]

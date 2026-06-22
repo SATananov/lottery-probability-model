@@ -32,6 +32,10 @@ def _step_key(value: Any) -> str:
 
 def _step_sort_key(step: str) -> tuple[int, int]:
     text = _step_key(step)
+    # Step 74 is the sync/audit control center and must run after the
+    # newest model steps that it audits, even when their numeric step is higher.
+    if text == "74":
+        return 999, 0
     parts = text.split(".")
     major = int(parts[0]) if parts and parts[0].isdigit() else 999
     minor = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 0

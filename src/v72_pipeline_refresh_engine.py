@@ -172,6 +172,12 @@ WEIGHTED_REFRESH_STEPS = [
         "outputs": ["models/v73", "reports/v73_ticket_pack_performance_summary.json"],
     },
     {
+        "step": "75",
+        "name": "Невронен meta learner",
+        "script": "scripts/v75_build_neural_meta_learner.py",
+        "outputs": ["models/v75", "reports/v75_neural_meta_learner_summary.json", "reports/v75_neural_candidate_tickets.csv"],
+    },
+    {
         "step": "74",
         "name": "Контрол на синхрона между моделите",
         "script": "scripts/v74_build_model_dependency_sync_center.py",

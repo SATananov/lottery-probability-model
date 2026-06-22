@@ -37,6 +37,7 @@ CATEGORY_BG = {
     "Applied portfolio": "Приложен портфейл",
     "Ticket pack export": "Пакет за игра",
     "Performance after draw": "Проверка след тираж",
+    "Neural meta learner": "Невронен meta learner",
 }
 
 
