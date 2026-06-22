@@ -25,6 +25,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v50_build_pair_group_intelligence.py",
     ROOT / "scripts" / "v51_build_ticket_portfolio_intelligence.py",
     ROOT / "scripts" / "v61_build_draw_result_analyzer.py",
+        "scripts/v62_build_model_performance_tracker.py",
     ROOT / "scripts" / "v60_build_ticket_builder_2_polish_export.py",
     ROOT / "scripts" / "v59_build_smart_ticket_builder_2.py",
     ROOT / "scripts" / "v58_build_smart_ensemble_score_2.py",

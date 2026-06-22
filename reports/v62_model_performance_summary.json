@@ -1,0 +1,34 @@
+{
+  "step": "62",
+  "name": "Model Performance Tracker",
+  "total_draws": 10058,
+  "latest_draw": {
+    "date": "2026-06-21",
+    "year": "2026",
+    "draw_number": "48",
+    "draw_position": "1",
+    "numbers": [
+      6,
+      13,
+      16,
+      19,
+      42,
+      44
+    ]
+  },
+  "models_evaluated": 10,
+  "models_with_candidate_signal": 4,
+  "best_hits": 6,
+  "best_models": [
+    "v41_latest_predictions"
+  ],
+  "average_best_hits": 2.75,
+  "history_rows": 10,
+  "generated_reports": [
+    "reports/v62_model_performance_summary.json",
+    "reports/v62_model_performance_summary.md",
+    "reports/v62_latest_model_performance.csv",
+    "reports/v62_model_performance_history.csv"
+  ],
+  "safe_note": "Historical post-draw model performance tracking only. This is not a prediction guarantee."
+}
