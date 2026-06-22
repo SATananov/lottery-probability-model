@@ -16,6 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import pandas as pd
 import streamlit as st
 from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
+from src.v54_pattern_balance_section import render_v54_pattern_balance_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4149,6 +4150,7 @@ def main() -> None:
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
         "Покритие на фиша": render_v53_ticket_coverage_section,
+        "Баланс на комбинациите": render_v54_pattern_balance_section,
     }
     choice = st.sidebar.radio(tr("menu"), list(pages.keys()))
     if st.sidebar.button(tr("refresh")):
