@@ -1,0 +1,461 @@
+{
+  "current_candidates": [
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,25,34,37",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/lottery_ml_extensions_model.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #1"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,33,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/lottery_ml_extensions_model.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #2"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,29,37,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/lottery_ml_extensions_model.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #3"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "12,21,24,33,37,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/lottery_ml_extensions_model.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #4"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,25,34,37",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/versions/lottery_ml_extensions_model_v1_20260620_205905.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #5"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,33,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/versions/lottery_ml_extensions_model_v1_20260620_205905.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #6"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "4,12,21,29,37,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/versions/lottery_ml_extensions_model_v1_20260620_205905.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #7"
+    },
+    {
+      "model_key": "ml_laboratory",
+      "model_label": "МЛ лаборатория",
+      "numbers": "12,21,24,33,37,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/versions/lottery_ml_extensions_model_v1_20260620_205905.json",
+      "source_priority": 10,
+      "ticket_label": "МЛ лаборатория #8"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "2,21,29,41,42,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_candidate_tickets.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #1"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "11,20,21,27,34,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_candidate_tickets.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #2"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "2,11,25,27,38,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_candidate_tickets.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #3"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "7,21,27,28,34,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_candidate_tickets.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #4"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "2,21,29,41,42,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_meta_learner_summary.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #5"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "11,20,21,27,34,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_meta_learner_summary.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #6"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "2,11,25,27,38,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_meta_learner_summary.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #7"
+    },
+    {
+      "model_key": "neural_meta",
+      "model_label": "Невронна лаборатория",
+      "numbers": "7,21,27,28,34,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "reports/v75_neural_meta_learner_summary.json",
+      "source_priority": 20,
+      "ticket_label": "Невронна лаборатория #8"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "1,2,4,18,37,38",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v66/v66_weighted_smart_ensemble_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #1"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "2,3,4,22,23,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v66/v66_weighted_smart_ensemble_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #2"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "16,17,18,37,44,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v66/v66_weighted_smart_ensemble_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #3"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "11,13,21,34,38,42",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v66/v66_weighted_smart_ensemble_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #4"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "1,2,4,18,37,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v67/v67_weighted_ticket_builder_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #5"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "1,4,21,34,38,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v67/v67_weighted_ticket_builder_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #6"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "2,13,21,23,38,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v67/v67_weighted_ticket_builder_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #7"
+    },
+    {
+      "model_key": "weighted_ensemble",
+      "model_label": "Претеглен ensemble анализ",
+      "numbers": "2,17,23,34,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v67/v67_weighted_ticket_builder_model.json",
+      "source_priority": 30,
+      "ticket_label": "Претеглен ensemble анализ #8"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "1,3,22,38,42,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #1"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "1,2,4,18,37,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #2"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "2,13,21,23,38,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #3"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "2,4,17,22,29,38",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #4"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "1,13,22,34,37,48",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #5"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "1,4,21,34,38,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #6"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "1,18,21,23,34,37",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #7"
+    },
+    {
+      "model_key": "portfolio_optimizer",
+      "model_label": "Умен portfolio optimizer",
+      "numbers": "2,17,23,34,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "source_priority": 40,
+      "ticket_label": "Умен portfolio optimizer #8"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "2,21,25,34,43,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #1"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "2,21,30,40,42,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #2"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "7,21,27,28,34,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #3"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "2,11,25,27,38,45",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #4"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "2,13,19,25,30,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #5"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "2,21,29,41,42,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #6"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "11,20,21,27,34,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #7"
+    },
+    {
+      "model_key": "final_play_plan",
+      "model_label": "Финален план",
+      "numbers": "3,13,25,30,38,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v78/v78_final_play_plan_model.json",
+      "source_priority": 50,
+      "ticket_label": "Финален план #8"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "1,2,4,18,37,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v71/v71_ticket_pack_export_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #1"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "1,4,34,36,38,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v71/v71_ticket_pack_export_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #2"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "2,13,21,23,38,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v71/v71_ticket_pack_export_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #3"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "2,11,17,34,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v71/v71_ticket_pack_export_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #4"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "1,2,4,18,37,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v73/v73_ticket_pack_performance_tracker_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #5"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "1,4,34,36,38,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v73/v73_ticket_pack_performance_tracker_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #6"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "2,13,21,23,38,49",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v73/v73_ticket_pack_performance_tracker_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #7"
+    },
+    {
+      "model_key": "ticket_pack",
+      "model_label": "Пакет за игра",
+      "numbers": "2,11,17,34,37,44",
+      "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+      "source_file": "models/v73/v73_ticket_pack_performance_tracker_model.json",
+      "source_priority": 60,
+      "ticket_label": "Пакет за игра #8"
+    }
+  ],
+  "model_summary": [],
+  "results": [],
+  "summary": {
+    "current_candidates": 48,
+    "evaluated_rows": 0,
+    "generated_at": "2026-06-22T18:00:47.716017+00:00",
+    "latest_draw_date": "2026-06-21",
+    "latest_draw_index": 10058,
+    "latest_numbers": "6,13,16,19,42,44",
+    "models_compared": 0,
+    "outputs": [
+      "models/v84/v84_model_comparison_forward_test_model.json",
+      "reports/v84_model_comparison_summary.json",
+      "reports/v84_model_comparison_summary.md",
+      "reports/v84_model_source_candidates.csv",
+      "reports/v84_model_comparison_results.csv",
+      "data/v84_model_forward_test_snapshots.csv"
+    ],
+    "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+    "snapshots_recorded": 0,
+    "status": "OK",
+    "step": "84",
+    "summary_rows": [],
+    "title": "Model Comparison / Forward Test Center"
+  }
+}

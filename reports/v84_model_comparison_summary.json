@@ -1,0 +1,23 @@
+{
+  "current_candidates": 48,
+  "evaluated_rows": 0,
+  "generated_at": "2026-06-22T18:00:47.716017+00:00",
+  "latest_draw_date": "2026-06-21",
+  "latest_draw_index": 10058,
+  "latest_numbers": "6,13,16,19,42,44",
+  "models_compared": 0,
+  "outputs": [
+    "models/v84/v84_model_comparison_forward_test_model.json",
+    "reports/v84_model_comparison_summary.json",
+    "reports/v84_model_comparison_summary.md",
+    "reports/v84_model_source_candidates.csv",
+    "reports/v84_model_comparison_results.csv",
+    "data/v84_model_forward_test_snapshots.csv"
+  ],
+  "safe_note": "Step 84 сравнява модели по записани преди тиража препоръки. Това е forward test / реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
+  "snapshots_recorded": 0,
+  "status": "OK",
+  "step": "84",
+  "summary_rows": [],
+  "title": "Model Comparison / Forward Test Center"
+}
