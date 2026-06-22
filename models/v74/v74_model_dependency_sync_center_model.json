@@ -603,7 +603,7 @@
         "models/v41/v41_latest_predictions.json",
         "reports/v41_model_retraining_summary.json"
       ],
-      "role": "Дава rules-aware прогнозни сигнали върху основните числа.",
+      "role": "Дава правила-свързани прогнозни сигнали върху основните числа.",
       "script": "scripts/v41_train_rules_aware_models.py",
       "step": "41"
     },
@@ -653,7 +653,7 @@
       "step": "43.1"
     },
     {
-      "category": "????????????????",
+      "category": "Ансамбъл",
       "datasets": [
         "data/v41_canonical_draw_events.csv"
       ],
@@ -667,12 +667,12 @@
         "models/v42/v42_combined_prediction.json",
         "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"
       ],
-      "label": "Финален ensemble фиш foundation",
+      "label": "Финална ансамблова основа за фиш",
       "outputs": [
         "models/v44_1/v44_1_final_ensemble_ticket_prediction.json",
         "reports/v44_1_final_ensemble_ticket_summary.json"
       ],
-      "role": "Обединява по-ранни сигнали във финален ensemble фиш.",
+      "role": "Обединява по-ранни сигнали във финален ансамблов фиш.",
       "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
       "step": "44.1"
     },
@@ -695,7 +695,7 @@
         "models/v45/v45_model_metadata.json",
         "reports/v45_training_summary.json"
       ],
-      "role": "Тренира prediction engine с feature matrix и backtest.",
+      "role": "Тренира прогнозен модел с признаци и историческа проверка.",
       "script": "scripts/v45_train_prediction_engine_pro.py",
       "step": "45"
     },
@@ -770,7 +770,7 @@
       "step": "55"
     },
     {
-      "category": "?????????????? ???? ????????????????",
+      "category": "Сходства",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -787,12 +787,12 @@
         "models/v56/v56_draw_similarity_manifest.json",
         "reports/v56_draw_similarity_summary.json"
       ],
-      "role": "Сравнява комбинации с исторически тиражи.",
+      "role": "Търси сходни исторически тиражи и модели на близост.",
       "script": "scripts/v56_build_draw_similarity_search.py",
       "step": "56"
     },
     {
-      "category": "Сигнален център",
+      "category": "Горещи/студени числа",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -812,12 +812,12 @@
         "models/v57/v57_hot_cold_stable_manifest.json",
         "reports/v57_hot_cold_stable_summary.json"
       ],
-      "role": "Извлича hot/cold/stable сигнали за числа.",
+      "role": "Открива горещи, студени и стабилни числа.",
       "script": "scripts/v57_build_hot_cold_stable_center.py",
       "step": "57"
     },
     {
-      "category": "???????? ????????????????",
+      "category": "Умен ансамбъл",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -837,7 +837,7 @@
         "models/v58/v58_smart_ensemble_manifest.json",
         "reports/v58_smart_ensemble_summary.json"
       ],
-      "role": "Обединява профили, hot/cold/stable и pattern сигнали.",
+      "role": "Обединява активни сигнали в интелигентна оценка.",
       "script": "scripts/v58_build_smart_ensemble_score_2.py",
       "step": "58"
     },
@@ -889,7 +889,7 @@
       "step": "61"
     },
     {
-      "category": "?????????????? ???? ??????????????????????????",
+      "category": "История на представянето",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -910,7 +910,7 @@
       "step": "62"
     },
     {
-      "category": "????????????????????",
+      "category": "Надеждност",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -927,12 +927,12 @@
         "reports/v63_model_reliability_summary.json",
         "reports/v63_model_reliability_scores.csv"
       ],
-      "role": "Изчислява reliability score за следените модели.",
+      "role": "Изчислява оценка за надеждност на следените модели.",
       "script": "scripts/v63_build_model_reliability_dashboard.py",
       "step": "63"
     },
     {
-      "category": "?????????????????? ??????????",
+      "category": "Адаптивно тегло",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -954,7 +954,7 @@
       "step": "65"
     },
     {
-      "category": "?????????????????? ????????????????",
+      "category": "Претеглен ансамбъл",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -967,7 +967,7 @@
       "inputs": [
         "reports/v65_model_weights.csv"
       ],
-      "label": "Претеглен ensemble анализ",
+      "label": "Претеглен ансамблов анализ",
       "outputs": [
         "models/v66/v66_weighted_smart_ensemble_model.json",
         "reports/v66_weighted_smart_ensemble_summary.json",
@@ -978,7 +978,7 @@
       "step": "66"
     },
     {
-      "category": "?????????????????? ?? ??????????",
+      "category": "Генератор с тегла",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -995,12 +995,12 @@
         "reports/v67_weighted_ticket_builder_summary.json",
         "reports/v67_weighted_ticket_builder_tickets.csv"
       ],
-      "role": "Строи фишове върху Step 66 weighted scores.",
+      "role": "Строи фишове върху претеглените оценки от Step 66.",
       "script": "scripts/v67_build_weighted_ticket_builder.py",
       "step": "67"
     },
     {
-      "category": "?????????????????????? ???? ????????????????",
+      "category": "Оптимизатор на портфейл",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1023,7 +1023,7 @@
       "step": "68"
     },
     {
-      "category": "?????????????????????? ???? ????????????????????",
+      "category": "Предложения за подобрение",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1046,7 +1046,7 @@
       "step": "69"
     },
     {
-      "category": "???????????????? ????????????????",
+      "category": "Приложен портфейл",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1068,7 +1068,7 @@
       "step": "70"
     },
     {
-      "category": "?????????????? ???? ?????????? ???? ????????",
+      "category": "Пакет за игра",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1085,12 +1085,12 @@
         "reports/v71_ticket_pack_summary.json",
         "reports/v71_ticket_pack.csv"
       ],
-      "role": "Подготвя printable/export пакет за игра с физически фишове.",
+      "role": "Подготвя пакет за печат и експорт за игра с физически фишове.",
       "script": "scripts/v71_build_ticket_pack_export.py",
       "step": "71"
     },
     {
-      "category": "?????????????????????? ???????? ??????????",
+      "category": "Представяне след тираж",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1107,12 +1107,12 @@
         "reports/v73_ticket_pack_performance_summary.json",
         "reports/v73_ticket_pack_performance_history.csv"
       ],
-      "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
+      "role": "Проверява активния пакет срещу реални тиражи преди обновяване на данните.",
       "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
       "step": "73"
     },
     {
-      "category": "???????????????? ????????-????????????????",
+      "category": "Невронен мета-обучител",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
@@ -1124,7 +1124,7 @@
       "inputs": [
         "data/v41_canonical_draw_events.csv"
       ],
-      "label": "Невронен meta learner",
+      "label": "Невронен мета-обучител",
       "outputs": [
         "models/v75/v75_neural_meta_learner_model.json",
         "reports/v75_neural_meta_learner_summary.json",
@@ -1132,7 +1132,7 @@
         "reports/v75_neural_candidate_tickets.csv",
         "reports/v75_neural_candidate_tickets.json"
       ],
-      "role": "Тренира лек невронен meta learner върху исторически feature-и и изгражда статистически кандидат фишове.",
+      "role": "Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.",
       "script": "scripts/v75_build_neural_meta_learner.py",
       "step": "75"
     }
@@ -1216,7 +1216,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T13:30:54+00:00",
+    "generated_at": "2026-06-22T13:49:33+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1241,9 +1241,9 @@
       "Проверка след реален тираж",
       "Model Dependency & Sync Center"
     ],
-    "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+    "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "bfa0bb448e481e3336b12c19d1517b55045e263365c46d05ac9222587875320e",
+    "state_hash": "9853ee3bf93fa8220ea10c204eae2f64a77d32be38132b2ae863d39c2306aed1",
     "status": "Синхронизиран",
     "step": "74",
     "synced_models": 24
@@ -1263,8 +1263,8 @@
       "missing_outputs": "",
       "outputs": "models/v41/v41_latest_predictions.json; reports/v41_model_retraining_summary.json",
       "outputs_present": true,
-      "role": "Дава rules-aware прогнозни сигнали върху основните числа.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Дава правила-свързани прогнозни сигнали върху основните числа.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v41_train_rules_aware_models.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1286,7 +1286,7 @@
       "outputs": "models/v42/v42_combined_prediction.json; reports/v42_combined_positive_negative_summary.json",
       "outputs_present": true,
       "role": "Комбинира позитивни и негативни статистически сигнали.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v42_build_combined_positive_negative_foundation.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1308,7 +1308,7 @@
       "outputs": "models/v43_1/v43_1_interval_rhythm_refined_prediction.json; reports/v43_1_interval_rhythm_refined_summary.json",
       "outputs_present": true,
       "role": "Следи ритъм на поява, интервали и закъснели числа.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1316,21 +1316,21 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "????????????????",
+      "category": "Ансамбъл",
       "datasets": "data/v41_canonical_draw_events.csv",
       "dependencies_present": true,
       "ensemble_source": true,
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "models/v42/v42_combined_prediction.json; models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
-      "label": "Финален ensemble фиш foundation",
+      "label": "Финална ансамблова основа за фиш",
       "latest_input_mtime": "2026-06-22T15:17:14",
       "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v44_1/v44_1_final_ensemble_ticket_prediction.json; reports/v44_1_final_ensemble_ticket_summary.json",
       "outputs_present": true,
-      "role": "Обединява по-ранни сигнали във финален ensemble фиш.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Обединява по-ранни сигнали във финален ансамблов фиш.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1351,8 +1351,8 @@
       "missing_outputs": "",
       "outputs": "models/v45/v45_model_metadata.json; reports/v45_training_summary.json",
       "outputs_present": true,
-      "role": "Тренира prediction engine с feature matrix и backtest.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Тренира прогнозен модел с признаци и историческа проверка.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v45_train_prediction_engine_pro.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1374,7 +1374,7 @@
       "outputs": "models/v50/v50_pair_group_intelligence.json; reports/v50_pair_group_summary.json",
       "outputs_present": true,
       "role": "Анализира двойки, групи и съвместни появи.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v50_build_pair_group_intelligence.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1396,7 +1396,7 @@
       "outputs": "models/v51/v51_ticket_portfolio_intelligence.json; reports/v51_ticket_portfolio_summary.json",
       "outputs_present": true,
       "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1418,7 +1418,7 @@
       "outputs": "models/v55/v55_number_profile_manifest.json; reports/v55_number_profile_summary.json",
       "outputs_present": true,
       "role": "Профилира всяко число по честота, интервали, двойки и стабилност.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v55_build_number_profile_center.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1426,7 +1426,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????? ???? ????????????????",
+      "category": "Сходства",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1439,8 +1439,8 @@
       "missing_outputs": "",
       "outputs": "models/v56/v56_draw_similarity_manifest.json; reports/v56_draw_similarity_summary.json",
       "outputs_present": true,
-      "role": "Сравнява комбинации с исторически тиражи.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Търси сходни исторически тиражи и модели на близост.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v56_build_draw_similarity_search.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1448,7 +1448,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Сигнален център",
+      "category": "Горещи/студени числа",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": true,
@@ -1461,8 +1461,8 @@
       "missing_outputs": "",
       "outputs": "models/v57/v57_hot_cold_stable_manifest.json; reports/v57_hot_cold_stable_summary.json",
       "outputs_present": true,
-      "role": "Извлича hot/cold/stable сигнали за числа.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Открива горещи, студени и стабилни числа.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v57_build_hot_cold_stable_center.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1470,7 +1470,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "???????? ????????????????",
+      "category": "Умен ансамбъл",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": true,
@@ -1483,8 +1483,8 @@
       "missing_outputs": "",
       "outputs": "models/v58/v58_smart_ensemble_manifest.json; reports/v58_smart_ensemble_summary.json",
       "outputs_present": true,
-      "role": "Обединява профили, hot/cold/stable и pattern сигнали.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Обединява активни сигнали в интелигентна оценка.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v58_build_smart_ensemble_score_2.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1506,7 +1506,7 @@
       "outputs": "models/v59/v59_smart_ticket_builder_2_manifest.json; reports/v59_smart_ticket_builder_2_summary.json",
       "outputs_present": true,
       "role": "Генерира кандидат комбинации по различни стратегии.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v59_build_smart_ticket_builder_2.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1528,7 +1528,7 @@
       "outputs": "models/v61/v61_draw_result_analyzer_manifest.json; reports/v61_draw_result_analyzer_summary.json",
       "outputs_present": true,
       "role": "Проверява сигналите срещу последния реален тираж.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v61_build_draw_result_analyzer.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1536,7 +1536,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????? ???? ??????????????????????????",
+      "category": "История на представянето",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1550,7 +1550,7 @@
       "outputs": "models/v62/v62_model_performance_tracker_model.json; reports/v62_model_performance_summary.json",
       "outputs_present": true,
       "role": "Събира история на представянето на моделите.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v62_build_model_performance_tracker.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1558,7 +1558,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "????????????????????",
+      "category": "Надеждност",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1571,8 +1571,8 @@
       "missing_outputs": "",
       "outputs": "models/v63/v63_model_reliability_dashboard_model.json; reports/v63_model_reliability_summary.json; reports/v63_model_reliability_scores.csv",
       "outputs_present": true,
-      "role": "Изчислява reliability score за следените модели.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Изчислява оценка за надеждност на следените модели.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v63_build_model_reliability_dashboard.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1580,7 +1580,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????? ??????????",
+      "category": "Адаптивно тегло",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1594,7 +1594,7 @@
       "outputs": "models/v65/v65_model_weighting_center_model.json; reports/v65_model_weighting_summary.json; reports/v65_model_weights.csv",
       "outputs_present": true,
       "role": "Превръща надеждността в адаптивни тегла.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v65_build_model_weighting_center.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1602,13 +1602,13 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????? ????????????????",
+      "category": "Претеглен ансамбъл",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 67; Step 68; Step 69",
       "inputs": "reports/v65_model_weights.csv",
-      "label": "Претеглен ensemble анализ",
+      "label": "Претеглен ансамблов анализ",
       "latest_input_mtime": "2026-06-22T15:18:35",
       "latest_output_mtime": "2026-06-22T15:18:36",
       "missing_inputs": "",
@@ -1616,7 +1616,7 @@
       "outputs": "models/v66/v66_weighted_smart_ensemble_model.json; reports/v66_weighted_smart_ensemble_summary.json; reports/v66_weighted_smart_ensemble_scores.csv",
       "outputs_present": true,
       "role": "Обединява активните сигнали според адаптивните тегла.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v66_build_weighted_smart_ensemble.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1624,7 +1624,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????? ?? ??????????",
+      "category": "Генератор с тегла",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1637,8 +1637,8 @@
       "missing_outputs": "",
       "outputs": "models/v67/v67_weighted_ticket_builder_model.json; reports/v67_weighted_ticket_builder_summary.json; reports/v67_weighted_ticket_builder_tickets.csv",
       "outputs_present": true,
-      "role": "Строи фишове върху Step 66 weighted scores.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Строи фишове върху претеглените оценки от Step 66.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v67_build_weighted_ticket_builder.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1646,7 +1646,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????????? ???? ????????????????",
+      "category": "Оптимизатор на портфейл",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1660,7 +1660,7 @@
       "outputs": "models/v68/v68_weighted_portfolio_optimizer_model.json; reports/v68_weighted_portfolio_summary.json; reports/v68_weighted_portfolio_tickets.csv",
       "outputs_present": true,
       "role": "Оценява портфейл, покритие, повторения и концентрация.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1668,7 +1668,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????????? ???? ????????????????????",
+      "category": "Предложения за подобрение",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1682,7 +1682,7 @@
       "outputs": "models/v69/v69_portfolio_improvement_model.json; reports/v69_portfolio_improvement_summary.json; reports/v69_candidate_portfolio_tickets.csv",
       "outputs_present": true,
       "role": "Предлага подобрения без да презаписва основния пакет.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1690,7 +1690,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "???????????????? ????????????????",
+      "category": "Приложен портфейл",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1704,7 +1704,7 @@
       "outputs": "models/v70/v70_applied_candidate_portfolio_model.json; reports/v70_applied_candidate_portfolio_summary.json; reports/v70_applied_candidate_portfolio_tickets.csv",
       "outputs_present": true,
       "role": "Фиксира подобрения пакет като отделна статистическа референция.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v70_build_applied_candidate_portfolio.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1712,7 +1712,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????? ???? ?????????? ???? ????????",
+      "category": "Пакет за игра",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1725,8 +1725,8 @@
       "missing_outputs": "",
       "outputs": "models/v71/v71_ticket_pack_export_model.json; reports/v71_ticket_pack_summary.json; reports/v71_ticket_pack.csv",
       "outputs_present": true,
-      "role": "Подготвя printable/export пакет за игра с физически фишове.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Подготвя пакет за печат и експорт за игра с физически фишове.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v71_build_ticket_pack_export.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1734,7 +1734,7 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "?????????????????????? ???????? ??????????",
+      "category": "Представяне след тираж",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
@@ -1747,8 +1747,8 @@
       "missing_outputs": "",
       "outputs": "models/v73/v73_ticket_pack_performance_tracker_model.json; reports/v73_ticket_pack_performance_summary.json; reports/v73_ticket_pack_performance_history.csv",
       "outputs_present": true,
-      "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Проверява активния пакет срещу реални тиражи преди обновяване на данните.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
       "script_exists": true,
       "status_rank": 2,
@@ -1756,21 +1756,21 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "???????????????? ????????-????????????????",
+      "category": "Невронен мета-обучител",
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 74",
       "inputs": "data/v41_canonical_draw_events.csv",
-      "label": "Невронен meta learner",
+      "label": "Невронен мета-обучител",
       "latest_input_mtime": "2026-06-22T07:57:50",
       "latest_output_mtime": "2026-06-22T15:59:30",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v75/v75_neural_meta_learner_model.json; reports/v75_neural_meta_learner_summary.json; reports/v75_neural_meta_number_scores.csv; reports/v75_neural_candidate_tickets.csv; reports/v75_neural_candidate_tickets.json",
       "outputs_present": true,
-      "role": "Тренира лек невронен meta learner върху исторически feature-и и изгражда статистически кандидат фишове.",
-      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
+      "role": "Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v75_build_neural_meta_learner.py",
       "script_exists": true,
       "status_rank": 2,

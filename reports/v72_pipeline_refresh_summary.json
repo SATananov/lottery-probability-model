@@ -5,8 +5,8 @@
   "include_core": false,
   "steps_planned": 13,
   "steps_reported": 13,
-  "all_scripts_present": true,
-  "all_outputs_present": true,
+  "all_scripts_present": false,
+  "all_outputs_present": false,
   "run_pipeline": false,
   "run_ok": "",
   "stopped_at": "",
@@ -26,7 +26,7 @@
     "74"
   ],
   "core_steps_included": [],
-  "generated_at": "2026-06-22T13:30:54+00:00",
+  "generated_at": "2026-06-22T13:49:34+00:00",
   "generated_reports": [
     "reports/v72_pipeline_refresh_summary.json",
     "reports/v72_pipeline_refresh_summary.md",

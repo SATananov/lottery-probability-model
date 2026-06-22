@@ -26,18 +26,18 @@ MAP_PATH = ROOT / "reports" / "v74_model_dependency_map.csv"
 LATEST_SELECTIVE_SYNC_PATH = ROOT / "reports" / "v74_1_latest_selective_sync_result.json"
 
 CATEGORY_BG = {
-    "Smart ensemble": "Умно обединяване",
+    "Smart ансамбъл": "Умно обединяване",
     "Performance tracker": "История на представянето",
     "Reliability": "Надеждност",
     "Adaptive weighting": "Адаптивно тегло",
-    "Weighted ensemble": "Претеглен ансамбъл",
+    "Weighted ансамбъл": "Претеглен ансамбъл",
     "Weighted ticket builder": "Генератор с тегла",
     "Portfolio optimizer": "Оптимизатор на портфейл",
     "Improvement suggestion": "Предложения за подобрение",
-    "Applied portfolio": "Приложен портфейл",
-    "Ticket pack export": "Пакет за игра",
+    "Applied портфейл": "Приложен портфейл",
+    "Ticket pack експорт": "Пакет за игра",
     "Performance after draw": "Проверка след тираж",
-    "Neural meta learner": "Невронен meta learner",
+    "Невронен мета обучител": "Невронен мета обучител",
 }
 
 
@@ -112,7 +112,7 @@ def _show_run_result(result):
             f"{result.get('failed_actions', 0)} проблемни действия."
         )
 
-    with st.expander("Последен log от синхронизацията", expanded=status != "OK"):
+    with st.expander("Последен лог от синхронизацията", expanded=status != "OK"):
         for row in result.get("results", []) or []:
             st.markdown(f"**Step {row.get('step')} — {row.get('label')}** — {row.get('status')}")
             stdout = str(row.get("stdout_tail", "") or "").strip()
@@ -129,11 +129,11 @@ def _show_git_result(result):
         return
     status = result.get("status", "")
     if status == "OK":
-        st.success(result.get("message", "GitHub sync мина успешно."))
+        st.success(result.get("message", "GitHub синхрон мина успешно."))
     elif status == "Няма промени":
         st.info(result.get("message", "Няма промени за качване."))
     else:
-        st.error(result.get("message", "GitHub sync спря с проблем."))
+        st.error(result.get("message", "GitHub синхрон спря с проблем."))
 
     latest_commit = str(result.get("latest_commit", "") or "").strip()
     if latest_commit:
@@ -141,7 +141,7 @@ def _show_git_result(result):
 
     remaining = str(result.get("remaining_status", "") or "").strip()
     if remaining:
-        with st.expander("Оставащи локални промени след GitHub sync"):
+        with st.expander("Оставащи локални промени след GitHub синхрон"):
             st.code(remaining, language="text")
 
     with st.expander("?????? ???? GitHub ????????????????", expanded=status not in {"OK", "Няма промени"}):
@@ -157,7 +157,7 @@ def _show_git_result(result):
 def render_v74_model_dependency_sync_center_section():
     st.title("Контрол на синхрона")
     st.caption(
-        "Показва и управлява дали dataset-ите, моделите, отчетите и pipeline стъпките са подравнени. "
+        "Показва и управлява дали набори данните, моделите, отчетите и стъпките от веригата са подравнени. "
         "Това е контролен център, не прогноза и не гаранция за печалба."
     )
 
@@ -175,9 +175,9 @@ def render_v74_model_dependency_sync_center_section():
 
     dataset_sync = summary.get("dataset_sync", {}) or {}
     if dataset_sync.get("rows_synced") and dataset_sync.get("latest_draw_synced"):
-        st.success("Главните dataset-и са синхронизирани по редове и последен тираж.")
+        st.success("Главните набори данни са синхронизирани по редове и последен тираж.")
     else:
-        st.warning("Има разминаване между главните dataset-и. Провери data refresh flow-а.")
+        st.warning("Има разминаване между главните набори данни. Провери потока за обновяване на данните.")
 
     st.subheader("Управление на синхрона")
     st.info(
@@ -274,7 +274,7 @@ def render_v74_model_dependency_sync_center_section():
             git_result = commit_and_push_model_outputs(commit_message=commit_message)
         _show_git_result(git_result)
 
-    st.subheader("Главни dataset-и")
+    st.subheader("Главни набори данни")
     dataset_rows = []
     for item in summary.get("datasets", []) or []:
         dataset_rows.append({
@@ -286,7 +286,7 @@ def render_v74_model_dependency_sync_center_section():
             "mtime": item.get("mtime", ""),
         })
     _show_table(dataset_rows, [
-        ("?????????? ??????????", "path"),
+        ("Набор данни", "path"),
         ("Редове", "rows"),
         ("Последна дата", "latest_date"),
         ("Последен тираж", "latest_draw_no"),
@@ -317,13 +317,13 @@ def render_v74_model_dependency_sync_center_section():
     with st.expander("Как да се чете този център"):
         st.markdown(
             """
-- **Синхронизиран** означава, че входните dataset-и/артефакти и изходите са налични и изходите не изглеждат по-стари от входовете.
+- **Синхронизиран** означава, че входните набори данни/артефакти и изходите са налични и изходите не изглеждат по-стари от входовете.
 - **Нужно обновяване** означава, че входен файл е по-нов от изхода и е добре да се пусне обновяване.
 - **Липсва файл** означава липсващ script, input или output artifact.
 - **Само избрания модел** пуска само конкретната стъпка и после обновява Step 74 audit.
 - **Избрания модел + зависимите след него** пуска избрания слой и всички следващи слоеве, които зависят от него.
 - **Цялата верига** пуска всички регистрирани model/report build стъпки по ред.
-- Моделите не се учат сляпо един от друг. Те си помагат чрез сигнали, reliability, тегла, ensemble и portfolio логика.
+- Моделите не се учат сляпо един от друг. Те си помагат чрез сигнали, надеждност, тегла, ансамбъл и портфейл логика.
 - Истината за обновяване остава реалният тираж, не прогнозата на друг модел.
 """
         )

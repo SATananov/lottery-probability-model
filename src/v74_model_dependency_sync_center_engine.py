@@ -20,7 +20,7 @@ REGISTRY_PATH = MODELS_DIR / "model_registry.json"
 MODEL_PATH = V74_MODELS_DIR / "v74_model_dependency_sync_center_model.json"
 
 SAFE_NOTE = (
-    "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. "
+    "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. "
     "Той не е прогноза и не е гаранция за печалба."
 )
 
@@ -30,303 +30,563 @@ PRIMARY_DATASETS = [
     "data/v41_canonical_draw_events.csv",
 ]
 
-MODEL_NODES: list[dict[str, Any]] = [
-    {
-        "step": "41",
-        "label": "Правилово-съзнати модели",
-        "category": "Базов модел",
-        "script": "scripts/v41_train_rules_aware_models.py",
-        "datasets": ["data/v41_canonical_draw_events.csv"],
-        "inputs": ["data/v41_canonical_draw_events.csv"],
-        "outputs": ["models/v41/v41_latest_predictions.json", "reports/v41_model_retraining_summary.json"],
-        "feeds": ["Step 62", "Step 65", "Step 66"],
-        "role": "Дава rules-aware прогнозни сигнали върху основните числа.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "42",
-        "label": "Комбиниран позитивен/негативен анализ",
-        "category": "Комбиниран анализ",
-        "script": "scripts/v42_build_combined_positive_negative_foundation.py",
-        "datasets": ["data/v41_canonical_draw_events.csv"],
-        "inputs": ["data/v41_canonical_draw_events.csv"],
-        "outputs": ["models/v42/v42_combined_prediction.json", "reports/v42_combined_positive_negative_summary.json"],
-        "feeds": ["Step 62", "Step 65", "Step 66"],
-        "role": "Комбинира позитивни и негативни статистически сигнали.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "43.1",
-        "label": "Интервален ритъм",
-        "category": "Интервален анализ",
-        "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
-        "datasets": ["data/v41_canonical_draw_events.csv"],
-        "inputs": ["data/v41_canonical_draw_events.csv"],
-        "outputs": ["models/v43_1/v43_1_interval_rhythm_refined_prediction.json", "reports/v43_1_interval_rhythm_refined_summary.json"],
-        "feeds": ["Step 44.1", "Step 58"],
-        "role": "Следи ритъм на поява, интервали и закъснели числа.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "44.1",
-        "label": "Финален ensemble фиш foundation",
-        "category": "????????????????",
-        "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
-        "datasets": ["data/v41_canonical_draw_events.csv"],
-        "inputs": ["models/v42/v42_combined_prediction.json", "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"],
-        "outputs": ["models/v44_1/v44_1_final_ensemble_ticket_prediction.json", "reports/v44_1_final_ensemble_ticket_summary.json"],
-        "feeds": ["Step 62", "Step 65", "Step 66"],
-        "role": "Обединява по-ранни сигнали във финален ensemble фиш.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "45",
-        "label": "Прогнозно табло Pro",
-        "category": "ML модел",
-        "script": "scripts/v45_train_prediction_engine_pro.py",
-        "datasets": ["data/v41_canonical_draw_events.csv"],
-        "inputs": ["data/v41_canonical_draw_events.csv"],
-        "outputs": ["models/v45/v45_model_metadata.json", "reports/v45_training_summary.json"],
-        "feeds": ["Step 62", "Step 65", "Step 66"],
-        "role": "Тренира prediction engine с feature matrix и backtest.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "50",
-        "label": "Анализ на двойки и групи",
-        "category": "Групова статистика",
-        "script": "scripts/v50_build_pair_group_intelligence.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["data/historical_draws.csv"],
-        "outputs": ["models/v50/v50_pair_group_intelligence.json", "reports/v50_pair_group_summary.json"],
-        "feeds": ["Step 51", "Step 62", "Step 65"],
-        "role": "Анализира двойки, групи и съвместни появи.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "51",
-        "label": "Интелигентна оценка на портфейл от фишове",
-        "category": "Портфолио",
-        "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["models/v50/v50_pair_group_intelligence.json", "data/historical_draws.csv"],
-        "outputs": ["models/v51/v51_ticket_portfolio_intelligence.json", "reports/v51_ticket_portfolio_summary.json"],
-        "feeds": ["Step 62", "Step 65", "Step 66"],
-        "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "55",
-        "label": "Профил на число",
-        "category": "Профилиране",
-        "script": "scripts/v55_build_number_profile_center.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["data/historical_draws.csv"],
-        "outputs": ["models/v55/v55_number_profile_manifest.json", "reports/v55_number_profile_summary.json"],
-        "feeds": ["Step 56", "Step 57", "Step 58"],
-        "role": "Профилира всяко число по честота, интервали, двойки и стабилност.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "56",
-        "label": "Подобни исторически тиражи",
-        "category": "?????????????? ???? ????????????????",
-        "script": "scripts/v56_build_draw_similarity_search.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["data/historical_draws.csv", "reports/v55_number_profiles.json"],
-        "outputs": ["models/v56/v56_draw_similarity_manifest.json", "reports/v56_draw_similarity_summary.json"],
-        "feeds": ["UI анализ"],
-        "role": "Сравнява комбинации с исторически тиражи.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "57",
-        "label": "Горещи, студени и стабилни числа",
-        "category": "Сигнален център",
-        "script": "scripts/v57_build_hot_cold_stable_center.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["data/historical_draws.csv", "reports/v55_number_profile_summary.json"],
-        "outputs": ["models/v57/v57_hot_cold_stable_manifest.json", "reports/v57_hot_cold_stable_summary.json"],
-        "feeds": ["Step 58", "Step 62", "Step 65", "Step 66"],
-        "role": "Извлича hot/cold/stable сигнали за числа.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "58",
-        "label": "Умна обединена оценка 2",
-        "category": "???????? ????????????????",
-        "script": "scripts/v58_build_smart_ensemble_score_2.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["models/v57/v57_hot_cold_stable_manifest.json", "reports/v55_number_profile_summary.json"],
-        "outputs": ["models/v58/v58_smart_ensemble_manifest.json", "reports/v58_smart_ensemble_summary.json"],
-        "feeds": ["Step 59", "Step 62", "Step 65", "Step 66"],
-        "role": "Обединява профили, hot/cold/stable и pattern сигнали.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "59",
-        "label": "Умен генератор на фишове 2",
-        "category": "Генератор",
-        "script": "scripts/v59_build_smart_ticket_builder_2.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v58_smart_ensemble_scores_sample.json"],
-        "outputs": ["models/v59/v59_smart_ticket_builder_2_manifest.json", "reports/v59_smart_ticket_builder_2_summary.json"],
-        "feeds": ["Step 60", "Step 62", "Step 65"],
-        "role": "Генерира кандидат комбинации по различни стратегии.",
-        "ensemble_source": True,
-    },
-    {
-        "step": "61",
-        "label": "Анализ на нов тираж",
-        "category": "Проверка след тираж",
-        "script": "scripts/v61_build_draw_result_analyzer.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["data/historical_draws.csv", "models/v41/v41_latest_predictions.json", "reports/v58_smart_ensemble_scores_sample.json"],
-        "outputs": ["models/v61/v61_draw_result_analyzer_manifest.json", "reports/v61_draw_result_analyzer_summary.json"],
-        "feeds": ["Step 62", "Step 63"],
-        "role": "Проверява сигналите срещу последния реален тираж.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "62",
-        "label": "История на моделите",
-        "category": "?????????????? ???? ??????????????????????????",
-        "script": "scripts/v62_build_model_performance_tracker.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v61_draw_result_analyzer_summary.json"],
-        "outputs": ["models/v62/v62_model_performance_tracker_model.json", "reports/v62_model_performance_summary.json"],
-        "feeds": ["Step 63"],
-        "role": "Събира история на представянето на моделите.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "63",
-        "label": "Надеждност на моделите",
-        "category": "????????????????????",
-        "script": "scripts/v63_build_model_reliability_dashboard.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v62_model_performance_summary.json"],
-        "outputs": ["models/v63/v63_model_reliability_dashboard_model.json", "reports/v63_model_reliability_summary.json", "reports/v63_model_reliability_scores.csv"],
-        "feeds": ["Step 65"],
-        "role": "Изчислява reliability score за следените модели.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "65",
-        "label": "Умно тегло на моделите",
-        "category": "?????????????????? ??????????",
-        "script": "scripts/v65_build_model_weighting_center.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v63_model_reliability_scores.csv"],
-        "outputs": ["models/v65/v65_model_weighting_center_model.json", "reports/v65_model_weighting_summary.json", "reports/v65_model_weights.csv"],
-        "feeds": ["Step 66"],
-        "role": "Превръща надеждността в адаптивни тегла.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "66",
-        "label": "Претеглен ensemble анализ",
-        "category": "?????????????????? ????????????????",
-        "script": "scripts/v66_build_weighted_smart_ensemble.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v65_model_weights.csv"],
-        "outputs": ["models/v66/v66_weighted_smart_ensemble_model.json", "reports/v66_weighted_smart_ensemble_summary.json", "reports/v66_weighted_smart_ensemble_scores.csv"],
-        "feeds": ["Step 67", "Step 68", "Step 69"],
-        "role": "Обединява активните сигнали според адаптивните тегла.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "67",
-        "label": "Умен генератор с тегла",
-        "category": "?????????????????? ?? ??????????",
-        "script": "scripts/v67_build_weighted_ticket_builder.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v66_weighted_smart_ensemble_scores.csv"],
-        "outputs": ["models/v67/v67_weighted_ticket_builder_model.json", "reports/v67_weighted_ticket_builder_summary.json", "reports/v67_weighted_ticket_builder_tickets.csv"],
-        "feeds": ["Step 68"],
-        "role": "Строи фишове върху Step 66 weighted scores.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "68",
-        "label": "Умен оптимизатор на портфейл",
-        "category": "?????????????????????? ???? ????????????????",
-        "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v67_weighted_ticket_builder_tickets.csv", "reports/v66_weighted_smart_ensemble_scores.csv"],
-        "outputs": ["models/v68/v68_weighted_portfolio_optimizer_model.json", "reports/v68_weighted_portfolio_summary.json", "reports/v68_weighted_portfolio_tickets.csv"],
-        "feeds": ["Step 69"],
-        "role": "Оценява портфейл, покритие, повторения и концентрация.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "69",
-        "label": "Подобряване на портфолио",
-        "category": "?????????????????????? ???? ????????????????????",
-        "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v68_weighted_portfolio_summary.json", "reports/v66_weighted_smart_ensemble_scores.csv"],
-        "outputs": ["models/v69/v69_portfolio_improvement_model.json", "reports/v69_portfolio_improvement_summary.json", "reports/v69_candidate_portfolio_tickets.csv"],
-        "feeds": ["Step 70"],
-        "role": "Предлага подобрения без да презаписва основния пакет.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "70",
-        "label": "Приложен подобрен портфейл",
-        "category": "???????????????? ????????????????",
-        "script": "scripts/v70_build_applied_candidate_portfolio.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v69_candidate_portfolio_tickets.csv"],
-        "outputs": ["models/v70/v70_applied_candidate_portfolio_model.json", "reports/v70_applied_candidate_portfolio_summary.json", "reports/v70_applied_candidate_portfolio_tickets.csv"],
-        "feeds": ["Step 71"],
-        "role": "Фиксира подобрения пакет като отделна статистическа референция.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "71",
-        "label": "Пакет за игра",
-        "category": "?????????????? ???? ?????????? ???? ????????",
-        "script": "scripts/v71_build_ticket_pack_export.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v70_applied_candidate_portfolio_tickets.csv"],
-        "outputs": ["models/v71/v71_ticket_pack_export_model.json", "reports/v71_ticket_pack_summary.json", "reports/v71_ticket_pack.csv"],
-        "feeds": ["Step 73"],
-        "role": "Подготвя printable/export пакет за игра с физически фишове.",
-        "ensemble_source": False,
-    },
-    {
-        "step": "73",
-        "label": "Представяне на пакета",
-        "category": "?????????????????????? ???????? ??????????",
-        "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
-        "datasets": ["data/historical_draws.csv"],
-        "inputs": ["reports/v71_ticket_pack.csv"],
-        "outputs": ["models/v73/v73_ticket_pack_performance_tracker_model.json", "reports/v73_ticket_pack_performance_summary.json", "reports/v73_ticket_pack_performance_history.csv"],
-        "feeds": ["Step 75"],
-        "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
-        "ensemble_source": False,
-    },
-
-    {
-        "step": "75",
-        "label": "Невронен meta learner",
-        "category": "???????????????? ????????-????????????????",
-        "script": "scripts/v75_build_neural_meta_learner.py",
-        "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
-        "inputs": ["data/v41_canonical_draw_events.csv"],
-        "outputs": [
-            "models/v75/v75_neural_meta_learner_model.json",
-            "reports/v75_neural_meta_learner_summary.json",
-            "reports/v75_neural_meta_number_scores.csv",
-            "reports/v75_neural_candidate_tickets.csv",
-            "reports/v75_neural_candidate_tickets.json",
-        ],
-        "feeds": ["Step 74"],
-        "role": "Тренира лек невронен meta learner върху исторически feature-и и изгражда статистически кандидат фишове.",
-        "ensemble_source": False,
-    },
+MODEL_NODES: list[dict[str, Any]] = json.loads(r'''
+[
+  {
+    "step": "41",
+    "label": "\u041f\u0440\u0430\u0432\u0438\u043b\u043e\u0432\u043e-\u0441\u044a\u0437\u043d\u0430\u0442\u0438 \u043c\u043e\u0434\u0435\u043b\u0438",
+    "category": "\u0411\u0430\u0437\u043e\u0432 \u043c\u043e\u0434\u0435\u043b",
+    "script": "scripts/v41_train_rules_aware_models.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "inputs": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "outputs": [
+      "models/v41/v41_latest_predictions.json",
+      "reports/v41_model_retraining_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u0414\u0430\u0432\u0430 \u043f\u0440\u0430\u0432\u0438\u043b\u0430-\u0441\u0432\u044a\u0440\u0437\u0430\u043d\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438 \u0432\u044a\u0440\u0445\u0443 \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u0430.",
+    "ensemble_source": true
+  },
+  {
+    "step": "42",
+    "label": "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u043f\u043e\u0437\u0438\u0442\u0438\u0432\u0435\u043d/\u043d\u0435\u0433\u0430\u0442\u0438\u0432\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437",
+    "category": "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437",
+    "script": "scripts/v42_build_combined_positive_negative_foundation.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "inputs": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "outputs": [
+      "models/v42/v42_combined_prediction.json",
+      "reports/v42_combined_positive_negative_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430 \u043f\u043e\u0437\u0438\u0442\u0438\u0432\u043d\u0438 \u0438 \u043d\u0435\u0433\u0430\u0442\u0438\u0432\u043d\u0438 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438.",
+    "ensemble_source": true
+  },
+  {
+    "step": "43.1",
+    "label": "\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u0440\u0438\u0442\u044a\u043c",
+    "category": "\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437",
+    "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "inputs": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "outputs": [
+      "models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
+      "reports/v43_1_interval_rhythm_refined_summary.json"
+    ],
+    "feeds": [
+      "Step 44.1",
+      "Step 58"
+    ],
+    "role": "\u0421\u043b\u0435\u0434\u0438 \u0440\u0438\u0442\u044a\u043c \u043d\u0430 \u043f\u043e\u044f\u0432\u0430, \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0438 \u0438 \u0437\u0430\u043a\u044a\u0441\u043d\u0435\u043b\u0438 \u0447\u0438\u0441\u043b\u0430.",
+    "ensemble_source": false
+  },
+  {
+    "step": "44.1",
+    "label": "\u0424\u0438\u043d\u0430\u043b\u043d\u0430 \u0430\u043d\u0441\u0430\u043c\u0431\u043b\u043e\u0432\u0430 \u043e\u0441\u043d\u043e\u0432\u0430 \u0437\u0430 \u0444\u0438\u0448",
+    "category": "\u0410\u043d\u0441\u0430\u043c\u0431\u044a\u043b",
+    "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "inputs": [
+      "models/v42/v42_combined_prediction.json",
+      "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"
+    ],
+    "outputs": [
+      "models/v44_1/v44_1_final_ensemble_ticket_prediction.json",
+      "reports/v44_1_final_ensemble_ticket_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u041e\u0431\u0435\u0434\u0438\u043d\u044f\u0432\u0430 \u043f\u043e-\u0440\u0430\u043d\u043d\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438 \u0432\u044a\u0432 \u0444\u0438\u043d\u0430\u043b\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u043b\u043e\u0432 \u0444\u0438\u0448.",
+    "ensemble_source": true
+  },
+  {
+    "step": "45",
+    "label": "\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u043e \u0442\u0430\u0431\u043b\u043e Pro",
+    "category": "ML \u043c\u043e\u0434\u0435\u043b",
+    "script": "scripts/v45_train_prediction_engine_pro.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "inputs": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "outputs": [
+      "models/v45/v45_model_metadata.json",
+      "reports/v45_training_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u0422\u0440\u0435\u043d\u0438\u0440\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u043c\u043e\u0434\u0435\u043b \u0441 \u043f\u0440\u0438\u0437\u043d\u0430\u0446\u0438 \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430.",
+    "ensemble_source": true
+  },
+  {
+    "step": "50",
+    "label": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u0434\u0432\u043e\u0439\u043a\u0438 \u0438 \u0433\u0440\u0443\u043f\u0438",
+    "category": "\u0413\u0440\u0443\u043f\u043e\u0432\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430",
+    "script": "scripts/v50_build_pair_group_intelligence.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/historical_draws.csv"
+    ],
+    "outputs": [
+      "models/v50/v50_pair_group_intelligence.json",
+      "reports/v50_pair_group_summary.json"
+    ],
+    "feeds": [
+      "Step 51",
+      "Step 62",
+      "Step 65"
+    ],
+    "role": "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430 \u0434\u0432\u043e\u0439\u043a\u0438, \u0433\u0440\u0443\u043f\u0438 \u0438 \u0441\u044a\u0432\u043c\u0435\u0441\u0442\u043d\u0438 \u043f\u043e\u044f\u0432\u0438.",
+    "ensemble_source": false
+  },
+  {
+    "step": "51",
+    "label": "\u0418\u043d\u0442\u0435\u043b\u0438\u0433\u0435\u043d\u0442\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b \u043e\u0442 \u0444\u0438\u0448\u043e\u0432\u0435",
+    "category": "\u041f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e",
+    "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "models/v50/v50_pair_group_intelligence.json",
+      "data/historical_draws.csv"
+    ],
+    "outputs": [
+      "models/v51/v51_ticket_portfolio_intelligence.json",
+      "reports/v51_ticket_portfolio_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u041e\u0446\u0435\u043d\u044f\u0432\u0430 \u0444\u0438\u0448\u043e\u0432\u0435 \u0438 \u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e \u0447\u0440\u0435\u0437 \u043f\u043e\u043a\u0440\u0438\u0442\u0438\u0435 \u0438 \u0433\u0440\u0443\u043f\u043e\u0432\u0430 \u043b\u043e\u0433\u0438\u043a\u0430.",
+    "ensemble_source": true
+  },
+  {
+    "step": "55",
+    "label": "\u041f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u0447\u0438\u0441\u043b\u043e",
+    "category": "\u041f\u0440\u043e\u0444\u0438\u043b\u0438\u0440\u0430\u043d\u0435",
+    "script": "scripts/v55_build_number_profile_center.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/historical_draws.csv"
+    ],
+    "outputs": [
+      "models/v55/v55_number_profile_manifest.json",
+      "reports/v55_number_profile_summary.json"
+    ],
+    "feeds": [
+      "Step 56",
+      "Step 57",
+      "Step 58"
+    ],
+    "role": "\u041f\u0440\u043e\u0444\u0438\u043b\u0438\u0440\u0430 \u0432\u0441\u044f\u043a\u043e \u0447\u0438\u0441\u043b\u043e \u043f\u043e \u0447\u0435\u0441\u0442\u043e\u0442\u0430, \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0438, \u0434\u0432\u043e\u0439\u043a\u0438 \u0438 \u0441\u0442\u0430\u0431\u0438\u043b\u043d\u043e\u0441\u0442.",
+    "ensemble_source": false
+  },
+  {
+    "step": "56",
+    "label": "\u041f\u043e\u0434\u043e\u0431\u043d\u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438",
+    "category": "\u0421\u0445\u043e\u0434\u0441\u0442\u0432\u0430",
+    "script": "scripts/v56_build_draw_similarity_search.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/historical_draws.csv",
+      "reports/v55_number_profiles.json"
+    ],
+    "outputs": [
+      "models/v56/v56_draw_similarity_manifest.json",
+      "reports/v56_draw_similarity_summary.json"
+    ],
+    "feeds": [
+      "UI \u0430\u043d\u0430\u043b\u0438\u0437"
+    ],
+    "role": "\u0422\u044a\u0440\u0441\u0438 \u0441\u0445\u043e\u0434\u043d\u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438 \u0438 \u043c\u043e\u0434\u0435\u043b\u0438 \u043d\u0430 \u0431\u043b\u0438\u0437\u043e\u0441\u0442.",
+    "ensemble_source": false
+  },
+  {
+    "step": "57",
+    "label": "\u0413\u043e\u0440\u0435\u0449\u0438, \u0441\u0442\u0443\u0434\u0435\u043d\u0438 \u0438 \u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0438 \u0447\u0438\u0441\u043b\u0430",
+    "category": "\u0413\u043e\u0440\u0435\u0449\u0438/\u0441\u0442\u0443\u0434\u0435\u043d\u0438 \u0447\u0438\u0441\u043b\u0430",
+    "script": "scripts/v57_build_hot_cold_stable_center.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/historical_draws.csv",
+      "reports/v55_number_profile_summary.json"
+    ],
+    "outputs": [
+      "models/v57/v57_hot_cold_stable_manifest.json",
+      "reports/v57_hot_cold_stable_summary.json"
+    ],
+    "feeds": [
+      "Step 58",
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u041e\u0442\u043a\u0440\u0438\u0432\u0430 \u0433\u043e\u0440\u0435\u0449\u0438, \u0441\u0442\u0443\u0434\u0435\u043d\u0438 \u0438 \u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0438 \u0447\u0438\u0441\u043b\u0430.",
+    "ensemble_source": true
+  },
+  {
+    "step": "58",
+    "label": "\u0423\u043c\u043d\u0430 \u043e\u0431\u0435\u0434\u0438\u043d\u0435\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 2",
+    "category": "\u0423\u043c\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b",
+    "script": "scripts/v58_build_smart_ensemble_score_2.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "models/v57/v57_hot_cold_stable_manifest.json",
+      "reports/v55_number_profile_summary.json"
+    ],
+    "outputs": [
+      "models/v58/v58_smart_ensemble_manifest.json",
+      "reports/v58_smart_ensemble_summary.json"
+    ],
+    "feeds": [
+      "Step 59",
+      "Step 62",
+      "Step 65",
+      "Step 66"
+    ],
+    "role": "\u041e\u0431\u0435\u0434\u0438\u043d\u044f\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u0438 \u0432 \u0438\u043d\u0442\u0435\u043b\u0438\u0433\u0435\u043d\u0442\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430.",
+    "ensemble_source": true
+  },
+  {
+    "step": "59",
+    "label": "\u0423\u043c\u0435\u043d \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u043d\u0430 \u0444\u0438\u0448\u043e\u0432\u0435 2",
+    "category": "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440",
+    "script": "scripts/v59_build_smart_ticket_builder_2.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v58_smart_ensemble_scores_sample.json"
+    ],
+    "outputs": [
+      "models/v59/v59_smart_ticket_builder_2_manifest.json",
+      "reports/v59_smart_ticket_builder_2_summary.json"
+    ],
+    "feeds": [
+      "Step 60",
+      "Step 62",
+      "Step 65"
+    ],
+    "role": "\u0413\u0435\u043d\u0435\u0440\u0438\u0440\u0430 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u043f\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438.",
+    "ensemble_source": true
+  },
+  {
+    "step": "61",
+    "label": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043d\u043e\u0432 \u0442\u0438\u0440\u0430\u0436",
+    "category": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0441\u043b\u0435\u0434 \u0442\u0438\u0440\u0430\u0436",
+    "script": "scripts/v61_build_draw_result_analyzer.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/historical_draws.csv",
+      "models/v41/v41_latest_predictions.json",
+      "reports/v58_smart_ensemble_scores_sample.json"
+    ],
+    "outputs": [
+      "models/v61/v61_draw_result_analyzer_manifest.json",
+      "reports/v61_draw_result_analyzer_summary.json"
+    ],
+    "feeds": [
+      "Step 62",
+      "Step 63"
+    ],
+    "role": "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u0441\u0438\u0433\u043d\u0430\u043b\u0438\u0442\u0435 \u0441\u0440\u0435\u0449\u0443 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u044f \u0440\u0435\u0430\u043b\u0435\u043d \u0442\u0438\u0440\u0430\u0436.",
+    "ensemble_source": false
+  },
+  {
+    "step": "62",
+    "label": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+    "category": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043d\u0430 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435\u0442\u043e",
+    "script": "scripts/v62_build_model_performance_tracker.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v61_draw_result_analyzer_summary.json"
+    ],
+    "outputs": [
+      "models/v62/v62_model_performance_tracker_model.json",
+      "reports/v62_model_performance_summary.json"
+    ],
+    "feeds": [
+      "Step 63"
+    ],
+    "role": "\u0421\u044a\u0431\u0438\u0440\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u043d\u0430 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435\u0442\u043e \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435.",
+    "ensemble_source": false
+  },
+  {
+    "step": "63",
+    "label": "\u041d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+    "category": "\u041d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442",
+    "script": "scripts/v63_build_model_reliability_dashboard.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v62_model_performance_summary.json"
+    ],
+    "outputs": [
+      "models/v63/v63_model_reliability_dashboard_model.json",
+      "reports/v63_model_reliability_summary.json",
+      "reports/v63_model_reliability_scores.csv"
+    ],
+    "feeds": [
+      "Step 65"
+    ],
+    "role": "\u0418\u0437\u0447\u0438\u0441\u043b\u044f\u0432\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442 \u043d\u0430 \u0441\u043b\u0435\u0434\u0435\u043d\u0438\u0442\u0435 \u043c\u043e\u0434\u0435\u043b\u0438.",
+    "ensemble_source": false
+  },
+  {
+    "step": "65",
+    "label": "\u0423\u043c\u043d\u043e \u0442\u0435\u0433\u043b\u043e \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+    "category": "\u0410\u0434\u0430\u043f\u0442\u0438\u0432\u043d\u043e \u0442\u0435\u0433\u043b\u043e",
+    "script": "scripts/v65_build_model_weighting_center.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v63_model_reliability_scores.csv"
+    ],
+    "outputs": [
+      "models/v65/v65_model_weighting_center_model.json",
+      "reports/v65_model_weighting_summary.json",
+      "reports/v65_model_weights.csv"
+    ],
+    "feeds": [
+      "Step 66"
+    ],
+    "role": "\u041f\u0440\u0435\u0432\u0440\u044a\u0449\u0430 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442\u0442\u0430 \u0432 \u0430\u0434\u0430\u043f\u0442\u0438\u0432\u043d\u0438 \u0442\u0435\u0433\u043b\u0430.",
+    "ensemble_source": false
+  },
+  {
+    "step": "66",
+    "label": "\u041f\u0440\u0435\u0442\u0435\u0433\u043b\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u043b\u043e\u0432 \u0430\u043d\u0430\u043b\u0438\u0437",
+    "category": "\u041f\u0440\u0435\u0442\u0435\u0433\u043b\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b",
+    "script": "scripts/v66_build_weighted_smart_ensemble.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v65_model_weights.csv"
+    ],
+    "outputs": [
+      "models/v66/v66_weighted_smart_ensemble_model.json",
+      "reports/v66_weighted_smart_ensemble_summary.json",
+      "reports/v66_weighted_smart_ensemble_scores.csv"
+    ],
+    "feeds": [
+      "Step 67",
+      "Step 68",
+      "Step 69"
+    ],
+    "role": "\u041e\u0431\u0435\u0434\u0438\u043d\u044f\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u0441\u0438\u0433\u043d\u0430\u043b\u0438 \u0441\u043f\u043e\u0440\u0435\u0434 \u0430\u0434\u0430\u043f\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u0442\u0435\u0433\u043b\u0430.",
+    "ensemble_source": false
+  },
+  {
+    "step": "67",
+    "label": "\u0423\u043c\u0435\u043d \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u0441 \u0442\u0435\u0433\u043b\u0430",
+    "category": "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u0441 \u0442\u0435\u0433\u043b\u0430",
+    "script": "scripts/v67_build_weighted_ticket_builder.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v66_weighted_smart_ensemble_scores.csv"
+    ],
+    "outputs": [
+      "models/v67/v67_weighted_ticket_builder_model.json",
+      "reports/v67_weighted_ticket_builder_summary.json",
+      "reports/v67_weighted_ticket_builder_tickets.csv"
+    ],
+    "feeds": [
+      "Step 68"
+    ],
+    "role": "\u0421\u0442\u0440\u043e\u0438 \u0444\u0438\u0448\u043e\u0432\u0435 \u0432\u044a\u0440\u0445\u0443 \u043f\u0440\u0435\u0442\u0435\u0433\u043b\u0435\u043d\u0438\u0442\u0435 \u043e\u0446\u0435\u043d\u043a\u0438 \u043e\u0442 Step 66.",
+    "ensemble_source": false
+  },
+  {
+    "step": "68",
+    "label": "\u0423\u043c\u0435\u043d \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0442\u043e\u0440 \u043d\u0430 \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b",
+    "category": "\u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0442\u043e\u0440 \u043d\u0430 \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b",
+    "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v67_weighted_ticket_builder_tickets.csv",
+      "reports/v66_weighted_smart_ensemble_scores.csv"
+    ],
+    "outputs": [
+      "models/v68/v68_weighted_portfolio_optimizer_model.json",
+      "reports/v68_weighted_portfolio_summary.json",
+      "reports/v68_weighted_portfolio_tickets.csv"
+    ],
+    "feeds": [
+      "Step 69"
+    ],
+    "role": "\u041e\u0446\u0435\u043d\u044f\u0432\u0430 \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b, \u043f\u043e\u043a\u0440\u0438\u0442\u0438\u0435, \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u044f \u0438 \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0430\u0446\u0438\u044f.",
+    "ensemble_source": false
+  },
+  {
+    "step": "69",
+    "label": "\u041f\u043e\u0434\u043e\u0431\u0440\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e",
+    "category": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0437\u0430 \u043f\u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435",
+    "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v68_weighted_portfolio_summary.json",
+      "reports/v66_weighted_smart_ensemble_scores.csv"
+    ],
+    "outputs": [
+      "models/v69/v69_portfolio_improvement_model.json",
+      "reports/v69_portfolio_improvement_summary.json",
+      "reports/v69_candidate_portfolio_tickets.csv"
+    ],
+    "feeds": [
+      "Step 70"
+    ],
+    "role": "\u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430 \u043f\u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u044f \u0431\u0435\u0437 \u0434\u0430 \u043f\u0440\u0435\u0437\u0430\u043f\u0438\u0441\u0432\u0430 \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u044f \u043f\u0430\u043a\u0435\u0442.",
+    "ensemble_source": false
+  },
+  {
+    "step": "70",
+    "label": "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d \u043f\u043e\u0434\u043e\u0431\u0440\u0435\u043d \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b",
+    "category": "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b",
+    "script": "scripts/v70_build_applied_candidate_portfolio.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v69_candidate_portfolio_tickets.csv"
+    ],
+    "outputs": [
+      "models/v70/v70_applied_candidate_portfolio_model.json",
+      "reports/v70_applied_candidate_portfolio_summary.json",
+      "reports/v70_applied_candidate_portfolio_tickets.csv"
+    ],
+    "feeds": [
+      "Step 71"
+    ],
+    "role": "\u0424\u0438\u043a\u0441\u0438\u0440\u0430 \u043f\u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u044f \u043f\u0430\u043a\u0435\u0442 \u043a\u0430\u0442\u043e \u043e\u0442\u0434\u0435\u043b\u043d\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0430 \u0440\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u044f.",
+    "ensemble_source": false
+  },
+  {
+    "step": "71",
+    "label": "\u041f\u0430\u043a\u0435\u0442 \u0437\u0430 \u0438\u0433\u0440\u0430",
+    "category": "\u041f\u0430\u043a\u0435\u0442 \u0437\u0430 \u0438\u0433\u0440\u0430",
+    "script": "scripts/v71_build_ticket_pack_export.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v70_applied_candidate_portfolio_tickets.csv"
+    ],
+    "outputs": [
+      "models/v71/v71_ticket_pack_export_model.json",
+      "reports/v71_ticket_pack_summary.json",
+      "reports/v71_ticket_pack.csv"
+    ],
+    "feeds": [
+      "Step 73"
+    ],
+    "role": "\u041f\u043e\u0434\u0433\u043e\u0442\u0432\u044f \u043f\u0430\u043a\u0435\u0442 \u0437\u0430 \u043f\u0435\u0447\u0430\u0442 \u0438 \u0435\u043a\u0441\u043f\u043e\u0440\u0442 \u0437\u0430 \u0438\u0433\u0440\u0430 \u0441 \u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0438 \u0444\u0438\u0448\u043e\u0432\u0435.",
+    "ensemble_source": false
+  },
+  {
+    "step": "73",
+    "label": "\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435 \u043d\u0430 \u043f\u0430\u043a\u0435\u0442\u0430",
+    "category": "\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435 \u0441\u043b\u0435\u0434 \u0442\u0438\u0440\u0430\u0436",
+    "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
+    "datasets": [
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "reports/v71_ticket_pack.csv"
+    ],
+    "outputs": [
+      "models/v73/v73_ticket_pack_performance_tracker_model.json",
+      "reports/v73_ticket_pack_performance_summary.json",
+      "reports/v73_ticket_pack_performance_history.csv"
+    ],
+    "feeds": [
+      "Step 75"
+    ],
+    "role": "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0438\u044f \u043f\u0430\u043a\u0435\u0442 \u0441\u0440\u0435\u0449\u0443 \u0440\u0435\u0430\u043b\u043d\u0438 \u0442\u0438\u0440\u0430\u0436\u0438 \u043f\u0440\u0435\u0434\u0438 \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435.",
+    "ensemble_source": false
+  },
+  {
+    "step": "75",
+    "label": "\u041d\u0435\u0432\u0440\u043e\u043d\u0435\u043d \u043c\u0435\u0442\u0430-\u043e\u0431\u0443\u0447\u0438\u0442\u0435\u043b",
+    "category": "\u041d\u0435\u0432\u0440\u043e\u043d\u0435\u043d \u043c\u0435\u0442\u0430-\u043e\u0431\u0443\u0447\u0438\u0442\u0435\u043b",
+    "script": "scripts/v75_build_neural_meta_learner.py",
+    "datasets": [
+      "data/v41_canonical_draw_events.csv",
+      "data/historical_draws.csv"
+    ],
+    "inputs": [
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "outputs": [
+      "models/v75/v75_neural_meta_learner_model.json",
+      "reports/v75_neural_meta_learner_summary.json",
+      "reports/v75_neural_meta_number_scores.csv",
+      "reports/v75_neural_candidate_tickets.csv",
+      "reports/v75_neural_candidate_tickets.json"
+    ],
+    "feeds": [
+      "Step 74"
+    ],
+    "role": "\u0422\u0440\u0435\u043d\u0438\u0440\u0430 \u043b\u0435\u043a \u043d\u0435\u0432\u0440\u043e\u043d\u0435\u043d \u043c\u0435\u0442\u0430-\u043e\u0431\u0443\u0447\u0438\u0442\u0435\u043b \u0432\u044a\u0440\u0445\u0443 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u0438\u0437\u043d\u0430\u0446\u0438 \u0438 \u0438\u0437\u0433\u0440\u0430\u0436\u0434\u0430 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u0444\u0438\u0448\u043e\u0432\u0435.",
+    "ensemble_source": false
+  }
 ]
+''')
+
 
 
 def read_csv_rows(path: Path) -> list[dict[str, str]]:

@@ -6,8 +6,8 @@
     "include_core": false,
     "steps_planned": 13,
     "steps_reported": 13,
-    "all_scripts_present": true,
-    "all_outputs_present": true,
+    "all_scripts_present": false,
+    "all_outputs_present": false,
     "run_pipeline": false,
     "run_ok": "",
     "stopped_at": "",
@@ -27,7 +27,7 @@
       "74"
     ],
     "core_steps_included": [],
-    "generated_at": "2026-06-22T13:30:54+00:00",
+    "generated_at": "2026-06-22T13:49:34+00:00",
     "generated_reports": [
       "reports/v72_pipeline_refresh_summary.json",
       "reports/v72_pipeline_refresh_summary.md",
@@ -87,12 +87,12 @@
     },
     {
       "step": "66",
-      "name": "Претеглен ensemble анализ",
-      "script": "scripts/v66_build_weighted_smart_ensemble.py",
-      "script_exists": true,
-      "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
-      "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T15:18:36",
+      "name": "Претеглен ансамбъл анализ",
+      "script": "scripts/v66_build_weighted_smart_ансамбъл.py",
+      "script_exists": false,
+      "outputs": "models/v66; reports/v66_weighted_smart_ансамбъл_summary.json",
+      "outputs_ok": false,
+      "latest_output_mtime": "",
       "run_status": "planned",
       "run_ok": "",
       "run_output_tail": ""
@@ -148,8 +148,8 @@
     {
       "step": "71",
       "name": "Пакет за игра",
-      "script": "scripts/v71_build_ticket_pack_export.py",
-      "script_exists": true,
+      "script": "scripts/v71_build_ticket_pack_експорт.py",
+      "script_exists": false,
       "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T15:20:15",
@@ -171,7 +171,7 @@
     },
     {
       "step": "75",
-      "name": "Невронен meta learner",
+      "name": "Невронен мета обучител",
       "script": "scripts/v75_build_neural_meta_learner.py",
       "script_exists": true,
       "outputs": "models/v75; reports/v75_neural_meta_learner_summary.json; reports/v75_neural_candidate_tickets.csv",
@@ -188,7 +188,7 @@
       "script_exists": true,
       "outputs": "models/v74; reports/v74_model_dependency_summary.json; models/model_registry.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T16:30:54",
+      "latest_output_mtime": "2026-06-22T16:49:33",
       "run_status": "planned",
       "run_ok": "",
       "run_output_tail": ""
