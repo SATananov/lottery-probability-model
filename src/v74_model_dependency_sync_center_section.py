@@ -144,7 +144,7 @@ def _show_git_result(result):
         with st.expander("Оставащи локални промени след GitHub sync"):
             st.code(remaining, language="text")
 
-    with st.expander("GitHub sync log", expanded=status not in {"OK", "Няма промени"}):
+    with st.expander("?????? ???? GitHub ????????????????", expanded=status not in {"OK", "Няма промени"}):
         for step in result.get("steps", []) or []:
             st.markdown(f"**{step.get('name', 'git')}** — code {step.get('returncode')}")
             stdout = str(step.get("stdout", "") or "").strip()
@@ -286,7 +286,7 @@ def render_v74_model_dependency_sync_center_section():
             "mtime": item.get("mtime", ""),
         })
     _show_table(dataset_rows, [
-        ("Dataset", "path"),
+        ("?????????? ??????????", "path"),
         ("Редове", "rows"),
         ("Последна дата", "latest_date"),
         ("Последен тираж", "latest_draw_no"),

@@ -70,7 +70,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "44.1",
         "label": "Финален ensemble фиш foundation",
-        "category": "Ensemble",
+        "category": "????????????????",
         "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
         "datasets": ["data/v41_canonical_draw_events.csv"],
         "inputs": ["models/v42/v42_combined_prediction.json", "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"],
@@ -130,7 +130,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "56",
         "label": "Подобни исторически тиражи",
-        "category": "Similarity search",
+        "category": "?????????????? ???? ????????????????",
         "script": "scripts/v56_build_draw_similarity_search.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["data/historical_draws.csv", "reports/v55_number_profiles.json"],
@@ -154,7 +154,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "58",
         "label": "Умна обединена оценка 2",
-        "category": "Smart ensemble",
+        "category": "???????? ????????????????",
         "script": "scripts/v58_build_smart_ensemble_score_2.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["models/v57/v57_hot_cold_stable_manifest.json", "reports/v55_number_profile_summary.json"],
@@ -190,7 +190,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "62",
         "label": "История на моделите",
-        "category": "Performance tracker",
+        "category": "?????????????? ???? ??????????????????????????",
         "script": "scripts/v62_build_model_performance_tracker.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v61_draw_result_analyzer_summary.json"],
@@ -202,7 +202,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "63",
         "label": "Надеждност на моделите",
-        "category": "Reliability",
+        "category": "????????????????????",
         "script": "scripts/v63_build_model_reliability_dashboard.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v62_model_performance_summary.json"],
@@ -214,7 +214,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "65",
         "label": "Умно тегло на моделите",
-        "category": "Adaptive weighting",
+        "category": "?????????????????? ??????????",
         "script": "scripts/v65_build_model_weighting_center.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v63_model_reliability_scores.csv"],
@@ -226,7 +226,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "66",
         "label": "Претеглен ensemble анализ",
-        "category": "Weighted ensemble",
+        "category": "?????????????????? ????????????????",
         "script": "scripts/v66_build_weighted_smart_ensemble.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v65_model_weights.csv"],
@@ -238,7 +238,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "67",
         "label": "Умен генератор с тегла",
-        "category": "Weighted ticket builder",
+        "category": "?????????????????? ?? ??????????",
         "script": "scripts/v67_build_weighted_ticket_builder.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v66_weighted_smart_ensemble_scores.csv"],
@@ -250,7 +250,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "68",
         "label": "Умен оптимизатор на портфейл",
-        "category": "Portfolio optimizer",
+        "category": "?????????????????????? ???? ????????????????",
         "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v67_weighted_ticket_builder_tickets.csv", "reports/v66_weighted_smart_ensemble_scores.csv"],
@@ -262,7 +262,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "69",
         "label": "Подобряване на портфолио",
-        "category": "Improvement suggestions",
+        "category": "?????????????????????? ???? ????????????????????",
         "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v68_weighted_portfolio_summary.json", "reports/v66_weighted_smart_ensemble_scores.csv"],
@@ -274,7 +274,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "70",
         "label": "Приложен подобрен портфейл",
-        "category": "Applied portfolio",
+        "category": "???????????????? ????????????????",
         "script": "scripts/v70_build_applied_candidate_portfolio.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v69_candidate_portfolio_tickets.csv"],
@@ -286,7 +286,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "71",
         "label": "Пакет за игра",
-        "category": "Ticket pack export",
+        "category": "?????????????? ???? ?????????? ???? ????????",
         "script": "scripts/v71_build_ticket_pack_export.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v70_applied_candidate_portfolio_tickets.csv"],
@@ -298,7 +298,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "73",
         "label": "Представяне на пакета",
-        "category": "Performance after draw",
+        "category": "?????????????????????? ???????? ??????????",
         "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
         "datasets": ["data/historical_draws.csv"],
         "inputs": ["reports/v71_ticket_pack.csv"],
@@ -311,7 +311,7 @@ MODEL_NODES: list[dict[str, Any]] = [
     {
         "step": "75",
         "label": "Невронен meta learner",
-        "category": "Neural meta learner",
+        "category": "???????????????? ????????-????????????????",
         "script": "scripts/v75_build_neural_meta_learner.py",
         "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
         "inputs": ["data/v41_canonical_draw_events.csv"],

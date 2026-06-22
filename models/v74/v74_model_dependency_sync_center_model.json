@@ -653,7 +653,7 @@
       "step": "43.1"
     },
     {
-      "category": "Ensemble",
+      "category": "????????????????",
       "datasets": [
         "data/v41_canonical_draw_events.csv"
       ],
@@ -770,7 +770,7 @@
       "step": "55"
     },
     {
-      "category": "Similarity search",
+      "category": "?????????????? ???? ????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -817,7 +817,7 @@
       "step": "57"
     },
     {
-      "category": "Smart ensemble",
+      "category": "???????? ????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -889,7 +889,7 @@
       "step": "61"
     },
     {
-      "category": "Performance tracker",
+      "category": "?????????????? ???? ??????????????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -910,7 +910,7 @@
       "step": "62"
     },
     {
-      "category": "Reliability",
+      "category": "????????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -932,7 +932,7 @@
       "step": "63"
     },
     {
-      "category": "Adaptive weighting",
+      "category": "?????????????????? ??????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -954,7 +954,7 @@
       "step": "65"
     },
     {
-      "category": "Weighted ensemble",
+      "category": "?????????????????? ????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -978,7 +978,7 @@
       "step": "66"
     },
     {
-      "category": "Weighted ticket builder",
+      "category": "?????????????????? ?? ??????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1000,7 +1000,7 @@
       "step": "67"
     },
     {
-      "category": "Portfolio optimizer",
+      "category": "?????????????????????? ???? ????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1023,7 +1023,7 @@
       "step": "68"
     },
     {
-      "category": "Improvement suggestions",
+      "category": "?????????????????????? ???? ????????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1046,7 +1046,7 @@
       "step": "69"
     },
     {
-      "category": "Applied portfolio",
+      "category": "???????????????? ????????????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1068,7 +1068,7 @@
       "step": "70"
     },
     {
-      "category": "Ticket pack export",
+      "category": "?????????????? ???? ?????????? ???? ????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1090,7 +1090,7 @@
       "step": "71"
     },
     {
-      "category": "Performance after draw",
+      "category": "?????????????????????? ???????? ??????????",
       "datasets": [
         "data/historical_draws.csv"
       ],
@@ -1112,7 +1112,7 @@
       "step": "73"
     },
     {
-      "category": "Neural meta learner",
+      "category": "???????????????? ????????-????????????????",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
@@ -1144,7 +1144,7 @@
       "latest_draw_no": "48",
       "latest_numbers": "6,13,16,19,42,44",
       "latest_year": "2026",
-      "mtime": "2026-06-22T12:58:06",
+      "mtime": "2026-06-22T07:57:49",
       "path": "data/historical_draws.csv",
       "rows": 10058
     },
@@ -1154,7 +1154,7 @@
       "latest_draw_no": "48",
       "latest_numbers": "6,13,16,19,42,44",
       "latest_year": "2026",
-      "mtime": "2026-06-22T12:58:06",
+      "mtime": "2026-06-22T07:57:50",
       "path": "data/v40_normalized_draw_events.csv",
       "rows": 10058
     },
@@ -1164,7 +1164,7 @@
       "latest_draw_no": "48",
       "latest_numbers": "6,13,16,19,42,44",
       "latest_year": "2026",
-      "mtime": "2026-06-22T12:58:06",
+      "mtime": "2026-06-22T07:57:50",
       "path": "data/v41_canonical_draw_events.csv",
       "rows": 10058
     }
@@ -1190,7 +1190,7 @@
         "latest_draw_no": "48",
         "latest_numbers": "6,13,16,19,42,44",
         "latest_year": "2026",
-        "mtime": "2026-06-22T12:58:06",
+        "mtime": "2026-06-22T07:57:49",
         "path": "data/historical_draws.csv",
         "rows": 10058
       },
@@ -1200,7 +1200,7 @@
         "latest_draw_no": "48",
         "latest_numbers": "6,13,16,19,42,44",
         "latest_year": "2026",
-        "mtime": "2026-06-22T12:58:06",
+        "mtime": "2026-06-22T07:57:50",
         "path": "data/v40_normalized_draw_events.csv",
         "rows": 10058
       },
@@ -1210,13 +1210,13 @@
         "latest_draw_no": "48",
         "latest_numbers": "6,13,16,19,42,44",
         "latest_year": "2026",
-        "mtime": "2026-06-22T12:58:06",
+        "mtime": "2026-06-22T07:57:50",
         "path": "data/v41_canonical_draw_events.csv",
         "rows": 10058
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T13:10:21+00:00",
+    "generated_at": "2026-06-22T13:30:54+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1243,7 +1243,7 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "d4b46fc371818b32f876a6b0fd0db8c98bd7c64d993b7cb1b8db258d42bd57d4",
+    "state_hash": "bfa0bb448e481e3336b12c19d1517b55045e263365c46d05ac9222587875320e",
     "status": "Синхронизиран",
     "step": "74",
     "synced_models": 24
@@ -1257,8 +1257,8 @@
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Правилово-съзнати модели",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v41/v41_latest_predictions.json; reports/v41_model_retraining_summary.json",
@@ -1279,8 +1279,8 @@
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Комбиниран позитивен/негативен анализ",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v42/v42_combined_prediction.json; reports/v42_combined_positive_negative_summary.json",
@@ -1301,8 +1301,8 @@
       "feeds": "Step 44.1; Step 58",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Интервален ритъм",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v43_1/v43_1_interval_rhythm_refined_prediction.json; reports/v43_1_interval_rhythm_refined_summary.json",
@@ -1316,15 +1316,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Ensemble",
+      "category": "????????????????",
       "datasets": "data/v41_canonical_draw_events.csv",
       "dependencies_present": true,
       "ensemble_source": true,
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "models/v42/v42_combined_prediction.json; models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
       "label": "Финален ensemble фиш foundation",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:17:14",
+      "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v44_1/v44_1_final_ensemble_ticket_prediction.json; reports/v44_1_final_ensemble_ticket_summary.json",
@@ -1345,8 +1345,8 @@
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Прогнозно табло Pro",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T15:17:34",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v45/v45_model_metadata.json; reports/v45_training_summary.json",
@@ -1367,8 +1367,8 @@
       "feeds": "Step 51; Step 62; Step 65",
       "inputs": "data/historical_draws.csv",
       "label": "Анализ на двойки и групи",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:49",
+      "latest_output_mtime": "2026-06-22T15:17:36",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v50/v50_pair_group_intelligence.json; reports/v50_pair_group_summary.json",
@@ -1389,8 +1389,8 @@
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "models/v50/v50_pair_group_intelligence.json; data/historical_draws.csv",
       "label": "Интелигентна оценка на портфейл от фишове",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:17:36",
+      "latest_output_mtime": "2026-06-22T15:17:37",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v51/v51_ticket_portfolio_intelligence.json; reports/v51_ticket_portfolio_summary.json",
@@ -1411,8 +1411,8 @@
       "feeds": "Step 56; Step 57; Step 58",
       "inputs": "data/historical_draws.csv",
       "label": "Профил на число",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:49",
+      "latest_output_mtime": "2026-06-22T15:17:43",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v55/v55_number_profile_manifest.json; reports/v55_number_profile_summary.json",
@@ -1426,15 +1426,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Similarity search",
+      "category": "?????????????? ???? ????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "UI анализ",
       "inputs": "data/historical_draws.csv; reports/v55_number_profiles.json",
       "label": "Подобни исторически тиражи",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:17:43",
+      "latest_output_mtime": "2026-06-22T15:17:48",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v56/v56_draw_similarity_manifest.json; reports/v56_draw_similarity_summary.json",
@@ -1455,8 +1455,8 @@
       "feeds": "Step 58; Step 62; Step 65; Step 66",
       "inputs": "data/historical_draws.csv; reports/v55_number_profile_summary.json",
       "label": "Горещи, студени и стабилни числа",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:17:43",
+      "latest_output_mtime": "2026-06-22T15:17:54",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v57/v57_hot_cold_stable_manifest.json; reports/v57_hot_cold_stable_summary.json",
@@ -1470,15 +1470,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Smart ensemble",
+      "category": "???????? ????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": true,
       "feeds": "Step 59; Step 62; Step 65; Step 66",
       "inputs": "models/v57/v57_hot_cold_stable_manifest.json; reports/v55_number_profile_summary.json",
       "label": "Умна обединена оценка 2",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:17:54",
+      "latest_output_mtime": "2026-06-22T15:18:02",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v58/v58_smart_ensemble_manifest.json; reports/v58_smart_ensemble_summary.json",
@@ -1499,8 +1499,8 @@
       "feeds": "Step 60; Step 62; Step 65",
       "inputs": "reports/v58_smart_ensemble_scores_sample.json",
       "label": "Умен генератор на фишове 2",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:02",
+      "latest_output_mtime": "2026-06-22T15:18:27",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v59/v59_smart_ticket_builder_2_manifest.json; reports/v59_smart_ticket_builder_2_summary.json",
@@ -1521,8 +1521,8 @@
       "feeds": "Step 62; Step 63",
       "inputs": "data/historical_draws.csv; models/v41/v41_latest_predictions.json; reports/v58_smart_ensemble_scores_sample.json",
       "label": "Анализ на нов тираж",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:02",
+      "latest_output_mtime": "2026-06-22T15:18:34",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v61/v61_draw_result_analyzer_manifest.json; reports/v61_draw_result_analyzer_summary.json",
@@ -1536,15 +1536,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Performance tracker",
+      "category": "?????????????? ???? ??????????????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 63",
       "inputs": "reports/v61_draw_result_analyzer_summary.json",
       "label": "История на моделите",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:34",
+      "latest_output_mtime": "2026-06-22T15:18:35",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v62/v62_model_performance_tracker_model.json; reports/v62_model_performance_summary.json",
@@ -1558,15 +1558,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Reliability",
+      "category": "????????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 65",
       "inputs": "reports/v62_model_performance_summary.json",
       "label": "Надеждност на моделите",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:35",
+      "latest_output_mtime": "2026-06-22T15:18:35",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v63/v63_model_reliability_dashboard_model.json; reports/v63_model_reliability_summary.json; reports/v63_model_reliability_scores.csv",
@@ -1580,15 +1580,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Adaptive weighting",
+      "category": "?????????????????? ??????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 66",
       "inputs": "reports/v63_model_reliability_scores.csv",
       "label": "Умно тегло на моделите",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:35",
+      "latest_output_mtime": "2026-06-22T15:18:35",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v65/v65_model_weighting_center_model.json; reports/v65_model_weighting_summary.json; reports/v65_model_weights.csv",
@@ -1602,15 +1602,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Weighted ensemble",
+      "category": "?????????????????? ????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 67; Step 68; Step 69",
       "inputs": "reports/v65_model_weights.csv",
       "label": "Претеглен ensemble анализ",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:35",
+      "latest_output_mtime": "2026-06-22T15:18:36",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v66/v66_weighted_smart_ensemble_model.json; reports/v66_weighted_smart_ensemble_summary.json; reports/v66_weighted_smart_ensemble_scores.csv",
@@ -1624,15 +1624,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Weighted ticket builder",
+      "category": "?????????????????? ?? ??????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 68",
       "inputs": "reports/v66_weighted_smart_ensemble_scores.csv",
       "label": "Умен генератор с тегла",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:18:36",
+      "latest_output_mtime": "2026-06-22T15:20:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v67/v67_weighted_ticket_builder_model.json; reports/v67_weighted_ticket_builder_summary.json; reports/v67_weighted_ticket_builder_tickets.csv",
@@ -1646,15 +1646,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Portfolio optimizer",
+      "category": "?????????????????????? ???? ????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 69",
       "inputs": "reports/v67_weighted_ticket_builder_tickets.csv; reports/v66_weighted_smart_ensemble_scores.csv",
       "label": "Умен оптимизатор на портфейл",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:20:14",
+      "latest_output_mtime": "2026-06-22T15:20:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v68/v68_weighted_portfolio_optimizer_model.json; reports/v68_weighted_portfolio_summary.json; reports/v68_weighted_portfolio_tickets.csv",
@@ -1668,15 +1668,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Improvement suggestions",
+      "category": "?????????????????????? ???? ????????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 70",
       "inputs": "reports/v68_weighted_portfolio_summary.json; reports/v66_weighted_smart_ensemble_scores.csv",
       "label": "Подобряване на портфолио",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:20:14",
+      "latest_output_mtime": "2026-06-22T15:20:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v69/v69_portfolio_improvement_model.json; reports/v69_portfolio_improvement_summary.json; reports/v69_candidate_portfolio_tickets.csv",
@@ -1690,15 +1690,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Applied portfolio",
+      "category": "???????????????? ????????????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 71",
       "inputs": "reports/v69_candidate_portfolio_tickets.csv",
       "label": "Приложен подобрен портфейл",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:20:14",
+      "latest_output_mtime": "2026-06-22T15:20:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v70/v70_applied_candidate_portfolio_model.json; reports/v70_applied_candidate_portfolio_summary.json; reports/v70_applied_candidate_portfolio_tickets.csv",
@@ -1712,15 +1712,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Ticket pack export",
+      "category": "?????????????? ???? ?????????? ???? ????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 73",
       "inputs": "reports/v70_applied_candidate_portfolio_tickets.csv",
       "label": "Пакет за игра",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:20:14",
+      "latest_output_mtime": "2026-06-22T15:20:15",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v71/v71_ticket_pack_export_model.json; reports/v71_ticket_pack_summary.json; reports/v71_ticket_pack.csv",
@@ -1734,15 +1734,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Performance after draw",
+      "category": "?????????????????????? ???????? ??????????",
       "datasets": "data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 75",
       "inputs": "reports/v71_ticket_pack.csv",
       "label": "Представяне на пакета",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T15:20:15",
+      "latest_output_mtime": "2026-06-22T15:20:15",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v73/v73_ticket_pack_performance_tracker_model.json; reports/v73_ticket_pack_performance_summary.json; reports/v73_ticket_pack_performance_history.csv",
@@ -1756,15 +1756,15 @@
       "sync_status": "Синхронизиран"
     },
     {
-      "category": "Neural meta learner",
+      "category": "???????????????? ????????-????????????????",
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
       "feeds": "Step 74",
       "inputs": "data/v41_canonical_draw_events.csv",
       "label": "Невронен meta learner",
-      "latest_input_mtime": "2026-06-22T12:58:06",
-      "latest_output_mtime": "2026-06-22T12:58:06",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T15:59:30",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v75/v75_neural_meta_learner_model.json; reports/v75_neural_meta_learner_summary.json; reports/v75_neural_meta_number_scores.csv; reports/v75_neural_candidate_tickets.csv; reports/v75_neural_candidate_tickets.json",
