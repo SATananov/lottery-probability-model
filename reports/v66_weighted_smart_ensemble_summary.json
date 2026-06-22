@@ -18,7 +18,7 @@
   "top_weighted_score_percent": 100.0,
   "top_number_status": "водещ претеглен сигнал",
   "reference_tickets_count": 4,
-  "generated_at": "2026-06-22T07:48:47+00:00",
+  "generated_at": "2026-06-22T07:57:02+00:00",
   "generated_reports": [
     "reports/v66_weighted_smart_ensemble_summary.json",
     "reports/v66_weighted_smart_ensemble_summary.md",
