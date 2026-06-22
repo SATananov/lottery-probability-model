@@ -264,11 +264,11 @@ def render_v74_model_dependency_sync_center_section():
         st.success("Няма локални промени за качване към GitHub.")
 
     commit_message = st.text_input(
-        "Commit съобщение",
+        "Съобщение за GitHub запис",
         value="Sync model dependency center outputs",
         key="v74_2_git_commit_message",
     )
-    if st.button("Commit & push models/reports/data към GitHub", key="v74_2_git_commit_push"):
+    if st.button("Запиши и качи models/reports/data в GitHub", key="v74_2_git_commit_push"):
         with st.spinner("Комитвам и качвам обновените artifacts към GitHub..."):
             git_result = commit_and_push_model_outputs(commit_message=commit_message)
         _show_git_result(git_result)
