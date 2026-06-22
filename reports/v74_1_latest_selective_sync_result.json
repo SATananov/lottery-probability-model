@@ -2,11 +2,11 @@
   "step": "74.1",
   "name": "Избирателно синхронизиране на модели",
   "status": "OK",
-  "planned_actions": 3,
-  "executed_actions": 3,
-  "successful_actions": 3,
+  "planned_actions": 5,
+  "executed_actions": 5,
+  "successful_actions": 5,
   "failed_actions": 0,
-  "generated_at": "2026-06-22T16:04:20+00:00",
+  "generated_at": "2026-06-22T16:31:52+00:00",
   "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
   "plan": [
     {
@@ -64,11 +64,68 @@
         "reports/v80_sync_plan_audit.csv"
       ],
       "feeds": [
-        "Step 74"
+        "Step 81"
       ],
       "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
       "ensemble_source": false,
       "order": 2
+    },
+    {
+      "step": "81",
+      "label": "Финален UX контрол",
+      "category": "Финален UX контрол",
+      "script": "scripts/v81_build_final_ux_navigation_center.py",
+      "datasets": [],
+      "inputs": [
+        "streamlit_app.py",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_sync_plan_audit.csv"
+      ],
+      "outputs": [
+        "models/v81/v81_final_ux_navigation_model.json",
+        "reports/v81_final_ux_navigation_summary.json",
+        "reports/v81_final_ux_navigation_summary.md",
+        "reports/v81_navigation_groups.csv",
+        "reports/v81_navigation_page_audit.csv",
+        "reports/v81_streamlit_label_audit.csv"
+      ],
+      "feeds": [
+        "Step 82"
+      ],
+      "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
+      "ensemble_source": false,
+      "order": 3
+    },
+    {
+      "step": "82",
+      "label": "Финален release пакет",
+      "category": "Финален release пакет",
+      "script": "scripts/v82_build_final_release_package_center.py",
+      "datasets": [
+        "data/historical_draws.csv",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "streamlit_app.py",
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v81_final_ux_navigation_summary.json"
+      ],
+      "outputs": [
+        "models/v82/v82_final_release_package_model.json",
+        "reports/v82_final_release_summary.json",
+        "reports/v82_final_release_summary.md",
+        "reports/v82_release_file_manifest.csv",
+        "reports/v82_release_readiness_checklist.csv",
+        "reports/v82_clean_zip_exclusion_plan.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
+      "ensemble_source": false,
+      "order": 4
     },
     {
       "step": "74",
@@ -95,7 +152,7 @@
       "feeds": [],
       "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
       "ensemble_source": false,
-      "order": 3
+      "order": 5
     }
   ],
   "results": [
@@ -131,8 +188,8 @@
       "order": 1,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T16:04:19+00:00",
-      "finished_at": "2026-06-22T16:04:19+00:00",
+      "started_at": "2026-06-22T16:31:51+00:00",
+      "finished_at": "2026-06-22T16:31:51+00:00",
       "stdout_tail": "STEP79_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nCANDIDATES 8\nPLAY_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5\n",
       "stderr_tail": ""
     },
@@ -160,16 +217,85 @@
         "reports/v80_sync_plan_audit.csv"
       ],
       "feeds": [
-        "Step 74"
+        "Step 81"
       ],
       "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
       "ensemble_source": false,
       "order": 2,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T16:04:19+00:00",
-      "finished_at": "2026-06-22T16:04:19+00:00",
-      "stdout_tail": "STEP80_BUILD_OK\nSTATUS OK\nDATASETS_CHECKED 3\nARTIFACTS_CHECKED 27\nQUALITY_CHECKS 21\nSYNC_PLANS_CHECKED 3\nISSUES_FOUND 0\n",
+      "started_at": "2026-06-22T16:31:51+00:00",
+      "finished_at": "2026-06-22T16:31:51+00:00",
+      "stdout_tail": "STEP80_BUILD_OK\nSTATUS OK\nDATASETS_CHECKED 3\nARTIFACTS_CHECKED 27\nQUALITY_CHECKS 29\nSYNC_PLANS_CHECKED 3\nISSUES_FOUND 0\n",
+      "stderr_tail": ""
+    },
+    {
+      "step": "81",
+      "label": "Финален UX контрол",
+      "category": "Финален UX контрол",
+      "script": "scripts/v81_build_final_ux_navigation_center.py",
+      "datasets": [],
+      "inputs": [
+        "streamlit_app.py",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_sync_plan_audit.csv"
+      ],
+      "outputs": [
+        "models/v81/v81_final_ux_navigation_model.json",
+        "reports/v81_final_ux_navigation_summary.json",
+        "reports/v81_final_ux_navigation_summary.md",
+        "reports/v81_navigation_groups.csv",
+        "reports/v81_navigation_page_audit.csv",
+        "reports/v81_streamlit_label_audit.csv"
+      ],
+      "feeds": [
+        "Step 82"
+      ],
+      "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
+      "ensemble_source": false,
+      "order": 3,
+      "returncode": 0,
+      "status": "OK",
+      "started_at": "2026-06-22T16:31:51+00:00",
+      "finished_at": "2026-06-22T16:31:52+00:00",
+      "stdout_tail": "STEP81_BUILD_OK\nSTATUS OK\nGROUPS_CHECKED 7\nNAVIGATION_PAGES 50\nDUPLICATE_PAGES 0\nSYSTEM_ORDER_OK True\nISSUES_FOUND 0\n",
+      "stderr_tail": ""
+    },
+    {
+      "step": "82",
+      "label": "Финален release пакет",
+      "category": "Финален release пакет",
+      "script": "scripts/v82_build_final_release_package_center.py",
+      "datasets": [
+        "data/historical_draws.csv",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "streamlit_app.py",
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v81_final_ux_navigation_summary.json"
+      ],
+      "outputs": [
+        "models/v82/v82_final_release_package_model.json",
+        "reports/v82_final_release_summary.json",
+        "reports/v82_final_release_summary.md",
+        "reports/v82_release_file_manifest.csv",
+        "reports/v82_release_readiness_checklist.csv",
+        "reports/v82_clean_zip_exclusion_plan.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
+      "ensemble_source": false,
+      "order": 4,
+      "returncode": 0,
+      "status": "OK",
+      "started_at": "2026-06-22T16:31:52+00:00",
+      "finished_at": "2026-06-22T16:31:52+00:00",
+      "stdout_tail": "STEP82_BUILD_OK\nSTATUS OK\nREQUIRED_FILES_CHECKED 21\nDATASETS_CHECKED 3\nMANIFEST_FILES 756\nUNWANTED_RELEASE_FILES 22\nISSUES_FOUND 0\n",
       "stderr_tail": ""
     },
     {
@@ -197,12 +323,12 @@
       "feeds": [],
       "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
       "ensemble_source": false,
-      "order": 3,
+      "order": 5,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T16:04:19+00:00",
-      "finished_at": "2026-06-22T16:04:20+00:00",
-      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 29\nSYNCED_MODELS 29\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
+      "started_at": "2026-06-22T16:31:52+00:00",
+      "finished_at": "2026-06-22T16:31:52+00:00",
+      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 31\nSYNCED_MODELS 31\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
       "stderr_tail": ""
     }
   ]

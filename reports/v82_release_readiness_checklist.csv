@@ -2,6 +2,7 @@
 Required file: streamlit_app.py,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
 Required file: README.md,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
 Required file: requirements.txt,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
+Required file: .gitignore,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
 Required file: data/historical_draws.csv,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
 Required file: data/v40_normalized_draw_events.csv,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.
 Required file: data/v41_canonical_draw_events.csv,OK,Наличен,Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.

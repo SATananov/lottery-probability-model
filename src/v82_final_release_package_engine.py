@@ -49,6 +49,7 @@ REQUIRED_RELEASE_FILES = [
     "streamlit_app.py",
     "README.md",
     "requirements.txt",
+    ".gitignore",
     "data/historical_draws.csv",
     "data/v40_normalized_draw_events.csv",
     "data/v41_canonical_draw_events.csv",
@@ -202,56 +203,143 @@ def _dataset_stats(path: Path) -> dict[str, Any]:
     return result
 
 
+RELEASE_MANIFEST_INCLUDE_ROOTS = [
+    ".gitignore",
+    "streamlit_app.py",
+    "README.md",
+    "requirements.txt",
+    "configs",
+    "data",
+    "src",
+    "scripts",
+    "models",
+    "reports",
+]
+
+RELEASE_EXCLUDED_DIR_NAMES = {
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".vscode/.ropeproject",
+}
+
+RELEASE_EXCLUDED_FILE_NAMES = {
+    ".DS_Store",
+    "Thumbs.db",
+}
+
+RELEASE_EXCLUDED_SUFFIXES = {
+    ".zip",
+    ".pyc",
+    ".pyo",
+    ".tmp",
+    ".temp",
+    ".bak",
+    ".backup",
+    ".patch",
+}
+
+
+def _is_release_excluded(rel_path: str) -> bool:
+    normalized = rel_path.replace("\\", "/").strip("/")
+    lower = normalized.lower()
+    parts = normalized.split("/")
+    name = parts[-1] if parts else lower
+
+    if any(part in RELEASE_EXCLUDED_DIR_NAMES for part in parts):
+        return True
+
+    if normalized in RELEASE_EXCLUDED_DIR_NAMES:
+        return True
+
+    if name in RELEASE_EXCLUDED_FILE_NAMES:
+        return True
+
+    if any(lower.endswith(suffix) for suffix in RELEASE_EXCLUDED_SUFFIXES):
+        return True
+
+    helper_prefixes = ("apply_", "fix_", "patch_")
+    helper_suffixes = (".py", ".ps1")
+    if name.startswith(helper_prefixes) and lower.endswith(helper_suffixes):
+        return True
+
+    return False
+
+
 def _file_manifest_rows() -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    include_roots = ["streamlit_app.py", "README.md", "requirements.txt", "data", "src", "scripts", "models", "reports"]
-    for item in include_roots:
+
+    for item in RELEASE_MANIFEST_INCLUDE_ROOTS:
         path = ROOT / item
+
         if path.is_file():
+            rel = path.relative_to(ROOT).as_posix()
+            if _is_release_excluded(rel):
+                continue
             rows.append({
-                "path": item,
+                "path": rel,
                 "kind": "file",
                 "size_bytes": path.stat().st_size,
                 "release_relevant": True,
-                "note": "Top-level release file",
+                "note": "Included in release manifest",
             })
+
         elif path.is_dir():
             for child in sorted(path.rglob("*")):
-                if child.is_file():
-                    rel = child.relative_to(ROOT).as_posix()
-                    rows.append({
-                        "path": rel,
-                        "kind": "file",
-                        "size_bytes": child.stat().st_size,
-                        "release_relevant": True,
-                        "note": "Included in release manifest",
-                    })
-    return rows
+                if not child.is_file():
+                    continue
 
+                rel = child.relative_to(ROOT).as_posix()
+                if _is_release_excluded(rel):
+                    continue
+
+                rows.append({
+                    "path": rel,
+                    "kind": "file",
+                    "size_bytes": child.stat().st_size,
+                    "release_relevant": True,
+                    "note": "Included in release manifest",
+                })
+
+    return rows
 
 def _quality_scan() -> tuple[list[dict[str, Any]], list[str]]:
     rows: list[dict[str, Any]] = []
     issues: list[str] = []
-    all_paths = [p for p in ROOT.rglob("*") if p.is_file()]
-    for path in all_paths:
-        rel = path.relative_to(ROOT).as_posix()
-        matched = []
-        for pattern in UNWANTED_PATTERNS:
-            if pattern in rel:
-                matched.append(pattern)
-        if rel.endswith(".zip"):
-            matched.append("nested_zip")
-        if rel.startswith("apply_step") and rel.endswith(".py"):
-            matched.append("helper_patch")
-        if matched:
+
+    if (ROOT / "gitignore").exists():
+        rows.append({
+            "path": "gitignore",
+            "matched_patterns": "legacy_gitignore_name",
+            "status": "Преименувай на .gitignore",
+            "safe_note": SAFE_NOTE,
+        })
+        issues.append("Legacy root gitignore exists. Use .gitignore instead.")
+
+    if not (ROOT / ".gitignore").exists():
+        rows.append({
+            "path": ".gitignore",
+            "matched_patterns": "missing_gitignore",
+            "status": "Липсва",
+            "safe_note": SAFE_NOTE,
+        })
+        issues.append("Missing .gitignore file.")
+
+    for row in _file_manifest_rows():
+        rel = str(row.get("path", ""))
+        if _is_release_excluded(rel):
             rows.append({
                 "path": rel,
-                "matched_patterns": " | ".join(sorted(set(matched))),
-                "status": "Изключи от ZIP",
+                "matched_patterns": "excluded_release_artifact",
+                "status": "Изключи от release manifest",
                 "safe_note": SAFE_NOTE,
             })
-    return rows, issues
+            issues.append(f"Excluded artifact leaked into release manifest: {rel}")
 
+    return rows, issues
 
 def build_final_release_package_center() -> dict[str, Any]:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)

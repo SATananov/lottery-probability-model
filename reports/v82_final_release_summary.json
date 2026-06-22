@@ -1,5 +1,5 @@
 {
-  "checklist_items": 30,
+  "checklist_items": 31,
   "dataset_results": {
     "data/historical_draws.csv": {
       "exists": true,
@@ -27,7 +27,7 @@
     }
   },
   "datasets_checked": 3,
-  "generated_at": "2026-06-22T16:31:52+00:00",
+  "generated_at": "2026-06-22T16:42:41+00:00",
   "generated_reports": [
     "reports/v82_final_release_summary.json",
     "reports/v82_final_release_summary.md",
@@ -38,10 +38,10 @@
   ],
   "issues_found": 0,
   "issues_preview": [],
-  "manifest_files_count": 756,
-  "manifest_size_bytes": 19333356,
+  "manifest_files_count": 737,
+  "manifest_size_bytes": 18977100,
   "name": "Финален release пакет",
-  "required_files_checked": 21,
+  "required_files_checked": 22,
   "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
   "status": "OK",
   "step": "82",
@@ -90,5 +90,5 @@
       "step": "75"
     }
   ],
-  "unwanted_release_files": 22
+  "unwanted_release_files": 0
 }

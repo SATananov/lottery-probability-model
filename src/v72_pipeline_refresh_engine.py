@@ -214,6 +214,12 @@ WEIGHTED_REFRESH_STEPS = [
         "outputs": ["models/v81", "reports/v81_final_ux_navigation_summary.json"],
     },
     {
+        "step": "82",
+        "name": "Финален release пакет",
+        "script": "scripts/v82_build_final_release_package_center.py",
+        "outputs": ["models/v82", "reports/v82_final_release_summary.json"],
+    },
+    {
         "step": "74",
         "name": "Контрол на синхрона между моделите",
         "script": "scripts/v74_build_model_dependency_sync_center.py",

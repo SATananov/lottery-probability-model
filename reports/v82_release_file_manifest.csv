@@ -1,7 +1,9 @@
 ﻿path,kind,size_bytes,release_relevant,note
-streamlit_app.py,file,216467,True,Top-level release file
-README.md,file,5418,True,Top-level release file
-requirements.txt,file,56,True,Top-level release file
+.gitignore,file,324,True,Included in release manifest
+streamlit_app.py,file,216467,True,Included in release manifest
+README.md,file,5418,True,Included in release manifest
+requirements.txt,file,56,True,Included in release manifest
+configs/ml_extensions_config.json,file,426,True,Included in release manifest
 data/DATA_SOURCE_NOTES.md,file,1185,True,Included in release manifest
 data/historical_draws.csv,file,573282,True,Included in release manifest
 data/raw/bst_649_official/649_1958.txt,file,1100,True,Included in release manifest
@@ -326,24 +328,6 @@ data/v40_sample_ticket_tables.csv,file,184,True,Included in release manifest
 data/v41_bst_official_normalized_draw_events_candidate.csv,file,949462,True,Included in release manifest
 data/v41_canonical_draw_events.csv,file,1115653,True,Included in release manifest
 src/__init__.py,file,0,True,Included in release manifest
-src/__pycache__/__init__.cpython-314.pyc,file,163,True,Included in release manifest
-src/__pycache__/add_draws_section.cpython-314.pyc,file,32581,True,Included in release manifest
-src/__pycache__/v74_model_dependency_sync_center_engine.cpython-314.pyc,file,59575,True,Included in release manifest
-src/__pycache__/v74_selective_sync_actions.cpython-314.pyc,file,38864,True,Included in release manifest
-src/__pycache__/v76_explainability_validation_engine.cpython-314.pyc,file,30295,True,Included in release manifest
-src/__pycache__/v76_explainability_validation_section.cpython-314.pyc,file,8975,True,Included in release manifest
-src/__pycache__/v77_decision_recommendation_engine.cpython-314.pyc,file,24991,True,Included in release manifest
-src/__pycache__/v77_decision_recommendation_section.cpython-314.pyc,file,8272,True,Included in release manifest
-src/__pycache__/v78_final_play_plan_engine.cpython-314.pyc,file,23434,True,Included in release manifest
-src/__pycache__/v78_final_play_plan_section.cpython-314.pyc,file,8308,True,Included in release manifest
-src/__pycache__/v79_ticket_pack_export_engine.cpython-314.pyc,file,21683,True,Included in release manifest
-src/__pycache__/v79_ticket_pack_export_section.cpython-314.pyc,file,7228,True,Included in release manifest
-src/__pycache__/v80_final_system_audit_engine.cpython-314.pyc,file,27950,True,Included in release manifest
-src/__pycache__/v80_final_system_audit_section.cpython-314.pyc,file,7903,True,Included in release manifest
-src/__pycache__/v81_final_ux_navigation_engine.cpython-314.pyc,file,16953,True,Included in release manifest
-src/__pycache__/v81_final_ux_navigation_section.cpython-314.pyc,file,6847,True,Included in release manifest
-src/__pycache__/v82_final_release_package_engine.cpython-314.pyc,file,24498,True,Included in release manifest
-src/__pycache__/v82_final_release_package_section.cpython-314.pyc,file,7661,True,Included in release manifest
 src/add_draws_section.py,file,23167,True,Included in release manifest
 src/advanced_methods.py,file,37061,True,Included in release manifest
 src/backtesting.py,file,6958,True,Included in release manifest
@@ -433,11 +417,8 @@ src/v80_final_system_audit_engine.py,file,20030,True,Included in release manifes
 src/v80_final_system_audit_section.py,file,4455,True,Included in release manifest
 src/v81_final_ux_navigation_engine.py,file,11556,True,Included in release manifest
 src/v81_final_ux_navigation_section.py,file,3733,True,Included in release manifest
-src/v82_final_release_package_engine.py,file,17423,True,Included in release manifest
+src/v82_final_release_package_engine.py,file,18814,True,Included in release manifest
 src/v82_final_release_package_section.py,file,4131,True,Included in release manifest
-scripts/__pycache__/v80_build_final_system_audit_center.cpython-314.pyc,file,1389,True,Included in release manifest
-scripts/__pycache__/v81_build_final_ux_navigation_center.cpython-314.pyc,file,1443,True,Included in release manifest
-scripts/__pycache__/v82_build_final_release_package_center.cpython-314.pyc,file,1468,True,Included in release manifest
 scripts/audit_bst_dataset.py,file,2439,True,Included in release manifest
 scripts/download_bst_649_history.py,file,1165,True,Included in release manifest
 scripts/v40_create_normalized_draw_events.py,file,8756,True,Included in release manifest
@@ -538,7 +519,7 @@ models/v78/v78_final_play_plan_model.json,file,12554,True,Included in release ma
 models/v79/v79_ticket_pack_export_model.json,file,12828,True,Included in release manifest
 models/v80/v80_final_system_audit_model.json,file,31195,True,Included in release manifest
 models/v81/v81_final_ux_navigation_model.json,file,42041,True,Included in release manifest
-models/v82/v82_final_release_package_model.json,file,19445,True,Included in release manifest
+models/v82/v82_final_release_package_model.json,file,19446,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260620_205905.json,file,37760,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260620_210331.json,file,37760,True,Included in release manifest
 models/versions/lottery_ml_extensions_model_v1_20260621_062313.json,file,37760,True,Included in release manifest
@@ -706,7 +687,7 @@ reports/v73_ticket_pack_performance_history.csv,file,402,True,Included in releas
 reports/v73_ticket_pack_performance_summary.json,file,1128,True,Included in release manifest
 reports/v73_ticket_pack_performance_summary.md,file,1568,True,Included in release manifest
 reports/v74_1_latest_selective_sync_plan.csv,file,1430,True,Included in release manifest
-reports/v74_1_latest_selective_sync_result.json,file,13539,True,Included in release manifest
+reports/v74_1_latest_selective_sync_result.json,file,13538,True,Included in release manifest
 reports/v74_model_dependency_map.csv,file,11409,True,Included in release manifest
 reports/v74_model_dependency_summary.json,file,2662,True,Included in release manifest
 reports/v74_model_dependency_summary.md,file,5721,True,Included in release manifest
@@ -751,7 +732,7 @@ reports/v81_navigation_groups.csv,file,2549,True,Included in release manifest
 reports/v81_navigation_page_audit.csv,file,21591,True,Included in release manifest
 reports/v81_streamlit_label_audit.csv,file,2793,True,Included in release manifest
 reports/v82_clean_zip_exclusion_plan.csv,file,3011,True,Included in release manifest
-reports/v82_final_release_summary.json,file,2405,True,Included in release manifest
-reports/v82_final_release_summary.md,file,872,True,Included in release manifest
-reports/v82_release_file_manifest.csv,file,62546,True,Included in release manifest
+reports/v82_final_release_summary.json,file,2406,True,Included in release manifest
+reports/v82_final_release_summary.md,file,873,True,Included in release manifest
+reports/v82_release_file_manifest.csv,file,64628,True,Included in release manifest
 reports/v82_release_readiness_checklist.csv,file,9433,True,Included in release manifest

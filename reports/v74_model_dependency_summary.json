@@ -45,7 +45,7 @@
     }
   ],
   "ensemble_sources": 8,
-  "generated_at": "2026-06-22T16:04:20+00:00",
+  "generated_at": "2026-06-22T16:31:52+00:00",
   "generated_reports": [
     "reports/v74_model_dependency_summary.json",
     "reports/v74_model_dependency_summary.md",
@@ -55,7 +55,7 @@
     "models/v74/v74_model_dependency_sync_center_model.json"
   ],
   "missing_models": 0,
-  "models_checked": 29,
+  "models_checked": 31,
   "name": "Контрол на синхрона между моделите",
   "pipeline_chain": [
     "Данни от тиражи",
@@ -72,8 +72,8 @@
   ],
   "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
   "stale_models": 0,
-  "state_hash": "05958bc70eee327ab71bcb06268611834efe33f92e28d2c4e109ffe23adb90e4",
+  "state_hash": "e312ce15b9ca5b6738ee8876ec1816ca2652e26ddfd7eb1ad465c4cbdb2b15a0",
   "status": "Синхронизиран",
   "step": "74",
-  "synced_models": 29
+  "synced_models": 31
 }
