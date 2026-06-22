@@ -164,7 +164,7 @@ def render_v72_pipeline_refresh_section():
                 st.info(result.get("message"))
             else:
                 st.success(result.get("message"))
-                st.write("Commit:", result.get("commit", ""))
+                st.write("Комит:", result.get("commit", ""))
         else:
             st.error(result.get("message", "GitHub синхронизацията не успя."))
 

@@ -1,5 +1,5 @@
 {
-  "all_synced": true,
+  "all_synced": false,
   "dataset_sync": {
     "datasets_checked": 3,
     "datasets_existing": 3,
@@ -45,7 +45,7 @@
     }
   ],
   "ensemble_sources": 8,
-  "generated_at": "2026-06-22T17:09:45+00:00",
+  "generated_at": "2026-06-22T17:14:56+00:00",
   "generated_reports": [
     "reports/v74_model_dependency_summary.json",
     "reports/v74_model_dependency_summary.md",
@@ -71,9 +71,9 @@
     "Model Dependency & Sync Center"
   ],
   "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
-  "stale_models": 0,
-  "state_hash": "97f517dd51980f4a450284e36d778b87204768a5a97a7576abe36c7141c27644",
-  "status": "Синхронизиран",
+  "stale_models": 1,
+  "state_hash": "cc8a3cd5eb18a52468262261ef6cb5e9a846bdac9f38df8119b15b7a74ae0e31",
+  "status": "Има нужда от преглед",
   "step": "74",
-  "synced_models": 32
+  "synced_models": 31
 }

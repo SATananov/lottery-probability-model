@@ -1,11 +1,11 @@
 # Step 82 — Финален release пакет
 
-Статус: **OK**
+Статус: **Има нужда от преглед**
 Проверени задължителни файлове: **22**
 Проверени datasets: **3**
 Файлове в release manifest: **746**
 Нежелани release файлове: **0**
-Намерени проблеми: **0**
+Намерени проблеми: **1**
 
 ## Очаквана финална sync логика
 
@@ -19,3 +19,7 @@
 Release ZIP трябва да съдържа активното приложение, datasets, models, reports, scripts и src, но без Git history, cache, backup, temp и helper patch файлове.
 
 **Важно:** Step 82 е release контролен слой. Той не е прогноза и не е гаранция за печалба.
+
+## Елементи за преглед
+
+- Upstream audit not OK: reports/v80_final_system_audit_summary.json

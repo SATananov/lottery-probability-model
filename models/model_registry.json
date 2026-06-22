@@ -1719,7 +1719,7 @@
     }
   ],
   "summary": {
-    "all_synced": true,
+    "all_synced": false,
     "dataset_sync": {
       "datasets_checked": 3,
       "datasets_existing": 3,
@@ -1765,7 +1765,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T17:09:45+00:00",
+    "generated_at": "2026-06-22T17:14:56+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1791,11 +1791,11 @@
       "Model Dependency & Sync Center"
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
-    "stale_models": 0,
-    "state_hash": "97f517dd51980f4a450284e36d778b87204768a5a97a7576abe36c7141c27644",
-    "status": "Синхронизиран",
+    "stale_models": 1,
+    "state_hash": "cc8a3cd5eb18a52468262261ef6cb5e9a846bdac9f38df8119b15b7a74ae0e31",
+    "status": "Има нужда от преглед",
     "step": "74",
-    "synced_models": 32
+    "synced_models": 31
   },
   "sync_status": [
     {
@@ -2423,7 +2423,7 @@
       "inputs": "reports/v79_ticket_pack_export_summary.json; reports/v79_export_ticket_pack.csv; reports/v79_ticket_pack_export.json",
       "label": "Финален системен одит",
       "latest_input_mtime": "2026-06-22T19:31:51",
-      "latest_output_mtime": "2026-06-22T19:31:51",
+      "latest_output_mtime": "2026-06-22T20:14:55",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v80/v80_final_system_audit_model.json; reports/v80_final_system_audit_summary.json; reports/v80_final_system_audit_summary.md; reports/v80_dataset_audit.csv; reports/v80_artifact_audit.csv; reports/v80_file_quality_audit.csv; reports/v80_sync_plan_audit.csv",
@@ -2444,7 +2444,7 @@
       "feeds": "Step 82",
       "inputs": "streamlit_app.py; reports/v80_final_system_audit_summary.json; reports/v80_sync_plan_audit.csv",
       "label": "Финален UX контрол",
-      "latest_input_mtime": "2026-06-22T20:01:55",
+      "latest_input_mtime": "2026-06-22T20:14:55",
       "latest_output_mtime": "2026-06-22T20:01:55",
       "missing_inputs": "",
       "missing_outputs": "",
@@ -2454,9 +2454,9 @@
       "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v81_build_final_ux_navigation_center.py",
       "script_exists": true,
-      "status_rank": 2,
+      "status_rank": 1,
       "step": "81",
-      "sync_status": "Синхронизиран"
+      "sync_status": "Нужно обновяване"
     },
     {
       "category": "Финален release пакет",
@@ -2466,8 +2466,8 @@
       "feeds": "Step 83",
       "inputs": "streamlit_app.py; reports/v79_ticket_pack_export_summary.json; reports/v80_final_system_audit_summary.json; reports/v81_final_ux_navigation_summary.json",
       "label": "Финален release пакет",
-      "latest_input_mtime": "2026-06-22T20:01:55",
-      "latest_output_mtime": "2026-06-22T20:09:45",
+      "latest_input_mtime": "2026-06-22T20:14:55",
+      "latest_output_mtime": "2026-06-22T20:14:56",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v82/v82_final_release_package_model.json; reports/v82_final_release_summary.json; reports/v82_final_release_summary.md; reports/v82_release_file_manifest.csv; reports/v82_release_readiness_checklist.csv; reports/v82_clean_zip_exclusion_plan.csv",
@@ -2488,8 +2488,8 @@
       "feeds": "Step 74",
       "inputs": "streamlit_app.py; reports/v82_final_release_summary.json; reports/v81_final_ux_navigation_summary.json; reports/v79_ticket_pack_export_summary.json",
       "label": "Ръководство за апа",
-      "latest_input_mtime": "2026-06-22T20:09:45",
-      "latest_output_mtime": "2026-06-22T20:09:45",
+      "latest_input_mtime": "2026-06-22T20:14:56",
+      "latest_output_mtime": "2026-06-22T20:14:56",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v83/v83_final_user_manual_model.json; reports/v83_final_user_manual_summary.json; reports/v83_final_user_manual_summary.md; reports/v83_app_guide_sections.csv; reports/v83_recommended_workflow.csv; reports/v83_safe_usage_checklist.csv",

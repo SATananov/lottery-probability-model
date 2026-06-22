@@ -486,10 +486,10 @@
     },
     {
       "check_type": "cyrillic_mojibake_scan",
-      "message": "OK",
+      "message": "apply_step83_4_bulgarian_ui_audit_polish.py: ????",
       "path": "active_text_files",
       "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
-      "status": "OK"
+      "status": "Провери"
     },
     {
       "check_type": "streamlit_label",
@@ -546,7 +546,7 @@
     "dataset_2026_rows_expected": 49,
     "dataset_rows_expected": 10058,
     "datasets_checked": 3,
-    "generated_at": "2026-06-22T16:31:51+00:00",
+    "generated_at": "2026-06-22T17:14:55+00:00",
     "generated_reports": [
       "reports/v80_final_system_audit_summary.json",
       "reports/v80_final_system_audit_summary.md",
@@ -556,7 +556,7 @@
       "reports/v80_sync_plan_audit.csv",
       "models/v80/v80_final_system_audit_model.json"
     ],
-    "issues_found": 0,
+    "issues_found": 4,
     "latest_draw_expected": {
       "date": "2026-06-21",
       "numbers": [
@@ -571,34 +571,34 @@
     "name": "Финален системен одит",
     "quality_checks": 29,
     "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
-    "status": "OK",
+    "status": "Има нужда от преглед",
     "step": "80",
     "sync_plans_checked": 3
   },
   "sync_plans": [
     {
-      "actual_steps": "79 -> 80 -> 81 -> 82 -> 74",
+      "actual_steps": "79 -> 80 -> 81 -> 82 -> 83 -> 74",
       "expected_steps": "79 -> 80 -> 81 -> 82 -> 74",
-      "message": "OK",
+      "message": "Планът не съвпада с очакваната верига",
       "plan_name": "79 -> 80 -> 81 -> 82 -> 74",
       "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
-      "status": "OK"
+      "status": "Провери"
     },
     {
-      "actual_steps": "78 -> 79 -> 80 -> 81 -> 82 -> 74",
+      "actual_steps": "78 -> 79 -> 80 -> 81 -> 82 -> 83 -> 74",
       "expected_steps": "78 -> 79 -> 80 -> 81 -> 82 -> 74",
-      "message": "OK",
+      "message": "Планът не съвпада с очакваната верига",
       "plan_name": "78 -> 79 -> 80 -> 81 -> 82 -> 74",
       "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
-      "status": "OK"
+      "status": "Провери"
     },
     {
-      "actual_steps": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 74",
+      "actual_steps": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 83 -> 74",
       "expected_steps": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 74",
-      "message": "OK",
+      "message": "Планът не съвпада с очакваната верига",
       "plan_name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 82 -> 74",
       "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
-      "status": "OK"
+      "status": "Провери"
     }
   ]
 }

@@ -396,7 +396,7 @@ src/v70_applied_candidate_portfolio_section.py,file,7871,True,Included in releas
 src/v71_ticket_pack_export_engine.py,file,18304,True,Included in release manifest
 src/v71_ticket_pack_export_section.py,file,6603,True,Included in release manifest
 src/v72_pipeline_refresh_engine.py,file,20710,True,Included in release manifest
-src/v72_pipeline_refresh_section.py,file,7626,True,Included in release manifest
+src/v72_pipeline_refresh_section.py,file,7630,True,Included in release manifest
 src/v73_ticket_pack_performance_tracker_engine.py,file,16165,True,Included in release manifest
 src/v73_ticket_pack_performance_tracker_section.py,file,7389,True,Included in release manifest
 src/v74_git_sync_actions.py,file,5480,True,Included in release manifest
@@ -414,7 +414,7 @@ src/v78_final_play_plan_section.py,file,5107,True,Included in release manifest
 src/v79_ticket_pack_export_engine.py,file,14258,True,Included in release manifest
 src/v79_ticket_pack_export_section.py,file,4250,True,Included in release manifest
 src/v80_final_system_audit_engine.py,file,20030,True,Included in release manifest
-src/v80_final_system_audit_section.py,file,4455,True,Included in release manifest
+src/v80_final_system_audit_section.py,file,9093,True,Included in release manifest
 src/v81_final_ux_navigation_engine.py,file,11556,True,Included in release manifest
 src/v81_final_ux_navigation_section.py,file,3733,True,Included in release manifest
 src/v82_final_release_package_engine.py,file,18814,True,Included in release manifest
@@ -520,7 +520,7 @@ models/v76/v76_explainability_validation_model.json,file,55262,True,Included in 
 models/v77/v77_decision_recommendation_model.json,file,11638,True,Included in release manifest
 models/v78/v78_final_play_plan_model.json,file,12554,True,Included in release manifest
 models/v79/v79_ticket_pack_export_model.json,file,12828,True,Included in release manifest
-models/v80/v80_final_system_audit_model.json,file,31195,True,Included in release manifest
+models/v80/v80_final_system_audit_model.json,file,31544,True,Included in release manifest
 models/v81/v81_final_ux_navigation_model.json,file,42690,True,Included in release manifest
 models/v82/v82_final_release_package_model.json,file,19825,True,Included in release manifest
 models/v83/v83_final_user_manual_model.json,file,15776,True,Included in release manifest
@@ -726,10 +726,10 @@ reports/v79_ticket_pack_export_summary.json,file,930,True,Included in release ma
 reports/v79_ticket_pack_export_summary.md,file,3273,True,Included in release manifest
 reports/v80_artifact_audit.csv,file,8856,True,Included in release manifest
 reports/v80_dataset_audit.csv,file,1123,True,Included in release manifest
-reports/v80_file_quality_audit.csv,file,9215,True,Included in release manifest
-reports/v80_final_system_audit_summary.json,file,1115,True,Included in release manifest
-reports/v80_final_system_audit_summary.md,file,1475,True,Included in release manifest
-reports/v80_sync_plan_audit.csv,file,1185,True,Included in release manifest
+reports/v80_file_quality_audit.csv,file,9274,True,Included in release manifest
+reports/v80_final_system_audit_summary.json,file,1150,True,Included in release manifest
+reports/v80_final_system_audit_summary.md,file,2007,True,Included in release manifest
+reports/v80_sync_plan_audit.csv,file,1440,True,Included in release manifest
 reports/v81_final_ux_navigation_summary.json,file,1018,True,Included in release manifest
 reports/v81_final_ux_navigation_summary.md,file,1099,True,Included in release manifest
 reports/v81_navigation_groups.csv,file,2549,True,Included in release manifest
@@ -738,7 +738,7 @@ reports/v81_streamlit_label_audit.csv,file,2793,True,Included in release manifes
 reports/v82_clean_zip_exclusion_plan.csv,file,3011,True,Included in release manifest
 reports/v82_final_release_summary.json,file,2405,True,Included in release manifest
 reports/v82_final_release_summary.md,file,872,True,Included in release manifest
-reports/v82_release_file_manifest.csv,file,63254,True,Included in release manifest
+reports/v82_release_file_manifest.csv,file,63256,True,Included in release manifest
 reports/v82_release_readiness_checklist.csv,file,9716,True,Included in release manifest
 reports/v83_app_guide_sections.csv,file,6377,True,Included in release manifest
 reports/v83_final_user_manual_summary.json,file,1127,True,Included in release manifest
