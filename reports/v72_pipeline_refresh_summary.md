@@ -2,7 +2,7 @@
 
 Режим: **audit**
 Включени основни стъпки: **False**
-Планирани стъпки: **11**
+Планирани стъпки: **12**
 Всички скриптове са налични: **True**
 Всички артефакти са налични: **True**
 
@@ -23,3 +23,4 @@
 | 70 | Приложен подобрен портфейл | `scripts/v70_build_applied_candidate_portfolio.py` | True | True | planned |
 | 71 | Пакет за игра | `scripts/v71_build_ticket_pack_export.py` | True | True | planned |
 | 73 | Представяне на пакета | `scripts/v73_build_ticket_pack_performance_tracker.py` | True | True | planned |
+| 74 | Контрол на синхрона между моделите | `scripts/v74_build_model_dependency_sync_center.py` | True | True | planned |

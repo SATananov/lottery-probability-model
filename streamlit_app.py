@@ -37,6 +37,7 @@ from src.v70_applied_candidate_portfolio_section import render_v70_applied_candi
 from src.v71_ticket_pack_export_section import render_v71_ticket_pack_export_section
 from src.v73_ticket_pack_performance_tracker_section import render_v73_ticket_pack_performance_tracker_section
 from src.v72_pipeline_refresh_section import render_v72_pipeline_refresh_section
+from src.v74_model_dependency_sync_center_section import render_v74_model_dependency_sync_center_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4187,6 +4188,7 @@ def main() -> None:
         "Пакет за игра": render_v71_ticket_pack_export_section,
         "Представяне на пакета": render_v73_ticket_pack_performance_tracker_section,
         "Обновяване на анализите": render_v72_pipeline_refresh_section,
+        "Контрол на синхрона": render_v74_model_dependency_sync_center_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -4241,6 +4243,7 @@ def main() -> None:
             'Пакет за игра',
             'Представяне на пакета',
             'Обновяване на анализите',
+            'Контрол на синхрона',
         ],
     }
     used_navigation_pages = set()

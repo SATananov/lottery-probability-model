@@ -61,7 +61,7 @@ def _show_table(rows):
 def render_v72_pipeline_refresh_section():
     st.title("Обновяване на анализите")
     st.caption(
-        "Център за обновяване на статистическите анализи: Step 61–63 и Step 65–73. "
+        "Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. "
         "При нужда може да включи и основните стъпки v41–v60."
     )
 
@@ -101,8 +101,8 @@ def render_v72_pipeline_refresh_section():
             st.rerun()
 
     with col_b:
-        if st.button("Обнови статистическия pipeline Step 61–73", key="v72_run_weighted", type="primary"): 
-            with st.spinner("Обновявам Step 61–63 и Step 65–73..."):
+        if st.button("Обнови статистическия pipeline Step 61–74", key="v72_run_weighted", type="primary"): 
+            with st.spinner("Обновявам Step 61–63 и Step 65–74..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=False)
             if result.get("run_ok"):
                 st.success("Статистическият pipeline се обнови успешно.")
@@ -113,12 +113,12 @@ def render_v72_pipeline_refresh_section():
 
     with st.expander("Пълен refresh след нов тираж"):
         st.warning(
-            "Тази опция пуска core scripts v41–v60 плюс weighted pipeline Step 61–73. "
+            "Тази опция пуска core scripts v41–v60 плюс weighted pipeline Step 61–74. "
             "Използвай я след добавяне на нов тираж, когато искаш пълно обновяване."
         )
 
-        if st.button("Пълно обновяване v41–v73", key="v72_run_full"): 
-            with st.spinner("Пускам пълно обновяване v41–v73..."):
+        if st.button("Пълно обновяване v41–v74", key="v72_run_full"): 
+            with st.spinner("Пускам пълно обновяване v41–v74..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=True)
             if result.get("run_ok"):
                 st.success("Пълният refresh мина успешно.")
@@ -181,10 +181,10 @@ def render_v72_pipeline_refresh_section():
         st.markdown(
             """
 - **Audit без обновяване** само проверява дали скриптовете и artifacts съществуват.
-- **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–73.
-- **Пълно обновяване v41–v73** пуска основните модели и после статистическия pipeline.
+- **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–74.
+- **Пълно обновяване v41–v74** пуска основните модели и после статистическия pipeline.
 - Add Draw auto-refresh вече е подравнен да обновява целия pipeline след запис.
-- Training Center вече показва Step 65–73 като част от refresh flow.
+- Training Center вече показва Step 65–74 като част от refresh flow.
 
 Това е технически контролен слой за обновяване, не предсказател на бъдещ тираж.
 """

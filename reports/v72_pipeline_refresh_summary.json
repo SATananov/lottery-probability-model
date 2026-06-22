@@ -3,8 +3,8 @@
   "name": "Интеграция за пълно обновяване на статистическия pipeline",
   "mode": "audit",
   "include_core": false,
-  "steps_planned": 11,
-  "steps_reported": 11,
+  "steps_planned": 12,
+  "steps_reported": 12,
   "all_scripts_present": true,
   "all_outputs_present": true,
   "run_pipeline": false,
@@ -21,10 +21,11 @@
     "69",
     "70",
     "71",
-    "73"
+    "73",
+    "74"
   ],
   "core_steps_included": [],
-  "generated_at": "2026-06-22T11:21:40+00:00",
+  "generated_at": "2026-06-22T12:01:25+00:00",
   "generated_reports": [
     "reports/v72_pipeline_refresh_summary.json",
     "reports/v72_pipeline_refresh_summary.md",

@@ -171,6 +171,12 @@ WEIGHTED_REFRESH_STEPS = [
         "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
         "outputs": ["models/v73", "reports/v73_ticket_pack_performance_summary.json"],
     },
+    {
+        "step": "74",
+        "name": "Контрол на синхрона между моделите",
+        "script": "scripts/v74_build_model_dependency_sync_center.py",
+        "outputs": ["models/v74", "reports/v74_model_dependency_summary.json", "models/model_registry.json"],
+    },
 ]
 
 

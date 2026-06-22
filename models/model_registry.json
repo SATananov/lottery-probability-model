@@ -1,0 +1,1715 @@
+{
+  "summary": {
+    "step": "74",
+    "name": "Контрол на синхрона между моделите",
+    "status": "Синхронизиран",
+    "all_synced": true,
+    "models_checked": 23,
+    "synced_models": 23,
+    "stale_models": 0,
+    "missing_models": 0,
+    "ensemble_sources": 8,
+    "datasets": [
+      {
+        "path": "data/historical_draws.csv",
+        "exists": true,
+        "rows": 10058,
+        "latest_date": "2026-06-21",
+        "latest_year": "2026",
+        "latest_draw_no": "48",
+        "latest_numbers": "6,13,16,19,42,44",
+        "mtime": "2026-06-22T07:57:49"
+      },
+      {
+        "path": "data/v40_normalized_draw_events.csv",
+        "exists": true,
+        "rows": 10058,
+        "latest_date": "2026-06-21",
+        "latest_year": "2026",
+        "latest_draw_no": "48",
+        "latest_numbers": "6,13,16,19,42,44",
+        "mtime": "2026-06-22T07:57:50"
+      },
+      {
+        "path": "data/v41_canonical_draw_events.csv",
+        "exists": true,
+        "rows": 10058,
+        "latest_date": "2026-06-21",
+        "latest_year": "2026",
+        "latest_draw_no": "48",
+        "latest_numbers": "6,13,16,19,42,44",
+        "mtime": "2026-06-22T07:57:50"
+      }
+    ],
+    "dataset_sync": {
+      "datasets_checked": 3,
+      "datasets_existing": 3,
+      "row_counts": [
+        10058
+      ],
+      "latest_draw_signatures": [
+        "2026-06-21 | 48 | 6,13,16,19,42,44"
+      ],
+      "rows_synced": true,
+      "latest_draw_synced": true
+    },
+    "pipeline_chain": [
+      "Данни от тиражи",
+      "Базови модели и статистики",
+      "Историческа проверка и performance",
+      "Надеждност на моделите",
+      "Адаптивни тегла",
+      "Weighted ensemble",
+      "Генератор на фишове",
+      "Portfolio optimizer",
+      "Пакет за игра",
+      "Проверка след реален тираж",
+      "Model Dependency & Sync Center"
+    ],
+    "generated_at": "2026-06-22T12:01:25+00:00",
+    "generated_reports": [
+      "reports/v74_model_dependency_summary.json",
+      "reports/v74_model_dependency_summary.md",
+      "reports/v74_model_dependency_map.csv",
+      "reports/v74_model_sync_status.csv",
+      "models/model_registry.json",
+      "models/v74/v74_model_dependency_sync_center_model.json"
+    ],
+    "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+  },
+  "primary_datasets": [
+    {
+      "path": "data/historical_draws.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_date": "2026-06-21",
+      "latest_year": "2026",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "mtime": "2026-06-22T07:57:49"
+    },
+    {
+      "path": "data/v40_normalized_draw_events.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_date": "2026-06-21",
+      "latest_year": "2026",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "mtime": "2026-06-22T07:57:50"
+    },
+    {
+      "path": "data/v41_canonical_draw_events.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_date": "2026-06-21",
+      "latest_year": "2026",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "mtime": "2026-06-22T07:57:50"
+    }
+  ],
+  "models": [
+    {
+      "step": "41",
+      "label": "Правилово-съзнати модели",
+      "category": "Базов модел",
+      "script": "scripts/v41_train_rules_aware_models.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "outputs": [
+        "models/v41/v41_latest_predictions.json",
+        "reports/v41_model_retraining_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Дава rules-aware прогнозни сигнали върху основните числа.",
+      "ensemble_source": true
+    },
+    {
+      "step": "42",
+      "label": "Комбиниран позитивен/негативен анализ",
+      "category": "Комбиниран анализ",
+      "script": "scripts/v42_build_combined_positive_negative_foundation.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "outputs": [
+        "models/v42/v42_combined_prediction.json",
+        "reports/v42_combined_positive_negative_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Комбинира позитивни и негативни статистически сигнали.",
+      "ensemble_source": true
+    },
+    {
+      "step": "43.1",
+      "label": "Интервален ритъм",
+      "category": "Интервален анализ",
+      "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "outputs": [
+        "models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
+        "reports/v43_1_interval_rhythm_refined_summary.json"
+      ],
+      "feeds": [
+        "Step 44.1",
+        "Step 58"
+      ],
+      "role": "Следи ритъм на поява, интервали и закъснели числа.",
+      "ensemble_source": false
+    },
+    {
+      "step": "44.1",
+      "label": "Финален ensemble фиш foundation",
+      "category": "Ensemble",
+      "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "models/v42/v42_combined_prediction.json",
+        "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"
+      ],
+      "outputs": [
+        "models/v44_1/v44_1_final_ensemble_ticket_prediction.json",
+        "reports/v44_1_final_ensemble_ticket_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Обединява по-ранни сигнали във финален ensemble фиш.",
+      "ensemble_source": true
+    },
+    {
+      "step": "45",
+      "label": "Прогнозно табло Pro",
+      "category": "ML модел",
+      "script": "scripts/v45_train_prediction_engine_pro.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "inputs": [
+        "data/v41_canonical_draw_events.csv"
+      ],
+      "outputs": [
+        "models/v45/v45_model_metadata.json",
+        "reports/v45_training_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Тренира prediction engine с feature matrix и backtest.",
+      "ensemble_source": true
+    },
+    {
+      "step": "50",
+      "label": "Анализ на двойки и групи",
+      "category": "Групова статистика",
+      "script": "scripts/v50_build_pair_group_intelligence.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "data/historical_draws.csv"
+      ],
+      "outputs": [
+        "models/v50/v50_pair_group_intelligence.json",
+        "reports/v50_pair_group_summary.json"
+      ],
+      "feeds": [
+        "Step 51",
+        "Step 62",
+        "Step 65"
+      ],
+      "role": "Анализира двойки, групи и съвместни появи.",
+      "ensemble_source": false
+    },
+    {
+      "step": "51",
+      "label": "Интелигентна оценка на портфейл от фишове",
+      "category": "Портфолио",
+      "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "models/v50/v50_pair_group_intelligence.json",
+        "data/historical_draws.csv"
+      ],
+      "outputs": [
+        "models/v51/v51_ticket_portfolio_intelligence.json",
+        "reports/v51_ticket_portfolio_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
+      "ensemble_source": true
+    },
+    {
+      "step": "55",
+      "label": "Профил на число",
+      "category": "Профилиране",
+      "script": "scripts/v55_build_number_profile_center.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "data/historical_draws.csv"
+      ],
+      "outputs": [
+        "models/v55/v55_number_profile_manifest.json",
+        "reports/v55_number_profile_summary.json"
+      ],
+      "feeds": [
+        "Step 56",
+        "Step 57",
+        "Step 58"
+      ],
+      "role": "Профилира всяко число по честота, интервали, двойки и стабилност.",
+      "ensemble_source": false
+    },
+    {
+      "step": "56",
+      "label": "Подобни исторически тиражи",
+      "category": "Similarity search",
+      "script": "scripts/v56_build_draw_similarity_search.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "data/historical_draws.csv",
+        "reports/v55_number_profiles.json"
+      ],
+      "outputs": [
+        "models/v56/v56_draw_similarity_manifest.json",
+        "reports/v56_draw_similarity_summary.json"
+      ],
+      "feeds": [
+        "UI анализ"
+      ],
+      "role": "Сравнява комбинации с исторически тиражи.",
+      "ensemble_source": false
+    },
+    {
+      "step": "57",
+      "label": "Горещи, студени и стабилни числа",
+      "category": "Сигнален център",
+      "script": "scripts/v57_build_hot_cold_stable_center.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "data/historical_draws.csv",
+        "reports/v55_number_profile_summary.json"
+      ],
+      "outputs": [
+        "models/v57/v57_hot_cold_stable_manifest.json",
+        "reports/v57_hot_cold_stable_summary.json"
+      ],
+      "feeds": [
+        "Step 58",
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Извлича hot/cold/stable сигнали за числа.",
+      "ensemble_source": true
+    },
+    {
+      "step": "58",
+      "label": "Умна обединена оценка 2",
+      "category": "Smart ensemble",
+      "script": "scripts/v58_build_smart_ensemble_score_2.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "models/v57/v57_hot_cold_stable_manifest.json",
+        "reports/v55_number_profile_summary.json"
+      ],
+      "outputs": [
+        "models/v58/v58_smart_ensemble_manifest.json",
+        "reports/v58_smart_ensemble_summary.json"
+      ],
+      "feeds": [
+        "Step 59",
+        "Step 62",
+        "Step 65",
+        "Step 66"
+      ],
+      "role": "Обединява профили, hot/cold/stable и pattern сигнали.",
+      "ensemble_source": true
+    },
+    {
+      "step": "59",
+      "label": "Умен генератор на фишове 2",
+      "category": "Генератор",
+      "script": "scripts/v59_build_smart_ticket_builder_2.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v58_smart_ensemble_scores_sample.json"
+      ],
+      "outputs": [
+        "models/v59/v59_smart_ticket_builder_2_manifest.json",
+        "reports/v59_smart_ticket_builder_2_summary.json"
+      ],
+      "feeds": [
+        "Step 60",
+        "Step 62",
+        "Step 65"
+      ],
+      "role": "Генерира кандидат комбинации по различни стратегии.",
+      "ensemble_source": true
+    },
+    {
+      "step": "61",
+      "label": "Анализ на нов тираж",
+      "category": "Проверка след тираж",
+      "script": "scripts/v61_build_draw_result_analyzer.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "data/historical_draws.csv",
+        "models/v41/v41_latest_predictions.json",
+        "reports/v58_smart_ensemble_scores_sample.json"
+      ],
+      "outputs": [
+        "models/v61/v61_draw_result_analyzer_manifest.json",
+        "reports/v61_draw_result_analyzer_summary.json"
+      ],
+      "feeds": [
+        "Step 62",
+        "Step 63"
+      ],
+      "role": "Проверява сигналите срещу последния реален тираж.",
+      "ensemble_source": false
+    },
+    {
+      "step": "62",
+      "label": "История на моделите",
+      "category": "Performance tracker",
+      "script": "scripts/v62_build_model_performance_tracker.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v61_draw_result_analyzer_summary.json"
+      ],
+      "outputs": [
+        "models/v62/v62_model_performance_tracker_model.json",
+        "reports/v62_model_performance_summary.json"
+      ],
+      "feeds": [
+        "Step 63"
+      ],
+      "role": "Събира история на представянето на моделите.",
+      "ensemble_source": false
+    },
+    {
+      "step": "63",
+      "label": "Надеждност на моделите",
+      "category": "Reliability",
+      "script": "scripts/v63_build_model_reliability_dashboard.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v62_model_performance_summary.json"
+      ],
+      "outputs": [
+        "models/v63/v63_model_reliability_dashboard_model.json",
+        "reports/v63_model_reliability_summary.json",
+        "reports/v63_model_reliability_scores.csv"
+      ],
+      "feeds": [
+        "Step 65"
+      ],
+      "role": "Изчислява reliability score за следените модели.",
+      "ensemble_source": false
+    },
+    {
+      "step": "65",
+      "label": "Умно тегло на моделите",
+      "category": "Adaptive weighting",
+      "script": "scripts/v65_build_model_weighting_center.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v63_model_reliability_scores.csv"
+      ],
+      "outputs": [
+        "models/v65/v65_model_weighting_center_model.json",
+        "reports/v65_model_weighting_summary.json",
+        "reports/v65_model_weights.csv"
+      ],
+      "feeds": [
+        "Step 66"
+      ],
+      "role": "Превръща надеждността в адаптивни тегла.",
+      "ensemble_source": false
+    },
+    {
+      "step": "66",
+      "label": "Претеглен ensemble анализ",
+      "category": "Weighted ensemble",
+      "script": "scripts/v66_build_weighted_smart_ensemble.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v65_model_weights.csv"
+      ],
+      "outputs": [
+        "models/v66/v66_weighted_smart_ensemble_model.json",
+        "reports/v66_weighted_smart_ensemble_summary.json",
+        "reports/v66_weighted_smart_ensemble_scores.csv"
+      ],
+      "feeds": [
+        "Step 67",
+        "Step 68",
+        "Step 69"
+      ],
+      "role": "Обединява активните сигнали според адаптивните тегла.",
+      "ensemble_source": false
+    },
+    {
+      "step": "67",
+      "label": "Умен генератор с тегла",
+      "category": "Weighted ticket builder",
+      "script": "scripts/v67_build_weighted_ticket_builder.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v66_weighted_smart_ensemble_scores.csv"
+      ],
+      "outputs": [
+        "models/v67/v67_weighted_ticket_builder_model.json",
+        "reports/v67_weighted_ticket_builder_summary.json",
+        "reports/v67_weighted_ticket_builder_tickets.csv"
+      ],
+      "feeds": [
+        "Step 68"
+      ],
+      "role": "Строи фишове върху Step 66 weighted scores.",
+      "ensemble_source": false
+    },
+    {
+      "step": "68",
+      "label": "Умен оптимизатор на портфейл",
+      "category": "Portfolio optimizer",
+      "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v67_weighted_ticket_builder_tickets.csv",
+        "reports/v66_weighted_smart_ensemble_scores.csv"
+      ],
+      "outputs": [
+        "models/v68/v68_weighted_portfolio_optimizer_model.json",
+        "reports/v68_weighted_portfolio_summary.json",
+        "reports/v68_weighted_portfolio_tickets.csv"
+      ],
+      "feeds": [
+        "Step 69"
+      ],
+      "role": "Оценява портфейл, покритие, повторения и концентрация.",
+      "ensemble_source": false
+    },
+    {
+      "step": "69",
+      "label": "Подобряване на портфолио",
+      "category": "Improvement suggestions",
+      "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v68_weighted_portfolio_summary.json",
+        "reports/v66_weighted_smart_ensemble_scores.csv"
+      ],
+      "outputs": [
+        "models/v69/v69_portfolio_improvement_model.json",
+        "reports/v69_portfolio_improvement_summary.json",
+        "reports/v69_candidate_portfolio_tickets.csv"
+      ],
+      "feeds": [
+        "Step 70"
+      ],
+      "role": "Предлага подобрения без да презаписва основния пакет.",
+      "ensemble_source": false
+    },
+    {
+      "step": "70",
+      "label": "Приложен подобрен портфейл",
+      "category": "Applied portfolio",
+      "script": "scripts/v70_build_applied_candidate_portfolio.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v69_candidate_portfolio_tickets.csv"
+      ],
+      "outputs": [
+        "models/v70/v70_applied_candidate_portfolio_model.json",
+        "reports/v70_applied_candidate_portfolio_summary.json",
+        "reports/v70_applied_candidate_portfolio_tickets.csv"
+      ],
+      "feeds": [
+        "Step 71"
+      ],
+      "role": "Фиксира подобрения пакет като отделна статистическа референция.",
+      "ensemble_source": false
+    },
+    {
+      "step": "71",
+      "label": "Пакет за игра",
+      "category": "Ticket pack export",
+      "script": "scripts/v71_build_ticket_pack_export.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v70_applied_candidate_portfolio_tickets.csv"
+      ],
+      "outputs": [
+        "models/v71/v71_ticket_pack_export_model.json",
+        "reports/v71_ticket_pack_summary.json",
+        "reports/v71_ticket_pack.csv"
+      ],
+      "feeds": [
+        "Step 73"
+      ],
+      "role": "Подготвя printable/export пакет за игра с физически фишове.",
+      "ensemble_source": false
+    },
+    {
+      "step": "73",
+      "label": "Представяне на пакета",
+      "category": "Performance after draw",
+      "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
+      "datasets": [
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v71_ticket_pack.csv"
+      ],
+      "outputs": [
+        "models/v73/v73_ticket_pack_performance_tracker_model.json",
+        "reports/v73_ticket_pack_performance_summary.json",
+        "reports/v73_ticket_pack_performance_history.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
+      "ensemble_source": false
+    }
+  ],
+  "sync_status": [
+    {
+      "step": "41",
+      "label": "Правилово-съзнати модели",
+      "category": "Базов модел",
+      "script": "scripts/v41_train_rules_aware_models.py",
+      "script_exists": true,
+      "datasets": "data/v41_canonical_draw_events.csv",
+      "inputs": "data/v41_canonical_draw_events.csv",
+      "outputs": "models/v41/v41_latest_predictions.json; reports/v41_model_retraining_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T07:58:09",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 65; Step 66",
+      "role": "Дава rules-aware прогнозни сигнали върху основните числа.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "42",
+      "label": "Комбиниран позитивен/негативен анализ",
+      "category": "Комбиниран анализ",
+      "script": "scripts/v42_build_combined_positive_negative_foundation.py",
+      "script_exists": true,
+      "datasets": "data/v41_canonical_draw_events.csv",
+      "inputs": "data/v41_canonical_draw_events.csv",
+      "outputs": "models/v42/v42_combined_prediction.json; reports/v42_combined_positive_negative_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 65; Step 66",
+      "role": "Комбинира позитивни и негативни статистически сигнали.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "43.1",
+      "label": "Интервален ритъм",
+      "category": "Интервален анализ",
+      "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
+      "script_exists": true,
+      "datasets": "data/v41_canonical_draw_events.csv",
+      "inputs": "data/v41_canonical_draw_events.csv",
+      "outputs": "models/v43_1/v43_1_interval_rhythm_refined_prediction.json; reports/v43_1_interval_rhythm_refined_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 44.1; Step 58",
+      "role": "Следи ритъм на поява, интервали и закъснели числа.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "44.1",
+      "label": "Финален ensemble фиш foundation",
+      "category": "Ensemble",
+      "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
+      "script_exists": true,
+      "datasets": "data/v41_canonical_draw_events.csv",
+      "inputs": "models/v42/v42_combined_prediction.json; models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
+      "outputs": "models/v44_1/v44_1_final_ensemble_ticket_prediction.json; reports/v44_1_final_ensemble_ticket_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 65; Step 66",
+      "role": "Обединява по-ранни сигнали във финален ensemble фиш.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "45",
+      "label": "Прогнозно табло Pro",
+      "category": "ML модел",
+      "script": "scripts/v45_train_prediction_engine_pro.py",
+      "script_exists": true,
+      "datasets": "data/v41_canonical_draw_events.csv",
+      "inputs": "data/v41_canonical_draw_events.csv",
+      "outputs": "models/v45/v45_model_metadata.json; reports/v45_training_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:50",
+      "latest_output_mtime": "2026-06-22T07:58:18",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 65; Step 66",
+      "role": "Тренира prediction engine с feature matrix и backtest.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "50",
+      "label": "Анализ на двойки и групи",
+      "category": "Групова статистика",
+      "script": "scripts/v50_build_pair_group_intelligence.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "data/historical_draws.csv",
+      "outputs": "models/v50/v50_pair_group_intelligence.json; reports/v50_pair_group_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:49",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 51; Step 62; Step 65",
+      "role": "Анализира двойки, групи и съвместни появи.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "51",
+      "label": "Интелигентна оценка на портфейл от фишове",
+      "category": "Портфолио",
+      "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "models/v50/v50_pair_group_intelligence.json; data/historical_draws.csv",
+      "outputs": "models/v51/v51_ticket_portfolio_intelligence.json; reports/v51_ticket_portfolio_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 65; Step 66",
+      "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "55",
+      "label": "Профил на число",
+      "category": "Профилиране",
+      "script": "scripts/v55_build_number_profile_center.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "data/historical_draws.csv",
+      "outputs": "models/v55/v55_number_profile_manifest.json; reports/v55_number_profile_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:57:49",
+      "latest_output_mtime": "2026-06-22T07:58:25",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 56; Step 57; Step 58",
+      "role": "Профилира всяко число по честота, интервали, двойки и стабилност.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "56",
+      "label": "Подобни исторически тиражи",
+      "category": "Similarity search",
+      "script": "scripts/v56_build_draw_similarity_search.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "data/historical_draws.csv; reports/v55_number_profiles.json",
+      "outputs": "models/v56/v56_draw_similarity_manifest.json; reports/v56_draw_similarity_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:58:25",
+      "latest_output_mtime": "2026-06-22T07:58:28",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "UI анализ",
+      "role": "Сравнява комбинации с исторически тиражи.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "57",
+      "label": "Горещи, студени и стабилни числа",
+      "category": "Сигнален център",
+      "script": "scripts/v57_build_hot_cold_stable_center.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "data/historical_draws.csv; reports/v55_number_profile_summary.json",
+      "outputs": "models/v57/v57_hot_cold_stable_manifest.json; reports/v57_hot_cold_stable_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:58:25",
+      "latest_output_mtime": "2026-06-22T07:58:32",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 58; Step 62; Step 65; Step 66",
+      "role": "Извлича hot/cold/stable сигнали за числа.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "58",
+      "label": "Умна обединена оценка 2",
+      "category": "Smart ensemble",
+      "script": "scripts/v58_build_smart_ensemble_score_2.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "models/v57/v57_hot_cold_stable_manifest.json; reports/v55_number_profile_summary.json",
+      "outputs": "models/v58/v58_smart_ensemble_manifest.json; reports/v58_smart_ensemble_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:58:32",
+      "latest_output_mtime": "2026-06-22T07:58:37",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 59; Step 62; Step 65; Step 66",
+      "role": "Обединява профили, hot/cold/stable и pattern сигнали.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "59",
+      "label": "Умен генератор на фишове 2",
+      "category": "Генератор",
+      "script": "scripts/v59_build_smart_ticket_builder_2.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v58_smart_ensemble_scores_sample.json",
+      "outputs": "models/v59/v59_smart_ticket_builder_2_manifest.json; reports/v59_smart_ticket_builder_2_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:58:37",
+      "latest_output_mtime": "2026-06-22T07:58:48",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 60; Step 62; Step 65",
+      "role": "Генерира кандидат комбинации по различни стратегии.",
+      "ensemble_source": true,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "61",
+      "label": "Анализ на нов тираж",
+      "category": "Проверка след тираж",
+      "script": "scripts/v61_build_draw_result_analyzer.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "data/historical_draws.csv; models/v41/v41_latest_predictions.json; reports/v58_smart_ensemble_scores_sample.json",
+      "outputs": "models/v61/v61_draw_result_analyzer_manifest.json; reports/v61_draw_result_analyzer_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T07:58:37",
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 62; Step 63",
+      "role": "Проверява сигналите срещу последния реален тираж.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "62",
+      "label": "История на моделите",
+      "category": "Performance tracker",
+      "script": "scripts/v62_build_model_performance_tracker.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v61_draw_result_analyzer_summary.json",
+      "outputs": "models/v62/v62_model_performance_tracker_model.json; reports/v62_model_performance_summary.json",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T12:59:03",
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 63",
+      "role": "Събира история на представянето на моделите.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "63",
+      "label": "Надеждност на моделите",
+      "category": "Reliability",
+      "script": "scripts/v63_build_model_reliability_dashboard.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v62_model_performance_summary.json",
+      "outputs": "models/v63/v63_model_reliability_dashboard_model.json; reports/v63_model_reliability_summary.json; reports/v63_model_reliability_scores.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T12:59:03",
+      "latest_output_mtime": "2026-06-22T12:59:03",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 65",
+      "role": "Изчислява reliability score за следените модели.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "65",
+      "label": "Умно тегло на моделите",
+      "category": "Adaptive weighting",
+      "script": "scripts/v65_build_model_weighting_center.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v63_model_reliability_scores.csv",
+      "outputs": "models/v65/v65_model_weighting_center_model.json; reports/v65_model_weighting_summary.json; reports/v65_model_weights.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T12:59:03",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 66",
+      "role": "Превръща надеждността в адаптивни тегла.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "66",
+      "label": "Претеглен ensemble анализ",
+      "category": "Weighted ensemble",
+      "script": "scripts/v66_build_weighted_smart_ensemble.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v65_model_weights.csv",
+      "outputs": "models/v66/v66_weighted_smart_ensemble_model.json; reports/v66_weighted_smart_ensemble_summary.json; reports/v66_weighted_smart_ensemble_scores.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T12:59:03",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 67; Step 68; Step 69",
+      "role": "Обединява активните сигнали според адаптивните тегла.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "67",
+      "label": "Умен генератор с тегла",
+      "category": "Weighted ticket builder",
+      "script": "scripts/v67_build_weighted_ticket_builder.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v66_weighted_smart_ensemble_scores.csv",
+      "outputs": "models/v67/v67_weighted_ticket_builder_model.json; reports/v67_weighted_ticket_builder_summary.json; reports/v67_weighted_ticket_builder_tickets.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T12:59:04",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 68",
+      "role": "Строи фишове върху Step 66 weighted scores.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "68",
+      "label": "Умен оптимизатор на портфейл",
+      "category": "Portfolio optimizer",
+      "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v67_weighted_ticket_builder_tickets.csv; reports/v66_weighted_smart_ensemble_scores.csv",
+      "outputs": "models/v68/v68_weighted_portfolio_optimizer_model.json; reports/v68_weighted_portfolio_summary.json; reports/v68_weighted_portfolio_tickets.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 69",
+      "role": "Оценява портфейл, покритие, повторения и концентрация.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "69",
+      "label": "Подобряване на портфолио",
+      "category": "Improvement suggestions",
+      "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v68_weighted_portfolio_summary.json; reports/v66_weighted_smart_ensemble_scores.csv",
+      "outputs": "models/v69/v69_portfolio_improvement_model.json; reports/v69_portfolio_improvement_summary.json; reports/v69_candidate_portfolio_tickets.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 70",
+      "role": "Предлага подобрения без да презаписва основния пакет.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "70",
+      "label": "Приложен подобрен портфейл",
+      "category": "Applied portfolio",
+      "script": "scripts/v70_build_applied_candidate_portfolio.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v69_candidate_portfolio_tickets.csv",
+      "outputs": "models/v70/v70_applied_candidate_portfolio_model.json; reports/v70_applied_candidate_portfolio_summary.json; reports/v70_applied_candidate_portfolio_tickets.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 71",
+      "role": "Фиксира подобрения пакет като отделна статистическа референция.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "71",
+      "label": "Пакет за игра",
+      "category": "Ticket pack export",
+      "script": "scripts/v71_build_ticket_pack_export.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v70_applied_candidate_portfolio_tickets.csv",
+      "outputs": "models/v71/v71_ticket_pack_export_model.json; reports/v71_ticket_pack_summary.json; reports/v71_ticket_pack.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 73",
+      "role": "Подготвя printable/export пакет за игра с физически фишове.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "step": "73",
+      "label": "Представяне на пакета",
+      "category": "Performance after draw",
+      "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
+      "script_exists": true,
+      "datasets": "data/historical_draws.csv",
+      "inputs": "reports/v71_ticket_pack.csv",
+      "outputs": "models/v73/v73_ticket_pack_performance_tracker_model.json; reports/v73_ticket_pack_performance_summary.json; reports/v73_ticket_pack_performance_history.csv",
+      "outputs_present": true,
+      "dependencies_present": true,
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "latest_input_mtime": "2026-06-22T14:41:44",
+      "latest_output_mtime": "2026-06-22T14:41:44",
+      "sync_status": "Синхронизиран",
+      "status_rank": 2,
+      "feeds": "Step 74",
+      "role": "Проверява активния пакет срещу реални тиражи преди dataset refresh.",
+      "ensemble_source": false,
+      "safe_note": "Step 74 е контролен слой за синхрон между dataset-и, модели, отчети и pipeline стъпки. Той не е прогноза и не е гаранция за печалба."
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 41",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 41",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 41",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 41",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 42",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 42",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 42",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 42",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 43.1",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 43.1",
+      "to": "Step 44.1",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 43.1",
+      "to": "Step 58",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 44.1",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "models/v42/v42_combined_prediction.json",
+      "to": "Step 44.1",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
+      "to": "Step 44.1",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 44.1",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 44.1",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 44.1",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 45",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 45",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 45",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 45",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 50",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 50",
+      "to": "Step 51",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 50",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 50",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 51",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "models/v50/v50_pair_group_intelligence.json",
+      "to": "Step 51",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 51",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 51",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 51",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 55",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "Step 55",
+      "to": "Step 56",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 55",
+      "to": "Step 57",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 55",
+      "to": "Step 58",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 56",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v55_number_profiles.json",
+      "to": "Step 56",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 56",
+      "to": "UI анализ",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 57",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v55_number_profile_summary.json",
+      "to": "Step 57",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 57",
+      "to": "Step 58",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 57",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 57",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 57",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 58",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "models/v57/v57_hot_cold_stable_manifest.json",
+      "to": "Step 58",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "reports/v55_number_profile_summary.json",
+      "to": "Step 58",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 58",
+      "to": "Step 59",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 58",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 58",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 58",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 59",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v58_smart_ensemble_scores_sample.json",
+      "to": "Step 59",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 59",
+      "to": "Step 60",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 59",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 59",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 61",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "models/v41/v41_latest_predictions.json",
+      "to": "Step 61",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "reports/v58_smart_ensemble_scores_sample.json",
+      "to": "Step 61",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 61",
+      "to": "Step 62",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 61",
+      "to": "Step 63",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 62",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v61_draw_result_analyzer_summary.json",
+      "to": "Step 62",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 62",
+      "to": "Step 63",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 63",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v62_model_performance_summary.json",
+      "to": "Step 63",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 63",
+      "to": "Step 65",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 65",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v63_model_reliability_scores.csv",
+      "to": "Step 65",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 65",
+      "to": "Step 66",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 66",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v65_model_weights.csv",
+      "to": "Step 66",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 66",
+      "to": "Step 67",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 66",
+      "to": "Step 68",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "Step 66",
+      "to": "Step 69",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 67",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v66_weighted_smart_ensemble_scores.csv",
+      "to": "Step 67",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 67",
+      "to": "Step 68",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 68",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v67_weighted_ticket_builder_tickets.csv",
+      "to": "Step 68",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "reports/v66_weighted_smart_ensemble_scores.csv",
+      "to": "Step 68",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 68",
+      "to": "Step 69",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 69",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v68_weighted_portfolio_summary.json",
+      "to": "Step 69",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "reports/v66_weighted_smart_ensemble_scores.csv",
+      "to": "Step 69",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 69",
+      "to": "Step 70",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 70",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v69_candidate_portfolio_tickets.csv",
+      "to": "Step 70",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 70",
+      "to": "Step 71",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 71",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v70_applied_candidate_portfolio_tickets.csv",
+      "to": "Step 71",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 71",
+      "to": "Step 73",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    },
+    {
+      "from": "data/historical_draws.csv",
+      "to": "Step 73",
+      "type": "dataset",
+      "description": "Dataset вход"
+    },
+    {
+      "from": "reports/v71_ticket_pack.csv",
+      "to": "Step 73",
+      "type": "artifact",
+      "description": "Входен model/report artifact"
+    },
+    {
+      "from": "Step 73",
+      "to": "Step 74",
+      "type": "feeds",
+      "description": "Изходът помага на следващ слой"
+    }
+  ]
+}
