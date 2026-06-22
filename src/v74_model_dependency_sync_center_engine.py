@@ -1099,4 +1099,39 @@ for _node in MODEL_NODES:
             _feeds.append("Step 80")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 80 FINAL SYSTEM AUDIT WIRING END
+# STEP 81 FINAL UX NAVIGATION WIRING START
+_STEP81_NODE = {
+    "step": "81",
+    "label": "Финален UX контрол",
+    "category": "Финален UX контрол",
+    "script": "scripts/v81_build_final_ux_navigation_center.py",
+    "datasets": [],
+    "inputs": [
+        "streamlit_app.py",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_sync_plan_audit.csv",
+    ],
+    "outputs": [
+        "models/v81/v81_final_ux_navigation_model.json",
+        "reports/v81_final_ux_navigation_summary.json",
+        "reports/v81_final_ux_navigation_summary.md",
+        "reports/v81_navigation_groups.csv",
+        "reports/v81_navigation_page_audit.csv",
+        "reports/v81_streamlit_label_audit.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
+    "ensemble_source": False,
+}
 
+if not any(str(_node.get("step")) == "81" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP81_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "80":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 81" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 81" not in _feeds:
+            _feeds.append("Step 81")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 81 FINAL UX NAVIGATION WIRING END

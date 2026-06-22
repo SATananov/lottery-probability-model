@@ -82,12 +82,13 @@ REQUIRED_STREAMLIT_LABELS = [
     "Финален план",
     "Експорт и изпълнение",
     "Финален системен одит",
+    "Финален UX контрол",
 ]
 
 SYNC_PLAN_EXPECTATIONS = [
-    {"name": "79 -> 80 -> 74", "step": "79", "mode": "selected_and_downstream", "expected": ["79", "80", "74"]},
-    {"name": "78 -> 79 -> 80 -> 74", "step": "78", "mode": "selected_and_downstream", "expected": ["78", "79", "80", "74"]},
-    {"name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 74", "step": "75", "mode": "selected_and_downstream", "expected": ["75", "76", "77", "78", "79", "80", "74"]},
+    {"name": "79 -> 80 -> 81 -> 74", "step": "79", "mode": "selected_and_downstream", "expected": ["79", "80", "81", "74"]},
+    {"name": "78 -> 79 -> 80 -> 81 -> 74", "step": "78", "mode": "selected_and_downstream", "expected": ["78", "79", "80", "81", "74"]},
+    {"name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 81 -> 74", "step": "75", "mode": "selected_and_downstream", "expected": ["75", "76", "77", "78", "79", "80", "81", "74"]},
 ]
 
 CHECK_PY_FILES = [
@@ -106,6 +107,9 @@ CHECK_PY_FILES = [
     "src/v80_final_system_audit_engine.py",
     "src/v80_final_system_audit_section.py",
     "scripts/v80_build_final_system_audit_center.py",
+    "src/v81_final_ux_navigation_engine.py",
+    "src/v81_final_ux_navigation_section.py",
+    "scripts/v81_build_final_ux_navigation_center.py",
 ]
 
 QUALITY_TEXT_EXTENSIONS = {".py", ".md", ".json", ".csv", ".txt", ".html", ".toml"}

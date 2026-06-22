@@ -692,4 +692,109 @@ def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
 
     return _step80_with_order(_plan)
 # STEP 80 FINAL SYSTEM AUDIT WIRING END
+# STEP 81 FINAL UX NAVIGATION WIRING START
+_STEP81_ORIGINAL_BUILD_SYNC_PLAN = build_sync_plan
 
+
+def _step81_find_node(step: str):
+    for _node in MODEL_NODES:
+        if str(_node.get("step")) == str(step):
+            return dict(_node)
+
+    if str(step) == "81":
+        return {
+            "step": "81",
+            "label": "Финален UX контрол",
+            "category": "Финален UX контрол",
+            "script": "scripts/v81_build_final_ux_navigation_center.py",
+            "datasets": [],
+            "inputs": [
+                "streamlit_app.py",
+                "reports/v80_final_system_audit_summary.json",
+                "reports/v80_sync_plan_audit.csv",
+            ],
+            "outputs": [
+                "models/v81/v81_final_ux_navigation_model.json",
+                "reports/v81_final_ux_navigation_summary.json",
+                "reports/v81_final_ux_navigation_summary.md",
+                "reports/v81_navigation_groups.csv",
+                "reports/v81_navigation_page_audit.csv",
+                "reports/v81_streamlit_label_audit.csv",
+            ],
+            "feeds": ["Step 74"],
+            "role": "Проверява финалната навигация и UX структурата.",
+            "ensemble_source": False,
+        }
+
+    if str(step) == "74":
+        return {
+            "step": "74",
+            "label": "Контрол на синхрона",
+            "category": "Контрол на синхрона",
+            "script": "scripts/v74_build_model_dependency_sync_center.py",
+            "datasets": ["data/historical_draws.csv", "data/v41_canonical_draw_events.csv"],
+            "inputs": [
+                "models/model_registry.json",
+                "reports/v81_final_ux_navigation_summary.json",
+                "reports/v81_navigation_groups.csv",
+            ],
+            "outputs": [
+                "models/v74/v74_model_dependency_sync_center_model.json",
+                "reports/v74_model_dependency_summary.json",
+                "reports/v74_model_dependency_summary.md",
+                "reports/v74_model_dependency_map.csv",
+                "reports/v74_model_sync_status.csv",
+            ],
+            "feeds": [],
+            "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+            "ensemble_source": False,
+        }
+
+    raise ValueError(f"Missing model node for Step {step}")
+
+
+def _step81_with_order(plan: list[dict]) -> list[dict]:
+    _ordered = []
+    for _index, _item in enumerate(plan, start=1):
+        _copy = dict(_item)
+        _copy["order"] = _index
+        _ordered.append(_copy)
+    return _ordered
+
+
+def _step81_insert_before_74(plan: list[dict], step: str = "81") -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if step in _steps:
+        return _step81_with_order(plan)
+    _node = _step81_find_node(step)
+    _new_plan = []
+    _inserted = False
+    for _item in plan:
+        if str(_item.get("step")) == "74" and not _inserted:
+            _new_plan.append(_node)
+            _inserted = True
+        _new_plan.append(dict(_item))
+    if not _inserted:
+        _new_plan.append(_node)
+    return _step81_with_order(_new_plan)
+
+
+def _step81_ensure_final_74(plan: list[dict]) -> list[dict]:
+    _steps = [str(_item.get("step")) for _item in plan]
+    if "74" in _steps:
+        return _step81_with_order(plan)
+    return _step81_with_order([*plan, _step81_find_node("74")])
+
+
+def build_sync_plan(selected_step=None, mode: str = "selected_and_downstream"):
+    _selected = "" if selected_step is None else str(selected_step)
+    _mode = str(mode)
+    if _selected == "81" and _mode == "selected_and_downstream":
+        return _step81_with_order([_step81_find_node("81"), _step81_find_node("74")])
+    _plan = _STEP81_ORIGINAL_BUILD_SYNC_PLAN(selected_step, mode)
+    if _selected in {"75", "76", "77", "78", "79", "80"} and _mode == "selected_and_downstream":
+        return _step81_ensure_final_74(_step81_insert_before_74(_plan, "81"))
+    if _mode == "full_chain":
+        return _step81_ensure_final_74(_step81_insert_before_74(_plan, "81"))
+    return _step81_with_order(_plan)
+# STEP 81 FINAL UX NAVIGATION WIRING END

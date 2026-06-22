@@ -1,0 +1,23 @@
+{
+  "duplicate_pages_count": 0,
+  "expected_groups_missing": [],
+  "generated_at": "2026-06-22T16:17:05+00:00",
+  "generated_reports": [
+    "reports/v81_final_ux_navigation_summary.json",
+    "reports/v81_final_ux_navigation_summary.md",
+    "reports/v81_navigation_groups.csv",
+    "reports/v81_navigation_page_audit.csv",
+    "reports/v81_streamlit_label_audit.csv",
+    "models/v81/v81_final_ux_navigation_model.json"
+  ],
+  "groups_count": 7,
+  "issues_found": 0,
+  "issues_preview": [],
+  "literal_page_keys_detected": 27,
+  "name": "Финален UX контрол",
+  "navigation_pages_count": 49,
+  "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
+  "status": "OK",
+  "step": "81",
+  "system_control_order_ok": true
+}

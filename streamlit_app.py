@@ -41,6 +41,7 @@ from src.v77_decision_recommendation_section import render_v77_decision_recommen
 from src.v78_final_play_plan_section import render_v78_final_play_plan_section
 from src.v79_ticket_pack_export_section import render_v79_ticket_pack_export_section
 from src.v80_final_system_audit_section import render_v80_final_system_audit_section
+from src.v81_final_ux_navigation_section import render_v81_final_ux_navigation_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3505,11 +3506,12 @@ def main() -> None:
         "Финален план": render_v78_final_play_plan_section,
         "Експорт и изпълнение": render_v79_ticket_pack_export_section,
         "Финален системен одит": render_v80_final_system_audit_section,
+        "Финален UX контрол": render_v81_final_ux_navigation_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
     navigation_groups = {
-        '🏠 Начало': [
+        '🏠 Начало и отчети': [
             'Табло',
             'Препоръки',
             'Прогноза',
@@ -3535,7 +3537,7 @@ def main() -> None:
             'Анализ по ритъм на появяване',
             'Анализ на двойки и групи',
         ],
-        '🧠 Модели и ML': [
+        '🧠 Модели и обучение': [
             'Комбиниран модел',
             'Комбиниран анализ',
             'Разширена лаборатория',
@@ -3544,10 +3546,9 @@ def main() -> None:
             'Стратегическа лаборатория',
             'Вероятности',
             'Финален обобщен анализ',
+            'Невронна лаборатория',
         ],
-        '✅ Контрол след тираж': [
-            'Добавяне на тираж',
-            'Анализ на нов тираж',
+        '⚖️ Тегла и портфолио': [
             'История на моделите',
             'Надеждност на моделите',
             'Умно тегло на моделите',
@@ -3558,14 +3559,20 @@ def main() -> None:
             'Приложен подобрен портфейл',
             'Пакет за игра',
             'Представяне на пакета',
-            'Обновяване на анализите',
-            "Решение и препоръка",
-            "Финален план",
-            "Експорт и изпълнение",
-            "Финален системен одит",
-            'Контрол на синхрона',
-            "Невронна лаборатория",
+        ],
+        '✅ Финален план за игра': [
+            'Добавяне на тираж',
+            'Анализ на нов тираж',
             'Обяснимост и валидация',
+            'Решение и препоръка',
+            'Финален план',
+            'Експорт и изпълнение',
+        ],
+        '🛡️ Система и контрол': [
+            'Обновяване на анализите',
+            'Финален системен одит',
+            'Финален UX контрол',
+            'Контрол на синхрона',
         ],
     }
     used_navigation_pages = set()
