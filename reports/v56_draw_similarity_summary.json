@@ -1,0 +1,386 @@
+{
+  "status": "completed",
+  "module": "Draw Similarity Search",
+  "version": "v56",
+  "total_draws": 10058,
+  "sample_query": "6, 13, 16, 19, 42, 44",
+  "sample_result": {
+    "total_draws": 10058,
+    "query_count": 1,
+    "valid_count": 1,
+    "invalid_count": 0,
+    "average_historical_similarity_score": 100.0,
+    "best_max_match_count": 6,
+    "total_exact_matches": 1,
+    "analyses": [
+      {
+        "query_index": 1,
+        "query_numbers": [
+          6,
+          13,
+          16,
+          19,
+          42,
+          44
+        ],
+        "query_text": "6, 13, 16, 19, 42, 44",
+        "is_valid": true,
+        "status": "Валидна",
+        "total_draws": 10058,
+        "historical_similarity_score": 100.0,
+        "band": "Има точно историческо съвпадение",
+        "max_match_count": 6,
+        "exact_matches_count": 1,
+        "five_matches_count": 0,
+        "four_matches_count": 10,
+        "three_matches_count": 187,
+        "match_distribution": {
+          "6": 1,
+          "5": 0,
+          "4": 10,
+          "3": 187,
+          "2": 1327,
+          "1": 4146,
+          "0": 4387
+        },
+        "closest_draws": [
+          {
+            "event_index": 10058,
+            "year": 2026,
+            "draw_no": 48.0,
+            "date": "2026-06-21",
+            "draw_numbers": [
+              6,
+              13,
+              16,
+              19,
+              42,
+              44
+            ],
+            "draw_numbers_text": "6, 13, 16, 19, 42, 44",
+            "match_count": 6,
+            "matching_numbers": [
+              6,
+              13,
+              16,
+              19,
+              42,
+              44
+            ],
+            "matching_numbers_text": "6, 13, 16, 19, 42, 44",
+            "different_query_numbers": [],
+            "different_query_numbers_text": "",
+            "different_draw_numbers": [],
+            "different_draw_numbers_text": ""
+          },
+          {
+            "event_index": 8331,
+            "year": 2012,
+            "draw_no": 8331,
+            "date": "",
+            "draw_numbers": [
+              6,
+              12,
+              13,
+              17,
+              19,
+              44
+            ],
+            "draw_numbers_text": "6, 12, 13, 17, 19, 44",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              13,
+              19,
+              44
+            ],
+            "matching_numbers_text": "6, 13, 19, 44",
+            "different_query_numbers": [
+              16,
+              42
+            ],
+            "different_query_numbers_text": "16, 42",
+            "different_draw_numbers": [
+              12,
+              17
+            ],
+            "different_draw_numbers_text": "12, 17"
+          },
+          {
+            "event_index": 8023,
+            "year": 2011,
+            "draw_no": 8023,
+            "date": "",
+            "draw_numbers": [
+              6,
+              7,
+              13,
+              29,
+              42,
+              44
+            ],
+            "draw_numbers_text": "6, 7, 13, 29, 42, 44",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              13,
+              42,
+              44
+            ],
+            "matching_numbers_text": "6, 13, 42, 44",
+            "different_query_numbers": [
+              16,
+              19
+            ],
+            "different_query_numbers_text": "16, 19",
+            "different_draw_numbers": [
+              7,
+              29
+            ],
+            "different_draw_numbers_text": "7, 29"
+          },
+          {
+            "event_index": 5346,
+            "year": 2002,
+            "draw_no": 5346,
+            "date": "",
+            "draw_numbers": [
+              4,
+              9,
+              13,
+              19,
+              42,
+              44
+            ],
+            "draw_numbers_text": "4, 9, 13, 19, 42, 44",
+            "match_count": 4,
+            "matching_numbers": [
+              13,
+              19,
+              42,
+              44
+            ],
+            "matching_numbers_text": "13, 19, 42, 44",
+            "different_query_numbers": [
+              6,
+              16
+            ],
+            "different_query_numbers_text": "6, 16",
+            "different_draw_numbers": [
+              4,
+              9
+            ],
+            "different_draw_numbers_text": "4, 9"
+          },
+          {
+            "event_index": 3871,
+            "year": 1997,
+            "draw_no": 3871,
+            "date": "",
+            "draw_numbers": [
+              5,
+              6,
+              8,
+              16,
+              19,
+              44
+            ],
+            "draw_numbers_text": "5, 6, 8, 16, 19, 44",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              16,
+              19,
+              44
+            ],
+            "matching_numbers_text": "6, 16, 19, 44",
+            "different_query_numbers": [
+              13,
+              42
+            ],
+            "different_query_numbers_text": "13, 42",
+            "different_draw_numbers": [
+              5,
+              8
+            ],
+            "different_draw_numbers_text": "5, 8"
+          },
+          {
+            "event_index": 3617,
+            "year": 1994,
+            "draw_no": 3617,
+            "date": "",
+            "draw_numbers": [
+              2,
+              6,
+              13,
+              19,
+              26,
+              42
+            ],
+            "draw_numbers_text": "2, 6, 13, 19, 26, 42",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              13,
+              19,
+              42
+            ],
+            "matching_numbers_text": "6, 13, 19, 42",
+            "different_query_numbers": [
+              16,
+              44
+            ],
+            "different_query_numbers_text": "16, 44",
+            "different_draw_numbers": [
+              2,
+              26
+            ],
+            "different_draw_numbers_text": "2, 26"
+          },
+          {
+            "event_index": 3372,
+            "year": 1992,
+            "draw_no": 3372,
+            "date": "",
+            "draw_numbers": [
+              13,
+              16,
+              17,
+              19,
+              42,
+              47
+            ],
+            "draw_numbers_text": "13, 16, 17, 19, 42, 47",
+            "match_count": 4,
+            "matching_numbers": [
+              13,
+              16,
+              19,
+              42
+            ],
+            "matching_numbers_text": "13, 16, 19, 42",
+            "different_query_numbers": [
+              6,
+              44
+            ],
+            "different_query_numbers_text": "6, 44",
+            "different_draw_numbers": [
+              17,
+              47
+            ],
+            "different_draw_numbers_text": "17, 47"
+          },
+          {
+            "event_index": 3130,
+            "year": 1990,
+            "draw_no": 3130,
+            "date": "",
+            "draw_numbers": [
+              2,
+              6,
+              7,
+              16,
+              19,
+              42
+            ],
+            "draw_numbers_text": "2, 6, 7, 16, 19, 42",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              16,
+              19,
+              42
+            ],
+            "matching_numbers_text": "6, 16, 19, 42",
+            "different_query_numbers": [
+              13,
+              44
+            ],
+            "different_query_numbers_text": "13, 44",
+            "different_draw_numbers": [
+              2,
+              7
+            ],
+            "different_draw_numbers_text": "2, 7"
+          },
+          {
+            "event_index": 2261,
+            "year": 1982,
+            "draw_no": 2261,
+            "date": "",
+            "draw_numbers": [
+              2,
+              6,
+              13,
+              19,
+              29,
+              42
+            ],
+            "draw_numbers_text": "2, 6, 13, 19, 29, 42",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              13,
+              19,
+              42
+            ],
+            "matching_numbers_text": "6, 13, 19, 42",
+            "different_query_numbers": [
+              16,
+              44
+            ],
+            "different_query_numbers_text": "16, 44",
+            "different_draw_numbers": [
+              2,
+              29
+            ],
+            "different_draw_numbers_text": "2, 29"
+          },
+          {
+            "event_index": 1604,
+            "year": 1976,
+            "draw_no": 1604,
+            "date": "",
+            "draw_numbers": [
+              6,
+              16,
+              17,
+              33,
+              42,
+              44
+            ],
+            "draw_numbers_text": "6, 16, 17, 33, 42, 44",
+            "match_count": 4,
+            "matching_numbers": [
+              6,
+              16,
+              42,
+              44
+            ],
+            "matching_numbers_text": "6, 16, 42, 44",
+            "different_query_numbers": [
+              13,
+              19
+            ],
+            "different_query_numbers_text": "13, 19",
+            "different_draw_numbers": [
+              17,
+              33
+            ],
+            "different_draw_numbers_text": "17, 33"
+          }
+        ],
+        "warnings": [
+          "Тази комбинация вече има точно историческо съвпадение в данните."
+        ],
+        "recommendations": [
+          "Точното минало съвпадение не означава, че комбинацията е по-вероятна или по-малко вероятна в бъдеще.",
+          "Сравни резултата и с модулите за покритие, баланс и профил на число."
+        ]
+      }
+    ],
+    "safety_note_bg": "Това е историческо сравнение, не предсказание. Сходството с минали тиражи не променя математическата вероятност за бъдещ тираж."
+  },
+  "safety_bg": "Резултатът е историческо сравнение, не обещание за бъдещо теглене."
+}

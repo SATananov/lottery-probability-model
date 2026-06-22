@@ -1,0 +1,18 @@
+{
+  "module": "draw_similarity_search",
+  "version": "v56",
+  "user_facing_name_bg": "Подобни исторически тиражи",
+  "total_draws": 10058,
+  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "purpose_bg": "Сравнява въведена 6/49 комбинация с всички исторически тиражи и показва най-близките исторически съвпадения.",
+  "not_a_prediction_bg": "Модулът не предсказва бъдещи тегления и не гарантира печалба. Той измерва само историческа близост.",
+  "metrics": [
+    "match_distribution_0_to_6",
+    "closest_historical_draws",
+    "exact_matches_count",
+    "five_matches_count",
+    "four_matches_count",
+    "three_matches_count",
+    "historical_similarity_score"
+  ]
+}
