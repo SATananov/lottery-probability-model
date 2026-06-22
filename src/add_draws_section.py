@@ -10,6 +10,8 @@ from typing import Any
 
 import streamlit as st
 
+from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack_against_draw
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "historical_draws.csv"
@@ -42,6 +44,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v69_build_portfolio_improvement_suggestions.py",
     ROOT / "scripts" / "v70_build_applied_candidate_portfolio.py",
     ROOT / "scripts" / "v71_build_ticket_pack_export.py",
+    ROOT / "scripts" / "v73_build_ticket_pack_performance_tracker.py",
 ]
 
 
@@ -428,6 +431,16 @@ def render() -> None:
         key="add_draw_sync_github",
     )
 
+    evaluate_pack_before_save = st.checkbox(
+        "Оцени текущия пакет преди запис на тиража",
+        value=True,
+        key="add_draw_evaluate_pack_before_save",
+        help=(
+            "Първо проверява активния Step 71 пакет срещу въведените числа "
+            "и записва Step 73 performance history. След това тиражът се записва в dataset-а."
+        ),
+    )
+
     replace_existing = st.checkbox(
         "Замени съществуващо теглене, ако вече го има",
         value=True,
@@ -518,6 +531,35 @@ def render() -> None:
             for error in errors:
                 st.error(error)
             return
+
+
+        pre_save_evaluations = []
+        if evaluate_pack_before_save:
+            st.info("Step 73: оценявам текущия Step 71 пакет преди запис в dataset-а.")
+
+            for position, numbers, _bonus in payloads:
+                try:
+                    evaluation = evaluate_current_pack_against_draw(
+                        numbers,
+                        draw_date=draw_date.isoformat(),
+                        draw_number=f"{draw_no}-{position}",
+                        source="add_draw_pre_save",
+                        persist=True,
+                    )
+                    pre_save_evaluations.append(evaluation)
+                    history = evaluation["history_row"]
+                    st.success(
+                        f"Step 73 OK — теглене {position}: "
+                        f"най-добър фиш {history['best_ticket_id']} с "
+                        f"{history['best_hit_count']} попадения; "
+                        f"пакетът покрива {history['package_unique_hits']} от 6 числа."
+                    )
+                except Exception as exc:
+                    st.error(
+                        "Step 73 оценката не успя. Тиражът не беше записан, "
+                        f"за да не се наруши правилният pre-refresh flow: {exc}"
+                    )
+                    return
 
         try:
             saved_count = save_draws(

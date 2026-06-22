@@ -165,6 +165,12 @@ WEIGHTED_REFRESH_STEPS = [
         "script": "scripts/v71_build_ticket_pack_export.py",
         "outputs": ["models/v71", "reports/v71_ticket_pack_summary.json"],
     },
+    {
+        "step": "73",
+        "name": "Представяне на пакета",
+        "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
+        "outputs": ["models/v73", "reports/v73_ticket_pack_performance_summary.json"],
+    },
 ]
 
 

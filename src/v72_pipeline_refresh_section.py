@@ -61,7 +61,7 @@ def _show_table(rows):
 def render_v72_pipeline_refresh_section():
     st.title("Обновяване на pipeline")
     st.caption(
-        "Единен refresh center за weighted pipeline: Step 61–63 и Step 65–71. "
+        "Единен refresh center за weighted pipeline: Step 61–63 и Step 65–73. "
         "При нужда може да включи и core steps v41–v60."
     )
 
@@ -101,8 +101,8 @@ def render_v72_pipeline_refresh_section():
             st.rerun()
 
     with col_b:
-        if st.button("Обнови weighted pipeline Step 61–71", key="v72_run_weighted", type="primary"):
-            with st.spinner("Обновявам Step 61–63 и Step 65–71..."):
+        if st.button("Обнови weighted pipeline Step 61–73", key="v72_run_weighted", type="primary"):
+            with st.spinner("Обновявам Step 61–63 и Step 65–73..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=False)
             if result.get("run_ok"):
                 st.success("Weighted pipeline refresh мина успешно.")
@@ -113,7 +113,7 @@ def render_v72_pipeline_refresh_section():
 
     with st.expander("Пълен refresh след нов тираж"):
         st.warning(
-            "Тази опция пуска core scripts v41–v60 плюс weighted pipeline Step 61–71. "
+            "Тази опция пуска core scripts v41–v60 плюс weighted pipeline Step 61–73. "
             "Използвай я след добавяне на нов тираж, когато искаш пълно обновяване."
         )
 
@@ -181,10 +181,10 @@ def render_v72_pipeline_refresh_section():
         st.markdown(
             """
 - **Audit без обновяване** само проверява дали скриптовете и artifacts съществуват.
-- **Weighted pipeline refresh** пуска Step 61, 62, 63 и Step 65–71.
+- **Weighted pipeline refresh** пуска Step 61, 62, 63 и Step 65–73.
 - **Пълен refresh v41–v71** пуска core моделите и после weighted pipeline.
 - Add Draw auto-refresh вече е подравнен да обновява целия pipeline след запис.
-- Training Center вече показва Step 65–71 като част от refresh flow.
+- Training Center вече показва Step 65–73 като част от refresh flow.
 
 Това е технически refresh/control layer, не предсказател на бъдещ тираж.
 """
