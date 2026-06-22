@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "step": "72",
+    "name": "Full Weighted Pipeline Refresh Integration",
+    "mode": "audit",
+    "include_core": false,
+    "steps_planned": 10,
+    "steps_reported": 10,
+    "all_scripts_present": true,
+    "all_outputs_present": true,
+    "run_pipeline": false,
+    "run_ok": "",
+    "stopped_at": "",
+    "weighted_steps": [
+      "61",
+      "62",
+      "63",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "70",
+      "71"
+    ],
+    "core_steps_included": [],
+    "generated_at": "2026-06-22T09:55:46+00:00",
+    "generated_reports": [
+      "reports/v72_pipeline_refresh_summary.json",
+      "reports/v72_pipeline_refresh_summary.md",
+      "reports/v72_pipeline_refresh_plan.csv",
+      "models/v72/v72_pipeline_refresh_model.json"
+    ],
+    "safe_note": "This refresh pipeline updates statistical artifacts only. It is not a prediction and not a winning guarantee."
+  },
+  "steps": [
+    {
+      "step": "61",
+      "name": "Анализ на нов тираж",
+      "script": "scripts/v61_build_draw_result_analyzer.py",
+      "script_exists": true,
+      "outputs": "models/v61; reports/v61_draw_result_analyzer_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T09:14:50",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "62",
+      "name": "История на моделите",
+      "script": "scripts/v62_build_model_performance_tracker.py",
+      "script_exists": true,
+      "outputs": "models/v62; reports/v62_model_performance_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T09:36:32",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "63",
+      "name": "Надеждност на моделите",
+      "script": "scripts/v63_build_model_reliability_dashboard.py",
+      "script_exists": true,
+      "outputs": "models/v63; reports/v63_model_reliability_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T09:52:52",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "65",
+      "name": "Умно тегло на моделите",
+      "script": "scripts/v65_build_model_weighting_center.py",
+      "script_exists": true,
+      "outputs": "models/v65; reports/v65_model_weighting_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T10:48:46",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "66",
+      "name": "Претеглен ensemble анализ",
+      "script": "scripts/v66_build_weighted_smart_ensemble.py",
+      "script_exists": true,
+      "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T10:57:02",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "67",
+      "name": "Умен генератор с тегла",
+      "script": "scripts/v67_build_weighted_ticket_builder.py",
+      "script_exists": true,
+      "outputs": "models/v67; reports/v67_weighted_ticket_builder_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T11:06:23",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "68",
+      "name": "Умен portfolio optimizer",
+      "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
+      "script_exists": true,
+      "outputs": "models/v68; reports/v68_weighted_portfolio_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T11:06:23",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "69",
+      "name": "Подобряване на портфолио",
+      "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
+      "script_exists": true,
+      "outputs": "models/v69; reports/v69_portfolio_improvement_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T11:25:19",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "70",
+      "name": "Приложен подобрен портфейл",
+      "script": "scripts/v70_build_applied_candidate_portfolio.py",
+      "script_exists": true,
+      "outputs": "models/v70; reports/v70_applied_candidate_portfolio_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T11:33:03",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "71",
+      "name": "Пакет за игра",
+      "script": "scripts/v71_build_ticket_pack_export.py",
+      "script_exists": true,
+      "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T12:42:56",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    }
+  ]
+}

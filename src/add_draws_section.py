@@ -24,17 +24,24 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v45_train_prediction_engine_pro.py",
     ROOT / "scripts" / "v50_build_pair_group_intelligence.py",
     ROOT / "scripts" / "v51_build_ticket_portfolio_intelligence.py",
-    ROOT / "scripts" / "v61_build_draw_result_analyzer.py",
-        "scripts/v62_build_model_performance_tracker.py",
-        "scripts/v63_build_model_reliability_dashboard.py",
-    ROOT / "scripts" / "v60_build_ticket_builder_2_polish_export.py",
-    ROOT / "scripts" / "v59_build_smart_ticket_builder_2.py",
-    ROOT / "scripts" / "v58_build_smart_ensemble_score_2.py",
-    ROOT / "scripts" / "v57_build_hot_cold_stable_center.py",
-    ROOT / "scripts" / "v56_build_draw_similarity_search.py",
-    ROOT / "scripts" / "v55_build_number_profile_center.py",
-    ROOT / "scripts" / "v54_build_pattern_balance_engine.py",
     ROOT / "scripts" / "v53_build_ticket_coverage_intelligence.py",
+    ROOT / "scripts" / "v54_build_pattern_balance_engine.py",
+    ROOT / "scripts" / "v55_build_number_profile_center.py",
+    ROOT / "scripts" / "v56_build_draw_similarity_search.py",
+    ROOT / "scripts" / "v57_build_hot_cold_stable_center.py",
+    ROOT / "scripts" / "v58_build_smart_ensemble_score_2.py",
+    ROOT / "scripts" / "v59_build_smart_ticket_builder_2.py",
+    ROOT / "scripts" / "v60_build_ticket_builder_2_polish_export.py",
+    ROOT / "scripts" / "v61_build_draw_result_analyzer.py",
+    ROOT / "scripts" / "v62_build_model_performance_tracker.py",
+    ROOT / "scripts" / "v63_build_model_reliability_dashboard.py",
+    ROOT / "scripts" / "v65_build_model_weighting_center.py",
+    ROOT / "scripts" / "v66_build_weighted_smart_ensemble.py",
+    ROOT / "scripts" / "v67_build_weighted_ticket_builder.py",
+    ROOT / "scripts" / "v68_build_weighted_portfolio_optimizer.py",
+    ROOT / "scripts" / "v69_build_portfolio_improvement_suggestions.py",
+    ROOT / "scripts" / "v70_build_applied_candidate_portfolio.py",
+    ROOT / "scripts" / "v71_build_ticket_pack_export.py",
 ]
 
 
@@ -293,22 +300,9 @@ def refresh_models() -> list[tuple[str, bool, str]]:
 def sync_to_github(year: int, draw_no: int) -> tuple[bool, str]:
     paths_to_add = [
         "data/historical_draws.csv",
-        "models/v41",
-        "models/v42",
-        "models/v43_1",
-        "models/v44_1",
-        "models/v45",
-        "models/v50",
-        "models/v51",
-        "models/v61",
-        "models/v60",
-        "models/v59",
-        "models/v58",
-        "models/v57",
-        "models/v56",
-        "models/v55",
-        "models/v54",
-        "models/v53",
+        "data/v40_normalized_draw_events.csv",
+        "data/v41_canonical_draw_events.csv",
+        "models",
         "reports",
     ]
 
@@ -423,7 +417,7 @@ def render() -> None:
     st.caption("Записва един тираж с едно или две тегления. Всяко теглене има 6 основни числа и отделно допълнително число.")
 
     auto_update = st.checkbox(
-        "Автоматично обнови моделите след запис",
+        "Автоматично обнови целия pipeline след запис",
         value=True,
         key="add_draw_auto_update_models",
     )

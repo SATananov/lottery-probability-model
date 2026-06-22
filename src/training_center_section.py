@@ -95,6 +95,52 @@ TRAINING_STEPS = [
         "script": "scripts/v61_build_draw_result_analyzer.py",
         "outputs": ["models/v61", "reports/v61_draw_result_analyzer_summary.json"],
     },
+
+    {
+        "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+        "script": "scripts/v62_build_model_performance_tracker.py",
+        "outputs": ['models/v62', 'reports/v62_model_performance_summary.json'],
+    },
+    {
+        "name": "\u041d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+        "script": "scripts/v63_build_model_reliability_dashboard.py",
+        "outputs": ['models/v63', 'reports/v63_model_reliability_summary.json'],
+    },
+    {
+        "name": "\u0423\u043c\u043d\u043e \u0442\u0435\u0433\u043b\u043e \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435",
+        "script": "scripts/v65_build_model_weighting_center.py",
+        "outputs": ['models/v65', 'reports/v65_model_weighting_summary.json'],
+    },
+    {
+        "name": "\u041f\u0440\u0435\u0442\u0435\u0433\u043b\u0435\u043d ensemble \u0430\u043d\u0430\u043b\u0438\u0437",
+        "script": "scripts/v66_build_weighted_smart_ensemble.py",
+        "outputs": ['models/v66', 'reports/v66_weighted_smart_ensemble_summary.json'],
+    },
+    {
+        "name": "\u0423\u043c\u0435\u043d \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u0441 \u0442\u0435\u0433\u043b\u0430",
+        "script": "scripts/v67_build_weighted_ticket_builder.py",
+        "outputs": ['models/v67', 'reports/v67_weighted_ticket_builder_summary.json'],
+    },
+    {
+        "name": "\u0423\u043c\u0435\u043d portfolio optimizer",
+        "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
+        "outputs": ['models/v68', 'reports/v68_weighted_portfolio_summary.json'],
+    },
+    {
+        "name": "\u041f\u043e\u0434\u043e\u0431\u0440\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e",
+        "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
+        "outputs": ['models/v69', 'reports/v69_portfolio_improvement_summary.json'],
+    },
+    {
+        "name": "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d \u043f\u043e\u0434\u043e\u0431\u0440\u0435\u043d \u043f\u043e\u0440\u0442\u0444\u0435\u0439\u043b",
+        "script": "scripts/v70_build_applied_candidate_portfolio.py",
+        "outputs": ['models/v70', 'reports/v70_applied_candidate_portfolio_summary.json'],
+    },
+    {
+        "name": "\u041f\u0430\u043a\u0435\u0442 \u0437\u0430 \u0438\u0433\u0440\u0430",
+        "script": "scripts/v71_build_ticket_pack_export.py",
+        "outputs": ['models/v71', 'reports/v71_ticket_pack_summary.json'],
+    },
 ]
 
 V45_SUMMARY_PATH = ROOT / "reports" / "v45_training_summary.json"
@@ -304,7 +350,7 @@ def _render_training_buttons() -> None:
             st.code(output or "-", language="text")
 
     with col2:
-        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v51")):
+        if st.button(T("\\u041f\\u044a\\u043b\\u0435\\u043d refresh v41 \\u2192 v71")):
             full_output = []
             all_ok = True
 
@@ -361,7 +407,7 @@ def _render_github_sync() -> None:
 
     commit_message = st.text_input(
         T("\\u0421\\u044a\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0437\\u0430 commit"),
-        value="Refresh model artifacts from training center",
+        value="Refresh full weighted pipeline artifacts from training center",
     )
 
     if st.button(T("\\u041a\\u0430\\u0447\\u0438 models/reports \\u0432 GitHub"), type="primary"):
@@ -391,7 +437,7 @@ def _render_github_sync() -> None:
             st.code("\\n\\n".join(logs), language="text")
             return
 
-        safe_message = commit_message.strip() or "Refresh model artifacts from training center"
+        safe_message = commit_message.strip() or "Refresh full weighted pipeline artifacts from training center"
 
         ok_commit, commit_output = _run_git_command(["git", "commit", "-m", safe_message])
         logs.append("=== git commit ===\\n" + (commit_output or "-"))
