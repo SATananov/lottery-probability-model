@@ -22,6 +22,11 @@ def _load_context() -> tuple[list[dict], list[dict], dict, int, str]:
 
 
 def _sample_text() -> str:
+    saved_ticket = st.session_state.get("v60_last_generated_ticket_text") or st.session_state.get("v59_last_generated_ticket_text")
+
+    if isinstance(saved_ticket, str) and saved_ticket.strip():
+        return saved_ticket.strip()
+
     return "\n".join(
         [
             "6, 13, 16, 19, 42, 44",
@@ -29,7 +34,6 @@ def _sample_text() -> str:
             "22, 28, 37, 38, 42, 49",
         ]
     )
-
 
 def _bg_summary_table(df: pd.DataFrame) -> pd.DataFrame:
     rename_map = {

@@ -5,9 +5,13 @@ import streamlit as st
 
 from src.v55_number_profile_engine import build_number_profiles, load_draw_events
 from src.v57_hot_cold_stable_engine import build_hot_cold_stable_center
-from src.v59_smart_ticket_builder_2_engine import (
-    build_smart_ticket_builder_2,
-    builder_result_to_dataframe,
+from src.v59_smart_ticket_builder_2_engine import build_smart_ticket_builder_2
+from src.v60_ticket_builder_export_utils import (
+    result_to_copy_text,
+    result_to_csv_bytes,
+    result_to_dataframe,
+    result_to_json_bytes,
+    result_to_txt_bytes,
 )
 
 
@@ -37,11 +41,35 @@ def _bg_table(df: pd.DataFrame) -> pd.DataFrame:
     return df[visible].rename(columns=rename_map)
 
 
-def _copy_text(selected_tickets: list[list[int]]) -> str:
-    return "\n".join(
-        ", ".join(str(number) for number in ticket)
-        for ticket in selected_tickets
-    )
+def _save_for_ensemble(result: dict) -> None:
+    ticket_text = result_to_copy_text(result)
+    st.session_state["v60_last_generated_ticket_text"] = ticket_text
+    st.session_state["v59_last_generated_ticket_text"] = ticket_text
+    st.session_state["generated_tickets"] = result.get("selected_tickets", [])
+    st.session_state["current_ticket_combinations"] = result.get("selected_tickets", [])
+
+
+def _render_ticket_card(index: int, row: dict) -> None:
+    st.markdown(f"### Комбинация {index}")
+    st.code(row["combination_text"], language="text")
+
+    c1, c2, c3, c4, c5 = st.columns(5)
+    c1.metric("Обща", row["final_score"])
+    c2.metric("Баланс", row["pattern_score"])
+    c3.metric("Покритие", row["coverage_score"])
+    c4.metric("Профил", row["number_profile_score"])
+    c5.metric("Историчност", row["similarity_context_score"])
+
+    st.caption(row["band"])
+
+    with st.expander("Защо е избрана тази комбинация"):
+        st.markdown("**Предупреждения:**")
+        for warning in row.get("warnings", []):
+            st.warning(warning)
+
+        st.markdown("**Препоръки:**")
+        for recommendation in row.get("recommendations", []):
+            st.success(recommendation)
 
 
 def render_v59_smart_ticket_builder_2_section() -> None:
@@ -133,22 +161,30 @@ def render_v59_smart_ticket_builder_2_section() -> None:
             step=1,
         )
 
-    if not st.button("Генерирай интелигентен фиш", type="primary"):
+    generate_clicked = st.button("Генерирай интелигентен фиш", type="primary")
+
+    if generate_clicked:
+        with st.spinner("Генерирам и оценявам кандидат-комбинации..."):
+            result = build_smart_ticket_builder_2(
+                ticket_count=ticket_count,
+                candidate_count=candidate_count,
+                seed=int(seed),
+                strategy=strategy,
+                max_number_reuse=max_number_reuse,
+                max_shared_numbers=max_shared_numbers,
+                draw_events=events,
+                profiles=profiles,
+                hot_cold_center=hot_cold_center,
+            )
+
+        st.session_state["v60_last_builder_result"] = result
+        _save_for_ensemble(result)
+
+    result = st.session_state.get("v60_last_builder_result")
+
+    if not result:
         st.info("Избери настройки и натисни бутона за генериране.")
         return
-
-    with st.spinner("Генерирам и оценявам кандидат-комбинации..."):
-        result = build_smart_ticket_builder_2(
-            ticket_count=ticket_count,
-            candidate_count=candidate_count,
-            seed=int(seed),
-            strategy=strategy,
-            max_number_reuse=max_number_reuse,
-            max_shared_numbers=max_shared_numbers,
-            draw_events=events,
-            profiles=profiles,
-            hot_cold_center=hot_cold_center,
-        )
 
     st.subheader("Предложен фиш")
 
@@ -160,16 +196,53 @@ def render_v59_smart_ticket_builder_2_section() -> None:
 
     st.caption(result["safety_note_bg"])
 
-    df = builder_result_to_dataframe(result)
+    df = result_to_dataframe(result)
 
     if df.empty:
         st.error("Не са генерирани валидни предложения. Пробвай по-голям кандидатски пул или друг seed.")
         return
 
+    st.markdown("### Готов фиш за копиране")
+    st.code(result_to_copy_text(result), language="text")
+
+    dl1, dl2, dl3 = st.columns(3)
+
+    with dl1:
+        st.download_button(
+            "Изтегли TXT",
+            data=result_to_txt_bytes(result),
+            file_name="smart_ticket_builder_2_ticket.txt",
+            mime="text/plain",
+        )
+
+    with dl2:
+        st.download_button(
+            "Изтегли CSV",
+            data=result_to_csv_bytes(result),
+            file_name="smart_ticket_builder_2_ticket.csv",
+            mime="text/csv",
+        )
+
+    with dl3:
+        st.download_button(
+            "Изтегли JSON",
+            data=result_to_json_bytes(result),
+            file_name="smart_ticket_builder_2_ticket.json",
+            mime="application/json",
+        )
+
+    if st.button("Запази този фиш за Обединена оценка"):
+        _save_for_ensemble(result)
+        st.success("Фишът е запазен. Отвори страницата „Обединена оценка“, за да го провериш там.")
+
+    st.markdown("### Таблица на предложенията")
     st.dataframe(_bg_table(df), use_container_width=True, hide_index=True)
 
-    st.markdown("### Копиране на фиша")
-    st.code(_copy_text(result["selected_tickets"]), language="text")
+    st.markdown("### Карти на комбинациите")
+
+    for index, row in enumerate(result["selected_rows"], start=1):
+        with st.container(border=True):
+            _render_ticket_card(index, row)
 
     st.markdown("### Предупреждения")
     for warning in result["warnings"]:
@@ -179,30 +252,9 @@ def render_v59_smart_ticket_builder_2_section() -> None:
     for recommendation in result["recommendations"]:
         st.success(recommendation)
 
-    st.markdown("### Детайли по избраните комбинации")
-
-    for index, row in enumerate(result["selected_rows"], start=1):
-        with st.expander(f"Комбинация {index}: {row['combination_text']}"):
-            st.write(f"**Обща оценка:** {row['final_score']} / 100")
-            st.write(f"**Ниво:** {row['band']}")
-
-            c1, c2, c3, c4, c5 = st.columns(5)
-            c1.metric("Баланс", row["pattern_score"])
-            c2.metric("Покритие", row["coverage_score"])
-            c3.metric("Профил", row["number_profile_score"])
-            c4.metric("Горещи/студени", row["hot_cold_balance_score"])
-            c5.metric("Историческа близост", row["similarity_context_score"])
-
-            st.markdown("**Предупреждения:**")
-            for warning in row.get("warnings", []):
-                st.warning(warning)
-
-            st.markdown("**Препоръки:**")
-            for recommendation in row.get("recommendations", []):
-                st.success(recommendation)
-
     with st.expander("Топ кандидати преди финалния избор"):
         preview_rows = []
+
         for index, row in enumerate(result["top_candidates_preview"], start=1):
             preview_rows.append(
                 {
@@ -215,4 +267,5 @@ def render_v59_smart_ticket_builder_2_section() -> None:
                     "Историческа близост": row["similarity_context_score"],
                 }
             )
+
         st.dataframe(preview_rows, use_container_width=True, hide_index=True)
