@@ -1,3 +1,3 @@
 ﻿order,step,label,category,script,script_exists,role
-1,78,Финален план,Финален план,scripts/v78_build_final_play_plan_center.py,,"Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия."
+1,79,Експорт и изпълнение,Експорт и изпълнение,scripts/v79_build_ticket_pack_export_center.py,,"Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение."
 2,74,Контрол на синхрона,Контрол на синхрона,scripts/v74_build_model_dependency_sync_center.py,,"Финален контролен слой за проверка на model artifacts, dependency map и sync status."

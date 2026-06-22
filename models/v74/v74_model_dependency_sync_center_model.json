@@ -699,6 +699,48 @@
     {
       "description": "Изходът помага на следващ слой",
       "from": "Step 78",
+      "to": "Step 79",
+      "type": "feeds"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 79",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/historical_draws.csv",
+      "to": "Step 79",
+      "type": "dataset"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v78_final_play_plan_summary.json",
+      "to": "Step 79",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v78_selected_ticket_plan.csv",
+      "to": "Step 79",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v78_play_plan_actions.csv",
+      "to": "Step 79",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v78_play_plan_warnings.csv",
+      "to": "Step 79",
+      "type": "artifact"
+    },
+    {
+      "description": "Изходът помага на следващ слой",
+      "from": "Step 79",
       "to": "Step 74",
       "type": "feeds"
     }
@@ -1321,7 +1363,7 @@
       ],
       "ensemble_source": false,
       "feeds": [
-        "Step 74"
+        "Step 79"
       ],
       "inputs": [
         "reports/v77_decision_recommendation_summary.json",
@@ -1342,6 +1384,36 @@
       "role": "Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия.",
       "script": "scripts/v78_build_final_play_plan_center.py",
       "step": "78"
+    },
+    {
+      "category": "Експорт и изпълнение",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "inputs": [
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_play_plan_actions.csv",
+        "reports/v78_play_plan_warnings.csv"
+      ],
+      "label": "Експорт и изпълнение",
+      "outputs": [
+        "models/v79/v79_ticket_pack_export_model.json",
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_ticket_pack_export_summary.md",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_execution_checklist.csv",
+        "reports/v79_ticket_pack_copy_text.txt",
+        "reports/v79_ticket_pack_export.json"
+      ],
+      "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
+      "script": "scripts/v79_build_ticket_pack_export_center.py",
+      "step": "79"
     }
   ],
   "primary_datasets": [
@@ -1423,7 +1495,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T15:15:41+00:00",
+    "generated_at": "2026-06-22T15:33:00+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1433,7 +1505,7 @@
       "models/v74/v74_model_dependency_sync_center_model.json"
     ],
     "missing_models": 0,
-    "models_checked": 27,
+    "models_checked": 28,
     "name": "Контрол на синхрона между моделите",
     "pipeline_chain": [
       "Данни от тиражи",
@@ -1450,10 +1522,10 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "41a94b8bf516f9a189e3e1cfeb48ad3d65e4ca1c9fb05c15464b5eca8f91ec61",
+    "state_hash": "0af17fae65c6f8f9e2045001f5352fed01ff4c4cb0264e096d52c6058c670723",
     "status": "Синхронизиран",
     "step": "74",
-    "synced_models": 27
+    "synced_models": 28
   },
   "sync_status": [
     {
@@ -2033,7 +2105,7 @@
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
-      "feeds": "Step 74",
+      "feeds": "Step 79",
       "inputs": "reports/v77_decision_recommendation_summary.json; reports/v77_ticket_recommendations.csv; reports/v77_decision_recommendations.json; reports/v77_decision_warnings.csv",
       "label": "Финален план",
       "latest_input_mtime": "2026-06-22T18:02:39",
@@ -2048,6 +2120,28 @@
       "script_exists": true,
       "status_rank": 2,
       "step": "78",
+      "sync_status": "Синхронизиран"
+    },
+    {
+      "category": "Експорт и изпълнение",
+      "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
+      "dependencies_present": true,
+      "ensemble_source": false,
+      "feeds": "Step 74",
+      "inputs": "reports/v78_final_play_plan_summary.json; reports/v78_selected_ticket_plan.csv; reports/v78_play_plan_actions.csv; reports/v78_play_plan_warnings.csv",
+      "label": "Експорт и изпълнение",
+      "latest_input_mtime": "2026-06-22T18:15:41",
+      "latest_output_mtime": "2026-06-22T18:33:00",
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "outputs": "models/v79/v79_ticket_pack_export_model.json; reports/v79_ticket_pack_export_summary.json; reports/v79_ticket_pack_export_summary.md; reports/v79_export_ticket_pack.csv; reports/v79_execution_checklist.csv; reports/v79_ticket_pack_copy_text.txt; reports/v79_ticket_pack_export.json",
+      "outputs_present": true,
+      "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
+      "script": "scripts/v79_build_ticket_pack_export_center.py",
+      "script_exists": true,
+      "status_rank": 2,
+      "step": "79",
       "sync_status": "Синхронизиран"
     }
   ]

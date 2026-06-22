@@ -1022,3 +1022,42 @@ for _node in MODEL_NODES:
             _feeds.append("Step 78")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 78 FINAL PLAY PLAN WIRING END
+
+# STEP 79 TICKET PACK EXPORT WIRING START
+_STEP79_NODE = {
+    "step": "79",
+    "label": "Експорт и изпълнение",
+    "category": "Експорт и изпълнение",
+    "script": "scripts/v79_build_ticket_pack_export_center.py",
+    "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+    "inputs": [
+        "reports/v78_final_play_plan_summary.json",
+        "reports/v78_selected_ticket_plan.csv",
+        "reports/v78_play_plan_actions.csv",
+        "reports/v78_play_plan_warnings.csv",
+    ],
+    "outputs": [
+        "models/v79/v79_ticket_pack_export_model.json",
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_ticket_pack_export_summary.md",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_execution_checklist.csv",
+        "reports/v79_ticket_pack_copy_text.txt",
+        "reports/v79_ticket_pack_export.json",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "79" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP79_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "78":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 79" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 79" not in _feeds:
+            _feeds.append("Step 79")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 79 TICKET PACK EXPORT WIRING END

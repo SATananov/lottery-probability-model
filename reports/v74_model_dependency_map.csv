@@ -115,4 +115,11 @@ reports/v77_decision_recommendation_summary.json,Step 78,artifact,Входен m
 reports/v77_ticket_recommendations.csv,Step 78,artifact,Входен model/report artifact
 reports/v77_decision_recommendations.json,Step 78,artifact,Входен model/report artifact
 reports/v77_decision_warnings.csv,Step 78,artifact,Входен model/report artifact
-Step 78,Step 74,feeds,Изходът помага на следващ слой
+Step 78,Step 79,feeds,Изходът помага на следващ слой
+data/v41_canonical_draw_events.csv,Step 79,dataset,Dataset вход
+data/historical_draws.csv,Step 79,dataset,Dataset вход
+reports/v78_final_play_plan_summary.json,Step 79,artifact,Входен model/report artifact
+reports/v78_selected_ticket_plan.csv,Step 79,artifact,Входен model/report artifact
+reports/v78_play_plan_actions.csv,Step 79,artifact,Входен model/report artifact
+reports/v78_play_plan_warnings.csv,Step 79,artifact,Входен model/report artifact
+Step 79,Step 74,feeds,Изходът помага на следващ слой
