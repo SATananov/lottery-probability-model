@@ -50,6 +50,51 @@ TRAINING_STEPS = [
         "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
         "outputs": ["models/v51", "reports/v51_ticket_portfolio_summary.json"],
     },
+    {
+        "name": "\u041f\u043e\u043a\u0440\u0438\u0442\u0438\u0435 \u043d\u0430 \u0444\u0438\u0448\u0430",
+        "script": "scripts/v53_build_ticket_coverage_intelligence.py",
+        "outputs": ["models/v53", "reports/v53_ticket_coverage_summary.json"],
+    },
+    {
+        "name": "\u0411\u0430\u043b\u0430\u043d\u0441 \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438\u0442\u0435",
+        "script": "scripts/v54_build_pattern_balance_engine.py",
+        "outputs": ["models/v54", "reports/v54_pattern_balance_summary.json"],
+    },
+    {
+        "name": "\u041f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u0447\u0438\u0441\u043b\u043e",
+        "script": "scripts/v55_build_number_profile_center.py",
+        "outputs": ["models/v55", "reports/v55_number_profile_summary.json"],
+    },
+    {
+        "name": "\u041f\u043e\u0434\u043e\u0431\u043d\u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438",
+        "script": "scripts/v56_build_draw_similarity_search.py",
+        "outputs": ["models/v56", "reports/v56_draw_similarity_summary.json"],
+    },
+    {
+        "name": "\u0413\u043e\u0440\u0435\u0449\u0438, \u0441\u0442\u0443\u0434\u0435\u043d\u0438 \u0438 \u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0438 \u0447\u0438\u0441\u043b\u0430",
+        "script": "scripts/v57_build_hot_cold_stable_center.py",
+        "outputs": ["models/v57", "reports/v57_hot_cold_stable_summary.json"],
+    },
+    {
+        "name": "\u041e\u0431\u0435\u0434\u0438\u043d\u0435\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430",
+        "script": "scripts/v58_build_smart_ensemble_score_2.py",
+        "outputs": ["models/v58", "reports/v58_smart_ensemble_summary.json"],
+    },
+    {
+        "name": "\u0418\u043d\u0442\u0435\u043b\u0438\u0433\u0435\u043d\u0442\u0435\u043d \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 2",
+        "script": "scripts/v59_build_smart_ticket_builder_2.py",
+        "outputs": ["models/v59", "reports/v59_smart_ticket_builder_2_summary.json"],
+    },
+    {
+        "name": "Export \u0438 polish \u043d\u0430 \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 2",
+        "script": "scripts/v60_build_ticket_builder_2_polish_export.py",
+        "outputs": ["models/v60", "reports/v60_ticket_builder_2_polish_export_summary.json"],
+    },
+    {
+        "name": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043d\u043e\u0432 \u0442\u0438\u0440\u0430\u0436",
+        "script": "scripts/v61_build_draw_result_analyzer.py",
+        "outputs": ["models/v61", "reports/v61_draw_result_analyzer_summary.json"],
+    },
 ]
 
 V45_SUMMARY_PATH = ROOT / "reports" / "v45_training_summary.json"

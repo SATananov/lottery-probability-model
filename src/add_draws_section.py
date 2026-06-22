@@ -24,6 +24,15 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v45_train_prediction_engine_pro.py",
     ROOT / "scripts" / "v50_build_pair_group_intelligence.py",
     ROOT / "scripts" / "v51_build_ticket_portfolio_intelligence.py",
+    ROOT / "scripts" / "v61_build_draw_result_analyzer.py",
+    ROOT / "scripts" / "v60_build_ticket_builder_2_polish_export.py",
+    ROOT / "scripts" / "v59_build_smart_ticket_builder_2.py",
+    ROOT / "scripts" / "v58_build_smart_ensemble_score_2.py",
+    ROOT / "scripts" / "v57_build_hot_cold_stable_center.py",
+    ROOT / "scripts" / "v56_build_draw_similarity_search.py",
+    ROOT / "scripts" / "v55_build_number_profile_center.py",
+    ROOT / "scripts" / "v54_build_pattern_balance_engine.py",
+    ROOT / "scripts" / "v53_build_ticket_coverage_intelligence.py",
 ]
 
 
@@ -289,6 +298,15 @@ def sync_to_github(year: int, draw_no: int) -> tuple[bool, str]:
         "models/v45",
         "models/v50",
         "models/v51",
+        "models/v61",
+        "models/v60",
+        "models/v59",
+        "models/v58",
+        "models/v57",
+        "models/v56",
+        "models/v55",
+        "models/v54",
+        "models/v53",
         "reports",
     ]
 

@@ -1,0 +1,80 @@
+{
+  "module": "draw_result_analyzer",
+  "version": "v61",
+  "user_facing_name_bg": "Анализ на нов тираж",
+  "total_draws": 10058,
+  "previous_draws_compared": 10057,
+  "latest_draw": {
+    "event_index": 10058,
+    "date": "2026-06-21",
+    "year": 2026,
+    "draw_no": 48.0,
+    "numbers": [
+      6,
+      13,
+      16,
+      19,
+      42,
+      44
+    ],
+    "numbers_text": "6, 13, 16, 19, 42, 44"
+  },
+  "pattern_band": "Отличен баланс",
+  "pattern_score": 90.0,
+  "group_counts": {
+    "hot_count": 0,
+    "cold_count": 0,
+    "stable_count": 0,
+    "overdue_count": 0,
+    "unique_group_count": 2
+  },
+  "model_signal_summary": {
+    "signal_count": 27,
+    "best_hit_count": 3,
+    "average_hit_count": 0.41,
+    "signals_with_3_or_more": 1,
+    "signals_with_4_or_more": 0,
+    "best_signals": [
+      {
+        "source_key": "v44_1_combined_positive_negative",
+        "source_bg": "v44.1 финален ансамбъл",
+        "candidate_label": "combined_positive_negative",
+        "candidate_numbers": [
+          1,
+          2,
+          13,
+          16,
+          37,
+          42
+        ],
+        "candidate_text": "1, 2, 13, 16, 37, 42",
+        "note_bg": "Финален ensemble ticket candidate.",
+        "hit_count": 3,
+        "matching_numbers": [
+          13,
+          16,
+          42
+        ],
+        "missing_numbers": [
+          1,
+          2,
+          37
+        ],
+        "matching_numbers_text": "13, 16, 42",
+        "missing_numbers_text": "1, 2, 37"
+      }
+    ]
+  },
+  "pair_group_context_summary": {
+    "actual_pair_count": 15,
+    "top_pair_hits_count": 0,
+    "watch_pair_hits_count": 0
+  },
+  "historical_similarity_summary": {
+    "max_match_count": 4,
+    "four_matches_count": 10,
+    "five_matches_count": 0,
+    "exact_matches_count": 0
+  },
+  "safety_note_bg": "Това е анализ след излизане на тиража. Той сравнява реалния тираж с текущи статистически артефакти и исторически профили, но не е доказателство за предсказание и не е гаранция за печалба."
+}
