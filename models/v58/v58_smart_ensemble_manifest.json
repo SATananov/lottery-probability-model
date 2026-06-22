@@ -1,0 +1,23 @@
+{
+  "module": "smart_ensemble_score_2",
+  "version": "v58",
+  "user_facing_name_bg": "Обединена оценка",
+  "total_draws": 10058,
+  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "purpose_bg": "Обединява няколко статистически слоя: покритие, баланс, профил на числа, горещи/студени/стабилни групи и историческа близост.",
+  "not_a_prediction_bg": "Модулът не предсказва бъдещи тегления и не гарантира печалба. Той е статистически контролен слой.",
+  "component_weights": {
+    "pattern_score": 0.22,
+    "coverage_score": 0.16,
+    "number_profile_score": 0.24,
+    "hot_cold_balance_score": 0.2,
+    "similarity_context_score": 0.18
+  },
+  "depends_on": [
+    "v53_ticket_coverage",
+    "v54_pattern_balance",
+    "v55_number_profile",
+    "v56_draw_similarity",
+    "v57_hot_cold_stable"
+  ]
+}
