@@ -24,6 +24,7 @@ from src.v58_smart_ensemble_score_section import render_v58_smart_ensemble_score
 from src.v59_smart_ticket_builder_2_section import render_v59_smart_ticket_builder_2_section
 from src.v61_draw_result_analyzer_section import render_v61_draw_result_analyzer_section
 from src.v62_model_performance_tracker_section import render_v62_model_performance_tracker_section
+from src.v63_model_reliability_dashboard_section import render_v63_model_reliability_dashboard_section
 
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
@@ -4164,6 +4165,7 @@ def main() -> None:
         "Интелигентен генератор 2": render_v59_smart_ticket_builder_2_section,
         "Анализ на нов тираж": render_v61_draw_result_analyzer_section,
         "История на моделите": render_v62_model_performance_tracker_section,
+        "Надеждност на моделите": render_v63_model_reliability_dashboard_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     choice = st.sidebar.radio(tr("menu"), list(pages.keys()))

@@ -1,0 +1,18 @@
+{
+  "step": "63",
+  "name": "Model Reliability Dashboard",
+  "history_rows": 10,
+  "tracked_draws": 1,
+  "models_ranked": 10,
+  "best_model": "v41_latest_predictions",
+  "best_model_label": "v41 — последни прогнозни сигнали",
+  "best_reliability_score": 100.0,
+  "best_average_hits": 6,
+  "best_max_hits": 6,
+  "generated_reports": [
+    "reports/v63_model_reliability_summary.json",
+    "reports/v63_model_reliability_summary.md",
+    "reports/v63_model_reliability_scores.csv"
+  ],
+  "safe_note": "Historical model reliability dashboard only. This is not a prediction guarantee."
+}
