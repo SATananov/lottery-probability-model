@@ -118,8 +118,8 @@ def _show_table(rows):
 def render_v71_ticket_pack_export_section():
     st.title("Пакет за игра")
     st.caption(
-        "Готов export/print пакет от Step 70 applied portfolio. "
-        "Това е статистически reference пакет, не гаранция за печалба."
+        "Готов пакет за преглед, печат и изтегляне от Step 70 приложения портфейл. "
+        "Това е статистически референтен пакет, не гаранция за печалба."
     )
 
     summary = _load_json(SUMMARY_PATH)
@@ -135,38 +135,38 @@ def render_v71_ticket_pack_export_section():
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Фишове", summary.get("tickets_exported", 0))
     col2.metric("Промени", summary.get("changes_included", 0))
-    col3.metric("Applied score", f"{summary.get('applied_portfolio_score', 0)} / 100")
-    col4.metric("Top20", f"{summary.get('applied_top20_coverage', 0)} / 20")
+    col3.metric("Приложена оценка", f"{summary.get('applied_portfolio_score', 0)} / 100")
+    col4.metric("Top 20 покритие", f"{summary.get('applied_top20_coverage', 0)} / 20")
 
     col5, col6, col7, col8 = st.columns(4)
     col5.metric("Уникални числа", summary.get("applied_unique_numbers", 0))
-    col6.metric("Repeated pairs", summary.get("applied_repeated_pairs", 0))
-    col7.metric("Repeated triples", summary.get("applied_repeated_triples", 0))
+    col6.metric("Повторени двойки", summary.get("applied_repeated_pairs", 0))
+    col7.metric("Повторени тройки", summary.get("applied_repeated_triples", 0))
     col8.metric("Исторически съвпадения", summary.get("applied_historical_exact_matches", 0))
 
-    st.success("Пакетът е готов за преглед, печат и export.")
+    st.success("Пакетът е готов за преглед, печат и изтегляне.")
     st.info("Лотарийните тегления са случайни. Този пакет не е обещание за печалба.")
 
     st.subheader("Фишове")
     _show_table(rows)
 
-    st.subheader("Бърз printable preview")
+    st.subheader("Бърз преглед за печат")
     txt_preview = _read_text(TXT_PATH)
     if txt_preview:
         st.code(txt_preview, language="text")
 
-    st.subheader("Export файлове")
+    st.subheader("Файлове за изтегляне")
 
     col_a, col_b, col_c = st.columns(3)
     with col_a:
         st.download_button(
-            "CSV export",
+            "Свали CSV",
             data=_read_bytes(CSV_PATH),
             file_name="v71_ticket_pack.csv",
             mime="text/csv",
         )
         st.download_button(
-            "TXT export",
+            "Свали TXT",
             data=_read_bytes(TXT_PATH),
             file_name="v71_ticket_pack.txt",
             mime="text/plain",
@@ -174,13 +174,13 @@ def render_v71_ticket_pack_export_section():
 
     with col_b:
         st.download_button(
-            "JSON export",
+            "Свали JSON",
             data=_read_bytes(JSON_PATH),
             file_name="v71_ticket_pack.json",
             mime="application/json",
         )
         st.download_button(
-            "Markdown print",
+            "Свали Markdown за печат",
             data=_read_bytes(MD_PATH),
             file_name="v71_ticket_pack_printable.md",
             mime="text/markdown",
@@ -188,7 +188,7 @@ def render_v71_ticket_pack_export_section():
 
     with col_c:
         st.download_button(
-            "HTML print page",
+            "Свали HTML страница за печат",
             data=_read_bytes(HTML_PATH),
             file_name="v71_ticket_pack_printable.html",
             mime="text/html",
@@ -199,7 +199,7 @@ def render_v71_ticket_pack_export_section():
             """
 1. Чете **Step 70 applied portfolio**.
 2. Подготвя фишовете в CSV, JSON, TXT, Markdown и HTML.
-3. Показва printable preview в app-а.
+3. Показва бърз преглед за печат в app-а.
 4. Пази safe note във всички export файлове.
 5. Не променя Step 70, Step 69 или Step 67.
 

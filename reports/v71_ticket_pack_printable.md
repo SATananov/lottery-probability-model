@@ -1,13 +1,13 @@
-# Step 71 — Ticket Pack Export
+# Step 71 — Пакет за игра
 
 ## Пакет за игра
 
-**Applied portfolio score:** 70.118 / 100
-**Top20 coverage:** 20 / 20
-**Unique numbers:** 21
-**Repeated pairs:** 19
-**Repeated triples:** 1
-**Historical exact matches:** 0
+**Приложена оценка на портфейла:** 70.118 / 100
+**Top 20 покритие:** 20 / 20
+**Уникални числа:** 21
+**Повторени двойки:** 19
+**Повторени тройки:** 1
+**Исторически точни повторения:** 0
 
 **Важно:** Статистически reference пакет. Не е прогноза и не е гаранция за печалба.
 
@@ -32,6 +32,6 @@
 | 4 | 23 | 11 | 2,17,23,34,37,44 | 2,11,17,34,37,44 |
 | 8 | 34 | 16 | 1,18,21,23,34,37 | 1,16,18,21,23,37 |
 
-## Safety note
+## Важна бележка
 
 Statistical reference pack only. Not a prediction and not a winning guarantee.

@@ -32,73 +32,73 @@ CORE_REFRESH_STEPS = [
     },
     {
         "step": "44.1",
-        "name": "Финален ensemble ticket foundation",
+        "name": "Финален ensemble фиш foundation",
         "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
         "outputs": ["models/v44_1", "reports/v44_1_final_ensemble_ticket_summary.json"],
     },
     {
         "step": "45",
-        "name": "Prediction Dashboard Pro",
+        "name": "Прогнозно табло Pro",
         "script": "scripts/v45_train_prediction_engine_pro.py",
         "outputs": ["models/v45", "reports/v45_training_summary.json"],
     },
     {
         "step": "50",
-        "name": "Pair & Group Intelligence",
+        "name": "Анализ на двойки и групи",
         "script": "scripts/v50_build_pair_group_intelligence.py",
         "outputs": ["models/v50", "reports/v50_pair_group_summary.json"],
     },
     {
         "step": "51",
-        "name": "Ticket Portfolio Intelligence",
+        "name": "Интелигентна оценка на портфейл от фишове",
         "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
         "outputs": ["models/v51", "reports/v51_ticket_portfolio_summary.json"],
     },
     {
         "step": "53",
-        "name": "Ticket Coverage Intelligence",
+        "name": "Анализ на покритието на фишовете",
         "script": "scripts/v53_build_ticket_coverage_intelligence.py",
         "outputs": ["models/v53", "reports/v53_ticket_coverage_summary.json"],
     },
     {
         "step": "54",
-        "name": "Pattern Balance Engine",
+        "name": "Анализ на баланса на комбинациите",
         "script": "scripts/v54_build_pattern_balance_engine.py",
         "outputs": ["models/v54", "reports/v54_pattern_balance_summary.json"],
     },
     {
         "step": "55",
-        "name": "Number Profile Center",
+        "name": "Профил на число",
         "script": "scripts/v55_build_number_profile_center.py",
         "outputs": ["models/v55", "reports/v55_number_profile_summary.json"],
     },
     {
         "step": "56",
-        "name": "Draw Similarity Search",
+        "name": "Търсене на подобни исторически тиражи",
         "script": "scripts/v56_build_draw_similarity_search.py",
         "outputs": ["models/v56", "reports/v56_draw_similarity_summary.json"],
     },
     {
         "step": "57",
-        "name": "Hot / Cold / Stable Number Center",
+        "name": "Горещи, студени и стабилни числа",
         "script": "scripts/v57_build_hot_cold_stable_center.py",
         "outputs": ["models/v57", "reports/v57_hot_cold_stable_summary.json"],
     },
     {
         "step": "58",
-        "name": "Smart Ensemble Score 2",
+        "name": "Умна обединена оценка 2",
         "script": "scripts/v58_build_smart_ensemble_score_2.py",
         "outputs": ["models/v58", "reports/v58_smart_ensemble_summary.json"],
     },
     {
         "step": "59",
-        "name": "Smart Ticket Builder 2",
+        "name": "Умен генератор на фишове 2",
         "script": "scripts/v59_build_smart_ticket_builder_2.py",
         "outputs": ["models/v59", "reports/v59_smart_ticket_builder_2_summary.json"],
     },
     {
         "step": "60",
-        "name": "Ticket Builder 2 Polish Export",
+        "name": "Финален export на генератора на фишове 2",
         "script": "scripts/v60_build_ticket_builder_2_polish_export.py",
         "outputs": ["models/v60", "reports/v60_ticket_builder_2_polish_export_summary.json"],
     },
@@ -143,7 +143,7 @@ WEIGHTED_REFRESH_STEPS = [
     },
     {
         "step": "68",
-        "name": "Умен portfolio optimizer",
+        "name": "Умен оптимизатор на портфейл",
         "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
         "outputs": ["models/v68", "reports/v68_weighted_portfolio_summary.json"],
     },
@@ -204,6 +204,16 @@ def _run_script(script: str) -> tuple[bool, str]:
     return completed.returncode == 0, output.strip()
 
 
+def _clean_output_text(value: str) -> str:
+    text = str(value or "")
+    # Keep generated reports readable even if a Windows console returns broken bytes.
+    text = text.replace("\ufffd", "")
+    text = text.replace(chr(0xFFFD), "")
+    while "    " in text:
+        text = text.replace("    ", " ")
+    return "\n".join(line.strip() for line in text.splitlines() if line.strip()).strip()
+
+
 def _step_status(step: dict[str, object]) -> dict[str, object]:
     outputs = list(step.get("outputs", []))
     script = str(step.get("script", ""))
@@ -255,7 +265,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
             ok, output = _run_script(str(step["script"]))
             row["run_status"] = "OK" if ok else "ERROR"
             row["run_ok"] = bool(ok)
-            row["run_output_tail"] = output[-3000:]
+            row["run_output_tail"] = _clean_output_text(output[-3000:])
 
             # Re-check outputs after running.
             row["outputs_ok"] = all(_exists(str(path)) for path in step.get("outputs", []))
@@ -275,7 +285,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
 
     summary = {
         "step": "72",
-        "name": "Full Weighted Pipeline Refresh Integration",
+        "name": "Интеграция за пълно обновяване на статистическия pipeline",
         "mode": "run" if run_pipeline else "audit",
         "include_core": include_core,
         "steps_planned": len(steps),
@@ -294,7 +304,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
             "reports/v72_pipeline_refresh_plan.csv",
             "models/v72/v72_pipeline_refresh_model.json",
         ],
-        "safe_note": "This refresh pipeline updates statistical artifacts only. It is not a prediction and not a winning guarantee.",
+        "safe_note": "Този pipeline обновява само статистически файлове. Не е предсказание и не е гаранция за печалба.",
     }
 
     fieldnames = [
@@ -315,19 +325,19 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
     _write_json(MODELS_DIR / "v72_pipeline_refresh_model.json", {"summary": summary, "steps": rows})
 
     md = [
-        "# Step 72 — Full Weighted Pipeline Refresh Integration",
+        "# Step 72 — Обновяване на статистическия pipeline",
         "",
-        f"Mode: **{summary['mode']}**",
-        f"Include core: **{summary['include_core']}**",
-        f"Steps planned: **{summary['steps_planned']}**",
-        f"All scripts present: **{summary['all_scripts_present']}**",
-        f"All outputs present: **{summary['all_outputs_present']}**",
+        f"Режим: **{summary['mode']}**",
+        f"Включени основни стъпки: **{summary['include_core']}**",
+        f"Планирани стъпки: **{summary['steps_planned']}**",
+        f"Всички скриптове са налични: **{summary['all_scripts_present']}**",
+        f"Всички артефакти са налични: **{summary['all_outputs_present']}**",
         "",
-        "**Important:** This is a statistical refresh pipeline. It is not a prediction and not a winning guarantee.",
+        "**Важно:** Това е статистическо обновяване. Не е предсказание и не е гаранция за печалба.",
         "",
-        "## Steps",
+        "## Стъпки",
         "",
-        "| Step | Name | Script | Script OK | Outputs OK | Run status |",
+        "| Стъпка | Име | Скрипт | Скрипт OK | Артефакти OK | Статус |",
         "|---:|---|---|---|---|---|",
     ]
 

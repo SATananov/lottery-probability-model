@@ -123,15 +123,15 @@ def load_step70_tickets():
 def build_txt(summary, tickets, changes):
     lines = [
         "LOTTERY PROBABILITY MODEL — STEP 71 TICKET PACK",
-        "ПАКЕТ ЗА ИГРА — СТАТИСТИЧЕСКИ REFERENCE ПАКЕТ",
+        "ПАКЕТ ЗА ИГРА — СТАТИСТИЧЕСКИ РЕФЕРЕНТЕН ПАКЕТ",
         "",
-        f"Източник: Step 70 applied candidate portfolio",
-        f"Applied portfolio score: {summary.get('applied_portfolio_score', 0)} / 100",
-        f"Top20 coverage: {summary.get('applied_top20_coverage', 0)} / 20",
-        f"Unique numbers: {summary.get('applied_unique_numbers', 0)}",
-        f"Repeated pairs: {summary.get('applied_repeated_pairs', 0)}",
-        f"Repeated triples: {summary.get('applied_repeated_triples', 0)}",
-        f"Historical exact matches: {summary.get('applied_historical_exact_matches', 0)}",
+        f"Източник: Step 70 приложен кандидат портфейл",
+        f"Приложена оценка на портфейла: {summary.get('applied_portfolio_score', 0)} / 100",
+        f"Top 20 покритие: {summary.get('applied_top20_coverage', 0)} / 20",
+        f"Уникални числа: {summary.get('applied_unique_numbers', 0)}",
+        f"Повторени двойки: {summary.get('applied_repeated_pairs', 0)}",
+        f"Повторени тройки: {summary.get('applied_repeated_triples', 0)}",
+        f"Исторически точни повторения: {summary.get('applied_historical_exact_matches', 0)}",
         "",
         SAFE_NOTE_BG,
         "",
@@ -142,7 +142,7 @@ def build_txt(summary, tickets, changes):
     for ticket in tickets:
         lines.append(
             f"Фиш {ticket['ticket_id']}: {ticket['numbers_display']} "
-            f"| score {ticket['average_step66_score']} "
+            f"| оценка {ticket['average_step66_score']} "
             f"| {ticket['strategy_label']}"
         )
 
@@ -160,16 +160,16 @@ def build_txt(summary, tickets, changes):
 
 def build_markdown(summary, tickets, changes):
     lines = [
-        "# Step 71 — Ticket Pack Export",
+        "# Step 71 — Пакет за игра",
         "",
         "## Пакет за игра",
         "",
-        f"**Applied portfolio score:** {summary.get('applied_portfolio_score', 0)} / 100",
-        f"**Top20 coverage:** {summary.get('applied_top20_coverage', 0)} / 20",
-        f"**Unique numbers:** {summary.get('applied_unique_numbers', 0)}",
-        f"**Repeated pairs:** {summary.get('applied_repeated_pairs', 0)}",
-        f"**Repeated triples:** {summary.get('applied_repeated_triples', 0)}",
-        f"**Historical exact matches:** {summary.get('applied_historical_exact_matches', 0)}",
+        f"**Приложена оценка на портфейла:** {summary.get('applied_portfolio_score', 0)} / 100",
+        f"**Top 20 покритие:** {summary.get('applied_top20_coverage', 0)} / 20",
+        f"**Уникални числа:** {summary.get('applied_unique_numbers', 0)}",
+        f"**Повторени двойки:** {summary.get('applied_repeated_pairs', 0)}",
+        f"**Повторени тройки:** {summary.get('applied_repeated_triples', 0)}",
+        f"**Исторически точни повторения:** {summary.get('applied_historical_exact_matches', 0)}",
         "",
         f"**Важно:** {SAFE_NOTE_BG}",
         "",
@@ -201,7 +201,7 @@ def build_markdown(summary, tickets, changes):
     else:
         lines.append("Няма приложени промени.")
 
-    lines.extend(["", "## Safety note", "", SAFE_NOTE_EN, ""])
+    lines.extend(["", "## Важна бележка", "", SAFE_NOTE_EN, ""])
     return "\n".join(lines)
 
 
@@ -237,7 +237,7 @@ def build_html(summary, tickets, changes):
 <html lang="bg">
 <head>
   <meta charset="utf-8">
-  <title>Step 71 Ticket Pack</title>
+  <title>Step 71 — Пакет за игра</title>
   <style>
     body {{
       font-family: Arial, sans-serif;
@@ -304,19 +304,19 @@ def build_html(summary, tickets, changes):
 <body>
   <div class="header">
     <h1>Пакет за игра — Step 71</h1>
-    <div>Източник: Step 70 applied candidate portfolio</div>
-    <div>Generated: {html.escape(generated)}</div>
+    <div>Източник: Step 70 приложен кандидат портфейл</div>
+    <div>Генерирано: {html.escape(generated)}</div>
   </div>
 
   <div class="note"><strong>Важно:</strong> {html.escape(SAFE_NOTE_BG)}</div>
 
   <div class="metrics">
-    <div class="metric"><strong>Applied score</strong><br>{summary.get('applied_portfolio_score', 0)} / 100</div>
-    <div class="metric"><strong>Top20 coverage</strong><br>{summary.get('applied_top20_coverage', 0)} / 20</div>
-    <div class="metric"><strong>Unique numbers</strong><br>{summary.get('applied_unique_numbers', 0)}</div>
-    <div class="metric"><strong>Repeated pairs</strong><br>{summary.get('applied_repeated_pairs', 0)}</div>
-    <div class="metric"><strong>Repeated triples</strong><br>{summary.get('applied_repeated_triples', 0)}</div>
-    <div class="metric"><strong>Historical matches</strong><br>{summary.get('applied_historical_exact_matches', 0)}</div>
+    <div class="metric"><strong>Приложена оценка</strong><br>{summary.get('applied_portfolio_score', 0)} / 100</div>
+    <div class="metric"><strong>Top 20 покритие</strong><br>{summary.get('applied_top20_coverage', 0)} / 20</div>
+    <div class="metric"><strong>Уникални числа</strong><br>{summary.get('applied_unique_numbers', 0)}</div>
+    <div class="metric"><strong>Повторени двойки</strong><br>{summary.get('applied_repeated_pairs', 0)}</div>
+    <div class="metric"><strong>Повторени тройки</strong><br>{summary.get('applied_repeated_triples', 0)}</div>
+    <div class="metric"><strong>Исторически повторения</strong><br>{summary.get('applied_historical_exact_matches', 0)}</div>
   </div>
 
   <h2>Фишове</h2>

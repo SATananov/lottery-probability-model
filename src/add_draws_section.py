@@ -598,5 +598,5 @@ def render() -> None:
             else:
                 st.error("GitHub синхронизацията не успя.")
             if output:
-                with st.expander("GitHub изход"):
+                with st.expander("Технически изход от GitHub"):
                     st.code(output)

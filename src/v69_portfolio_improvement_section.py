@@ -135,22 +135,22 @@ def render_v69_portfolio_improvement_section():
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Предложения", summary.get("suggestions_generated", 0))
     col2.metric("Промени в кандидат портфолио", summary.get("candidate_changes_applied", 0))
-    col3.metric("Baseline score", f"{summary.get('baseline_portfolio_score', 0)} / 100")
-    col4.metric("Candidate score", f"{summary.get('candidate_portfolio_score', 0)} / 100")
+    col3.metric("Базова оценка", f"{summary.get('baseline_portfolio_score', 0)} / 100")
+    col4.metric("Кандидат оценка", f"{summary.get('candidate_portfolio_score', 0)} / 100")
 
     col5, col6, col7, col8 = st.columns(4)
     col5.metric("Top20 преди", f"{summary.get('baseline_top20_coverage', 0)} / 20")
     col6.metric("Top20 след", f"{summary.get('candidate_top20_coverage', 0)} / 20")
-    col7.metric("Repeated pairs преди", summary.get("baseline_repeated_pairs", 0))
-    col8.metric("Repeated pairs след", summary.get("candidate_repeated_pairs", 0))
+    col7.metric("Повторени двойки преди", summary.get("baseline_repeated_pairs", 0))
+    col8.metric("Повторени двойки след", summary.get("candidate_repeated_pairs", 0))
 
     delta = _as_float(summary.get("portfolio_score_delta", 0))
     if delta >= 0:
-        st.success(f"Кандидат портфолиото не влошава общия score. Delta: {delta:.3f}")
+        st.success(f"Кандидат портфолиото не влошава общата оценка. Промяна: {delta:.3f}")
     else:
         st.warning(
-            f"Кандидат портфолиото има лек спад в score ({delta:.3f}), "
-            "но може да подобрява coverage/diversity."
+            f"Кандидат портфолиото има лек спад в оценката ({delta:.3f}), "
+            "но може да подобрява покритието и разнообразието."
         )
 
     st.info(

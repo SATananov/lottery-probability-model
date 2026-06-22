@@ -89,7 +89,7 @@ def render_v73_ticket_pack_performance_tracker_section():
 
     summary = _load_json(SUMMARY_PATH)
     if not summary:
-        st.warning("Липсва Step 73 summary. Пусни: python scripts/v73_build_ticket_pack_performance_tracker.py")
+        st.warning("Липсва обобщение за Step 73. Пусни: python scripts/v73_build_ticket_pack_performance_tracker.py")
         return
 
     col1, col2, col3 = st.columns(3)
@@ -140,9 +140,9 @@ def render_v73_ticket_pack_performance_tracker_section():
     history_rows = _load_csv(HISTORY_PATH)
     _show_history(history_rows)
 
-    if st.button("Refresh Step 73 summary", key="v73_refresh_summary"):
+    if st.button("Обнови обобщението на Step 73", key="v73_refresh_summary"):
         result = build_ticket_pack_performance_tracker()
-        st.success("Step 73 summary обновен.")
+        st.success("Обобщението на Step 73 е обновено.")
         st.json(result)
         st.rerun()
 

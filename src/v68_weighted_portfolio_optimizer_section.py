@@ -125,7 +125,7 @@ def _show_table(rows, columns):
 
 
 def render_v68_weighted_portfolio_optimizer_section():
-    st.title("Умен portfolio optimizer")
+    st.title("Умен оптимизатор на портфейл")
     st.caption(
         "Оценява целия пакет от Step 67 фишове като портфолио: покритие, припокриване, "
         "повторени двойки/тройки и непокрити силни Step 66 сигнали. Това не е гаранция за печалба."
@@ -147,7 +147,7 @@ def render_v68_weighted_portfolio_optimizer_section():
     triples = _load_csv(TRIPLES_PATH)
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Portfolio score", f"{summary.get('portfolio_score', 0)} / 100")
+    col1.metric("Оценка на портфейла", f"{summary.get('portfolio_score', 0)} / 100")
     col2.metric("Фишове", summary.get("tickets_analyzed", 0))
     col3.metric("Покрити числа", f"{summary.get('unique_numbers_covered', 0)} / 49")
     col4.metric("Top20 покритие", f"{summary.get('covered_top20_numbers', 0)} / 20")
@@ -155,7 +155,7 @@ def render_v68_weighted_portfolio_optimizer_section():
     col5, col6, col7, col8 = st.columns(4)
     col5.metric("Средна оценка", f"{summary.get('average_ticket_step66_score', 0)}%")
     col6.metric("Среден overlap", summary.get("average_ticket_overlap", 0))
-    col7.metric("Max overlap", summary.get("max_ticket_overlap", 0))
+    col7.metric("Максимално припокриване", summary.get("max_ticket_overlap", 0))
     col8.metric("Повторени двойки", summary.get("repeated_pairs_count", 0))
 
     status = summary.get("portfolio_status", "")

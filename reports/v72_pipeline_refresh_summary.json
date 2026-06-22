@@ -1,14 +1,14 @@
 {
   "step": "72",
-  "name": "Full Weighted Pipeline Refresh Integration",
-  "mode": "run",
+  "name": "Интеграция за пълно обновяване на статистическия pipeline",
+  "mode": "audit",
   "include_core": false,
-  "steps_planned": 10,
-  "steps_reported": 10,
+  "steps_planned": 11,
+  "steps_reported": 11,
   "all_scripts_present": true,
   "all_outputs_present": true,
-  "run_pipeline": true,
-  "run_ok": true,
+  "run_pipeline": false,
+  "run_ok": "",
   "stopped_at": "",
   "weighted_steps": [
     "61",
@@ -20,15 +20,16 @@
     "68",
     "69",
     "70",
-    "71"
+    "71",
+    "73"
   ],
   "core_steps_included": [],
-  "generated_at": "2026-06-22T10:00:43+00:00",
+  "generated_at": "2026-06-22T11:21:40+00:00",
   "generated_reports": [
     "reports/v72_pipeline_refresh_summary.json",
     "reports/v72_pipeline_refresh_summary.md",
     "reports/v72_pipeline_refresh_plan.csv",
     "models/v72/v72_pipeline_refresh_model.json"
   ],
-  "safe_note": "This refresh pipeline updates statistical artifacts only. It is not a prediction and not a winning guarantee."
+  "safe_note": "Този pipeline обновява само статистически файлове. Не е предсказание и не е гаранция за печалба."
 }

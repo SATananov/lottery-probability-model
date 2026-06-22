@@ -15,6 +15,9 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import pandas as pd
 import streamlit as st
+from src.bg_ui_helpers import install_streamlit_bg_table_patch
+
+install_streamlit_bg_table_patch(st)
 from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
 from src.v54_pattern_balance_section import render_v54_pattern_balance_section
 from src.v55_number_profile_section import render_v55_number_profile_section
@@ -4178,12 +4181,12 @@ def main() -> None:
         "Умно тегло на моделите": render_v65_model_weighting_section,
         "Претеглен ensemble анализ": render_v66_weighted_smart_ensemble_section,
         "Умен генератор с тегла": render_v67_weighted_ticket_builder_section,
-        "Умен portfolio optimizer": render_v68_weighted_portfolio_optimizer_section,
+        "Умен оптимизатор на портфейл": render_v68_weighted_portfolio_optimizer_section,
         "Подобряване на портфолио": render_v69_portfolio_improvement_section,
         "Приложен подобрен портфейл": render_v70_applied_candidate_portfolio_section,
         "Пакет за игра": render_v71_ticket_pack_export_section,
         "Представяне на пакета": render_v73_ticket_pack_performance_tracker_section,
-        "Обновяване на pipeline": render_v72_pipeline_refresh_section,
+        "Обновяване на анализите": render_v72_pipeline_refresh_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -4232,12 +4235,12 @@ def main() -> None:
             'Умно тегло на моделите',
             'Претеглен ensemble анализ',
             'Умен генератор с тегла',
-            'Умен portfolio optimizer',
+            'Умен оптимизатор на портфейл',
             'Подобряване на портфолио',
             'Приложен подобрен портфейл',
             'Пакет за игра',
             'Представяне на пакета',
-            'Обновяване на pipeline',
+            'Обновяване на анализите',
         ],
     }
     used_navigation_pages = set()

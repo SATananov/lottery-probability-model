@@ -59,10 +59,10 @@ def _show_table(rows):
 
 
 def render_v72_pipeline_refresh_section():
-    st.title("Обновяване на pipeline")
+    st.title("Обновяване на анализите")
     st.caption(
-        "Единен refresh center за weighted pipeline: Step 61–63 и Step 65–73. "
-        "При нужда може да включи и core steps v41–v60."
+        "Център за обновяване на статистическите анализи: Step 61–63 и Step 65–73. "
+        "При нужда може да включи и основните стъпки v41–v60."
     )
 
     summary = _load_json(SUMMARY_PATH)
@@ -75,17 +75,17 @@ def render_v72_pipeline_refresh_section():
         )
     else:
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Mode", summary.get("mode", "-"))
-        col2.metric("Steps", summary.get("steps_planned", 0))
-        col3.metric("Scripts OK", "Да" if summary.get("all_scripts_present") else "Не")
-        col4.metric("Outputs OK", "Да" if summary.get("all_outputs_present") else "Не")
+        col1.metric("Режим", summary.get("mode", "-"))
+        col2.metric("Стъпки", summary.get("steps_planned", 0))
+        col3.metric("Скриптове OK", "Да" if summary.get("all_scripts_present") else "Не")
+        col4.metric("Артефакти OK", "Да" if summary.get("all_outputs_present") else "Не")
 
         st.info(
-            "Това е refresh orchestration слой. Той обновява статистически artifacts, "
+            "Това е контролен слой за обновяване. Той преизчислява статистическите файлове, "
             "но не е предсказание и не е гаранция за печалба."
         )
 
-    st.subheader("Pipeline status")
+    st.subheader("Статус на обновяването")
     _show_table(rows)
 
     st.subheader("Действия")
@@ -94,20 +94,20 @@ def render_v72_pipeline_refresh_section():
 
     with col_a:
         if st.button("Audit без обновяване", key="v72_audit_only"):
-            with st.spinner("Проверявам pipeline artifacts..."):
+            with st.spinner("Проверявам файловете от анализа..."):
                 result = build_pipeline_refresh_plan(run_pipeline=False, include_core=False)
             st.success("Audit завърши.")
             st.json(result)
             st.rerun()
 
     with col_b:
-        if st.button("Обнови weighted pipeline Step 61–73", key="v72_run_weighted", type="primary"):
+        if st.button("Обнови статистическия pipeline Step 61–73", key="v72_run_weighted", type="primary"): 
             with st.spinner("Обновявам Step 61–63 и Step 65–73..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=False)
             if result.get("run_ok"):
-                st.success("Weighted pipeline refresh мина успешно.")
+                st.success("Статистическият pipeline се обнови успешно.")
             else:
-                st.error(f"Pipeline refresh спря при: {result.get('stopped_at')}")
+                st.error(f"Обновяването спря при: {result.get('stopped_at')}")
             st.json(result)
             st.rerun()
 
@@ -117,8 +117,8 @@ def render_v72_pipeline_refresh_section():
             "Използвай я след добавяне на нов тираж, когато искаш пълно обновяване."
         )
 
-        if st.button("Пълен refresh v41–v71", key="v72_run_full"):
-            with st.spinner("Пускам пълен refresh v41–v71..."):
+        if st.button("Пълно обновяване v41–v73", key="v72_run_full"): 
+            with st.spinner("Пускам пълно обновяване v41–v73..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=True)
             if result.get("run_ok"):
                 st.success("Пълният refresh мина успешно.")
@@ -129,7 +129,7 @@ def render_v72_pipeline_refresh_section():
 
 
 
-    st.subheader("GitHub sync след refresh")
+    st.subheader("GitHub синхронизация след обновяване")
 
     git_info = git_status_short()
     current_status = str(git_info.get("status", "") or "").strip()
@@ -141,7 +141,7 @@ def render_v72_pipeline_refresh_section():
         st.success("Git status е clean. Няма чакащи локални промени.")
 
     commit_message = st.text_input(
-        "Commit message",
+        "Съобщение за GitHub commit",
         value="Refresh lottery data models and reports after pipeline update",
         key="v72_github_sync_commit_message",
     )
@@ -152,7 +152,7 @@ def render_v72_pipeline_refresh_section():
     )
 
     if st.button(
-        "Commit & push data/models/reports към GitHub",
+        "Запази и качи data/models/reports в GitHub",
         key="v72_github_sync_button",
         disabled=not confirm_sync,
     ):
@@ -166,14 +166,14 @@ def render_v72_pipeline_refresh_section():
                 st.success(result.get("message"))
                 st.write("Commit:", result.get("commit", ""))
         else:
-            st.error(result.get("message", "GitHub sync failed."))
+            st.error(result.get("message", "GitHub синхронизацията не успя."))
 
         staged = result.get("staged_files") or []
         if staged:
             st.write("Файлове:")
             st.code("\\n".join(staged), language="text")
 
-        with st.expander("Git details"):
+        with st.expander("Git технически детайли"):
             st.json(result)
 
 
@@ -181,11 +181,11 @@ def render_v72_pipeline_refresh_section():
         st.markdown(
             """
 - **Audit без обновяване** само проверява дали скриптовете и artifacts съществуват.
-- **Weighted pipeline refresh** пуска Step 61, 62, 63 и Step 65–73.
-- **Пълен refresh v41–v71** пуска core моделите и после weighted pipeline.
+- **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–73.
+- **Пълно обновяване v41–v73** пуска основните модели и после статистическия pipeline.
 - Add Draw auto-refresh вече е подравнен да обновява целия pipeline след запис.
 - Training Center вече показва Step 65–73 като част от refresh flow.
 
-Това е технически refresh/control layer, не предсказател на бъдещ тираж.
+Това е технически контролен слой за обновяване, не предсказател на бъдещ тираж.
 """
         )

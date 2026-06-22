@@ -161,30 +161,30 @@ def render_v70_applied_candidate_portfolio_section():
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Приложени фишове", summary.get("applied_portfolio_tickets", 0))
     col2.metric("Промени", summary.get("applied_changes_count", 0))
-    col3.metric("Original score", f"{summary.get('original_portfolio_score', 0)} / 100")
-    col4.metric("Applied score", f"{summary.get('applied_portfolio_score', 0)} / 100")
+    col3.metric("Оригинална оценка", f"{summary.get('original_portfolio_score', 0)} / 100")
+    col4.metric("Приложена оценка", f"{summary.get('applied_portfolio_score', 0)} / 100")
 
     col5, col6, col7, col8 = st.columns(4)
-    col5.metric("Top20 original", f"{summary.get('original_top20_coverage', 0)} / 20")
-    col6.metric("Top20 applied", f"{summary.get('applied_top20_coverage', 0)} / 20")
-    col7.metric("Pairs original", summary.get("original_repeated_pairs", 0))
-    col8.metric("Pairs applied", summary.get("applied_repeated_pairs", 0))
+    col5.metric("Top 20 оригинал", f"{summary.get('original_top20_coverage', 0)} / 20")
+    col6.metric("Top 20 приложен", f"{summary.get('applied_top20_coverage', 0)} / 20")
+    col7.metric("Двойки оригинал", summary.get("original_repeated_pairs", 0))
+    col8.metric("Двойки приложен", summary.get("applied_repeated_pairs", 0))
 
     delta = _as_float(summary.get("portfolio_score_delta", 0))
     if delta >= 0:
-        st.success(f"Applied портфейлът подобрява или запазва portfolio score. Delta: {delta:.3f}")
+        st.success(f"Приложеният портфейл подобрява или запазва оценката. Промяна: {delta:.3f}")
     else:
         st.warning(
-            f"Applied портфейлът има лек спад в score ({delta:.3f}), "
-            "но може да подобрява coverage/diversity."
+            f"Приложеният портфейл има лек спад в оценката ({delta:.3f}), "
+            "но може да подобрява покритието и разнообразието."
         )
 
     st.info(
-        "Step 70 маркира candidate portfolio като приложен статистически reference layer. "
+        "Step 70 маркира кандидат портфейла като приложен статистически референтен слой. "
         "Той не презаписва Step 67 и не твърди, че предвижда бъдещ тираж."
     )
 
-    st.markdown(f"**Decision:** {summary.get('decision', '')}")
+    st.markdown(f"**Решение:** {summary.get('decision', '')}")
 
     if int(summary.get("applied_historical_exact_matches", 0) or 0) == 0:
         st.success("Няма точни исторически повторения в приложения портфейл.")

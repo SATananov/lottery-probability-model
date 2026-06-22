@@ -122,7 +122,7 @@ TRAINING_STEPS = [
         "outputs": ['models/v67', 'reports/v67_weighted_ticket_builder_summary.json'],
     },
     {
-        "name": "\u0423\u043c\u0435\u043d portfolio optimizer",
+        "name": "\u0423\u043c\u0435\u043d оптимизатор на портфейл",
         "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
         "outputs": ['models/v68', 'reports/v68_weighted_portfolio_summary.json'],
     },

@@ -1,15 +1,15 @@
 {
   "summary": {
     "step": "72",
-    "name": "Full Weighted Pipeline Refresh Integration",
-    "mode": "run",
+    "name": "Интеграция за пълно обновяване на статистическия pipeline",
+    "mode": "audit",
     "include_core": false,
-    "steps_planned": 10,
-    "steps_reported": 10,
+    "steps_planned": 11,
+    "steps_reported": 11,
     "all_scripts_present": true,
     "all_outputs_present": true,
-    "run_pipeline": true,
-    "run_ok": true,
+    "run_pipeline": false,
+    "run_ok": "",
     "stopped_at": "",
     "weighted_steps": [
       "61",
@@ -21,17 +21,18 @@
       "68",
       "69",
       "70",
-      "71"
+      "71",
+      "73"
     ],
     "core_steps_included": [],
-    "generated_at": "2026-06-22T10:00:43+00:00",
+    "generated_at": "2026-06-22T11:21:40+00:00",
     "generated_reports": [
       "reports/v72_pipeline_refresh_summary.json",
       "reports/v72_pipeline_refresh_summary.md",
       "reports/v72_pipeline_refresh_plan.csv",
       "models/v72/v72_pipeline_refresh_model.json"
     ],
-    "safe_note": "This refresh pipeline updates statistical artifacts only. It is not a prediction and not a winning guarantee."
+    "safe_note": "Този pipeline обновява само статистически файлове. Не е предсказание и не е гаранция за печалба."
   },
   "steps": [
     {
@@ -42,9 +43,9 @@
       "outputs": "models/v61; reports/v61_draw_result_analyzer_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T12:59:03",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "V61_DRAW_RESULT_ANALYZER_OK\nTOTAL_DRAWS 10058\nLATEST_DATE 2026-06-21\nLATEST_DRAW 48.0\nLATEST_NUMBERS 6, 13, 16, 19, 42, 44\nBEST_SIGNAL_HITS 3\nSIGNALS_CHECKED 27"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "62",
@@ -54,9 +55,9 @@
       "outputs": "models/v62; reports/v62_model_performance_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T12:59:03",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP62_BUILD_OK\nTOTAL_DRAWS 10058\nLATEST_DRAW {'date': '2026-06-21', 'year': '2026', 'draw_number': '48', 'draw_position': '1', 'numbers': [6, 13, 16, 19, 42, 44]}\nMODELS_EVALUATED 10\nBEST_HITS 6"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "63",
@@ -66,9 +67,9 @@
       "outputs": "models/v63; reports/v63_model_reliability_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T12:59:03",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP63_BUILD_OK\nHISTORY_ROWS 10\nTRACKED_DRAWS 1\nMODELS_RANKED 10\nBEST_MODEL v41 � �������� ��������� �������\nBEST_SCORE 100.0"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "65",
@@ -78,9 +79,9 @@
       "outputs": "models/v65; reports/v65_model_weighting_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T12:59:03",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP65_BUILD_OK\nMODELS_WEIGHTED 10\nTOP_MODEL v41 � �������� ��������� �������\nTOP_WEIGHT 25.91"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "66",
@@ -90,9 +91,9 @@
       "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T12:59:04",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP66_BUILD_OK\nSOURCES_USED 8\nNUMBERS_SCORED 49\nTOP_NUMBER 1\nTOP_SCORE 100.0"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "67",
@@ -102,21 +103,21 @@
       "outputs": "models/v67; reports/v67_weighted_ticket_builder_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T13:00:42",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP67_BUILD_OK\nTICKETS_GENERATED 8\nTOP_TICKET_ID 1\nTOP_AVG_SCORE 88.116"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "68",
-      "name": "Умен portfolio optimizer",
+      "name": "Умен оптимизатор на портфейл",
       "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
       "script_exists": true,
       "outputs": "models/v68; reports/v68_weighted_portfolio_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T13:00:42",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP68_BUILD_OK\nTICKETS_ANALYZED 8\nUNIQUE_NUMBERS_COVERED 18\nPORTFOLIO_SCORE 60.684\nPORTFOLIO_STATUS �������� �������� � ����� �� ����������"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "69",
@@ -126,9 +127,9 @@
       "outputs": "models/v69; reports/v69_portfolio_improvement_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T13:00:43",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP69_BUILD_OK\nSUGGESTIONS_GENERATED 60\nCANDIDATE_CHANGES 3\nBASELINE_SCORE 60.684\nCANDIDATE_SCORE 70.118"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "70",
@@ -138,9 +139,9 @@
       "outputs": "models/v70; reports/v70_applied_candidate_portfolio_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T13:00:43",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP70_BUILD_OK\nAPPLIED_TICKETS 8\nAPPLIED_CHANGES 3\nORIGINAL_SCORE 60.684\nAPPLIED_SCORE 70.118"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "71",
@@ -149,10 +150,22 @@
       "script_exists": true,
       "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-22T13:00:43",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP71_BUILD_OK\nTICKETS_EXPORTED 8\nCHANGES_INCLUDED 3\nAPPLIED_SCORE 70.118"
+      "latest_output_mtime": "2026-06-22T14:21:40",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
+    },
+    {
+      "step": "73",
+      "name": "Представяне на пакета",
+      "script": "scripts/v73_build_ticket_pack_performance_tracker.py",
+      "script_exists": true,
+      "outputs": "models/v73; reports/v73_ticket_pack_performance_summary.json",
+      "outputs_ok": true,
+      "latest_output_mtime": "2026-06-22T13:50:20",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     }
   ]
 }
