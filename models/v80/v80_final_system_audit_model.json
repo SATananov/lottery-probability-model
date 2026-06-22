@@ -1,0 +1,548 @@
+{
+  "artifacts": [
+    {
+      "artifact": "models/v76/v76_explainability_validation_model.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 55262,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_explainability_validation_summary.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 826,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_explainability_validation_summary.md",
+      "exists": true,
+      "kind": "text",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 5629,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_number_explanations.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 24854,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_ticket_explanations.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 15307,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_ticket_validation.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 3043,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "reports/v76_validation_warnings.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 3560,
+      "status": "OK",
+      "step": "76"
+    },
+    {
+      "artifact": "models/v77/v77_decision_recommendation_model.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 11638,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "reports/v77_decision_recommendation_summary.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 1132,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "reports/v77_decision_recommendation_summary.md",
+      "exists": true,
+      "kind": "text",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 4242,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "reports/v77_ticket_recommendations.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 6005,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "reports/v77_decision_recommendations.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 10690,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "reports/v77_decision_warnings.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 73,
+      "status": "OK",
+      "step": "77"
+    },
+    {
+      "artifact": "models/v78/v78_final_play_plan_model.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 12554,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_final_play_plan_summary.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 1035,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_final_play_plan_summary.md",
+      "exists": true,
+      "kind": "text",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 3175,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_selected_ticket_plan.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 4558,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_play_plan_actions.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 1361,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_play_plan_warnings.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 889,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "reports/v78_final_play_plan.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 11290,
+      "status": "OK",
+      "step": "78"
+    },
+    {
+      "artifact": "models/v79/v79_ticket_pack_export_model.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 12828,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_ticket_pack_export_summary.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 930,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_ticket_pack_export_summary.md",
+      "exists": true,
+      "kind": "text",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 3273,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_export_ticket_pack.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 3735,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_execution_checklist.csv",
+      "exists": true,
+      "kind": "csv",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 2427,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_ticket_pack_copy_text.txt",
+      "exists": true,
+      "kind": "text",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 1799,
+      "status": "OK",
+      "step": "79"
+    },
+    {
+      "artifact": "reports/v79_ticket_pack_export.json",
+      "exists": true,
+      "kind": "json",
+      "message": "OK",
+      "parse_ok": true,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "size_bytes": 11679,
+      "status": "OK",
+      "step": "79"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "data/historical_draws.csv",
+      "duplicate_keys": 0,
+      "exists": true,
+      "invalid_rows": 0,
+      "latest_date": "2026-06-21",
+      "latest_numbers": "6,13,16,19,42,44",
+      "rows": 10058,
+      "rows_2026": 49,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "dataset": "data/v40_normalized_draw_events.csv",
+      "duplicate_keys": 0,
+      "exists": true,
+      "invalid_rows": 0,
+      "latest_date": "2026-06-21",
+      "latest_numbers": "6,13,16,19,42,44",
+      "rows": 10058,
+      "rows_2026": 49,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "dataset": "data/v41_canonical_draw_events.csv",
+      "duplicate_keys": 0,
+      "exists": true,
+      "invalid_rows": 0,
+      "latest_date": "2026-06-21",
+      "latest_numbers": "6,13,16,19,42,44",
+      "rows": 10058,
+      "rows_2026": 49,
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    }
+  ],
+  "quality": [
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "streamlit_app.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/add_draws_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v74_model_dependency_sync_center_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v74_selective_sync_actions.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v76_explainability_validation_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v76_explainability_validation_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v77_decision_recommendation_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v77_decision_recommendation_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v78_final_play_plan_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v78_final_play_plan_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v79_ticket_pack_export_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v79_ticket_pack_export_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v80_final_system_audit_engine.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "src/v80_final_system_audit_section.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "python_compile",
+      "message": "OK",
+      "path": "scripts/v80_build_final_system_audit_center.py",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "cyrillic_mojibake_scan",
+      "message": "OK",
+      "path": "active_text_files",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "streamlit_label",
+      "message": "count=2",
+      "path": "Обяснимост и валидация",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "streamlit_label",
+      "message": "count=2",
+      "path": "Решение и препоръка",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "streamlit_label",
+      "message": "count=2",
+      "path": "Финален план",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "streamlit_label",
+      "message": "count=2",
+      "path": "Експорт и изпълнение",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "check_type": "streamlit_label",
+      "message": "count=2",
+      "path": "Финален системен одит",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    }
+  ],
+  "summary": {
+    "artifacts_checked": 27,
+    "dataset_2026_rows_expected": 49,
+    "dataset_rows_expected": 10058,
+    "datasets_checked": 3,
+    "generated_at": "2026-06-22T16:04:19+00:00",
+    "generated_reports": [
+      "reports/v80_final_system_audit_summary.json",
+      "reports/v80_final_system_audit_summary.md",
+      "reports/v80_dataset_audit.csv",
+      "reports/v80_artifact_audit.csv",
+      "reports/v80_file_quality_audit.csv",
+      "reports/v80_sync_plan_audit.csv",
+      "models/v80/v80_final_system_audit_model.json"
+    ],
+    "issues_found": 0,
+    "latest_draw_expected": {
+      "date": "2026-06-21",
+      "numbers": [
+        6,
+        13,
+        16,
+        19,
+        42,
+        44
+      ]
+    },
+    "name": "Финален системен одит",
+    "quality_checks": 21,
+    "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+    "status": "OK",
+    "step": "80",
+    "sync_plans_checked": 3
+  },
+  "sync_plans": [
+    {
+      "actual_steps": "79 -> 80 -> 74",
+      "expected_steps": "79 -> 80 -> 74",
+      "message": "OK",
+      "plan_name": "79 -> 80 -> 74",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "actual_steps": "78 -> 79 -> 80 -> 74",
+      "expected_steps": "78 -> 79 -> 80 -> 74",
+      "message": "OK",
+      "plan_name": "78 -> 79 -> 80 -> 74",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    },
+    {
+      "actual_steps": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 74",
+      "expected_steps": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 74",
+      "message": "OK",
+      "plan_name": "75 -> 76 -> 77 -> 78 -> 79 -> 80 -> 74",
+      "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+      "status": "OK"
+    }
+  ]
+}

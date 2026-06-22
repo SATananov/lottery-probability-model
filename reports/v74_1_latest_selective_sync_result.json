@@ -2,11 +2,11 @@
   "step": "74.1",
   "name": "Избирателно синхронизиране на модели",
   "status": "OK",
-  "planned_actions": 2,
-  "executed_actions": 2,
-  "successful_actions": 2,
+  "planned_actions": 3,
+  "executed_actions": 3,
+  "successful_actions": 3,
   "failed_actions": 0,
-  "generated_at": "2026-06-22T15:33:00+00:00",
+  "generated_at": "2026-06-22T16:04:20+00:00",
   "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
   "plan": [
     {
@@ -34,11 +34,41 @@
         "reports/v79_ticket_pack_export.json"
       ],
       "feeds": [
-        "Step 74"
+        "Step 80"
       ],
       "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
       "ensemble_source": false,
       "order": 1
+    },
+    {
+      "step": "80",
+      "label": "Финален системен одит",
+      "category": "Финален системен одит",
+      "script": "scripts/v80_build_final_system_audit_center.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_ticket_pack_export.json"
+      ],
+      "outputs": [
+        "models/v80/v80_final_system_audit_model.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_final_system_audit_summary.md",
+        "reports/v80_dataset_audit.csv",
+        "reports/v80_artifact_audit.csv",
+        "reports/v80_file_quality_audit.csv",
+        "reports/v80_sync_plan_audit.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "ensemble_source": false,
+      "order": 2
     },
     {
       "step": "74",
@@ -65,7 +95,7 @@
       "feeds": [],
       "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
       "ensemble_source": false,
-      "order": 2
+      "order": 3
     }
   ],
   "results": [
@@ -94,16 +124,52 @@
         "reports/v79_ticket_pack_export.json"
       ],
       "feeds": [
-        "Step 74"
+        "Step 80"
       ],
       "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
       "ensemble_source": false,
       "order": 1,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T15:32:59+00:00",
-      "finished_at": "2026-06-22T15:33:00+00:00",
+      "started_at": "2026-06-22T16:04:19+00:00",
+      "finished_at": "2026-06-22T16:04:19+00:00",
       "stdout_tail": "STEP79_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nCANDIDATES 8\nPLAY_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5\n",
+      "stderr_tail": ""
+    },
+    {
+      "step": "80",
+      "label": "Финален системен одит",
+      "category": "Финален системен одит",
+      "script": "scripts/v80_build_final_system_audit_center.py",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "inputs": [
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_ticket_pack_export.json"
+      ],
+      "outputs": [
+        "models/v80/v80_final_system_audit_model.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_final_system_audit_summary.md",
+        "reports/v80_dataset_audit.csv",
+        "reports/v80_artifact_audit.csv",
+        "reports/v80_file_quality_audit.csv",
+        "reports/v80_sync_plan_audit.csv"
+      ],
+      "feeds": [
+        "Step 74"
+      ],
+      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "ensemble_source": false,
+      "order": 2,
+      "returncode": 0,
+      "status": "OK",
+      "started_at": "2026-06-22T16:04:19+00:00",
+      "finished_at": "2026-06-22T16:04:19+00:00",
+      "stdout_tail": "STEP80_BUILD_OK\nSTATUS OK\nDATASETS_CHECKED 3\nARTIFACTS_CHECKED 27\nQUALITY_CHECKS 21\nSYNC_PLANS_CHECKED 3\nISSUES_FOUND 0\n",
       "stderr_tail": ""
     },
     {
@@ -131,12 +197,12 @@
       "feeds": [],
       "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
       "ensemble_source": false,
-      "order": 2,
+      "order": 3,
       "returncode": 0,
       "status": "OK",
-      "started_at": "2026-06-22T15:33:00+00:00",
-      "finished_at": "2026-06-22T15:33:00+00:00",
-      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 28\nSYNCED_MODELS 28\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
+      "started_at": "2026-06-22T16:04:19+00:00",
+      "finished_at": "2026-06-22T16:04:20+00:00",
+      "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 29\nSYNCED_MODELS 29\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
       "stderr_tail": ""
     }
   ]

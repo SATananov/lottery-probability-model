@@ -40,6 +40,7 @@ from src.v76_explainability_validation_section import render_v76_explainability_
 from src.v77_decision_recommendation_section import render_v77_decision_recommendation_section
 from src.v78_final_play_plan_section import render_v78_final_play_plan_section
 from src.v79_ticket_pack_export_section import render_v79_ticket_pack_export_section
+from src.v80_final_system_audit_section import render_v80_final_system_audit_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3503,6 +3504,7 @@ def main() -> None:
         "Решение и препоръка": render_v77_decision_recommendation_section,
         "Финален план": render_v78_final_play_plan_section,
         "Експорт и изпълнение": render_v79_ticket_pack_export_section,
+        "Финален системен одит": render_v80_final_system_audit_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -3560,6 +3562,7 @@ def main() -> None:
             "Решение и препоръка",
             "Финален план",
             "Експорт и изпълнение",
+            "Финален системен одит",
             'Контрол на синхрона',
             "Невронна лаборатория",
             'Обяснимост и валидация',

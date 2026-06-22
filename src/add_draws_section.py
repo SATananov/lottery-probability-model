@@ -50,6 +50,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v77_build_decision_recommendation_center.py",
     ROOT / "scripts" / "v78_build_final_play_plan_center.py",
     ROOT / "scripts" / "v79_build_ticket_pack_export_center.py",
+    ROOT / "scripts" / "v80_build_final_system_audit_center.py",
     ROOT / "scripts" / "v74_build_model_dependency_sync_center.py",
 ]
 

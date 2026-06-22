@@ -178,6 +178,36 @@ WEIGHTED_REFRESH_STEPS = [
         "outputs": ["models/v75", "reports/v75_neural_meta_learner_summary.json", "reports/v75_neural_candidate_tickets.csv"],
     },
     {
+        "step": "76",
+        "name": "Обяснимост и валидация",
+        "script": "scripts/v76_build_explainability_validation_center.py",
+        "outputs": ["models/v76", "reports/v76_explainability_validation_summary.json"],
+    },
+    {
+        "step": "77",
+        "name": "Решение и препоръка",
+        "script": "scripts/v77_build_decision_recommendation_center.py",
+        "outputs": ["models/v77", "reports/v77_decision_recommendation_summary.json"],
+    },
+    {
+        "step": "78",
+        "name": "Финален план",
+        "script": "scripts/v78_build_final_play_plan_center.py",
+        "outputs": ["models/v78", "reports/v78_final_play_plan_summary.json"],
+    },
+    {
+        "step": "79",
+        "name": "Експорт и изпълнение",
+        "script": "scripts/v79_build_ticket_pack_export_center.py",
+        "outputs": ["models/v79", "reports/v79_ticket_pack_export_summary.json"],
+    },
+    {
+        "step": "80",
+        "name": "Финален системен одит",
+        "script": "scripts/v80_build_final_system_audit_center.py",
+        "outputs": ["models/v80", "reports/v80_final_system_audit_summary.json"],
+    },
+    {
         "step": "74",
         "name": "Контрол на синхрона между моделите",
         "script": "scripts/v74_build_model_dependency_sync_center.py",

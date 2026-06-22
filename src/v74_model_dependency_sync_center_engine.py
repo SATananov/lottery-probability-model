@@ -1061,3 +1061,42 @@ for _node in MODEL_NODES:
             _feeds.append("Step 79")
         _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
 # STEP 79 TICKET PACK EXPORT WIRING END
+
+# STEP 80 FINAL SYSTEM AUDIT WIRING START
+_STEP80_NODE = {
+    "step": "80",
+    "label": "Финален системен одит",
+    "category": "Финален системен одит",
+    "script": "scripts/v80_build_final_system_audit_center.py",
+    "datasets": ["data/v41_canonical_draw_events.csv", "data/historical_draws.csv"],
+    "inputs": [
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_ticket_pack_export.json",
+    ],
+    "outputs": [
+        "models/v80/v80_final_system_audit_model.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_final_system_audit_summary.md",
+        "reports/v80_dataset_audit.csv",
+        "reports/v80_artifact_audit.csv",
+        "reports/v80_file_quality_audit.csv",
+        "reports/v80_sync_plan_audit.csv",
+    ],
+    "feeds": ["Step 74"],
+    "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+    "ensemble_source": False,
+}
+
+if not any(str(_node.get("step")) == "80" for _node in MODEL_NODES):
+    MODEL_NODES.append(_STEP80_NODE)
+
+for _node in MODEL_NODES:
+    if str(_node.get("step")) == "79":
+        _feeds = [str(_item) for _item in _node.get("feeds", [])]
+        _feeds = ["Step 80" if _item == "Step 74" else _item for _item in _feeds]
+        if "Step 80" not in _feeds:
+            _feeds.append("Step 80")
+        _node["feeds"] = [_item for _item in _feeds if _item != "Step 74"]
+# STEP 80 FINAL SYSTEM AUDIT WIRING END
+

@@ -1,0 +1,34 @@
+{
+  "artifacts_checked": 27,
+  "dataset_2026_rows_expected": 49,
+  "dataset_rows_expected": 10058,
+  "datasets_checked": 3,
+  "generated_at": "2026-06-22T16:04:19+00:00",
+  "generated_reports": [
+    "reports/v80_final_system_audit_summary.json",
+    "reports/v80_final_system_audit_summary.md",
+    "reports/v80_dataset_audit.csv",
+    "reports/v80_artifact_audit.csv",
+    "reports/v80_file_quality_audit.csv",
+    "reports/v80_sync_plan_audit.csv",
+    "models/v80/v80_final_system_audit_model.json"
+  ],
+  "issues_found": 0,
+  "latest_draw_expected": {
+    "date": "2026-06-21",
+    "numbers": [
+      6,
+      13,
+      16,
+      19,
+      42,
+      44
+    ]
+  },
+  "name": "Финален системен одит",
+  "quality_checks": 21,
+  "safe_note": "Step 80 е финален системен одит на данни, артефакти, sync планове и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
+  "status": "OK",
+  "step": "80",
+  "sync_plans_checked": 3
+}

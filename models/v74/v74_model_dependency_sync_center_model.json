@@ -741,6 +741,42 @@
     {
       "description": "Изходът помага на следващ слой",
       "from": "Step 79",
+      "to": "Step 80",
+      "type": "feeds"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/v41_canonical_draw_events.csv",
+      "to": "Step 80",
+      "type": "dataset"
+    },
+    {
+      "description": "Dataset вход",
+      "from": "data/historical_draws.csv",
+      "to": "Step 80",
+      "type": "dataset"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v79_ticket_pack_export_summary.json",
+      "to": "Step 80",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v79_export_ticket_pack.csv",
+      "to": "Step 80",
+      "type": "artifact"
+    },
+    {
+      "description": "Входен model/report artifact",
+      "from": "reports/v79_ticket_pack_export.json",
+      "to": "Step 80",
+      "type": "artifact"
+    },
+    {
+      "description": "Изходът помага на следващ слой",
+      "from": "Step 80",
       "to": "Step 74",
       "type": "feeds"
     }
@@ -1393,7 +1429,7 @@
       ],
       "ensemble_source": false,
       "feeds": [
-        "Step 74"
+        "Step 80"
       ],
       "inputs": [
         "reports/v78_final_play_plan_summary.json",
@@ -1414,6 +1450,35 @@
       "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
       "script": "scripts/v79_build_ticket_pack_export_center.py",
       "step": "79"
+    },
+    {
+      "category": "Финален системен одит",
+      "datasets": [
+        "data/v41_canonical_draw_events.csv",
+        "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "inputs": [
+        "reports/v79_ticket_pack_export_summary.json",
+        "reports/v79_export_ticket_pack.csv",
+        "reports/v79_ticket_pack_export.json"
+      ],
+      "label": "Финален системен одит",
+      "outputs": [
+        "models/v80/v80_final_system_audit_model.json",
+        "reports/v80_final_system_audit_summary.json",
+        "reports/v80_final_system_audit_summary.md",
+        "reports/v80_dataset_audit.csv",
+        "reports/v80_artifact_audit.csv",
+        "reports/v80_file_quality_audit.csv",
+        "reports/v80_sync_plan_audit.csv"
+      ],
+      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "script": "scripts/v80_build_final_system_audit_center.py",
+      "step": "80"
     }
   ],
   "primary_datasets": [
@@ -1495,7 +1560,7 @@
       }
     ],
     "ensemble_sources": 8,
-    "generated_at": "2026-06-22T15:33:00+00:00",
+    "generated_at": "2026-06-22T16:04:20+00:00",
     "generated_reports": [
       "reports/v74_model_dependency_summary.json",
       "reports/v74_model_dependency_summary.md",
@@ -1505,7 +1570,7 @@
       "models/v74/v74_model_dependency_sync_center_model.json"
     ],
     "missing_models": 0,
-    "models_checked": 28,
+    "models_checked": 29,
     "name": "Контрол на синхрона между моделите",
     "pipeline_chain": [
       "Данни от тиражи",
@@ -1522,10 +1587,10 @@
     ],
     "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
     "stale_models": 0,
-    "state_hash": "0af17fae65c6f8f9e2045001f5352fed01ff4c4cb0264e096d52c6058c670723",
+    "state_hash": "05958bc70eee327ab71bcb06268611834efe33f92e28d2c4e109ffe23adb90e4",
     "status": "Синхронизиран",
     "step": "74",
-    "synced_models": 28
+    "synced_models": 29
   },
   "sync_status": [
     {
@@ -2127,11 +2192,11 @@
       "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
       "dependencies_present": true,
       "ensemble_source": false,
-      "feeds": "Step 74",
+      "feeds": "Step 80",
       "inputs": "reports/v78_final_play_plan_summary.json; reports/v78_selected_ticket_plan.csv; reports/v78_play_plan_actions.csv; reports/v78_play_plan_warnings.csv",
       "label": "Експорт и изпълнение",
       "latest_input_mtime": "2026-06-22T18:15:41",
-      "latest_output_mtime": "2026-06-22T18:33:00",
+      "latest_output_mtime": "2026-06-22T19:04:19",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v79/v79_ticket_pack_export_model.json; reports/v79_ticket_pack_export_summary.json; reports/v79_ticket_pack_export_summary.md; reports/v79_export_ticket_pack.csv; reports/v79_execution_checklist.csv; reports/v79_ticket_pack_copy_text.txt; reports/v79_ticket_pack_export.json",
@@ -2142,6 +2207,28 @@
       "script_exists": true,
       "status_rank": 2,
       "step": "79",
+      "sync_status": "Синхронизиран"
+    },
+    {
+      "category": "Финален системен одит",
+      "datasets": "data/v41_canonical_draw_events.csv; data/historical_draws.csv",
+      "dependencies_present": true,
+      "ensemble_source": false,
+      "feeds": "Step 74",
+      "inputs": "reports/v79_ticket_pack_export_summary.json; reports/v79_export_ticket_pack.csv; reports/v79_ticket_pack_export.json",
+      "label": "Финален системен одит",
+      "latest_input_mtime": "2026-06-22T19:04:19",
+      "latest_output_mtime": "2026-06-22T19:04:19",
+      "missing_inputs": "",
+      "missing_outputs": "",
+      "outputs": "models/v80/v80_final_system_audit_model.json; reports/v80_final_system_audit_summary.json; reports/v80_final_system_audit_summary.md; reports/v80_dataset_audit.csv; reports/v80_artifact_audit.csv; reports/v80_file_quality_audit.csv; reports/v80_sync_plan_audit.csv",
+      "outputs_present": true,
+      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
+      "script": "scripts/v80_build_final_system_audit_center.py",
+      "script_exists": true,
+      "status_rank": 2,
+      "step": "80",
       "sync_status": "Синхронизиран"
     }
   ]
