@@ -20,10 +20,10 @@
   "reference_tickets_count": 4,
   "generated_at": "2026-06-22T12:18:36+00:00",
   "generated_reports": [
-    "reports/v66_weighted_smart_комбиниран анализ_summary.json",
-    "reports/v66_weighted_smart_комбиниран анализ_summary.md",
-    "reports/v66_weighted_smart_комбиниран анализ_scores.csv",
-    "models/v66/v66_weighted_smart_комбиниран анализ_model.json"
+    "reports/v66_weighted_smart_ensemble_summary.json",
+    "reports/v66_weighted_smart_ensemble_summary.md",
+    "reports/v66_weighted_smart_ensemble_scores.csv",
+    "models/v66/v66_weighted_smart_ensemble_model.json"
   ],
   "safe_note": "This is a weighted statistical комбиниран анализ layer. It is not a гаранция за печалба or a promise of future lottery results."
 }

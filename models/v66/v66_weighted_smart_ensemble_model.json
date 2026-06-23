@@ -21,10 +21,10 @@
     "reference_tickets_count": 4,
     "generated_at": "2026-06-22T12:18:36+00:00",
     "generated_reports": [
-      "reports/v66_weighted_smart_комбиниран анализ_summary.json",
-      "reports/v66_weighted_smart_комбиниран анализ_summary.md",
-      "reports/v66_weighted_smart_комбиниран анализ_scores.csv",
-      "models/v66/v66_weighted_smart_комбиниран анализ_model.json"
+      "reports/v66_weighted_smart_ensemble_summary.json",
+      "reports/v66_weighted_smart_ensemble_summary.md",
+      "reports/v66_weighted_smart_ensemble_scores.csv",
+      "models/v66/v66_weighted_smart_ensemble_model.json"
     ],
     "safe_note": "This is a weighted statistical комбиниран анализ layer. It is not a гаранция за печалба or a promise of future lottery results."
   },
@@ -46,15 +46,15 @@
       ]
     },
     {
-      "model_name": "v44_1_final_комбиниран анализ_ticket",
+      "model_name": "v44_1_final_ensemble_ticket",
       "model_label": "v44.1 — финален комбиниран анализ фиш",
       "original_adaptive_weight": 0.204663,
       "used_weight": 0.229651,
       "source_files": [
-        "reports/v44_1_final_комбиниран анализ_number_scores.csv",
-        "reports/v44_1_final_комбиниран анализ_ticket_summary.json",
-        "models/v44_1/v44_1_final_комбиниран анализ_number_scores.json",
-        "models/v44_1/v44_1_final_комбиниран анализ_ticket_prediction.json"
+        "reports/v44_1_final_ensemble_number_scores.csv",
+        "reports/v44_1_final_ensemble_ticket_summary.json",
+        "models/v44_1/v44_1_final_ensemble_number_scores.json",
+        "models/v44_1/v44_1_final_ensemble_ticket_prediction.json"
       ]
     },
     {
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "model_name": "v51_ticket_пакет_intelligence",
+      "model_name": "v51_ticket_portfolio_intelligence",
       "model_label": "v51 — пакет от комбинации",
       "original_adaptive_weight": 0.054404,
       "used_weight": 0.061046,
@@ -102,13 +102,13 @@
       ]
     },
     {
-      "model_name": "v58_smart_комбиниран анализ",
+      "model_name": "v58_smart_ensemble",
       "model_label": "v58 — обединена оценка",
       "original_adaptive_weight": 0.054404,
       "used_weight": 0.061046,
       "source_files": [
-        "reports/v58_smart_комбиниран анализ_scores_sample.csv",
-        "reports/v58_smart_комбиниран анализ_scores_sample.json"
+        "reports/v58_smart_ensemble_scores_sample.csv",
+        "reports/v58_smart_ensemble_scores_sample.json"
       ]
     },
     {

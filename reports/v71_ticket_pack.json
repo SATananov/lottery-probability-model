@@ -56,8 +56,8 @@
     "name": "Пакет за изтегляне и печат",
     "physical_tickets_exported": 2,
     "safe_note": "Статистически референтен пакет. Не е прогноза и не е гаранция за печалба.",
-    "source_applied_portfolio": "reports/v70_applied_candidate_пакет_tickets.csv",
-    "source_summary": "reports/v70_applied_candidate_пакет_summary.json",
+    "source_applied_portfolio": "reports/v70_applied_candidate_portfolio_tickets.csv",
+    "source_summary": "reports/v70_applied_candidate_portfolio_summary.json",
     "step": "71",
     "tickets_exported": 8
   },

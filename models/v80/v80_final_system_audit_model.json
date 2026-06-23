@@ -578,7 +578,7 @@
     "generated_reports": [
       "reports/v80_final_system_audit_summary.json",
       "reports/v80_final_system_audit_summary.md",
-      "reports/v80_данни_audit.csv",
+      "reports/v80_dataset_audit.csv",
       "reports/v80_artifact_audit.csv",
       "reports/v80_file_quality_audit.csv",
       "reports/v80_sync_plan_audit.csv",

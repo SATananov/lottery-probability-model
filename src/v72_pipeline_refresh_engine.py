@@ -21,20 +21,20 @@ CORE_REFRESH_STEPS = [
     {
         "step": "42",
         "name": "Комбиниран позитивен/негативен анализ",
-        "script": "scripts/v42_build_combined_positive_negative_основа.py",
+        "script": "scripts/v42_build_combined_positive_negative_foundation.py",
         "outputs": ["models/v42", "reports"],
     },
     {
         "step": "43.1",
         "name": "Интервален ритъм",
-        "script": "scripts/v43_1_refine_interval_rhythm_основа.py",
+        "script": "scripts/v43_1_refine_interval_rhythm_foundation.py",
         "outputs": ["models/v43_1", "reports/v43_1_interval_rhythm_refined_summary.json"],
     },
     {
         "step": "44.1",
         "name": "Финален ансамбъл фиш основа",
-        "script": "scripts/v44_1_refine_final_ансамбъл_ticket_основа.py",
-        "outputs": ["models/v44_1", "reports/v44_1_final_ансамбъл_ticket_summary.json"],
+        "script": "scripts/v44_1_refine_final_ensemble_ticket_foundation.py",
+        "outputs": ["models/v44_1", "reports/v44_1_final_ensemble_ticket_summary.json"],
     },
     {
         "step": "45",
@@ -87,8 +87,8 @@ CORE_REFRESH_STEPS = [
     {
         "step": "58",
         "name": "Умна обединена оценка 2",
-        "script": "scripts/v58_build_smart_ансамбъл_score_2.py",
-        "outputs": ["models/v58", "reports/v58_smart_ансамбъл_summary.json"],
+        "script": "scripts/v58_build_smart_ensemble_score_2.py",
+        "outputs": ["models/v58", "reports/v58_smart_ensemble_summary.json"],
     },
     {
         "step": "59",
@@ -99,8 +99,8 @@ CORE_REFRESH_STEPS = [
     {
         "step": "60",
         "name": "Финален експорт на генератора на фишове 2",
-        "script": "scripts/v60_build_ticket_builder_2_polish_експорт.py",
-        "outputs": ["models/v60", "reports/v60_ticket_builder_2_polish_експорт_summary.json"],
+        "script": "scripts/v60_build_ticket_builder_2_polish_export.py",
+        "outputs": ["models/v60", "reports/v60_ticket_builder_2_polish_export_summary.json"],
     },
 ]
 
@@ -132,8 +132,8 @@ WEIGHTED_REFRESH_STEPS = [
     {
         "step": "66",
         "name": "Претеглен ансамбъл анализ",
-        "script": "scripts/v66_build_weighted_smart_ансамбъл.py",
-        "outputs": ["models/v66", "reports/v66_weighted_smart_ансамбъл_summary.json"],
+        "script": "scripts/v66_build_weighted_smart_ensemble.py",
+        "outputs": ["models/v66", "reports/v66_weighted_smart_ensemble_summary.json"],
     },
     {
         "step": "67",
@@ -162,7 +162,7 @@ WEIGHTED_REFRESH_STEPS = [
     {
         "step": "71",
         "name": "Пакет за игра",
-        "script": "scripts/v71_build_ticket_pack_експорт.py",
+        "script": "scripts/v71_build_ticket_pack_export.py",
         "outputs": ["models/v71", "reports/v71_ticket_pack_summary.json"],
     },
     {

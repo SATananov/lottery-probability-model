@@ -37,7 +37,7 @@
     },
     {
       "rank": 2,
-      "model_name": "v44_1_final_комбиниран анализ_ticket",
+      "model_name": "v44_1_final_ensemble_ticket",
       "model_label": "v44.1 — финален комбиниран анализ фиш",
       "tracked_draws": 1,
       "average_hits": 3,
@@ -105,7 +105,7 @@
     },
     {
       "rank": 6,
-      "model_name": "v51_ticket_пакет_intelligence",
+      "model_name": "v51_ticket_portfolio_intelligence",
       "model_label": "v51 — пакет от комбинации",
       "tracked_draws": 1,
       "average_hits": 0,
@@ -139,7 +139,7 @@
     },
     {
       "rank": 8,
-      "model_name": "v58_smart_комбиниран анализ",
+      "model_name": "v58_smart_ensemble",
       "model_label": "v58 — обединена оценка",
       "tracked_draws": 1,
       "average_hits": 0,

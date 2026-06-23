@@ -50,13 +50,13 @@ Step 58,Step 62,feeds,Изходът помага на следващ слой
 Step 58,Step 65,feeds,Изходът помага на следващ слой
 Step 58,Step 66,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 59,данни,Dataset вход
-reports/v58_smart_комбиниран анализ_scores_sample.json,Step 59,artifact,Входен model/report artifact
+reports/v58_smart_ensemble_scores_sample.json,Step 59,artifact,Входен model/report artifact
 Step 59,Step 60,feeds,Изходът помага на следващ слой
 Step 59,Step 62,feeds,Изходът помага на следващ слой
 Step 59,Step 65,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 61,данни,Dataset вход
 models/v41/v41_latest_predictions.json,Step 61,artifact,Входен model/report artifact
-reports/v58_smart_комбиниран анализ_scores_sample.json,Step 61,artifact,Входен model/report artifact
+reports/v58_smart_ensemble_scores_sample.json,Step 61,artifact,Входен model/report artifact
 Step 61,Step 62,feeds,Изходът помага на следващ слой
 Step 61,Step 63,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 62,данни,Dataset вход
@@ -74,21 +74,21 @@ Step 66,Step 67,feeds,Изходът помага на следващ слой
 Step 66,Step 68,feeds,Изходът помага на следващ слой
 Step 66,Step 69,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 67,данни,Dataset вход
-reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 67,artifact,Входен model/report artifact
+reports/v66_weighted_smart_ensemble_scores.csv,Step 67,artifact,Входен model/report artifact
 Step 67,Step 68,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 68,данни,Dataset вход
 reports/v67_weighted_ticket_builder_tickets.csv,Step 68,artifact,Входен model/report artifact
-reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 68,artifact,Входен model/report artifact
+reports/v66_weighted_smart_ensemble_scores.csv,Step 68,artifact,Входен model/report artifact
 Step 68,Step 69,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 69,данни,Dataset вход
-reports/v68_weighted_пакет_summary.json,Step 69,artifact,Входен model/report artifact
-reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 69,artifact,Входен model/report artifact
+reports/v68_weighted_portfolio_summary.json,Step 69,artifact,Входен model/report artifact
+reports/v66_weighted_smart_ensemble_scores.csv,Step 69,artifact,Входен model/report artifact
 Step 69,Step 70,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 70,данни,Dataset вход
-reports/v69_candidate_пакет_tickets.csv,Step 70,artifact,Входен model/report artifact
+reports/v69_candidate_portfolio_tickets.csv,Step 70,artifact,Входен model/report artifact
 Step 70,Step 71,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 71,данни,Dataset вход
-reports/v70_applied_candidate_пакет_tickets.csv,Step 71,artifact,Входен model/report artifact
+reports/v70_applied_candidate_portfolio_tickets.csv,Step 71,artifact,Входен model/report artifact
 Step 71,Step 73,feeds,Изходът помага на следващ слой
 data/historical_draws.csv,Step 73,данни,Dataset вход
 reports/v71_ticket_pack.csv,Step 73,artifact,Входен model/report artifact

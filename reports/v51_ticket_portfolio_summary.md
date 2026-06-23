@@ -1,6 +1,6 @@
 # V51 Ticket Пакет Intelligence
 
-Status: `v51_ticket_пакет_intelligence_completed`
+Status: `v51_ticket_portfolio_intelligence_completed`
 Overall score: **62.78 / 100**
 Rating: **medium**
 

@@ -688,7 +688,7 @@
       "events_with_6_hits": 0
     },
     {
-      "model": "v45_pro_комбиниран анализ",
+      "model": "v45_pro_ensemble",
       "test_events": 2012,
       "average_hits_top6": 0.6843936381709742,
       "median_hits_top6": 1.0,

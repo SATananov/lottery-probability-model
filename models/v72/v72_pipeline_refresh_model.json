@@ -29,10 +29,10 @@
     "core_steps_included": [],
     "generated_at": "2026-06-22T13:49:34+00:00",
     "generated_reports": [
-      "reports/v72_верига_refresh_summary.json",
-      "reports/v72_верига_refresh_summary.md",
-      "reports/v72_верига_refresh_plan.csv",
-      "models/v72/v72_верига_refresh_model.json"
+      "reports/v72_pipeline_refresh_summary.json",
+      "reports/v72_pipeline_refresh_summary.md",
+      "reports/v72_pipeline_refresh_plan.csv",
+      "models/v72/v72_pipeline_refresh_model.json"
     ],
     "safe_note": "Този верига обновява само статистически файлове. Не е предсказание и не е гаранция за печалба."
   },
@@ -88,9 +88,9 @@
     {
       "step": "66",
       "name": "Претеглен ансамбъл анализ",
-      "script": "scripts/v66_build_weighted_smart_ансамбъл.py",
+      "script": "scripts/v66_build_weighted_smart_ensemble.py",
       "script_exists": false,
-      "outputs": "models/v66; reports/v66_weighted_smart_ансамбъл_summary.json",
+      "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
       "outputs_ok": false,
       "latest_output_mtime": "",
       "run_status": "planned",
@@ -112,9 +112,9 @@
     {
       "step": "68",
       "name": "Умен оптимизатор на портфейл",
-      "script": "scripts/v68_build_weighted_пакет_оптимизатор.py",
+      "script": "scripts/v68_build_weighted_portfolio_optimizer.py",
       "script_exists": true,
-      "outputs": "models/v68; reports/v68_weighted_пакет_summary.json",
+      "outputs": "models/v68; reports/v68_weighted_portfolio_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T15:20:14",
       "run_status": "planned",
@@ -124,9 +124,9 @@
     {
       "step": "69",
       "name": "Подобряване на портфолио",
-      "script": "scripts/v69_build_пакет_improvement_suggestions.py",
+      "script": "scripts/v69_build_portfolio_improvement_suggestions.py",
       "script_exists": true,
-      "outputs": "models/v69; reports/v69_пакет_improvement_summary.json",
+      "outputs": "models/v69; reports/v69_portfolio_improvement_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T15:20:14",
       "run_status": "planned",
@@ -136,9 +136,9 @@
     {
       "step": "70",
       "name": "Приложен подобрен портфейл",
-      "script": "scripts/v70_build_applied_candidate_пакет.py",
+      "script": "scripts/v70_build_applied_candidate_portfolio.py",
       "script_exists": true,
-      "outputs": "models/v70; reports/v70_applied_candidate_пакет_summary.json",
+      "outputs": "models/v70; reports/v70_applied_candidate_portfolio_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-22T15:20:14",
       "run_status": "planned",
@@ -148,7 +148,7 @@
     {
       "step": "71",
       "name": "Пакет за игра",
-      "script": "scripts/v71_build_ticket_pack_експорт.py",
+      "script": "scripts/v71_build_ticket_pack_export.py",
       "script_exists": false,
       "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
       "outputs_ok": true,

@@ -13,7 +13,7 @@
     "reports/v84_model_comparison_summary.md",
     "reports/v84_model_source_candidates.csv",
     "reports/v84_model_comparison_results.csv",
-    "data/v84_model_forward_test_заключен записs.csv"
+    "data/v84_model_forward_test_snapshots.csv"
   ],
   "safe_note": "Step 84 сравнява модели по заключени преди тиража комбинации. Това е реална проверка във времето. Не е прогноза и не е гаранция за печалба.",
   "snapshot_rows_recorded": 48,

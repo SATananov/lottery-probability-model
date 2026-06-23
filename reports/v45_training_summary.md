@@ -33,13 +33,13 @@ Lottery draws are random. These outputs are statistical rankings and rule-aware 
 - `random_baseline`: avg=0.7247, max=4, 3+ events=38
 - `sgd_logistic_probability`: avg=0.7177, max=4, 3+ events=40
 - `gaussian_naive_bayes`: avg=0.7361, max=4, 3+ events=40
-- `v45_pro_комбиниран анализ`: avg=0.6844, max=4, 3+ events=33
+- `v45_pro_ensemble`: avg=0.6844, max=4, 3+ events=33
 
 ## Output files
 
 - `models\v45\v45_latest_number_scores.json`
 - `models\v45\v45_final_prediction_tickets.json`
 - `models\v45\v45_model_metadata.json`
-- `reports\v45_историческа проверка_results.csv`
-- `reports\v45_историческа проверка_by_model.csv`
+- `reports\v45_backtest_results.csv`
+- `reports\v45_backtest_by_model.csv`
 - `reports\v45_feature_importance.csv`

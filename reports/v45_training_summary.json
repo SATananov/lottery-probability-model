@@ -152,7 +152,7 @@
       "events_with_6_hits": 0
     },
     {
-      "model": "v45_pro_комбиниран анализ",
+      "model": "v45_pro_ensemble",
       "test_events": 2012,
       "average_hits_top6": 0.6843936381709742,
       "median_hits_top6": 1.0,
@@ -204,8 +204,8 @@
     "models\\v45\\v45_model_metadata.json",
     "reports\\v45_training_summary.json",
     "reports\\v45_training_summary.md",
-    "reports\\v45_историческа проверка_results.csv",
-    "reports\\v45_историческа проверка_by_model.csv",
+    "reports\\v45_backtest_results.csv",
+    "reports\\v45_backtest_by_model.csv",
     "reports\\v45_feature_importance.csv"
   ],
   "warning": "Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers."

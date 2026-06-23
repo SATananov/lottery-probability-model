@@ -28,10 +28,10 @@
   "core_steps_included": [],
   "generated_at": "2026-06-22T13:49:34+00:00",
   "generated_reports": [
-    "reports/v72_верига_refresh_summary.json",
-    "reports/v72_верига_refresh_summary.md",
-    "reports/v72_верига_refresh_plan.csv",
-    "models/v72/v72_верига_refresh_model.json"
+    "reports/v72_pipeline_refresh_summary.json",
+    "reports/v72_pipeline_refresh_summary.md",
+    "reports/v72_pipeline_refresh_plan.csv",
+    "models/v72/v72_pipeline_refresh_model.json"
   ],
   "safe_note": "Този верига обновява само статистически файлове. Не е предсказание и не е гаранция за печалба."
 }

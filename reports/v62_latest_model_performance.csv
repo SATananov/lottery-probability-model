@@ -1,11 +1,11 @@
 ﻿model_name,source_file,source_exists,candidate_count,best_hits,coverage_percent,best_candidate,hit_numbers,status
 v41_latest_predictions,models\v41\v41_latest_predictions.json,True,4,6,100.0,6 13 16 19 42 44,6 13 16 19 42 44,ok
-v44_1_final_комбиниран анализ_ticket,models\v44_1\v44_1_final_комбиниран анализ_ticket_prediction.json,True,4,3,50.0,1 2 13 16 37 42,13 16 42,ok
+v44_1_final_ensemble_ticket,models\v44_1\v44_1_final_ensemble_ticket_prediction.json,True,4,3,50.0,1 2 13 16 37 42,13 16 42,ok
 v42_combined_prediction,models\v42\v42_combined_prediction.json,True,1,2,33.33,2 13 37 38 42 49,13 42,ok
 v45_final_prediction_tickets,models\v45\v45_final_prediction_tickets.json,True,4,0,0.0,4 11 18 21 34 36,,ok
 v50_pair_group_intelligence,models\v50\v50_pair_group_intelligence.json,True,0,0,0.0,,,no_candidate_signal
-v51_ticket_пакет_intelligence,models\v51\v51_ticket_пакет_intelligence.json,True,0,0,0.0,,,no_candidate_signal
+v51_ticket_portfolio_intelligence,models\v51\v51_ticket_portfolio_intelligence.json,True,0,0,0.0,,,no_candidate_signal
 v57_hot_cold_stable,C:\Users\stana\Desktop\lottery-probability-model\models\v57\v57_hot_cold_stable_model.json,False,0,0,0.0,,,no_candidate_signal
-v58_smart_комбиниран анализ,C:\Users\stana\Desktop\lottery-probability-model\models\v58\v58_smart_комбиниран анализ_model.json,False,0,0,0.0,,,no_candidate_signal
+v58_smart_ensemble,C:\Users\stana\Desktop\lottery-probability-model\models\v58\v58_smart_ensemble_model.json,False,0,0,0.0,,,no_candidate_signal
 v59_smart_ticket_builder_2,C:\Users\stana\Desktop\lottery-probability-model\models\v59\v59_smart_ticket_builder_2_model.json,False,0,0,0.0,,,no_candidate_signal
 v61_latest_draw_signal_hits,reports\v61_model_signal_hits.csv,True,0,0,0.0,,,no_candidate_signal

@@ -48,8 +48,8 @@
     "models\\v45\\v45_latest_number_scores.json",
     "models\\v45\\v45_final_prediction_tickets.json",
     "reports\\v45_training_summary.json",
-    "reports\\v45_историческа проверка_results.csv",
-    "reports\\v45_историческа проверка_by_model.csv",
+    "reports\\v45_backtest_results.csv",
+    "reports\\v45_backtest_by_model.csv",
     "reports\\v45_feature_importance.csv"
   ],
   "warning": "Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers."

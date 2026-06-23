@@ -1,8 +1,8 @@
 {
   "step": "71",
   "name": "Пакет за изтегляне и печат",
-  "source_applied_portfolio": "reports/v70_applied_candidate_пакет_tickets.csv",
-  "source_summary": "reports/v70_applied_candidate_пакет_summary.json",
+  "source_applied_portfolio": "reports/v70_applied_candidate_portfolio_tickets.csv",
+  "source_summary": "reports/v70_applied_candidate_portfolio_summary.json",
   "tickets_exported": 8,
   "physical_tickets_exported": 2,
   "combinations_per_physical_ticket": 4,

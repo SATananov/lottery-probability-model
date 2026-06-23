@@ -464,13 +464,13 @@
     "decision": "candidate пакет accepted as improved статистическа референция",
     "generated_at": "2026-06-22T12:20:14+00:00",
     "generated_reports": [
-      "reports/v70_applied_candidate_пакет_summary.json",
-      "reports/v70_applied_candidate_пакет_summary.md",
-      "reports/v70_applied_candidate_пакет_tickets.csv",
-      "reports/v70_applied_candidate_пакет_tickets.json",
-      "reports/v70_original_vs_candidate_пакет.csv",
-      "reports/v70_applied_candidate_пакет_changes.csv",
-      "models/v70/v70_applied_candidate_пакет_model.json"
+      "reports/v70_applied_candidate_portfolio_summary.json",
+      "reports/v70_applied_candidate_portfolio_summary.md",
+      "reports/v70_applied_candidate_portfolio_tickets.csv",
+      "reports/v70_applied_candidate_portfolio_tickets.json",
+      "reports/v70_original_vs_candidate_portfolio.csv",
+      "reports/v70_applied_candidate_portfolio_changes.csv",
+      "models/v70/v70_applied_candidate_portfolio_model.json"
     ],
     "name": "Apply Candidate Пакет",
     "original_portfolio_score": 60.684,
@@ -480,9 +480,9 @@
     "original_unique_numbers": 18,
     "portfolio_score_delta": 9.434,
     "safe_note": "This is an applied статистическа референция пакет. It is not a гаранция за печалба or a promise of future lottery results.",
-    "source_candidate_portfolio": "reports/v69_candidate_пакет_tickets.csv",
+    "source_candidate_portfolio": "reports/v69_candidate_portfolio_tickets.csv",
     "source_original_portfolio": "reports/v67_weighted_ticket_builder_tickets.csv",
-    "source_suggestions": "reports/v69_пакет_improvement_summary.json",
+    "source_suggestions": "reports/v69_portfolio_improvement_summary.json",
     "step": "70",
     "undercovered_top20_after_apply": []
   }
