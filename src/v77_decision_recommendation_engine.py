@@ -387,7 +387,7 @@ def build_decision_recommendation_center() -> dict[str, Any]:
         f"Брой препоръки: **{summary['recommendations_count']}**",
         f"Предупредителни препоръки: **{summary['decision_warnings']}**",
         "",
-        f"Най-високо класиран фиш: **{summary['best_ticket_id']}** — **{summary['best_numbers']}**",
+        f"Най-високо класирана комбинация: **{summary['best_ticket_id']}** — **{summary['best_numbers']}**",
         f"Оценка: **{summary['best_decision_score']}**",
         f"Ниво: **{summary['best_recommendation_level']}**",
         "",
@@ -395,7 +395,7 @@ def build_decision_recommendation_center() -> dict[str, Any]:
         "",
         "## Препоръки по фишове",
         "",
-        "| Ранг | Фиш | Числа | Оценка | Ниво | Действие | Причини | Предупреждения |",
+        "| Ранг | Комбинация | Числа | Оценка | Ниво | Действие | Причини | Предупреждения |",
         "|---:|---:|---|---:|---|---|---|---|",
     ]
 

@@ -206,17 +206,17 @@ def render_v61_draw_result_analyzer_section() -> None:
     if not closest_df.empty:
         st.dataframe(_bg_closest_table(closest_df), use_container_width=True, hide_index=True)
 
-    st.markdown("### Двойки от v50 контекст")
+    st.markdown("### Контекст на двойките")
     pair_context = result.get("pair_group_context", {})
     q1, q2, q3 = st.columns(3)
     q1.metric("Двойки в тиража", pair_context.get("actual_pair_count", 0))
-    q2.metric("Попадения в top двойки", pair_context.get("top_pair_hits_count", 0))
+    q2.metric("Попадения във водещи двойки", pair_context.get("top_pair_hits_count", 0))
     q3.metric("Попадения в наблюдавани двойки", pair_context.get("watch_pair_hits_count", 0))
 
     pair_rows = pair_context.get("top_pair_hits", []) + pair_context.get("watch_pair_hits", [])
     if pair_rows:
         st.dataframe(pd.DataFrame(pair_rows), use_container_width=True, hide_index=True)
     else:
-        st.caption("Няма двойки от последния тираж, които да попадат в текущите top/watch v50 списъци.")
+        st.caption("Няма двойки от последния тираж, които да попадат в текущите водещи или наблюдавани списъци от анализа на двойки.")
 
     st.caption(result.get("safety_note_bg", ""))

@@ -15,7 +15,7 @@ from src.v77_decision_recommendation_engine import (
 
 COLUMN_LABELS = {
     "rank": "Ранг",
-    "ticket_id": "Фиш",
+    "ticket_id": "Комбинация",
     "numbers": "Числа",
     "decision_score": "Оценка за решение",
     "recommendation_level": "Ниво на препоръка",
@@ -69,7 +69,7 @@ def render_v77_decision_recommendation_section() -> None:
 
     with info_col:
         st.info(
-            "Центърът показва кои фишове са водещи, кои са резервни и кои носят повече структурен риск."
+            "Центърът показва кои комбинации са водещи, кои са резервни и кои носят повече структурен риск."
         )
 
     summary = load_summary()
@@ -81,14 +81,14 @@ def render_v77_decision_recommendation_section() -> None:
     metric_cols[3].metric("Резервни", summary.get("reserve_count", 0))
     metric_cols[4].metric("Предупреждения", summary.get("decision_warnings", 0))
 
-    st.subheader("Най-високо класиран фиш")
+    st.subheader("Най-високо класирана комбинация")
     best_numbers = summary.get("best_numbers", "")
     best_score = summary.get("best_decision_score", 0)
     best_level = summary.get("best_recommendation_level", "")
 
     if best_numbers:
         st.success(
-            f"Фиш {summary.get('best_ticket_id', '')}: {best_numbers} — "
+            f"Комбинация {summary.get('best_ticket_id', '')}: {best_numbers} — "
             f"оценка {best_score}, ниво: {best_level}"
         )
     else:
@@ -104,11 +104,11 @@ def render_v77_decision_recommendation_section() -> None:
     st.subheader("Предупредителни препоръки")
     warnings_df = _read_csv(V77_DECISION_WARNINGS_CSV)
     if warnings_df.empty:
-        st.success("Няма фишове с повишен decision риск.")
+        st.success("Няма комбинации с повишен риск според оценката.")
     else:
         st.dataframe(_display_df(warnings_df), use_container_width=True, hide_index=True)
 
-    with st.expander("Как да се чете Step 77"):
+    with st.expander("Как да се чете този раздел"):
         st.markdown(
             "- **Оценка за решение** комбинира невронна оценка, обяснима оценка и структурен баланс.\n"
             "- **Ниво на препоръка** показва дали фишът е водещ, силен, резервен или само за наблюдение.\n"
