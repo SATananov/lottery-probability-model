@@ -11,6 +11,7 @@ from typing import Any
 import streamlit as st
 
 from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack_against_draw
+from src.v95_active_plan_auto_evaluation_engine import evaluate_active_plan_against_pending_draw
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,6 +55,8 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v81_build_final_ux_navigation_center.py",
     ROOT / "scripts" / "v82_build_final_release_package_center.py",
     ROOT / "scripts" / "v74_build_model_dependency_sync_center.py",
+    ROOT / "scripts" / "v94_build_active_budget_plan_tracker.py",
+    ROOT / "scripts" / "v95_build_active_plan_auto_evaluation.py",
 ]
 
 
@@ -450,6 +453,16 @@ def render() -> None:
         ),
     )
 
+    evaluate_active_budget_plan_before_save = st.checkbox(
+        "Провери активния бюджетен план преди запис на тиража",
+        value=True,
+        key="add_draw_evaluate_active_budget_plan_before_save",
+        help=(
+            "Взема същите въведени числа от тази страница и проверява активния Step 94 план "
+            "преди dataset-ът да бъде обновен. Така няма второ въвеждане и няма backfit."
+        ),
+    )
+
     replace_existing = st.checkbox(
         "Замени съществуващо теглене, ако вече го има",
         value=True,
@@ -569,6 +582,47 @@ def render() -> None:
                         f"за да не се наруши правилният процес преди обновяване: {exc}"
                     )
                     return
+
+        if evaluate_active_budget_plan_before_save:
+            st.info("Step 95: проверявам активния бюджетен план срещу въведените числа преди запис в dataset-а.")
+
+            for position, numbers, _bonus in payloads:
+                try:
+                    evaluation = evaluate_active_plan_against_pending_draw(
+                        numbers,
+                        draw_date=draw_date.isoformat(),
+                        year=year,
+                        draw_no=draw_no,
+                        draw_position=position,
+                        persist=True,
+                        source="add_draw_pre_save",
+                    )
+                except Exception as exc:
+                    st.error(
+                        "Step 95 проверката на активния бюджетен план не успя. "
+                        f"Тиражът не беше записан, за да не се наруши редът преди обновяване: {exc}"
+                    )
+                    return
+
+                status = evaluation.get("status", "UNKNOWN")
+                message = evaluation.get("message_bg", "")
+                if status == "EVALUATED":
+                    summary = evaluation.get("summary", {}) or {}
+                    already_recorded = bool(evaluation.get("already_recorded"))
+                    suffix = " Историята вече имаше запис за този план и тираж." if already_recorded else ""
+                    st.success(
+                        f"Step 95 OK — теглене {position}: "
+                        f"най-добра комбинация с {summary.get('best_hit_count', 0)} попадения; "
+                        f"комбинации 3+ = {summary.get('rows_with_3_plus', 0)}; "
+                        f"комбинации 4+ = {summary.get('rows_with_4_plus', 0)}."
+                        + suffix
+                    )
+                elif status == "NO_ACTIVE_PLAN":
+                    st.info(message or "Няма активен бюджетен план за проверка.")
+                elif status == "DRAW_NOT_AFTER_ACTIVE_PLAN":
+                    st.warning(message or "Въведеният тираж не е след активния план; Step 95 не записва реален резултат.")
+                else:
+                    st.warning(message or f"Step 95 статус: {status}")
 
         try:
             saved_count = save_draws(
