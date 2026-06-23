@@ -11,7 +11,7 @@ Ranks numbers whose historical frequency, recent frequency, and recency gap are 
 ## Training summary
 
 - Training draws: 10057
-- Recent window: 20
+- Последен прозорец: 20
 - Recommended middle ticket: [3, 5, 19, 36, 45, 46]
 
 ## Weights

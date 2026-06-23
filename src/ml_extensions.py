@@ -68,7 +68,7 @@ FEATURE_NAMES = [
 
 
 class MLExtensionError(Exception):
-    """Raised when the optional ML extension workflow cannot run."""
+    """Raised when the optional ML extension flow cannot run."""
 
 
 def ensure_dirs() -> None:

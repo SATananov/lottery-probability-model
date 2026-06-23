@@ -567,7 +567,7 @@ def _add_relative_probability(scored_candidates: list[dict[str, Any]], temperatu
 
 
 def build_portfolio(scored_candidates: list[dict[str, Any]], portfolio_size: int = 10, max_overlap: int = 3) -> list[dict[str, Any]]:
-    """Greedy portfolio optimizer that prefers strong tickets with low overlap."""
+    """Greedy оптимизаторът на пакет от комбинации that prefers strong tickets with low overlap."""
     portfolio: list[dict[str, Any]] = []
     for item in scored_candidates:
         numbers = set(item["numbers"])

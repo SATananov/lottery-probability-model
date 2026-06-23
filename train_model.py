@@ -58,7 +58,7 @@ def main() -> None:
 
         print("Backtest")
         print("-" * 40)
-        print(f"Tested draws: {backtest['test_count']}")
+        print(f"Проверени тиражи: {backtest['test_count']}")
         print(f"Model average matches: {backtest['model_average_matches']:.4f}")
         print(f"Random average matches: {backtest['random_average_matches']:.4f}")
         print(f"Backtest report saved to: {backtest_report_path}")

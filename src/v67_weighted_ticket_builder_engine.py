@@ -551,7 +551,7 @@ def build_weighted_ticket_builder():
         "rules": {
             "ticket_size": TICKET_SIZE,
             "number_range": "1..49",
-            "source": "Step 66 weighted smart ensemble scores",
+            "source": "Step 66 weighted обединена оценкаs",
             "historical_exact_match_policy": "avoid exact historical draw combinations when historical data can be parsed",
             "portfolio_overlap_policy": "penalize 4+ and strongly penalize 5+ overlaps with previously generated tickets",
         },

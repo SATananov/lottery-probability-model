@@ -145,7 +145,7 @@ def write_backtest_report(
     report_path.parent.mkdir(parents=True, exist_ok=True)
 
     lines = [
-        "# Backtest Report",
+        "# Отчет от историческа проверка",
         "",
         "## Goal",
         "",
@@ -156,10 +156,10 @@ def write_backtest_report(
         "",
         "## Summary",
         "",
-        f"- Tested draws: {backtest_result['test_count']}",
-        f"- Minimum training size: {backtest_result['min_train_size']}",
-        f"- Recent window: {backtest_result['recent_window']}",
-        f"- Random seed: {backtest_result['random_seed']}",
+        f"- Проверени тиражи: {backtest_result['test_count']}",
+        f"- Минимален обучаващ период: {backtest_result['min_train_size']}",
+        f"- Последен прозорец: {backtest_result['recent_window']}",
+        f"- Случайно семе: {backtest_result['random_seed']}",
         f"- Model average matches: {backtest_result['model_average_matches']:.4f}",
         f"- Random average matches: {backtest_result['random_average_matches']:.4f}",
         "",

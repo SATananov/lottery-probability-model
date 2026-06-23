@@ -37,7 +37,7 @@ def _load_csv(path: Path):
 
 def _show_table(rows):
     if not rows:
-        st.info("Няма налични pipeline данни.")
+        st.info("Няма налични данни за веригата.")
         return
 
     shown = []
@@ -105,7 +105,7 @@ def render_v72_pipeline_refresh_section():
             with st.spinner("Обновявам Step 61–63 и Step 65–74..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=False)
             if result.get("run_ok"):
-                st.success("Статистическият pipeline се обнови успешно.")
+                st.success("Статистическата верига се обнови успешно.")
             else:
                 st.error(f"Обновяването спря при: {result.get('stopped_at')}")
             st.json(result)
@@ -113,7 +113,7 @@ def render_v72_pipeline_refresh_section():
 
     with st.expander("Пълен refresh след нов тираж"):
         st.warning(
-            "Тази опция пуска core scripts v41–v60 плюс weighted pipeline Step 61–74. "
+            "Тази опция пуска core scripts v41–v60 плюс претеглена верига Step 61–74. "
             "Използвай я след добавяне на нов тираж, когато искаш пълно обновяване."
         )
 
@@ -142,12 +142,12 @@ def render_v72_pipeline_refresh_section():
 
     commit_message = st.text_input(
         "Съобщение за GitHub commit",
-        value="Refresh lottery data models and reports after pipeline update",
+        value="Обнови моделите и отчетите след промяна във веригата",
         key="v72_github_sync_commit_message",
     )
 
     confirm_sync = st.checkbox(
-        "Потвърждавам: commit/push само на data/, models/ и reports/",
+        "Потвърждавам: commit и push само на data/, models/ и reports/",
         key="v72_github_sync_confirm",
     )
 

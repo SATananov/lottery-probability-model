@@ -5,7 +5,7 @@
 - Name: Historical Frequency Probability Model
 - Version: 1.0
 - Training draws: 10057
-- Recent window: 20
+- Последен прозорец: 20
 - Recommended ticket: [2, 8, 26, 38, 42, 49]
 
 ## Important warning

@@ -336,7 +336,7 @@ def add_ensemble_score(feature_df: pd.DataFrame, columns: list[tuple[str, float]
     """Add an event-local rank ensemble score.
 
     Each event has 49 rows, one per number. A vectorized rank calculation keeps
-    the desktop refresh workflow fast and avoids expensive pandas groupby ranks.
+    the desktop refresh flow fast and avoids expensive pandas groupby ranks.
     """
     import numpy as np
 
@@ -494,7 +494,7 @@ def train_sklearn_models(
     """Train fast per-number probability rankers.
 
     The project is a desktop Streamlit app, so this intentionally uses fast models.
-    Heavy models can make the manual update workflow feel broken on normal laptops.
+    Heavy models can make the manual update flow feel broken on normal laptops.
     """
     status: dict[str, Any] = {"sklearn_available": False, "models": {}}
 

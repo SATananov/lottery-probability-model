@@ -796,7 +796,7 @@ def build_model_dependency_sync_center() -> dict[str, Any]:
         "Надеждност на моделите",
         "Адаптивни тегла",
         "Weighted ensemble",
-        "Генератор на фишове",
+        "Генератор на комбинации",
         "Portfolio optimizer",
         "Пакет за игра",
         "Проверка след реален тираж",
@@ -891,7 +891,7 @@ def build_model_dependency_sync_center() -> dict[str, Any]:
     for row in statuses:
         md.append(f"| {row['step']} | {row['label']} | {row['category']} | {row['sync_status']} | {row['feeds']} |")
 
-    md.extend(["", "## Pipeline логика", ""])
+    md.extend(["", "## Логика на веригата", ""])
     for index, item in enumerate(pipeline_chain, start=1):
         md.append(f"{index}. {item}")
 
@@ -1007,7 +1007,7 @@ _STEP78_NODE = {
         "reports/v78_final_play_plan.json",
     ],
     "feeds": ["Step 74"],
-    "role": "Превръща decision препоръките във финален дисциплиниран план за основни фишове, резерви и действия.",
+    "role": "Превръща decision препоръките във финален дисциплиниран план за основни комбинации, резерви и действия.",
     "ensemble_source": False,
 }
 
@@ -1138,8 +1138,8 @@ for _node in MODEL_NODES:
 # STEP 82 FINAL RELEASE PACKAGE WIRING START
 _STEP82_NODE = {
     "step": "82",
-    "label": "Финален release пакет",
-    "category": "Финален release пакет",
+    "label": "Финален пакет за предаване",
+    "category": "Финален пакет за предаване",
     "script": "scripts/v82_build_final_release_package_center.py",
     "datasets": [
         "data/historical_draws.csv",
@@ -1161,7 +1161,7 @@ _STEP82_NODE = {
         "reports/v82_clean_zip_exclusion_plan.csv",
     ],
     "feeds": ["Step 74"],
-    "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
+    "role": "Финален пакет за предаване readiness и clean ZIP контролен слой след Step 81.",
     "ensemble_source": False,
 }
 

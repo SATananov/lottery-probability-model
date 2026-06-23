@@ -619,7 +619,7 @@ def combo_line(combo: dict[str, Any]) -> str:
 
 def build_markdown(payload: dict[str, Any]) -> str:
     lines = [
-        "# Final Ensemble Ticket Foundation Report",
+        "# Final Combined Combination Foundation Report",
         "",
         "This foundation combines historical/rules-style signals, combined positive/negative analysis, and interval rhythm analysis.",
         "",
@@ -636,7 +636,7 @@ def build_markdown(payload: dict[str, Any]) -> str:
         numbers = ", ".join(str(number) for number in combo["numbers"])
         lines.append(f"Combination {index}: **{numbers}**")
         lines.append(
-            f"- Average final ensemble score: {combo['average_final_ensemble_score']}"
+            f"- Average final combined score: {combo['average_final_ensemble_score']}"
         )
         lines.append(
             f"- Average rhythm score: {combo['average_rhythm_score']}"
@@ -648,7 +648,7 @@ def build_markdown(payload: dict[str, Any]) -> str:
 
     lines.extend(
         [
-            "## Top ensemble numbers",
+            "## Top combined-score numbers",
             "",
             "| number | final score | combined | rhythm | next-window | rules | consensus |",
             "| --- | --- | --- | --- | --- | --- | --- |",

@@ -6,10 +6,10 @@ This report checks whether the middle/balanced model performs better than hot, c
 
 ## Summary
 
-- Tested draws: 10047
-- Minimum training size: 10
-- Recent window: 20
-- Random seed: 123
+- Проверени тиражи: 10047
+- Минимален обучаващ период: 10
+- Последен прозорец: 20
+- Случайно семе: 123
 - Middle average matches: 0.7469
 - Hot average matches: 0.7343
 - Cold average matches: 0.7163

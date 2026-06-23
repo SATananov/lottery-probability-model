@@ -50,7 +50,7 @@ CORE_REFRESH_STEPS = [
     },
     {
         "step": "51",
-        "name": "Интелигентна оценка на портфейл от фишове",
+        "name": "Интелигентна оценка на пакет от комбинации",
         "script": "scripts/v51_build_ticket_portfolio_intelligence.py",
         "outputs": ["models/v51", "reports/v51_ticket_portfolio_summary.json"],
     },
@@ -92,7 +92,7 @@ CORE_REFRESH_STEPS = [
     },
     {
         "step": "59",
-        "name": "Умен генератор на фишове 2",
+        "name": "Умен генератор на комбинации 2",
         "script": "scripts/v59_build_smart_ticket_builder_2.py",
         "outputs": ["models/v59", "reports/v59_smart_ticket_builder_2_summary.json"],
     },
@@ -215,7 +215,7 @@ WEIGHTED_REFRESH_STEPS = [
     },
     {
         "step": "82",
-        "name": "Финален release пакет",
+        "name": "Финален пакет за предаване",
         "script": "scripts/v82_build_final_release_package_center.py",
         "outputs": ["models/v82", "reports/v82_final_release_summary.json"],
     },
@@ -339,7 +339,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
 
     summary = {
         "step": "72",
-        "name": "Интеграция за пълно обновяване на статистическия pipeline",
+        "name": "Интеграция за пълно обновяване на статистическата верига",
         "mode": "run" if run_pipeline else "audit",
         "include_core": include_core,
         "steps_planned": len(steps),
@@ -358,7 +358,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
             "reports/v72_pipeline_refresh_plan.csv",
             "models/v72/v72_pipeline_refresh_model.json",
         ],
-        "safe_note": "Този pipeline обновява само статистически файлове. Не е предсказание и не е гаранция за печалба.",
+        "safe_note": "Тази верига обновява само статистически файлове. Не е предсказание и не е гаранция за печалба.",
     }
 
     fieldnames = [
@@ -379,7 +379,7 @@ def build_pipeline_refresh_plan(run_pipeline: bool = False, include_core: bool =
     _write_json(MODELS_DIR / "v72_pipeline_refresh_model.json", {"summary": summary, "steps": rows})
 
     md = [
-        "# Step 72 — Обновяване на статистическия pipeline",
+        "# Step 72 — Обновяване на статистическата верига",
         "",
         f"Режим: **{summary['mode']}**",
         f"Включени основни стъпки: **{summary['include_core']}**",
@@ -464,7 +464,7 @@ def git_status_short() -> dict[str, object]:
 def git_sync_data_models_reports(commit_message: str | None = None) -> dict[str, object]:
     message = (commit_message or "").strip()
     if not message:
-        message = "Refresh lottery data models and reports after pipeline update"
+        message = "Обнови моделите и отчетите след промяна във веригата"
 
     repo_check = _run_git_command(["rev-parse", "--is-inside-work-tree"])
     if not repo_check["ok"]:

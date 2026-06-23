@@ -45,7 +45,7 @@ def main() -> None:
     print()
     print("Backtest")
     print("-" * 40)
-    print(f"Tested draws: {backtest['tested_draws']}")
+    print(f"Проверени тиражи: {backtest['tested_draws']}")
     print(f"Combined average matches: {backtest['combined_average_matches']:.4f}")
     print(f"Random average matches: {backtest['random_average_matches']:.4f}")
     print(backtest["message"])

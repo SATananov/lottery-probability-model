@@ -220,11 +220,11 @@ def build_recommendations(summary_core, undercovered_top, repeated_pairs, repeat
 
     if summary_core["max_ticket_overlap"] >= 5:
         recommendations.append(
-            "Има много високо припокриване между поне два фиша. Добре е да се намали overlap."
+            "Има много високо припокриване между поне две комбинации. Добре е да се намали припокриването."
         )
     elif summary_core["max_ticket_overlap"] == 4:
         recommendations.append(
-            "Има умерено високо припокриване между фишове. При Step 69 може да се добави по-строг overlap control."
+            "Има умерено високо припокриване между комбинации. При Step 69 може да се добави по-строг контрол на припокриването."
         )
 
     if undercovered_top:
@@ -236,7 +236,7 @@ def build_recommendations(summary_core, undercovered_top, repeated_pairs, repeat
 
     if repeated_pairs:
         recommendations.append(
-            "Има повторени двойки. Това не е грешка, но portfolio optimizer може да намали повторенията."
+            "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията."
         )
 
     if repeated_triples:
@@ -246,7 +246,7 @@ def build_recommendations(summary_core, undercovered_top, repeated_pairs, repeat
 
     if not recommendations:
         recommendations.append(
-            "Портфолиото има добър баланс между покритие, overlap и претеглена оценка. Няма критични структурни предупреждения."
+            "Пакетът има добър баланс между покритие, припокриване и претеглена оценка. Няма критични структурни предупреждения."
         )
 
     return recommendations
@@ -468,7 +468,7 @@ def build_weighted_portfolio_optimizer():
             "reports/v68_weighted_portfolio_repeated_triples.csv",
             "models/v68/v68_weighted_portfolio_optimizer_model.json",
         ],
-        "safe_note": "This is a statistical portfolio optimizer. It is not a гаранция за печалба or a promise of future lottery results.",
+        "safe_note": "This is a statistical оптимизаторът на пакет от комбинации. It is not a гаранция за печалба or a promise of future lottery results.",
     }
 
     write_csv(

@@ -6,10 +6,10 @@ This report checks whether the historical frequency model performs better than a
 
 ## Summary
 
-- Tested draws: 10047
-- Minimum training size: 10
-- Recent window: 20
-- Random seed: 42
+- Проверени тиражи: 10047
+- Минимален обучаващ период: 10
+- Последен прозорец: 20
+- Случайно семе: 42
 - Model average matches: 0.7343
 - Random average matches: 0.7144
 

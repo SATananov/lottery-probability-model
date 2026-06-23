@@ -1,6 +1,6 @@
 # Combined Strategy Отчет от историческа проверка
 
-Tested draws: 25
+Проверени тиражи: 25
 Combined model average matches: 0.3200
 Random baseline average matches: 1.3600
 

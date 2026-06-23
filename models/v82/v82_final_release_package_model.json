@@ -3,240 +3,240 @@
     {
       "check": "Required file: streamlit_app.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: README.md",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: requirements.txt",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: .gitignore",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: data/historical_draws.csv",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: data/v40_normalized_draw_events.csv",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: data/v41_canonical_draw_events.csv",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: models/model_registry.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: models/v79/v79_ticket_pack_export_model.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: models/v80/v80_final_system_audit_model.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: models/v81/v81_final_ux_navigation_model.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: reports/v79_ticket_pack_export_summary.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: reports/v80_final_system_audit_summary.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: reports/v81_final_ux_navigation_summary.json",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: scripts/v79_build_ticket_pack_export_center.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: scripts/v80_build_final_system_audit_center.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: scripts/v81_build_final_ux_navigation_center.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: scripts/v82_build_final_release_package_center.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: src/v79_ticket_pack_export_engine.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: src/v80_final_system_audit_engine.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: src/v81_final_ux_navigation_engine.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Required file: src/v82_final_release_package_engine.py",
       "details": "Наличен",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Dataset expectation: data/historical_draws.csv",
       "details": "10058 rows / 49 rows за 2026 / latest draw OK",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Dataset expectation: data/v40_normalized_draw_events.csv",
       "details": "10058 rows / 49 rows за 2026 / latest draw OK",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Dataset expectation: data/v41_canonical_draw_events.csv",
       "details": "10058 rows / 49 rows за 2026 / latest draw OK",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Upstream audit OK: reports/v80_final_system_audit_summary.json",
       "details": "status=OK; issues_found=0",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Upstream audit OK: reports/v81_final_ux_navigation_summary.json",
       "details": "status=OK; issues_found=0",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Streamlit label: Финален системен одит",
       "details": "count=2",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Streamlit label: Финален UX контрол",
       "details": "count=2",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Streamlit label: Финален пакет за предаване",
       "details": "count=2",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     },
     {
       "check": "Streamlit label: Контрол на синхрона",
       "details": "count=2",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "OK"
     }
   ],
   "clean_zip_exclusion_plan": [
     {
       "pattern": ".git/",
-      "reason": "Git history не се включва в clean release ZIP.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "reason": "Git history не се включва в чист ZIP.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "__pycache__/",
       "reason": "Python cache артефакт.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": ".pytest_cache/",
       "reason": "Test cache артефакт.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": ".ipynb_checkpoints/",
       "reason": "Jupyter cache артефакт.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "*.zip",
-      "reason": "Не допускаме nested ZIP вътре в release ZIP.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "reason": "Не допускаме nested ZIP вътре в чист ZIP.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "*.tmp",
       "reason": "Временни файлове.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "*.temp",
       "reason": "Временни файлове.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "*.bak",
       "reason": "Backup файлове.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "apply_step*.py",
-      "reason": "Helper patch файловете се чистят преди commit/release.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "reason": "Еднократните помощни файлове се чистят преди commit/предаване.",
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     },
     {
       "pattern": "fix_*.py / apply_*.ps1",
       "reason": "Еднократни помощни скриптове не са част от продукта.",
-      "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
+      "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
     }
   ],
   "dataset_results": {
@@ -309,7 +309,7 @@
     "manifest_size_bytes": 19058301,
     "name": "Финален пакет за предаване",
     "required_files_checked": 22,
-    "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
+    "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
     "status": "OK",
     "step": "82",
     "sync_expectations": [

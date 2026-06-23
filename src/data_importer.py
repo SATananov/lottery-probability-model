@@ -2,7 +2,7 @@
 Official Bulgarian Sports Totalizator 6/49 data importer.
 
 BST publishes historical 6/49 archive files in several different formats.
-This importer keeps the data workflow conservative:
+This importer keeps the data flow conservative:
 
 1. Back up the current canonical CSV before every import.
 2. Download official archive files when links are discoverable.

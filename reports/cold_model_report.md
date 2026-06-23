@@ -11,7 +11,7 @@ Ranks numbers that are historically below expected frequency, have larger recenc
 ## Training summary
 
 - Training draws: 10057
-- Recent window: 20
+- Последен прозорец: 20
 - Recommended cold ticket: [4, 12, 25, 34, 41, 44]
 
 ## Weights

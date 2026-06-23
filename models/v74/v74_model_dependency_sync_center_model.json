@@ -985,12 +985,12 @@
         "models/v42/v42_combined_prediction.json",
         "models/v43_1/v43_1_interval_rhythm_refined_prediction.json"
       ],
-      "label": "Финална ансамблова основа за фиш",
+      "label": "Финална обединена основа за комбинация",
       "outputs": [
         "models/v44_1/v44_1_final_комбиниран анализ_ticket_prediction.json",
         "reports/v44_1_final_комбиниран анализ_ticket_summary.json"
       ],
-      "role": "Обединява по-ранни сигнали във финален ансамблов фиш.",
+      "role": "Обединява по-ранни сигнали във финална обединена комбинация.",
       "script": "scripts/v44_1_refine_final_комбиниран анализ_ticket_foundation.py",
       "step": "44.1"
     },
@@ -1055,12 +1055,12 @@
         "models/v50/v50_pair_group_intelligence.json",
         "data/historical_draws.csv"
       ],
-      "label": "Интелигентна оценка на портфейл от фишове",
+      "label": "Интелигентна оценка на пакет от комбинации",
       "outputs": [
         "models/v51/v51_ticket_пакет_intelligence.json",
         "reports/v51_ticket_пакет_summary.json"
       ],
-      "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
+      "role": "Оценява комбинации и пакет чрез покритие и групова логика.",
       "script": "scripts/v51_build_ticket_пакет_intelligence.py",
       "step": "51"
     },
@@ -1173,7 +1173,7 @@
       "inputs": [
         "reports/v58_smart_комбиниран анализ_scores_sample.json"
       ],
-      "label": "Умен генератор на фишове 2",
+      "label": "Умен генератор на комбинации 2",
       "outputs": [
         "models/v59/v59_smart_ticket_builder_2_manifest.json",
         "reports/v59_smart_ticket_builder_2_summary.json"
@@ -1313,7 +1313,7 @@
         "reports/v67_weighted_ticket_builder_summary.json",
         "reports/v67_weighted_ticket_builder_tickets.csv"
       ],
-      "role": "Строи фишове върху претеглените оценки от Step 66.",
+      "role": "Строи комбинации върху претеглените оценки от Step 66.",
       "script": "scripts/v67_build_weighted_ticket_builder.py",
       "step": "67"
     },
@@ -1681,7 +1681,7 @@
         "reports/v83_recommended_работен процес.csv",
         "reports/v83_safe_usage_checklist.csv"
       ],
-      "role": "Финално потребителско ръководство, безопасен работен процес и guide center върху release пакета.",
+      "role": "Финално потребителско ръководство, безопасен работен процес и guide center върху пакета за предаване.",
       "script": "scripts/v83_build_final_user_manual_center.py",
       "step": "83"
     }
@@ -1784,7 +1784,7 @@
       "Надеждност на моделите",
       "Адаптивни тегла",
       "Weighted комбиниран анализ",
-      "Генератор на фишове",
+      "Генератор на комбинации",
       "Оптимизатор на пакет",
       "Пакет за игра",
       "Проверка след реален тираж",
@@ -1871,14 +1871,14 @@
       "ensemble_source": true,
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "models/v42/v42_combined_prediction.json; models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
-      "label": "Финална ансамблова основа за фиш",
+      "label": "Финална обединена основа за комбинация",
       "latest_input_mtime": "2026-06-22T15:17:14",
       "latest_output_mtime": "2026-06-22T15:17:14",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v44_1/v44_1_final_комбиниран анализ_ticket_prediction.json; reports/v44_1_final_комбиниран анализ_ticket_summary.json",
       "outputs_present": true,
-      "role": "Обединява по-ранни сигнали във финален ансамблов фиш.",
+      "role": "Обединява по-ранни сигнали във финална обединена комбинация.",
       "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v44_1_refine_final_комбиниран анализ_ticket_foundation.py",
       "script_exists": true,
@@ -1937,14 +1937,14 @@
       "ensemble_source": true,
       "feeds": "Step 62; Step 65; Step 66",
       "inputs": "models/v50/v50_pair_group_intelligence.json; data/historical_draws.csv",
-      "label": "Интелигентна оценка на портфейл от фишове",
+      "label": "Интелигентна оценка на пакет от комбинации",
       "latest_input_mtime": "2026-06-22T15:17:36",
       "latest_output_mtime": "2026-06-22T15:17:37",
       "missing_inputs": "",
       "missing_outputs": "",
       "outputs": "models/v51/v51_ticket_пакет_intelligence.json; reports/v51_ticket_пакет_summary.json",
       "outputs_present": true,
-      "role": "Оценява фишове и портфолио чрез покритие и групова логика.",
+      "role": "Оценява комбинации и пакет чрез покритие и групова логика.",
       "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v51_build_ticket_пакет_intelligence.py",
       "script_exists": true,
@@ -2047,7 +2047,7 @@
       "ensemble_source": true,
       "feeds": "Step 60; Step 62; Step 65",
       "inputs": "reports/v58_smart_комбиниран анализ_scores_sample.json",
-      "label": "Умен генератор на фишове 2",
+      "label": "Умен генератор на комбинации 2",
       "latest_input_mtime": "2026-06-22T15:18:02",
       "latest_output_mtime": "2026-06-22T15:18:27",
       "missing_inputs": "",
@@ -2186,7 +2186,7 @@
       "missing_outputs": "",
       "outputs": "models/v67/v67_weighted_ticket_builder_model.json; reports/v67_weighted_ticket_builder_summary.json; reports/v67_weighted_ticket_builder_tickets.csv",
       "outputs_present": true,
-      "role": "Строи фишове върху претеглените оценки от Step 66.",
+      "role": "Строи комбинации върху претеглените оценки от Step 66.",
       "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v67_build_weighted_ticket_builder.py",
       "script_exists": true,
@@ -2494,7 +2494,7 @@
       "missing_outputs": "",
       "outputs": "models/v83/v83_final_user_manual_model.json; reports/v83_final_user_manual_summary.json; reports/v83_final_user_manual_summary.md; reports/v83_app_guide_sections.csv; reports/v83_recommended_работен процес.csv; reports/v83_safe_usage_checklist.csv",
       "outputs_present": true,
-      "role": "Финално потребителско ръководство, безопасен работен процес и guide center върху release пакета.",
+      "role": "Финално потребителско ръководство, безопасен работен процес и guide center върху пакета за предаване.",
       "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
       "script": "scripts/v83_build_final_user_manual_center.py",
       "script_exists": true,

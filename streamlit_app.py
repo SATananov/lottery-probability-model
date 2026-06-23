@@ -571,7 +571,7 @@ def _lr34_render_report(text_value):
     tested = None
     best_strategy = None
     if _lr34_re:
-        tested_match = _lr34_re.search(r"Tested draws:\s*(\d+)", text_value)
+        tested_match = _lr34_re.search(r"Проверени тиражи:\s*(\d+)", text_value)
         best_match = _lr34_re.search(r"Best strategy:\s*([A-Za-z_]+)", text_value)
         if tested_match:
             tested = int(tested_match.group(1))
@@ -734,7 +734,7 @@ TRANSLATIONS = {
     "en": {
         "language": "Language",
         "app_title": "Lottery Statistical Laboratory 6/49",
-        "app_caption": "Analysis, models, backtesting and visual recommendations. It does not guarantee a win.",
+        "app_caption": "Analysis, models, historical checks and visual recommendations. It does not guarantee a win.",
         "menu": "Menu",
         "dashboard": "Dashboard",
         "recommendations": "Recommendations",
@@ -764,9 +764,9 @@ TRANSLATIONS = {
         "middle_model": "Middle / balanced model",
         "gap_model": "Gap / interval model",
         "combined_model": "Final combined model",
-        "advanced_model": "Advanced ensemble model",
-        "train_advanced": "Train advanced ensemble",
-        "run_backtest": "Run backtest",
+        "advanced_model": "Разширен обединен модел",
+        "train_advanced": "Train разширен обединен модел",
+        "run_backtest": "Пусни историческа проверка",
         "no_model": "Model not available yet. Run the training script.",
         "numbers": "Numbers",
         "confidence": "Score",
@@ -1442,7 +1442,7 @@ def _v39_adv_render_overview(model):
     st.markdown(
         _v39_adv_text(
             "\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0430\u0442\u0430 \u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f \u0435 \u043f\u043e-\u0442\u0435\u0436\u044a\u043a \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b. \u0422\u044f \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430 \u043d\u044f\u043a\u043e\u043b\u043a\u043e \u0432\u0438\u0434\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044a\u0440\u0445\u0443 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0442\u0435 \u0442\u0438\u0440\u0430\u0436\u0438 \u0438 \u043a\u043b\u0430\u0441\u0438\u0440\u0430 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442-\u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438. \u0422\u043e\u0432\u0430 \u0435 \u0430\u043d\u0430\u043b\u0438\u0437, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f \u0437\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430.",
-            "The Advanced Lab is a heavier statistical ensemble. It combines several checks over the historical draws and ranks candidate combinations. This is analysis, not a guarantee of winning.",
+            "Лабораторията използва по-тежък обединен статистически анализ. It combines several checks over the historical draws and ranks candidate combinations. This is analysis, not a guarantee of winning.",
         )
     )
     training_draws = _v39_adv_model_value(model, "training_draws", "dataset_rows", "rows")
@@ -1478,7 +1478,7 @@ def page_advanced_lab() -> None:
         '<div class="warning-soft">'
         + _v39_adv_text(
             "\u0422\u0430\u0437\u0438 \u0441\u0435\u043a\u0446\u0438\u044f \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b \u0438 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430. \u0420\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0438\u0442\u0435 \u0441\u0430 \u0437\u0430 \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435, \u043d\u0435 \u0441\u0430 \u0433\u0430\u0440\u0430\u043d\u0446\u0438\u044f \u0437\u0430 \u043f\u0435\u0447\u0430\u043b\u0431\u0430.",
-            "This section uses an advanced statistical ensemble and historical checks. The results are for analysis and comparison, not a guarantee of winning.",
+            "This section uses an разширен обединен статистически анализ and historical checks. The results are for analysis and comparison, not a guarantee of winning.",
         )
         + "</div>",
         unsafe_allow_html=True,
@@ -2410,7 +2410,7 @@ def page_ml_lab() -> None:
             "ml_classification_report.md": _v39_ml_text("\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f", "Classification report"),
             "ml_clustering_report.md": _v39_ml_text("\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f", "Clustering report"),
             "ml_dimensionality_reduction_report.md": _v39_ml_text("\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430", "2D map report"),
-            "ml_extensions_backtest_report.md": _v39_ml_text("\u041e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", "Backtesting report"),
+            "ml_extensions_backtest_report.md": _v39_ml_text("\u041e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", "Отчет от историческа проверка"),
             "ml_extensions_model_card.md": _v39_ml_text("\u041a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0430", "Model card"),
         }
         selected = st.selectbox(_v39_ml_text("\u041c\u041b \u043e\u0442\u0447\u0435\u0442", "ML report"), report_files, format_func=lambda name: report_labels.get(name, name), key="v39_ml_report_select")

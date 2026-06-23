@@ -205,7 +205,7 @@ def render_v80_final_system_audit_section() -> None:
 
     cols = st.columns(5)
     cols[0].metric("Статус", _status_badge(str(summary.get("status", ""))))
-    cols[1].metric("Datasets", summary.get("datasets_checked", 0))
+    cols[1].metric("Набори данни", summary.get("datasets_checked", 0))
     cols[2].metric("Артефакти", summary.get("artifacts_checked", 0))
     cols[3].metric("Планове за синхронизация", summary.get("sync_plans_checked", 0))
     cols[4].metric("Проблеми", summary.get("issues_found", 0))

@@ -15,10 +15,10 @@ HISTORY_PATH = REPORTS_DIR / "v62_model_performance_history.csv"
 MODEL_LABELS = {
     "v41_latest_predictions": "v41 — последни прогнозни сигнали",
     "v42_combined_prediction": "v42 — комбиниран позитивен/негативен модел",
-    "v44_1_final_ensemble_ticket": "v44.1 — финален ensemble фиш",
+    "v44_1_final_ensemble_ticket": "v44.1 — финална обединена комбинация",
     "v45_final_prediction_tickets": "v45 — Prediction Dashboard Pro",
     "v50_pair_group_intelligence": "v50 — двойки и групи",
-    "v51_ticket_portfolio_intelligence": "v51 — портфолио от фишове",
+    "v51_ticket_portfolio_intelligence": "v51 — пакет от комбинации",
     "v57_hot_cold_stable": "v57 — горещи, студени и стабилни",
     "v58_smart_ensemble": "v58 — обединена оценка",
     "v59_smart_ticket_builder_2": "v59 — интелигентен генератор 2",

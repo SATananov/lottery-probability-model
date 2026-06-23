@@ -6,9 +6,9 @@ This report checks whether the gap/interval probability model performs better th
 
 ## Summary
 
-- Tested draws: 10047
-- Minimum training size: 10
-- Random seed: 456
+- Проверени тиражи: 10047
+- Минимален обучаващ период: 10
+- Случайно семе: 456
 - Gap average matches: 0.7192
 - Hot average matches: 0.7343
 - Cold average matches: 0.7163

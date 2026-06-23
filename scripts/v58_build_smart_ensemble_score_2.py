@@ -83,7 +83,7 @@ def main() -> None:
 
     summary = {
         "status": "completed",
-        "module": "Smart Ensemble Score 2",
+        "module": "Обединена оценка 2",
         "version": "v58",
         "total_draws": len(events),
         "sample_query_count": len(combinations),
@@ -105,7 +105,7 @@ def main() -> None:
     )
 
     markdown_lines = [
-        "# V58 Smart Ensemble Score 2",
+        "# V58 Обединена оценка 2",
         "",
         "## Цел",
         "",

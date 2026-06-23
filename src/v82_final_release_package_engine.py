@@ -20,7 +20,7 @@ EXCLUSIONS_CSV = REPORTS_DIR / "v82_clean_zip_exclusion_plan.csv"
 MODEL_JSON = V82_MODELS_DIR / "v82_final_release_package_model.json"
 
 SAFE_NOTE = (
-    "Step 82 е финален release и clean package контролен слой. "
+    "Step 82 е финален контролен слой за готовност и чист ZIP. "
     "Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба."
 )
 
@@ -82,15 +82,15 @@ UNWANTED_PATTERNS = [
 ]
 
 ZIP_EXCLUSION_PLAN = [
-    {"pattern": ".git/", "reason": "Git history не се включва в clean release ZIP."},
+    {"pattern": ".git/", "reason": "Git history не се включва в чист ZIP."},
     {"pattern": "__pycache__/", "reason": "Python cache артефакт."},
     {"pattern": ".pytest_cache/", "reason": "Test cache артефакт."},
     {"pattern": ".ipynb_checkpoints/", "reason": "Jupyter cache артефакт."},
-    {"pattern": "*.zip", "reason": "Не допускаме nested ZIP вътре в release ZIP."},
+    {"pattern": "*.zip", "reason": "Не допускаме nested ZIP вътре в чист ZIP."},
     {"pattern": "*.tmp", "reason": "Временни файлове."},
     {"pattern": "*.temp", "reason": "Временни файлове."},
     {"pattern": "*.bak", "reason": "Backup файлове."},
-    {"pattern": "apply_step*.py", "reason": "Helper patch файловете се чистят преди commit/release."},
+    {"pattern": "apply_step*.py", "reason": "Еднократните помощни файлове се чистят преди commit/предаване."},
     {"pattern": "fix_*.py / apply_*.ps1", "reason": "Еднократни помощни скриптове не са част от продукта."},
 ]
 
@@ -284,7 +284,7 @@ def _file_manifest_rows() -> list[dict[str, Any]]:
                 "kind": "file",
                 "size_bytes": path.stat().st_size,
                 "release_relevant": True,
-                "note": "Included in release manifest",
+                "note": "Included in списък на файловете",
             })
 
         elif path.is_dir():
@@ -301,7 +301,7 @@ def _file_manifest_rows() -> list[dict[str, Any]]:
                     "kind": "file",
                     "size_bytes": child.stat().st_size,
                     "release_relevant": True,
-                    "note": "Included in release manifest",
+                    "note": "Included in списък на файловете",
                 })
 
     return rows
@@ -334,10 +334,10 @@ def _quality_scan() -> tuple[list[dict[str, Any]], list[str]]:
             rows.append({
                 "path": rel,
                 "matched_patterns": "excluded_release_artifact",
-                "status": "Изключи от release manifest",
+                "status": "Изключи от списък на файловете",
                 "safe_note": SAFE_NOTE,
             })
-            issues.append(f"Excluded artifact leaked into release manifest: {rel}")
+            issues.append(f"Excluded artifact leaked into списък на файловете: {rel}")
 
     return rows, issues
 
@@ -406,7 +406,7 @@ def build_final_release_package_center() -> dict[str, Any]:
     required_labels = [
         "Финален системен одит",
         "Финален UX контрол",
-        "Финален release пакет",
+        "Финален пакет за предаване",
         "Контрол на синхрона",
     ]
     for label in required_labels:
@@ -433,7 +433,7 @@ def build_final_release_package_center() -> dict[str, Any]:
     total_release_size = sum(int(row.get("size_bytes", 0)) for row in manifest_rows)
     summary = {
         "step": "82",
-        "name": "Финален release пакет",
+        "name": "Финален пакет за предаване",
         "status": "OK" if not issues else "Има нужда от преглед",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "required_files_checked": len(REQUIRED_RELEASE_FILES),
@@ -465,16 +465,16 @@ def build_final_release_package_center() -> dict[str, Any]:
     })
 
     md = [
-        "# Step 82 — Финален release пакет",
+        "# Step 82 — Финален пакет за предаване",
         "",
         f"Статус: **{summary['status']}**",
         f"Проверени задължителни файлове: **{summary['required_files_checked']}**",
         f"Проверени datasets: **{summary['datasets_checked']}**",
-        f"Файлове в release manifest: **{summary['manifest_files_count']}**",
-        f"Нежелани release файлове: **{summary['unwanted_release_files']}**",
+        f"Файлове в списък на файловете: **{summary['manifest_files_count']}**",
+        f"Нежелани файлове: **{summary['unwanted_release_files']}**",
         f"Намерени проблеми: **{summary['issues_found']}**",
         "",
-        "## Очаквана финална sync логика",
+        "## Очаквана финална логика на синхрона",
         "",
         "- 82 -> 74",
         "- 81 -> 82 -> 74",
@@ -483,9 +483,9 @@ def build_final_release_package_center() -> dict[str, Any]:
         "",
         "## Clean ZIP принцип",
         "",
-        "Release ZIP трябва да съдържа активното приложение, datasets, models, reports, scripts и src, но без Git history, cache, backup, temp и helper patch файлове.",
+        "Чист ZIP трябва да съдържа активното приложение, datasets, models, reports, scripts и src, но без Git history, cache, backup, temp и helper patch файлове.",
         "",
-        "**Важно:** Step 82 е release контролен слой. Той не е прогноза и не е гаранция за печалба.",
+        "**Важно:** Step 82 е контролен слой за готовност. Той не е прогноза и не е гаранция за печалба.",
     ]
     if issues:
         md.extend(["", "## Елементи за преглед", ""])

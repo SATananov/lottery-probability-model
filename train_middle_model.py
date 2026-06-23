@@ -1,4 +1,4 @@
-﻿from src.middle_number_model import (
+from src.middle_number_model import (
     DEFAULT_DATA_PATH,
     DEFAULT_MIDDLE_BACKTEST_REPORT_PATH,
     DEFAULT_MIDDLE_MODEL_PATH,
@@ -65,7 +65,7 @@ def main() -> None:
 
         print("Middle model backtest")
         print("-" * 40)
-        print(f"Tested draws: {backtest['test_count']}")
+        print(f"Проверени тиражи: {backtest['test_count']}")
         print(f"Middle model average matches: {backtest['middle_average_matches']:.4f}")
         print(f"Hot frequency model average matches: {backtest['hot_average_matches']:.4f}")
         print(f"Cold model average matches: {backtest['cold_average_matches']:.4f}")

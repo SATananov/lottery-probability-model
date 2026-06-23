@@ -64,7 +64,7 @@ def main() -> None:
 
         print("Cold model backtest")
         print("-" * 40)
-        print(f"Tested draws: {backtest['test_count']}")
+        print(f"Проверени тиражи: {backtest['test_count']}")
         print(f"Cold model average matches: {backtest['cold_average_matches']:.4f}")
         print(f"Hot frequency model average matches: {backtest['hot_average_matches']:.4f}")
         print(f"Random baseline average matches: {backtest['random_average_matches']:.4f}")

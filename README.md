@@ -23,10 +23,10 @@ official historical data -> validation -> model training -> backtesting -> compa
 - cold / underrepresented model;
 - middle / balanced model;
 - gap / interval model;
-- advanced ensemble model;
+- разширен обединен модел model;
 - final combined strategy model;
 - visual Streamlit app with Bulgarian UI support;
-- manual draw upload and model refresh workflow.
+- manual draw upload and model refresh flow.
 
 ## Run the visual app
 
@@ -34,7 +34,7 @@ official historical data -> validation -> model training -> backtesting -> compa
 python -m streamlit run streamlit_app.py
 ```
 
-## Run the console workflow
+## Run the console update flow
 
 ```bash
 python app.py

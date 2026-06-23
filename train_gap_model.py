@@ -59,7 +59,7 @@ def main() -> None:
 
         print("Gap model backtest")
         print("-" * 40)
-        print(f"Tested draws: {backtest['test_count']}")
+        print(f"Проверени тиражи: {backtest['test_count']}")
         print(f"Gap model average matches: {backtest['gap_average_matches']:.4f}")
         print(f"Hot frequency model average matches: {backtest['hot_average_matches']:.4f}")
         print(f"Cold model average matches: {backtest['cold_average_matches']:.4f}")

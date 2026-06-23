@@ -1,4 +1,4 @@
-﻿import json
+import json
 import math
 import random
 from collections import Counter
@@ -262,7 +262,7 @@ def write_middle_model_report(
         "## Training summary",
         "",
         f"- Training draws: {model['training_draws']}",
-        f"- Recent window: {model['recent_window']}",
+        f"- Последен прозорец: {model['recent_window']}",
         f"- Recommended middle ticket: {model['recommended_ticket']}",
         "",
         "## Weights",
@@ -487,10 +487,10 @@ def write_middle_backtest_report(
         "",
         "## Summary",
         "",
-        f"- Tested draws: {backtest_result['test_count']}",
-        f"- Minimum training size: {backtest_result['min_train_size']}",
-        f"- Recent window: {backtest_result['recent_window']}",
-        f"- Random seed: {backtest_result['random_seed']}",
+        f"- Проверени тиражи: {backtest_result['test_count']}",
+        f"- Минимален обучаващ период: {backtest_result['min_train_size']}",
+        f"- Последен прозорец: {backtest_result['recent_window']}",
+        f"- Случайно семе: {backtest_result['random_seed']}",
         f"- Middle average matches: {backtest_result['middle_average_matches']:.4f}",
         f"- Hot average matches: {backtest_result['hot_average_matches']:.4f}",
         f"- Cold average matches: {backtest_result['cold_average_matches']:.4f}",

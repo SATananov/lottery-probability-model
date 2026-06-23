@@ -412,7 +412,7 @@ def _render_github_sync() -> None:
 
     commit_message = st.text_input(
         T("\\u0421\\u044a\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0437\\u0430 commit"),
-        value="Refresh full weighted pipeline artifacts from training center",
+        value="Refresh full претеглена верига artifacts from training center",
     )
 
     if st.button(T("\\u041a\\u0430\\u0447\\u0438 models/reports \\u0432 GitHub"), type="primary"):
@@ -442,7 +442,7 @@ def _render_github_sync() -> None:
             st.code("\\n\\n".join(logs), language="text")
             return
 
-        safe_message = commit_message.strip() or "Refresh full weighted pipeline artifacts from training center"
+        safe_message = commit_message.strip() or "Refresh full претеглена верига artifacts from training center"
 
         ok_commit, commit_output = _run_git_command(["git", "commit", "-m", safe_message])
         logs.append("=== git commit ===\\n" + (commit_output or "-"))

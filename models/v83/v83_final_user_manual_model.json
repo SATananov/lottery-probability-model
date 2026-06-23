@@ -123,7 +123,7 @@
     },
     {
       "caution": "Пази фиксиран бюджет и не променяй плана емоционално.",
-      "expected_result": "Получаваш активни фишове, резерви и действия.",
+      "expected_result": "Получаваш активни комбинации, резерви и действия.",
       "page": "Финален план",
       "step_order": 8,
       "when_to_use": "Когато подготвяш реалния пакет."
@@ -183,7 +183,7 @@
     {
       "check_item": "Clean ZIP само при чист статус",
       "check_order": 7,
-      "recommended_behavior": "Първо commit/push и празен git status, после архив.",
+      "recommended_behavior": "Първо commit и push и празен git status, после архив.",
       "risk_if_ignored": "Непълен или несинхронизиран checkpoint."
     }
   ],

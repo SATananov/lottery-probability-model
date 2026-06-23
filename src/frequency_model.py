@@ -349,7 +349,7 @@ def write_frequency_model_report(
         f"- Name: {model['model_name']}",
         f"- Version: {model['model_version']}",
         f"- Training draws: {model['training_draws']}",
-        f"- Recent window: {model['recent_window']}",
+        f"- Последен прозорец: {model['recent_window']}",
         f"- Recommended ticket: {model['recommended_ticket']}",
         "",
         "## Important warning",

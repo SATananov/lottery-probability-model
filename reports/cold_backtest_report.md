@@ -6,10 +6,10 @@ This report tests whether choosing underrepresented numbers performs better than
 
 ## Summary
 
-- Tested draws: 10047
-- Minimum training size: 10
-- Recent window: 20
-- Random seed: 99
+- Проверени тиражи: 10047
+- Минимален обучаващ период: 10
+- Последен прозорец: 20
+- Случайно семе: 99
 - Cold model average matches: 0.7163
 - Hot frequency model average matches: 0.7343
 - Random baseline average matches: 0.7289

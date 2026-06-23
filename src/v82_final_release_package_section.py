@@ -45,17 +45,17 @@ def _show_rows(title: str, rows: list[dict[str, str]]) -> None:
 
 
 def render_v82_final_release_package_section() -> None:
-    st.title("Финален release пакет")
+    st.title("Финален пакет за предаване")
     st.caption("Step 82 — финална готовност на пакета и чист ZIP контрол преди checkpoint.")
-    st.warning("Този модул подготвя clean release checkpoint. Той не е прогноза и не е гаранция за печалба.")
+    st.warning("Този модул подготвя чист контролен ZIP. Той не е прогноза и не е гаранция за печалба.")
 
-    if st.button("Обнови финалния release контрол"):
+    if st.button("Обнови финалния контрол на готовността"):
         with st.spinner("Обновяване на проверките за готовност на финалния пакет..."):
             summary = build_final_release_package_center()
         if summary.get("status") == "OK":
-            st.success("Финалният release контрол е обновен успешно.")
+            st.success("Финалният контрол на готовността е обновен успешно.")
         else:
-            st.warning("Release контролът намери елементи за преглед.")
+            st.warning("Контролът на готовността намери елементи за преглед.")
 
     summary = _load_json(SUMMARY_JSON)
     if not summary:
@@ -63,15 +63,15 @@ def render_v82_final_release_package_section() -> None:
 
     cols = st.columns(4)
     cols[0].metric("Статус", str(summary.get("status", "-")))
-    cols[1].metric("Datasets", int(summary.get("datasets_checked", 0)))
-    cols[2].metric("Manifest files", int(summary.get("manifest_files_count", 0)))
+    cols[1].metric("Набори данни", int(summary.get("datasets_checked", 0)))
+    cols[2].metric("Файлове в списъка", int(summary.get("manifest_files_count", 0)))
     cols[3].metric("Проблеми", int(summary.get("issues_found", 0)))
 
     st.markdown("### Какво заключва Step 82")
     st.markdown(
-        "- проверява release-ready файловете и финалните datasets;\n"
-        "- описва кои файлове влизат в clean ZIP checkpoint;\n"
-        "- пази списък с файлове, които не трябва да попадат в release ZIP;\n"
+        "- проверява файловете, готови за предаване и финалните набори данни;\n"
+        "- описва кои файлове влизат в чист ZIP контролен архив;\n"
+        "- пази списък с файлове, които не трябва да попадат в чист ZIP;\n"
         "- потвърждава финалната верига: Step 79 → Step 80 → Step 81 → Step 82 → Step 74."
     )
 
@@ -81,13 +81,13 @@ def render_v82_final_release_package_section() -> None:
         for issue in issues:
             st.write(f"- {issue}")
     else:
-        st.success("Release readiness проверките са чисти. Можеш да създадеш clean ZIP checkpoint след commit/push.")
+        st.success("Проверките за готовност за предаване са чисти. Можеш да създадеш чист ZIP контролен архив след commit и push.")
 
-    st.markdown("### Финална sync логика")
+    st.markdown("### Финална логика на синхрона")
     for item in summary.get("sync_expectations", []):
         expected = " -> ".join(str(step) for step in item.get("expected", []))
         st.write(f"- **{item.get('name', '-')}:** `{expected}`")
 
-    _show_rows("Release readiness checklist", _load_rows(CHECKLIST_CSV))
-    _show_rows("Clean ZIP exclusion plan", _load_rows(EXCLUSIONS_CSV))
-    _show_rows("Release manifest preview", _load_rows(MANIFEST_CSV, limit=100))
+    _show_rows("Списък за готовност", _load_rows(CHECKLIST_CSV))
+    _show_rows("План за изключване от чистия ZIP", _load_rows(EXCLUSIONS_CSV))
+    _show_rows("Преглед на списъка с файлове", _load_rows(MANIFEST_CSV, limit=100))

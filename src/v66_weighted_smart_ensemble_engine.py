@@ -25,10 +25,10 @@ EXCLUDED_SCORE_SOURCE_MODELS = {
 MODEL_LABELS = {
     "v41_latest_predictions": "v41 — последни прогнозни сигнали",
     "v42_combined_prediction": "v42 — комбиниран позитивен/негативен модел",
-    "v44_1_final_ensemble_ticket": "v44.1 — финален ensemble фиш",
+    "v44_1_final_ensemble_ticket": "v44.1 — финална обединена комбинация",
     "v45_final_prediction_tickets": "v45 — Prediction Dashboard Pro",
     "v50_pair_group_intelligence": "v50 — двойки и групи",
-    "v51_ticket_portfolio_intelligence": "v51 — портфолио от фишове",
+    "v51_ticket_portfolio_intelligence": "v51 — пакет от комбинации",
     "v57_hot_cold_stable": "v57 — горещи, студени и стабилни",
     "v58_smart_ensemble": "v58 — обединена оценка",
     "v59_smart_ticket_builder_2": "v59 — интелигентен генератор 2",
@@ -588,7 +588,7 @@ def build_weighted_smart_ensemble():
 
     summary = {
         "step": "66",
-        "name": "Weighted Smart Ensemble Integration",
+        "name": "Претеглена обединена оценка",
         "source_weights": "reports/v65_model_weights.csv",
         "numbers_scored": len(score_rows),
         "sources_used": len(source_models),
@@ -634,7 +634,7 @@ def build_weighted_smart_ensemble():
     write_json(V66_MODELS_DIR / "v66_weighted_smart_ensemble_model.json", model_payload)
 
     md = [
-        "# Step 66 — Weighted Smart Ensemble Integration",
+        "# Step 66 — Претеглена обединена оценка",
         "",
         "This report combines available number-score sources with Step 65 adaptive model weights.",
         "",

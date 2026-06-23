@@ -12,7 +12,7 @@ def main() -> None:
     save_advanced_model(model, DEFAULT_MODEL_PATH)
     report_path = write_advanced_report(model, DEFAULT_REPORT_PATH)
 
-    print("Trained advanced statistical ensemble model")
+    print("Trained advanced combined statistical model")
     print("----------------------------------------")
     print(f"Model: {model['model_name']} v{model['model_version']}")
     print(f"Training draws: {model['training_draws']}")

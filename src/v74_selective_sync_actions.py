@@ -810,8 +810,8 @@ def _step82_find_node(step: str):
     if str(step) == "82":
         return {
             "step": "82",
-            "label": "Финален release пакет",
-            "category": "Финален release пакет",
+            "label": "Финален пакет за предаване",
+            "category": "Финален пакет за предаване",
             "script": "scripts/v82_build_final_release_package_center.py",
             "datasets": [
                 "data/historical_draws.csv",
@@ -833,7 +833,7 @@ def _step82_find_node(step: str):
                 "reports/v82_clean_zip_exclusion_plan.csv",
             ],
             "feeds": ["Step 74"],
-            "role": "Финален release readiness и clean ZIP контролен слой.",
+            "role": "Финален пакет за предаване readiness и clean ZIP контролен слой.",
             "ensemble_source": False,
         }
 

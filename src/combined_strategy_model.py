@@ -596,7 +596,7 @@ def write_combined_backtest_report(
     lines = [
         "# Combined Strategy Backtest Report",
         "",
-        f"Tested draws: {backtest['tested_draws']}",
+        f"Проверени тиражи: {backtest['tested_draws']}",
         f"Combined model average matches: {backtest['combined_average_matches']:.4f}",
         f"Random baseline average matches: {backtest['random_average_matches']:.4f}",
         "",

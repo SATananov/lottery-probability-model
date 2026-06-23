@@ -12,12 +12,12 @@ Important: no method changes the true jackpot probability for one exact 6-number
 - Pair/triple significance: compares co-occurring pairs/triples against random expectation.
 - Human-pattern avoidance: penalizes common human-selected patterns such as obvious sequences and all birthdate-range numbers.
 - Portfolio optimizer: selects a diversified group of recommended tickets.
-- Advanced ensemble model: combines all advanced signals into one main ranking score.
+- Разширен обединен модел: combines all advanced signals into one main ranking score.
 - Rolling backtesting engine: tests strategies on later draws using only earlier data.
 
 ## Commands
 
-Train the advanced ensemble:
+Train the разширен обединен модел:
 
 ```powershell
 python train_advanced_model.py
