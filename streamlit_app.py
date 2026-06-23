@@ -53,6 +53,9 @@ try:
     import inspect as _bg34_inspect
 except Exception:  # pragma: no cover
     _bg34_inspect = None
+
+
+
 def _bg34_is_bulgarian() -> bool:
     """Use the app language key instead of scanning all session values."""
     try:
@@ -1202,6 +1205,33 @@ def render_header() -> None:
         """,
         unsafe_allow_html=True,
     )
+
+# STEP87_7_USER_FRIENDLY_MODEL_SOURCE_START
+def _step87_7_user_model_source(filename: str) -> str:
+    def u(value: str) -> str:
+        return value.encode("ascii").decode("unicode_escape")
+
+    mapping = {
+        "lottery_prediction_model.json": u(r"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0441\u043b\u043e\u0439"),
+        "lottery_prediction_model_v36.json": u(r"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0441\u043b\u043e\u0439"),
+        "prediction_model.json": u(r"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0441\u043b\u043e\u0439"),
+        "prediction_engine_model.json": u(r"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0441\u043b\u043e\u0439"),
+        "lottery_combined_model.json": u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0441\u043b\u043e\u0439"),
+        "lottery_frequency_model.json": u(r"\u0427\u0435\u0441\u0442\u043e\u0442\u0435\u043d \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043b\u043e\u0439"),
+        "lottery_cold_model.json": u(r"\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043b\u043e\u0439"),
+        "lottery_advanced_ensemble_model.json": u(r"\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u043b\u043e\u0432 \u0441\u043b\u043e\u0439"),
+        "lottery_ml_extensions_model.json": u(r"\u041c\u041b \u043f\u043e\u043c\u043e\u0449\u0435\u043d \u0441\u043b\u043e\u0439"),
+    }
+
+    value = str(filename or "").strip()
+    if value in mapping:
+        return mapping[value]
+    if value.endswith(".json"):
+        return u(r"\u041c\u043e\u0434\u0435\u043b\u0435\u043d \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u043a")
+    return value
+# STEP87_7_USER_FRIENDLY_MODEL_SOURCE_END
+
+
 def page_dashboard() -> None:
     render_header()
     metrics = get_dataset_metrics()
@@ -1226,7 +1256,7 @@ def page_dashboard() -> None:
         with cols[i % 3]:
             model = model_json(filename)
             numbers, score = main_recommendation(model)
-            render_ticket_card(title, numbers, score, filename, explanation)
+            render_ticket_card(title, numbers, score, _step87_7_user_model_source(filename), explanation)
 def page_recommendations() -> None:
     render_header()
     st.markdown("## " + tr("all_models"))
@@ -1234,7 +1264,7 @@ def page_recommendations() -> None:
     for title, filename, kind, explanation in get_model_cards():
         model = model_json(filename)
         numbers, score = main_recommendation(model)
-        render_ticket_card(title, numbers, score, filename, explanation)
+        render_ticket_card(title, numbers, score, _step87_7_user_model_source(filename), explanation)
         recs = extract_recommendations(model)
         if kind in {"advanced", "combined"} and recs:
             with st.expander(tr("top_recommendations"), expanded=(kind == "advanced")):
@@ -2046,72 +2076,206 @@ Important: 2026 is a partial year and currently includes draws up to 2026-06-18.
 - \u041f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438 \u043f\u044a\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u043e\u0442 \u0447\u0438\u0441\u043b\u0430 \u0432 \u0446\u0435\u043b\u0438\u044f \u043d\u0430\u0431\u043e\u0440 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438: 6
 \u0412\u0430\u0436\u043d\u043e: 2026 \u0433. \u0435 \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u0430 \u0433\u043e\u0434\u0438\u043d\u0430 \u0438 \u043a\u044a\u043c \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u0432\u043a\u043b\u044e\u0447\u0432\u0430 \u0442\u0438\u0440\u0430\u0436\u0438 \u0434\u043e 2026-06-18. \u0422\u0435\u0437\u0438 \u0434\u0430\u043d\u043d\u0438 \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u0442 \u043d\u0430\u0431\u043e\u0440\u0430 \u043e\u0442 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435, \u043d\u043e \u043d\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f\u0442 \u0442\u0435\u043e\u0440\u0435\u0442\u0438\u0447\u043d\u0438\u0442\u0435 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0438 \u0432 \u043b\u043e\u0442\u0430\u0440\u0438\u044f\u0442\u0430.
 """
+
+# STEP87_8_REPORT_DISPLAY_POLISH_START
+def _step87_8_u(raw: str) -> str:
+    return raw.encode("ascii").decode("unicode_escape")
+
+
+def _step87_8_report_label_mapping() -> dict:
+    return {
+        "2026_partial_update_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u0437\u0430 2026"),
+        "historical_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "advanced_ensemble_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b"),
+        "advanced_backtest_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "backtest_report.md": _step87_8_u(r"\u0427\u0435\u0441\u0442\u043e\u0442\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+        "frequency_model_report.md": _step87_8_u(r"\u0427\u0435\u0441\u0442\u043e\u0442\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "cold_model_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "cold_backtest_report.md": _step87_8_u(r"\u0421\u0442\u0443\u0434\u0435\u043d \u043c\u043e\u0434\u0435\u043b \u2014 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "combined_model_report.md": _step87_8_u(r"\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u043e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+        "combined_backtest_report.md": _step87_8_u(r"\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u043e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "gap_backtest_report.md": _step87_8_u(r"\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b \u2014 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+        "middle_backtest_report.md": _step87_8_u(r"\u0411\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b \u2014 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "ml_extensions_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u041c\u041b \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f"),
+        "ml_extensions_backtest_report.md": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u043e\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"),
+
+        "prediction_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u0438\u044f \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043b\u043e\u0439"),
+        "prediction_model_card.md": _step87_8_u(r"\u041a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b"),
+        "prediction_methodology_report.md": _step87_8_u(r"\u041c\u0435\u0442\u043e\u0434\u043e\u043b\u043e\u0433\u0438\u044f \u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b"),
+        "combined_strategy_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
+        "data_audit_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
+        "data_import_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
+        "gap_model_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "middle_model_report.md": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "ml_classification_report.md": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
+        "ml_clustering_report.md": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
+        "ml_dimensionality_reduction_report.md": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
+        "ml_2d_map_report.md": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430"),
+    }
+
+
+def _step87_8_report_display_name(value) -> str:
+    try:
+        name = value.name
+    except Exception:
+        name = str(value or "")
+
+    name = str(name).replace("\\", "/").split("/")[-1].strip()
+    labels = _step87_8_report_label_mapping()
+
+    if name in labels:
+        return labels[name]
+
+    stem = name
+    if stem.endswith(".md"):
+        stem = stem[:-3]
+    if stem.endswith(".json"):
+        return _step87_8_u(r"\u041c\u043e\u0434\u0435\u043b\u0435\u043d \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u043a")
+
+    exact_stem_labels = {
+        "combined_strategy_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
+        "data_audit_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
+        "data_import_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
+        "gap_model_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "middle_model_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "ml_classification_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
+        "ml_clustering_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
+        "ml_dimensionality_reduction_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
+        "ml_2d_map_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430"),
+    }
+
+    if stem in exact_stem_labels:
+        return exact_stem_labels[stem]
+
+    # Generic vXX_*_summary translator, for example:
+    version_match = re.match(r"^v\d+_(.+?)_summary$", stem)
+    if version_match:
+        topic = version_match.group(1)
+
+        topic_labels = {
+            "decision_recommendation": _step87_8_u(r"\u0420\u0435\u0448\u0435\u043d\u0438\u0435 \u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430"),
+            "final_play_plan": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043f\u043b\u0430\u043d \u0437\u0430 \u0438\u0433\u0440\u0430"),
+            "ticket_pack_export": _step87_8_u(r"\u0415\u043a\u0441\u043f\u043e\u0440\u0442 \u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u0430\u043a\u0435\u0442\u0430"),
+            "final_system_audit": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u0441\u0438\u0441\u0442\u0435\u043c\u0435\u043d \u043e\u0434\u0438\u0442"),
+            "final_ux_navigation": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u0430 UX \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f"),
+            "final_release": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d release \u043f\u0430\u043a\u0435\u0442"),
+            "final_user_manual": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u043e \u043f\u043e\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043b\u0441\u043a\u043e \u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e"),
+            "model_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+            "neural_epoch_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043d\u0435\u0432\u0440\u043e\u043d\u043d\u0438 \u0435\u043f\u043e\u0445\u0438"),
+            "model_registry": _step87_8_u(r"\u0420\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+        }
+
+        if topic in topic_labels:
+            return _step87_8_u(r"\u041e\u0431\u043e\u0431\u0449\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u2014 ") + topic_labels[topic]
+
+        cleaned_topic = topic.replace("_", " ").replace("-", " ").strip()
+        return _step87_8_u(r"\u041e\u0431\u043e\u0431\u0449\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u2014 ") + cleaned_topic
+
+    if name.endswith(".md"):
+        cleaned = stem.replace("_", " ").replace("-", " ").strip()
+        return _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u2014 ") + cleaned
+
+    return name
+
+
+def _step87_8_polish_report_text(content: str) -> str:
+    import re as _re
+
+    display_text = str(content or "")
+
+    def repl_filename(match):
+        return _step87_8_report_display_name(match.group(0))
+
+    display_text = _re.sub(r"\b[A-Za-z0-9][A-Za-z0-9_\-]*\.md\b", repl_filename, display_text)
+    display_text = _re.sub(r"\b[A-Za-z0-9][A-Za-z0-9_\-]*\.json\b", repl_filename, display_text)
+
+    report_prefix = _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442: ")
+
+    title_map = {
+        "combined strategy report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
+        "data audit report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
+        "data import report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
+        "gap model report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "middle model report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "ml classification report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
+        "ml clustering report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
+        "ml dimensionality reduction report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
+        "ml 2d map report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430"),
+        "advanced ensemble report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u0430\u043d\u0441\u0430\u043c\u0431\u044a\u043b"),
+        "cold model report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "frequency model report": _step87_8_u(r"\u0427\u0435\u0441\u0442\u043e\u0442\u0435\u043d \u043e\u0442\u0447\u0435\u0442"),
+        "combined model report": _step87_8_u(r"\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u043e\u0442\u0447\u0435\u0442"),
+        "model refresh report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+        "training report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435"),
+        "validation report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0432\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f"),
+        "model card": _step87_8_u(r"\u041a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0430"),
+        "prediction model card": _step87_8_u(r"\u041a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b"),
+    }
+
+    for old, new in title_map.items():
+        display_text = display_text.replace(report_prefix + old, new)
+
+    for old, new in title_map.items():
+        display_text = display_text.replace(old, new)
+
+    return display_text
+
+# STEP87_8_REPORT_DISPLAY_POLISH_END
+
+
 def render_report_file(path: Path) -> None:
-    lang = report_language()
-    if path.name == "2026_partial_update_report.md":
-        text = localized_2026_partial_update_report()
-    else:
-        if not path.exists():
-            missing_message = "\u041e\u0442\u0447\u0435\u0442\u044a\u0442 \u043d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d" if lang == "bg" else "Report not found"
-            st.info(f"{missing_message}: {path.name}")
-            return
-        text = path.read_text(encoding="utf-8", errors="replace")
-    lines = text.splitlines()
-    if not lines:
-        empty_message = "\u041e\u0442\u0447\u0435\u0442\u044a\u0442 \u0435 \u043f\u0440\u0430\u0437\u0435\u043d." if lang == "bg" else "The report is empty."
-        download_label = "\u0421\u0432\u0430\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u0430" if lang == "bg" else "Download report"
-        st.info(empty_message)
-        st.download_button(
-            download_label,
-            data=text,
-            file_name=path.name,
-            mime="text/markdown",
-            key=f"download_{path.name}",
-        )
+    lang = st.session_state.get("language", globals().get("LANG", "bg"))
+
+    try:
+        raw_text = path.read_text(encoding="utf-8", errors="replace")
+    except Exception as exc:
+        st.error(_step87_8_u(r"\u041d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043e\u0442\u0432\u043e\u0440\u0438 \u043e\u0442\u0447\u0435\u0442\u044a\u0442") + f": {exc}")
         return
-    if len(lines) <= 20:
-        st.markdown(text)
+
+    title = _step87_8_report_display_name(path)
+    display_text = _step87_8_polish_report_text(raw_text)
+
+    st.markdown(f"### {title}")
+
+    if not display_text.strip():
+        empty_message = _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442\u044a\u0442 \u0435 \u043f\u0440\u0430\u0437\u0435\u043d.") if lang == "bg" else "The report is empty."
+        st.info(empty_message)
     else:
-        max_rows = min(len(lines), 800)
-        default_rows = min(120, max_rows)
-        slider_label = "\u0420\u0435\u0434\u043e\u0432\u0435 \u0437\u0430 \u043f\u0440\u0435\u0433\u043b\u0435\u0434" if lang == "bg" else "Rows to preview"
-        limit = st.slider(
-            slider_label,
-            min_value=20,
-            max_value=max_rows,
-            value=default_rows,
-            key=f"slider_{path.name}",
-        )
-        st.markdown("\n".join(lines[:limit]))
-    download_label = "\u0421\u0432\u0430\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u0430" if lang == "bg" else "Download report"
+        st.markdown(display_text)
+
+    download_label = _step87_8_u(r"\u0421\u0432\u0430\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u0430") if lang == "bg" else "Download report"
     st.download_button(
         download_label,
-        data=text,
+        data=raw_text,
         file_name=path.name,
         mime="text/markdown",
-        key=f"download_{path.name}",
     )
+
+
 def page_reports() -> None:
     render_header()
     st.markdown("## " + tr("reports"))
+
     files = sorted(REPORTS_DIR.glob("*.md")) if REPORTS_DIR.exists() else []
+
     if not files:
-        st.info("Няма намерени отчети.")
+        st.info(_step87_8_u(r"\u041d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438 \u043e\u0442\u0447\u0435\u0442\u0438."))
         return
-    report_labels = {
-        "prediction_report.md": "Отчет за прогнозата",
-        "prediction_model_card.md": "Карта на прогнозния модул",
-        "prediction_methodology_report.md": "Методология на прогнозата",
-        "advanced_backtest_report.md": "Отчет от историческа проверка",
-        "ml_extensions_backtest_report.md": "МЛ отчет от историческа проверка",
-        "backtest_report.md": "Честотен отчет от историческа проверка",
-        "combined_backtest_report.md": "Комбиниран отчет от историческа проверка",
-        "cold_backtest_report.md": "Студен модел — историческа проверка",
-        "gap_backtest_report.md": "Интервален модел — историческа проверка",
-        "middle_backtest_report.md": "Балансиран модел — историческа проверка",
-    }
-    selected = st.selectbox("Отчет", files, format_func=lambda p: report_labels.get(p.name, p.name))
+
+    selected = st.selectbox(
+        _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442"),
+        files,
+        format_func=_step87_8_report_display_name,
+    )
+
     render_report_file(selected)
+
 def _v39_ml_lang() -> str:
     try:
         return st.session_state.get("language", globals().get("LANG", "bg"))
