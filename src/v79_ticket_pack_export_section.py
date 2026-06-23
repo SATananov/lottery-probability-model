@@ -19,7 +19,7 @@ COLUMN_LABELS = {
     "ticket_id": "Фиш",
     "numbers_display": "Числа",
     "numbers_compact": "Числа за запис",
-    "plan_role": "Роля от Step 78",
+    "plan_role": "Роля от финалния план",
     "export_status": "Статус за изпълнение",
     "decision_score": "Оценка",
     "risk_level": "Риск",
@@ -43,10 +43,82 @@ def _display_df(df: pd.DataFrame) -> pd.DataFrame:
     return df.rename(columns={column: COLUMN_LABELS.get(column, column) for column in df.columns})
 
 
+
+
+def _v79_polish_df(df):
+    try:
+        if df is None:
+            return df
+        if getattr(df, "empty", False):
+            return df
+
+        polished = df.copy()
+
+        rename_map = {
+            "Бележка": "Бележка",
+            "role_from_step_78": "Роля от финалния план",
+            "role_in_plan": "Роля в плана",
+            "execution_status": "Статус за изпълнение",
+            "status": "Статус",
+            "details": "Детайли",
+            "action": "Действие",
+            "check": "Проверка",
+            "warning": "Предупреждение",
+            "risk": "Риск",
+            "numbers": "Числа",
+            "numbers_to_write": "Числа за запис",
+            "ticket": "Фиш",
+            "ticket_id": "Фиш",
+            "rank": "Ранг",
+            "score": "Оценка",
+            "validation": "Валидация",
+            "neural_score": "Невронна оценка",
+            "structural_score": "Структурна оценка",
+            "model_label": "Модел",
+            "snapshot_created_at": "Дата на заключване",
+            "данните_draw_index_at_snapshot": "Тиражи в данните при запис",
+        }
+
+        try:
+            polished = polished.rename(columns=rename_map)
+        except Exception:
+            pass
+
+        replacements = {
+            "Финалният план": "Финалният план",
+            "Финалният пакет": "Финалният пакет",
+            "Step 73.1": "предварителната проверка",
+            "step 78": "финалният план",
+            "step 79": "финалният пакет",
+            "данните": "данните",
+            "данните": "данните",
+            "записа на новия тираж": "записа на новия тираж",
+            "Добавяне на тираж": "Добавяне на тираж",
+            "проверка на резултата": "проверка на резултата",
+            "последния чист checkpoint": "последния чист checkpoint",
+            "работен процес": "работен процес",
+            "Проверки": "Проверки",
+            "проверки": "проверки",
+            "Бележка": "Бележка",
+        }
+
+        for col in list(getattr(polished, "columns", [])):
+            try:
+                series = polished[col].astype(str)
+                for old, new in replacements.items():
+                    series = series.str.replace(old, new, regex=False)
+                polished[col] = series
+            except Exception:
+                pass
+
+        return polished
+    except Exception:
+        return df
+
 def render_v79_ticket_pack_export_section() -> None:
     st.title("Експорт и изпълнение")
     st.caption(
-        "Step 79 подготвя финалния пакет за копиране, печат и дисциплинирано изпълнение."
+        "Финалният пакет подготвя фишовете за копиране, печат и дисциплинирано изпълнение."
     )
 
     st.warning(
@@ -57,9 +129,9 @@ def render_v79_ticket_pack_export_section() -> None:
     action_col, info_col = st.columns([1, 2])
     with action_col:
         if st.button("Обнови експорт пакета", type="primary"):
-            with st.spinner("Подготвям фишове за копиране, checklist и export files..."):
+            with st.spinner("Подготвям фишове за копиране, проверки и export files..."):
                 build_ticket_pack_export_center()
-            st.success("Step 79 е обновен успешно.")
+            st.success("Финалният пакет е обновен успешно.")
             st.rerun()
 
     with info_col:
@@ -73,7 +145,7 @@ def render_v79_ticket_pack_export_section() -> None:
     metric_cols[0].metric("Кандидати", summary.get("candidate_tickets", 0))
     metric_cols[1].metric("За игра", summary.get("play_tickets", 0))
     metric_cols[2].metric("Резерви", summary.get("reserve_tickets", 0))
-    metric_cols[3].metric("Checklist", summary.get("checklist_items", 0))
+    metric_cols[3].metric("Проверки", summary.get("проверки_items", 0))
     metric_cols[4].metric("Предупреждения", summary.get("warning_items_from_step78", 0))
 
     st.subheader("Готов текст за копиране")
@@ -90,17 +162,26 @@ def render_v79_ticket_pack_export_section() -> None:
     else:
         st.dataframe(_display_df(export_df), use_container_width=True, hide_index=True)
 
-    st.subheader("Checklist преди игра")
-    checklist_df = _read_csv(V79_EXECUTION_CHECKLIST_CSV)
-    if checklist_df.empty:
-        st.info("Няма checklist.")
-    else:
-        st.dataframe(_display_df(checklist_df), use_container_width=True, hide_index=True)
 
-    with st.expander("Как да се чете Step 79"):
+    # Визуални фишове от заключения запис — реален игрови лист за изпълнение.
+    try:
+        from src.v84_1_final_plan_snapshot_slips import render_v84_1_final_plan_snapshot_slips
+
+        render_v84_1_final_plan_snapshot_slips()
+    except Exception as exc:
+        st.warning(f"Неуспешно зареждане на визуалните фишове: {exc}")
+
+    st.subheader("Проверки преди игра")
+    проверки_df = _read_csv(V79_EXECUTION_CHECKLIST_CSV)
+    if проверки_df.empty:
+        st.info("Няма проверки.")
+    else:
+        st.dataframe(_display_df(проверки_df), use_container_width=True, hide_index=True)
+
+    with st.expander("Как да се чете финалният пакет"):
         st.markdown(
-            "- **За игра** са основните фишове от Step 78.\n"
+            "- **За игра** са основните фишове от Финалният план.\n"
             "- **Резерва** не се добавя автоматично — използва се само при ръчна причина.\n"
             "- **Copy text** е готов за копиране или печат.\n"
-            "- След реален тираж първо сравни резултата с пакета, после обнови dataset-а."
+            "- След реален тираж първо сравни резултата с пакета, после обнови данните."
         )

@@ -47,10 +47,59 @@ def _display_df(df: pd.DataFrame) -> pd.DataFrame:
     return df.rename(columns={column: COLUMN_LABELS.get(column, column) for column in df.columns})
 
 
+
+
+def _v78_polish_df(df):
+    try:
+        if df is None:
+            return df
+        if getattr(df, "empty", False):
+            return df
+
+        polished = df.copy()
+
+        rename_map = {
+            "Бележка": "Бележка",
+            "details": "Детайли",
+            "action": "Действие",
+            "warning": "Предупреждение",
+            "risk": "Риск",
+            "numbers": "Числа",
+            "role_in_plan": "Роля в плана",
+        }
+
+        try:
+            polished = polished.rename(columns=rename_map)
+        except Exception:
+            pass
+
+        replacements = {
+            "Финалният план": "Финалният план",
+            "step 78": "финалният план",
+            "данните": "данните",
+            "данните": "данните",
+            "записа на новия тираж": "записа на новия тираж",
+            "Step 73.1": "предварителната проверка",
+        }
+
+        for col in list(getattr(polished, "columns", [])):
+            try:
+                series = polished[col].astype(str)
+                for old, new in replacements.items():
+                    series = series.str.replace(old, new, regex=False)
+                polished[col] = series
+            except Exception:
+                pass
+
+        return polished
+    except Exception:
+        return df
+
 def render_v78_final_play_plan_section() -> None:
+
     st.title("Финален план")
     st.caption(
-        "Step 78 превръща препоръките от Step 77 в дисциплиниран план: "
+        "Финалният план превръща препоръките от Step 77 в дисциплиниран план: "
         "основни фишове, резерви, предупреждения и действия."
     )
 
@@ -64,7 +113,7 @@ def render_v78_final_play_plan_section() -> None:
         if st.button("Обнови финалния план", type="primary"):
             with st.spinner("Подреждам основни фишове, резерви и действия..."):
                 build_final_play_plan_center()
-            st.success("Step 78 е обновен успешно.")
+            st.success("Финалният план е обновен успешно.")
             st.rerun()
 
     with info_col:
@@ -112,10 +161,11 @@ def render_v78_final_play_plan_section() -> None:
     else:
         st.dataframe(_display_df(warnings_df), use_container_width=True, hide_index=True)
 
-    with st.expander("Как да се чете Step 78"):
+    with st.expander("Как да се чете финалният план"):
         st.markdown(
             "- **Основен фиш** е част от финалния дисциплиниран пакет.\n"
             "- **Резервен фиш** се пази като алтернатива, без да се разширява пакетът хаотично.\n"
             "- **Само наблюдение** не влиза директно във финалния пакет.\n"
-            "- След нов тираж първо провери пакета срещу реалните числа, после обнови dataset-а."
+            "- След нов тираж първо провери пакета срещу реалните числа, после обнови данните."
         )
+
