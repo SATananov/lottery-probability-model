@@ -28,7 +28,7 @@ def txt(value: str) -> str:
 
     If the value still contains literal unicode escapes, decode them once.
     If Python has already decoded the string to Cyrillic, return it unchanged.
-    This prevents double-decoding mojibake such as ?R??...
+    This prevents double-decoding mojibake / replacement-character text.
     """
     if "\\u" in value or "\\x" in value:
         return value.encode("utf-8").decode("unicode_escape")

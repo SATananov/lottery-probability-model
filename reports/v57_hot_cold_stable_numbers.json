@@ -1,7 +1,7 @@
 {
   "total_draws": 10058,
   "numbers_profiled": 49,
-  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "data_path": "data/historical_draws.csv",
   "summary_rows": [
     {
       "group": "Горещи напоследък",

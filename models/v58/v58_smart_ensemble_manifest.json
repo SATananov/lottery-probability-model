@@ -3,7 +3,7 @@
   "version": "v58",
   "user_facing_name_bg": "Обединена оценка",
   "total_draws": 10058,
-  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "data_path": "data/historical_draws.csv",
   "purpose_bg": "Обединява няколко статистически слоя: покритие, баланс, профил на числа, горещи/студени/стабилни групи и историческа близост.",
   "not_a_prediction_bg": "Модулът не предсказва бъдещи тегления и не гарантира печалба. Той е статистически контролен слой.",
   "component_weights": {

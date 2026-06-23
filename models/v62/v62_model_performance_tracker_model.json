@@ -102,7 +102,7 @@
     },
     {
       "model_name": "v57_hot_cold_stable",
-      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v57\\v57_hot_cold_stable_model.json",
+      "source_file": "models/v57/v57_hot_cold_stable_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,
@@ -113,7 +113,7 @@
     },
     {
       "model_name": "v58_smart_ensemble",
-      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v58\\v58_smart_ensemble_model.json",
+      "source_file": "models/v58/v58_smart_ensemble_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,
@@ -124,7 +124,7 @@
     },
     {
       "model_name": "v59_smart_ticket_builder_2",
-      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v59\\v59_smart_ticket_builder_2_model.json",
+      "source_file": "models/v59/v59_smart_ticket_builder_2_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,

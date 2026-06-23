@@ -4,7 +4,7 @@
   "user_facing_name_bg": "Профил на число",
   "total_draws": 10058,
   "numbers_profiled": 49,
-  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
+  "data_path": "data/historical_draws.csv",
   "purpose_bg": "Създава статистически профил за всяко число от 1 до 49: честота, последна поява, интервали, скорошна активност и участие в двойки/тройки.",
   "not_a_prediction_bg": "Модулът не предсказва печеливши числа и не гарантира печалба. Той анализира само историческото поведение на числата.",
   "metrics": [
