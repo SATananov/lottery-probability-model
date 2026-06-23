@@ -115,6 +115,106 @@ def _v79_polish_df(df):
     except Exception:
         return df
 
+
+
+def _v841_combo_visible_polish_df(df):
+    try:
+        if df is None:
+            return df
+        if getattr(df, "empty", False):
+            return df
+
+        polished = df.copy()
+
+        rename_map = {
+            "safe_note": "Важно уточнение",
+            "role_in_plan": "Роля в плана",
+            "role_from_step_78": "Роля от финалния план",
+            "execution_status": "Статус за изпълнение",
+            "numbers_to_write": "Числа за запис",
+            "ticket": "Комбинация",
+            "ticket_id": "Комбинация",
+        }
+
+        try:
+            polished = polished.rename(columns=rename_map)
+        except Exception:
+            pass
+
+        replacements = {
+            "основните фишове": "основните комбинации",
+            "Основните фишове": "Основните комбинации",
+            "основни фишове": "основни комбинации",
+            "Основни фишове": "Основни комбинации",
+            "основен фиш": "основна комбинация",
+            "Основен фиш": "Основна комбинация",
+            "резервните фишове": "резервните комбинации",
+            "Резервните фишове": "Резервните комбинации",
+            "резервни фишове": "резервни комбинации",
+            "Резервни фишове": "Резервни комбинации",
+            "резервен фиш": "резервна комбинация",
+            "Резервен фиш": "Резервна комбинация",
+            "фишове в пакета": "комбинации в пакета",
+            "Фишове в пакета": "Комбинации в пакета",
+            "фиша в пакета": "комбинации в пакета",
+            "Фишове за изпълнение": "Комбинации за изпълнение",
+            "фишове за изпълнение": "комбинации за изпълнение",
+            "Фиш за изпълнение": "Комбинация за изпълнение",
+            "фиш за изпълнение": "комбинация за изпълнение",
+            "Фиш ": "Комбинация ",
+            "clean checkpoint": "последното чисто състояние",
+            "Add Draw save": "записа на новия тираж",
+            "Add Draw": "Добавяне на тираж",
+            "checker/result сравнение": "проверка на резултата",
+            "checker/result": "проверка на резултата",
+            "workflow": "работен процес",
+            "dataset-а": "данните",
+            "dataset": "данните",
+            "Step 78": "Финалният план",
+            "Step 79": "Финалният пакет",
+            "Checklist": "Проверки",
+        }
+
+        for col in list(getattr(polished, "columns", [])):
+            try:
+                series = polished[col].astype(str)
+                for old, new in replacements.items():
+                    series = series.str.replace(old, new, regex=False)
+                polished[col] = series
+            except Exception:
+                pass
+
+        # Streamlit cannot render duplicate column names.
+        # Keep labels human-readable while guaranteeing uniqueness.
+        used = set()
+        new_columns = []
+        for col in list(polished.columns):
+            base = str(col)
+            if base in used:
+                if base == "Бележка":
+                    candidate_base = "Допълнителна бележка"
+                elif base == "Важно уточнение":
+                    candidate_base = "Допълнително уточнение"
+                else:
+                    candidate_base = base
+
+                candidate = candidate_base
+                counter = 2
+                while candidate in used:
+                    candidate = f"{candidate_base} {counter}"
+                    counter += 1
+                new_columns.append(candidate)
+                used.add(candidate)
+            else:
+                new_columns.append(base)
+                used.add(base)
+
+        polished.columns = new_columns
+
+        return polished
+    except Exception:
+        return df
+
 def render_v79_ticket_pack_export_section() -> None:
     st.title("Експорт и изпълнение")
     st.caption(
@@ -136,7 +236,7 @@ def render_v79_ticket_pack_export_section() -> None:
 
     with info_col:
         st.info(
-            "Използвай този екран за финално копиране на основните фишове и контрол преди игра."
+            "Използвай този екран за финално копиране на основните комбинации и контрол преди игра."
         )
 
     summary = load_summary()
@@ -155,12 +255,12 @@ def render_v79_ticket_pack_export_section() -> None:
     else:
         st.info("Още няма готов текст за копиране. Натисни бутона за обновяване.")
 
-    st.subheader("Фишове за изпълнение")
+    st.subheader("Комбинации за изпълнение")
     export_df = _read_csv(V79_EXPORT_TICKETS_CSV)
     if export_df.empty:
         st.info("Няма генериран export пакет.")
     else:
-        st.dataframe(_display_df(export_df), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(export_df)), use_container_width=True, hide_index=True)
 
 
     # Визуални фишове от заключения запис — реален игрови лист за изпълнение.
@@ -176,11 +276,11 @@ def render_v79_ticket_pack_export_section() -> None:
     if проверки_df.empty:
         st.info("Няма проверки.")
     else:
-        st.dataframe(_display_df(проверки_df), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(проверки_df)), use_container_width=True, hide_index=True)
 
     with st.expander("Как да се чете финалният пакет"):
         st.markdown(
-            "- **За игра** са основните фишове от Финалният план.\n"
+            "- **За игра** са основните комбинации от Финалният план.\n"
             "- **Резерва** не се добавя автоматично — използва се само при ръчна причина.\n"
             "- **Copy text** е готов за копиране или печат.\n"
             "- След реален тираж първо сравни резултата с пакета, после обнови данните."
