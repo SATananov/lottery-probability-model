@@ -1,0 +1,15 @@
+{
+  "step": 93,
+  "status": "OK",
+  "title_bg": "Бюджетен съветник",
+  "default_budget_eur": 10.0,
+  "default_price_per_combination_eur": 0.9,
+  "default_max_combinations": 11,
+  "recommended_strategy": "Звезден фиш + допълнителни системни комбинации (претеглените моделни числа)",
+  "recommended_type": "Хибрид",
+  "recommended_combinations": 11,
+  "recommended_cost_eur": 9.9,
+  "recommended_unique_numbers": 27,
+  "recommended_advisor_score": 61.731,
+  "safe_note_bg": "Това е бюджетен статистически съветник за структура на фиш. Не е прогноза, не е гаранция и не доказва бъдещ резултат. Използва текущите Step 89/91/92 резултати, за да предложи разумно разпределение на бюджета."
+}
