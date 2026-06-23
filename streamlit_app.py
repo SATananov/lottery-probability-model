@@ -3729,6 +3729,12 @@ def render_v93_budget_advisor_page() -> None:
     return _render()
 # STEP93_BUDGET_ADVISOR_WRAPPER_END
 
+# STEP94_ACTIVE_BUDGET_PLAN_TRACKER_WRAPPER_START
+def render_v94_active_budget_plan_tracker_page() -> None:
+    from src.v94_active_budget_plan_tracker_section import render_v94_active_budget_plan_tracker_section as _render
+    return _render()
+# STEP94_ACTIVE_BUDGET_PLAN_TRACKER_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3740,6 +3746,7 @@ def main() -> None:
         "Системни фишове": render_v91_budget_aware_system_builder_page,
         "Тест на системни стратегии": render_v92_system_strategy_backtest_center_page,
         "Бюджетен съветник": render_v93_budget_advisor_page,
+        "План и резултат": render_v94_active_budget_plan_tracker_page,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3819,6 +3826,7 @@ def main() -> None:
             'Системни фишове',
             'Тест на системни стратегии',
             'Бюджетен съветник',
+            'План и резултат',
             'Обединена оценка',
         ],
         '📊 Исторически анализи': [

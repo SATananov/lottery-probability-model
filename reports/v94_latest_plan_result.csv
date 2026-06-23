@@ -1,0 +1,12 @@
+﻿combination_index,numbers,hit_count,matching_numbers,missing_numbers,is_empty,has_3_plus,has_4_plus
+1,"7, 12, 25, 26, 34, 42",1,42,"7, 12, 25, 26, 34",False,False,False
+2,"4, 22, 24, 29, 37, 44",1,44,"4, 22, 24, 29, 37",False,False,False
+3,"2, 21, 28, 33, 45, 48",0,,"2, 21, 28, 33, 45, 48",True,False,False
+4,"11, 20, 23, 27, 38, 41",0,,"11, 20, 23, 27, 38, 41",True,False,False
+5,"1, 2, 18, 22, 37, 49",0,,"1, 2, 18, 22, 37, 49",True,False,False
+6,"1, 4, 21, 22, 38, 49",0,,"1, 4, 21, 22, 38, 49",True,False,False
+7,"2, 4, 18, 21, 37, 38",0,,"2, 4, 18, 21, 37, 38",True,False,False
+8,"1, 2, 18, 21, 38, 49",0,,"1, 2, 18, 21, 38, 49",True,False,False
+9,"2, 4, 21, 22, 37, 49",0,,"2, 4, 21, 22, 37, 49",True,False,False
+10,"1, 4, 18, 22, 37, 38",0,,"1, 4, 18, 22, 37, 38",True,False,False
+11,"1, 2, 22, 37, 38, 49",0,,"1, 2, 22, 37, 38, 49",True,False,False

@@ -1,0 +1,2 @@
+﻿plan_id,created_at_utc,status,budget_eur,price_per_combination_eur,strategy_type,strategy_label,combination_count,cost_eur,unique_covered_numbers,advisor_score,saved_after_draw_year,saved_after_draw_number,saved_after_draw_date,note_bg
+v94_active_20260623T163844Z0000,2026-06-23T16:38:44+00:00,ACTIVE,10.0,0.9,Хибрид,Звезден фиш + допълнителни системни комбинации (претеглените моделни числа),11,9.9,27,61.731,2026,1,2026-06-21,Автоматично създаден референтен план от Step 93 при build на Step 94.

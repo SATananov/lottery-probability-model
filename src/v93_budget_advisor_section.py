@@ -177,6 +177,14 @@ def render_v93_budget_advisor_section() -> None:
             file_name="budget_advisor_combinations.csv",
             mime="text/csv",
         )
+        st.divider()
+        st.markdown("#### Активен план")
+        st.caption("Запази този бюджетен план, за да го провериш честно след следващия реален тираж.")
+        if st.button("Запази като активен план", key="v93_save_active_plan"):
+            from src.v94_active_budget_plan_tracker_engine import save_active_plan_from_advice
+
+            plan = save_active_plan_from_advice(advice, note_bg="Запазен от Бюджетен съветник.")
+            st.success(f"Активният план е запазен: {plan.get('strategy_type', '-')} / {plan.get('combination_count', 0)} комбинации.")
 
     with tabs[1]:
         st.markdown("#### Сравнени варианти за този бюджет")
