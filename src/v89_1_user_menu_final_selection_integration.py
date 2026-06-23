@@ -139,7 +139,7 @@ def render_v89_1_user_menu_final_selection() -> None:
     )
 
     if package_label:
-        st.caption(package_label)
+        st.caption(f"{_t(r'\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u043a')}: {package_label}")
 
     for index, combo in enumerate(combinations[:4], start=1):
         if not isinstance(combo, list):

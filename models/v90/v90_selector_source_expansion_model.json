@@ -2,394 +2,63 @@
   "step": 90,
   "status": "OK",
   "title_bg": "Разширена интеграция на моделните резултати",
-  "candidate_count": 30,
-  "source_count": 30,
+  "candidate_count": 11,
+  "source_count": 14,
+  "trusted_source_count": 14,
   "candidates": [
     {
-      "package_id": "reports_v41_training_readiness_audit_json",
-      "package_label": "Training readiness audit",
-      "source_path": "reports/v41_training_readiness_audit.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "models_v88_v88_anti_zero_coverage_model_json_candidate",
+      "package_label": "Защитен фиш с широко покритие",
+      "source_group": "Защитни пакети",
+      "source_path": "models/v88/v88_anti_zero_coverage_model.json",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "candidate",
       "combinations": [
         [
-          11,
-          15,
-          18,
-          22,
-          23,
-          39
-        ],
-        [
           7,
-          9,
-          29,
-          35,
-          37,
-          47
-        ],
-        [
-          2,
-          5,
-          10,
-          13,
-          35,
-          49
-        ],
-        [
-          5,
-          15,
-          17,
-          18,
-          23,
-          40
-        ],
-        [
-          8,
-          9,
-          10,
-          11,
-          33,
-          46
-        ],
-        [
-          4,
-          17,
-          23,
-          35,
-          42,
-          46
-        ],
-        [
-          5,
-          24,
-          28,
-          33,
-          34,
-          43
-        ],
-        [
-          7,
-          8,
-          23,
-          25,
-          28,
-          38
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 30,
-      "empty_risk_percent": 0.194024,
-      "at_least_one_hit_percent": 99.805976
-    },
-    {
-      "package_id": "reports_v59_smart_ticket_builder_2_sample_json",
-      "package_label": "Smart ticket builder 2 sample",
-      "source_path": "reports/v59_smart_ticket_builder_2_sample.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          17,
-          24,
-          31,
-          35,
-          38
-        ],
-        [
-          2,
-          13,
-          17,
-          29,
-          34,
-          47
-        ],
-        [
-          4,
-          8,
-          13,
-          29,
-          37,
-          38
-        ],
-        [
-          4,
-          9,
-          25,
-          37,
-          44,
-          46
-        ],
-        [
-          1,
-          16,
-          21,
-          42,
-          43,
-          48
-        ],
-        [
-          4,
           12,
-          28,
+          25,
+          26,
+          34,
+          42
+        ],
+        [
+          4,
+          22,
+          24,
           29,
           37,
+          44
+        ],
+        [
+          2,
+          21,
+          28,
+          33,
+          45,
           48
         ],
         [
-          10,
-          13,
+          11,
           20,
-          26,
-          37,
-          49
-        ],
-        [
-          2,
-          17,
-          24,
-          26,
-          36,
-          43
+          23,
+          27,
+          38,
+          41
         ]
       ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 30,
-      "empty_risk_percent": 0.194024,
-      "at_least_one_hit_percent": 99.805976
-    },
-    {
-      "package_id": "models_versions_lottery_prediction_model_v36_20260621_070453_json",
-      "package_label": "Lottery prediction model v36 20260621 070453",
-      "source_path": "models/versions/lottery_prediction_model_v36_20260621_070453.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          22,
-          26,
-          28,
-          29,
-          40,
-          42
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          37
-        ],
-        [
-          12,
-          21,
-          24,
-          33,
-          37,
-          48
-        ],
-        [
-          2,
-          15,
-          25,
-          33,
-          38,
-          42
-        ],
-        [
-          2,
-          7,
-          24,
-          25,
-          35,
-          38
-        ],
-        [
-          4,
-          12,
-          18,
-          21,
-          38,
-          45
-        ],
-        [
-          5,
-          15,
-          24,
-          25,
-          36,
-          38
-        ],
-        [
-          1,
-          12,
-          17,
-          21,
-          46,
-          48
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 27,
-      "empty_risk_percent": 0.533567,
-      "at_least_one_hit_percent": 99.466433
-    },
-    {
-      "package_id": "models_versions_lottery_prediction_model_v36_20260620_205906_json",
-      "package_label": "Lottery prediction model v36 20260620 205906",
-      "source_path": "models/versions/lottery_prediction_model_v36_20260620_205906.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          22,
-          26,
-          28,
-          29,
-          40,
-          42
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          37
-        ],
-        [
-          12,
-          21,
-          24,
-          33,
-          37,
-          48
-        ],
-        [
-          2,
-          15,
-          25,
-          33,
-          38,
-          42
-        ],
-        [
-          2,
-          7,
-          24,
-          25,
-          35,
-          38
-        ],
-        [
-          1,
-          12,
-          17,
-          21,
-          46,
-          48
-        ],
-        [
-          4,
-          12,
-          17,
-          22,
-          37,
-          49
-        ],
-        [
-          5,
-          15,
-          24,
-          25,
-          36,
-          38
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 26,
-      "empty_risk_percent": 0.721884,
-      "at_least_one_hit_percent": 99.278116
-    },
-    {
-      "package_id": "reports_v58_smart_ensemble_scores_sample_json",
-      "package_label": "Smart ensemble scores sample",
-      "source_path": "reports/v58_smart_ensemble_scores_sample.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          48
-        ],
-        [
-          22,
-          28,
-          37,
-          38,
-          42,
-          49
-        ],
-        [
-          6,
-          12,
-          13,
-          17,
-          19,
-          44
-        ],
-        [
-          6,
-          7,
-          13,
-          29,
-          42,
-          44
-        ],
-        [
-          4,
-          9,
-          13,
-          19,
-          42,
-          44
-        ],
-        [
-          5,
-          6,
-          8,
-          16,
-          19,
-          44
-        ],
-        [
-          2,
-          6,
-          13,
-          19,
-          26,
-          42
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 25,
-      "empty_risk_percent": 0.962513,
-      "at_least_one_hit_percent": 99.037487
+      "total_combinations": 4,
+      "unique_covered_numbers": 24,
+      "empty_risk_percent": 1.266464,
+      "at_least_one_hit_percent": 98.733536
     },
     {
       "package_id": "reports_v59_smart_ticket_builder_2_sample_csv",
-      "package_label": "Smart ticket builder 2 sample",
+      "package_label": "Интелигентен генератор 2",
+      "source_group": "Генератори",
       "source_path": "reports/v59_smart_ticket_builder_2_sample.csv",
-      "source_kind": "expanded_artifact",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           2,
@@ -439,9 +108,11 @@
     },
     {
       "package_id": "reports_v60_ticket_builder_2_export_sample_csv",
-      "package_label": "Ticket builder 2 export sample",
+      "package_label": "Експорт от интелигентния генератор",
+      "source_group": "Генератори",
       "source_path": "reports/v60_ticket_builder_2_export_sample.csv",
-      "source_kind": "expanded_artifact",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           4,
@@ -491,9 +162,11 @@
     },
     {
       "package_id": "models_v44_1_v44_1_final_ensemble_ticket_prediction_json",
-      "package_label": "1 final ensemble ticket prediction",
+      "package_label": "Финален ансамблов фиш",
+      "source_group": "Финални фишове",
       "source_path": "models/v44_1/v44_1_final_ensemble_ticket_prediction.json",
-      "source_kind": "expanded_artifact",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           4,
@@ -534,10 +207,12 @@
       "at_least_one_hit_percent": 97.883196
     },
     {
-      "package_id": "models_v69_v69_portfolio_improvement_model_json",
-      "package_label": "Portfolio improvement model",
-      "source_path": "models/v69/v69_portfolio_improvement_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v69_candidate_portfolio_tickets_csv",
+      "package_label": "Подобрен кандидат портфейл",
+      "source_group": "Портфейли",
+      "source_path": "reports/v69_candidate_portfolio_tickets.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           1,
@@ -610,10 +285,12 @@
       "at_least_one_hit_percent": 97.305886
     },
     {
-      "package_id": "models_v76_v76_explainability_validation_model_json",
-      "package_label": "Explainability validation model",
-      "source_path": "models/v76/v76_explainability_validation_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v75_neural_candidate_tickets_csv",
+      "package_label": "Невронни кандидат комбинации",
+      "source_group": "Невронни сигнали",
+      "source_path": "reports/v75_neural_candidate_tickets.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           2,
@@ -686,10 +363,12 @@
       "at_least_one_hit_percent": 97.305886
     },
     {
-      "package_id": "models_v77_v77_decision_recommendation_model_json",
-      "package_label": "Decision recommendation model",
-      "source_path": "models/v77/v77_decision_recommendation_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v78_selected_ticket_plan_csv",
+      "package_label": "Финален план за игра",
+      "source_group": "Финални фишове",
+      "source_path": "reports/v78_selected_ticket_plan.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           2,
@@ -762,10 +441,12 @@
       "at_least_one_hit_percent": 97.305886
     },
     {
-      "package_id": "models_v84_v84_model_comparison_forward_test_model_json",
-      "package_label": "Model comparison forward test model",
-      "source_path": "models/v84/v84_model_comparison_forward_test_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v84_model_source_candidates_csv",
+      "package_label": "Снапшот на моделни кандидати",
+      "source_group": "Моделни снапшоти",
+      "source_path": "reports/v84_model_source_candidates.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           4,
@@ -838,174 +519,12 @@
       "at_least_one_hit_percent": 97.305886
     },
     {
-      "package_id": "models_v41_v41_latest_predictions_json",
-      "package_label": "Latest predictions",
-      "source_path": "models/v41/v41_latest_predictions.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ],
-        [
-          4,
-          21,
-          34,
-          37,
-          44,
-          49
-        ],
-        [
-          2,
-          18,
-          22,
-          23,
-          37,
-          38
-        ],
-        [
-          1,
-          3,
-          7,
-          9,
-          11,
-          21
-        ]
-      ],
-      "total_combinations": 4,
-      "unique_covered_numbers": 21,
-      "empty_risk_percent": 2.694114,
-      "at_least_one_hit_percent": 97.305886
-    },
-    {
-      "package_id": "reports_v76_ticket_explanations_json",
-      "package_label": "Ticket explanations",
-      "source_path": "reports/v76_ticket_explanations.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          21,
-          29,
-          41,
-          42,
-          44
-        ],
-        [
-          17,
-          21,
-          29,
-          34,
-          42,
-          44
-        ],
-        [
-          11,
-          20,
-          21,
-          27,
-          34,
-          44
-        ],
-        [
-          20,
-          21,
-          25,
-          34,
-          40,
-          44
-        ],
-        [
-          2,
-          11,
-          25,
-          27,
-          38,
-          45
-        ],
-        [
-          2,
-          10,
-          11,
-          35,
-          38,
-          45
-        ],
-        [
-          7,
-          21,
-          27,
-          28,
-          34,
-          45
-        ],
-        [
-          3,
-          21,
-          27,
-          28,
-          40,
-          45
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 20,
-      "empty_risk_percent": 3.396927,
-      "at_least_one_hit_percent": 96.603073
-    },
-    {
-      "package_id": "models_v66_v66_weighted_smart_ensemble_model_json",
-      "package_label": "Weighted smart ensemble model",
-      "source_path": "models/v66/v66_weighted_smart_ensemble_model.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          1,
-          2,
-          4,
-          18,
-          37,
-          38
-        ],
-        [
-          2,
-          3,
-          4,
-          22,
-          23,
-          48
-        ],
-        [
-          16,
-          17,
-          18,
-          37,
-          44,
-          49
-        ],
-        [
-          11,
-          13,
-          21,
-          34,
-          38,
-          42
-        ]
-      ],
-      "total_combinations": 4,
-      "unique_covered_numbers": 19,
-      "empty_risk_percent": 4.246159,
-      "at_least_one_hit_percent": 95.753841
-    },
-    {
-      "package_id": "models_v67_v67_weighted_ticket_builder_model_json",
-      "package_label": "Weighted ticket builder model",
-      "source_path": "models/v67/v67_weighted_ticket_builder_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v67_weighted_ticket_builder_tickets_csv",
+      "package_label": "Генератор с претеглени сигнали",
+      "source_group": "Претеглени модели",
+      "source_path": "reports/v67_weighted_ticket_builder_tickets.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           1,
@@ -1078,10 +597,12 @@
       "at_least_one_hit_percent": 94.734763
     },
     {
-      "package_id": "models_v68_v68_weighted_portfolio_optimizer_model_json",
-      "package_label": "Weighted portfolio optimizer model",
-      "source_path": "models/v68/v68_weighted_portfolio_optimizer_model.json",
-      "source_kind": "expanded_artifact",
+      "package_id": "reports_v68_weighted_portfolio_tickets_csv",
+      "package_label": "Оптимизиран портфейл с претеглени сигнали",
+      "source_group": "Претеглени модели",
+      "source_path": "reports/v68_weighted_portfolio_tickets.csv",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           1,
@@ -1152,200 +673,14 @@
       "unique_covered_numbers": 18,
       "empty_risk_percent": 5.265237,
       "at_least_one_hit_percent": 94.734763
-    },
-    {
-      "package_id": "models_versions_lottery_ml_extensions_model_v1_20260620_205905_json",
-      "package_label": "Lottery ml extensions model v1 20260620 205905",
-      "source_path": "models/versions/lottery_ml_extensions_model_v1_20260620_205905.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          37
-        ],
-        [
-          4,
-          12,
-          21,
-          33,
-          37,
-          44
-        ],
-        [
-          4,
-          12,
-          21,
-          29,
-          37,
-          48
-        ],
-        [
-          12,
-          21,
-          24,
-          33,
-          37,
-          48
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          42,
-          45
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          48
-        ],
-        [
-          1,
-          12,
-          17,
-          21,
-          46,
-          48
-        ],
-        [
-          4,
-          12,
-          20,
-          25,
-          37,
-          48
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 17,
-      "empty_risk_percent": 6.480291,
-      "at_least_one_hit_percent": 93.519709
-    },
-    {
-      "package_id": "reports_v56_draw_similarity_summary_json",
-      "package_label": "Draw similarity summary",
-      "source_path": "reports/v56_draw_similarity_summary.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ],
-        [
-          6,
-          12,
-          13,
-          17,
-          19,
-          44
-        ],
-        [
-          6,
-          7,
-          13,
-          29,
-          42,
-          44
-        ],
-        [
-          4,
-          9,
-          13,
-          19,
-          42,
-          44
-        ],
-        [
-          5,
-          6,
-          8,
-          16,
-          19,
-          44
-        ],
-        [
-          2,
-          6,
-          13,
-          19,
-          26,
-          42
-        ],
-        [
-          13,
-          16,
-          17,
-          19,
-          42,
-          47
-        ],
-        [
-          2,
-          6,
-          7,
-          16,
-          19,
-          42
-        ]
-      ],
-      "total_combinations": 8,
-      "unique_covered_numbers": 17,
-      "empty_risk_percent": 6.480291,
-      "at_least_one_hit_percent": 93.519709
-    },
-    {
-      "package_id": "reports_v58_smart_ensemble_scores_sample_csv",
-      "package_label": "Smart ensemble scores sample",
-      "source_path": "reports/v58_smart_ensemble_scores_sample.csv",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          48
-        ],
-        [
-          22,
-          28,
-          37,
-          38,
-          42,
-          49
-        ]
-      ],
-      "total_combinations": 3,
-      "unique_covered_numbers": 17,
-      "empty_risk_percent": 6.480291,
-      "at_least_one_hit_percent": 93.519709
     },
     {
       "package_id": "models_v45_v45_final_prediction_tickets_json",
-      "package_label": "Final prediction tickets",
+      "package_label": "Финални прогнозни комбинации",
+      "source_group": "Финални фишове",
       "source_path": "models/v45/v45_final_prediction_tickets.json",
-      "source_kind": "expanded_artifact",
+      "source_kind": "trusted_ticket_source",
+      "preferred_key": "",
       "combinations": [
         [
           12,
@@ -1384,235 +719,7 @@
       "unique_covered_numbers": 14,
       "empty_risk_percent": 11.607418,
       "at_least_one_hit_percent": 88.392582
-    },
-    {
-      "package_id": "models_v43_1_v43_1_interval_rhythm_refined_prediction_json",
-      "package_label": "1 interval rhythm refined prediction",
-      "source_path": "models/v43_1/v43_1_interval_rhythm_refined_prediction.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          17,
-          35,
-          38,
-          45,
-          49
-        ],
-        [
-          4,
-          12,
-          21,
-          25,
-          34,
-          48
-        ]
-      ],
-      "total_combinations": 2,
-      "unique_covered_numbers": 12,
-      "empty_risk_percent": 16.624818,
-      "at_least_one_hit_percent": 83.375182
-    },
-    {
-      "package_id": "models_v85_v85_neural_epoch_comparison_model_json",
-      "package_label": "Neural epoch comparison model",
-      "source_path": "models/v85/v85_neural_epoch_comparison_model.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          4,
-          6,
-          8,
-          14,
-          16
-        ],
-        [
-          2,
-          4,
-          6,
-          8,
-          14,
-          28
-        ],
-        [
-          1,
-          4,
-          6,
-          8,
-          26,
-          28
-        ],
-        [
-          1,
-          6,
-          26,
-          28,
-          30,
-          32
-        ]
-      ],
-      "total_combinations": 4,
-      "unique_covered_numbers": 11,
-      "empty_risk_percent": 19.741972,
-      "at_least_one_hit_percent": 80.258028
-    },
-    {
-      "package_id": "reports_v78_play_plan_warnings_csv",
-      "package_label": "Play plan warnings",
-      "source_path": "reports/v78_play_plan_warnings.csv",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          11,
-          20,
-          21,
-          27,
-          34,
-          44
-        ],
-        [
-          3,
-          13,
-          25,
-          30,
-          38,
-          44
-        ]
-      ],
-      "total_combinations": 2,
-      "unique_covered_numbers": 11,
-      "empty_risk_percent": 19.741972,
-      "at_least_one_hit_percent": 80.258028
-    },
-    {
-      "package_id": "reports_v61_draw_result_analyzer_summary_json",
-      "package_label": "Draw result analyzer summary",
-      "source_path": "reports/v61_draw_result_analyzer_summary.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ],
-        [
-          1,
-          2,
-          13,
-          16,
-          37,
-          42
-        ]
-      ],
-      "total_combinations": 2,
-      "unique_covered_numbers": 9,
-      "empty_risk_percent": 27.448731,
-      "at_least_one_hit_percent": 72.551269
-    },
-    {
-      "package_id": "models_v41_v41_frequency_main_numbers_model_json",
-      "package_label": "Frequency main numbers model",
-      "source_path": "models/v41/v41_frequency_main_numbers_model.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          4,
-          21,
-          34,
-          37,
-          44,
-          49
-        ]
-      ],
-      "total_combinations": 1,
-      "unique_covered_numbers": 6,
-      "empty_risk_percent": 43.596498,
-      "at_least_one_hit_percent": 56.403502
-    },
-    {
-      "package_id": "models_v41_v41_recency_main_numbers_model_json",
-      "package_label": "Recency main numbers model",
-      "source_path": "models/v41/v41_recency_main_numbers_model.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          18,
-          22,
-          23,
-          37,
-          38
-        ]
-      ],
-      "total_combinations": 1,
-      "unique_covered_numbers": 6,
-      "empty_risk_percent": 43.596498,
-      "at_least_one_hit_percent": 56.403502
-    },
-    {
-      "package_id": "models_v42_v42_combined_prediction_json",
-      "package_label": "Combined prediction",
-      "source_path": "models/v42/v42_combined_prediction.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          2,
-          13,
-          37,
-          38,
-          42,
-          49
-        ]
-      ],
-      "total_combinations": 1,
-      "unique_covered_numbers": 6,
-      "empty_risk_percent": 43.596498,
-      "at_least_one_hit_percent": 56.403502
-    },
-    {
-      "package_id": "models_v45_v45_latest_number_scores_json",
-      "package_label": "Latest number scores",
-      "source_path": "models/v45/v45_latest_number_scores.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          6,
-          13,
-          16,
-          19,
-          42,
-          44
-        ]
-      ],
-      "total_combinations": 1,
-      "unique_covered_numbers": 6,
-      "empty_risk_percent": 43.596498,
-      "at_least_one_hit_percent": 56.403502
-    },
-    {
-      "package_id": "reports_v45_training_summary_json",
-      "package_label": "Training summary",
-      "source_path": "reports/v45_training_summary.json",
-      "source_kind": "expanded_artifact",
-      "combinations": [
-        [
-          12,
-          17,
-          21,
-          24,
-          34,
-          48
-        ]
-      ],
-      "total_combinations": 1,
-      "unique_covered_numbers": 6,
-      "empty_risk_percent": 43.596498,
-      "at_least_one_hit_percent": 56.403502
     }
   ],
-  "safe_note_bg": "Това е разширен списък от кандидат пакети. Не е прогноза и не е гаранция."
+  "safe_note_bg": "Това е строго подбран списък от реални кандидат-фишове. Не е прогноза и не е гаранция."
 }

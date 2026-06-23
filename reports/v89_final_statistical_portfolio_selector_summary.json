@@ -1,10 +1,10 @@
 {
   "step": 89,
   "title_bg": "Финален статистически избор",
-  "candidate_count": 30,
-  "balanced_package": "1 final ensemble ticket prediction",
-  "balanced_score": 69.775,
-  "conservative_package": "1 final ensemble ticket prediction",
-  "aggressive_package": "1 interval rhythm refined prediction",
+  "candidate_count": 11,
+  "balanced_package": "Защитен фиш с широко покритие",
+  "balanced_score": 71.852,
+  "conservative_package": "Защитен фиш с широко покритие",
+  "aggressive_package": "Защитен фиш с широко покритие",
   "safe_note_bg": "Това е статистически избор на пакет, не прогноза и не гаранция за печалба."
 }
