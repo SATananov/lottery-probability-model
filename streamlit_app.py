@@ -2121,6 +2121,8 @@ def _step87_8_report_label_mapping() -> dict:
 
 
 def _step87_8_report_display_name(value) -> str:
+    import re as _re
+
     try:
         name = value.name
     except Exception:
@@ -2138,50 +2140,113 @@ def _step87_8_report_display_name(value) -> str:
     if stem.endswith(".json"):
         return _step87_8_u(r"\u041c\u043e\u0434\u0435\u043b\u0435\u043d \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u043a")
 
-    exact_stem_labels = {
-        "combined_strategy_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
-        "data_audit_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
-        "data_import_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
-        "gap_model_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
-        "middle_model_report": _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b"),
-        "ml_classification_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
-        "ml_clustering_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
-        "ml_dimensionality_reduction_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
-        "ml_2d_map_report": _step87_8_u(r"\u041c\u041b \u043e\u0442\u0447\u0435\u0442 \u0437\u0430 2D \u043a\u0430\u0440\u0442\u0430"),
+    exact_topics = {
+        "decision_recommendation": _step87_8_u(r"\u0420\u0435\u0448\u0435\u043d\u0438\u0435 \u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430"),
+        "final_play_plan": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043f\u043b\u0430\u043d \u0437\u0430 \u0438\u0433\u0440\u0430"),
+        "ticket_pack_export": _step87_8_u(r"\u0415\u043a\u0441\u043f\u043e\u0440\u0442 \u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u0430\u043a\u0435\u0442\u0430"),
+        "final_system_audit": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u0441\u0438\u0441\u0442\u0435\u043c\u0435\u043d \u043e\u0434\u0438\u0442"),
+        "final_ux_navigation": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u0430 UX \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f"),
+        "final_release": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d release \u043f\u0430\u043a\u0435\u0442"),
+        "final_user_manual": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u043e \u043f\u043e\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043b\u0441\u043a\u043e \u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e"),
+        "model_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+        "neural_epoch_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043d\u0435\u0432\u0440\u043e\u043d\u043d\u0438 \u0435\u043f\u043e\u0445\u0438"),
+        "model_registry": _step87_8_u(r"\u0420\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+        "combined_strategy": _step87_8_u(r"\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
+        "data_audit": _step87_8_u(r"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
+        "data_import": _step87_8_u(r"\u0418\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
+        "gap_model": _step87_8_u(r"\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "middle_model": _step87_8_u(r"\u0411\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d \u043c\u043e\u0434\u0435\u043b"),
+        "ml_classification": _step87_8_u(r"\u041c\u041b \u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
+        "ml_clustering": _step87_8_u(r"\u041c\u041b \u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
+        "ml_dimensionality_reduction": _step87_8_u(r"\u041c\u041b \u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
     }
 
-    if stem in exact_stem_labels:
-        return exact_stem_labels[stem]
+    topic = stem
 
-    # Generic vXX_*_summary translator, for example:
-    version_match = re.match(r"^v\d+_(.+?)_summary$", stem)
+    version_match = _re.match(r"^v\d+_(.+?)_summary$", topic)
     if version_match:
         topic = version_match.group(1)
+        if topic in exact_topics:
+            return _step87_8_u(r"\u041e\u0431\u043e\u0431\u0449\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u2014 ") + exact_topics[topic]
 
-        topic_labels = {
-            "decision_recommendation": _step87_8_u(r"\u0420\u0435\u0448\u0435\u043d\u0438\u0435 \u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430"),
-            "final_play_plan": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u043f\u043b\u0430\u043d \u0437\u0430 \u0438\u0433\u0440\u0430"),
-            "ticket_pack_export": _step87_8_u(r"\u0415\u043a\u0441\u043f\u043e\u0440\u0442 \u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u0430\u043a\u0435\u0442\u0430"),
-            "final_system_audit": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d \u0441\u0438\u0441\u0442\u0435\u043c\u0435\u043d \u043e\u0434\u0438\u0442"),
-            "final_ux_navigation": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u0430 UX \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f"),
-            "final_release": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u0435\u043d release \u043f\u0430\u043a\u0435\u0442"),
-            "final_user_manual": _step87_8_u(r"\u0424\u0438\u043d\u0430\u043b\u043d\u043e \u043f\u043e\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043b\u0441\u043a\u043e \u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e"),
-            "model_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
-            "neural_epoch_comparison": _step87_8_u(r"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u0430 \u043d\u0435\u0432\u0440\u043e\u043d\u043d\u0438 \u0435\u043f\u043e\u0445\u0438"),
-            "model_registry": _step87_8_u(r"\u0420\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
-        }
+    suffixes = [
+        "_summary",
+        "_report",
+        "_backtest",
+        "_model_card",
+        "_methodology",
+    ]
 
-        if topic in topic_labels:
-            return _step87_8_u(r"\u041e\u0431\u043e\u0431\u0449\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u2014 ") + topic_labels[topic]
+    changed = True
+    while changed:
+        changed = False
+        for suffix in suffixes:
+            if topic.endswith(suffix):
+                topic = topic[: -len(suffix)]
+                changed = True
 
-        cleaned_topic = topic.replace("_", " ").replace("-", " ").strip()
-        return _step87_8_u(r"\u041e\u0431\u043e\u0431\u0449\u0435\u043d \u043e\u0442\u0447\u0435\u0442 \u2014 ") + cleaned_topic
+    if topic in exact_topics:
+        return _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u2014 ") + exact_topics[topic]
 
-    if name.endswith(".md"):
-        cleaned = stem.replace("_", " ").replace("-", " ").strip()
-        return _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u2014 ") + cleaned
+    phrase_map = {
+        "dimensionality_reduction": _step87_8_u(r"\u0440\u0435\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u0442\u0430"),
+        "decision_recommendation": _step87_8_u(r"\u0440\u0435\u0448\u0435\u043d\u0438\u0435 \u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430"),
+        "final_play_plan": _step87_8_u(r"\u0444\u0438\u043d\u0430\u043b\u0435\u043d \u043f\u043b\u0430\u043d \u0437\u0430 \u0438\u0433\u0440\u0430"),
+        "ticket_pack": _step87_8_u(r"\u043f\u0430\u043a\u0435\u0442 \u0444\u0438\u0448\u043e\u0432\u0435"),
+        "model_registry": _step87_8_u(r"\u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u0438\u0442\u0435"),
+        "system_audit": _step87_8_u(r"\u0441\u0438\u0441\u0442\u0435\u043c\u0435\u043d \u043e\u0434\u0438\u0442"),
+        "data_audit": _step87_8_u(r"\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435"),
+        "data_import": _step87_8_u(r"\u0438\u043c\u043f\u043e\u0440\u0442 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438"),
+    }
 
-    return name
+    for old, new in phrase_map.items():
+        topic = topic.replace(old, new.replace(" ", "_"))
+
+    token_map = {
+        "v": "",
+        "final": _step87_8_u(r"\u0444\u0438\u043d\u0430\u043b\u0435\u043d"),
+        "play": _step87_8_u(r"\u0438\u0433\u0440\u0430"),
+        "plan": _step87_8_u(r"\u043f\u043b\u0430\u043d"),
+        "decision": _step87_8_u(r"\u0440\u0435\u0448\u0435\u043d\u0438\u0435"),
+        "recommendation": _step87_8_u(r"\u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0430"),
+        "ticket": _step87_8_u(r"\u0444\u0438\u0448"),
+        "pack": _step87_8_u(r"\u043f\u0430\u043a\u0435\u0442"),
+        "export": _step87_8_u(r"\u0435\u043a\u0441\u043f\u043e\u0440\u0442"),
+        "system": _step87_8_u(r"\u0441\u0438\u0441\u0442\u0435\u043c\u0435\u043d"),
+        "audit": _step87_8_u(r"\u043e\u0434\u0438\u0442"),
+        "ux": "UX",
+        "navigation": _step87_8_u(r"\u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f"),
+        "release": "release",
+        "user": _step87_8_u(r"\u043f\u043e\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043b\u0441\u043a\u043e"),
+        "manual": _step87_8_u(r"\u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e"),
+        "model": _step87_8_u(r"\u043c\u043e\u0434\u0435\u043b"),
+        "comparison": _step87_8_u(r"\u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435"),
+        "neural": _step87_8_u(r"\u043d\u0435\u0432\u0440\u043e\u043d\u043d\u0438"),
+        "epoch": _step87_8_u(r"\u0435\u043f\u043e\u0445\u0438"),
+        "registry": _step87_8_u(r"\u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440"),
+        "combined": _step87_8_u(r"\u043a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d"),
+        "strategy": _step87_8_u(r"\u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f"),
+        "data": _step87_8_u(r"\u0434\u0430\u043d\u043d\u0438"),
+        "import": _step87_8_u(r"\u0438\u043c\u043f\u043e\u0440\u0442"),
+        "gap": _step87_8_u(r"\u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435\u043d"),
+        "middle": _step87_8_u(r"\u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u0430\u043d"),
+        "classification": _step87_8_u(r"\u043a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f"),
+        "clustering": _step87_8_u(r"\u043a\u043b\u044a\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044f"),
+        "ml": _step87_8_u(r"\u041c\u041b"),
+    }
+
+    words = []
+    for part in topic.replace("-", "_").split("_"):
+        if not part:
+            continue
+        words.append(token_map.get(part, part))
+
+    cleaned = " ".join(words).strip()
+    if not cleaned:
+        return name
+
+    cleaned = cleaned[:1].upper() + cleaned[1:]
+    return _step87_8_u(r"\u041e\u0442\u0447\u0435\u0442 \u2014 ") + cleaned
 
 
 def _step87_8_polish_report_text(content: str) -> str:
