@@ -3697,12 +3697,20 @@ def render_v88_anti_zero_coverage_section() -> None:
     return _render()
 # STEP88_ANTI_ZERO_COVERAGE_WRAPPER_END
 
+
+# STEP89_FINAL_STATISTICAL_SELECTOR_WRAPPER_START
+def render_v89_final_statistical_portfolio_selector_section() -> None:
+    from src.v89_final_statistical_portfolio_selector_section import render_v89_final_statistical_portfolio_selector_section as _render
+    return _render()
+# STEP89_FINAL_STATISTICAL_SELECTOR_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
 
         "Потребителско меню": render_v87_synthesized_user_menu_section,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
+        "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3814,6 +3822,7 @@ def main() -> None:
             'Пакет за игра',
             'Представяне на пакета',
             'Защита от празен фиш',
+            'Финален статистически избор',
         ],
         '✅ Финален план за игра': [
             'Добавяне на тираж',
