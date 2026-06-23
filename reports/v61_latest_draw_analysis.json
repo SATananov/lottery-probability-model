@@ -1178,7 +1178,7 @@
     {
       "source_key": "v45_ticket_1",
       "source_bg": "v45 Prediction Engine Pro — ticket",
-      "candidate_label": "primary_rule_aware_ml_комбиниран анализ",
+      "candidate_label": "primary_rule_aware_ml_ensemble",
       "candidate_numbers": [
         12,
         17,

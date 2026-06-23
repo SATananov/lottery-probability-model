@@ -18,7 +18,7 @@ v44.1 финален ансамбъл,interval_rhythm_next_window,"4, 12, 25, 34
 v45 Prediction Engine Pro — primary,primary_numbers,"12, 17, 21, 24, 34, 48",0,,"12, 17, 21, 24, 34, 48",Primary statistical candidate от v45.
 v45 Prediction Engine Pro — ticket,coverage_low_overlap,"4, 11, 18, 21, 34, 36",0,,"4, 11, 18, 21, 34, 36",Ticket candidate от v45.
 v45 Prediction Engine Pro — ticket,historical_signal_alternative,"2, 17, 18, 23, 36, 48",0,,"2, 17, 18, 23, 36, 48",Ticket candidate от v45.
-v45 Prediction Engine Pro — ticket,primary_rule_aware_ml_комбиниран анализ,"12, 17, 21, 24, 34, 48",0,,"12, 17, 21, 24, 34, 48",Ticket candidate от v45.
+v45 Prediction Engine Pro — ticket,primary_rule_aware_ml_ensemble,"12, 17, 21, 24, 34, 48",0,,"12, 17, 21, 24, 34, 48",Ticket candidate от v45.
 v45 Prediction Engine Pro — ticket,rhythm_weighted_alternative,"2, 4, 17, 34, 37, 38",0,,"2, 4, 17, 34, 37, 38",Ticket candidate от v45.
 v59 Интелигентен генератор 2 sample,ticket_1,"2, 17, 24, 31, 35, 38",0,,"2, 17, 24, 31, 35, 38","Примерна генерирана комбинация, използва се само за post-draw overlap context."
 v60 export sample,ticket_1,"4, 17, 28, 29, 34, 39",0,,"4, 17, 28, 29, 34, 39","Примерна генерирана комбинация, използва се само за post-draw overlap context."
