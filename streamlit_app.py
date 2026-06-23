@@ -46,6 +46,7 @@ from src.v82_final_release_package_section import render_v82_final_release_packa
 from src.v83_final_user_manual_section import render_v83_final_user_manual_section
 from src.v84_model_comparison_forward_test_section import render_v84_model_comparison_forward_test_section
 from src.v86_model_registry_trust_center_section import render_v86_model_registry_trust_center_section
+from src.v87_synthesized_user_menu_section import render_v87_synthesized_user_menu_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3463,6 +3464,9 @@ def _rhythm_bg(hex_text: str) -> str:
 def main() -> None:
     page_glossary()
     pages = {
+
+        "Потребителско меню": render_v87_synthesized_user_menu_section,
+
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
         tr("combined"): page_combined,
@@ -3508,6 +3512,7 @@ def main() -> None:
         "Обяснимост и валидация": render_v76_explainability_validation_section,
         "Решение и препоръка": render_v77_decision_recommendation_section,
         "Финален план": render_v78_final_play_plan_section,
+
         "Експорт и изпълнение": render_v79_ticket_pack_export_section,
         "Финален системен одит": render_v80_final_system_audit_section,
         "Финален UX контрол": render_v81_final_ux_navigation_section,
@@ -3521,6 +3526,9 @@ def main() -> None:
     # STEP64_GROUPED_NAVIGATION_START
     navigation_groups = {
         '🏠 Начало и отчети': [
+
+            'Потребителско меню',
+
             'Табло',
             'Препоръки',
             'Прогноза',
@@ -3575,6 +3583,7 @@ def main() -> None:
             'Обяснимост и валидация',
             'Решение и препоръка',
             'Финален план',
+
             'Експорт и изпълнение',
         ],
         '🛡️ Система и контрол': [
