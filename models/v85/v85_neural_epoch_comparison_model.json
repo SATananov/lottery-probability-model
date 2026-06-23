@@ -1,0 +1,93 @@
+{
+  "step": "85",
+  "model_type": "neural_epoch_comparison_audit",
+  "active_model_replacement": false,
+  "best_epochs_by_test_avg_hits": 90,
+  "best_latest_top6_numbers": [
+    6,
+    8,
+    4,
+    2,
+    14,
+    16
+  ],
+  "results": [
+    {
+      "epochs": 90,
+      "train_loss": 0.6944818797637605,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.0033091842697384743,
+      "train_avg_hits_top6": 0.743847874720358,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7326043737574552,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        6,
+        8,
+        4,
+        2,
+        14,
+        16
+      ]
+    },
+    {
+      "epochs": 150,
+      "train_loss": 0.6938277033346537,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.003963360698845286,
+      "train_avg_hits_top6": 0.747825006214268,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7231610337972167,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        6,
+        8,
+        4,
+        2,
+        14,
+        28
+      ]
+    },
+    {
+      "epochs": 300,
+      "train_loss": 0.6933601358056936,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.004430928227805442,
+      "train_avg_hits_top6": 0.7510564255530698,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7311133200795229,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        28,
+        6,
+        26,
+        4,
+        8,
+        1
+      ]
+    },
+    {
+      "epochs": 500,
+      "train_loss": 0.6932489102602751,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.004542153773223867,
+      "train_avg_hits_top6": 0.7475764354958986,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7216699801192843,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        28,
+        26,
+        32,
+        1,
+        6,
+        30
+      ]
+    }
+  ],
+  "safe_wording": "Statistical audit only. Lottery outcomes are random and no winning result is guaranteed."
+}

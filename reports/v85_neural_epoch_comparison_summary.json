@@ -1,0 +1,104 @@
+{
+  "step": "85",
+  "name": "Neural Epoch Comparison Audit",
+  "status": "OK",
+  "safe_wording": "This is a statistical training audit, not a prediction guarantee.",
+  "dataset": "data/v41_canonical_draw_events.csv",
+  "valid_draws": 10058,
+  "train_draws": 8046,
+  "test_draws": 2012,
+  "train_samples": 394254,
+  "test_samples": 98588,
+  "features": 8,
+  "hidden_units": 18,
+  "learning_rate": 0.035,
+  "random_seed": 85,
+  "epoch_checkpoints": [
+    90,
+    150,
+    300,
+    500
+  ],
+  "best_epochs_by_test_avg_hits": 90,
+  "best_test_avg_hits_top6": 0.7326043737574552,
+  "best_test_max_hits_top6": 4.0,
+  "results": [
+    {
+      "epochs": 90,
+      "train_loss": 0.6944818797637605,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.0033091842697384743,
+      "train_avg_hits_top6": 0.743847874720358,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7326043737574552,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        6,
+        8,
+        4,
+        2,
+        14,
+        16
+      ]
+    },
+    {
+      "epochs": 150,
+      "train_loss": 0.6938277033346537,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.003963360698845286,
+      "train_avg_hits_top6": 0.747825006214268,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7231610337972167,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        6,
+        8,
+        4,
+        2,
+        14,
+        28
+      ]
+    },
+    {
+      "epochs": 300,
+      "train_loss": 0.6933601358056936,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.004430928227805442,
+      "train_avg_hits_top6": 0.7510564255530698,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7311133200795229,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        28,
+        6,
+        26,
+        4,
+        8,
+        1
+      ]
+    },
+    {
+      "epochs": 500,
+      "train_loss": 0.6932489102602751,
+      "loss_start": 0.697791064033499,
+      "loss_delta": 0.004542153773223867,
+      "train_avg_hits_top6": 0.7475764354958986,
+      "train_max_hits_top6": 4.0,
+      "test_avg_hits_top6": 0.7216699801192843,
+      "test_max_hits_top6": 4.0,
+      "test_events_evaluated": 2012,
+      "latest_top6_numbers": [
+        28,
+        26,
+        32,
+        1,
+        6,
+        30
+      ]
+    }
+  ],
+  "recommendation": "Keep the current neural setup unless a higher epoch checkpoint improves test-period performance without only improving training loss."
+}
