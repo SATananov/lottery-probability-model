@@ -3704,6 +3704,13 @@ def render_v89_final_statistical_portfolio_selector_section() -> None:
     return _render()
 # STEP89_FINAL_STATISTICAL_SELECTOR_WRAPPER_END
 
+
+# STEP90_SELECTOR_SOURCE_EXPANSION_WRAPPER_START
+def render_v90_selector_source_expansion_section() -> None:
+    from src.v90_selector_source_expansion_section import render_v90_selector_source_expansion_section as _render
+    return _render()
+# STEP90_SELECTOR_SOURCE_EXPANSION_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3711,6 +3718,7 @@ def main() -> None:
         "Потребителско меню": render_v87_synthesized_user_menu_section,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
+        "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3823,6 +3831,7 @@ def main() -> None:
             'Представяне на пакета',
             'Защита от празен фиш',
             'Финален статистически избор',
+            'Интеграция на моделните резултати',
         ],
         '✅ Финален план за игра': [
             'Добавяне на тираж',

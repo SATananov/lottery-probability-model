@@ -1,0 +1,31 @@
+﻿package_label,source_path,total_combinations,unique_covered_numbers,empty_risk_percent
+Training readiness audit,reports/v41_training_readiness_audit.json,8,30,0.194024
+Smart ticket builder 2 sample,reports/v59_smart_ticket_builder_2_sample.json,8,30,0.194024
+Lottery prediction model v36 20260621 070453,models/versions/lottery_prediction_model_v36_20260621_070453.json,8,27,0.533567
+Lottery prediction model v36 20260620 205906,models/versions/lottery_prediction_model_v36_20260620_205906.json,8,26,0.721884
+Smart ensemble scores sample,reports/v58_smart_ensemble_scores_sample.json,8,25,0.962513
+Smart ticket builder 2 sample,reports/v59_smart_ticket_builder_2_sample.csv,5,23,1.646403
+Ticket builder 2 export sample,reports/v60_ticket_builder_2_export_sample.csv,5,23,1.646403
+1 final ensemble ticket prediction,models/v44_1/v44_1_final_ensemble_ticket_prediction.json,4,22,2.116804
+Portfolio improvement model,models/v69/v69_portfolio_improvement_model.json,8,21,2.694114
+Explainability validation model,models/v76/v76_explainability_validation_model.json,8,21,2.694114
+Decision recommendation model,models/v77/v77_decision_recommendation_model.json,8,21,2.694114
+Model comparison forward test model,models/v84/v84_model_comparison_forward_test_model.json,8,21,2.694114
+Latest predictions,models/v41/v41_latest_predictions.json,4,21,2.694114
+Ticket explanations,reports/v76_ticket_explanations.json,8,20,3.396927
+Weighted smart ensemble model,models/v66/v66_weighted_smart_ensemble_model.json,4,19,4.246159
+Weighted ticket builder model,models/v67/v67_weighted_ticket_builder_model.json,8,18,5.265237
+Weighted portfolio optimizer model,models/v68/v68_weighted_portfolio_optimizer_model.json,8,18,5.265237
+Lottery ml extensions model v1 20260620 205905,models/versions/lottery_ml_extensions_model_v1_20260620_205905.json,8,17,6.480291
+Draw similarity summary,reports/v56_draw_similarity_summary.json,8,17,6.480291
+Smart ensemble scores sample,reports/v58_smart_ensemble_scores_sample.csv,3,17,6.480291
+Final prediction tickets,models/v45/v45_final_prediction_tickets.json,4,14,11.607418
+1 interval rhythm refined prediction,models/v43_1/v43_1_interval_rhythm_refined_prediction.json,2,12,16.624818
+Neural epoch comparison model,models/v85/v85_neural_epoch_comparison_model.json,4,11,19.741972
+Play plan warnings,reports/v78_play_plan_warnings.csv,2,11,19.741972
+Draw result analyzer summary,reports/v61_draw_result_analyzer_summary.json,2,9,27.448731
+Frequency main numbers model,models/v41/v41_frequency_main_numbers_model.json,1,6,43.596498
+Recency main numbers model,models/v41/v41_recency_main_numbers_model.json,1,6,43.596498
+Combined prediction,models/v42/v42_combined_prediction.json,1,6,43.596498
+Latest number scores,models/v45/v45_latest_number_scores.json,1,6,43.596498
+Training summary,reports/v45_training_summary.json,1,6,43.596498

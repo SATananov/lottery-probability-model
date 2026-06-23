@@ -645,3 +645,17 @@ def build_and_save() -> dict[str, Any]:
     model = build_selector_model()
     save_selector_outputs(model)
     return model
+
+# STEP90_SELECTOR_SOURCE_EXPANSION_INTEGRATION_START
+_load_candidate_packages_step89_base = load_candidate_packages
+
+def load_candidate_packages():
+    try:
+        from src.v90_selector_source_expansion_engine import load_expanded_candidate_packages
+        expanded_candidates = load_expanded_candidate_packages()
+        if expanded_candidates:
+            return expanded_candidates
+    except Exception:
+        pass
+    return _load_candidate_packages_step89_base()
+# STEP90_SELECTOR_SOURCE_EXPANSION_INTEGRATION_END
