@@ -249,6 +249,7 @@ def evaluate_plan_against_latest(plan: dict[str, Any], *, allow_same_draw: bool 
 
     saved_key = str(plan.get("saved_after_draw_key", "") or "")
     latest_key = str(latest.get("draw_key", "") or "")
+    is_demo_same_draw = bool(saved_key and latest_key == saved_key and allow_same_draw)
     if saved_key and latest_key == saved_key and not allow_same_draw:
         return {
             "status": "WAITING_NEXT_DRAW",
@@ -296,7 +297,8 @@ def evaluate_plan_against_latest(plan: dict[str, Any], *, allow_same_draw: bool 
     result = {
         "status": "EVALUATED",
         "message_bg": "Планът е проверен срещу най-новия наличен тираж.",
-        "evaluation_time_utc": _now_iso(),
+        "evaluation_type": "DEMO_SAME_DRAW" if is_demo_same_draw else "REAL_NEXT_DRAW",
+        "evaluated_draw_key": latest_key,
         "active_plan": plan,
         "latest_draw": latest,
         "saved_after_draw": plan.get("saved_after_draw", {}) or {},
@@ -348,7 +350,9 @@ def build_active_plan_tracker_model() -> dict[str, Any]:
 
     result = evaluate_plan_against_latest(active_plan, allow_same_draw=False)
     demo_result = evaluate_plan_against_latest(active_plan, allow_same_draw=True)
-    _write_result_csv(demo_result if demo_result.get("rows") else result)
+    # Persist only the real result rows. Demo rows stay runtime-only so rebuilds do not
+    # make the tracked latest-result CSV look like a real post-draw evaluation.
+    _write_result_csv(result)
 
     model = {
         "step": 94,

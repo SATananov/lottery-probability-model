@@ -383,7 +383,8 @@
   "demo_result": {
     "status": "EVALUATED",
     "message_bg": "Планът е проверен срещу най-новия наличен тираж.",
-    "evaluation_time_utc": "2026-06-23T16:51:15+00:00",
+    "evaluation_type": "DEMO_SAME_DRAW",
+    "evaluated_draw_key": "2026-48-1|2026|1|2026-06-21|6, 13, 16, 19, 42, 44",
     "active_plan": {
       "step": 94,
       "plan_id": "v94_active_20260623T163844Z0000",
