@@ -45,7 +45,8 @@ NUMBER_FIELD_GROUPS = (
 
 
 def _t(value: str) -> str:
-    return value.encode("utf-8").decode("unicode_escape")
+    """Return already decoded Python unicode text without a second unicode_escape pass."""
+    return value
 
 
 def _friendly_label(path: Path) -> str:

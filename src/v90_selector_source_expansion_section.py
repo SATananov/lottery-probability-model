@@ -12,7 +12,8 @@ from src.v90_selector_source_expansion_engine import MODEL_PATH, build_and_save
 
 
 def _t(value: str) -> str:
-    return value.encode("utf-8").decode("unicode_escape")
+    """Return already decoded Python unicode text without a second unicode_escape pass."""
+    return value
 
 
 TITLE = _t("\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u044f \u043d\u0430 \u043c\u043e\u0434\u0435\u043b\u043d\u0438\u0442\u0435 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0438")
