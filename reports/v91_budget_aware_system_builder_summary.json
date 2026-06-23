@@ -1,0 +1,22 @@
+{
+  "step": 91,
+  "status": "OK",
+  "title_bg": "Системни фишове според бюджет",
+  "option_count": 16,
+  "practical_recommendation": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+  "practical_core_numbers": [
+    1,
+    2,
+    4,
+    18,
+    21,
+    22,
+    37,
+    38,
+    49
+  ],
+  "practical_selected_combinations": 4,
+  "practical_cost_eur_at_090": 3.6,
+  "practical_system_score": 88.638,
+  "safe_note_bg": "Това е статистически метод за структуриране на фишове. Не е прогноза и не е гаранция за печалба."
+}
