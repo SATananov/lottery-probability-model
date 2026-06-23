@@ -1,4 +1,4 @@
-# Step 72 — Обновяване на статистическия pipeline
+# Step 72 — Обновяване на статистическия верига
 
 Режим: **audit**
 Включени основни стъпки: **False**
@@ -18,9 +18,9 @@
 | 65 | Умно тегло на моделите | `scripts/v65_build_model_weighting_center.py` | True | True | planned |
 | 66 | Претеглен ансамбъл анализ | `scripts/v66_build_weighted_smart_ансамбъл.py` | False | False | planned |
 | 67 | Умен генератор с тегла | `scripts/v67_build_weighted_ticket_builder.py` | True | True | planned |
-| 68 | Умен оптимизатор на портфейл | `scripts/v68_build_weighted_portfolio_optimizer.py` | True | True | planned |
-| 69 | Подобряване на портфолио | `scripts/v69_build_portfolio_improvement_suggestions.py` | True | True | planned |
-| 70 | Приложен подобрен портфейл | `scripts/v70_build_applied_candidate_portfolio.py` | True | True | planned |
+| 68 | Умен оптимизатор на портфейл | `scripts/v68_build_weighted_пакет_оптимизатор.py` | True | True | planned |
+| 69 | Подобряване на портфолио | `scripts/v69_build_пакет_improvement_suggestions.py` | True | True | planned |
+| 70 | Приложен подобрен портфейл | `scripts/v70_build_applied_candidate_пакет.py` | True | True | planned |
 | 71 | Пакет за игра | `scripts/v71_build_ticket_pack_експорт.py` | False | True | planned |
 | 73 | Представяне на пакета | `scripts/v73_build_ticket_pack_performance_tracker.py` | True | True | planned |
 | 75 | Невронен мета обучител | `scripts/v75_build_neural_meta_learner.py` | True | True | planned |

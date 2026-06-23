@@ -1,4 +1,4 @@
-# Combined Strategy Backtest Report
+# Combined Strategy Отчет от историческа проверка
 
 Tested draws: 25
 Combined model average matches: 0.3200

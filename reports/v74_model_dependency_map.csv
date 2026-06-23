@@ -1,130 +1,130 @@
 ﻿from,to,type,description
-data/v41_canonical_draw_events.csv,Step 41,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 41,данни,Dataset вход
 Step 41,Step 62,feeds,Изходът помага на следващ слой
 Step 41,Step 65,feeds,Изходът помага на следващ слой
 Step 41,Step 66,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 42,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 42,данни,Dataset вход
 Step 42,Step 62,feeds,Изходът помага на следващ слой
 Step 42,Step 65,feeds,Изходът помага на следващ слой
 Step 42,Step 66,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 43.1,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 43.1,данни,Dataset вход
 Step 43.1,Step 44.1,feeds,Изходът помага на следващ слой
 Step 43.1,Step 58,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 44.1,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 44.1,данни,Dataset вход
 models/v42/v42_combined_prediction.json,Step 44.1,artifact,Входен model/report artifact
 models/v43_1/v43_1_interval_rhythm_refined_prediction.json,Step 44.1,artifact,Входен model/report artifact
 Step 44.1,Step 62,feeds,Изходът помага на следващ слой
 Step 44.1,Step 65,feeds,Изходът помага на следващ слой
 Step 44.1,Step 66,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 45,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 45,данни,Dataset вход
 Step 45,Step 62,feeds,Изходът помага на следващ слой
 Step 45,Step 65,feeds,Изходът помага на следващ слой
 Step 45,Step 66,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 50,dataset,Dataset вход
+data/historical_draws.csv,Step 50,данни,Dataset вход
 Step 50,Step 51,feeds,Изходът помага на следващ слой
 Step 50,Step 62,feeds,Изходът помага на следващ слой
 Step 50,Step 65,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 51,dataset,Dataset вход
+data/historical_draws.csv,Step 51,данни,Dataset вход
 models/v50/v50_pair_group_intelligence.json,Step 51,artifact,Входен model/report artifact
 Step 51,Step 62,feeds,Изходът помага на следващ слой
 Step 51,Step 65,feeds,Изходът помага на следващ слой
 Step 51,Step 66,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 55,dataset,Dataset вход
+data/historical_draws.csv,Step 55,данни,Dataset вход
 Step 55,Step 56,feeds,Изходът помага на следващ слой
 Step 55,Step 57,feeds,Изходът помага на следващ слой
 Step 55,Step 58,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 56,dataset,Dataset вход
+data/historical_draws.csv,Step 56,данни,Dataset вход
 reports/v55_number_profiles.json,Step 56,artifact,Входен model/report artifact
 Step 56,UI анализ,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 57,dataset,Dataset вход
+data/historical_draws.csv,Step 57,данни,Dataset вход
 reports/v55_number_profile_summary.json,Step 57,artifact,Входен model/report artifact
 Step 57,Step 58,feeds,Изходът помага на следващ слой
 Step 57,Step 62,feeds,Изходът помага на следващ слой
 Step 57,Step 65,feeds,Изходът помага на следващ слой
 Step 57,Step 66,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 58,dataset,Dataset вход
+data/historical_draws.csv,Step 58,данни,Dataset вход
 models/v57/v57_hot_cold_stable_manifest.json,Step 58,artifact,Входен model/report artifact
 reports/v55_number_profile_summary.json,Step 58,artifact,Входен model/report artifact
 Step 58,Step 59,feeds,Изходът помага на следващ слой
 Step 58,Step 62,feeds,Изходът помага на следващ слой
 Step 58,Step 65,feeds,Изходът помага на следващ слой
 Step 58,Step 66,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 59,dataset,Dataset вход
-reports/v58_smart_ensemble_scores_sample.json,Step 59,artifact,Входен model/report artifact
+data/historical_draws.csv,Step 59,данни,Dataset вход
+reports/v58_smart_комбиниран анализ_scores_sample.json,Step 59,artifact,Входен model/report artifact
 Step 59,Step 60,feeds,Изходът помага на следващ слой
 Step 59,Step 62,feeds,Изходът помага на следващ слой
 Step 59,Step 65,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 61,dataset,Dataset вход
+data/historical_draws.csv,Step 61,данни,Dataset вход
 models/v41/v41_latest_predictions.json,Step 61,artifact,Входен model/report artifact
-reports/v58_smart_ensemble_scores_sample.json,Step 61,artifact,Входен model/report artifact
+reports/v58_smart_комбиниран анализ_scores_sample.json,Step 61,artifact,Входен model/report artifact
 Step 61,Step 62,feeds,Изходът помага на следващ слой
 Step 61,Step 63,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 62,dataset,Dataset вход
+data/historical_draws.csv,Step 62,данни,Dataset вход
 reports/v61_draw_result_analyzer_summary.json,Step 62,artifact,Входен model/report artifact
 Step 62,Step 63,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 63,dataset,Dataset вход
+data/historical_draws.csv,Step 63,данни,Dataset вход
 reports/v62_model_performance_summary.json,Step 63,artifact,Входен model/report artifact
 Step 63,Step 65,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 65,dataset,Dataset вход
+data/historical_draws.csv,Step 65,данни,Dataset вход
 reports/v63_model_reliability_scores.csv,Step 65,artifact,Входен model/report artifact
 Step 65,Step 66,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 66,dataset,Dataset вход
+data/historical_draws.csv,Step 66,данни,Dataset вход
 reports/v65_model_weights.csv,Step 66,artifact,Входен model/report artifact
 Step 66,Step 67,feeds,Изходът помага на следващ слой
 Step 66,Step 68,feeds,Изходът помага на следващ слой
 Step 66,Step 69,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 67,dataset,Dataset вход
-reports/v66_weighted_smart_ensemble_scores.csv,Step 67,artifact,Входен model/report artifact
+data/historical_draws.csv,Step 67,данни,Dataset вход
+reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 67,artifact,Входен model/report artifact
 Step 67,Step 68,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 68,dataset,Dataset вход
+data/historical_draws.csv,Step 68,данни,Dataset вход
 reports/v67_weighted_ticket_builder_tickets.csv,Step 68,artifact,Входен model/report artifact
-reports/v66_weighted_smart_ensemble_scores.csv,Step 68,artifact,Входен model/report artifact
+reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 68,artifact,Входен model/report artifact
 Step 68,Step 69,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 69,dataset,Dataset вход
-reports/v68_weighted_portfolio_summary.json,Step 69,artifact,Входен model/report artifact
-reports/v66_weighted_smart_ensemble_scores.csv,Step 69,artifact,Входен model/report artifact
+data/historical_draws.csv,Step 69,данни,Dataset вход
+reports/v68_weighted_пакет_summary.json,Step 69,artifact,Входен model/report artifact
+reports/v66_weighted_smart_комбиниран анализ_scores.csv,Step 69,artifact,Входен model/report artifact
 Step 69,Step 70,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 70,dataset,Dataset вход
-reports/v69_candidate_portfolio_tickets.csv,Step 70,artifact,Входен model/report artifact
+data/historical_draws.csv,Step 70,данни,Dataset вход
+reports/v69_candidate_пакет_tickets.csv,Step 70,artifact,Входен model/report artifact
 Step 70,Step 71,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 71,dataset,Dataset вход
-reports/v70_applied_candidate_portfolio_tickets.csv,Step 71,artifact,Входен model/report artifact
+data/historical_draws.csv,Step 71,данни,Dataset вход
+reports/v70_applied_candidate_пакет_tickets.csv,Step 71,artifact,Входен model/report artifact
 Step 71,Step 73,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 73,dataset,Dataset вход
+data/historical_draws.csv,Step 73,данни,Dataset вход
 reports/v71_ticket_pack.csv,Step 73,artifact,Входен model/report artifact
 Step 73,Step 75,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 75,dataset,Dataset вход
-data/historical_draws.csv,Step 75,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 75,данни,Dataset вход
+data/historical_draws.csv,Step 75,данни,Dataset вход
 Step 75,Step 76,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 76,dataset,Dataset вход
-data/historical_draws.csv,Step 76,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 76,данни,Dataset вход
+data/historical_draws.csv,Step 76,данни,Dataset вход
 reports/v75_neural_meta_number_scores.csv,Step 76,artifact,Входен model/report artifact
 reports/v75_neural_candidate_tickets.csv,Step 76,artifact,Входен model/report artifact
 reports/v75_neural_meta_learner_summary.json,Step 76,artifact,Входен model/report artifact
 Step 76,Step 77,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 77,dataset,Dataset вход
-data/historical_draws.csv,Step 77,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 77,данни,Dataset вход
+data/historical_draws.csv,Step 77,данни,Dataset вход
 reports/v76_explainability_validation_summary.json,Step 77,artifact,Входен model/report artifact
 reports/v76_ticket_validation.csv,Step 77,artifact,Входен model/report artifact
 reports/v76_number_explanations.csv,Step 77,artifact,Входен model/report artifact
 reports/v76_validation_warnings.csv,Step 77,artifact,Входен model/report artifact
 Step 77,Step 78,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 78,dataset,Dataset вход
-data/historical_draws.csv,Step 78,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 78,данни,Dataset вход
+data/historical_draws.csv,Step 78,данни,Dataset вход
 reports/v77_decision_recommendation_summary.json,Step 78,artifact,Входен model/report artifact
 reports/v77_ticket_recommendations.csv,Step 78,artifact,Входен model/report artifact
 reports/v77_decision_recommendations.json,Step 78,artifact,Входен model/report artifact
 reports/v77_decision_warnings.csv,Step 78,artifact,Входен model/report artifact
 Step 78,Step 79,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 79,dataset,Dataset вход
-data/historical_draws.csv,Step 79,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 79,данни,Dataset вход
+data/historical_draws.csv,Step 79,данни,Dataset вход
 reports/v78_final_play_plan_summary.json,Step 79,artifact,Входен model/report artifact
 reports/v78_selected_ticket_plan.csv,Step 79,artifact,Входен model/report artifact
 reports/v78_play_plan_actions.csv,Step 79,artifact,Входен model/report artifact
 reports/v78_play_plan_warnings.csv,Step 79,artifact,Входен model/report artifact
 Step 79,Step 80,feeds,Изходът помага на следващ слой
-data/v41_canonical_draw_events.csv,Step 80,dataset,Dataset вход
-data/historical_draws.csv,Step 80,dataset,Dataset вход
+data/v41_canonical_draw_events.csv,Step 80,данни,Dataset вход
+data/historical_draws.csv,Step 80,данни,Dataset вход
 reports/v79_ticket_pack_export_summary.json,Step 80,artifact,Входен model/report artifact
 reports/v79_export_ticket_pack.csv,Step 80,artifact,Входен model/report artifact
 reports/v79_ticket_pack_export.json,Step 80,artifact,Входен model/report artifact
@@ -133,17 +133,17 @@ streamlit_app.py,Step 81,artifact,Входен model/report artifact
 reports/v80_final_system_audit_summary.json,Step 81,artifact,Входен model/report artifact
 reports/v80_sync_plan_audit.csv,Step 81,artifact,Входен model/report artifact
 Step 81,Step 82,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 82,dataset,Dataset вход
-data/v40_normalized_draw_events.csv,Step 82,dataset,Dataset вход
-data/v41_canonical_draw_events.csv,Step 82,dataset,Dataset вход
+data/historical_draws.csv,Step 82,данни,Dataset вход
+data/v40_normalized_draw_events.csv,Step 82,данни,Dataset вход
+data/v41_canonical_draw_events.csv,Step 82,данни,Dataset вход
 streamlit_app.py,Step 82,artifact,Входен model/report artifact
 reports/v79_ticket_pack_export_summary.json,Step 82,artifact,Входен model/report artifact
 reports/v80_final_system_audit_summary.json,Step 82,artifact,Входен model/report artifact
 reports/v81_final_ux_navigation_summary.json,Step 82,artifact,Входен model/report artifact
 Step 82,Step 83,feeds,Изходът помага на следващ слой
-data/historical_draws.csv,Step 83,dataset,Dataset вход
-data/v40_normalized_draw_events.csv,Step 83,dataset,Dataset вход
-data/v41_canonical_draw_events.csv,Step 83,dataset,Dataset вход
+data/historical_draws.csv,Step 83,данни,Dataset вход
+data/v40_normalized_draw_events.csv,Step 83,данни,Dataset вход
+data/v41_canonical_draw_events.csv,Step 83,данни,Dataset вход
 streamlit_app.py,Step 83,artifact,Входен model/report artifact
 reports/v82_final_release_summary.json,Step 83,artifact,Входен model/report artifact
 reports/v81_final_ux_navigation_summary.json,Step 83,artifact,Входен model/report artifact

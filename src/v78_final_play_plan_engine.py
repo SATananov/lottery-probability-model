@@ -27,7 +27,7 @@ V78_PLAY_PLAN_JSON = REPORTS_DIR / "v78_final_play_plan.json"
 V78_MODEL_JSON = V78_MODELS_DIR / "v78_final_play_plan_model.json"
 
 SAFE_NOTE = (
-    "Step 78 подрежда финален план за игра от вече оценените кандидат фишове. "
+    "Step 78 подрежда финален план за игра от вече оценените кандидат комбинации. "
     "Това е статистическа организация и контрол на риска, не гаранция за печалба."
 )
 
@@ -127,16 +127,16 @@ def _plan_role(index: int, row: dict[str, Any]) -> str:
     if status == "невалиден" or level == "неподходящ":
         return "изключен"
     if index <= 3:
-        return "основен фиш"
+        return "основна комбинация"
     if index <= 6:
-        return "резервен фиш"
+        return "резервна комбинация"
     return "само наблюдение"
 
 
 def _plan_action(role: str) -> str:
-    if role == "основен фиш":
+    if role == "основна комбинация":
         return "Включи във финалния пакет"
-    if role == "резервен фиш":
+    if role == "резервна комбинация":
         return "Дръж като резервен вариант"
     if role == "само наблюдение":
         return "Не включвай директно, само сравнявай"
@@ -148,9 +148,9 @@ def _discipline_note(row: dict[str, Any], role: str) -> str:
     warnings = str(row.get("caution_notes", ""))
 
     notes: list[str] = []
-    if role == "основен фиш":
+    if role == "основна комбинация":
         notes.append("избран заради най-високо подреждане")
-    if role == "резервен фиш":
+    if role == "резервна комбинация":
         notes.append("подходящ като резервна опция")
     if role == "само наблюдение":
         notes.append("не е приоритетен за финален пакет")
@@ -217,8 +217,8 @@ def build_final_play_plan_center() -> dict[str, Any]:
             "safe_note": SAFE_NOTE,
         })
 
-    active_rows = [row for row in plan_rows if row["plan_role"] == "основен фиш"]
-    reserve_rows = [row for row in plan_rows if row["plan_role"] == "резервен фиш"]
+    active_rows = [row for row in plan_rows if row["plan_role"] == "основна комбинация"]
+    reserve_rows = [row for row in plan_rows if row["plan_role"] == "резервна комбинация"]
     watch_rows = [row for row in plan_rows if row["plan_role"] == "само наблюдение"]
     excluded_rows = [row for row in plan_rows if row["plan_role"] == "изключен"]
 
@@ -233,7 +233,7 @@ def build_final_play_plan_center() -> dict[str, Any]:
         {
             "order": 1,
             "action": "Използвай само основните фишове като финален пакет",
-            "details": f"Основни фишове: {len(active_rows)}",
+            "details": f"Основни комбинации: {len(active_rows)}",
             "safe_note": SAFE_NOTE,
         },
         {
@@ -244,8 +244,8 @@ def build_final_play_plan_center() -> dict[str, Any]:
         },
         {
             "order": 3,
-            "action": "След нов тираж оцени пакета преди обновяване на dataset-а",
-            "details": "Използвай Step 73.1 преди Add Draw save, после обнови веригата.",
+            "action": "След нов тираж оцени пакета преди обновяване на данните",
+            "details": "Използвай предварителната проверка преди записа на новия тираж, после обнови веригата.",
             "safe_note": SAFE_NOTE,
         },
     ]
@@ -341,17 +341,17 @@ def build_final_play_plan_center() -> dict[str, Any]:
         f"Статус: **{summary['status']}**",
         f"Валидни тиражи: **{summary['valid_draws']}**",
         f"Последен тираж: **{summary['latest_date']}** — **{summary['latest_numbers']}**",
-        f"Кандидат фишове: **{summary['candidate_tickets']}**",
-        f"Основни фишове: **{summary['active_tickets']}**",
-        f"Резервни фишове: **{summary['reserve_tickets']}**",
-        f"Средна оценка на основните фишове: **{summary['average_active_decision_score']}**",
+        f"Кандидат комбинации: **{summary['candidate_tickets']}**",
+        f"Основни комбинации: **{summary['active_tickets']}**",
+        f"Резервни комбинации: **{summary['reserve_tickets']}**",
+        f"Средна оценка на основните комбинации: **{summary['average_active_decision_score']}**",
         f"Покритие от уникални числа в основния пакет: **{summary['unique_active_numbers']}**",
         "",
         "**Важно:** Step 78 е финален план за организация и контрол на риска. Не е гаранция за печалба.",
         "",
-        "## План по фишове",
+        "## План по комбинации",
         "",
-        "| Ранг | Фиш | Числа | Роля | Действие | Оценка | Риск | Бележка |",
+        "| Ранг | Комбинация | Числа | Роля | Действие | Оценка | Риск | Бележка |",
         "|---:|---:|---|---|---|---:|---|---|",
     ]
 

@@ -1,14 +1,14 @@
-# Step 69 — Portfolio Improvement Suggestions
+# Step 69 — Пакет Improvement Suggestions
 
-This report proposes concrete statistical improvements for the Step 67 ticket portfolio, using Step 66 scores and Step 68 portfolio analysis.
+This report proposes concrete statistical improvements for the Step 67 ticket пакет, using Step 66 scores and Step 68 пакет analysis.
 
 **Important:** These are improvement suggestions only. They are not predictions and not гаранция за печалбаs.
 
 Suggestions generated: **60**
 Candidate changes applied: **3**
-Baseline portfolio score: **60.684 / 100**
-Candidate portfolio score: **70.118 / 100**
-Portfolio score delta: **9.434**
+Baseline обща оценка на пакета: **60.684 / 100**
+Candidate обща оценка на пакета: **70.118 / 100**
+Пакет score delta: **9.434**
 Baseline top20 coverage: **17 / 20**
 Candidate top20 coverage: **20 / 20**
 Baseline unique numbers: **18**
@@ -38,19 +38,19 @@ Candidate repeated triples: **1**
 | 14 | 4 | 23 | 36 | 2,17,23,34,37,44 | 2,17,34,36,37,44 | 28.139 | силна препоръка | покрива непокрит top20 сигнал 36; намалява повторените двойки; намалява повторените тройки; увеличава уникалното покритие; увеличава top20 покритието |
 | 15 | 8 | 23 | 36 | 1,18,21,23,34,37 | 1,18,21,34,36,37 | 28.139 | силна препоръка | покрива непокрит top20 сигнал 36; намалява повторените двойки; намалява повторените тройки; увеличава уникалното покритие; увеличава top20 покритието |
 
-## Candidate portfolio
+## Candidate пакет
 
 | Ticket | Strategy | Numbers | Avg Step 66 score | Changed |
 |---:|---|---|---:|---|
-| 1 | Балансиран претеглен фиш | 1,2,4,18,37,49 | 88.116% | False |
-| 2 | Фиш с висока претеглена оценка | 1,4,34,36,38,44 | 77.405% | True |
-| 3 | Диверсифициран претеглен фиш | 2,13,21,23,38,49 | 78.881% | False |
-| 4 | Балансиран фиш по нечетни/четни числа | 2,11,17,34,37,44 | 72.663% | True |
-| 5 | Балансиран фиш по ниски/високи числа | 1,3,22,38,42,49 | 75.825% | False |
-| 6 | Разпределен range фиш | 1,13,22,34,37,48 | 74.847% | False |
+| 1 | Балансирана претеглена комбинация | 1,2,4,18,37,49 | 88.116% | False |
+| 2 | Комбинация с висока претеглена оценка | 1,4,34,36,38,44 | 77.405% | True |
+| 3 | Диверсифицирана претеглена комбинация | 2,13,21,23,38,49 | 78.881% | False |
+| 4 | Балансирана комбинация по нечетни/четни числа | 2,11,17,34,37,44 | 72.663% | True |
+| 5 | Балансирана комбинация по ниски/високи числа | 1,3,22,38,42,49 | 75.825% | False |
+| 6 | Разпределена диапазонна комбинация | 1,13,22,34,37,48 | 74.847% | False |
 | 7 | Консервативно ядро | 2,4,17,22,29,38 | 74.595% | False |
-| 8 | Разширен статистически фиш | 1,16,18,21,23,37 | 78.128% | True |
+| 8 | Разширена статистическа комбинация | 1,16,18,21,23,37 | 78.128% | True |
 
-## Safety note
+## Важно уточнение
 
-Lottery draws are random. This step only suggests structural/statistical improvements to a reference portfolio.
+Lottery draws are random. This step only suggests structural/statistical improvements to a reference пакет.

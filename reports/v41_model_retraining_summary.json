@@ -89,5 +89,5 @@
     "events_with_5plus_hits": 0,
     "events_with_6_hits": 0
   },
-  "important_warning": "Lottery draws are random. Backtest metrics are evaluation diagnostics, not a guarantee of future outcomes."
+  "important_warning": "Lottery draws are random. Историческа проверка metrics are evaluation diagnostics, not a guarantee of future outcomes."
 }

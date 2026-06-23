@@ -4,7 +4,7 @@ Status: review required. No model retraining was performed.
 
 ## Summary
 
-- Canonical dataset: `data\v41_canonical_draw_events.csv`
+- Canonical данни: `data\v41_canonical_draw_events.csv`
 - Total draw events: 10058
 - Total unique draws: 5176
 - Years: 1958–2026 (69 years)
@@ -33,7 +33,7 @@ Status: review required. No model retraining was performed.
 
 ## Recommendation
 
-- Use this canonical dataset for main-number v41 model retraining after review.
+- Use this canonical данни for main-number v41 model retraining after review.
 - Do not train a bonus-number model yet because bonus data is unavailable.
 - Keep `drawing_no` as a rules-aware field.
 - Do not merge several drawings into one 12/18/24-number record.

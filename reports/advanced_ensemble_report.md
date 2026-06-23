@@ -1,7 +1,7 @@
-# Advanced Statistical Ensemble Report
+# Advanced Statistical Комбиниран анализ Report
 
 This report combines time-decay, Bayesian smoothing, fairness checks, pair/triple significance,
-human-pattern avoidance, structure balance and portfolio diversification.
+human-pattern avoidance, structure balance and пакет diversification.
 
 Important: this is a statistical ranking system, not a guaranteed prediction system.
 The true jackpot odds for every exact combination remain: 1 in 13983816.
@@ -289,18 +289,18 @@ The true jackpot odds for every exact combination remain: 1 in 13983816.
 - Human-pattern avoidance score: 1.0000
 
 
-## Portfolio recommendations
+## Пакет recommendations
 
-- Portfolio 1: [4, 12, 21, 34, 37, 44] — confidence 74.88/100
-- Portfolio 2: [4, 21, 24, 25, 34, 48] — confidence 70.71/100
-- Portfolio 3: [12, 20, 21, 25, 34, 38] — confidence 69.70/100
-- Portfolio 4: [4, 20, 21, 25, 33, 44] — confidence 68.60/100
-- Portfolio 5: [12, 21, 24, 33, 37, 48] — confidence 68.48/100
-- Portfolio 6: [4, 12, 21, 35, 38, 48] — confidence 67.90/100
-- Portfolio 7: [12, 21, 24, 34, 35, 42] — confidence 67.74/100
-- Portfolio 8: [4, 12, 21, 25, 42, 45] — confidence 67.41/100
-- Portfolio 9: [4, 12, 20, 25, 37, 48] — confidence 67.30/100
-- Portfolio 10: [4, 20, 24, 33, 34, 37] — confidence 67.16/100
+- Пакет 1: [4, 12, 21, 34, 37, 44] — confidence 74.88/100
+- Пакет 2: [4, 21, 24, 25, 34, 48] — confidence 70.71/100
+- Пакет 3: [12, 20, 21, 25, 34, 38] — confidence 69.70/100
+- Пакет 4: [4, 20, 21, 25, 33, 44] — confidence 68.60/100
+- Пакет 5: [12, 21, 24, 33, 37, 48] — confidence 68.48/100
+- Пакет 6: [4, 12, 21, 35, 38, 48] — confidence 67.90/100
+- Пакет 7: [12, 21, 24, 34, 35, 42] — confidence 67.74/100
+- Пакет 8: [4, 12, 21, 25, 42, 45] — confidence 67.41/100
+- Пакет 9: [4, 12, 20, 25, 37, 48] — confidence 67.30/100
+- Пакет 10: [4, 20, 24, 33, 34, 37] — confidence 67.16/100
 
 ## Top number scores
 

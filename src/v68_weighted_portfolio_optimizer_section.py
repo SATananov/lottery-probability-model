@@ -20,14 +20,14 @@ PAIRS_PATH = ROOT / "reports" / "v68_weighted_portfolio_repeated_pairs.csv"
 TRIPLES_PATH = ROOT / "reports" / "v68_weighted_portfolio_repeated_triples.csv"
 
 TICKET_COLUMNS = [
-    ("ticket_id", "Фиш"),
+    ("ticket_id", "Комбинация"),
     ("strategy_label", "Стратегия"),
     ("numbers", "Числа"),
     ("average_step66_score", "Средна Step 66 оценка"),
     ("unique_help_count", "Уникален принос"),
     ("top20_numbers_count", "Top20 числа"),
-    ("max_overlap_with_other_ticket", "Max overlap"),
-    ("portfolio_contribution_score", "Portfolio принос"),
+    ("max_overlap_with_other_ticket", "Макс. припокриване"),
+    ("portfolio_contribution_score", "Принос към пакета"),
     ("balance_status", "Баланс"),
 ]
 
@@ -127,7 +127,7 @@ def _show_table(rows, columns):
 def render_v68_weighted_portfolio_optimizer_section():
     st.title("Умен оптимизатор на портфейл")
     st.caption(
-        "Оценява целия пакет от Step 67 фишове като портфолио: покритие, припокриване, "
+        "Оценява целия пакет от Step 67 комбинации: покритие, припокриване, "
         "повторени двойки/тройки и непокрити силни Step 66 сигнали. Това не е гаранция за печалба."
     )
 
@@ -147,14 +147,14 @@ def render_v68_weighted_portfolio_optimizer_section():
     triples = _load_csv(TRIPLES_PATH)
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Оценка на портфейла", f"{summary.get('portfolio_score', 0)} / 100")
-    col2.metric("Фишове", summary.get("tickets_analyzed", 0))
+    col1.metric("Оценка на пакета", f"{summary.get('portfolio_score', 0)} / 100")
+    col2.metric("Комбинации", summary.get("tickets_analyzed", 0))
     col3.metric("Покрити числа", f"{summary.get('unique_numbers_covered', 0)} / 49")
     col4.metric("Top20 покритие", f"{summary.get('covered_top20_numbers', 0)} / 20")
 
     col5, col6, col7, col8 = st.columns(4)
     col5.metric("Средна оценка", f"{summary.get('average_ticket_step66_score', 0)}%")
-    col6.metric("Среден overlap", summary.get("average_ticket_overlap", 0))
+    col6.metric("Средно припокриване", summary.get("average_ticket_overlap", 0))
     col7.metric("Максимално припокриване", summary.get("max_ticket_overlap", 0))
     col8.metric("Повторени двойки", summary.get("repeated_pairs_count", 0))
 
@@ -165,7 +165,7 @@ def render_v68_weighted_portfolio_optimizer_section():
         st.warning(f"Статус: {status}")
 
     st.info(
-        "Step 68 не избира печеливши числа. Той оценява дали пакетът от фишове е добре структуриран като статистическо портфолио."
+        "Step 68 не избира печеливши числа. Той оценява дали пакетът от комбинации е добре структуриран статистически."
     )
 
     recommendations = summary.get("recommendations", [])
@@ -174,7 +174,7 @@ def render_v68_weighted_portfolio_optimizer_section():
         for item in recommendations:
             st.markdown(f"- {item}")
 
-    st.subheader("Принос на фишовете в портфолиото")
+    st.subheader("Принос на комбинациите в пакета")
     _show_table(tickets, TICKET_COLUMNS)
 
     st.subheader("Покритие на числата")
@@ -196,14 +196,14 @@ def render_v68_weighted_portfolio_optimizer_section():
 
     _show_table(shown_coverage, COVERAGE_COLUMNS)
 
-    with st.expander("Overlap между фишовете"):
+    with st.expander("Припокриване между комбинациите"):
         if overlaps:
             if pd is not None:
                 st.dataframe(pd.DataFrame(overlaps), use_container_width=True, hide_index=True)
             else:
                 st.table(overlaps)
         else:
-            st.info("Няма overlap данни.")
+            st.info("Няма данни за припокриване.")
 
     with st.expander("Повторени двойки и тройки"):
         st.markdown("**Повторени двойки**")
@@ -227,15 +227,15 @@ def render_v68_weighted_portfolio_optimizer_section():
     with st.expander("Как работи Step 68"):
         st.markdown(
             """
-1. Чете фишовете от **Step 67**.
+1. Чете комбинациите от **Step 67**.
 2. Чете претеглените оценки от **Step 66**.
 3. Изчислява:
    - колко уникални числа са покрити;
    - колко top 10 / top 20 Step 66 числа са покрити;
-   - колко се припокриват фишовете;
+   - колко се припокриват комбинациите;
    - дали има повторени двойки и тройки;
    - кои силни числа остават непокрити.
-4. Дава общ **portfolio score** и препоръки за следваща оптимизация.
+4. Дава общ **обща оценка на пакета** и препоръки за следваща оптимизация.
 
 Това е структурен статистически анализ, не предсказание на бъдещ тираж.
 """

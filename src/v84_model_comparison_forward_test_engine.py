@@ -21,8 +21,8 @@ SUMMARY_MD = REPORTS_DIR / "v84_model_comparison_summary.md"
 MODEL_JSON = V84_MODEL_DIR / "v84_model_comparison_forward_test_model.json"
 
 SAFE_NOTE = (
-    "Step 84 сравнява модели по записани преди тиража препоръки. "
-    "Това е forward test / реална проверка във времето. "
+    "Step 84 сравнява модели по заключени преди тиража комбинации. "
+    "Това е реална проверка във времето. "
     "Не е прогноза и не е гаранция за печалба."
 )
 
@@ -41,13 +41,13 @@ MODEL_SOURCE_CONFIG = [
     },
     {
         "model_key": "weighted_ensemble",
-        "model_label": "Претеглен ensemble анализ",
+        "model_label": "Претеглен комбиниран анализ",
         "tokens": ["v66", "v67", "weighted"],
         "priority": 30,
     },
     {
         "model_key": "portfolio_optimizer",
-        "model_label": "Умен portfolio optimizer",
+        "model_label": "Умен оптимизатор на пакет",
         "tokens": ["v68", "portfolio"],
         "priority": 40,
     },
@@ -284,7 +284,7 @@ def discover_current_model_candidates() -> list[dict[str, Any]]:
                 model_tickets.append({
                     "model_key": model_key,
                     "model_label": model_label,
-                    "ticket_label": f"{model_label} #{len(model_tickets) + 1}",
+                    "ticket_label": f"{model_label} комбинация #{len(model_tickets) + 1}",
                     "numbers": _numbers_to_text(ticket),
                     "source_file": rel,
                     "source_priority": priority,
@@ -365,12 +365,14 @@ def build_model_comparison_forward_test_center() -> dict[str, Any]:
 
     summary = {
         "step": "84",
-        "title": "Model Comparison / Forward Test Center",
+        "title": "Сравнение на модели / реална проверка във времето",
         "status": "OK",
         "generated_at": _now_iso(),
         "safe_note": SAFE_NOTE,
         "current_candidates": len(candidates),
-        "snapshots_recorded": len(snapshots),
+        "snapshots_recorded": len({row.get("snapshot_id", "") for row in snapshots if row.get("snapshot_id", "")}),
+        "snapshot_rows_recorded": len(snapshots),
+        "locked_snapshot_records": len({row.get("snapshot_id", "") for row in snapshots if row.get("snapshot_id", "")}),
         "evaluated_rows": len(results),
         "models_compared": len(summary_rows),
         "latest_draw_index": latest["draw_index"],
@@ -417,7 +419,7 @@ def _write_summary_md(summary: dict[str, Any], rows: list[dict[str, Any]]) -> No
         "",
         "## Обобщение по модели",
         "",
-        "| Модел | Проверени фишове | Средно познати | Най-добър резултат | % с 2+ | % с 3+ | % с 4+ |",
+        "| Модел | Проверени комбинации | Средно познати | Най-добър резултат | % с 2+ | % с 3+ | % с 4+ |",
         "|---|---:|---:|---:|---:|---:|---:|",
     ]
 
@@ -429,7 +431,7 @@ def _write_summary_md(summary: dict[str, Any], rows: list[dict[str, Any]]) -> No
                 f"{row['pct_at_least_2']} | {row['pct_at_least_3']} | {row['pct_at_least_4']} |"
             )
     else:
-        lines.append("| Няма записани snapshot-и | 0 | 0 | 0 | 0 | 0 | 0 |")
+        lines.append("| Няма записани заключени записи | 0 | 0 | 0 | 0 | 0 | 0 |")
 
     SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -447,7 +449,7 @@ def create_snapshot_from_current_candidates(snapshot_name: str = "") -> dict[str
     for candidate in candidates:
         row = {
             "snapshot_id": snapshot_id,
-            "snapshot_name": snapshot_name or "Текущ snapshot преди тираж",
+            "snapshot_name": snapshot_name or "Текущ заключен запис преди тираж",
             "snapshot_created_at": created_at,
             "dataset_draw_index_at_snapshot": latest["draw_index"],
             "dataset_latest_draw_date_at_snapshot": latest["draw_date"],
@@ -507,13 +509,13 @@ def add_manual_snapshot_row(model_label: str, numbers_text: str, snapshot_name: 
 
     row = {
         "snapshot_id": snapshot_id,
-        "snapshot_name": snapshot_name or "Ръчен snapshot преди тираж",
+        "snapshot_name": snapshot_name or "Ръчен заключен запис преди тираж",
         "snapshot_created_at": created_at,
         "dataset_draw_index_at_snapshot": latest["draw_index"],
         "dataset_latest_draw_date_at_snapshot": latest["draw_date"],
         "model_key": "manual",
         "model_label": model_label.strip() or "Ръчно въведен модел",
-        "ticket_label": model_label.strip() or "Ръчно въведен фиш",
+        "ticket_label": model_label.strip() or "Ръчно въведена комбинация",
         "numbers": _numbers_to_text(numbers),
         "source_file": "manual_ui_entry",
         "status": "чака реален тираж",
@@ -652,5 +654,6 @@ if __name__ == "__main__":
     result = build_model_comparison_forward_test_center()
     print("STEP84_STATUS", result.get("status"))
     print("CANDIDATES", result.get("current_candidates"))
-    print("SNAPSHOTS", result.get("snapshots_recorded"))
+    print("LOCKED_RECORDS", result.get("locked_snapshot_records"))
+    print("SNAPSHOT_ROWS", result.get("snapshot_rows_recorded"))
     print("EVALUATED_ROWS", result.get("evaluated_rows"))

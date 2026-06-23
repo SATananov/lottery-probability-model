@@ -1771,6 +1771,6 @@
   "recommendation": {
     "use_for_main_number_models": true,
     "use_bonus_model": false,
-    "reason": "Canonical dataset has valid main draw events and no duplicate keys. Bonus numbers are unavailable and must not be invented."
+    "reason": "Canonical данни has valid main draw events and no duplicate keys. Bonus numbers are unavailable and must not be invented."
   }
 }

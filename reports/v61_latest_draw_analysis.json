@@ -637,7 +637,7 @@
           42
         ],
         "candidate_text": "1, 2, 13, 16, 37, 42",
-        "note_bg": "Финален ensemble ticket candidate.",
+        "note_bg": "Финален комбиниран анализ ticket candidate.",
         "hit_count": 3,
         "matching_numbers": [
           13,
@@ -668,7 +668,7 @@
         42
       ],
       "candidate_text": "1, 2, 13, 16, 37, 42",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "note_bg": "Финален комбиниран анализ ticket candidate.",
       "hit_count": 3,
       "matching_numbers": [
         13,
@@ -724,7 +724,7 @@
         48
       ],
       "candidate_text": "1, 16, 21, 42, 43, 48",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 2,
       "matching_numbers": [
         16,
@@ -780,7 +780,7 @@
         47
       ],
       "candidate_text": "2, 13, 17, 29, 34, 47",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 1,
       "matching_numbers": [
         13
@@ -808,7 +808,7 @@
         38
       ],
       "candidate_text": "4, 8, 13, 29, 37, 38",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 1,
       "matching_numbers": [
         13
@@ -836,7 +836,7 @@
         46
       ],
       "candidate_text": "4, 9, 25, 37, 44, 46",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 1,
       "matching_numbers": [
         44
@@ -1026,7 +1026,7 @@
         36
       ],
       "candidate_text": "3, 18, 23, 24, 33, 36",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "note_bg": "Финален комбиниран анализ ticket candidate.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1053,7 +1053,7 @@
         49
       ],
       "candidate_text": "4, 12, 21, 38, 48, 49",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "note_bg": "Финален комбиниран анализ ticket candidate.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1080,7 +1080,7 @@
         47
       ],
       "candidate_text": "4, 12, 25, 34, 41, 47",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "note_bg": "Финален комбиниран анализ ticket candidate.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1178,7 +1178,7 @@
     {
       "source_key": "v45_ticket_1",
       "source_bg": "v45 Prediction Engine Pro — ticket",
-      "candidate_label": "primary_rule_aware_ml_ensemble",
+      "candidate_label": "primary_rule_aware_ml_комбиниран анализ",
       "candidate_numbers": [
         12,
         17,
@@ -1242,7 +1242,7 @@
         38
       ],
       "candidate_text": "2, 17, 24, 31, 35, 38",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1269,7 +1269,7 @@
         39
       ],
       "candidate_text": "4, 17, 28, 29, 34, 39",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1296,7 +1296,7 @@
         49
       ],
       "candidate_text": "5, 12, 20, 26, 48, 49",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1323,7 +1323,7 @@
         49
       ],
       "candidate_text": "10, 17, 21, 30, 47, 49",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1350,7 +1350,7 @@
         46
       ],
       "candidate_text": "5, 23, 34, 37, 38, 46",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
@@ -1377,7 +1377,7 @@
         45
       ],
       "candidate_text": "8, 9, 21, 26, 37, 45",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "note_bg": "Примерна генерирана комбинация, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [

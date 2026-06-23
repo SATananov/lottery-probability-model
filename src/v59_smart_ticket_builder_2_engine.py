@@ -421,7 +421,7 @@ def build_smart_ticket_builder_2(
         "warnings": warnings,
         "recommendations": recommendations,
         "safety_note_bg": (
-            "Smart Ticket Builder 2 генерира статистически балансирани предложения. "
+            "Умен генератор на комбинации 2 генерира статистически балансирани предложения. "
             "Той не предсказва печеливши числа и не гарантира печалба."
         ),
     }

@@ -2,7 +2,7 @@
   "model_name": "Cold Numbers / Underrepresented Numbers Model",
   "model_version": "1.0",
   "method": "Ranks numbers that are historically below expected frequency, have larger recency gaps, and are cold in the recent window.",
-  "warning": "This is a training baseline, not a guarantee. Lottery draws should still be treated as random unless a backtest proves a stable signal.",
+  "warning": "This is a training baseline, not a guarantee. Lottery draws should still be treated as random unless a историческа проверка proves a stable signal.",
   "training_draws": 10057,
   "recent_window": 20,
   "weights": {

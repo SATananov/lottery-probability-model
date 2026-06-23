@@ -17,7 +17,7 @@ TICKETS_PATH = ROOT / "reports" / "v67_weighted_ticket_builder_tickets.csv"
 MODEL_PATH = ROOT / "models" / "v67" / "v67_weighted_ticket_builder_model.json"
 
 DISPLAY_COLUMNS = [
-    ("ticket_id", "Фиш"),
+    ("ticket_id", "Комбинация"),
     ("strategy_label", "Стратегия"),
     ("numbers", "Числа"),
     ("average_weighted_score", "Средна претеглена оценка"),
@@ -26,7 +26,7 @@ DISPLAY_COLUMNS = [
     ("low_count", "Ниски"),
     ("high_count", "Високи"),
     ("number_range", "Диапазон"),
-    ("max_overlap_with_previous", "Max overlap"),
+    ("max_overlap_with_previous", "Макс. припокриване"),
     ("balance_status", "Баланс"),
     ("risk_note", "Бележка"),
 ]
@@ -92,7 +92,7 @@ def _localize_rows(rows):
 
 def _show_table(rows):
     if not rows:
-        st.info("Няма налични фишове за показване.")
+        st.info("Няма налични комбинации за показване.")
         return
 
     localized = _localize_rows(rows)
@@ -106,7 +106,7 @@ def _show_table(rows):
 def render_v67_weighted_ticket_builder_section():
     st.title("Умен генератор с тегла")
     st.caption(
-        "Генерира статистически референтни фишове чрез Step 66 претеглените оценки. "
+        "Генерира статистически референтни комбинации чрез Step 66 претеглените оценки. "
         "Това не е прогноза и не е гаранция за печалба."
     )
 
@@ -122,16 +122,16 @@ def render_v67_weighted_ticket_builder_section():
         return
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Генерирани фишове", summary.get("tickets_generated", 0))
+    col1.metric("Генерирани комбинации", summary.get("tickets_generated", 0))
     col2.metric("Стратегии", len(summary.get("strategies_used", [])))
-    col3.metric("Top фиш", summary.get("top_average_weighted_score_ticket_id", "-"))
+    col3.metric("Водеща комбинация", summary.get("top_average_weighted_score_ticket_id", "-"))
     col4.metric("Top средна оценка", f"{summary.get('top_average_weighted_score', 0)}%")
 
     if int(summary.get("historical_exact_matches", 0) or 0) == 0:
-        st.success("Няма точни исторически повторения сред генерираните фишове.")
+        st.success("Няма точни исторически повторения сред генерираните комбинации.")
     else:
         st.warning(
-            "Има фишове, които съвпадат с историческа комбинация. "
+            "Има комбинации, които съвпадат с историческа комбинация. "
             "Провери таблицата преди използване."
         )
 
@@ -140,10 +140,10 @@ def render_v67_weighted_ticket_builder_section():
         "Лотарийните тегления остават случайни."
     )
 
-    st.subheader("Генерирани фишове")
+    st.subheader("Генерирани комбинации")
     _show_table(tickets)
 
-    st.subheader("Фишове като карти")
+    st.subheader("Комбинации като карти")
     for row in tickets:
         numbers = str(row.get("numbers", "")).replace(",", " · ")
         strategy = row.get("strategy_label", "")
@@ -153,7 +153,7 @@ def render_v67_weighted_ticket_builder_section():
 
         st.markdown(
             f"""
-**Фиш {row.get('ticket_id')} — {strategy}**  
+**Комбинация {row.get('ticket_id')} — {strategy}**  
 `{numbers}`  
 Средна претеглена оценка: **{avg_score}**  
 Баланс: **{status}**  
@@ -165,16 +165,16 @@ def render_v67_weighted_ticket_builder_section():
         st.markdown(
             """
 1. Чете **Step 66 претеглените оценки** за числа 1–49.
-2. Строи няколко типа фишове чрез различни стратегии.
-3. Оценява всеки фиш по:
+2. Строи няколко типа комбинации чрез различни стратегии.
+3. Оценява всяка комбинация по:
    - средна претеглена оценка;
    - четни/нечетни;
    - ниски/високи;
    - диапазон;
    - групи по десетилетия;
    - поредни числа;
-   - припокриване с други генерирани фишове.
-4. Опитва да избегне точни исторически повторения, когато dataset-ът позволява това.
+   - припокриване с други генерирани комбинации.
+4. Опитва да избегне точни исторически повторения, когато данните позволява това.
 
 Това е статистически генератор, не предсказател на бъдещ тираж.
 """

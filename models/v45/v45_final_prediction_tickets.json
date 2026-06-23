@@ -14,7 +14,7 @@
   "ticket_combinations": [
     {
       "ticket_index": 1,
-      "label": "primary_rule_aware_ml_ensemble",
+      "label": "primary_rule_aware_ml_комбиниран анализ",
       "numbers": [
         12,
         17,
@@ -53,7 +53,7 @@
           "median_gap": 6.0,
           "total_hits": 1249,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -72,7 +72,7 @@
           "median_gap": 6.0,
           "total_hits": 1267,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency"
           ]
         },
@@ -89,7 +89,7 @@
           "median_gap": 5.5,
           "total_hits": 1289,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "interesting_interval_profile",
             "ml_probability_support"
           ]
@@ -107,7 +107,7 @@
           "median_gap": 6.0,
           "total_hits": 1240,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -126,7 +126,7 @@
           "median_gap": 5.0,
           "total_hits": 1291,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -145,7 +145,7 @@
           "median_gap": 6.0,
           "total_hits": 1269,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -194,7 +194,7 @@
           "median_gap": 6.0,
           "total_hits": 1276,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "interesting_interval_profile",
             "ml_probability_support"
           ]
@@ -212,7 +212,7 @@
           "median_gap": 6.0,
           "total_hits": 1273,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency"
           ]
         },
@@ -229,7 +229,7 @@
           "median_gap": 6.0,
           "total_hits": 1196,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -248,7 +248,7 @@
           "median_gap": 5.5,
           "total_hits": 1289,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "interesting_interval_profile",
             "ml_probability_support"
           ]
@@ -266,7 +266,7 @@
           "median_gap": 5.0,
           "total_hits": 1291,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -285,7 +285,7 @@
           "median_gap": 6.0,
           "total_hits": 1221,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -333,7 +333,7 @@
           "median_gap": 6.0,
           "total_hits": 1222,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "ml_probability_support"
           ]
@@ -351,7 +351,7 @@
           "median_gap": 6.0,
           "total_hits": 1276,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "interesting_interval_profile",
             "ml_probability_support"
           ]
@@ -369,7 +369,7 @@
           "median_gap": 6.0,
           "total_hits": 1267,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency"
           ]
         },
@@ -386,7 +386,7 @@
           "median_gap": 5.0,
           "total_hits": 1291,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -405,7 +405,7 @@
           "median_gap": 6.0,
           "total_hits": 1276,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency"
           ]
         },
@@ -422,7 +422,7 @@
           "median_gap": 6.0,
           "total_hits": 1231,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile"
           ]
@@ -471,7 +471,7 @@
           "median_gap": 6.0,
           "total_hits": 1222,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "ml_probability_support"
           ]
@@ -489,7 +489,7 @@
           "median_gap": 6.0,
           "total_hits": 1267,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency"
           ]
         },
@@ -506,7 +506,7 @@
           "median_gap": 6.0,
           "total_hits": 1196,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -543,7 +543,7 @@
           "median_gap": 6.0,
           "total_hits": 1221,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -562,7 +562,7 @@
           "median_gap": 6.0,
           "total_hits": 1269,
           "reasons": [
-            "strong_ensemble_rank",
+            "strong_комбиниран анализ_rank",
             "above_expected_recent_frequency",
             "interesting_interval_profile",
             "ml_probability_support"
@@ -688,7 +688,7 @@
       "events_with_6_hits": 0
     },
     {
-      "model": "v45_pro_ensemble",
+      "model": "v45_pro_комбиниран анализ",
       "test_events": 2012,
       "average_hits_top6": 0.6843936381709742,
       "median_hits_top6": 1.0,

@@ -330,8 +330,8 @@ data/v41_canonical_draw_events.csv,file,1115653,True,Included in release manifes
 src/__init__.py,file,0,True,Included in release manifest
 src/add_draws_section.py,file,23167,True,Included in release manifest
 src/advanced_methods.py,file,37061,True,Included in release manifest
-src/backtesting.py,file,6958,True,Included in release manifest
-src/backtesting_center_section.py,file,16263,True,Included in release manifest
+src/историческа проверкаing.py,file,6958,True,Included in release manifest
+src/историческа проверкаing_center_section.py,file,16263,True,Included in release manifest
 src/bg_ui_helpers.py,file,11247,True,Included in release manifest
 src/cold_number_model.py,file,16911,True,Included in release manifest
 src/combination_filters.py,file,7123,True,Included in release manifest
@@ -356,10 +356,10 @@ src/training_center_section.py,file,27215,True,Included in release manifest
 src/v41_rules_aware_analysis_section.py,file,14207,True,Included in release manifest
 src/v42_combined_analysis_section.py,file,18323,True,Included in release manifest
 src/v43_interval_rhythm_analysis_section.py,file,10075,True,Included in release manifest
-src/v44_final_ensemble_analysis_section.py,file,11526,True,Included in release manifest
+src/v44_final_комбиниран анализ_analysis_section.py,file,11526,True,Included in release manifest
 src/v45_prediction_dashboard_pro_section.py,file,13616,True,Included in release manifest
 src/v50_pair_group_analysis_section.py,file,11914,True,Included in release manifest
-src/v51_ticket_portfolio_section.py,file,13470,True,Included in release manifest
+src/v51_ticket_пакет_section.py,file,13470,True,Included in release manifest
 src/v53_ticket_coverage_engine.py,file,10363,True,Included in release manifest
 src/v53_ticket_coverage_section.py,file,6701,True,Included in release manifest
 src/v54_pattern_balance_engine.py,file,15770,True,Included in release manifest
@@ -370,8 +370,8 @@ src/v56_draw_similarity_engine.py,file,10259,True,Included in release manifest
 src/v56_draw_similarity_section.py,file,6479,True,Included in release manifest
 src/v57_hot_cold_stable_engine.py,file,11502,True,Included in release manifest
 src/v57_hot_cold_stable_section.py,file,7870,True,Included in release manifest
-src/v58_smart_ensemble_score_engine.py,file,17528,True,Included in release manifest
-src/v58_smart_ensemble_score_section.py,file,8366,True,Included in release manifest
+src/v58_smart_комбиниран анализ_score_engine.py,file,17528,True,Included in release manifest
+src/v58_smart_комбиниран анализ_score_section.py,file,8366,True,Included in release manifest
 src/v59_smart_ticket_builder_2_engine.py,file,16819,True,Included in release manifest
 src/v59_smart_ticket_builder_2_section.py,file,10055,True,Included in release manifest
 src/v60_ticket_builder_export_utils.py,file,3834,True,Included in release manifest
@@ -383,20 +383,20 @@ src/v63_model_reliability_dashboard_engine.py,file,9116,True,Included in release
 src/v63_model_reliability_dashboard_section.py,file,4925,True,Included in release manifest
 src/v65_model_weighting_engine.py,file,11189,True,Included in release manifest
 src/v65_model_weighting_section.py,file,5093,True,Included in release manifest
-src/v66_weighted_smart_ensemble_engine.py,file,23420,True,Included in release manifest
-src/v66_weighted_smart_ensemble_section.py,file,6219,True,Included in release manifest
+src/v66_weighted_smart_комбиниран анализ_engine.py,file,23420,True,Included in release manifest
+src/v66_weighted_smart_комбиниран анализ_section.py,file,6219,True,Included in release manifest
 src/v67_weighted_ticket_builder_engine.py,file,20961,True,Included in release manifest
 src/v67_weighted_ticket_builder_section.py,file,6940,True,Included in release manifest
-src/v68_weighted_portfolio_optimizer_engine.py,file,22943,True,Included in release manifest
-src/v68_weighted_portfolio_optimizer_section.py,file,8497,True,Included in release manifest
-src/v69_portfolio_improvement_engine.py,file,28065,True,Included in release manifest
-src/v69_portfolio_improvement_section.py,file,7839,True,Included in release manifest
-src/v70_applied_candidate_portfolio_engine.py,file,25324,True,Included in release manifest
-src/v70_applied_candidate_portfolio_section.py,file,7871,True,Included in release manifest
+src/v68_weighted_пакет_оптимизатор_engine.py,file,22943,True,Included in release manifest
+src/v68_weighted_пакет_оптимизатор_section.py,file,8497,True,Included in release manifest
+src/v69_пакет_improvement_engine.py,file,28065,True,Included in release manifest
+src/v69_пакет_improvement_section.py,file,7839,True,Included in release manifest
+src/v70_applied_candidate_пакет_engine.py,file,25324,True,Included in release manifest
+src/v70_applied_candidate_пакет_section.py,file,7871,True,Included in release manifest
 src/v71_ticket_pack_export_engine.py,file,18304,True,Included in release manifest
 src/v71_ticket_pack_export_section.py,file,6603,True,Included in release manifest
-src/v72_pipeline_refresh_engine.py,file,20710,True,Included in release manifest
-src/v72_pipeline_refresh_section.py,file,7630,True,Included in release manifest
+src/v72_верига_refresh_engine.py,file,20710,True,Included in release manifest
+src/v72_верига_refresh_section.py,file,7630,True,Included in release manifest
 src/v73_ticket_pack_performance_tracker_engine.py,file,16165,True,Included in release manifest
 src/v73_ticket_pack_performance_tracker_section.py,file,7389,True,Included in release manifest
 src/v74_git_sync_actions.py,file,5480,True,Included in release manifest
@@ -421,7 +421,7 @@ src/v82_final_release_package_engine.py,file,18814,True,Included in release mani
 src/v82_final_release_package_section.py,file,4099,True,Included in release manifest
 src/v83_final_user_manual_engine.py,file,18240,True,Included in release manifest
 src/v83_final_user_manual_section.py,file,6475,True,Included in release manifest
-scripts/audit_bst_dataset.py,file,2439,True,Included in release manifest
+scripts/audit_bst_данни.py,file,2439,True,Included in release manifest
 scripts/download_bst_649_history.py,file,1165,True,Included in release manifest
 scripts/v40_create_normalized_draw_events.py,file,8756,True,Included in release manifest
 scripts/v40_rules_aware_draw_audit.py,file,11085,True,Included in release manifest
@@ -432,29 +432,29 @@ scripts/v41_train_rules_aware_models.py,file,25339,True,Included in release mani
 scripts/v41_training_readiness_audit.py,file,9257,True,Included in release manifest
 scripts/v42_build_combined_positive_negative_foundation.py,file,19578,True,Included in release manifest
 scripts/v43_1_refine_interval_rhythm_foundation.py,file,21146,True,Included in release manifest
-scripts/v44_1_refine_final_ensemble_ticket_foundation.py,file,25103,True,Included in release manifest
+scripts/v44_1_refine_final_комбиниран анализ_ticket_foundation.py,file,25103,True,Included in release manifest
 scripts/v45_train_prediction_engine_pro.py,file,46851,True,Included in release manifest
 scripts/v50_build_pair_group_intelligence.py,file,10771,True,Included in release manifest
-scripts/v51_build_ticket_portfolio_intelligence.py,file,14760,True,Included in release manifest
+scripts/v51_build_ticket_пакет_intelligence.py,file,14760,True,Included in release manifest
 scripts/v53_build_ticket_coverage_intelligence.py,file,3948,True,Included in release manifest
 scripts/v54_build_pattern_balance_engine.py,file,3942,True,Included in release manifest
 scripts/v55_build_number_profile_center.py,file,6060,True,Included in release manifest
 scripts/v56_build_draw_similarity_search.py,file,4730,True,Included in release manifest
 scripts/v57_build_hot_cold_stable_center.py,file,4560,True,Included in release manifest
-scripts/v58_build_smart_ensemble_score_2.py,file,5493,True,Included in release manifest
+scripts/v58_build_smart_комбиниран анализ_score_2.py,file,5493,True,Included in release manifest
 scripts/v59_build_smart_ticket_builder_2.py,file,5663,True,Included in release manifest
 scripts/v60_build_ticket_builder_2_polish_export.py,file,5768,True,Included in release manifest
 scripts/v61_build_draw_result_analyzer.py,file,987,True,Included in release manifest
 scripts/v62_build_model_performance_tracker.py,file,554,True,Included in release manifest
 scripts/v63_build_model_reliability_dashboard.py,file,631,True,Included in release manifest
 scripts/v65_build_model_weighting_center.py,file,520,True,Included in release manifest
-scripts/v66_build_weighted_smart_ensemble.py,file,578,True,Included in release manifest
+scripts/v66_build_weighted_smart_комбиниран анализ.py,file,578,True,Included in release manifest
 scripts/v67_build_weighted_ticket_builder.py,file,561,True,Included in release manifest
-scripts/v68_build_weighted_portfolio_optimizer.py,file,624,True,Included in release manifest
-scripts/v69_build_portfolio_improvement_suggestions.py,file,651,True,Included in release manifest
-scripts/v70_build_applied_candidate_portfolio.py,file,633,True,Included in release manifest
+scripts/v68_build_weighted_пакет_оптимизатор.py,file,624,True,Included in release manifest
+scripts/v69_build_пакет_improvement_suggestions.py,file,651,True,Included in release manifest
+scripts/v70_build_applied_candidate_пакет.py,file,633,True,Included in release manifest
 scripts/v71_build_ticket_pack_export.py,file,524,True,Included in release manifest
-scripts/v72_build_pipeline_refresh_plan.py,file,608,True,Included in release manifest
+scripts/v72_build_верига_refresh_plan.py,file,608,True,Included in release manifest
 scripts/v73_build_ticket_pack_performance_tracker.py,file,537,True,Included in release manifest
 scripts/v74_1_selective_model_sync.py,file,1326,True,Included in release manifest
 scripts/v74_build_model_dependency_sync_center.py,file,618,True,Included in release manifest
@@ -467,8 +467,8 @@ scripts/v80_build_final_system_audit_center.py,file,700,True,Included in release
 scripts/v81_build_final_ux_navigation_center.py,file,740,True,Included in release manifest
 scripts/v82_build_final_release_package_center.py,file,764,True,Included in release manifest
 scripts/v83_build_final_user_manual_center.py,file,624,True,Included in release manifest
-models/lottery_advanced_backtest.json,file,58479,True,Included in release manifest
-models/lottery_advanced_ensemble_model.json,file,61938,True,Included in release manifest
+models/lottery_advanced_историческа проверка.json,file,58479,True,Included in release manifest
+models/lottery_advanced_комбиниран анализ_model.json,file,61938,True,Included in release manifest
 models/lottery_cold_model.json,file,25685,True,Included in release manifest
 models/lottery_combined_model.json,file,67069,True,Included in release manifest
 models/lottery_frequency_model.json,file,27697,True,Included in release manifest
@@ -486,33 +486,33 @@ models/v42/v42_combined_prediction.json,file,3783,True,Included in release manif
 models/v42/v42_positive_negative_number_scores.json,file,27781,True,Included in release manifest
 models/v43_1/v43_1_interval_rhythm_refined_prediction.json,file,8563,True,Included in release manifest
 models/v43_1/v43_1_interval_rhythm_refined_scores.json,file,62569,True,Included in release manifest
-models/v44_1/v44_1_final_ensemble_number_scores.json,file,32153,True,Included in release manifest
-models/v44_1/v44_1_final_ensemble_ticket_prediction.json,file,33237,True,Included in release manifest
+models/v44_1/v44_1_final_комбиниран анализ_number_scores.json,file,32153,True,Included in release manifest
+models/v44_1/v44_1_final_комбиниран анализ_ticket_prediction.json,file,33237,True,Included in release manifest
 models/v45/v45_final_prediction_tickets.json,file,22298,True,Included in release manifest
 models/v45/v45_latest_number_scores.json,file,23393,True,Included in release manifest
 models/v45/v45_model_metadata.json,file,1675,True,Included in release manifest
 models/v45/v45_number_score_model.joblib,file,5290,True,Included in release manifest
 models/v50/v50_pair_group_intelligence.json,file,19897,True,Included in release manifest
-models/v51/v51_ticket_portfolio_intelligence.json,file,803,True,Included in release manifest
+models/v51/v51_ticket_пакет_intelligence.json,file,803,True,Included in release manifest
 models/v53/v53_ticket_coverage_rules.json,file,1098,True,Included in release manifest
 models/v54/v54_pattern_balance_rules.json,file,1199,True,Included in release manifest
 models/v55/v55_number_profile_manifest.json,file,1186,True,Included in release manifest
 models/v56/v56_draw_similarity_manifest.json,file,934,True,Included in release manifest
 models/v57/v57_hot_cold_stable_manifest.json,file,959,True,Included in release manifest
-models/v58/v58_smart_ensemble_manifest.json,file,1070,True,Included in release manifest
+models/v58/v58_smart_комбиниран анализ_manifest.json,file,1070,True,Included in release manifest
 models/v59/v59_smart_ticket_builder_2_manifest.json,file,1001,True,Included in release manifest
 models/v60/v60_ticket_builder_2_polish_export_manifest.json,file,881,True,Included in release manifest
 models/v61/v61_draw_result_analyzer_manifest.json,file,1265,True,Included in release manifest
 models/v62/v62_model_performance_tracker_model.json,file,6064,True,Included in release manifest
 models/v63/v63_model_reliability_dashboard_model.json,file,6096,True,Included in release manifest
 models/v65/v65_model_weighting_center_model.json,file,8327,True,Included in release manifest
-models/v66/v66_weighted_smart_ensemble_model.json,file,27011,True,Included in release manifest
+models/v66/v66_weighted_smart_комбиниран анализ_model.json,file,27011,True,Included in release manifest
 models/v67/v67_weighted_ticket_builder_model.json,file,23988,True,Included in release manifest
-models/v68/v68_weighted_portfolio_optimizer_model.json,file,31660,True,Included in release manifest
-models/v69/v69_portfolio_improvement_model.json,file,118874,True,Included in release manifest
-models/v70/v70_applied_candidate_portfolio_model.json,file,17983,True,Included in release manifest
+models/v68/v68_weighted_пакет_оптимизатор_model.json,file,31660,True,Included in release manifest
+models/v69/v69_пакет_improvement_model.json,file,118874,True,Included in release manifest
+models/v70/v70_applied_candidate_пакет_model.json,file,17983,True,Included in release manifest
 models/v71/v71_ticket_pack_export_model.json,file,9725,True,Included in release manifest
-models/v72/v72_pipeline_refresh_model.json,file,6873,True,Included in release manifest
+models/v72/v72_верига_refresh_model.json,file,6873,True,Included in release manifest
 models/v73/v73_ticket_pack_performance_tracker_model.json,file,5201,True,Included in release manifest
 models/v74/v74_model_dependency_sync_center_model.json,file,100864,True,Included in release manifest
 models/v75/v75_neural_meta_learner_model.json,file,10846,True,Included in release manifest
@@ -546,25 +546,25 @@ models/versions/lottery_prediction_model_v36_20260621_073138.json,file,51777,Tru
 models/versions/lottery_prediction_model_v36_20260621_073314.json,file,51777,True,Included in release manifest
 models/versions/lottery_prediction_model_v36_20260621_075025.json,file,51777,True,Included in release manifest
 reports/2026_partial_update_report.md,file,1101,True,Included in release manifest
-reports/advanced_backtest_report.md,file,8703,True,Included in release manifest
-reports/advanced_ensemble_report.md,file,10085,True,Included in release manifest
-reports/backtest_report.md,file,991187,True,Included in release manifest
-reports/cold_backtest_report.md,file,1292779,True,Included in release manifest
+reports/advanced_историческа проверка_report.md,file,8703,True,Included in release manifest
+reports/advanced_комбиниран анализ_report.md,file,10085,True,Included in release manifest
+reports/историческа проверка_report.md,file,991187,True,Included in release manifest
+reports/cold_историческа проверка_report.md,file,1292779,True,Included in release manifest
 reports/cold_model_report.md,file,2632,True,Included in release manifest
-reports/combined_backtest_report.md,file,3986,True,Included in release manifest
+reports/combined_историческа проверка_report.md,file,3986,True,Included in release manifest
 reports/combined_strategy_report.md,file,10187,True,Included in release manifest
 reports/data_audit_report.md,file,1273,True,Included in release manifest
 reports/data_import_report.md,file,1923,True,Included in release manifest
 reports/frequency_model_report.md,file,2140,True,Included in release manifest
-reports/gap_backtest_report.md,file,1892671,True,Included in release manifest
+reports/gap_историческа проверка_report.md,file,1892671,True,Included in release manifest
 reports/gap_model_report.md,file,3187,True,Included in release manifest
 reports/historical_report.md,file,1957,True,Included in release manifest
-reports/middle_backtest_report.md,file,1592751,True,Included in release manifest
+reports/middle_историческа проверка_report.md,file,1592751,True,Included in release manifest
 reports/middle_model_report.md,file,2530,True,Included in release manifest
 reports/ml_classification_report.md,file,589,True,Included in release manifest
 reports/ml_clustering_report.md,file,867,True,Included in release manifest
 reports/ml_dimensionality_reduction_report.md,file,492,True,Included in release manifest
-reports/ml_extensions_backtest_report.md,file,3109,True,Included in release manifest
+reports/ml_extensions_историческа проверка_report.md,file,3109,True,Included in release manifest
 reports/ml_extensions_model_card.md,file,1177,True,Included in release manifest
 reports/ml_extensions_report.md,file,2291,True,Included in release manifest
 reports/prediction_methodology_report.md,file,990,True,Included in release manifest
@@ -582,7 +582,7 @@ reports/v41_bst_official_archive_audit.md,file,723,True,Included in release mani
 reports/v41_bst_official_archive_urls.csv,file,4542,True,Included in release manifest
 reports/v41_canonical_draw_events_audit.json,file,23321,True,Included in release manifest
 reports/v41_canonical_draw_events_audit.md,file,3779,True,Included in release manifest
-reports/v41_model_backtest_events.csv,file,448521,True,Included in release manifest
+reports/v41_model_историческа проверка_events.csv,file,448521,True,Included in release manifest
 reports/v41_model_retraining_summary.json,file,2599,True,Included in release manifest
 reports/v41_model_retraining_summary.md,file,1516,True,Included in release manifest
 reports/v41_training_readiness_audit.json,file,36741,True,Included in release manifest
@@ -593,11 +593,11 @@ reports/v42_combined_positive_negative_summary.md,file,2445,True,Included in rel
 reports/v43_1_interval_rhythm_refined_scores.csv,file,10041,True,Included in release manifest
 reports/v43_1_interval_rhythm_refined_summary.json,file,61743,True,Included in release manifest
 reports/v43_1_interval_rhythm_refined_summary.md,file,3361,True,Included in release manifest
-reports/v44_1_final_ensemble_number_scores.csv,file,5398,True,Included in release manifest
-reports/v44_1_final_ensemble_ticket_summary.json,file,33237,True,Included in release manifest
-reports/v44_1_final_ensemble_ticket_summary.md,file,1990,True,Included in release manifest
-reports/v45_backtest_by_model.csv,file,947,True,Included in release manifest
-reports/v45_backtest_results.csv,file,1055470,True,Included in release manifest
+reports/v44_1_final_комбиниран анализ_number_scores.csv,file,5398,True,Included in release manifest
+reports/v44_1_final_комбиниран анализ_ticket_summary.json,file,33237,True,Included in release manifest
+reports/v44_1_final_комбиниран анализ_ticket_summary.md,file,1990,True,Included in release manifest
+reports/v45_историческа проверка_by_model.csv,file,947,True,Included in release manifest
+reports/v45_историческа проверка_results.csv,file,1055470,True,Included in release manifest
 reports/v45_feature_importance.csv,file,2381,True,Included in release manifest
 reports/v45_training_summary.json,file,5625,True,Included in release manifest
 reports/v45_training_summary.md,file,1341,True,Included in release manifest
@@ -606,8 +606,8 @@ reports/v50_pair_group_summary.json,file,10208,True,Included in release manifest
 reports/v50_pair_group_summary.md,file,1766,True,Included in release manifest
 reports/v50_pair_scores.csv,file,78084,True,Included in release manifest
 reports/v51_current_pro_ticket_score.csv,file,360,True,Included in release manifest
-reports/v51_ticket_portfolio_summary.json,file,2349,True,Included in release manifest
-reports/v51_ticket_portfolio_summary.md,file,627,True,Included in release manifest
+reports/v51_ticket_пакет_summary.json,file,2349,True,Included in release manifest
+reports/v51_ticket_пакет_summary.md,file,627,True,Included in release manifest
 reports/v53_ticket_coverage_summary.json,file,574,True,Included in release manifest
 reports/v53_ticket_coverage_summary.md,file,994,True,Included in release manifest
 reports/v54_pattern_balance_summary.json,file,623,True,Included in release manifest
@@ -622,10 +622,10 @@ reports/v57_hot_cold_stable_numbers.csv,file,7879,True,Included in release manif
 reports/v57_hot_cold_stable_numbers.json,file,83344,True,Included in release manifest
 reports/v57_hot_cold_stable_summary.json,file,3893,True,Included in release manifest
 reports/v57_hot_cold_stable_summary.md,file,1073,True,Included in release manifest
-reports/v58_smart_ensemble_scores_sample.csv,file,568,True,Included in release manifest
-reports/v58_smart_ensemble_scores_sample.json,file,44905,True,Included in release manifest
-reports/v58_smart_ensemble_summary.json,file,534,True,Included in release manifest
-reports/v58_smart_ensemble_summary.md,file,1294,True,Included in release manifest
+reports/v58_smart_комбиниран анализ_scores_sample.csv,file,568,True,Included in release manifest
+reports/v58_smart_комбиниран анализ_scores_sample.json,file,44905,True,Included in release manifest
+reports/v58_smart_комбиниран анализ_summary.json,file,534,True,Included in release manifest
+reports/v58_smart_комбиниран анализ_summary.md,file,1294,True,Included in release manifest
 reports/v59_smart_ticket_builder_2_sample.csv,file,722,True,Included in release manifest
 reports/v59_smart_ticket_builder_2_sample.json,file,106265,True,Included in release manifest
 reports/v59_smart_ticket_builder_2_summary.json,file,911,True,Included in release manifest
@@ -651,31 +651,31 @@ reports/v63_model_reliability_summary.md,file,1985,True,Included in release mani
 reports/v65_model_weighting_summary.json,file,866,True,Included in release manifest
 reports/v65_model_weighting_summary.md,file,2468,True,Included in release manifest
 reports/v65_model_weights.csv,file,2735,True,Included in release manifest
-reports/v66_weighted_smart_ensemble_scores.csv,file,12010,True,Included in release manifest
-reports/v66_weighted_smart_ensemble_summary.json,file,1106,True,Included in release manifest
-reports/v66_weighted_smart_ensemble_summary.md,file,4205,True,Included in release manifest
+reports/v66_weighted_smart_комбиниран анализ_scores.csv,file,12010,True,Included in release manifest
+reports/v66_weighted_smart_комбиниран анализ_summary.json,file,1106,True,Included in release manifest
+reports/v66_weighted_smart_комбиниран анализ_summary.md,file,4205,True,Included in release manifest
 reports/v67_weighted_ticket_builder_summary.json,file,1044,True,Included in release manifest
 reports/v67_weighted_ticket_builder_summary.md,file,2009,True,Included in release manifest
 reports/v67_weighted_ticket_builder_tickets.csv,file,4331,True,Included in release manifest
 reports/v67_weighted_ticket_builder_tickets.json,file,8930,True,Included in release manifest
-reports/v68_weighted_portfolio_coverage.csv,file,5678,True,Included in release manifest
-reports/v68_weighted_portfolio_overlaps.csv,file,400,True,Included in release manifest
-reports/v68_weighted_portfolio_repeated_pairs.csv,file,386,True,Included in release manifest
-reports/v68_weighted_portfolio_repeated_triples.csv,file,107,True,Included in release manifest
-reports/v68_weighted_portfolio_summary.json,file,2434,True,Included in release manifest
-reports/v68_weighted_portfolio_summary.md,file,2768,True,Included in release manifest
-reports/v68_weighted_portfolio_tickets.csv,file,1905,True,Included in release manifest
-reports/v69_candidate_portfolio_tickets.csv,file,1575,True,Included in release manifest
-reports/v69_candidate_portfolio_tickets.json,file,2607,True,Included in release manifest
-reports/v69_portfolio_improvement_suggestions.csv,file,35064,True,Included in release manifest
-reports/v69_portfolio_improvement_summary.json,file,1681,True,Included in release manifest
-reports/v69_portfolio_improvement_summary.md,file,7524,True,Included in release manifest
-reports/v70_applied_candidate_portfolio_changes.csv,file,741,True,Included in release manifest
-reports/v70_applied_candidate_portfolio_summary.json,file,1620,True,Included in release manifest
-reports/v70_applied_candidate_portfolio_summary.md,file,2438,True,Included in release manifest
-reports/v70_applied_candidate_portfolio_tickets.csv,file,2105,True,Included in release manifest
-reports/v70_applied_candidate_portfolio_tickets.json,file,4701,True,Included in release manifest
-reports/v70_original_vs_candidate_portfolio.csv,file,1138,True,Included in release manifest
+reports/v68_weighted_пакет_coverage.csv,file,5678,True,Included in release manifest
+reports/v68_weighted_пакет_overlaps.csv,file,400,True,Included in release manifest
+reports/v68_weighted_пакет_repeated_pairs.csv,file,386,True,Included in release manifest
+reports/v68_weighted_пакет_repeated_triples.csv,file,107,True,Included in release manifest
+reports/v68_weighted_пакет_summary.json,file,2434,True,Included in release manifest
+reports/v68_weighted_пакет_summary.md,file,2768,True,Included in release manifest
+reports/v68_weighted_пакет_tickets.csv,file,1905,True,Included in release manifest
+reports/v69_candidate_пакет_tickets.csv,file,1575,True,Included in release manifest
+reports/v69_candidate_пакет_tickets.json,file,2607,True,Included in release manifest
+reports/v69_пакет_improvement_suggestions.csv,file,35064,True,Included in release manifest
+reports/v69_пакет_improvement_summary.json,file,1681,True,Included in release manifest
+reports/v69_пакет_improvement_summary.md,file,7524,True,Included in release manifest
+reports/v70_applied_candidate_пакет_changes.csv,file,741,True,Included in release manifest
+reports/v70_applied_candidate_пакет_summary.json,file,1620,True,Included in release manifest
+reports/v70_applied_candidate_пакет_summary.md,file,2438,True,Included in release manifest
+reports/v70_applied_candidate_пакет_tickets.csv,file,2105,True,Included in release manifest
+reports/v70_applied_candidate_пакет_tickets.json,file,4701,True,Included in release manifest
+reports/v70_original_vs_candidate_пакет.csv,file,1138,True,Included in release manifest
 reports/v71_ticket_pack.csv,file,2590,True,Included in release manifest
 reports/v71_ticket_pack.json,file,9725,True,Included in release manifest
 reports/v71_ticket_pack.txt,file,2122,True,Included in release manifest
@@ -683,9 +683,9 @@ reports/v71_ticket_pack_printable.html,file,4830,True,Included in release manife
 reports/v71_ticket_pack_printable.md,file,2131,True,Included in release manifest
 reports/v71_ticket_pack_summary.json,file,1140,True,Included in release manifest
 reports/v71_ticket_pack_summary.md,file,2131,True,Included in release manifest
-reports/v72_pipeline_refresh_plan.csv,file,2673,True,Included in release manifest
-reports/v72_pipeline_refresh_summary.json,file,1025,True,Included in release manifest
-reports/v72_pipeline_refresh_summary.md,file,2338,True,Included in release manifest
+reports/v72_верига_refresh_plan.csv,file,2673,True,Included in release manifest
+reports/v72_верига_refresh_summary.json,file,1025,True,Included in release manifest
+reports/v72_верига_refresh_summary.md,file,2338,True,Included in release manifest
 reports/v73_latest_ticket_pack_result.csv,file,187,True,Included in release manifest
 reports/v73_ticket_pack_performance_history.csv,file,402,True,Included in release manifest
 reports/v73_ticket_pack_performance_summary.json,file,1128,True,Included in release manifest
@@ -725,7 +725,7 @@ reports/v79_ticket_pack_export.json,file,11679,True,Included in release manifest
 reports/v79_ticket_pack_export_summary.json,file,930,True,Included in release manifest
 reports/v79_ticket_pack_export_summary.md,file,3273,True,Included in release manifest
 reports/v80_artifact_audit.csv,file,9585,True,Included in release manifest
-reports/v80_dataset_audit.csv,file,1204,True,Included in release manifest
+reports/v80_данни_audit.csv,file,1204,True,Included in release manifest
 reports/v80_file_quality_audit.csv,file,11374,True,Included in release manifest
 reports/v80_final_system_audit_summary.json,file,1142,True,Included in release manifest
 reports/v80_final_system_audit_summary.md,file,1556,True,Included in release manifest
@@ -743,5 +743,5 @@ reports/v82_release_readiness_checklist.csv,file,9716,True,Included in release m
 reports/v83_app_guide_sections.csv,file,6377,True,Included in release manifest
 reports/v83_final_user_manual_summary.json,file,1127,True,Included in release manifest
 reports/v83_final_user_manual_summary.md,file,4433,True,Included in release manifest
-reports/v83_recommended_workflow.csv,file,3281,True,Included in release manifest
+reports/v83_recommended_работен процес.csv,file,3281,True,Included in release manifest
 reports/v83_safe_usage_checklist.csv,file,1607,True,Included in release manifest

@@ -1,22 +1,18 @@
 {
-  "step": "74.1",
-  "name": "Избирателно синхронизиране на модели",
-  "status": "OK",
-  "planned_actions": 5,
   "executed_actions": 5,
-  "successful_actions": 5,
   "failed_actions": 0,
   "generated_at": "2026-06-22T16:31:52+00:00",
-  "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
+  "name": "Избирателно синхронизиране на модели",
   "plan": [
     {
-      "step": "79",
-      "label": "Експорт и изпълнение",
       "category": "Експорт и изпълнение",
-      "script": "scripts/v79_build_ticket_pack_export_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 80"
       ],
       "inputs": [
         "reports/v78_final_play_plan_summary.json",
@@ -24,6 +20,8 @@
         "reports/v78_play_plan_actions.csv",
         "reports/v78_play_plan_warnings.csv"
       ],
+      "label": "Експорт и изпълнение",
+      "order": 1,
       "outputs": [
         "models/v79/v79_ticket_pack_export_model.json",
         "reports/v79_ticket_pack_export_summary.json",
@@ -33,54 +31,54 @@
         "reports/v79_ticket_pack_copy_text.txt",
         "reports/v79_ticket_pack_export.json"
       ],
-      "feeds": [
-        "Step 80"
-      ],
       "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
-      "ensemble_source": false,
-      "order": 1
+      "script": "scripts/v79_build_ticket_pack_export_center.py",
+      "step": "79"
     },
     {
-      "step": "80",
-      "label": "Финален системен одит",
       "category": "Финален системен одит",
-      "script": "scripts/v80_build_final_system_audit_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 81"
       ],
       "inputs": [
         "reports/v79_ticket_pack_export_summary.json",
         "reports/v79_export_ticket_pack.csv",
         "reports/v79_ticket_pack_export.json"
       ],
+      "label": "Финален системен одит",
+      "order": 2,
       "outputs": [
         "models/v80/v80_final_system_audit_model.json",
         "reports/v80_final_system_audit_summary.json",
         "reports/v80_final_system_audit_summary.md",
-        "reports/v80_dataset_audit.csv",
+        "reports/v80_данни_audit.csv",
         "reports/v80_artifact_audit.csv",
         "reports/v80_file_quality_audit.csv",
         "reports/v80_sync_plan_audit.csv"
       ],
-      "feeds": [
-        "Step 81"
-      ],
-      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
-      "ensemble_source": false,
-      "order": 2
+      "role": "Проверява данни синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "script": "scripts/v80_build_final_system_audit_center.py",
+      "step": "80"
     },
     {
-      "step": "81",
-      "label": "Финален UX контрол",
       "category": "Финален UX контрол",
-      "script": "scripts/v81_build_final_ux_navigation_center.py",
       "datasets": [],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 82"
+      ],
       "inputs": [
         "streamlit_app.py",
         "reports/v80_final_system_audit_summary.json",
         "reports/v80_sync_plan_audit.csv"
       ],
+      "label": "Финален UX контрол",
+      "order": 3,
       "outputs": [
         "models/v81/v81_final_ux_navigation_model.json",
         "reports/v81_final_ux_navigation_summary.json",
@@ -89,22 +87,20 @@
         "reports/v81_navigation_page_audit.csv",
         "reports/v81_streamlit_label_audit.csv"
       ],
-      "feeds": [
-        "Step 82"
-      ],
       "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
-      "ensemble_source": false,
-      "order": 3
+      "script": "scripts/v81_build_final_ux_navigation_center.py",
+      "step": "81"
     },
     {
-      "step": "82",
-      "label": "Финален release пакет",
-      "category": "Финален release пакет",
-      "script": "scripts/v82_build_final_release_package_center.py",
+      "category": "Финален пакет за предаване",
       "datasets": [
         "data/historical_draws.csv",
         "data/v40_normalized_draw_events.csv",
         "data/v41_canonical_draw_events.csv"
+      ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
       ],
       "inputs": [
         "streamlit_app.py",
@@ -112,6 +108,8 @@
         "reports/v80_final_system_audit_summary.json",
         "reports/v81_final_ux_navigation_summary.json"
       ],
+      "label": "Финален пакет за предаване",
+      "order": 4,
       "outputs": [
         "models/v82/v82_final_release_package_model.json",
         "reports/v82_final_release_summary.json",
@@ -120,28 +118,26 @@
         "reports/v82_release_readiness_checklist.csv",
         "reports/v82_clean_zip_exclusion_plan.csv"
       ],
-      "feeds": [
-        "Step 74"
-      ],
-      "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
-      "ensemble_source": false,
-      "order": 4
+      "role": "Финален готовност за предаване и чист ZIP контролен слой след Step 81.",
+      "script": "scripts/v82_build_final_release_package_center.py",
+      "step": "82"
     },
     {
-      "step": "74",
-      "label": "Контрол на синхрона",
       "category": "Контрол на синхрона",
-      "script": "scripts/v74_build_model_dependency_sync_center.py",
       "datasets": [
         "data/historical_draws.csv",
         "data/v41_canonical_draw_events.csv"
       ],
+      "ensemble_source": false,
+      "feeds": [],
       "inputs": [
         "models/model_registry.json",
         "reports/v79_ticket_pack_export_summary.json",
         "reports/v79_export_ticket_pack.csv",
         "reports/v79_ticket_pack_export.json"
       ],
+      "label": "Контрол на синхрона",
+      "order": 5,
       "outputs": [
         "models/v74/v74_model_dependency_sync_center_model.json",
         "reports/v74_model_dependency_summary.json",
@@ -149,28 +145,32 @@
         "reports/v74_model_dependency_map.csv",
         "reports/v74_model_sync_status.csv"
       ],
-      "feeds": [],
       "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
-      "ensemble_source": false,
-      "order": 5
+      "script": "scripts/v74_build_model_dependency_sync_center.py",
+      "step": "74"
     }
   ],
+  "planned_actions": 5,
   "results": [
     {
-      "step": "79",
-      "label": "Експорт и изпълнение",
       "category": "Експорт и изпълнение",
-      "script": "scripts/v79_build_ticket_pack_export_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
       ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 80"
+      ],
+      "finished_at": "2026-06-22T16:31:51+00:00",
       "inputs": [
         "reports/v78_final_play_plan_summary.json",
         "reports/v78_selected_ticket_plan.csv",
         "reports/v78_play_plan_actions.csv",
         "reports/v78_play_plan_warnings.csv"
       ],
+      "label": "Експорт и изпълнение",
+      "order": 1,
       "outputs": [
         "models/v79/v79_ticket_pack_export_model.json",
         "reports/v79_ticket_pack_export_summary.json",
@@ -180,66 +180,66 @@
         "reports/v79_ticket_pack_copy_text.txt",
         "reports/v79_ticket_pack_export.json"
       ],
-      "feeds": [
-        "Step 80"
-      ],
-      "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
-      "ensemble_source": false,
-      "order": 1,
       "returncode": 0,
-      "status": "OK",
+      "role": "Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.",
+      "script": "scripts/v79_build_ticket_pack_export_center.py",
       "started_at": "2026-06-22T16:31:51+00:00",
-      "finished_at": "2026-06-22T16:31:51+00:00",
+      "status": "OK",
+      "stderr_tail": "",
       "stdout_tail": "STEP79_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10058\nCANDIDATES 8\nPLAY_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5\n",
-      "stderr_tail": ""
+      "step": "79"
     },
     {
-      "step": "80",
-      "label": "Финален системен одит",
       "category": "Финален системен одит",
-      "script": "scripts/v80_build_final_system_audit_center.py",
       "datasets": [
         "data/v41_canonical_draw_events.csv",
         "data/historical_draws.csv"
       ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 81"
+      ],
+      "finished_at": "2026-06-22T16:31:51+00:00",
       "inputs": [
         "reports/v79_ticket_pack_export_summary.json",
         "reports/v79_export_ticket_pack.csv",
         "reports/v79_ticket_pack_export.json"
       ],
+      "label": "Финален системен одит",
+      "order": 2,
       "outputs": [
         "models/v80/v80_final_system_audit_model.json",
         "reports/v80_final_system_audit_summary.json",
         "reports/v80_final_system_audit_summary.md",
-        "reports/v80_dataset_audit.csv",
+        "reports/v80_данни_audit.csv",
         "reports/v80_artifact_audit.csv",
         "reports/v80_file_quality_audit.csv",
         "reports/v80_sync_plan_audit.csv"
       ],
-      "feeds": [
-        "Step 81"
-      ],
-      "role": "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
-      "ensemble_source": false,
-      "order": 2,
       "returncode": 0,
-      "status": "OK",
+      "role": "Проверява данни синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.",
+      "script": "scripts/v80_build_final_system_audit_center.py",
       "started_at": "2026-06-22T16:31:51+00:00",
-      "finished_at": "2026-06-22T16:31:51+00:00",
+      "status": "OK",
+      "stderr_tail": "",
       "stdout_tail": "STEP80_BUILD_OK\nSTATUS OK\nDATASETS_CHECKED 3\nARTIFACTS_CHECKED 27\nQUALITY_CHECKS 29\nSYNC_PLANS_CHECKED 3\nISSUES_FOUND 0\n",
-      "stderr_tail": ""
+      "step": "80"
     },
     {
-      "step": "81",
-      "label": "Финален UX контрол",
       "category": "Финален UX контрол",
-      "script": "scripts/v81_build_final_ux_navigation_center.py",
       "datasets": [],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 82"
+      ],
+      "finished_at": "2026-06-22T16:31:52+00:00",
       "inputs": [
         "streamlit_app.py",
         "reports/v80_final_system_audit_summary.json",
         "reports/v80_sync_plan_audit.csv"
       ],
+      "label": "Финален UX контрол",
+      "order": 3,
       "outputs": [
         "models/v81/v81_final_ux_navigation_model.json",
         "reports/v81_final_ux_navigation_summary.json",
@@ -248,35 +248,35 @@
         "reports/v81_navigation_page_audit.csv",
         "reports/v81_streamlit_label_audit.csv"
       ],
-      "feeds": [
-        "Step 82"
-      ],
-      "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
-      "ensemble_source": false,
-      "order": 3,
       "returncode": 0,
-      "status": "OK",
+      "role": "Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.",
+      "script": "scripts/v81_build_final_ux_navigation_center.py",
       "started_at": "2026-06-22T16:31:51+00:00",
-      "finished_at": "2026-06-22T16:31:52+00:00",
+      "status": "OK",
+      "stderr_tail": "",
       "stdout_tail": "STEP81_BUILD_OK\nSTATUS OK\nGROUPS_CHECKED 7\nNAVIGATION_PAGES 50\nDUPLICATE_PAGES 0\nSYSTEM_ORDER_OK True\nISSUES_FOUND 0\n",
-      "stderr_tail": ""
+      "step": "81"
     },
     {
-      "step": "82",
-      "label": "Финален release пакет",
-      "category": "Финален release пакет",
-      "script": "scripts/v82_build_final_release_package_center.py",
+      "category": "Финален пакет за предаване",
       "datasets": [
         "data/historical_draws.csv",
         "data/v40_normalized_draw_events.csv",
         "data/v41_canonical_draw_events.csv"
       ],
+      "ensemble_source": false,
+      "feeds": [
+        "Step 74"
+      ],
+      "finished_at": "2026-06-22T16:31:52+00:00",
       "inputs": [
         "streamlit_app.py",
         "reports/v79_ticket_pack_export_summary.json",
         "reports/v80_final_system_audit_summary.json",
         "reports/v81_final_ux_navigation_summary.json"
       ],
+      "label": "Финален пакет за предаване",
+      "order": 4,
       "outputs": [
         "models/v82/v82_final_release_package_model.json",
         "reports/v82_final_release_summary.json",
@@ -285,34 +285,32 @@
         "reports/v82_release_readiness_checklist.csv",
         "reports/v82_clean_zip_exclusion_plan.csv"
       ],
-      "feeds": [
-        "Step 74"
-      ],
-      "role": "Финален release readiness и clean ZIP контролен слой след Step 81.",
-      "ensemble_source": false,
-      "order": 4,
       "returncode": 0,
-      "status": "OK",
+      "role": "Финален готовност за предаване и чист ZIP контролен слой след Step 81.",
+      "script": "scripts/v82_build_final_release_package_center.py",
       "started_at": "2026-06-22T16:31:52+00:00",
-      "finished_at": "2026-06-22T16:31:52+00:00",
+      "status": "OK",
+      "stderr_tail": "",
       "stdout_tail": "STEP82_BUILD_OK\nSTATUS OK\nREQUIRED_FILES_CHECKED 21\nDATASETS_CHECKED 3\nMANIFEST_FILES 756\nUNWANTED_RELEASE_FILES 22\nISSUES_FOUND 0\n",
-      "stderr_tail": ""
+      "step": "82"
     },
     {
-      "step": "74",
-      "label": "Контрол на синхрона",
       "category": "Контрол на синхрона",
-      "script": "scripts/v74_build_model_dependency_sync_center.py",
       "datasets": [
         "data/historical_draws.csv",
         "data/v41_canonical_draw_events.csv"
       ],
+      "ensemble_source": false,
+      "feeds": [],
+      "finished_at": "2026-06-22T16:31:52+00:00",
       "inputs": [
         "models/model_registry.json",
         "reports/v79_ticket_pack_export_summary.json",
         "reports/v79_export_ticket_pack.csv",
         "reports/v79_ticket_pack_export.json"
       ],
+      "label": "Контрол на синхрона",
+      "order": 5,
       "outputs": [
         "models/v74/v74_model_dependency_sync_center_model.json",
         "reports/v74_model_dependency_summary.json",
@@ -320,16 +318,18 @@
         "reports/v74_model_dependency_map.csv",
         "reports/v74_model_sync_status.csv"
       ],
-      "feeds": [],
-      "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
-      "ensemble_source": false,
-      "order": 5,
       "returncode": 0,
-      "status": "OK",
+      "role": "Финален контролен слой за проверка на model artifacts, dependency map и sync status.",
+      "script": "scripts/v74_build_model_dependency_sync_center.py",
       "started_at": "2026-06-22T16:31:52+00:00",
-      "finished_at": "2026-06-22T16:31:52+00:00",
+      "status": "OK",
+      "stderr_tail": "",
       "stdout_tail": "STEP74_BUILD_OK\nSTATUS Синхронизиран\nMODELS_CHECKED 31\nSYNCED_MODELS 31\nSTALE_MODELS 0\nMISSING_MODELS 0\n",
-      "stderr_tail": ""
+      "step": "74"
     }
-  ]
+  ],
+  "safe_note": "Step 74.1 управлява обновяването на избран модел или цяла зависима верига. Това е контролен панел за синхрон, не прогноза и не гаранция за печалба.",
+  "status": "OK",
+  "step": "74.1",
+  "successful_actions": 5
 }

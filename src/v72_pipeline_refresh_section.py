@@ -101,7 +101,7 @@ def render_v72_pipeline_refresh_section():
             st.rerun()
 
     with col_b:
-        if st.button("Обнови статистическия pipeline Step 61–74", key="v72_run_weighted", type="primary"): 
+        if st.button("Обнови статистическата верига Step 61–74", key="v72_run_weighted", type="primary"): 
             with st.spinner("Обновявам Step 61–63 и Step 65–74..."):
                 result = build_pipeline_refresh_plan(run_pipeline=True, include_core=False)
             if result.get("run_ok"):
@@ -180,11 +180,11 @@ def render_v72_pipeline_refresh_section():
     with st.expander("Как работи Step 72"):
         st.markdown(
             """
-- **Audit без обновяване** само проверява дали скриптовете и artifacts съществуват.
+- **Проверка без обновяване** само проверява дали скриптовете и артефактите съществуват.
 - **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–74.
-- **Пълно обновяване v41–v74** пуска основните модели и после статистическия pipeline.
-- Add Draw auto-refresh вече е подравнен да обновява целия pipeline след запис.
-- Training Center вече показва Step 65–74 като част от refresh flow.
+- **Пълно обновяване v41–v74** пуска основните модели и после статистическата верига.
+- Автоматичното обновяване след „Добавяне на тираж“ вече е подравнено да обновява цялата верига след запис.
+- Центърът за обучение вече показва Step 65–74 като част от процеса за обновяване.
 
 Това е технически контролен слой за обновяване, не предсказател на бъдещ тираж.
 """

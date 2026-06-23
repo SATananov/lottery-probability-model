@@ -557,7 +557,7 @@
     {
       "check_type": "streamlit_label",
       "message": "count=2",
-      "path": "Финален release пакет",
+      "path": "Финален пакет за предаване",
       "safe_note": "Step 80 е финален системен одит на данни, артефакти, планове за синхронизация и файлово качество. Това е контролен слой, не прогноза и не гаранция за печалба.",
       "status": "OK"
     },
@@ -578,7 +578,7 @@
     "generated_reports": [
       "reports/v80_final_system_audit_summary.json",
       "reports/v80_final_system_audit_summary.md",
-      "reports/v80_dataset_audit.csv",
+      "reports/v80_данни_audit.csv",
       "reports/v80_artifact_audit.csv",
       "reports/v80_file_quality_audit.csv",
       "reports/v80_sync_plan_audit.csv",

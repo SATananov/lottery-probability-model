@@ -100,7 +100,7 @@ def render_v75_neural_meta_learner_section() -> None:
         st.dataframe(_display_df(scores[existing].head(20)), use_container_width=True, hide_index=True)
 
     if Path(CANDIDATE_TICKETS_CSV).exists():
-        st.subheader("Кандидат фишове от невронния слой")
+        st.subheader("Кандидат комбинации от невронния слой")
         tickets = pd.read_csv(CANDIDATE_TICKETS_CSV)
         st.dataframe(_display_df(tickets), use_container_width=True, hide_index=True)
 
@@ -108,6 +108,6 @@ def render_v75_neural_meta_learner_section() -> None:
         st.markdown(
             "- Мрежата е лека MLP архитектура, реализирана с NumPy.\n"
             "- Не използва бъдещи тиражи като вход за обучение.\n"
-            "- Оценява числа, а не обещава печеливш фиш.\n"
-            "- Резултатът трябва да се сравнява чрез backtesting/reliability преди да се включва в основния ensemble."
+            "- Оценява числа, а не обещава печеливша комбинация.\n"
+            "- Резултатът трябва да се сравнява чрез историческа проверка/надеждност преди да се включва в основния комбиниран анализ."
         )

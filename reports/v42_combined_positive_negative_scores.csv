@@ -1,4 +1,4 @@
-number,total_hits,expected_hits,difference_from_expected,frequency_ratio,current_absence_gap,max_absence_gap,last_25_hits,last_50_hits,last_100_hits,last_250_hits,last_500_hits,v41_vote_count,positive_signal_score,absence_risk_score,combined_score,absence_risk_level
+﻿number,total_hits,expected_hits,difference_from_expected,frequency_ratio,current_absence_gap,max_absence_gap,last_25_hits,last_50_hits,last_100_hits,last_250_hits,last_500_hits,v41_vote_count,positive_signal_score,absence_risk_score,combined_score,absence_risk_level
 1,1251,1231.592,19.408,1.015759,2,59,6,8,10,22,50,2,82.855,7.071,58.053,very_low
 2,1222,1231.592,-9.592,0.992212,7,65,5,6,16,37,65,1,86.721,11.807,58.969,very_low
 3,1182,1231.592,-49.592,0.959734,9,68,2,7,15,28,59,1,81.613,20.056,51.368,very_low

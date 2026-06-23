@@ -1,4 +1,4 @@
-# Final Ensemble Ticket Foundation Report
+# Final Комбиниран анализ Ticket Foundation Report
 
 This foundation combines historical/rules-style signals, combined positive/negative analysis, and interval rhythm analysis.
 
@@ -10,26 +10,26 @@ Bonus number used: **False**
 ## ПРЕДЛОЖЕНИЕ ЗА ЧИСЛА
 
 Combination 1: **4, 12, 21, 38, 48, 49**
-- Average final ensemble score: 65.73
+- Average final комбиниран анализ score: 65.73
 - Average rhythm score: 60.928
 - Average combined score: 54.563
 
 Combination 2: **4, 12, 25, 34, 41, 47**
-- Average final ensemble score: 60.289
+- Average final комбиниран анализ score: 60.289
 - Average rhythm score: 64.365
 - Average combined score: 41.569
 
 Combination 3: **1, 2, 13, 16, 37, 42**
-- Average final ensemble score: 56.894
+- Average final комбиниран анализ score: 56.894
 - Average rhythm score: 38.999
 - Average combined score: 60.135
 
 Combination 4: **3, 18, 23, 24, 33, 36**
-- Average final ensemble score: 59.036
+- Average final комбиниран анализ score: 59.036
 - Average rhythm score: 51.758
 - Average combined score: 52.864
 
-## Top ensemble numbers
+## Top комбиниран анализ numbers
 
 | number | final score | combined | rhythm | next-window | rules | consensus |
 | --- | --- | --- | --- | --- | --- | --- |

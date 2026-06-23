@@ -1,4 +1,4 @@
-number,final_ensemble_score,v42_combined_score,v42_positive_signal,v42_absence_risk,v42_absence_safety,rhythm_final_score,rhythm_next_window_score,rhythm_overdue_score,rhythm_balanced_score,rules_score,v41_vote_score,consensus_hits,consensus_score,model_agreement_score,current_gap,total_hits,hits_last_100,hits_last_250
+﻿number,final_ensemble_score,v42_combined_score,v42_positive_signal,v42_absence_risk,v42_absence_safety,rhythm_final_score,rhythm_next_window_score,rhythm_overdue_score,rhythm_balanced_score,rules_score,v41_vote_score,consensus_hits,consensus_score,model_agreement_score,current_gap,total_hits,hits_last_100,hits_last_250
 48,67.556,55.357,83.226,13.232,86.768,63.086,65.182,84.146,45.552,61.25,0.0,3,50.1,68.589,19,1269,14,35
 21,67.17,53.383,84.616,18.987,81.013,64.401,66.484,84.847,47.298,53.325,44.0,4,66.8,72.312,19,1289,12,25
 4,66.952,49.815,77.066,17.167,82.833,67.283,70.112,87.489,49.098,53.609,22.0,4,66.8,66.982,20,1276,12,26

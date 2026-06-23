@@ -1,8 +1,8 @@
 {
   "step": "68",
-  "name": "Weighted Portfolio Optimizer",
+  "name": "Weighted Пакет Оптимизатор",
   "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
-  "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
+  "source_scores": "reports/v66_weighted_smart_комбиниран анализ_scores.csv",
   "tickets_analyzed": 8,
   "unique_numbers_covered": 18,
   "coverage_percent": 36.73,
@@ -39,19 +39,19 @@
   "recommendations": [
     "Портфолиото покрива сравнително малко уникални числа. Следваща оптимизация може да увеличи diversity.",
     "Има силни Step 66 числа, които не са покрити в портфолиото: 16, 11, 36.",
-    "Има повторени двойки. Това не е грешка, но portfolio optimizer може да намали повторенията.",
+    "Има повторени двойки. Това не е грешка, но оптимизатор на пакет може да намали повторенията.",
     "Има повторени тройки. Това повишава концентрацията и може да се оптимизира."
   ],
   "generated_at": "2026-06-22T12:20:14+00:00",
   "generated_reports": [
-    "reports/v68_weighted_portfolio_summary.json",
-    "reports/v68_weighted_portfolio_summary.md",
-    "reports/v68_weighted_portfolio_tickets.csv",
-    "reports/v68_weighted_portfolio_coverage.csv",
-    "reports/v68_weighted_portfolio_overlaps.csv",
-    "reports/v68_weighted_portfolio_repeated_pairs.csv",
-    "reports/v68_weighted_portfolio_repeated_triples.csv",
-    "models/v68/v68_weighted_portfolio_optimizer_model.json"
+    "reports/v68_weighted_пакет_summary.json",
+    "reports/v68_weighted_пакет_summary.md",
+    "reports/v68_weighted_пакет_tickets.csv",
+    "reports/v68_weighted_пакет_coverage.csv",
+    "reports/v68_weighted_пакет_overlaps.csv",
+    "reports/v68_weighted_пакет_repeated_pairs.csv",
+    "reports/v68_weighted_пакет_repeated_triples.csv",
+    "models/v68/v68_weighted_пакет_оптимизатор_model.json"
   ],
-  "safe_note": "This is a statistical portfolio optimizer. It is not a гаранция за печалба or a promise of future lottery results."
+  "safe_note": "This is a statistical оптимизатор на пакет. It is not a гаранция за печалба or a promise of future lottery results."
 }

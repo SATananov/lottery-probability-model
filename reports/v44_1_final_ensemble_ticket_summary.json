@@ -1,5 +1,5 @@
 {
-  "model_name": "final_ensemble_ticket_foundation",
+  "model_name": "final_комбиниран анализ_ticket_foundation",
   "internal_version": "v44.1",
   "purpose": "Build four refined 6-number statistical ticket suggestions by combining previous model layers, submodel signals, and ticket-level coverage constraints.",
   "valid_draws": 10058,
@@ -1015,6 +1015,6 @@
       "hits_last_250": 23
     }
   ],
-  "all_number_scores_file": "reports\\v44_1_final_ensemble_number_scores.csv",
+  "all_number_scores_file": "reports\\v44_1_final_комбиниран анализ_number_scores.csv",
   "selection_note": "Four combinations are generated for a full ticket with 4 x 6 numbers. Repetition is limited and combinations are diversified. They are statistical suggestions, not predictions with a guarantee."
 }

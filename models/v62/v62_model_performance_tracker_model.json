@@ -46,8 +46,8 @@
       "status": "ok"
     },
     {
-      "model_name": "v44_1_final_ensemble_ticket",
-      "source_file": "models\\v44_1\\v44_1_final_ensemble_ticket_prediction.json",
+      "model_name": "v44_1_final_комбиниран анализ_ticket",
+      "source_file": "models\\v44_1\\v44_1_final_комбиниран анализ_ticket_prediction.json",
       "source_exists": true,
       "candidate_count": 4,
       "best_hits": 3,
@@ -90,8 +90,8 @@
       "status": "no_candidate_signal"
     },
     {
-      "model_name": "v51_ticket_portfolio_intelligence",
-      "source_file": "models\\v51\\v51_ticket_portfolio_intelligence.json",
+      "model_name": "v51_ticket_пакет_intelligence",
+      "source_file": "models\\v51\\v51_ticket_пакет_intelligence.json",
       "source_exists": true,
       "candidate_count": 0,
       "best_hits": 0,
@@ -112,8 +112,8 @@
       "status": "no_candidate_signal"
     },
     {
-      "model_name": "v58_smart_ensemble",
-      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v58\\v58_smart_ensemble_model.json",
+      "model_name": "v58_smart_комбиниран анализ",
+      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v58\\v58_smart_комбиниран анализ_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,
@@ -157,8 +157,8 @@
       "exists": true
     },
     {
-      "name": "v44_1_final_ensemble_ticket",
-      "path": "models\\v44_1\\v44_1_final_ensemble_ticket_prediction.json",
+      "name": "v44_1_final_комбиниран анализ_ticket",
+      "path": "models\\v44_1\\v44_1_final_комбиниран анализ_ticket_prediction.json",
       "exists": true
     },
     {
@@ -172,8 +172,8 @@
       "exists": true
     },
     {
-      "name": "v51_ticket_portfolio_intelligence",
-      "path": "models\\v51\\v51_ticket_portfolio_intelligence.json",
+      "name": "v51_ticket_пакет_intelligence",
+      "path": "models\\v51\\v51_ticket_пакет_intelligence.json",
       "exists": true
     },
     {
@@ -182,8 +182,8 @@
       "exists": false
     },
     {
-      "name": "v58_smart_ensemble",
-      "path": "models\\v58\\v58_smart_ensemble_model.json",
+      "name": "v58_smart_комбиниран анализ",
+      "path": "models\\v58\\v58_smart_комбиниран анализ_model.json",
       "exists": false
     },
     {

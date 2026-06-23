@@ -27,7 +27,7 @@ V77_DECISION_WARNINGS_CSV = REPORTS_DIR / "v77_decision_warnings.csv"
 V77_MODEL_JSON = V77_MODELS_DIR / "v77_decision_recommendation_model.json"
 
 SAFE_NOTE = (
-    "Step 77 подрежда и препоръчва кандидат фишове според статистически сигнали, "
+    "Step 77 подрежда и препоръчва кандидат комбинации според статистически сигнали, "
     "обяснимост и структурна валидация. Това не е гаранция за печалба."
 )
 

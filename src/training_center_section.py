@@ -86,7 +86,7 @@ TRAINING_STEPS = [
         "outputs": ["models/v59", "reports/v59_smart_ticket_builder_2_summary.json"],
     },
     {
-        "name": "Export \u0438 polish \u043d\u0430 \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 2",
+        "name": "Изтегляне и финално изглаждане на генератор 2",
         "script": "scripts/v60_build_ticket_builder_2_polish_export.py",
         "outputs": ["models/v60", "reports/v60_ticket_builder_2_polish_export_summary.json"],
     },

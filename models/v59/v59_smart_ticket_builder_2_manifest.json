@@ -9,7 +9,7 @@
   "candidate_count_requested": 120,
   "candidate_count_scored": 120,
   "selected_count": 5,
-  "purpose_bg": "Генерира кандидат-комбинации, оценява ги през Smart Ensemble Score 2 и избира по-разнообразен статистически фиш.",
+  "purpose_bg": "Генерира кандидат-комбинации, оценява ги през Smart Комбиниран анализ Score 2 и избира по-разнообразен статистически фиш.",
   "not_a_prediction_bg": "Модулът не предсказва печеливши числа и не гарантира печалба. Той е помощник за статистически контрол на предложенията.",
   "depends_on": [
     "v53_ticket_coverage",
@@ -17,6 +17,6 @@
     "v55_number_profile",
     "v56_draw_similarity",
     "v57_hot_cold_stable",
-    "v58_smart_ensemble_score_2"
+    "v58_smart_комбиниран анализ_score_2"
   ]
 }

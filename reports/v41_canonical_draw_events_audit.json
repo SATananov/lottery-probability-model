@@ -1,5 +1,5 @@
 {
-  "status": "canonical_dataset_built_no_model_retrain",
+  "status": "canonical_данни_built_no_model_retrain",
   "source_dataset": "data\\historical_draws.csv",
   "canonical_dataset": "data\\v41_canonical_draw_events.csv",
   "total_draw_events": 10058,

@@ -1,5 +1,5 @@
 {
-  "model_name": "Advanced Statistical Ensemble Model",
+  "model_name": "Advanced Statistical Комбиниран анализ Model",
   "model_version": "1.0",
   "training_draws": 10057,
   "candidate_count": 18000,

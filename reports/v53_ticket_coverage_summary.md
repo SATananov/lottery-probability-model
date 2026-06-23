@@ -1,4 +1,4 @@
-# V53 Ticket Coverage Intelligence
+# V53 Анализ на покритието на комбинациите
 
 ## Цел
 

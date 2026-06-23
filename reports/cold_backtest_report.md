@@ -1,4 +1,4 @@
-# Cold Numbers Backtest Report
+# Cold Numbers Отчет от историческа проверка
 
 ## Goal
 

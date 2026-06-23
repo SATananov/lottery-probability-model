@@ -1,4 +1,4 @@
-ticket_id,numbers,neural_ticket_score,explainability_score,odd_count,low_count,sum,spread,adjacent_pairs,decade_groups,top10_overlap,validation_status,warnings,safe_note
+﻿ticket_id,numbers,neural_ticket_score,explainability_score,odd_count,low_count,sum,spread,adjacent_pairs,decade_groups,top10_overlap,validation_status,warnings,safe_note
 1,"2,21,29,41,42,44",0.516563,0.516563,3,2,179,42,1,3,2,валиден,няма структурно предупреждение,Step 76 обяснява и валидира статистическите сигнали от Step 75. Той не е гаранция за печалба и не отменя случайността на лотарията.
 2,"11,20,21,27,34,44",0.51528,0.515281,3,3,157,33,1,4,2,валиден,няма структурно предупреждение,Step 76 обяснява и валидира статистическите сигнали от Step 75. Той не е гаранция за печалба и не отменя случайността на лотарията.
 3,"2,11,25,27,38,45",0.520419,0.520419,4,2,148,43,0,5,4,валиден,няма структурно предупреждение,Step 76 обяснява и валидира статистическите сигнали от Step 75. Той не е гаранция за печалба и не отменя случайността на лотарията.

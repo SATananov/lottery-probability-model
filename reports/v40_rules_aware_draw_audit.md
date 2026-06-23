@@ -67,7 +67,7 @@ rules_version
 ```
 
 ## Recommendation
-- Keep the existing v39 dataset as the stable baseline.
+- Keep the existing v39 данни as the stable baseline.
 - Do not retrain new two-drawing models until second-drawing and bonus-number data are imported.
-- For v40, create a normalized draw-event dataset with drawing_no and bonus_number instead of overwriting historical_draws.csv directly.
-- After the normalized dataset is created, train separate models for drawing 1, drawing 2, combined analysis, and bonus number analysis.
+- For v40, create a normalized draw-event данни with drawing_no and bonus_number instead of overwriting historical_draws.csv directly.
+- After the normalized данни is created, train separate models for drawing 1, drawing 2, combined analysis, and bonus number analysis.

@@ -1,4 +1,4 @@
-group,n1,n2,n3,count,recent_count,last_seen_index,gap,frequency_score,recency_score,overdue_score,group_score
+﻿group,n1,n2,n3,count,recent_count,last_seen_index,gap,frequency_score,recency_score,overdue_score,group_score
 13-23-34,13,23,34,23,3,9987,71,0.92,0.75,0.007059,0.879941
 20-22-49,20,22,49,25,2,10008,50,1.0,0.5,0.004971,0.849254
 11-34-36,11,34,36,24,2,10022,36,0.96,0.5,0.003579,0.827463

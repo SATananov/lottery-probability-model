@@ -38,7 +38,7 @@ def result_to_dataframe(result: dict[str, Any]) -> pd.DataFrame:
 
 def result_to_export_payload(result: dict[str, Any]) -> dict[str, Any]:
     return {
-        "module": "Smart Ticket Builder 2 — помощник за комбинации",
+        "module": "Умен генератор на комбинации 2 — помощник за комбинации",
         "step": "60_polish_export",
         "strategy": result.get("strategy"),
         "seed": result.get("seed"),
@@ -71,7 +71,7 @@ def result_to_json_bytes(result: dict[str, Any]) -> bytes:
 
 def result_to_txt_bytes(result: dict[str, Any]) -> bytes:
     lines = [
-        "Smart Ticket Builder 2 — помощник за комбинации",
+        "Умен генератор на комбинации 2 — помощник за комбинации",
         "Статистически помощник, не предсказание и не гаранция за печалба.",
         "",
         f"Стратегия: {result.get('strategy')}",

@@ -192,9 +192,9 @@ def build_markdown(summary, tickets, changes):
         "",
         f"**Важно:** {SAFE_NOTE_BG}",
         "",
-        "## Фишове",
+        "## Комбинации",
         "",
-        "| Фиш / комбинация | Числа | Средна Step 66 оценка | Стратегия |",
+        "| Комбинация | Числа | Средна Step 66 оценка | Стратегия |",
         "|---:|---|---:|---|",
     ]
 
@@ -338,11 +338,11 @@ def build_html(summary, tickets, changes):
     <div class="metric"><strong>Исторически повторения</strong><br>{summary.get('applied_historical_exact_matches', 0)}</div>
   </div>
 
-  <h2>Фишове</h2>
+  <h2>Комбинации</h2>
   <table>
     <thead>
       <tr>
-        <th>Фиш / комбинация</th>
+        <th>Комбинация</th>
         <th>Числа</th>
         <th>Средна Step 66 оценка</th>
         <th>Стратегия</th>
@@ -434,7 +434,7 @@ def build_ticket_pack_export():
 
     summary = {
         "step": "71",
-        "name": "Export / Print Ticket Pack",
+        "name": "Пакет за изтегляне и печат",
         "source_applied_portfolio": "reports/v70_applied_candidate_portfolio_tickets.csv",
         "source_summary": "reports/v70_applied_candidate_portfolio_summary.json",
         "tickets_exported": len(tickets),

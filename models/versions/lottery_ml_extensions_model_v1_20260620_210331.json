@@ -1,124 +1,22 @@
 {
-  "model_name": "Lottery ML Extensions Ensemble",
-  "model_version": "1.0",
-  "created_at": "2026-06-20T21:03:27",
-  "training_draws": 10057,
-  "candidate_count": 1200,
-  "important_note": "Това е статистическо ранкиране, класификация, клъстеризация и редукция на размерността за анализ. Не променя реалния шанс за джакпот.",
-  "theoretical_jackpot_odds": "1 към 13983816",
-  "implemented_course_topics": [
-    "Feature Engineering",
-    "Time Series / rolling historical order",
-    "Classification",
-    "Unsupervised Learning / Clustering",
-    "Dimensionality Reduction",
-    "Testing / Backtesting",
-    "Machine Learning Tools: конфигурация, карта на модела и версионирани артефакти"
-  ],
-  "configuration": {
-    "random_seed": 20260620,
-    "candidate_count": 1200,
-    "portfolio_size": 15,
-    "cluster_count": 5,
-    "backtest_draws": 20,
-    "backtest_candidate_count": 200,
-    "recent_window": 80,
-    "score_weights": {
-      "frequency": 0.16,
-      "cold_gap": 0.18,
-      "middle_balance": 0.14,
-      "pair_support": 0.12,
-      "triple_support": 0.06,
-      "structure": 0.14,
-      "human_pattern": 0.1,
-      "time_decay": 0.1
-    }
+  "backtest_summary": {
+    "average_matches": 0.55,
+    "distribution": {
+      "0": 11,
+      "1": 7,
+      "2": 2,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    "hit_rate_ge_2": 10.0,
+    "hit_rate_ge_3": 0.0,
+    "tested_draws": 20
   },
+  "candidate_count": 1200,
   "classifier": {
-    "type": "nearest_centroid_classifier",
-    "target": "слаб / нормален / силен статистически фиш",
-    "classes": [
-      "нормален статистически фиш",
-      "силен статистически фиш",
-      "слаб статистически фиш"
-    ],
-    "score_quantiles": {
-      "q33": 54.9107,
-      "q66": 59.5424
-    },
-    "feature_names": [
-      "sum",
-      "odd_count",
-      "low_count",
-      "middle_count",
-      "high_count",
-      "span",
-      "consecutive_pairs",
-      "numbers_under_31",
-      "frequency_score",
-      "cold_gap_score",
-      "middle_balance_score",
-      "pair_support",
-      "triple_support",
-      "structure_score",
-      "human_pattern_score",
-      "time_decay_score"
-    ],
-    "feature_means": {
-      "sum": 151.045,
-      "odd_count": 2.8266666666666667,
-      "low_count": 1.93,
-      "middle_count": 2.0591666666666666,
-      "high_count": 2.0108333333333333,
-      "span": 37.098333333333336,
-      "consecutive_pairs": 0.5416666666666666,
-      "numbers_under_31": 3.7525,
-      "frequency_score": 0.5271477777777778,
-      "cold_gap_score": 0.24333201609691027,
-      "middle_balance_score": 0.6073940781440765,
-      "pair_support": 0.781519191919192,
-      "triple_support": 0.44456,
-      "structure_score": 0.6800333333333334,
-      "human_pattern_score": 0.8569166666666667,
-      "time_decay_score": 0.5194502358279967
-    },
-    "feature_stds": {
-      "sum": 30.524570969314496,
-      "odd_count": 1.1573266867103826,
-      "low_count": 1.0373025903209594,
-      "middle_count": 1.0519449267886536,
-      "high_count": 1.004933272058381,
-      "span": 7.214247595038884,
-      "consecutive_pairs": 0.6597676105813313,
-      "numbers_under_31": 1.0338283630452707,
-      "frequency_score": 0.18951098323041451,
-      "cold_gap_score": 0.10330797085618487,
-      "middle_balance_score": 0.16452484510709883,
-      "pair_support": 0.03332360465647137,
-      "triple_support": 0.04236581308593081,
-      "structure_score": 0.17715761223234366,
-      "human_pattern_score": 0.18002314665990407,
-      "time_decay_score": 0.12145084260804907
-    },
     "centroids": {
-      "силен статистически фиш": [
-        0.1687518699788049,
-        -0.16789876853398997,
-        -0.11209314513322882,
-        -0.18206239030763954,
-        0.30628313959255377,
-        0.38352755552786416,
-        -0.23403962581586535,
-        -0.29876579136384407,
-        0.5015968096138693,
-        -0.40439276740420577,
-        0.2284196445659444,
-        0.4582121653152653,
-        0.3564611087541587,
-        0.7585247378267359,
-        0.741026713838826,
-        0.218263640083352
-      ],
       "нормален статистически фиш": [
         0.1981496922434939,
         -0.14915949369226092,
@@ -136,6 +34,24 @@
         -0.058915750815635444,
         0.1214911111543382,
         0.15412648623682187
+      ],
+      "силен статистически фиш": [
+        0.1687518699788049,
+        -0.16789876853398997,
+        -0.11209314513322882,
+        -0.18206239030763954,
+        0.30628313959255377,
+        0.38352755552786416,
+        -0.23403962581586535,
+        -0.29876579136384407,
+        0.5015968096138693,
+        -0.40439276740420577,
+        0.2284196445659444,
+        0.4582121653152653,
+        0.3564611087541587,
+        0.7585247378267359,
+        0.741026713838826,
+        0.218263640083352
       ],
       "слаб статистически фиш": [
         -0.37201525525195833,
@@ -155,11 +71,30 @@
         -0.8849731799579769,
         -0.37900417601966885
       ]
-    }
-  },
-  "cluster_model": {
-    "type": "kmeans_from_scratch",
-    "cluster_count": 5,
+    },
+    "classes": [
+      "нормален статистически фиш",
+      "силна статистическа комбинация",
+      "слаб статистически фиш"
+    ],
+    "feature_means": {
+      "cold_gap_score": 0.24333201609691027,
+      "consecutive_pairs": 0.5416666666666666,
+      "frequency_score": 0.5271477777777778,
+      "high_count": 2.0108333333333333,
+      "human_pattern_score": 0.8569166666666667,
+      "low_count": 1.93,
+      "middle_balance_score": 0.6073940781440765,
+      "middle_count": 2.0591666666666666,
+      "numbers_under_31": 3.7525,
+      "odd_count": 2.8266666666666667,
+      "pair_support": 0.781519191919192,
+      "span": 37.098333333333336,
+      "structure_score": 0.6800333333333334,
+      "sum": 151.045,
+      "time_decay_score": 0.5194502358279967,
+      "triple_support": 0.44456
+    },
     "feature_names": [
       "sum",
       "odd_count",
@@ -178,42 +113,32 @@
       "human_pattern_score",
       "time_decay_score"
     ],
-    "feature_means": {
-      "sum": 151.045,
-      "odd_count": 2.8266666666666667,
-      "low_count": 1.93,
-      "middle_count": 2.0591666666666666,
-      "high_count": 2.0108333333333333,
-      "span": 37.098333333333336,
-      "consecutive_pairs": 0.5416666666666666,
-      "numbers_under_31": 3.7525,
-      "frequency_score": 0.5271477777777778,
-      "cold_gap_score": 0.24333201609691027,
-      "middle_balance_score": 0.6073940781440765,
-      "pair_support": 0.781519191919192,
-      "triple_support": 0.44456,
-      "structure_score": 0.6800333333333334,
-      "human_pattern_score": 0.8569166666666667,
-      "time_decay_score": 0.5194502358279967
-    },
     "feature_stds": {
-      "sum": 30.524570969314496,
-      "odd_count": 1.1573266867103826,
-      "low_count": 1.0373025903209594,
-      "middle_count": 1.0519449267886536,
-      "high_count": 1.004933272058381,
-      "span": 7.214247595038884,
-      "consecutive_pairs": 0.6597676105813313,
-      "numbers_under_31": 1.0338283630452707,
-      "frequency_score": 0.18951098323041451,
       "cold_gap_score": 0.10330797085618487,
-      "middle_balance_score": 0.16452484510709883,
-      "pair_support": 0.03332360465647137,
-      "triple_support": 0.04236581308593081,
-      "structure_score": 0.17715761223234366,
+      "consecutive_pairs": 0.6597676105813313,
+      "frequency_score": 0.18951098323041451,
+      "high_count": 1.004933272058381,
       "human_pattern_score": 0.18002314665990407,
-      "time_decay_score": 0.12145084260804907
+      "low_count": 1.0373025903209594,
+      "middle_balance_score": 0.16452484510709883,
+      "middle_count": 1.0519449267886536,
+      "numbers_under_31": 1.0338283630452707,
+      "odd_count": 1.1573266867103826,
+      "pair_support": 0.03332360465647137,
+      "span": 7.214247595038884,
+      "structure_score": 0.17715761223234366,
+      "sum": 30.524570969314496,
+      "time_decay_score": 0.12145084260804907,
+      "triple_support": 0.04236581308593081
     },
+    "score_quantiles": {
+      "q33": 54.9107,
+      "q66": 59.5424
+    },
+    "target": "слаб / нормален / силна статистическа комбинация",
+    "type": "nearest_centroid_classifier"
+  },
+  "cluster_model": {
     "centroids": [
       [
         -0.13168471043805663,
@@ -306,61 +231,77 @@
         -0.1438108902845929
       ]
     ],
+    "cluster_count": 5,
     "cluster_summaries": [
       {
-        "cluster": 0,
-        "label": "смесени статистически фишове",
-        "size": 197,
         "average_score": 52.0062,
-        "avg_frequency_score": 0.2621,
         "avg_cold_gap_score": 0.4047,
+        "avg_frequency_score": 0.2621,
+        "avg_human_pattern_score": 0.8655,
         "avg_structure_score": 0.7013,
-        "avg_human_pattern_score": 0.8655
+        "cluster": 0,
+        "label": "смесени статистически комбинации",
+        "size": 197
       },
       {
-        "cluster": 1,
-        "label": "балансирани фишове",
-        "size": 397,
         "average_score": 59.9511,
-        "avg_frequency_score": 0.5023,
         "avg_cold_gap_score": 0.2032,
+        "avg_frequency_score": 0.5023,
+        "avg_human_pattern_score": 0.9593,
         "avg_structure_score": 0.7586,
-        "avg_human_pattern_score": 0.9593
+        "cluster": 1,
+        "label": "балансирани комбинации",
+        "size": 397
       },
       {
-        "cluster": 2,
-        "label": "честотни фишове",
-        "size": 252,
         "average_score": 60.0882,
-        "avg_frequency_score": 0.7832,
         "avg_cold_gap_score": 0.2084,
+        "avg_frequency_score": 0.7832,
+        "avg_human_pattern_score": 0.9333,
         "avg_structure_score": 0.7448,
-        "avg_human_pattern_score": 0.9333
+        "cluster": 2,
+        "label": "честотни комбинации",
+        "size": 252
       },
       {
-        "cluster": 3,
-        "label": "смесени статистически фишове",
-        "size": 133,
         "average_score": 55.3886,
-        "avg_frequency_score": 0.5643,
         "avg_cold_gap_score": 0.1951,
+        "avg_frequency_score": 0.5643,
+        "avg_human_pattern_score": 0.8523,
         "avg_structure_score": 0.4496,
-        "avg_human_pattern_score": 0.8523
+        "cluster": 3,
+        "label": "смесени статистически комбинации",
+        "size": 133
       },
       {
-        "cluster": 4,
-        "label": "смесени статистически фишове",
-        "size": 221,
         "average_score": 51.6849,
-        "avg_frequency_score": 0.4937,
         "avg_cold_gap_score": 0.2403,
+        "avg_frequency_score": 0.4937,
+        "avg_human_pattern_score": 0.581,
         "avg_structure_score": 0.5847,
-        "avg_human_pattern_score": 0.581
+        "cluster": 4,
+        "label": "смесени статистически комбинации",
+        "size": 221
       }
-    ]
-  },
-  "dimensionality_reduction": {
-    "type": "pca_from_scratch",
+    ],
+    "feature_means": {
+      "cold_gap_score": 0.24333201609691027,
+      "consecutive_pairs": 0.5416666666666666,
+      "frequency_score": 0.5271477777777778,
+      "high_count": 2.0108333333333333,
+      "human_pattern_score": 0.8569166666666667,
+      "low_count": 1.93,
+      "middle_balance_score": 0.6073940781440765,
+      "middle_count": 2.0591666666666666,
+      "numbers_under_31": 3.7525,
+      "odd_count": 2.8266666666666667,
+      "pair_support": 0.781519191919192,
+      "span": 37.098333333333336,
+      "structure_score": 0.6800333333333334,
+      "sum": 151.045,
+      "time_decay_score": 0.5194502358279967,
+      "triple_support": 0.44456
+    },
     "feature_names": [
       "sum",
       "odd_count",
@@ -379,42 +320,47 @@
       "human_pattern_score",
       "time_decay_score"
     ],
-    "feature_means": {
-      "sum": 156.1925,
-      "odd_count": 2.6375,
-      "low_count": 1.8175,
-      "middle_count": 1.865,
-      "high_count": 2.3175,
-      "span": 39.8675,
-      "consecutive_pairs": 0.3875,
-      "numbers_under_31": 3.4425,
-      "frequency_score": 0.6229866666666667,
-      "cold_gap_score": 0.2009758026807978,
-      "middle_balance_score": 0.6462121925693335,
-      "pair_support": 0.7967575757575758,
-      "triple_support": 0.459645,
-      "structure_score": 0.8170000000000001,
-      "human_pattern_score": 0.990625,
-      "time_decay_score": 0.5443650823704599
-    },
     "feature_stds": {
-      "sum": 19.78317159724687,
-      "odd_count": 0.7052213076274919,
-      "low_count": 0.6967117540062218,
-      "middle_count": 0.7702325268147331,
-      "high_count": 0.6021629767982805,
-      "span": 5.589548405591109,
-      "consecutive_pairs": 0.5029673851018479,
-      "numbers_under_31": 0.6385241049337556,
-      "frequency_score": 0.15140081757821794,
-      "cold_gap_score": 0.07147118997202562,
-      "middle_balance_score": 0.18449652282254753,
-      "pair_support": 0.03131618866099005,
-      "triple_support": 0.043264112536650516,
-      "structure_score": 0.09979929733907664,
-      "human_pattern_score": 0.03853012849712563,
-      "time_decay_score": 0.1075363542163055
+      "cold_gap_score": 0.10330797085618487,
+      "consecutive_pairs": 0.6597676105813313,
+      "frequency_score": 0.18951098323041451,
+      "high_count": 1.004933272058381,
+      "human_pattern_score": 0.18002314665990407,
+      "low_count": 1.0373025903209594,
+      "middle_balance_score": 0.16452484510709883,
+      "middle_count": 1.0519449267886536,
+      "numbers_under_31": 1.0338283630452707,
+      "odd_count": 1.1573266867103826,
+      "pair_support": 0.03332360465647137,
+      "span": 7.214247595038884,
+      "structure_score": 0.17715761223234366,
+      "sum": 30.524570969314496,
+      "time_decay_score": 0.12145084260804907,
+      "triple_support": 0.04236581308593081
     },
+    "type": "kmeans_from_scratch"
+  },
+  "configuration": {
+    "backtest_candidate_count": 200,
+    "backtest_draws": 20,
+    "candidate_count": 1200,
+    "cluster_count": 5,
+    "portfolio_size": 15,
+    "random_seed": 20260620,
+    "recent_window": 80,
+    "score_weights": {
+      "cold_gap": 0.18,
+      "frequency": 0.16,
+      "human_pattern": 0.1,
+      "middle_balance": 0.14,
+      "pair_support": 0.12,
+      "structure": 0.14,
+      "time_decay": 0.1,
+      "triple_support": 0.06
+    }
+  },
+  "created_at": "2026-06-20T21:03:27",
+  "dimensionality_reduction": {
     "components": [
       [
         0.13205072463671147,
@@ -456,8 +402,75 @@
     "explained_variance_ratio": [
       0.2426,
       0.191
-    ]
+    ],
+    "feature_means": {
+      "cold_gap_score": 0.2009758026807978,
+      "consecutive_pairs": 0.3875,
+      "frequency_score": 0.6229866666666667,
+      "high_count": 2.3175,
+      "human_pattern_score": 0.990625,
+      "low_count": 1.8175,
+      "middle_balance_score": 0.6462121925693335,
+      "middle_count": 1.865,
+      "numbers_under_31": 3.4425,
+      "odd_count": 2.6375,
+      "pair_support": 0.7967575757575758,
+      "span": 39.8675,
+      "structure_score": 0.8170000000000001,
+      "sum": 156.1925,
+      "time_decay_score": 0.5443650823704599,
+      "triple_support": 0.459645
+    },
+    "feature_names": [
+      "sum",
+      "odd_count",
+      "low_count",
+      "middle_count",
+      "high_count",
+      "span",
+      "consecutive_pairs",
+      "numbers_under_31",
+      "frequency_score",
+      "cold_gap_score",
+      "middle_balance_score",
+      "pair_support",
+      "triple_support",
+      "structure_score",
+      "human_pattern_score",
+      "time_decay_score"
+    ],
+    "feature_stds": {
+      "cold_gap_score": 0.07147118997202562,
+      "consecutive_pairs": 0.5029673851018479,
+      "frequency_score": 0.15140081757821794,
+      "high_count": 0.6021629767982805,
+      "human_pattern_score": 0.03853012849712563,
+      "low_count": 0.6967117540062218,
+      "middle_balance_score": 0.18449652282254753,
+      "middle_count": 0.7702325268147331,
+      "numbers_under_31": 0.6385241049337556,
+      "odd_count": 0.7052213076274919,
+      "pair_support": 0.03131618866099005,
+      "span": 5.589548405591109,
+      "structure_score": 0.09979929733907664,
+      "sum": 19.78317159724687,
+      "time_decay_score": 0.1075363542163055,
+      "triple_support": 0.043264112536650516
+    },
+    "type": "pca_from_scratch"
   },
+  "implemented_course_topics": [
+    "Feature Engineering",
+    "Time Series / rolling historical order",
+    "Classification",
+    "Unsupervised Learning / Clustering",
+    "Dimensionality Reduction",
+    "Testing / Историческа проверкаing",
+    "Machine Learning Tools: конфигурация, карта на модела и версионирани артефакти"
+  ],
+  "important_note": "Това е статистическо ранкиране, класификация, клъстеризация и редукция на размерността за анализ. Не променя реалния шанс за джакпот.",
+  "model_name": "Lottery ML Extensions Комбиниран анализ",
+  "model_version": "1.0",
   "projection_points_sample": [
     {
       "numbers": [
@@ -468,9 +481,9 @@
         34,
         37
       ],
+      "score": 66.6704,
       "x": -2.8701,
-      "y": -1.242,
-      "score": 66.6704
+      "y": -1.242
     },
     {
       "numbers": [
@@ -481,9 +494,9 @@
         37,
         44
       ],
+      "score": 66.5603,
       "x": -2.8862,
-      "y": -0.0736,
-      "score": 66.5603
+      "y": -0.0736
     },
     {
       "numbers": [
@@ -494,9 +507,9 @@
         37,
         48
       ],
+      "score": 65.9788,
       "x": -2.4985,
-      "y": -1.0144,
-      "score": 65.9788
+      "y": -1.0144
     },
     {
       "numbers": [
@@ -507,9 +520,9 @@
         37,
         48
       ],
+      "score": 65.3594,
       "x": -0.3691,
-      "y": 1.2909,
-      "score": 65.3594
+      "y": 1.2909
     },
     {
       "numbers": [
@@ -520,9 +533,9 @@
         42,
         45
       ],
+      "score": 65.354,
       "x": -0.8469,
-      "y": -1.5084,
-      "score": 65.354
+      "y": -1.5084
     },
     {
       "numbers": [
@@ -533,9 +546,9 @@
         34,
         48
       ],
+      "score": 65.2865,
       "x": -3.2257,
-      "y": -0.6704,
-      "score": 65.2865
+      "y": -0.6704
     },
     {
       "numbers": [
@@ -546,9 +559,9 @@
         46,
         48
       ],
+      "score": 65.2555,
       "x": -2.3076,
-      "y": -1.3303,
-      "score": 65.2555
+      "y": -1.3303
     },
     {
       "numbers": [
@@ -559,9 +572,9 @@
         37,
         48
       ],
+      "score": 65.2326,
       "x": -1.5614,
-      "y": -0.9375,
-      "score": 65.2326
+      "y": -0.9375
     },
     {
       "numbers": [
@@ -572,9 +585,9 @@
         34,
         44
       ],
+      "score": 65.1816,
       "x": -4.2433,
-      "y": -0.4939,
-      "score": 65.1816
+      "y": -0.4939
     },
     {
       "numbers": [
@@ -585,9 +598,9 @@
         38,
         43
       ],
+      "score": 65.0513,
       "x": 2.1729,
-      "y": -0.9245,
-      "score": 65.0513
+      "y": -0.9245
     },
     {
       "numbers": [
@@ -598,9 +611,9 @@
         42,
         45
       ],
+      "score": 65.013,
       "x": 0.8029,
-      "y": -1.3119,
-      "score": 65.013
+      "y": -1.3119
     },
     {
       "numbers": [
@@ -611,9 +624,9 @@
         48,
         49
       ],
+      "score": 65.0123,
       "x": -1.1837,
-      "y": -0.6892,
-      "score": 65.0123
+      "y": -0.6892
     },
     {
       "numbers": [
@@ -624,9 +637,9 @@
         37,
         49
       ],
+      "score": 64.9589,
       "x": 0.8378,
-      "y": -1.7211,
-      "score": 64.9589
+      "y": -1.7211
     },
     {
       "numbers": [
@@ -637,9 +650,9 @@
         37,
         44
       ],
+      "score": 64.9377,
       "x": -1.8362,
-      "y": -1.0819,
-      "score": 64.9377
+      "y": -1.0819
     },
     {
       "numbers": [
@@ -650,9 +663,9 @@
         34,
         44
       ],
+      "score": 64.9012,
       "x": -3.2858,
-      "y": 0.4926,
-      "score": 64.9012
+      "y": 0.4926
     },
     {
       "numbers": [
@@ -663,9 +676,9 @@
         37,
         48
       ],
+      "score": 64.8526,
       "x": -2.3495,
-      "y": -1.2053,
-      "score": 64.8526
+      "y": -1.2053
     },
     {
       "numbers": [
@@ -676,9 +689,9 @@
         36,
         45
       ],
+      "score": 64.7914,
       "x": 1.2848,
-      "y": -0.7137,
-      "score": 64.7914
+      "y": -0.7137
     },
     {
       "numbers": [
@@ -689,9 +702,9 @@
         42,
         46
       ],
+      "score": 64.7249,
       "x": 1.4765,
-      "y": -0.7225,
-      "score": 64.7249
+      "y": -0.7225
     },
     {
       "numbers": [
@@ -702,9 +715,9 @@
         35,
         38
       ],
+      "score": 64.6955,
       "x": 1.6976,
-      "y": -1.0126,
-      "score": 64.6955
+      "y": -1.0126
     },
     {
       "numbers": [
@@ -715,9 +728,9 @@
         38,
         45
       ],
+      "score": 64.6945,
       "x": 0.6089,
-      "y": -1.999,
-      "score": 64.6945
+      "y": -1.999
     },
     {
       "numbers": [
@@ -728,9 +741,9 @@
         37,
         48
       ],
+      "score": 64.6024,
       "x": -1.5705,
-      "y": -1.0117,
-      "score": 64.6024
+      "y": -1.0117
     },
     {
       "numbers": [
@@ -741,9 +754,9 @@
         42,
         46
       ],
+      "score": 64.58,
       "x": 1.3082,
-      "y": -1.5651,
-      "score": 64.58
+      "y": -1.5651
     },
     {
       "numbers": [
@@ -754,9 +767,9 @@
         35,
         38
       ],
+      "score": 64.5723,
       "x": 1.8156,
-      "y": -1.4911,
-      "score": 64.5723
+      "y": -1.4911
     },
     {
       "numbers": [
@@ -767,9 +780,9 @@
         37,
         44
       ],
+      "score": 64.5336,
       "x": -2.6012,
-      "y": 2.3993,
-      "score": 64.5336
+      "y": 2.3993
     },
     {
       "numbers": [
@@ -780,9 +793,9 @@
         36,
         42
       ],
+      "score": 64.4448,
       "x": 1.664,
-      "y": -1.7055,
-      "score": 64.4448
+      "y": -1.7055
     },
     {
       "numbers": [
@@ -793,9 +806,9 @@
         37,
         44
       ],
+      "score": 64.3609,
       "x": -1.1648,
-      "y": -1.8707,
-      "score": 64.3609
+      "y": -1.8707
     },
     {
       "numbers": [
@@ -806,9 +819,9 @@
         34,
         46
       ],
+      "score": 64.3087,
       "x": -2.8985,
-      "y": -0.9457,
-      "score": 64.3087
+      "y": -0.9457
     },
     {
       "numbers": [
@@ -819,9 +832,9 @@
         43,
         45
       ],
+      "score": 64.2921,
       "x": 1.4829,
-      "y": -1.9895,
-      "score": 64.2921
+      "y": -1.9895
     },
     {
       "numbers": [
@@ -832,9 +845,9 @@
         34,
         48
       ],
+      "score": 64.1914,
       "x": -2.4709,
-      "y": -0.5405,
-      "score": 64.1914
+      "y": -0.5405
     },
     {
       "numbers": [
@@ -845,9 +858,9 @@
         38,
         42
       ],
+      "score": 64.18,
       "x": 1.2879,
-      "y": -1.1962,
-      "score": 64.18
+      "y": -1.1962
     },
     {
       "numbers": [
@@ -858,9 +871,9 @@
         37,
         44
       ],
+      "score": 64.1052,
       "x": -3.9138,
-      "y": 2.3335,
-      "score": 64.1052
+      "y": 2.3335
     },
     {
       "numbers": [
@@ -871,9 +884,9 @@
         42,
         49
       ],
+      "score": 64.0963,
       "x": -0.5492,
-      "y": -1.5556,
-      "score": 64.0963
+      "y": -1.5556
     },
     {
       "numbers": [
@@ -884,9 +897,9 @@
         44,
         49
       ],
+      "score": 64.0919,
       "x": -4.1832,
-      "y": -1.0375,
-      "score": 64.0919
+      "y": -1.0375
     },
     {
       "numbers": [
@@ -897,9 +910,9 @@
         38,
         45
       ],
+      "score": 64.0844,
       "x": -0.7862,
-      "y": -1.2565,
-      "score": 64.0844
+      "y": -1.2565
     },
     {
       "numbers": [
@@ -910,9 +923,9 @@
         35,
         44
       ],
+      "score": 64.0764,
       "x": -0.221,
-      "y": -0.5582,
-      "score": 64.0764
+      "y": -0.5582
     },
     {
       "numbers": [
@@ -923,9 +936,9 @@
         35,
         43
       ],
+      "score": 63.9276,
       "x": 1.3475,
-      "y": -1.688,
-      "score": 63.9276
+      "y": -1.688
     },
     {
       "numbers": [
@@ -936,9 +949,9 @@
         35,
         42
       ],
+      "score": 63.9257,
       "x": 1.9535,
-      "y": -1.3968,
-      "score": 63.9257
+      "y": -1.3968
     },
     {
       "numbers": [
@@ -949,9 +962,9 @@
         35,
         42
       ],
+      "score": 63.8973,
       "x": 0.8887,
-      "y": -1.3196,
-      "score": 63.8973
+      "y": -1.3196
     },
     {
       "numbers": [
@@ -962,9 +975,9 @@
         44,
         48
       ],
+      "score": 63.8825,
       "x": -2.9025,
-      "y": 1.9199,
-      "score": 63.8825
+      "y": 1.9199
     },
     {
       "numbers": [
@@ -975,9 +988,9 @@
         37,
         42
       ],
+      "score": 63.8551,
       "x": 1.0761,
-      "y": -1.9586,
-      "score": 63.8551
+      "y": -1.9586
     },
     {
       "numbers": [
@@ -988,9 +1001,9 @@
         38,
         43
       ],
+      "score": 63.759,
       "x": 1.0619,
-      "y": -0.1748,
-      "score": 63.759
+      "y": -0.1748
     },
     {
       "numbers": [
@@ -1001,9 +1014,9 @@
         46,
         49
       ],
+      "score": 63.7258,
       "x": -1.2557,
-      "y": 2.6278,
-      "score": 63.7258
+      "y": 2.6278
     },
     {
       "numbers": [
@@ -1014,9 +1027,9 @@
         44,
         46
       ],
+      "score": 63.703,
       "x": -0.8972,
-      "y": -0.9707,
-      "score": 63.703
+      "y": -0.9707
     },
     {
       "numbers": [
@@ -1027,9 +1040,9 @@
         36,
         38
       ],
+      "score": 63.6823,
       "x": 2.6158,
-      "y": 0.4991,
-      "score": 63.6823
+      "y": 0.4991
     },
     {
       "numbers": [
@@ -1040,9 +1053,9 @@
         36,
         38
       ],
+      "score": 63.674,
       "x": 0.2648,
-      "y": -0.3774,
-      "score": 63.674
+      "y": -0.3774
     },
     {
       "numbers": [
@@ -1053,9 +1066,9 @@
         35,
         46
       ],
+      "score": 63.6232,
       "x": 0.0992,
-      "y": -1.4212,
-      "score": 63.6232
+      "y": -1.4212
     },
     {
       "numbers": [
@@ -1066,9 +1079,9 @@
         38,
         49
       ],
+      "score": 63.5316,
       "x": 0.4374,
-      "y": 0.7779,
-      "score": 63.5316
+      "y": 0.7779
     },
     {
       "numbers": [
@@ -1079,9 +1092,9 @@
         36,
         38
       ],
+      "score": 63.4855,
       "x": 1.9934,
-      "y": -0.5768,
-      "score": 63.4855
+      "y": -0.5768
     },
     {
       "numbers": [
@@ -1092,9 +1105,9 @@
         43,
         46
       ],
+      "score": 63.4616,
       "x": 2.2698,
-      "y": 2.2854,
-      "score": 63.4616
+      "y": 2.2854
     },
     {
       "numbers": [
@@ -1105,9 +1118,9 @@
         37,
         49
       ],
+      "score": 63.4564,
       "x": -4.1311,
-      "y": -1.4684,
-      "score": 63.4564
+      "y": -1.4684
     },
     {
       "numbers": [
@@ -1118,9 +1131,9 @@
         37,
         44
       ],
+      "score": 63.4443,
       "x": -2.5107,
-      "y": -1.1235,
-      "score": 63.4443
+      "y": -1.1235
     },
     {
       "numbers": [
@@ -1131,9 +1144,9 @@
         37,
         45
       ],
+      "score": 63.4315,
       "x": -2.6227,
-      "y": 1.0225,
-      "score": 63.4315
+      "y": 1.0225
     },
     {
       "numbers": [
@@ -1144,9 +1157,9 @@
         36,
         38
       ],
+      "score": 63.4243,
       "x": 0.7965,
-      "y": -1.3857,
-      "score": 63.4243
+      "y": -1.3857
     },
     {
       "numbers": [
@@ -1157,9 +1170,9 @@
         34,
         38
       ],
+      "score": 63.4232,
       "x": -0.4982,
-      "y": 0.5503,
-      "score": 63.4232
+      "y": 0.5503
     },
     {
       "numbers": [
@@ -1170,9 +1183,9 @@
         37,
         48
       ],
+      "score": 63.4067,
       "x": -0.9003,
-      "y": 0.212,
-      "score": 63.4067
+      "y": 0.212
     },
     {
       "numbers": [
@@ -1183,9 +1196,9 @@
         34,
         46
       ],
+      "score": 63.3499,
       "x": -1.5376,
-      "y": -0.7744,
-      "score": 63.3499
+      "y": -0.7744
     },
     {
       "numbers": [
@@ -1196,9 +1209,9 @@
         46,
         49
       ],
+      "score": 63.336,
       "x": 0.9283,
-      "y": -0.1527,
-      "score": 63.336
+      "y": -0.1527
     },
     {
       "numbers": [
@@ -1209,9 +1222,9 @@
         34,
         48
       ],
+      "score": 63.3354,
       "x": -2.6108,
-      "y": 0.8535,
-      "score": 63.3354
+      "y": 0.8535
     },
     {
       "numbers": [
@@ -1222,9 +1235,9 @@
         42,
         49
       ],
+      "score": 63.3089,
       "x": 1.4436,
-      "y": -1.3222,
-      "score": 63.3089
+      "y": -1.3222
     },
     {
       "numbers": [
@@ -1235,14 +1248,28 @@
         37,
         46
       ],
+      "score": 63.2979,
       "x": -1.6236,
-      "y": -1.7435,
-      "score": 63.2979
+      "y": -1.7435
     }
   ],
   "recommended_combinations": [
     {
-      "rank": 1,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 14.01,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 66.67,
+      "feature_summary": {
+        "cold_gap_score": 0.3516,
+        "frequency_score": 0.8333,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.4119,
+        "pair_support": 0.8319,
+        "structure_score": 1.0,
+        "time_decay_score": 0.4188,
+        "triple_support": 0.512
+      },
       "numbers": [
         4,
         12,
@@ -1251,26 +1278,26 @@
         34,
         37
       ],
-      "confidence_score": 66.67,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 14.01,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 1,
       "relative_model_probability": 1.046116,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.8333,
-        "cold_gap_score": 0.3516,
-        "middle_balance_score": 0.4119,
-        "pair_support": 0.8319,
-        "triple_support": 0.512,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4188
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 2,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 19.35,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 66.56,
+      "feature_summary": {
+        "cold_gap_score": 0.3066,
+        "frequency_score": 0.8147,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.4249,
+        "pair_support": 0.8638,
+        "structure_score": 1.0,
+        "time_decay_score": 0.4681,
+        "triple_support": 0.502
+      },
       "numbers": [
         4,
         12,
@@ -1279,26 +1306,26 @@
         37,
         44
       ],
-      "confidence_score": 66.56,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 19.35,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 2,
       "relative_model_probability": 1.044389,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.8147,
-        "cold_gap_score": 0.3066,
-        "middle_balance_score": 0.4249,
-        "pair_support": 0.8638,
-        "triple_support": 0.502,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4681
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 3,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 24.43,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.98,
+      "feature_summary": {
+        "cold_gap_score": 0.247,
+        "frequency_score": 0.8253,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.4273,
+        "pair_support": 0.8343,
+        "structure_score": 1.0,
+        "time_decay_score": 0.5297,
+        "triple_support": 0.506
+      },
       "numbers": [
         4,
         12,
@@ -1307,26 +1334,26 @@
         37,
         48
       ],
-      "confidence_score": 65.98,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 24.43,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 3,
       "relative_model_probability": 1.035265,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.8253,
-        "cold_gap_score": 0.247,
-        "middle_balance_score": 0.4273,
-        "pair_support": 0.8343,
-        "triple_support": 0.506,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.5297
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 4,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 17.94,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.36,
+      "feature_summary": {
+        "cold_gap_score": 0.2527,
+        "frequency_score": 0.7387,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.571,
+        "pair_support": 0.8327,
+        "structure_score": 0.84,
+        "time_decay_score": 0.6269,
+        "triple_support": 0.496
+      },
       "numbers": [
         12,
         21,
@@ -1335,26 +1362,26 @@
         37,
         48
       ],
-      "confidence_score": 65.36,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 17.94,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 4,
       "relative_model_probability": 1.025546,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.7387,
-        "cold_gap_score": 0.2527,
-        "middle_balance_score": 0.571,
-        "pair_support": 0.8327,
-        "triple_support": 0.496,
-        "structure_score": 0.84,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.6269
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 5,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 20.2,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.35,
+      "feature_summary": {
+        "cold_gap_score": 0.2787,
+        "frequency_score": 0.708,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.6529,
+        "pair_support": 0.7964,
+        "structure_score": 1.0,
+        "time_decay_score": 0.3756,
+        "triple_support": 0.426
+      },
       "numbers": [
         4,
         12,
@@ -1363,26 +1390,26 @@
         42,
         45
       ],
-      "confidence_score": 65.35,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 20.2,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 5,
       "relative_model_probability": 1.025462,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.708,
-        "cold_gap_score": 0.2787,
-        "middle_balance_score": 0.6529,
-        "pair_support": 0.7964,
-        "triple_support": 0.426,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.3756
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 6,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 12.35,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.29,
+      "feature_summary": {
+        "cold_gap_score": 0.4022,
+        "frequency_score": 0.824,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.4298,
+        "pair_support": 0.8396,
+        "structure_score": 0.88,
+        "time_decay_score": 0.3522,
+        "triple_support": 0.488
+      },
       "numbers": [
         4,
         12,
@@ -1391,26 +1418,26 @@
         34,
         48
       ],
-      "confidence_score": 65.29,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 12.35,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 6,
       "relative_model_probability": 1.024403,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.824,
-        "cold_gap_score": 0.4022,
-        "middle_balance_score": 0.4298,
-        "pair_support": 0.8396,
-        "triple_support": 0.488,
-        "structure_score": 0.88,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.3522
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 7,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 27.06,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.26,
+      "feature_summary": {
+        "cold_gap_score": 0.2185,
+        "frequency_score": 0.7667,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.5401,
+        "pair_support": 0.8295,
+        "structure_score": 1.0,
+        "time_decay_score": 0.4504,
+        "triple_support": 0.506
+      },
       "numbers": [
         1,
         12,
@@ -1419,26 +1446,26 @@
         46,
         48
       ],
-      "confidence_score": 65.26,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 27.06,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 7,
       "relative_model_probability": 1.023916,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.7667,
-        "cold_gap_score": 0.2185,
-        "middle_balance_score": 0.5401,
-        "pair_support": 0.8295,
-        "triple_support": 0.506,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4504
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 8,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 25.13,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.23,
+      "feature_summary": {
+        "cold_gap_score": 0.3142,
+        "frequency_score": 0.7133,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.589,
+        "pair_support": 0.8307,
+        "structure_score": 0.88,
+        "time_decay_score": 0.4882,
+        "triple_support": 0.458
+      },
       "numbers": [
         4,
         12,
@@ -1447,26 +1474,26 @@
         37,
         48
       ],
-      "confidence_score": 65.23,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 25.13,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 8,
       "relative_model_probability": 1.023556,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.7133,
-        "cold_gap_score": 0.3142,
-        "middle_balance_score": 0.589,
-        "pair_support": 0.8307,
-        "triple_support": 0.458,
-        "structure_score": 0.88,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4882
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 9,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 8.81,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.18,
+      "feature_summary": {
+        "cold_gap_score": 0.4307,
+        "frequency_score": 0.852,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.376,
+        "pair_support": 0.8529,
+        "structure_score": 0.88,
+        "time_decay_score": 0.2738,
+        "triple_support": 0.54
+      },
       "numbers": [
         4,
         12,
@@ -1475,26 +1502,26 @@
         34,
         44
       ],
-      "confidence_score": 65.18,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 8.81,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 9,
       "relative_model_probability": 1.022756,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.852,
-        "cold_gap_score": 0.4307,
-        "middle_balance_score": 0.376,
-        "pair_support": 0.8529,
-        "triple_support": 0.54,
-        "structure_score": 0.88,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.2738
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 10,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 14.54,
+      "cluster": 1,
+      "cluster_label": "балансирани комбинации",
+      "confidence_score": 65.05,
+      "feature_summary": {
+        "cold_gap_score": 0.1356,
+        "frequency_score": 0.4973,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.8819,
+        "pair_support": 0.7677,
+        "structure_score": 1.0,
+        "time_decay_score": 0.6599,
+        "triple_support": 0.416
+      },
       "numbers": [
         2,
         15,
@@ -1503,26 +1530,26 @@
         38,
         43
       ],
-      "confidence_score": 65.05,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 14.54,
-      "cluster": 1,
-      "cluster_label": "балансирани фишове",
+      "rank": 10,
       "relative_model_probability": 1.020711,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.4973,
-        "cold_gap_score": 0.1356,
-        "middle_balance_score": 0.8819,
-        "pair_support": 0.7677,
-        "triple_support": 0.416,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.6599
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 11,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 16.97,
+      "cluster": 1,
+      "cluster_label": "балансирани комбинации",
+      "confidence_score": 65.01,
+      "feature_summary": {
+        "cold_gap_score": 0.1527,
+        "frequency_score": 0.5653,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.8736,
+        "pair_support": 0.7923,
+        "structure_score": 1.0,
+        "time_decay_score": 0.4782,
+        "triple_support": 0.45
+      },
       "numbers": [
         8,
         15,
@@ -1531,26 +1558,26 @@
         42,
         45
       ],
-      "confidence_score": 65.01,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 16.97,
-      "cluster": 1,
-      "cluster_label": "балансирани фишове",
+      "rank": 11,
       "relative_model_probability": 1.020111,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.5653,
-        "cold_gap_score": 0.1527,
-        "middle_balance_score": 0.8736,
-        "pair_support": 0.7923,
-        "triple_support": 0.45,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4782
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 12,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 25.98,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 65.01,
+      "feature_summary": {
+        "cold_gap_score": 0.2027,
+        "frequency_score": 0.784,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.5068,
+        "pair_support": 0.8166,
+        "structure_score": 1.0,
+        "time_decay_score": 0.5155,
+        "triple_support": 0.462
+      },
       "numbers": [
         9,
         12,
@@ -1559,26 +1586,26 @@
         48,
         49
       ],
-      "confidence_score": 65.01,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 25.98,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 12,
       "relative_model_probability": 1.0201,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.784,
-        "cold_gap_score": 0.2027,
-        "middle_balance_score": 0.5068,
-        "pair_support": 0.8166,
-        "triple_support": 0.462,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.5155
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 13,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 20.68,
+      "cluster": 1,
+      "cluster_label": "балансирани комбинации",
+      "confidence_score": 64.96,
+      "feature_summary": {
+        "cold_gap_score": 0.1357,
+        "frequency_score": 0.5987,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.6611,
+        "pair_support": 0.7818,
+        "structure_score": 1.0,
+        "time_decay_score": 0.7649,
+        "triple_support": 0.442
+      },
       "numbers": [
         2,
         13,
@@ -1587,26 +1614,26 @@
         37,
         49
       ],
-      "confidence_score": 64.96,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 20.68,
-      "cluster": 1,
-      "cluster_label": "балансирани фишове",
+      "rank": 13,
       "relative_model_probability": 1.019262,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.5987,
-        "cold_gap_score": 0.1357,
-        "middle_balance_score": 0.6611,
-        "pair_support": 0.7818,
-        "triple_support": 0.442,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.7649
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 14,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 23.03,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 64.94,
+      "feature_summary": {
+        "cold_gap_score": 0.2249,
+        "frequency_score": 0.8147,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.4478,
+        "pair_support": 0.8323,
+        "structure_score": 1.0,
+        "time_decay_score": 0.4827,
+        "triple_support": 0.462
+      },
       "numbers": [
         9,
         12,
@@ -1615,26 +1642,26 @@
         37,
         44
       ],
-      "confidence_score": 64.94,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 23.03,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 14,
       "relative_model_probability": 1.018929,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.8147,
-        "cold_gap_score": 0.2249,
-        "middle_balance_score": 0.4478,
-        "pair_support": 0.8323,
-        "triple_support": 0.462,
-        "structure_score": 1.0,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.4827
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     },
     {
-      "rank": 15,
+      "classification": "силна статистическа комбинация",
+      "classification_confidence": 9.79,
+      "cluster": 2,
+      "cluster_label": "честотни комбинации",
+      "confidence_score": 64.9,
+      "feature_summary": {
+        "cold_gap_score": 0.3889,
+        "frequency_score": 0.8347,
+        "human_pattern_score": 1.0,
+        "middle_balance_score": 0.3864,
+        "pair_support": 0.8525,
+        "structure_score": 0.88,
+        "time_decay_score": 0.3526,
+        "triple_support": 0.51
+      },
       "numbers": [
         4,
         12,
@@ -1643,38 +1670,11 @@
         34,
         44
       ],
-      "confidence_score": 64.9,
-      "classification": "силен статистически фиш",
-      "classification_confidence": 9.79,
-      "cluster": 2,
-      "cluster_label": "честотни фишове",
+      "rank": 15,
       "relative_model_probability": 1.018356,
-      "theoretical_jackpot_odds": "1 към 13983816",
-      "feature_summary": {
-        "frequency_score": 0.8347,
-        "cold_gap_score": 0.3889,
-        "middle_balance_score": 0.3864,
-        "pair_support": 0.8525,
-        "triple_support": 0.51,
-        "structure_score": 0.88,
-        "human_pattern_score": 1.0,
-        "time_decay_score": 0.3526
-      }
+      "theoretical_jackpot_odds": "1 към 13983816"
     }
   ],
-  "backtest_summary": {
-    "tested_draws": 20,
-    "average_matches": 0.55,
-    "hit_rate_ge_2": 10.0,
-    "hit_rate_ge_3": 0.0,
-    "distribution": {
-      "0": 11,
-      "1": 7,
-      "2": 2,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0
-    }
-  }
+  "theoretical_jackpot_odds": "1 към 13983816",
+  "training_draws": 10057
 }

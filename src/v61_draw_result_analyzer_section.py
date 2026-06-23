@@ -126,7 +126,7 @@ def render_v61_draw_result_analyzer_section() -> None:
             st.code(output or "-", language="text")
 
     with col_b:
-        st.caption("При добавяне на нов тираж този модул може да се refresh-ва автоматично от Add Draw workflow.")
+        st.caption("При добавяне на нов тираж този модул може да се обновява автоматично от работния процес „Добавяне на тираж“.")
 
     try:
         result = _load_analysis()

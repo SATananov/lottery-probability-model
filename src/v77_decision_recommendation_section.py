@@ -51,7 +51,7 @@ def render_v77_decision_recommendation_section() -> None:
     st.title("Решение и препоръка")
     st.caption(
         "Step 77 обединява Neural Meta Learner, обяснимостта и структурната валидация "
-        "в ясен decision layer за кандидат фишовете."
+        "в ясен слой за решение за кандидат комбинациите."
     )
 
     st.warning(
@@ -94,7 +94,7 @@ def render_v77_decision_recommendation_section() -> None:
     else:
         st.info("Още няма налична препоръка. Натисни бутона за обновяване.")
 
-    st.subheader("Подреждане на кандидат фишовете")
+    st.subheader("Подреждане на кандидат комбинациите")
     rec_df = _read_csv(V77_TICKET_RECOMMENDATIONS_CSV)
     if rec_df.empty:
         st.info("Няма генерирани препоръки.")

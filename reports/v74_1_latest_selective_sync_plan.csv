@@ -1,6 +1,6 @@
 ﻿order,step,label,category,script,script_exists,role
 1,79,Експорт и изпълнение,Експорт и изпълнение,scripts/v79_build_ticket_pack_export_center.py,,"Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение."
-2,80,Финален системен одит,Финален системен одит,scripts/v80_build_final_system_audit_center.py,,"Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол."
+2,80,Финален системен одит,Финален системен одит,scripts/v80_build_final_system_audit_center.py,,"Проверява данни синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол."
 3,81,Финален UX контрол,Финален UX контрол,scripts/v81_build_final_ux_navigation_center.py,,"Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels."
-4,82,Финален release пакет,Финален release пакет,scripts/v82_build_final_release_package_center.py,,Финален release readiness и clean ZIP контролен слой след Step 81.
+4,82,Финален пакет за предаване,Финален пакет за предаване,scripts/v82_build_final_release_package_center.py,,Финален готовност за предаване и чист ZIP контролен слой след Step 81.
 5,74,Контрол на синхрона,Контрол на синхрона,scripts/v74_build_model_dependency_sync_center.py,,"Финален контролен слой за проверка на model artifacts, dependency map и sync status."

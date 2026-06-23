@@ -1,8 +1,8 @@
-# Step 82 — Финален release пакет
+# Step 82 — Финален пакет за предаване
 
 Статус: **OK**
 Проверени задължителни файлове: **22**
-Проверени datasets: **3**
+Проверени данниs: **3**
 Файлове в release manifest: **746**
 Нежелани release файлове: **0**
 Намерени проблеми: **0**
@@ -16,6 +16,6 @@
 
 ## Clean ZIP принцип
 
-Release ZIP трябва да съдържа активното приложение, datasets, models, reports, scripts и src, но без Git history, cache, backup, temp и helper patch файлове.
+Release ZIP трябва да съдържа активното приложение, данниs, models, reports, scripts и src, но без Git history, cache, backup, temp и helper patch файлове.
 
 **Важно:** Step 82 е release контролен слой. Той не е прогноза и не е гаранция за печалба.

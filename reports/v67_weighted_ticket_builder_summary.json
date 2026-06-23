@@ -1,7 +1,7 @@
 {
   "step": "67",
   "name": "Weighted Ticket Builder Integration",
-  "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
+  "source_scores": "reports/v66_weighted_smart_комбиниран анализ_scores.csv",
   "tickets_generated": 8,
   "strategies_used": [
     "balanced_weighted",

@@ -20,37 +20,37 @@ TICKET_SIZE = 6
 TICKET_STRATEGIES = [
     {
         "strategy": "balanced_weighted",
-        "label": "Балансиран претеглен фиш",
+        "label": "Балансирана претеглена комбинация",
         "pool_size": 24,
         "description": "Търси силен среден score, но с контрол върху odd/even, low/high, range и десетилетия.",
     },
     {
         "strategy": "high_confidence",
-        "label": "Фиш с висока претеглена оценка",
+        "label": "Комбинация с висока претеглена оценка",
         "pool_size": 16,
         "description": "Предпочита най-силните числа от Step 66, с минимален структурен контрол.",
     },
     {
         "strategy": "diversified_weighted",
-        "label": "Диверсифициран претеглен фиш",
+        "label": "Диверсифицирана претеглена комбинация",
         "pool_size": 30,
-        "description": "Намалява припокриването с предишните фишове и пази по-широко покритие.",
+        "description": "Намалява припокриването с предишните комбинации и пази по-широко покритие.",
     },
     {
         "strategy": "odd_even_balanced",
-        "label": "Балансиран фиш по нечетни/четни числа",
+        "label": "Балансирана комбинация по нечетни/четни числа",
         "pool_size": 28,
         "description": "Търси 3/3 или 2/4 баланс между четни и нечетни числа.",
     },
     {
         "strategy": "low_high_balanced",
-        "label": "Балансиран фиш по ниски/високи числа",
+        "label": "Балансирана комбинация по ниски/високи числа",
         "pool_size": 28,
         "description": "Търси баланс между ниски числа 1–24 и високи числа 25–49.",
     },
     {
         "strategy": "spread_balanced",
-        "label": "Разпределен range фиш",
+        "label": "Разпределена диапазонна комбинация",
         "pool_size": 32,
         "description": "Предпочита по-широк диапазон и поне няколко различни десетични групи.",
     },
@@ -62,7 +62,7 @@ TICKET_STRATEGIES = [
     },
     {
         "strategy": "exploratory_weighted",
-        "label": "Разширен статистически фиш",
+        "label": "Разширена статистическа комбинация",
         "pool_size": 36,
         "description": "Позволява малко по-широк пул, за да не се повтарят само най-очевидните числа.",
     },
@@ -362,12 +362,12 @@ def balance_status(metrics, historical_exact_match, max_previous_overlap):
         issues.append("много поредни числа")
 
     if max_previous_overlap >= 5:
-        issues.append("много голямо припокриване с друг фиш")
+        issues.append("много голямо припокриване с друга комбинация")
     elif max_previous_overlap == 4:
-        issues.append("умерено припокриване с друг фиш")
+        issues.append("умерено припокриване с друга комбинация")
 
     if not issues:
-        return "добър структурен баланс", "Контролиран статистически фиш."
+        return "добър структурен баланс", "Контролирана статистическа комбинация."
 
     if len(issues) <= 2:
         return "умерен риск", "Наблюдение: " + "; ".join(issues)
@@ -525,7 +525,7 @@ def build_weighted_ticket_builder():
 
     summary = {
         "step": "67",
-        "name": "Weighted Ticket Builder Integration",
+        "name": "Умен генератор с тегла",
         "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
         "tickets_generated": len(tickets),
         "strategies_used": [strategy["strategy"] for strategy in TICKET_STRATEGIES],
@@ -562,20 +562,20 @@ def build_weighted_ticket_builder():
     write_json(MODELS_DIR / "v67_weighted_ticket_builder_model.json", model_payload)
 
     md = [
-        "# Step 67 — Weighted Ticket Builder Integration",
+        "# Step 67 — Умен генератор с тегла",
         "",
         "This report turns Step 66 weighted number scores into a small portfolio of статистическа референция tickets.",
         "",
         "**Important:** These combinations are not predictions and not гаранция за печалбаs.",
         "",
-        f"Tickets generated: **{summary['tickets_generated']}**",
+        f"Генерирани комбинации: **{summary['tickets_generated']}**",
         f"Best average претеглена оценка ticket: **#{summary['top_average_weighted_score_ticket_id']}**",
         f"Best average претеглена оценка: **{summary['top_average_weighted_score']}%**",
-        f"Historical exact matches: **{summary['historical_exact_matches']}**",
+        f"Точни исторически повторения: **{summary['historical_exact_matches']}**",
         "",
-        "## Generated tickets",
+        "## Генерирани комбинации",
         "",
-        "| ID | Strategy | Numbers | Avg score | Odd/Even | Low/High | Range | Status |",
+        "| ID | Стратегия | Числа | Средна оценка | Нечетни/четни | Ниски/високи | Диапазон | Статус |",
         "|---:|---|---|---:|---|---|---:|---|",
     ]
 
@@ -588,7 +588,7 @@ def build_weighted_ticket_builder():
 
     md.extend([
         "",
-        "## Safety note",
+        "## Важно уточнение",
         "",
         "Lottery draws are random. This step only converts weighted statistical signals into structured референтни комбинации.",
     ])

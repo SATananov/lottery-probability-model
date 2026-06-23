@@ -1,4 +1,4 @@
-# V58 Smart Ensemble Score 2
+# V58 Smart Комбиниран анализ Score 2
 
 ## Цел
 

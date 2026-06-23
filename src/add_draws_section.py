@@ -566,7 +566,7 @@ def render() -> None:
                 except Exception as exc:
                     st.error(
                         "Step 73 оценката не успя. Тиражът не беше записан, "
-                        f"за да не се наруши правилният pre-refresh flow: {exc}"
+                        f"за да не се наруши правилният процес преди обновяване: {exc}"
                     )
                     return
 

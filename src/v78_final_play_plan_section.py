@@ -16,7 +16,7 @@ from src.v78_final_play_plan_engine import (
 
 COLUMN_LABELS = {
     "plan_rank": "Ранг",
-    "ticket_id": "Фиш",
+    "ticket_id": "Комбинация",
     "numbers": "Числа",
     "plan_role": "Роля в плана",
     "plan_action": "Действие",
@@ -204,7 +204,7 @@ def render_v78_final_play_plan_section() -> None:
     )
 
     st.warning(
-        "Това е статистическа организация на кандидат фишове. "
+        "Това е статистическа организация на кандидат комбинации. "
         "Лотарията остава случайна игра и няма гаранция за печалба."
     )
 
@@ -224,23 +224,23 @@ def render_v78_final_play_plan_section() -> None:
     summary = load_summary()
 
     metric_cols = st.columns(5)
-    metric_cols[0].metric("Кандидати", summary.get("candidate_tickets", 0))
-    metric_cols[1].metric("Основни", summary.get("active_tickets", 0))
-    metric_cols[2].metric("Резервни", summary.get("reserve_tickets", 0))
+    metric_cols[0].metric("Кандидат комбинации", summary.get("candidate_tickets", 0))
+    metric_cols[1].metric("Основни комбинации", summary.get("active_tickets", 0))
+    metric_cols[2].metric("Резервни комбинации", summary.get("reserve_tickets", 0))
     metric_cols[3].metric("Уникални числа", summary.get("unique_active_numbers", 0))
     metric_cols[4].metric("Средна оценка", summary.get("average_active_decision_score", 0))
 
-    st.subheader("Най-високо класиран основен фиш")
+    st.subheader("Най-високо класирана основна комбинация")
     best_numbers = summary.get("best_numbers", "")
     if best_numbers:
         st.success(
-            f"Фиш {summary.get('best_ticket_id', '')}: {best_numbers} — "
+            f"Комбинация {summary.get('best_ticket_id', '')}: {best_numbers} — "
             f"средна оценка на основния пакет: {summary.get('average_active_decision_score', 0)}"
         )
     else:
         st.info("Още няма финален план. Натисни бутона за обновяване.")
 
-    st.subheader("План по фишове")
+    st.subheader("План по комбинации")
     plan_df = _read_csv(V78_SELECTED_TICKETS_CSV)
     if plan_df.empty:
         st.info("Няма генериран финален план.")
@@ -257,7 +257,7 @@ def render_v78_final_play_plan_section() -> None:
     st.subheader("Предупреждения")
     warnings_df = _read_csv(V78_PLAY_WARNINGS_CSV)
     if warnings_df.empty:
-        st.success("Няма фишове с повишен риск във финалния план.")
+        st.success("Няма комбинации с повишен риск във финалния план.")
     else:
         st.dataframe(_v841_combo_visible_polish_df(_display_df(warnings_df)), use_container_width=True, hide_index=True)
 

@@ -67,7 +67,7 @@ _BG34_EXACT = {
     "Combined Model": "Комбиниран модел",
     "Combined model": "Комбиниран модел",
     "Advanced Lab": "Разширена лаборатория",
-    "Ticket Analyzer": "Анализ на фиш",
+    "Ticket Analyzer": "Анализ на комбинация",
     "Historical Statistics": "Историческа статистика",
     "Вероятностна лаборатория": "Вероятности",
     "Reports": "Отчети",
@@ -119,7 +119,7 @@ _BG34_EXACT = {
     "Virtual draw": "Виртуален тираж",
     "Compare with models": "Сравни с моделите",
     "Generate model numbers": "Генерирай моделни числа",
-    "Generate model tickets": "Генерирай моделни фишове",
+    "Generate model tickets": "Генерирай моделни комбинации",
     "Риск от човешки шаблон": "Риск от човешки шаблон",
     "Human-pattern risk": "Риск от човешки шаблон",
     "Човешки риск": "Човешки риск",
@@ -193,15 +193,15 @@ _BG34_EXACT = {
     "Actual": "Реални числа",
     "Actual numbers": "Реални числа",
     "Advanced": "Разширен модел",
-    "Advanced ticket": "Фиш на разширения модел",
-    "Advanced фиш": "Фиш на разширения модел",
+    "Advanced ticket": "Комбинация на разширения модел",
+    "Advanced фиш": "Комбинация на разширения модел",
     "Advanced matches": "Съвпадения на разширения модел",
     "Advanced съвпадения": "Съвпадения на разширения модел",
     "Random": "Случаен модел",
-    "Random ticket": "Случаен фиш",
-    "Random фиш": "Случаен фиш",
-    "Random matches": "Съвпадения на случаен фиш",
-    "Random съвпадения": "Съвпадения на случаен фиш",
+    "Random ticket": "Случайна комбинация",
+    "Random фиш": "Случайна комбинация",
+    "Random matches": "Съвпадения на случайна комбинация",
+    "Random съвпадения": "Съвпадения на случайна комбинация",
     "Strategy": "Стратегия",
     "Code": "Код",
     "Average": "Средно",
@@ -556,10 +556,10 @@ def _lr34_parse_recent_draws(text_value):
             "Тираж": int(draw),
             "Дата": date_value.strip() or "-",
             "Реални числа": _lr34_nums(actual),
-            "Фиш на разширения модел": _lr34_nums(advanced),
+            "Комбинация на разширения модел": _lr34_nums(advanced),
             "Съвпадения на разширения модел": int(adv_matches),
-            "Случаен фиш": _lr34_nums(random_ticket),
-            "Съвпадения на случаен фиш": int(rnd_matches),
+            "Случайна комбинация": _lr34_nums(random_ticket),
+            "Съвпадения на случайна комбинация": int(rnd_matches),
         })
     return rows
 def _lr34_render_report(text_value):
@@ -604,10 +604,10 @@ def _lr34_render_report(text_value):
                 "Тираж": row["Тираж"],
                 "Дата": row["Дата"],
                 "Реални числа": ", ".join(map(str, row["Реални числа"])),
-                "Фиш на разширения модел": ", ".join(map(str, row["Фиш на разширения модел"])),
+                "Комбинация на разширения модел": ", ".join(map(str, row["Комбинация на разширения модел"])),
                 "Съвпадения на разширения модел": row["Съвпадения на разширения модел"],
-                "Случаен фиш": ", ".join(map(str, row["Случаен фиш"])),
-                "Съвпадения на случаен фиш": row["Съвпадения на случаен фиш"],
+                "Случайна комбинация": ", ".join(map(str, row["Случайна комбинация"])),
+                "Съвпадения на случайна комбинация": row["Съвпадения на случайна комбинация"],
             })
         st.dataframe(pd.DataFrame(table_rows), width="stretch", hide_index=True)
         with st.expander("Виж последните тиражи визуално", expanded=False):
@@ -618,11 +618,11 @@ def _lr34_render_report(text_value):
                     st.caption("Реални числа")
                     _lr34_balls(row["Реални числа"])
                 with c2:
-                    st.caption(f"Фиш на разширения модел — {row['Съвпадения на разширения модел']} съвпадения")
-                    _lr34_balls(row["Фиш на разширения модел"])
+                    st.caption(f"Комбинация на разширения модел — {row['Съвпадения на разширения модел']} съвпадения")
+                    _lr34_balls(row["Комбинация на разширения модел"])
                 with c3:
-                    st.caption(f"Случаен фиш — {row['Съвпадения на случаен фиш']} съвпадения")
-                    _lr34_balls(row["Случаен фиш"])
+                    st.caption(f"Случайна комбинация — {row['Съвпадения на случайна комбинация']} съвпадения")
+                    _lr34_balls(row["Случайна комбинация"])
                 st.divider()
     st.download_button("Свали оригиналния отчет", data=text_value, file_name="advanced_backtest_report.md", mime="text/markdown")
     return True
@@ -677,7 +677,7 @@ TRANSLATIONS = {
         "ml_lab": "МЛ лаборатория",
         "ml_extensions": "МЛ разширения: класификация, клъстери и 2D карта",
         "prediction": "Прогноза",
-        "ticket_analyzer": "Анализ на фиш",
+        "ticket_analyzer": "Анализ на комбинация",
         "history": "Историческа статистика",
         "v41_history_analysis": "Анализ на минали тегления",
         "probability_lab": "Вероятности",
@@ -743,7 +743,7 @@ TRANSLATIONS = {
         "ml_lab": "ML Laboratory",
         "ml_extensions": "ML extensions: classification, clusters and 2D map",
         "prediction": "Prediction",
-        "ticket_analyzer": "Ticket Analyzer",
+        "ticket_analyzer": "Анализ на комбинация",
         "history": "Historical Statistics",
         "v41_history_analysis": "Historical Draw Analysis",
         "probability_lab": "Вероятностна лаборатория",
@@ -2296,7 +2296,7 @@ def page_ml_lab() -> None:
             st.markdown(html, unsafe_allow_html=True)
     with tabs[1]:
         classifier = model.get("classifier", {})
-        st.markdown("### " + _v39_ml_text("\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u043d\u0430 \u0444\u0438\u0448\u043e\u0432\u0435", "Ticket Classification"))
+        st.markdown("### " + _v39_ml_text("\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u043d\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438", "Класификация на комбинации"))
         st.markdown(_v39_ml_text(
             "\u041a\u043b\u0430\u0441\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u044a\u0442 \u0433\u0440\u0443\u043f\u0438\u0440\u0430 \u0444\u0438\u0448\u043e\u0432\u0435\u0442\u0435 \u043a\u0430\u0442\u043e \u0441\u043b\u0430\u0431, \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0438\u043b\u0438 \u0441\u0438\u043b\u0435\u043d \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0444\u0438\u0448 \u0441\u043f\u043e\u0440\u0435\u0434 \u0438\u0437\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0442\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438.",
             "The classifier groups tickets as weak, normal, or strong statistical tickets based on calculated features.",
@@ -3450,7 +3450,7 @@ def page_pair_group_analysis() -> None:
     import src.v50_pair_group_analysis_section as pair_group_analysis_section
     reload(pair_group_analysis_section)
     pair_group_analysis_section.render()
-TICKET_PORTFOLIO_LABEL = "\u041e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0444\u0438\u0448"
+TICKET_PORTFOLIO_LABEL = "Оценка на пакет"
 def page_ticket_portfolio() -> None:
     from importlib import reload
     import src.v51_ticket_portfolio_section as ticket_portfolio_section
@@ -3484,7 +3484,7 @@ def main() -> None:
         tr("probability_lab"): page_probability_lab,
         tr("reports"): page_reports,
         tr("update_draws"): page_update_draws,
-        "Покритие на фиша": render_v53_ticket_coverage_section,
+        "Покритие на комбинациите": render_v53_ticket_coverage_section,
         "Баланс на комбинациите": render_v54_pattern_balance_section,
         "Профил на число": render_v55_number_profile_section,
         "Горещи, студени и стабилни числа": render_v57_hot_cold_stable_section,
@@ -3494,11 +3494,11 @@ def main() -> None:
         "История на моделите": render_v62_model_performance_tracker_section,
         "Надеждност на моделите": render_v63_model_reliability_dashboard_section,
         "Умно тегло на моделите": render_v65_model_weighting_section,
-        "Претеглен ensemble анализ": render_v66_weighted_smart_ensemble_section,
+        "Претеглен комбиниран анализ": render_v66_weighted_smart_ensemble_section,
         "Умен генератор с тегла": render_v67_weighted_ticket_builder_section,
-        "Умен оптимизатор на портфейл": render_v68_weighted_portfolio_optimizer_section,
-        "Подобряване на портфолио": render_v69_portfolio_improvement_section,
-        "Приложен подобрен портфейл": render_v70_applied_candidate_portfolio_section,
+        "Умен оптимизатор на пакет": render_v68_weighted_portfolio_optimizer_section,
+        "Подобряване на пакет": render_v69_portfolio_improvement_section,
+        "Приложен подобрен пакет": render_v70_applied_candidate_portfolio_section,
         "Пакет за игра": render_v71_ticket_pack_export_section,
         "Представяне на пакета": render_v73_ticket_pack_performance_tracker_section,
         "Обновяване на анализите": render_v72_pipeline_refresh_section,
@@ -3510,7 +3510,7 @@ def main() -> None:
         "Експорт и изпълнение": render_v79_ticket_pack_export_section,
         "Финален системен одит": render_v80_final_system_audit_section,
         "Финален UX контрол": render_v81_final_ux_navigation_section,
-        "Финален release пакет": render_v82_final_release_package_section,
+        "Финален пакет за предаване": render_v82_final_release_package_section,
         "Ръководство за апа": render_v83_final_user_manual_section,
 "Сравнение на модели": render_v84_model_comparison_forward_test_section,
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
@@ -3524,12 +3524,12 @@ def main() -> None:
             'Прогнозно табло Pro',
             'Отчети',
         ],
-        '🎫 Фишове и генератори': [
-            'Анализ на фиш',
-            'Оценка на фиш',
+        '🎫 Комбинации и фишове': [
+            'Анализ на комбинация',
+            'Оценка на пакет',
             'Генератор на комбинации',
             'Интелигентен генератор 2',
-            'Покритие на фиша',
+            'Покритие на комбинациите',
             'Баланс на комбинациите',
             'Обединена оценка',
         ],
@@ -3558,11 +3558,11 @@ def main() -> None:
             'История на моделите',
             'Надеждност на моделите',
             'Умно тегло на моделите',
-            'Претеглен ensemble анализ',
+            'Претеглен комбиниран анализ',
             'Умен генератор с тегла',
-            'Умен оптимизатор на портфейл',
-            'Подобряване на портфолио',
-            'Приложен подобрен портфейл',
+            'Умен оптимизатор на пакет',
+            'Подобряване на пакет',
+            'Приложен подобрен пакет',
             'Пакет за игра',
             'Представяне на пакета',
         ],
@@ -3578,7 +3578,7 @@ def main() -> None:
             'Обновяване на анализите',
             'Финален системен одит',
             'Финален UX контрол',
-            'Финален release пакет',
+            'Финален пакет за предаване',
         'Ръководство за апа',
 'Сравнение на модели',
             'Контрол на синхрона',

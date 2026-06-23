@@ -71,7 +71,7 @@ def _show_small_table(title: str, data: dict[str, int]) -> None:
 
 
 def render_v53_ticket_coverage_section() -> None:
-    st.title("Покритие на фиша")
+    st.title("Покритие на комбинациите")
 
     st.markdown(
         "Тази страница проверява дали няколко комбинации във фиша са прекалено близки "

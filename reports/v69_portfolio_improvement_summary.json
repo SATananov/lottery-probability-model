@@ -1,9 +1,9 @@
 {
   "step": "69",
-  "name": "Portfolio Improvement Suggestions",
+  "name": "Пакет Improvement Suggestions",
   "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
-  "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
-  "source_portfolio": "reports/v68_weighted_portfolio_summary.json",
+  "source_scores": "reports/v66_weighted_smart_комбиниран анализ_scores.csv",
+  "source_portfolio": "reports/v68_weighted_пакет_summary.json",
   "suggestions_generated": 60,
   "candidate_changes_applied": 3,
   "baseline_portfolio_score": 60.684,
@@ -37,12 +37,12 @@
   "undercovered_top20_after": [],
   "generated_at": "2026-06-22T12:20:14+00:00",
   "generated_reports": [
-    "reports/v69_portfolio_improvement_summary.json",
-    "reports/v69_portfolio_improvement_summary.md",
-    "reports/v69_portfolio_improvement_suggestions.csv",
-    "reports/v69_candidate_portfolio_tickets.csv",
-    "reports/v69_candidate_portfolio_tickets.json",
-    "models/v69/v69_portfolio_improvement_model.json"
+    "reports/v69_пакет_improvement_summary.json",
+    "reports/v69_пакет_improvement_summary.md",
+    "reports/v69_пакет_improvement_suggestions.csv",
+    "reports/v69_candidate_пакет_tickets.csv",
+    "reports/v69_candidate_пакет_tickets.json",
+    "models/v69/v69_пакет_improvement_model.json"
   ],
   "safe_note": "These are statistical improvement suggestions. They are not гаранция за печалбаs or promises of future lottery results."
 }

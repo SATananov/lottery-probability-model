@@ -114,9 +114,9 @@ def _state_hash(payload: Any) -> str:
 
 
 def _export_status(role: str, risk: str) -> str:
-    if role == "основен фиш":
+    if role == "основна комбинация":
         return "за игра"
-    if role == "резервен фиш":
+    if role == "резервна комбинация":
         return "резерва"
     if role == "само наблюдение":
         return "само наблюдение"
@@ -133,9 +133,9 @@ def _execution_note(row: dict[str, Any]) -> str:
     score = _as_float(row.get("decision_score"))
 
     notes: list[str] = []
-    if role == "основен фиш":
+    if role == "основна комбинация":
         notes.append("включен във финалния пакет")
-    elif role == "резервен фиш":
+    elif role == "резервна комбинация":
         notes.append("пази като резервен вариант")
     elif role == "само наблюдение":
         notes.append("не влиза в основния пакет")
@@ -195,21 +195,21 @@ def build_ticket_pack_export_center() -> dict[str, Any]:
     checklist = [
         {
             "order": 1,
-            "check_item": "Провери дали използваш последния clean checkpoint",
+            "check_item": "Провери дали използваш последния последното чисто състояние",
             "status": "задължително",
             "details": "Не смесвай стари отчети с нов финален план.",
             "safe_note": SAFE_NOTE,
         },
         {
             "order": 2,
-            "check_item": "Играй само основните фишове, ако няма ръчна причина за промяна",
+            "check_item": "Използвай само основните комбинации, ако няма ръчна причина за промяна",
             "status": "задължително",
-            "details": f"Основни фишове в пакета: {len(active_rows)}.",
+            "details": f"Основни комбинации в пакета: {len(active_rows)}.",
             "safe_note": SAFE_NOTE,
         },
         {
             "order": 3,
-            "check_item": "Резервните фишове не се добавят автоматично",
+            "check_item": "Резервните комбинации не се добавят автоматично",
             "status": "контрол",
             "details": "Резервите са за сравнение или замяна, не за хаотично разширяване.",
             "safe_note": SAFE_NOTE,
@@ -218,14 +218,14 @@ def build_ticket_pack_export_center() -> dict[str, Any]:
             "order": 4,
             "check_item": "След реален тираж първо сравни резултата срещу пакета",
             "status": "след тираж",
-            "details": "Преди Add Draw save използвай checker/result сравнение, после обнови dataset-а.",
+            "details": "Преди записа на новия тираж използвай проверка на резултата, после обнови данните.",
             "safe_note": SAFE_NOTE,
         },
         {
             "order": 5,
             "check_item": "Не приемай анализа като обещание",
             "status": "важно",
-            "details": "Това е статистически workflow, а не предсказване на печеливш тираж.",
+            "details": "Това е статистически работен процес, а не предсказване на печеливш тираж.",
             "safe_note": SAFE_NOTE,
         },
     ]
@@ -234,27 +234,27 @@ def build_ticket_pack_export_center() -> dict[str, Any]:
         "ФИНАЛЕН ПАКЕТ — Step 79",
         "Важно: статистическа организация, не гаранция за печалба.",
         "",
-        "ОСНОВНИ ФИШОВЕ:",
+        "ОСНОВНИ КОМБИНАЦИИ:",
     ]
 
     if active_rows:
         for row in active_rows:
             copy_lines.append(
-                f"Фиш {row['ticket_id']}: {row['numbers_display']} "
+                f"Комбинация {row['ticket_id']}: {row['numbers_display']} "
                 f"(оценка {row['decision_score']}, риск: {row['risk_level']})"
             )
     else:
-        copy_lines.append("Няма основни фишове.")
+        copy_lines.append("Няма основни комбинации.")
 
-    copy_lines.extend(["", "РЕЗЕРВНИ ФИШОВЕ:"])
+    copy_lines.extend(["", "РЕЗЕРВНИ КОМБИНАЦИИ:"])
     if reserve_rows:
         for row in reserve_rows:
             copy_lines.append(
-                f"Фиш {row['ticket_id']}: {row['numbers_display']} "
+                f"Комбинация {row['ticket_id']}: {row['numbers_display']} "
                 f"(оценка {row['decision_score']}, риск: {row['risk_level']})"
             )
     else:
-        copy_lines.append("Няма резервни фишове.")
+        copy_lines.append("Няма резервни комбинации.")
 
     copy_lines.extend(["", "КОНТРОЛНИ БЕЛЕЖКИ:"])
     for item in checklist:
@@ -332,16 +332,16 @@ def build_ticket_pack_export_center() -> dict[str, Any]:
         f"Статус: **{summary['status']}**",
         f"Валидни тиражи: **{summary['valid_draws']}**",
         f"Последен тираж: **{summary['latest_date']}** — **{summary['latest_numbers']}**",
-        f"Кандидат фишове: **{summary['candidate_tickets']}**",
-        f"Фишове за игра: **{summary['play_tickets']}**",
-        f"Резервни фишове: **{summary['reserve_tickets']}**",
-        f"Фишове само за наблюдение: **{summary['watch_tickets']}**",
+        f"Кандидат комбинации: **{summary['candidate_tickets']}**",
+        f"Комбинации за игра: **{summary['play_tickets']}**",
+        f"Резервни комбинации: **{summary['reserve_tickets']}**",
+        f"Комбинации само за наблюдение: **{summary['watch_tickets']}**",
         "",
-        "**Важно:** Step 79 е слой за експорт, копиране и дисциплина. Не е гаранция за печалба.",
+        "**Важно:** Step 79 е слой за изтегляне, копиране и дисциплина. Не е гаранция за печалба.",
         "",
         "## Пакет за игра",
         "",
-        "| Ред | Фиш | Числа | Роля | Статус | Оценка | Риск | Бележка |",
+        "| Ред | Комбинация | Числа | Роля | Статус | Оценка | Риск | Бележка |",
         "|---:|---:|---|---|---|---:|---|---|",
     ]
 
@@ -354,7 +354,7 @@ def build_ticket_pack_export_center() -> dict[str, Any]:
 
     md.extend([
         "",
-        "## Checklist",
+        "## Проверки",
         "",
         "| Ред | Проверка | Статус | Детайли |",
         "|---:|---|---|---|",

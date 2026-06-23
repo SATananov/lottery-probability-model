@@ -1,11 +1,11 @@
 # v41 Canonical Rules-Aware Draw Events Audit
 
-Status: canonical dataset built. No model retraining was performed.
+Status: canonical данни built. No model retraining was performed.
 
 ## Summary
 
-- Source dataset: `data\historical_draws.csv`
-- Canonical dataset: `data\v41_canonical_draw_events.csv`
+- Source данни: `data\historical_draws.csv`
+- Canonical данни: `data\v41_canonical_draw_events.csv`
 - Total draw events: 10058
 - Total unique draws: 5176
 - Years: 1958–2026 (69 years)
@@ -107,6 +107,6 @@ Status: canonical dataset built. No model retraining was performed.
 ## Important notes
 
 - Each row is treated as one real draw event.
-- `drawing_no` is derived from `draw_position` in the source dataset.
+- `drawing_no` is derived from `draw_position` in the source данни.
 - Bonus numbers are not invented; they remain missing until a reliable source is added.
-- This dataset is ready for review before v41 model retraining.
+- This данни is ready for review before v41 model retraining.

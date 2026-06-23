@@ -1,37 +1,10 @@
 {
-  "summary": {
-    "step": "73",
-    "name": "Представяне на пакета",
-    "active_pack_source": "reports/v71_ticket_pack.csv",
-    "active_pack_snapshot_id": "49cbc83e12549109",
-    "active_pack_tickets": 8,
-    "active_pack_combinations": 8,
-    "active_pack_physical_tickets": 2,
-    "combinations_per_physical_ticket": 4,
-    "history_rows": 0,
-    "latest_best_hit_count": "",
-    "latest_best_combination_label": "",
-    "latest_package_unique_hits": "",
-    "latest_draw_numbers": "",
-    "status": "Готово за следваща проверка",
-    "generated_at": "2026-06-22T12:20:15+00:00",
-    "generated_reports": [
-      "reports/v73_ticket_pack_performance_summary.json",
-      "reports/v73_ticket_pack_performance_summary.md",
-      "reports/v73_ticket_pack_performance_history.csv",
-      "reports/v73_latest_ticket_pack_result.csv",
-      "models/v73/v73_ticket_pack_performance_tracker_model.json"
-    ],
-    "safe_note": "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба."
-  },
   "active_pack": [
     {
-      "ticket_id": 1,
+      "average_step66_score": 88.116,
       "combination_id": 1,
-      "physical_ticket_id": 1,
       "combination_in_ticket": 1,
-      "combination_label": "Фиш 1 / Комбинация 1",
-      "strategy_label": "Балансиран претеглен фиш",
+      "combination_label": "Комбинация 1 / Комбинация 1",
       "numbers": [
         1,
         2,
@@ -41,15 +14,15 @@
         49
       ],
       "numbers_display": "01 02 04 18 37 49",
-      "average_step66_score": 88.116
+      "physical_ticket_id": 1,
+      "strategy_label": "Балансирана претеглена комбинация",
+      "ticket_id": 1
     },
     {
-      "ticket_id": 2,
+      "average_step66_score": 77.405,
       "combination_id": 2,
-      "physical_ticket_id": 1,
       "combination_in_ticket": 2,
-      "combination_label": "Фиш 1 / Комбинация 2",
-      "strategy_label": "Фиш с висока претеглена оценка",
+      "combination_label": "Комбинация 1 / Комбинация 2",
       "numbers": [
         1,
         4,
@@ -59,15 +32,15 @@
         44
       ],
       "numbers_display": "01 04 34 36 38 44",
-      "average_step66_score": 77.405
+      "physical_ticket_id": 1,
+      "strategy_label": "Комбинация с висока претеглена оценка",
+      "ticket_id": 2
     },
     {
-      "ticket_id": 3,
+      "average_step66_score": 78.881,
       "combination_id": 3,
-      "physical_ticket_id": 1,
       "combination_in_ticket": 3,
-      "combination_label": "Фиш 1 / Комбинация 3",
-      "strategy_label": "Диверсифициран претеглен фиш",
+      "combination_label": "Комбинация 1 / Комбинация 3",
       "numbers": [
         2,
         13,
@@ -77,15 +50,15 @@
         49
       ],
       "numbers_display": "02 13 21 23 38 49",
-      "average_step66_score": 78.881
+      "physical_ticket_id": 1,
+      "strategy_label": "Диверсифицирана претеглена комбинация",
+      "ticket_id": 3
     },
     {
-      "ticket_id": 4,
+      "average_step66_score": 72.663,
       "combination_id": 4,
-      "physical_ticket_id": 1,
       "combination_in_ticket": 4,
-      "combination_label": "Фиш 1 / Комбинация 4",
-      "strategy_label": "Балансиран фиш по нечетни/четни числа",
+      "combination_label": "Комбинация 1 / Комбинация 4",
       "numbers": [
         2,
         11,
@@ -95,15 +68,15 @@
         44
       ],
       "numbers_display": "02 11 17 34 37 44",
-      "average_step66_score": 72.663
+      "physical_ticket_id": 1,
+      "strategy_label": "Балансирана комбинация по нечетни/четни числа",
+      "ticket_id": 4
     },
     {
-      "ticket_id": 5,
+      "average_step66_score": 75.825,
       "combination_id": 5,
-      "physical_ticket_id": 2,
       "combination_in_ticket": 1,
-      "combination_label": "Фиш 2 / Комбинация 1",
-      "strategy_label": "Балансиран фиш по ниски/високи числа",
+      "combination_label": "Комбинация 2 / Комбинация 1",
       "numbers": [
         1,
         3,
@@ -113,15 +86,15 @@
         49
       ],
       "numbers_display": "01 03 22 38 42 49",
-      "average_step66_score": 75.825
+      "physical_ticket_id": 2,
+      "strategy_label": "Балансирана комбинация по ниски/високи числа",
+      "ticket_id": 5
     },
     {
-      "ticket_id": 6,
+      "average_step66_score": 74.847,
       "combination_id": 6,
-      "physical_ticket_id": 2,
       "combination_in_ticket": 2,
-      "combination_label": "Фиш 2 / Комбинация 2",
-      "strategy_label": "Разпределен range фиш",
+      "combination_label": "Комбинация 2 / Комбинация 2",
       "numbers": [
         1,
         13,
@@ -131,15 +104,15 @@
         48
       ],
       "numbers_display": "01 13 22 34 37 48",
-      "average_step66_score": 74.847
+      "physical_ticket_id": 2,
+      "strategy_label": "Разпределена диапазонна комбинация",
+      "ticket_id": 6
     },
     {
-      "ticket_id": 7,
+      "average_step66_score": 74.595,
       "combination_id": 7,
-      "physical_ticket_id": 2,
       "combination_in_ticket": 3,
-      "combination_label": "Фиш 2 / Комбинация 3",
-      "strategy_label": "Консервативно ядро",
+      "combination_label": "Комбинация 2 / Комбинация 3",
       "numbers": [
         2,
         4,
@@ -149,15 +122,15 @@
         38
       ],
       "numbers_display": "02 04 17 22 29 38",
-      "average_step66_score": 74.595
+      "physical_ticket_id": 2,
+      "strategy_label": "Консервативно ядро",
+      "ticket_id": 7
     },
     {
-      "ticket_id": 8,
+      "average_step66_score": 78.128,
       "combination_id": 8,
-      "physical_ticket_id": 2,
       "combination_in_ticket": 4,
-      "combination_label": "Фиш 2 / Комбинация 4",
-      "strategy_label": "Разширен статистически фиш",
+      "combination_label": "Комбинация 2 / Комбинация 4",
       "numbers": [
         1,
         16,
@@ -167,9 +140,36 @@
         37
       ],
       "numbers_display": "01 16 18 21 23 37",
-      "average_step66_score": 78.128
+      "physical_ticket_id": 2,
+      "strategy_label": "Разширена статистическа комбинация",
+      "ticket_id": 8
     }
   ],
   "history": [],
-  "safe_note": "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба."
+  "safe_note": "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба.",
+  "summary": {
+    "active_pack_combinations": 8,
+    "active_pack_physical_tickets": 2,
+    "active_pack_snapshot_id": "49cbc83e12549109",
+    "active_pack_source": "reports/v71_ticket_pack.csv",
+    "active_pack_tickets": 8,
+    "combinations_per_physical_ticket": 4,
+    "generated_at": "2026-06-22T12:20:15+00:00",
+    "generated_reports": [
+      "reports/v73_ticket_pack_performance_summary.json",
+      "reports/v73_ticket_pack_performance_summary.md",
+      "reports/v73_ticket_pack_performance_history.csv",
+      "reports/v73_latest_ticket_pack_result.csv",
+      "models/v73/v73_ticket_pack_performance_tracker_model.json"
+    ],
+    "history_rows": 0,
+    "latest_best_combination_label": "",
+    "latest_best_hit_count": "",
+    "latest_draw_numbers": "",
+    "latest_package_unique_hits": "",
+    "name": "Представяне на пакета",
+    "safe_note": "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба.",
+    "status": "Готово за следваща проверка",
+    "step": "73"
+  }
 }

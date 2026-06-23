@@ -1,8 +1,8 @@
 # v40 Normalized Draw Events Report
 
 Status: **PASS**
-Source dataset: `data\historical_draws.csv`
-Output dataset: `data\v40_normalized_draw_events.csv`
+Source данни: `data\historical_draws.csv`
+Output данни: `data\v40_normalized_draw_events.csv`
 
 ## Summary
 - Source rows: **10058**
@@ -56,7 +56,7 @@ data_status
 
 ## Important notes
 - historical_draws.csv was not modified.
-- v40_normalized_draw_events.csv is a foundation dataset, not yet a complete official two-drawing dataset.
+- v40_normalized_draw_events.csv is a foundation данни, not yet a complete official two-drawing данни.
 - bonus_number is intentionally blank until real bonus-number data is imported from a trusted source.
 - Do not retrain two-drawing or bonus-number models until drawing 2 and bonus numbers are imported.
-- Ticket checker logic should compare every ticket table against every drawing_no inside the selected draw.
+- Ticket checker logic should compare every поле във фиша against every drawing_no inside the selected draw.

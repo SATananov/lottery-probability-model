@@ -1,4 +1,4 @@
-ticket_id,ticket_table_no,chosen_numbers,draw_number,date,drawing_no,drawn_numbers,bonus_number,matched_numbers,match_count,bonus_match,bonus_match_bg,result_label_bg
+﻿ticket_id,ticket_table_no,chosen_numbers,draw_number,date,drawing_no,drawn_numbers,bonus_number,matched_numbers,match_count,bonus_match,bonus_match_bg,result_label_bg
 sample_ticket,1,22 26 28 29 40 42,1,DEMO,1,22 26 28 29 40 42,7,22 26 28 29 40 42,6,False,не,I група / 6 познати числа
 sample_ticket,1,22 26 28 29 40 42,1,DEMO,2,1 7 14 21 35 49,42,,0,True,да,няма печеливша група по основните 6 числа
 sample_ticket,2,1 7 14 21 35 49,1,DEMO,1,22 26 28 29 40 42,7,,0,True,да,няма печеливша група по основните 6 числа

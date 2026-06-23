@@ -40,7 +40,7 @@
   "issues_preview": [],
   "manifest_files_count": 746,
   "manifest_size_bytes": 19058301,
-  "name": "Финален release пакет",
+  "name": "Финален пакет за предаване",
   "required_files_checked": 22,
   "safe_note": "Step 82 е финален release и clean package контролен слой. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
   "status": "OK",

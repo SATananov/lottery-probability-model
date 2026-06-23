@@ -38,7 +38,7 @@ def _load_csv(path):
 
 def _show_history(rows):
     if not rows:
-        st.info("Все още няма официална история. Тя ще се запише автоматично от Add Draw преди dataset refresh.")
+        st.info("Все още няма официална история. Тя ще се запише автоматично от „Добавяне на тираж“ преди обновяването на данните.")
         return
 
     shown = []
@@ -67,7 +67,7 @@ def _show_ticket_results(rows):
     shown = []
     for row in rows:
         shown.append({
-            "Фиш / комбинация": row.get("combination_label") or row.get("ticket_id", ""),
+            "Комбинация": row.get("combination_label") or row.get("ticket_id", ""),
             "Стратегия": row.get("strategy_label", ""),
             "Числа в комбинацията": str(row.get("ticket_numbers", "")).replace(",", ", "),
             "Познати числа": str(row.get("matched_numbers", "")).replace(",", ", "),
@@ -84,7 +84,7 @@ def _show_ticket_results(rows):
 def render_v73_ticket_pack_performance_tracker_section():
     st.title("Представяне на пакета")
     st.caption(
-        "Проверява текущия активен Step 71 пакет срещу нови числа, преди новият тираж да обнови dataset-а. "
+        "Проверява текущия активен Step 71 пакет срещу нови числа, преди новият тираж да обнови данните. "
         f"В един физически фиш могат да се попълнят {COMBINATIONS_PER_PHYSICAL_TICKET} комбинации по 6 числа."
     )
 
@@ -97,11 +97,11 @@ def render_v73_ticket_pack_performance_tracker_section():
     col1.metric("Комбинации", summary.get("active_pack_combinations", summary.get("active_pack_tickets", 0)))
     col2.metric("Физически фишове", summary.get("active_pack_physical_tickets", 0))
     col3.metric("Записи в историята", summary.get("history_rows", 0))
-    col4.metric("Snapshot на пакета", summary.get("active_pack_snapshot_id", "-"))
+    col4.metric("Заключен запис на пакета", summary.get("active_pack_snapshot_id", "-"))
 
     st.info(
-        "Ръчното поле е само за предварителна проверка. Официалният резултат се записва от Add Draw flow-а "
-        "преди dataset refresh, за да остане проверката честна."
+        "Ръчното поле е само за предварителна проверка. Официалният резултат се записва от „Добавяне на тираж“ "
+        "преди обновяването на данните, за да остане проверката честна."
     )
 
     st.subheader("Ръчна проверка срещу 6 числа")
@@ -157,8 +157,8 @@ def render_v73_ticket_pack_performance_tracker_section():
 - Един физически фиш може да съдържа **{COMBINATIONS_PER_PHYSICAL_TICKET} комбинации**.
 - Ако пакетът има 8 комбинации, това означава 2 физически фиша за попълване.
 - При нов тираж първо се проверява старият пакет срещу новите числа.
-- После резултатът се записва в performance history.
-- Едва след това новият тираж се добавя в dataset-а и pipeline-ът се обновява.
+- После резултатът се записва в историята на представянето.
+- Едва след това новият тираж се добавя в данните и веригата за обновяване се обновява.
 
 Това пази проверката честна: пакетът се оценява преди да е видял новия тираж.
 """

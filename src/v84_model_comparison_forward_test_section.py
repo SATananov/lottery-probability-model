@@ -25,16 +25,16 @@ SNAPSHOT_CSV = DATA_DIR / "v84_model_forward_test_snapshots.csv"
 COLUMN_LABELS = {
     "model_key": "Ключ на модела",
     "model_label": "Модел",
-    "ticket_label": "Фиш / препоръка",
+    "ticket_label": "Комбинация / препоръка",
     "numbers": "Числа",
     "source_file": "Източник",
     "source_priority": "Приоритет",
     "safe_note": "Важно уточнение",
-    "snapshot_id": "Snapshot ID",
-    "snapshot_name": "Име на snapshot",
+    "snapshot_id": "ID на заключен запис",
+    "snapshot_name": "Име на заключен запис",
     "snapshot_created_at": "Записан на",
-    "dataset_draw_index_at_snapshot": "Тиражи при запис",
-    "dataset_latest_draw_date_at_snapshot": "Последен тираж при запис",
+    "dataset_draw_index_at_snapshot": "Брой тиражи при запис",
+    "dataset_latest_draw_date_at_snapshot": "Дата на последен тираж при запис",
     "status": "Статус",
     "target_draw_index": "Проверен тираж",
     "target_draw_date": "Дата на проверка",
@@ -42,7 +42,7 @@ COLUMN_LABELS = {
     "hits_count": "Познати числа",
     "hit_numbers": "Познати",
     "result_bucket": "Резултат",
-    "tickets_evaluated": "Проверени фишове",
+    "tickets_evaluated": "Проверени комбинации",
     "average_hits": "Средно познати",
     "max_hits": "Най-добър резултат",
     "pct_at_least_2": "% с 2+",
@@ -87,7 +87,7 @@ def _show_table(title: str, rows: list[dict[str, Any]]) -> None:
 
 def render_v84_model_comparison_forward_test_section() -> None:
     st.title("Сравнение на модели")
-    st.caption("Step 84 — forward test център за реално сравнение на моделите във времето.")
+    st.caption("Step 84 — център за реална проверка на моделите във времето.")
 
     st.warning(
         "Този модул сравнява модели само по предварително записани препоръки. "
@@ -103,9 +103,9 @@ def render_v84_model_comparison_forward_test_section() -> None:
             st.success(f"Готово. Намерени кандидати: {summary.get('current_candidates', 0)}")
 
     with col_b:
-        if st.button("Запази snapshot преди тираж"):
+        if st.button("Запази заключен запис преди тираж"):
             with st.spinner("Записване на текущите препоръки..."):
-                result = create_snapshot_from_current_candidates("Автоматичен snapshot преди тираж")
+                result = create_snapshot_from_current_candidates("Автоматичен заключен запис преди тираж")
             st.success(f"Записани редове: {result.get('rows_added', 0)}")
 
     summary = _load_json(SUMMARY_JSON)
@@ -114,36 +114,36 @@ def render_v84_model_comparison_forward_test_section() -> None:
 
     metric_cols = st.columns(5)
     metric_cols[0].metric("Статус", str(summary.get("status", "-")))
-    metric_cols[1].metric("Кандидати", int(summary.get("current_candidates", 0)))
-    metric_cols[2].metric("Snapshot-и", int(summary.get("snapshots_recorded", 0)))
-    metric_cols[3].metric("Проверени редове", int(summary.get("evaluated_rows", 0)))
+    metric_cols[1].metric("Кандидат комбинации", int(summary.get("current_candidates", 0)))
+    metric_cols[2].metric("Заключени записи", int(summary.get("locked_snapshot_records", summary.get("snapshots_recorded", 0))))
+    metric_cols[3].metric("Редове в записите", int(summary.get("snapshot_rows_recorded", 0)))
     metric_cols[4].metric("Сравнени модели", int(summary.get("models_compared", 0)))
 
     st.markdown("### Как се използва")
     st.markdown(
-        "Преди тиража натискаш **Запази snapshot преди тираж**. "
+        "Преди тиража натискаш **Запази заключен запис преди тираж**. "
         "След като излезе реалният тираж, въвеждаш го в **Добавяне на тираж**, "
         "после се връщаш тук и натискаш **Обнови анализа**. "
         "Така виждаме кой модел реално се е държал по-добре."
     )
 
-    st.markdown("### Ръчно добавяне на контролен фиш")
+    st.markdown("### Ръчно добавяне на контролна комбинация")
     with st.form("v84_manual_snapshot_form"):
-        model_label = st.text_input("Име на модела", value="Ръчен контролен фиш")
+        model_label = st.text_input("Име на модела", value="Ръчна контролна комбинация")
         numbers_text = st.text_input("Числа, разделени със запетая или интервал", value="")
-        submitted = st.form_submit_button("Запази ръчен snapshot")
+        submitted = st.form_submit_button("Запази ръчен заключен запис")
 
     if submitted:
-        result = add_manual_snapshot_row(model_label, numbers_text, "Ръчен snapshot преди тираж")
+        result = add_manual_snapshot_row(model_label, numbers_text, "Ръчен заключен запис преди тираж")
         if result.get("status") == "OK":
-            st.success(f"Записан snapshot: {result.get('numbers')}")
+            st.success(f"Записана комбинация в заключен запис: {result.get('numbers')}")
         else:
             st.error(str(result.get("message", "Неуспешен запис.")))
 
     summary_rows = summary.get("summary_rows") or []
     _show_table("Обобщение по модели", summary_rows)
     _show_table("Текущи открити кандидати", _load_rows(CANDIDATES_CSV))
-    _show_table("Записани snapshot-и", _load_rows(SNAPSHOT_CSV))
+    _show_table("Заключени записи и редове", _load_rows(SNAPSHOT_CSV))
     _show_table("Резултати след реален тираж", _load_rows(RESULTS_CSV))
 
     st.info(

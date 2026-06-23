@@ -944,7 +944,7 @@ def _step83_find_node(step: str):
                 "reports/v83_safe_usage_checklist.csv",
             ],
             "feeds": ["Step 74"],
-            "role": "Финално потребителско ръководство, безопасен workflow и guide center.",
+            "role": "Финално потребителско ръководство, безопасен работен процес и център с ръководство.",
             "ensemble_source": False,
         }
 

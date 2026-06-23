@@ -16,7 +16,7 @@ from src.v79_ticket_pack_export_engine import (
 
 COLUMN_LABELS = {
     "export_order": "Ред",
-    "ticket_id": "Фиш",
+    "ticket_id": "Комбинация",
     "numbers_display": "Числа",
     "numbers_compact": "Числа за запис",
     "plan_role": "Роля от финалния план",
@@ -67,8 +67,8 @@ def _v79_polish_df(df):
             "risk": "Риск",
             "numbers": "Числа",
             "numbers_to_write": "Числа за запис",
-            "ticket": "Фиш",
-            "ticket_id": "Фиш",
+            "ticket": "Комбинация",
+            "ticket_id": "Комбинация",
             "rank": "Ранг",
             "score": "Оценка",
             "validation": "Валидация",
@@ -157,7 +157,7 @@ def _v841_combo_visible_polish_df(df):
             "фишове в пакета": "комбинации в пакета",
             "Фишове в пакета": "Комбинации в пакета",
             "фиша в пакета": "комбинации в пакета",
-            "Фишове за изпълнение": "Комбинации за изпълнение",
+            "Комбинации за изпълнение": "Комбинации за изпълнение",
             "фишове за изпълнение": "комбинации за изпълнение",
             "Фиш за изпълнение": "Комбинация за изпълнение",
             "фиш за изпълнение": "комбинация за изпълнение",
@@ -218,7 +218,7 @@ def _v841_combo_visible_polish_df(df):
 def render_v79_ticket_pack_export_section() -> None:
     st.title("Експорт и изпълнение")
     st.caption(
-        "Финалният пакет подготвя фишовете за копиране, печат и дисциплинирано изпълнение."
+        "Финалният пакет подготвя комбинациите за копиране, печат и дисциплинирано изпълнение."
     )
 
     st.warning(
@@ -228,8 +228,8 @@ def render_v79_ticket_pack_export_section() -> None:
 
     action_col, info_col = st.columns([1, 2])
     with action_col:
-        if st.button("Обнови експорт пакета", type="primary"):
-            with st.spinner("Подготвям фишове за копиране, проверки и export files..."):
+        if st.button("Обнови пакета за изтегляне", type="primary"):
+            with st.spinner("Подготвям комбинациите за копиране, проверки и файлове за изтегляне..."):
                 build_ticket_pack_export_center()
             st.success("Финалният пакет е обновен успешно.")
             st.rerun()
@@ -242,10 +242,10 @@ def render_v79_ticket_pack_export_section() -> None:
     summary = load_summary()
 
     metric_cols = st.columns(5)
-    metric_cols[0].metric("Кандидати", summary.get("candidate_tickets", 0))
-    metric_cols[1].metric("За игра", summary.get("play_tickets", 0))
-    metric_cols[2].metric("Резерви", summary.get("reserve_tickets", 0))
-    metric_cols[3].metric("Проверки", summary.get("проверки_items", 0))
+    metric_cols[0].metric("Кандидат комбинации", summary.get("candidate_tickets", 0))
+    metric_cols[1].metric("Комбинации за игра", summary.get("play_tickets", 0))
+    metric_cols[2].metric("Резервни комбинации", summary.get("reserve_tickets", 0))
+    metric_cols[3].metric("Проверки", summary.get("checklist_items", 0))
     metric_cols[4].metric("Предупреждения", summary.get("warning_items_from_step78", 0))
 
     st.subheader("Готов текст за копиране")
@@ -258,7 +258,7 @@ def render_v79_ticket_pack_export_section() -> None:
     st.subheader("Комбинации за изпълнение")
     export_df = _read_csv(V79_EXPORT_TICKETS_CSV)
     if export_df.empty:
-        st.info("Няма генериран export пакет.")
+        st.info("Няма генериран пакет за изтегляне.")
     else:
         st.dataframe(_v841_combo_visible_polish_df(_display_df(export_df)), use_container_width=True, hide_index=True)
 
@@ -282,6 +282,6 @@ def render_v79_ticket_pack_export_section() -> None:
         st.markdown(
             "- **За игра** са основните комбинации от Финалният план.\n"
             "- **Резерва** не се добавя автоматично — използва се само при ръчна причина.\n"
-            "- **Copy text** е готов за копиране или печат.\n"
+            "- **Текстът за копиране** е готов за копиране или печат.\n"
             "- След реален тираж първо сравни резултата с пакета, после обнови данните."
         )

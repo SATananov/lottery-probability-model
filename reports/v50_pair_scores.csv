@@ -1,4 +1,4 @@
-pair,n1,n2,count,recent_count,last_seen_index,gap,frequency_score,recency_score,overdue_score,pair_score,watch_score
+﻿pair,n1,n2,count,recent_count,last_seen_index,gap,frequency_score,recency_score,overdue_score,pair_score,watch_score
 17-37,17,37,137,10,10053,5,0.830303,1.0,0.000497,0.915077,0.498381
 24-38,24,38,146,9,10046,12,0.884848,0.9,0.001193,0.907245,0.531386
 22-48,22,48,144,9,10028,30,0.872727,0.9,0.002983,0.900916,0.524829

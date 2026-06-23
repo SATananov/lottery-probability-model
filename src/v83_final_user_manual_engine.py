@@ -104,7 +104,7 @@ def _safe_checklist_rows() -> list[dict[str, Any]]:
         {"check_order": 3, "check_item": "Фиксиран бюджет", "recommended_behavior": "Определи лимит преди избора и не го променяй след това.", "risk_if_ignored": "Емоционално преследване на загуби."},
         {"check_order": 4, "check_item": "Ръчна проверка на числата", "recommended_behavior": "Провери всяка комбинация преди пускане или архивиране.", "risk_if_ignored": "Грешен фиш, дублирана таблица или сгрешено число."},
         {"check_order": 5, "check_item": "Bonus числото се държи отделно", "recommended_behavior": "Не смесвай bonus с основните 6 числа при анализ.", "risk_if_ignored": "Изкривяване на статистиката."},
-        {"check_order": 6, "check_item": "След нов тираж се пуска синхрон", "recommended_behavior": "След Add Draw използвай refresh/верига за синхронизация според приложението.", "risk_if_ignored": "Остарели модели и отчети."},
+        {"check_order": 6, "check_item": "След нов тираж се пуска синхрон", "recommended_behavior": "След „Добавяне на тираж“ използвай обновяване/верига за синхронизация според приложението.", "risk_if_ignored": "Остарели модели и отчети."},
         {"check_order": 7, "check_item": "Clean ZIP само при чист статус", "recommended_behavior": "Първо commit/push и празен git status, после архив.", "risk_if_ignored": "Непълен или несинхронизиран checkpoint."},
     ]
 

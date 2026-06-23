@@ -1,6 +1,6 @@
 # Step 63 — Model Reliability Dashboard
 
-This report ranks model reliability based on historical post-draw performance history from Step 62.
+This report ranks model reliability based on historical post-draw история на представянето from Step 62.
 
 **Important:** This is historical analysis only. It is not a guarantee and not a promise of future lottery results.
 
@@ -15,7 +15,7 @@ Best reliability score: **100.0%**
 | Rank | Model | Tracked draws | Avg hits | Max hits | 2+ hit rate | 3+ hit rate | Reliability | Status |
 |---:|---|---:|---:|---:|---:|---:|---:|---|
 | 1 | v41 — последни прогнозни сигнали | 1 | 6 | 6 | 100.0% | 100.0% | 100.0% | предварителна оценка |
-| 2 | v44.1 — финален ensemble фиш | 1 | 3 | 3 | 100.0% | 100.0% | 77.5% | предварителна оценка |
+| 2 | v44.1 — финален комбиниран анализ комбинация | 1 | 3 | 3 | 100.0% | 100.0% | 77.5% | предварителна оценка |
 | 3 | v42 — комбиниран позитивен/негативен модел | 1 | 2 | 2 | 100.0% | 0.0% | 55.0% | предварителна оценка |
 | 4 | v45 — Prediction Dashboard Pro | 1 | 0 | 0 | 0.0% | 0.0% | 10.0% | предварителна оценка |
 | 5 | v50 — двойки и групи | 1 | 0 | 0 | 0.0% | 0.0% | 10.0% | предварителна оценка |

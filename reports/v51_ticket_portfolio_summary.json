@@ -1,5 +1,5 @@
 {
-  "status": "v51_ticket_portfolio_intelligence_completed",
+  "status": "v51_ticket_пакет_intelligence_completed",
   "created_at": "2026-06-22T15:17:37",
   "source_tickets": "models\\v45\\v45_final_prediction_tickets.json",
   "pair_source": "reports\\v50_pair_scores.csv",
