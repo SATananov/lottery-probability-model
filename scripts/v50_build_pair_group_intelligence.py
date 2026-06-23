@@ -278,17 +278,17 @@ def _write_outputs(data_path: Path, draws: list[list[int]], pair_df: pd.DataFram
     ]
 
     for item in top_pairs[:10]:
-        md.append(f"- {item['pair']} ? score {item['pair_score']}, count {item['count']}, recent {item['recent_count']}")
+        md.append(f"- {item['pair']} -> score {item['pair_score']}, count {item['count']}, recent {item['recent_count']}")
 
     md.append("")
     md.append("## Watchlist pair signals")
     for item in watch_pairs[:10]:
-        md.append(f"- {item['pair']} ? watch {item['watch_score']}, gap {item['gap']}, count {item['count']}")
+        md.append(f"- {item['pair']} -> watch {item['watch_score']}, gap {item['gap']}, count {item['count']}")
 
     md.append("")
     md.append("## Top group signals")
     for item in top_groups[:10]:
-        md.append(f"- {item['group']} ? score {item['group_score']}, count {item['count']}, recent {item['recent_count']}")
+        md.append(f"- {item['group']} -> score {item['group_score']}, count {item['count']}, recent {item['recent_count']}")
 
     SUMMARY_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
 

@@ -18,7 +18,7 @@ Important: this is statistical analysis only. It is not a guarantee of winnings.
 - repeat_score: 0.33333
 
 ## Combination scores
-- 12 17 21 24 34 48 ? score 72.92
-- 4 11 18 21 34 36 ? score 70.8
-- 2 4 17 34 37 38 ? score 75.17
-- 2 17 18 23 36 48 ? score 71.21
+- 12 17 21 24 34 48 -> score 72.92
+- 4 11 18 21 34 36 -> score 70.8
+- 2 4 17 34 37 38 -> score 75.17
+- 2 17 18 23 36 48 -> score 71.21

@@ -438,7 +438,7 @@ def _write_outputs(combo_rows: list[dict[str, Any]], portfolio: dict[str, Any], 
     lines.append("## Combination scores")
 
     for row in csv_rows:
-        lines.append(f"- {row.get('combination')} ? score {row.get('combo_score')}")
+        lines.append(f"- {row.get('combination')} -> score {row.get('combo_score')}")
 
     SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

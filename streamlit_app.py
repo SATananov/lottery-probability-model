@@ -1523,7 +1523,7 @@ def page_advanced_lab() -> None:
         st.caption(_v39_adv_text("\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u043c\u043e\u0434\u0435\u043b\u0430 \u043d\u0430\u0437\u0430\u0434 \u0432\u044a\u0432 \u0432\u0440\u0435\u043c\u0435\u0442\u043e \u0432\u044a\u0440\u0445\u0443 \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0442\u0438\u0440\u0430\u0436\u0438.", "Checks the model backwards on historical draws."))
     model = _v39_adv_load_model()
     if not model:
-        st.info(_v39_adv_text("\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u043c\u043e\u0434\u0435\u043b. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b\u201c.", "No advanced model was found yet. Click "Recalculate Advanced Model"."))
+        st.info(_v39_adv_text("\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u043c\u043e\u0434\u0435\u043b. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u041f\u0440\u0435\u0438\u0437\u0447\u0438\u0441\u043b\u0438 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438\u044f \u043c\u043e\u0434\u0435\u043b\u201c.", "No advanced model was found yet. Click 'Recalculate Advanced Model'."))
         return
     _v39_adv_render_overview(model)
     _v39_adv_render_top(model)
@@ -2015,7 +2015,7 @@ def page_prediction() -> None:
         else:
             st.info(_v39_pred_text(
                 "\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0435\u043d \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442. \u041d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u0417\u0430\u0440\u0435\u0434\u0438 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430\u201c.",
-                "No prediction result was found yet. Click "Load Latest Prediction".",
+                "No prediction result was found yet. Click 'Load Latest Prediction'.",
             ))
 def report_language() -> str:
     try:
@@ -3154,7 +3154,7 @@ def page_ticket_analyzer() -> None:
         st.info(
             tx(
                 "\u041c\u0430\u0440\u043a\u0438\u0440\u0430\u0439 \u0435\u0434\u043d\u0430 \u0438\u043b\u0438 \u043f\u043e\u0432\u0435\u0447\u0435 \u043f\u044a\u043b\u043d\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u0438 \u0438 \u043d\u0430\u0442\u0438\u0441\u043d\u0438 \u201e\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0444\u0438\u0448\u0430\u201c.",
-                "Mark one or more complete combinations and click "Analyze ticket".",
+                "Mark one or more complete combinations and click 'Analyze ticket'.",
             )
         )
         return
