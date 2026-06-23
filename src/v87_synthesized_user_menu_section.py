@@ -101,8 +101,8 @@ CSS = """
 .v87-ticket-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 12px;
     flex-wrap: wrap;
 }
 .v87-ticket-label {
@@ -114,20 +114,31 @@ CSS = """
 .v87-number-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    align-items: center;
 }
 .v87-number-box {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: linear-gradient(180deg, rgba(245,245,245,0.98), rgba(226,232,240,0.98));
-    color: #111827;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 32% 24%, rgba(255, 246, 176, 0.98) 0%, rgba(244, 210, 84, 0.98) 34%, rgba(184, 144, 24, 0.98) 72%, rgba(120, 91, 10, 0.98) 100%);
+    color: #090909;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 0.95rem;
-    border: 1px solid rgba(148,163,184,0.45);
+    font-weight: 900;
+    font-size: 1.05rem;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    border: 1px solid rgba(255, 232, 129, 0.72);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -10px 16px rgba(91, 67, 5, 0.28),
+        0 8px 18px rgba(212, 175, 55, 0.20),
+        0 0 0 1px rgba(212, 175, 55, 0.10);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 .v87-model-card {
     border: 1px solid rgba(120,120,120,0.22);
@@ -145,6 +156,19 @@ CSS = """
     opacity: 0.82;
     margin-top: 8px;
 }
+
+@media (max-width: 640px) {
+    .v87-number-box {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 0.95rem;
+    }
+    .v87-number-strip {
+        gap: 8px;
+    }
+}
+
 @media (max-width: 980px) {
     .v87-grid-quick,
     .v87-ticket-grid {

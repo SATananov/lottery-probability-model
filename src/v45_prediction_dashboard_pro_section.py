@@ -39,6 +39,68 @@ def _numbers_line(numbers: list[int]) -> str:
     return " · ".join(str(int(number)) for number in numbers)
 
 
+
+# STEP87_6_4_GOLD_NUMBER_STYLE_START
+def _v45_gold_number_css() -> str:
+    return """
+<style>
+.v45-gold-number-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 0.75rem 0 1.1rem 0;
+}
+.v45-gold-number-ball {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 32% 24%, rgba(255, 246, 176, 0.98) 0%, rgba(244, 210, 84, 0.98) 34%, rgba(184, 144, 24, 0.98) 72%, rgba(120, 91, 10, 0.98) 100%);
+    color: #090909;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.08rem;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    border: 1px solid rgba(255, 232, 129, 0.72);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -10px 16px rgba(91, 67, 5, 0.28),
+        0 8px 18px rgba(212, 175, 55, 0.20),
+        0 0 0 1px rgba(212, 175, 55, 0.10);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+@media (max-width: 640px) {
+    .v45-gold-number-ball {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 0.96rem;
+    }
+    .v45-gold-number-strip {
+        gap: 8px;
+    }
+}
+</style>
+"""
+
+def _v45_render_gold_numbers(numbers: list[int]) -> str:
+    balls = []
+    for value in numbers:
+        try:
+            number = int(value)
+        except Exception:
+            continue
+        if 1 <= number <= 49:
+            balls.append(f'<span class="v45-gold-number-ball">{number}</span>')
+    return '<div class="v45-gold-number-strip">' + ''.join(balls) + '</div>'
+# STEP87_6_4_GOLD_NUMBER_STYLE_END
+
+
 def _reason_label(reason: str) -> str:
     labels = {
         "strong_ensemble_rank": "силен ансамблов ранг",
@@ -86,9 +148,7 @@ def _show_dataframe(rows: list[dict[str, Any]]) -> None:
 
 
 def _render_number_cards(numbers: list[int]) -> None:
-    cols = st.columns(6)
-    for col, number in zip(cols, numbers):
-        col.metric("Число", int(number))
+    st.markdown(_v45_render_gold_numbers(numbers), unsafe_allow_html=True)
 
 
 def _model_rows(summary: dict[str, Any]) -> list[dict[str, Any]]:
@@ -149,6 +209,7 @@ def _ticket_detail_rows(ticket: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def render() -> None:
+    st.markdown(_v45_gold_number_css(), unsafe_allow_html=True)
     tickets = _load_json(TICKETS_PATH)
     scores = _load_json(SCORES_PATH)
     summary = _load_json(SUMMARY_PATH)
@@ -197,7 +258,7 @@ def render() -> None:
             numbers = [int(number) for number in ticket.get("numbers", [])]
             structure = ticket.get("structure", {})
             st.markdown(f"#### Комбинация {ticket.get('ticket_index', '-')}: {_ticket_label(ticket.get('label', ''))}")
-            st.markdown(f"## `{_numbers_line(numbers)}`")
+            st.markdown(_v45_render_gold_numbers(numbers), unsafe_allow_html=True)
             cols = st.columns(5)
             cols[0].metric("Оценка", _score(ticket.get("average_score")))
             cols[1].metric("Нечетни / четни", f"{structure.get('odd_count', '-')} / {structure.get('even_count', '-')}")
