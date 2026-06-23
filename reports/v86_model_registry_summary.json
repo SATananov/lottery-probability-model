@@ -2,37 +2,25 @@
   "step": 86,
   "name": "Model Registry & Trust Center",
   "status": "OK",
-  "generated_at": "2026-06-23T08:44:42.528635+00:00",
+  "generated_at": "2026-06-23T09:27:26.174346+00:00",
   "dataset_source": "data/v41_canonical_draw_events.csv",
   "dataset_rows": 10058,
   "latest_draw_date": "2026-06-21",
   "latest_draw_index": "10058",
   "latest_numbers": "6,13,16,19,42,44",
   "models_registered": 11,
-  "active_models": 10,
+  "active_models": 4,
   "audit_only_models": 1,
-  "control_models": 10,
+  "control_models": 2,
   "missing_models": 0,
   "active_model_names": [
-    "Rules-aware ?????? ?? ????????? ?????",
-    "Pair and Group Intelligence",
-    "Ticket Portfolio Intelligence",
-    "Smart Ensemble Score",
-    "Model Reliability Dashboard",
-    "Adaptive Model Weighting",
-    "Weighted Smart Ensemble",
-    "Applied Candidate Portfolio",
-    "Neural Meta Learner",
-    "Model Comparison Forward Test"
+    "Обединена умна оценка",
+    "Претеглен обединен модел",
+    "Приложен кандидат-пакет",
+    "Невронен мета модел"
   ],
   "audit_only_model_names": [
-    "Neural Epoch Comparison Audit"
+    "Проверка на невронни епохи"
   ],
-  "safe_note": "???? ? ???????? ? ??????? ?? ??????? ????? ??????. ?? ? ???????? ? ?? ? ???????? ?? ???????.",
-  "generated_reports": [
-    "reports/v86_model_registry_summary.json",
-    "reports/v86_model_registry_models.csv",
-    "reports/v86_model_registry_summary.md",
-    "models/v86/v86_model_registry_trust_center_model.json"
-  ]
+  "safe_note": "Това е регистър и контрол на доверие между модели. Не е прогноза и не е гаранция за печалба."
 }
