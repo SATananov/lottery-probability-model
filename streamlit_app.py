@@ -3690,11 +3690,19 @@ def page_ticket_portfolio() -> None:
 def _rhythm_bg(hex_text: str) -> str:
     return bytes.fromhex(hex_text).decode("utf-8")
 # V42_COMBINED_ANALYSIS_STREAMLIT_HOOK_END
+
+# STEP88_ANTI_ZERO_COVERAGE_WRAPPER_START
+def render_v88_anti_zero_coverage_section() -> None:
+    from src.v88_anti_zero_coverage_section import render_v88_anti_zero_coverage_section as _render
+    return _render()
+# STEP88_ANTI_ZERO_COVERAGE_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
 
         "Потребителско меню": render_v87_synthesized_user_menu_section,
+        "Защита от празен фиш": render_v88_anti_zero_coverage_section,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3805,6 +3813,7 @@ def main() -> None:
             'Приложен подобрен пакет',
             'Пакет за игра',
             'Представяне на пакета',
+            'Защита от празен фиш',
         ],
         '✅ Финален план за игра': [
             'Добавяне на тираж',
