@@ -1,0 +1,10 @@
+{
+  "step": 96,
+  "status": "OK",
+  "workflow_step_count": 6,
+  "active_plan_available": true,
+  "active_plan_type": "",
+  "active_plan_combinations": 11,
+  "v95_status": "WAITING_NEXT_DRAW",
+  "safe_note_bg": "Step 96 е UX/control слой за страницата Добавяне на тираж. Той не променя прогнозните модели и не обещава печалба; целта е правилен ред на действията."
+}

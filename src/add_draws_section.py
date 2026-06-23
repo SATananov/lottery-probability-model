@@ -12,6 +12,7 @@ import streamlit as st
 
 from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack_against_draw
 from src.v95_active_plan_auto_evaluation_engine import evaluate_active_plan_against_pending_draw
+from src.v96_add_draw_controlled_flow_engine import load_add_draw_controlled_flow_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +58,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v74_build_model_dependency_sync_center.py",
     ROOT / "scripts" / "v94_build_active_budget_plan_tracker.py",
     ROOT / "scripts" / "v95_build_active_plan_auto_evaluation.py",
+    ROOT / "scripts" / "v96_build_add_draw_controlled_flow.py",
 ]
 
 
@@ -442,6 +444,38 @@ def render() -> None:
         value=True,
         key="add_draw_sync_github",
     )
+
+    # step96_controlled_flow_marker
+    controlled_flow = load_add_draw_controlled_flow_summary()
+    controlled_steps = controlled_flow.get("workflow_steps", []) or []
+    controlled_snapshot = controlled_flow.get("current_snapshot", {}) or {}
+
+    st.markdown("#### Контролиран ред при добавяне на тираж")
+    st.caption(controlled_flow.get("intro_bg", ""))
+
+    flow_lines = []
+    for item in controlled_steps:
+        flow_lines.append(
+            f"**{item.get('step_order', '')}. {item.get('title_bg', '')}** — "
+            f"{item.get('description_bg', '')}  \\n"
+            f"_Контрол:_ {item.get('guard_bg', '')}"
+        )
+
+    if flow_lines:
+        st.markdown("\n\n".join(flow_lines))
+
+    if controlled_snapshot.get("active_plan_available"):
+        st.info(
+            "Активният бюджетен план е наличен: "
+            f"{controlled_snapshot.get('active_plan_type', '')}, "
+            f"{controlled_snapshot.get('active_plan_combinations', 0)} комбинации, "
+            f"{controlled_snapshot.get('active_plan_cost_eur', 0.0)} EUR. "
+            "Step 95 ще го провери със същите въведени числа преди запис."
+        )
+    else:
+        st.warning(
+            "Няма активен бюджетен план. Step 95 ще бъде пропуснат, докато не се запази план от Бюджетния съветник."
+        )
 
     evaluate_pack_before_save = st.checkbox(
         "Оцени текущия пакет преди запис на тиража",
