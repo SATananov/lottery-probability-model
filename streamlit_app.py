@@ -45,6 +45,7 @@ from src.v81_final_ux_navigation_section import render_v81_final_ux_navigation_s
 from src.v82_final_release_package_section import render_v82_final_release_package_section
 from src.v83_final_user_manual_section import render_v83_final_user_manual_section
 from src.v84_model_comparison_forward_test_section import render_v84_model_comparison_forward_test_section
+from src.v86_model_registry_trust_center_section import render_v86_model_registry_trust_center_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3513,6 +3514,8 @@ def main() -> None:
         "Финален пакет за предаване": render_v82_final_release_package_section,
         "Ръководство за апа": render_v83_final_user_manual_section,
 "Сравнение на модели": render_v84_model_comparison_forward_test_section,
+"Регистър на модели": render_v86_model_registry_trust_center_section,
+
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
     # STEP64_GROUPED_NAVIGATION_START
@@ -3581,6 +3584,8 @@ def main() -> None:
             'Финален пакет за предаване',
         'Ръководство за апа',
 'Сравнение на модели',
+'Регистър на модели',
+
             'Контрол на синхрона',
         ],
     }
