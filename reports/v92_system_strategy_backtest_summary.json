@@ -1,0 +1,14 @@
+{
+  "step": 92,
+  "status": "OK",
+  "title_bg": "Тест на системни стратегии",
+  "draws_tested": 10058,
+  "strategies_tested": 16,
+  "random_trials_per_combination_count": 25,
+  "best_under_10_eur": "Защитен фиш с широко покритие",
+  "best_under_10_budget_efficiency_score": 26.862,
+  "best_under_10_average_best_hits": 1.603201,
+  "best_four_combo_strategy": "Защитен фиш с широко покритие",
+  "best_four_combo_budget_efficiency_score": 26.862,
+  "safe_note_bg": "Това е исторически replay на текущите стратегии и текущите им комбинации. Не е walk-forward обучение, не е прогноза и не е гаранция за печалба. Използва се само за сравнение на структура, риск и поведение върху минали тиражи."
+}

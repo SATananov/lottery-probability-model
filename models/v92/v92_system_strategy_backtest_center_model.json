@@ -1,0 +1,1653 @@
+{
+  "step": 92,
+  "status": "OK",
+  "title_bg": "Тест на системни стратегии",
+  "safe_note_bg": "Това е исторически replay на текущите стратегии и текущите им комбинации. Не е walk-forward обучение, не е прогноза и не е гаранция за печалба. Използва се само за сравнение на структура, риск и поведение върху минали тиражи.",
+  "method_summary_bg": "Слоят сравнява готовите Step 91 стратегии върху историческите тиражи. За всяка стратегия се отчита най-доброто съвпадение в рамките на нейния пакет от комбинации, празен риск, 2+/3+/4+/5+ съвпадения и сравнение с детерминиран случаен baseline със същия брой комбинации.",
+  "draws_tested": 10058,
+  "latest_draw_id": "2026-48-1",
+  "latest_draw_date": "2026-06-21",
+  "latest_draw_numbers": [
+    6,
+    13,
+    16,
+    19,
+    42,
+    44
+  ],
+  "strategies_tested": 16,
+  "random_trials_per_combination_count": 25,
+  "best_overall_by_historical_score": {
+    "option_id": "step89_reference",
+    "strategy_label": "Защитен фиш с широко покритие",
+    "strategy_type": "Широко покритие / Финален статистически избор",
+    "mode_label": "Широко покритие",
+    "source_label": "Финален статистически избор",
+    "core_numbers": "2, 4, 7, 11, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 37, 38, 41, 42, 44, 45, 48",
+    "combination_count": 4,
+    "unique_covered_numbers": 24,
+    "cost_eur_at_090": 3.6,
+    "system_score_step91": 71.852,
+    "draws_tested": 10058,
+    "average_best_hits": 1.603201,
+    "average_total_row_hits": 2.962915,
+    "max_best_hits": 5,
+    "empty_rate_percent": 1.511235,
+    "at_least_1_percent": 98.488765,
+    "at_least_2_percent": 53.728375,
+    "at_least_3_percent": 7.615828,
+    "at_least_4_percent": 0.477232,
+    "at_least_5_percent": 0.009942,
+    "exact_6_count": 0,
+    "exact_6_percent": 0.0,
+    "historical_score": 53.724,
+    "budget_efficiency_score": 26.862,
+    "random_average_best_hits": 1.524402,
+    "average_hits_vs_random": 0.078799,
+    "random_empty_rate_percent": 3.599125,
+    "empty_rate_vs_random": -2.08789,
+    "distribution": {
+      "0": 152,
+      "1": 4502,
+      "2": 4638,
+      "3": 718,
+      "4": 47,
+      "5": 1,
+      "6": 0
+    }
+  },
+  "best_by_budget_efficiency": {
+    "option_id": "step89_reference",
+    "strategy_label": "Защитен фиш с широко покритие",
+    "strategy_type": "Широко покритие / Финален статистически избор",
+    "mode_label": "Широко покритие",
+    "source_label": "Финален статистически избор",
+    "core_numbers": "2, 4, 7, 11, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 37, 38, 41, 42, 44, 45, 48",
+    "combination_count": 4,
+    "unique_covered_numbers": 24,
+    "cost_eur_at_090": 3.6,
+    "system_score_step91": 71.852,
+    "draws_tested": 10058,
+    "average_best_hits": 1.603201,
+    "average_total_row_hits": 2.962915,
+    "max_best_hits": 5,
+    "empty_rate_percent": 1.511235,
+    "at_least_1_percent": 98.488765,
+    "at_least_2_percent": 53.728375,
+    "at_least_3_percent": 7.615828,
+    "at_least_4_percent": 0.477232,
+    "at_least_5_percent": 0.009942,
+    "exact_6_count": 0,
+    "exact_6_percent": 0.0,
+    "historical_score": 53.724,
+    "budget_efficiency_score": 26.862,
+    "random_average_best_hits": 1.524402,
+    "average_hits_vs_random": 0.078799,
+    "random_empty_rate_percent": 3.599125,
+    "empty_rate_vs_random": -2.08789,
+    "distribution": {
+      "0": 152,
+      "1": 4502,
+      "2": 4638,
+      "3": 718,
+      "4": 47,
+      "5": 1,
+      "6": 0
+    }
+  },
+  "best_under_10_eur": {
+    "option_id": "step89_reference",
+    "strategy_label": "Защитен фиш с широко покритие",
+    "strategy_type": "Широко покритие / Финален статистически избор",
+    "mode_label": "Широко покритие",
+    "source_label": "Финален статистически избор",
+    "core_numbers": "2, 4, 7, 11, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 37, 38, 41, 42, 44, 45, 48",
+    "combination_count": 4,
+    "unique_covered_numbers": 24,
+    "cost_eur_at_090": 3.6,
+    "system_score_step91": 71.852,
+    "draws_tested": 10058,
+    "average_best_hits": 1.603201,
+    "average_total_row_hits": 2.962915,
+    "max_best_hits": 5,
+    "empty_rate_percent": 1.511235,
+    "at_least_1_percent": 98.488765,
+    "at_least_2_percent": 53.728375,
+    "at_least_3_percent": 7.615828,
+    "at_least_4_percent": 0.477232,
+    "at_least_5_percent": 0.009942,
+    "exact_6_count": 0,
+    "exact_6_percent": 0.0,
+    "historical_score": 53.724,
+    "budget_efficiency_score": 26.862,
+    "random_average_best_hits": 1.524402,
+    "average_hits_vs_random": 0.078799,
+    "random_empty_rate_percent": 3.599125,
+    "empty_rate_vs_random": -2.08789,
+    "distribution": {
+      "0": 152,
+      "1": 4502,
+      "2": 4638,
+      "3": 718,
+      "4": 47,
+      "5": 1,
+      "6": 0
+    }
+  },
+  "best_four_combo_strategy": {
+    "option_id": "step89_reference",
+    "strategy_label": "Защитен фиш с широко покритие",
+    "strategy_type": "Широко покритие / Финален статистически избор",
+    "mode_label": "Широко покритие",
+    "source_label": "Финален статистически избор",
+    "core_numbers": "2, 4, 7, 11, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 37, 38, 41, 42, 44, 45, 48",
+    "combination_count": 4,
+    "unique_covered_numbers": 24,
+    "cost_eur_at_090": 3.6,
+    "system_score_step91": 71.852,
+    "draws_tested": 10058,
+    "average_best_hits": 1.603201,
+    "average_total_row_hits": 2.962915,
+    "max_best_hits": 5,
+    "empty_rate_percent": 1.511235,
+    "at_least_1_percent": 98.488765,
+    "at_least_2_percent": 53.728375,
+    "at_least_3_percent": 7.615828,
+    "at_least_4_percent": 0.477232,
+    "at_least_5_percent": 0.009942,
+    "exact_6_count": 0,
+    "exact_6_percent": 0.0,
+    "historical_score": 53.724,
+    "budget_efficiency_score": 26.862,
+    "random_average_best_hits": 1.524402,
+    "average_hits_vs_random": 0.078799,
+    "random_empty_rate_percent": 3.599125,
+    "empty_rate_vs_random": -2.08789,
+    "distribution": {
+      "0": 152,
+      "1": 4502,
+      "2": 4638,
+      "3": 718,
+      "4": 47,
+      "5": 1,
+      "6": 0
+    }
+  },
+  "strategy_rows": [
+    {
+      "option_id": "step89_reference",
+      "strategy_label": "Защитен фиш с широко покритие",
+      "strategy_type": "Широко покритие / Финален статистически избор",
+      "mode_label": "Широко покритие",
+      "source_label": "Финален статистически избор",
+      "core_numbers": "2, 4, 7, 11, 12, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 33, 34, 37, 38, 41, 42, 44, 45, 48",
+      "combination_count": 4,
+      "unique_covered_numbers": 24,
+      "cost_eur_at_090": 3.6,
+      "system_score_step91": 71.852,
+      "draws_tested": 10058,
+      "average_best_hits": 1.603201,
+      "average_total_row_hits": 2.962915,
+      "max_best_hits": 5,
+      "empty_rate_percent": 1.511235,
+      "at_least_1_percent": 98.488765,
+      "at_least_2_percent": 53.728375,
+      "at_least_3_percent": 7.615828,
+      "at_least_4_percent": 0.477232,
+      "at_least_5_percent": 0.009942,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 53.724,
+      "budget_efficiency_score": 26.862,
+      "random_average_best_hits": 1.524402,
+      "average_hits_vs_random": 0.078799,
+      "random_empty_rate_percent": 3.599125,
+      "empty_rate_vs_random": -2.08789,
+      "distribution": {
+        "0": 152,
+        "1": 4502,
+        "2": 4638,
+        "3": 718,
+        "4": 47,
+        "5": 1,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_model_core_9_4",
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "strategy_type": "Редуцирана система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Редуцирана система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 4,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 3.6,
+      "system_score_step91": 88.638,
+      "draws_tested": 10058,
+      "average_best_hits": 1.101412,
+      "average_total_row_hits": 2.982004,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 5.617419,
+      "at_least_4_percent": 0.457347,
+      "at_least_5_percent": 0.039769,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 36.807,
+      "budget_efficiency_score": 18.404,
+      "random_average_best_hits": 1.524402,
+      "average_hits_vs_random": -0.42299,
+      "random_empty_rate_percent": 3.599125,
+      "empty_rate_vs_random": 22.857427,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2501,
+        "3": 519,
+        "4": 42,
+        "5": 4,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_hybrid_core_9_4",
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "strategy_type": "Редуцирана система / Хибридно ядро",
+      "mode_label": "Редуцирана система",
+      "source_label": "Хибридно ядро",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 4,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 3.6,
+      "system_score_step91": 88.638,
+      "draws_tested": 10058,
+      "average_best_hits": 1.101412,
+      "average_total_row_hits": 2.982004,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 5.617419,
+      "at_least_4_percent": 0.457347,
+      "at_least_5_percent": 0.039769,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 36.807,
+      "budget_efficiency_score": 18.404,
+      "random_average_best_hits": 1.524402,
+      "average_hits_vs_random": -0.42299,
+      "random_empty_rate_percent": 3.599125,
+      "empty_rate_vs_random": 22.857427,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2501,
+        "3": 519,
+        "4": 42,
+        "5": 4,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_protected_core_9_4",
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "strategy_type": "Редуцирана система / Защитно ядро от финалния фиш",
+      "mode_label": "Редуцирана система",
+      "source_label": "Защитно ядро от финалния фиш",
+      "core_numbers": "2, 4, 21, 22, 23, 34, 37, 38, 44",
+      "combination_count": 4,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 3.6,
+      "system_score_step91": 85.062,
+      "draws_tested": 10058,
+      "average_best_hits": 1.102406,
+      "average_total_row_hits": 2.990058,
+      "max_best_hits": 5,
+      "empty_rate_percent": 27.142573,
+      "at_least_1_percent": 72.857427,
+      "at_least_2_percent": 31.378008,
+      "at_least_3_percent": 5.637304,
+      "at_least_4_percent": 0.357924,
+      "at_least_5_percent": 0.009942,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 36.659,
+      "budget_efficiency_score": 18.329,
+      "random_average_best_hits": 1.524402,
+      "average_hits_vs_random": -0.421996,
+      "random_empty_rate_percent": 3.599125,
+      "empty_rate_vs_random": 23.543448,
+      "distribution": {
+        "0": 2730,
+        "1": 4172,
+        "2": 2589,
+        "3": 531,
+        "4": 35,
+        "5": 1,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_protected_core_9_8",
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "strategy_type": "Редуцирана система / Защитно ядро от финалния фиш",
+      "mode_label": "Редуцирана система",
+      "source_label": "Защитно ядро от финалния фиш",
+      "core_numbers": "2, 4, 21, 22, 23, 34, 37, 38, 44",
+      "combination_count": 8,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 7.2,
+      "system_score_step91": 88.076,
+      "draws_tested": 10058,
+      "average_best_hits": 1.118711,
+      "average_total_row_hits": 5.97246,
+      "max_best_hits": 5,
+      "empty_rate_percent": 27.142573,
+      "at_least_1_percent": 72.857427,
+      "at_least_2_percent": 31.378008,
+      "at_least_3_percent": 6.949692,
+      "at_least_4_percent": 0.676079,
+      "at_least_5_percent": 0.009942,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.923,
+      "budget_efficiency_score": 13.408,
+      "random_average_best_hits": 1.876059,
+      "average_hits_vs_random": -0.757348,
+      "random_empty_rate_percent": 0.099821,
+      "empty_rate_vs_random": 27.042752,
+      "distribution": {
+        "0": 2730,
+        "1": 4172,
+        "2": 2457,
+        "3": 631,
+        "4": 67,
+        "5": 1,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_model_core_9_8",
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "strategy_type": "Редуцирана система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Редуцирана система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 8,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 7.2,
+      "system_score_step91": 90.813,
+      "draws_tested": 10058,
+      "average_best_hits": 1.115729,
+      "average_total_row_hits": 5.973454,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 6.880095,
+      "at_least_4_percent": 0.616425,
+      "at_least_5_percent": 0.049712,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.805,
+      "budget_efficiency_score": 13.366,
+      "random_average_best_hits": 1.876059,
+      "average_hits_vs_random": -0.76033,
+      "random_empty_rate_percent": 0.099821,
+      "empty_rate_vs_random": 26.356731,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2374,
+        "3": 630,
+        "4": 57,
+        "5": 5,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_hybrid_core_9_8",
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "strategy_type": "Редуцирана система / Хибридно ядро",
+      "mode_label": "Редуцирана система",
+      "source_label": "Хибридно ядро",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 8,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 7.2,
+      "system_score_step91": 90.813,
+      "draws_tested": 10058,
+      "average_best_hits": 1.115729,
+      "average_total_row_hits": 5.973454,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 6.880095,
+      "at_least_4_percent": 0.616425,
+      "at_least_5_percent": 0.049712,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.805,
+      "budget_efficiency_score": 13.366,
+      "random_average_best_hits": 1.876059,
+      "average_hits_vs_random": -0.76033,
+      "random_empty_rate_percent": 0.099821,
+      "empty_rate_vs_random": 26.356731,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2374,
+        "3": 630,
+        "4": 57,
+        "5": 5,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_protected_core_9_12",
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "strategy_type": "Редуцирана система / Защитно ядро от финалния фиш",
+      "mode_label": "Редуцирана система",
+      "source_label": "Защитно ядро от финалния фиш",
+      "core_numbers": "2, 4, 21, 22, 23, 34, 37, 38, 44",
+      "combination_count": 12,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 10.8,
+      "system_score_step91": 88.525,
+      "draws_tested": 10058,
+      "average_best_hits": 1.121992,
+      "average_total_row_hits": 8.965699,
+      "max_best_hits": 5,
+      "empty_rate_percent": 27.142573,
+      "at_least_1_percent": 72.857427,
+      "at_least_2_percent": 31.378008,
+      "at_least_3_percent": 7.138596,
+      "at_least_4_percent": 0.805329,
+      "at_least_5_percent": 0.019885,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.979,
+      "budget_efficiency_score": 10.964,
+      "random_average_best_hits": 2.076846,
+      "average_hits_vs_random": -0.954854,
+      "random_empty_rate_percent": 0.003181,
+      "empty_rate_vs_random": 27.139392,
+      "distribution": {
+        "0": 2730,
+        "1": 4172,
+        "2": 2438,
+        "3": 637,
+        "4": 79,
+        "5": 2,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_model_core_9_12",
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "strategy_type": "Редуцирана система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Редуцирана система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 12,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 10.8,
+      "system_score_step91": 91.103,
+      "draws_tested": 10058,
+      "average_best_hits": 1.117121,
+      "average_total_row_hits": 8.965301,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 6.949692,
+      "at_least_4_percent": 0.666136,
+      "at_least_5_percent": 0.069596,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.671,
+      "budget_efficiency_score": 10.875,
+      "random_average_best_hits": 2.076846,
+      "average_hits_vs_random": -0.959725,
+      "random_empty_rate_percent": 0.003181,
+      "empty_rate_vs_random": 26.453371,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2367,
+        "3": 632,
+        "4": 60,
+        "5": 7,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_hybrid_core_9_12",
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "strategy_type": "Редуцирана система / Хибридно ядро",
+      "mode_label": "Редуцирана система",
+      "source_label": "Хибридно ядро",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 12,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 10.8,
+      "system_score_step91": 91.103,
+      "draws_tested": 10058,
+      "average_best_hits": 1.117121,
+      "average_total_row_hits": 8.965301,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 6.949692,
+      "at_least_4_percent": 0.666136,
+      "at_least_5_percent": 0.069596,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.671,
+      "budget_efficiency_score": 10.875,
+      "random_average_best_hits": 2.076846,
+      "average_hits_vs_random": -0.959725,
+      "random_empty_rate_percent": 0.003181,
+      "empty_rate_vs_random": 26.453371,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2367,
+        "3": 632,
+        "4": 60,
+        "5": 7,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "full_model_core_7",
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "strategy_type": "Пълна система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Пълна система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 37, 38",
+      "combination_count": 7,
+      "unique_covered_numbers": 7,
+      "cost_eur_at_090": 6.3,
+      "system_score_step91": 90.139,
+      "draws_tested": 10058,
+      "average_best_hits": 0.869059,
+      "average_total_row_hits": 5.214357,
+      "max_best_hits": 5,
+      "empty_rate_percent": 36.448598,
+      "at_least_1_percent": 63.551402,
+      "at_least_2_percent": 19.914496,
+      "at_least_3_percent": 3.121893,
+      "at_least_4_percent": 0.29827,
+      "at_least_5_percent": 0.019885,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 27.511,
+      "budget_efficiency_score": 10.398,
+      "random_average_best_hits": 1.810945,
+      "average_hits_vs_random": -0.941886,
+      "random_empty_rate_percent": 0.317359,
+      "empty_rate_vs_random": 36.131239,
+      "distribution": {
+        "0": 3666,
+        "1": 4389,
+        "2": 1689,
+        "3": 284,
+        "4": 28,
+        "5": 2,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_protected_core_9_16",
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "strategy_type": "Редуцирана система / Защитно ядро от финалния фиш",
+      "mode_label": "Редуцирана система",
+      "source_label": "Защитно ядро от финалния фиш",
+      "core_numbers": "2, 4, 21, 22, 23, 34, 37, 38, 44",
+      "combination_count": 16,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 14.4,
+      "system_score_step91": 88.413,
+      "draws_tested": 10058,
+      "average_best_hits": 1.122589,
+      "average_total_row_hits": 11.959634,
+      "max_best_hits": 5,
+      "empty_rate_percent": 27.142573,
+      "at_least_1_percent": 72.857427,
+      "at_least_2_percent": 31.378008,
+      "at_least_3_percent": 7.138596,
+      "at_least_4_percent": 0.864983,
+      "at_least_5_percent": 0.019885,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.719,
+      "budget_efficiency_score": 9.43,
+      "random_average_best_hits": 2.203989,
+      "average_hits_vs_random": -1.0814,
+      "random_empty_rate_percent": 0.0,
+      "empty_rate_vs_random": 27.142573,
+      "distribution": {
+        "0": 2730,
+        "1": 4172,
+        "2": 2438,
+        "3": 631,
+        "4": 85,
+        "5": 2,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_model_core_9_16",
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "strategy_type": "Редуцирана система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Редуцирана система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 16,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 14.4,
+      "system_score_step91": 91.297,
+      "draws_tested": 10058,
+      "average_best_hits": 1.118811,
+      "average_total_row_hits": 11.951979,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 7.078942,
+      "at_least_4_percent": 0.695963,
+      "at_least_5_percent": 0.079539,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.511,
+      "budget_efficiency_score": 9.378,
+      "random_average_best_hits": 2.203989,
+      "average_hits_vs_random": -1.085178,
+      "random_empty_rate_percent": 0.0,
+      "empty_rate_vs_random": 26.456552,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2354,
+        "3": 642,
+        "4": 62,
+        "5": 8,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "reduced_hybrid_core_9_16",
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "strategy_type": "Редуцирана система / Хибридно ядро",
+      "mode_label": "Редуцирана система",
+      "source_label": "Хибридно ядро",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 16,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 14.4,
+      "system_score_step91": 91.297,
+      "draws_tested": 10058,
+      "average_best_hits": 1.118811,
+      "average_total_row_hits": 11.951979,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 7.078942,
+      "at_least_4_percent": 0.695963,
+      "at_least_5_percent": 0.079539,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 37.511,
+      "budget_efficiency_score": 9.378,
+      "random_average_best_hits": 2.203989,
+      "average_hits_vs_random": -1.085178,
+      "random_empty_rate_percent": 0.0,
+      "empty_rate_vs_random": 26.456552,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2354,
+        "3": 642,
+        "4": 62,
+        "5": 8,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "full_model_core_8",
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "strategy_type": "Пълна система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Пълна система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38",
+      "combination_count": 28,
+      "unique_covered_numbers": 8,
+      "cost_eur_at_090": 25.2,
+      "system_score_step91": 89.087,
+      "draws_tested": 10058,
+      "average_best_hits": 0.993339,
+      "average_total_row_hits": 20.860111,
+      "max_best_hits": 5,
+      "empty_rate_percent": 31.179161,
+      "at_least_1_percent": 68.820839,
+      "at_least_2_percent": 24.975144,
+      "at_least_3_percent": 5.020879,
+      "at_least_4_percent": 0.477232,
+      "at_least_5_percent": 0.039769,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 30.88,
+      "budget_efficiency_score": 5.836,
+      "random_average_best_hits": 2.428709,
+      "average_hits_vs_random": -1.43537,
+      "random_empty_rate_percent": 0.0,
+      "empty_rate_vs_random": 31.179161,
+      "distribution": {
+        "0": 3136,
+        "1": 4410,
+        "2": 2007,
+        "3": 457,
+        "4": 44,
+        "5": 4,
+        "6": 0
+      }
+    },
+    {
+      "option_id": "full_model_core_9",
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "strategy_type": "Пълна система / Моделно ядро от претеглените сигнали",
+      "mode_label": "Пълна система",
+      "source_label": "Моделно ядро от претеглените сигнали",
+      "core_numbers": "1, 2, 4, 18, 21, 22, 37, 38, 49",
+      "combination_count": 84,
+      "unique_covered_numbers": 9,
+      "cost_eur_at_090": 75.6,
+      "system_score_step91": 89.682,
+      "draws_tested": 10058,
+      "average_best_hits": 1.120004,
+      "average_total_row_hits": 62.720223,
+      "max_best_hits": 5,
+      "empty_rate_percent": 26.456552,
+      "at_least_1_percent": 73.543448,
+      "at_least_2_percent": 30.483197,
+      "at_least_3_percent": 7.078942,
+      "at_least_4_percent": 0.795387,
+      "at_least_5_percent": 0.099423,
+      "exact_6_count": 0,
+      "exact_6_percent": 0.0,
+      "historical_score": 31.643,
+      "budget_efficiency_score": 3.453,
+      "random_average_best_hits": 2.871835,
+      "average_hits_vs_random": -1.751831,
+      "random_empty_rate_percent": 0.0,
+      "empty_rate_vs_random": 26.456552,
+      "distribution": {
+        "0": 2661,
+        "1": 4331,
+        "2": 2354,
+        "3": 632,
+        "4": 70,
+        "5": 10,
+        "6": 0
+      }
+    }
+  ],
+  "distribution_rows": [
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 0,
+      "draw_count": 152,
+      "draw_percent": 1.511235
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 1,
+      "draw_count": 4502,
+      "draw_percent": 44.76039
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 2,
+      "draw_count": 4638,
+      "draw_percent": 46.112547
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 3,
+      "draw_count": 718,
+      "draw_percent": 7.138596
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 4,
+      "draw_count": 47,
+      "draw_percent": 0.46729
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 5,
+      "draw_count": 1,
+      "draw_percent": 0.009942
+    },
+    {
+      "strategy_label": "Защитен фиш с широко покритие",
+      "combination_count": 4,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 2,
+      "draw_count": 2501,
+      "draw_percent": 24.865778
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 3,
+      "draw_count": 519,
+      "draw_percent": 5.160072
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 4,
+      "draw_count": 42,
+      "draw_percent": 0.417578
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 5,
+      "draw_count": 4,
+      "draw_percent": 0.039769
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 2,
+      "draw_count": 2501,
+      "draw_percent": 24.865778
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 3,
+      "draw_count": 519,
+      "draw_percent": 5.160072
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 4,
+      "draw_count": 42,
+      "draw_percent": 0.417578
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 5,
+      "draw_count": 4,
+      "draw_percent": 0.039769
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 0,
+      "draw_count": 2730,
+      "draw_percent": 27.142573
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 1,
+      "draw_count": 4172,
+      "draw_percent": 41.479419
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 2,
+      "draw_count": 2589,
+      "draw_percent": 25.740704
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 3,
+      "draw_count": 531,
+      "draw_percent": 5.27938
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 4,
+      "draw_count": 35,
+      "draw_percent": 0.347982
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 5,
+      "draw_count": 1,
+      "draw_percent": 0.009942
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",
+      "combination_count": 4,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 0,
+      "draw_count": 2730,
+      "draw_percent": 27.142573
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 1,
+      "draw_count": 4172,
+      "draw_percent": 41.479419
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 2,
+      "draw_count": 2457,
+      "draw_percent": 24.428316
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 3,
+      "draw_count": 631,
+      "draw_percent": 6.273613
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 4,
+      "draw_count": 67,
+      "draw_percent": 0.666136
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 5,
+      "draw_count": 1,
+      "draw_percent": 0.009942
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 2,
+      "draw_count": 2374,
+      "draw_percent": 23.603102
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 3,
+      "draw_count": 630,
+      "draw_percent": 6.263671
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 4,
+      "draw_count": 57,
+      "draw_percent": 0.566713
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 5,
+      "draw_count": 5,
+      "draw_percent": 0.049712
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 2,
+      "draw_count": 2374,
+      "draw_percent": 23.603102
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 3,
+      "draw_count": 630,
+      "draw_percent": 6.263671
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 4,
+      "draw_count": 57,
+      "draw_percent": 0.566713
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 5,
+      "draw_count": 5,
+      "draw_percent": 0.049712
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",
+      "combination_count": 8,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 0,
+      "draw_count": 2730,
+      "draw_percent": 27.142573
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 1,
+      "draw_count": 4172,
+      "draw_percent": 41.479419
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 2,
+      "draw_count": 2438,
+      "draw_percent": 24.239411
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 3,
+      "draw_count": 637,
+      "draw_percent": 6.333267
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 4,
+      "draw_count": 79,
+      "draw_percent": 0.785444
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 5,
+      "draw_count": 2,
+      "draw_percent": 0.019885
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 2,
+      "draw_count": 2367,
+      "draw_percent": 23.533506
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 3,
+      "draw_count": 632,
+      "draw_percent": 6.283555
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 4,
+      "draw_count": 60,
+      "draw_percent": 0.59654
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 5,
+      "draw_count": 7,
+      "draw_percent": 0.069596
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 2,
+      "draw_count": 2367,
+      "draw_percent": 23.533506
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 3,
+      "draw_count": 632,
+      "draw_percent": 6.283555
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 4,
+      "draw_count": 60,
+      "draw_percent": 0.59654
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 5,
+      "draw_count": 7,
+      "draw_percent": 0.069596
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",
+      "combination_count": 12,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 0,
+      "draw_count": 3666,
+      "draw_percent": 36.448598
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 1,
+      "draw_count": 4389,
+      "draw_percent": 43.636906
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 2,
+      "draw_count": 1689,
+      "draw_percent": 16.792603
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 3,
+      "draw_count": 284,
+      "draw_percent": 2.823623
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 4,
+      "draw_count": 28,
+      "draw_percent": 0.278385
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 5,
+      "draw_count": 2,
+      "draw_percent": 0.019885
+    },
+    {
+      "strategy_label": "Пълна система от 7 моделни числа",
+      "combination_count": 7,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 0,
+      "draw_count": 2730,
+      "draw_percent": 27.142573
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 1,
+      "draw_count": 4172,
+      "draw_percent": 41.479419
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 2,
+      "draw_count": 2438,
+      "draw_percent": 24.239411
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 3,
+      "draw_count": 631,
+      "draw_percent": 6.273613
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 4,
+      "draw_count": 85,
+      "draw_percent": 0.845098
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 5,
+      "draw_count": 2,
+      "draw_percent": 0.019885
+    },
+    {
+      "strategy_label": "Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 2,
+      "draw_count": 2354,
+      "draw_percent": 23.404255
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 3,
+      "draw_count": 642,
+      "draw_percent": 6.382979
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 4,
+      "draw_count": 62,
+      "draw_percent": 0.616425
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 5,
+      "draw_count": 8,
+      "draw_percent": 0.079539
+    },
+    {
+      "strategy_label": "Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 2,
+      "draw_count": 2354,
+      "draw_percent": 23.404255
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 3,
+      "draw_count": 642,
+      "draw_percent": 6.382979
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 4,
+      "draw_count": 62,
+      "draw_percent": 0.616425
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 5,
+      "draw_count": 8,
+      "draw_percent": 0.079539
+    },
+    {
+      "strategy_label": "Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",
+      "combination_count": 16,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 0,
+      "draw_count": 3136,
+      "draw_percent": 31.179161
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 1,
+      "draw_count": 4410,
+      "draw_percent": 43.845695
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 2,
+      "draw_count": 2007,
+      "draw_percent": 19.954265
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 3,
+      "draw_count": 457,
+      "draw_percent": 4.543647
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 4,
+      "draw_count": 44,
+      "draw_percent": 0.437463
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 5,
+      "draw_count": 4,
+      "draw_percent": 0.039769
+    },
+    {
+      "strategy_label": "Пълна система от 8 моделни числа",
+      "combination_count": 28,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 0,
+      "draw_count": 2661,
+      "draw_percent": 26.456552
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 1,
+      "draw_count": 4331,
+      "draw_percent": 43.060251
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 2,
+      "draw_count": 2354,
+      "draw_percent": 23.404255
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 3,
+      "draw_count": 632,
+      "draw_percent": 6.283555
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 4,
+      "draw_count": 70,
+      "draw_percent": 0.695963
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 5,
+      "draw_count": 10,
+      "draw_percent": 0.099423
+    },
+    {
+      "strategy_label": "Пълна система от 9 моделни числа",
+      "combination_count": 84,
+      "best_hit_bucket": 6,
+      "draw_count": 0,
+      "draw_percent": 0.0
+    }
+  ],
+  "random_baseline_rows": [
+    {
+      "combination_count": 4,
+      "trials": 25,
+      "random_average_best_hits": 1.524402,
+      "random_empty_rate_percent": 3.599125,
+      "random_at_least_3_percent": 7.353748,
+      "random_at_least_4_percent": 0.394114,
+      "random_max_best_hits_avg": 4.52
+    },
+    {
+      "combination_count": 7,
+      "trials": 25,
+      "random_average_best_hits": 1.810945,
+      "random_empty_rate_percent": 0.317359,
+      "random_at_least_3_percent": 12.499901,
+      "random_at_least_4_percent": 0.658978,
+      "random_max_best_hits_avg": 4.68
+    },
+    {
+      "combination_count": 8,
+      "trials": 25,
+      "random_average_best_hits": 1.876059,
+      "random_empty_rate_percent": 0.099821,
+      "random_at_least_3_percent": 13.972161,
+      "random_at_least_4_percent": 0.785842,
+      "random_max_best_hits_avg": 4.68
+    },
+    {
+      "combination_count": 12,
+      "trials": 25,
+      "random_average_best_hits": 2.076846,
+      "random_empty_rate_percent": 0.003181,
+      "random_at_least_3_percent": 20.129251,
+      "random_at_least_4_percent": 1.179558,
+      "random_max_best_hits_avg": 4.88
+    },
+    {
+      "combination_count": 16,
+      "trials": 25,
+      "random_average_best_hits": 2.203989,
+      "random_empty_rate_percent": 0.0,
+      "random_at_least_3_percent": 25.976934,
+      "random_at_least_4_percent": 1.523563,
+      "random_max_best_hits_avg": 5.04
+    },
+    {
+      "combination_count": 28,
+      "trials": 25,
+      "random_average_best_hits": 2.428709,
+      "random_empty_rate_percent": 0.0,
+      "random_at_least_3_percent": 41.062637,
+      "random_at_least_4_percent": 2.73096,
+      "random_max_best_hits_avg": 5
+    },
+    {
+      "combination_count": 84,
+      "trials": 25,
+      "random_average_best_hits": 2.871835,
+      "random_empty_rate_percent": 0.0,
+      "random_at_least_3_percent": 79.062637,
+      "random_at_least_4_percent": 7.971366,
+      "random_max_best_hits_avg": 5.08
+    }
+  ]
+}

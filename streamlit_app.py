@@ -3717,6 +3717,12 @@ def render_v91_budget_aware_system_builder_page() -> None:
     return _render()
 # STEP91_BUDGET_AWARE_SYSTEM_BUILDER_WRAPPER_END
 
+# STEP92_SYSTEM_STRATEGY_BACKTEST_WRAPPER_START
+def render_v92_system_strategy_backtest_center_page() -> None:
+    from src.v92_system_strategy_backtest_center_section import render_v92_system_strategy_backtest_center_section as _render
+    return _render()
+# STEP92_SYSTEM_STRATEGY_BACKTEST_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3726,6 +3732,7 @@ def main() -> None:
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
         "Системни фишове": render_v91_budget_aware_system_builder_page,
+        "Тест на системни стратегии": render_v92_system_strategy_backtest_center_page,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3803,6 +3810,7 @@ def main() -> None:
             'Покритие на комбинациите',
             'Баланс на комбинациите',
             'Системни фишове',
+            'Тест на системни стратегии',
             'Обединена оценка',
         ],
         '📊 Исторически анализи': [
