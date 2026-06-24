@@ -61,6 +61,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v95_build_active_plan_auto_evaluation.py",
     ROOT / "scripts" / "v96_build_add_draw_controlled_flow.py",
     ROOT / "scripts" / "v97_build_real_draw_lifecycle.py",
+    ROOT / "scripts" / "v98_build_active_plan_result_history.py",
 ]
 
 

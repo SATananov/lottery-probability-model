@@ -1,0 +1,49 @@
+{
+  "step": 98,
+  "status": "WAITING_NEXT_DRAW",
+  "title_bg": "История на резултатите от активния план",
+  "generated_at_utc": "2026-06-24T04:44:17+00:00",
+  "active_plan": {
+    "plan_id": "v94_active_20260623T163844Z0000",
+    "status": "ACTIVE",
+    "strategy_type": "Хибрид",
+    "combination_count": 11,
+    "cost_eur": 9.9,
+    "cost_text": "9.90",
+    "saved_after_draw_date": "2026-06-21",
+    "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44",
+    "v95_status": "WAITING_NEXT_DRAW",
+    "real_result_rows": 0,
+    "best_hit_count_max": 0,
+    "best_hit_count_average": 0.0,
+    "rows_with_3_plus_count": 0,
+    "rows_with_4_plus_count": 0,
+    "rows_with_3_plus_rate_percent": 0.0,
+    "rows_with_4_plus_rate_percent": 0.0,
+    "latest_result_date": "",
+    "latest_verdict_bg": "",
+    "trend_bg": "Още няма реални резултати",
+    "next_status_bg": "Активният план е готов, но още няма следващ реален тираж след заключването му."
+  },
+  "history_summary": {
+    "real_result_rows": 0,
+    "best_hit_count_max": 0,
+    "best_hit_count_average": 0.0,
+    "rows_with_3_plus_count": 0,
+    "rows_with_4_plus_count": 0,
+    "rows_with_3_plus_rate_percent": 0.0,
+    "rows_with_4_plus_rate_percent": 0.0,
+    "latest_result_date": "",
+    "latest_verdict_bg": "",
+    "trend_bg": "Още няма реални резултати"
+  },
+  "history_rows": [],
+  "source_files": {
+    "active_plan_model": "models/v94/v94_active_budget_plan_tracker_model.json",
+    "step95_model": "models/v95/v95_active_plan_auto_evaluation_model.json",
+    "step95_history": "reports/v95_active_plan_auto_evaluation_history.csv",
+    "step95_latest_result": "reports/v95_active_plan_auto_evaluation_latest_result.csv"
+  },
+  "method_bg": "Step 98 не изчислява нови числа. Той обобщава само вече записаните Step 95 реални проверки на активния план и пази отделен dashboard за история, средни стойности, 3+/4+ честота и тренд.",
+  "safe_note_bg": "Step 98 е исторически дневник на вече запазени активни планове и реални резултати. Той не добавя нова прогноза, не променя математиката и не обещава печалба."
+}

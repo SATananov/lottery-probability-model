@@ -3741,6 +3741,12 @@ def render_v97_real_draw_lifecycle_page() -> None:
     return _render()
 # STEP97_REAL_DRAW_LIFECYCLE_WRAPPER_END
 
+# STEP98_ACTIVE_PLAN_RESULT_HISTORY_WRAPPER_START
+def render_v98_active_plan_result_history_page() -> None:
+    from src.v98_active_plan_result_history_section import render_v98_active_plan_result_history_section as _render
+    return _render()
+# STEP98_ACTIVE_PLAN_RESULT_HISTORY_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3754,6 +3760,7 @@ def main() -> None:
         "Бюджетен съветник": render_v93_budget_advisor_page,
         "План и резултат": render_v94_active_budget_plan_tracker_page,
         "Реален цикъл на тираж": render_v97_real_draw_lifecycle_page,
+        "История на активния план": render_v98_active_plan_result_history_page,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3875,6 +3882,7 @@ def main() -> None:
         '✅ Финален план за игра': [
             'Добавяне на тираж',
             'Реален цикъл на тираж',
+            'История на активния план',
             'Анализ на нов тираж',
             'Обяснимост и валидация',
             'Решение и препоръка',

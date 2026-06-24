@@ -1,0 +1,16 @@
+{
+  "step": 98,
+  "status": "WAITING_NEXT_DRAW",
+  "plan_id": "v94_active_20260623T163844Z0000",
+  "strategy_type": "Хибрид",
+  "combination_count": 11,
+  "cost_eur": 9.9,
+  "v95_status": "WAITING_NEXT_DRAW",
+  "real_result_rows": 0,
+  "best_hit_count_max": 0,
+  "best_hit_count_average": 0.0,
+  "rows_with_3_plus_rate_percent": 0.0,
+  "rows_with_4_plus_rate_percent": 0.0,
+  "next_status_bg": "Активният план е готов, но още няма следващ реален тираж след заключването му.",
+  "safe_note_bg": "Step 98 е исторически дневник на вече запазени активни планове и реални резултати. Той не добавя нова прогноза, не променя математиката и не обещава печалба."
+}
