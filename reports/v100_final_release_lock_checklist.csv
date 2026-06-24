@@ -1,0 +1,17 @@
+﻿area_bg,check_bg,status,blocking,details_bg
+Данни,Dataset-ите са синхронизирани,OK,yes,"historical=10058, normalized=10058, canonical=10058"
+Данни,Последният тираж е очакваният checkpoint,OK,yes,"2026-06-21 — 6, 13, 16, 19, 42, 44"
+Активен план,Планът е наличен,OK,yes,v94_active_20260623T163844Z0000
+Активен план,Типът е Хибрид,OK,yes,Хибрид
+Активен план,Комбинациите са 11,OK,yes,11
+Активен план,Цената е 9.90 EUR,OK,yes,9.90 EUR
+Статуси,Step 95 чака следващ реален тираж,OK,yes,WAITING_NEXT_DRAW
+Статуси,Step 97 lifecycle е готов,OK,yes,READY
+Статуси,Step 98 историята чака следващ тираж,OK,yes,WAITING_NEXT_DRAW
+Статуси,Step 99 финалното табло е готово,OK,yes,READY_WAITING_NEXT_DRAW
+Навигация,Финалното табло е вързано,OK,yes,Финално табло
+Навигация,Финалното заключване е вързано,OK,yes,Финално заключване
+Add Draw,Step 95 pre-save проверката е преди запис,OK,yes,evaluate_active_plan_against_pending_draw преди save_draws
+Add Draw,Step 73 pre-save проверката остава преди запис,OK,yes,evaluate_current_pack_against_draw преди save_draws
+Add Draw,Refresh-ът е след запис,OK,yes,refresh_models след save_draws
+Add Draw,Step 97/98/99/100 са в refresh chain,OK,yes,"v97, v98, v99, v100"

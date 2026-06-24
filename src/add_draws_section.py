@@ -63,6 +63,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v97_build_real_draw_lifecycle.py",
     ROOT / "scripts" / "v98_build_active_plan_result_history.py",
     ROOT / "scripts" / "v99_build_final_user_dashboard.py",
+    ROOT / "scripts" / "v100_build_final_release_lock.py",
 ]
 
 

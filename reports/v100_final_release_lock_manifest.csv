@@ -1,0 +1,17 @@
+﻿artifact_type,path,status,note_bg
+file,models/v100/v100_final_release_lock_model.json,OK,наличен
+file,reports/v100_final_release_lock_summary.json,OK,наличен
+file,reports/v100_final_release_lock_summary.md,OK,наличен
+file,reports/v100_final_release_lock_checklist.csv,OK,наличен
+file,reports/v100_final_release_lock_manifest.csv,MISSING,липсва
+file,models/v94/v94_active_budget_plan_tracker_model.json,OK,наличен
+file,models/v95/v95_active_plan_auto_evaluation_model.json,OK,наличен
+file,models/v96/v96_add_draw_controlled_flow_model.json,OK,наличен
+file,models/v97/v97_real_draw_lifecycle_model.json,OK,наличен
+file,models/v98/v98_active_plan_result_history_model.json,OK,наличен
+file,models/v99/v99_final_user_dashboard_model.json,OK,наличен
+file,data/historical_draws.csv,OK,наличен
+file,data/v40_normalized_draw_events.csv,OK,наличен
+file,data/v41_canonical_draw_events.csv,OK,наличен
+file,streamlit_app.py,OK,наличен
+file,src/add_draws_section.py,OK,наличен

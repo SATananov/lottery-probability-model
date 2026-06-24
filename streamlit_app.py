@@ -3753,12 +3753,19 @@ def render_v99_final_user_dashboard_page() -> None:
     return _render()
 # STEP99_FINAL_USER_DASHBOARD_WRAPPER_END
 
+# STEP100_FINAL_RELEASE_LOCK_WRAPPER_START
+def render_v100_final_release_lock_page() -> None:
+    from src.v100_final_release_lock_section import render_v100_final_release_lock_section as _render
+    return _render()
+# STEP100_FINAL_RELEASE_LOCK_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
 
         "Потребителско меню": render_v87_synthesized_user_menu_section,
         "Финално табло": render_v99_final_user_dashboard_page,
+        "Финално заключване": render_v100_final_release_lock_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3831,6 +3838,7 @@ def main() -> None:
 
             'Потребителско меню',
             'Финално табло',
+            'Финално заключване',
 
             'Табло',
             'Препоръки',
