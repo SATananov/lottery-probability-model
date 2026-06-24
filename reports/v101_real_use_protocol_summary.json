@@ -1,0 +1,240 @@
+{
+  "step": 101,
+  "status": "WAITING_NEXT_REAL_DRAW",
+  "title_bg": "Протокол за реална употреба",
+  "generated_at_utc": "2026-06-24T08:36:52+00:00",
+  "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW",
+  "active_plan": {
+    "plan_id": "v94_active_20260623T163844Z0000",
+    "strategy_type": "Хибрид",
+    "combination_count": 11,
+    "cost_eur": 9.9,
+    "cost_text": "9.90 EUR",
+    "saved_after_draw_date": "2026-06-21",
+    "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44"
+  },
+  "dataset": {
+    "historical": {
+      "path": "data/historical_draws.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_draw_date": "2026-06-21",
+      "latest_numbers": [
+        6,
+        13,
+        16,
+        19,
+        42,
+        44
+      ],
+      "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+      "year_min": 1958,
+      "year_max": 2026,
+      "rows_2026": 49
+    },
+    "normalized": {
+      "path": "data/v40_normalized_draw_events.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_draw_date": "2026-06-21",
+      "latest_numbers": [
+        6,
+        13,
+        16,
+        19,
+        42,
+        44
+      ],
+      "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+      "year_min": 1958,
+      "year_max": 2026,
+      "rows_2026": 49
+    },
+    "canonical": {
+      "path": "data/v41_canonical_draw_events.csv",
+      "exists": true,
+      "rows": 10058,
+      "latest_draw_date": "2026-06-21",
+      "latest_numbers": [
+        6,
+        13,
+        16,
+        19,
+        42,
+        44
+      ],
+      "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+      "year_min": 1958,
+      "year_max": 2026,
+      "rows_2026": 49
+    },
+    "historical_rows": 10058,
+    "normalized_rows": 10058,
+    "canonical_rows": 10058,
+    "datasets_synced": true,
+    "latest_draw_date": "2026-06-21",
+    "latest_numbers": [
+      6,
+      13,
+      16,
+      19,
+      42,
+      44
+    ],
+    "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+    "latest_draw_year": "2026",
+    "latest_draw_no": "48",
+    "latest_draw_position": "1"
+  },
+  "statuses": {
+    "step95_status": "WAITING_NEXT_DRAW",
+    "step97_status": "READY",
+    "step98_status": "WAITING_NEXT_DRAW",
+    "step99_status": "READY_WAITING_NEXT_DRAW",
+    "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW"
+  },
+  "flow": {
+    "real_use_protocol_page_wired": true,
+    "step73_before_save": true,
+    "step95_before_save": true,
+    "refresh_after_save": true,
+    "add_draw_has_step100": true,
+    "add_draw_has_step101": true,
+    "step101_after_step100": true
+  },
+  "protocol_steps": [
+    {
+      "order": 1,
+      "phase_bg": "Преди следващия тираж",
+      "action_bg": "Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.",
+      "why_bg": "Така първият реален цикъл ще измери заключената система, а не нова смесена версия.",
+      "expected_result_bg": "Проектът остава във V1_LOCKED_WAITING_NEXT_DRAW."
+    },
+    {
+      "order": 2,
+      "phase_bg": "Когато излезе новият тираж",
+      "action_bg": "Отвори Добавяне на тираж и въведи реалните числа точно както са публикувани.",
+      "why_bg": "Ръчният вход трябва да е ясен и проверим, преди dataset-ът да се промени.",
+      "expected_result_bg": "Pending draw е готов за pre-save оценка."
+    },
+    {
+      "order": 3,
+      "phase_bg": "Преди запис",
+      "action_bg": "Остави включени pre-save оценките на Step 73 и Step 95.",
+      "why_bg": "Те сравняват активния пакет/план срещу новия тираж преди dataset update.",
+      "expected_result_bg": "Има оценка на активния план преди запис."
+    },
+    {
+      "order": 4,
+      "phase_bg": "Запис и обновяване",
+      "action_bg": "Запиши тиража и пусни refresh chain-а след save.",
+      "why_bg": "След записа се обновяват history, result tracking, final dashboard, release lock и този протокол.",
+      "expected_result_bg": "Step 96–101 са обновени след реалния draw."
+    },
+    {
+      "order": 5,
+      "phase_bg": "След обновяване",
+      "action_bg": "Прегледай История на активния план, Финално табло, Финално заключване и Протокол за реална употреба.",
+      "why_bg": "Това е реалният operational review, не нова прогноза.",
+      "expected_result_bg": "Ясно се вижда как се е представил активният план."
+    },
+    {
+      "order": 6,
+      "phase_bg": "След проверка",
+      "action_bg": "Комитни само ако compile/JSON/CSV/Cyrillic/checkpoint проверките са чисти, после направи clean ZIP.",
+      "why_bg": "Така следващият checkpoint остава проверим и възстановим.",
+      "expected_result_bg": "Нов clean checkpoint след първи реален цикъл."
+    }
+  ],
+  "checklist": [
+    {
+      "area_bg": "Step 100",
+      "check_bg": "V1 lock е активен",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "V1_LOCKED_WAITING_NEXT_DRAW"
+    },
+    {
+      "area_bg": "Step 100",
+      "check_bg": "Няма Step 100 blocking failures",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "blocking_failures=0"
+    },
+    {
+      "area_bg": "Данни",
+      "check_bg": "Dataset-ите са синхронизирани",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "historical=10058, normalized=10058, canonical=10058"
+    },
+    {
+      "area_bg": "Данни",
+      "check_bg": "Checkpoint latest draw остава 2026-06-21",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "2026-06-21 — 6, 13, 16, 19, 42, 44"
+    },
+    {
+      "area_bg": "Активен план",
+      "check_bg": "Активният план е Хибрид",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "Хибрид"
+    },
+    {
+      "area_bg": "Активен план",
+      "check_bg": "Планът има 11 комбинации",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "11"
+    },
+    {
+      "area_bg": "Активен план",
+      "check_bg": "Бюджетът е 9.90 EUR",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "9.90 EUR"
+    },
+    {
+      "area_bg": "Add Draw",
+      "check_bg": "Step 73 pre-save остава преди save",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "evaluate_current_pack_against_draw преди save_draws"
+    },
+    {
+      "area_bg": "Add Draw",
+      "check_bg": "Step 95 pre-save остава преди save",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "evaluate_active_plan_against_pending_draw преди save_draws"
+    },
+    {
+      "area_bg": "Add Draw",
+      "check_bg": "Refresh chain остава след save",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "refresh_models след save_draws"
+    },
+    {
+      "area_bg": "Add Draw",
+      "check_bg": "Step 101 е след Step 100 в refresh chain",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "v101_build_real_use_protocol.py след v100_build_final_release_lock.py"
+    },
+    {
+      "area_bg": "Навигация",
+      "check_bg": "Страницата е вързана в app-а",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "Протокол за реална употреба"
+    }
+  ],
+  "blocking_failures": [],
+  "next_action_bg": "Изчакай следващия реален тираж и го въведи през Добавяне на тираж.",
+  "method_bg": "Step 101 е operational protocol слой. Той фиксира реда на работа след Step 100 и не променя прогнозната логика.",
+  "safe_note_bg": "Step 101 е протокол за реална употреба след заключен Step 100. Той описва кога и как да се използва апът при следващ реален тираж. Не добавя нов модел, не променя математиката, не променя тегла, не генерира нови числа и не гарантира печалба.",
+  "locked_scope_bg": "Без нови модели, без промяна на тегла, без промяна на ticket builder, без промяна на dataset преди следващ реален тираж."
+}

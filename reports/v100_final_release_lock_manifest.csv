@@ -3,7 +3,7 @@ file,models/v100/v100_final_release_lock_model.json,OK,наличен
 file,reports/v100_final_release_lock_summary.json,OK,наличен
 file,reports/v100_final_release_lock_summary.md,OK,наличен
 file,reports/v100_final_release_lock_checklist.csv,OK,наличен
-file,reports/v100_final_release_lock_manifest.csv,MISSING,липсва
+file,reports/v100_final_release_lock_manifest.csv,OK,наличен
 file,models/v94/v94_active_budget_plan_tracker_model.json,OK,наличен
 file,models/v95/v95_active_plan_auto_evaluation_model.json,OK,наличен
 file,models/v96/v96_add_draw_controlled_flow_model.json,OK,наличен
