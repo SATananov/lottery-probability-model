@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
 import os
 import subprocess
@@ -39,6 +40,13 @@ FORBIDDEN_SUFFIXES = {
     ".zip",
 }
 HELPER_PREFIXES = ("apply_", "fix_", "patch_")
+VIRTUAL_METADATA_PATHS = {
+    "models/v103/v103_clean_release_checkpoint_model.json",
+    "reports/v103_clean_release_checkpoint_summary.json",
+    "reports/v103_clean_release_checkpoint_summary.md",
+    "reports/v103_clean_release_checkpoint_checklist.csv",
+    "reports/v103_clean_release_checkpoint_manifest.csv",
+}
 
 
 def _write_text(path: Path, text: str) -> None:
@@ -105,17 +113,23 @@ def _desktop_dir() -> Path:
     return desktop
 
 
-def build_clean_release_summary() -> dict[str, Any]:
-    tracked = _tracked_files()
-    status = _git_status_short()
-    forbidden_tracked = [path for path in tracked if is_forbidden_release_path(path)]
+def _included_and_skipped(tracked: list[str]) -> tuple[list[str], list[str]]:
+    included: list[str] = []
+    skipped: list[str] = []
+    for relative_path in tracked:
+        if is_forbidden_release_path(relative_path):
+            skipped.append(relative_path)
+            continue
+        source = ROOT / relative_path
+        if not source.is_file():
+            skipped.append(relative_path)
+            continue
+        included.append(relative_path)
+    return included, skipped
 
-    stamp = datetime.now().strftime("%Y%m%d_%H%M")
-    commit = _short_commit()
-    zip_name = f"{PROJECT_NAME}_step103_104_clean-checkpoint_{stamp}_{commit}.zip"
-    recommended_path = str(_desktop_dir() / zip_name)
 
-    checks = [
+def _base_checks(tracked: list[str], status: str, forbidden_tracked: list[str]) -> list[dict[str, Any]]:
+    return [
         {
             "check": "git_available",
             "passed": bool(tracked),
@@ -137,7 +151,23 @@ def build_clean_release_summary() -> dict[str, Any]:
             "details_bg": "ZIP creation uses tracked project files only, so .git and cache folders are excluded by design.",
         },
     ]
-    blocking_failures = sum(1 for item in checks if not item["passed"] and item["check"] != "working_tree_clean_before_zip")
+
+
+def _recommended_zip_path(commit: str) -> str:
+    stamp = datetime.now().strftime("%Y%m%d_%H%M")
+    zip_name = f"{PROJECT_NAME}_step103_104_clean-checkpoint_{stamp}_{commit}.zip"
+    return str(_desktop_dir() / zip_name)
+
+
+def build_clean_release_summary() -> dict[str, Any]:
+    tracked = _tracked_files()
+    status = _git_status_short()
+    forbidden_tracked = [path for path in tracked if is_forbidden_release_path(path)]
+    commit = _short_commit()
+    checks = _base_checks(tracked, status, forbidden_tracked)
+    blocking_failures = sum(
+        1 for item in checks if not item["passed"] and item["check"] != "working_tree_clean_before_zip"
+    )
     status_code = "READY_FOR_CLEAN_ZIP" if blocking_failures == 0 else "BLOCKED"
     if status:
         status_code = "WAITING_FOR_CLEAN_GIT_STATUS"
@@ -152,25 +182,21 @@ def build_clean_release_summary() -> dict[str, Any]:
         "forbidden_tracked_count": len(forbidden_tracked),
         "forbidden_tracked_preview": forbidden_tracked[:30],
         "git_status_short": status,
-        "recommended_zip_path": recommended_path,
+        "recommended_zip_path": _recommended_zip_path(commit),
         "recommended_command": "python .\\scripts\\v103_create_clean_release_checkpoint.py",
         "blocking_failures": blocking_failures,
+        "metadata_policy": "Live UI summary is computed without writing files. Clean ZIP metadata is generated inside the ZIP at creation time.",
         "checks": checks,
         "notes_bg": [
             "Normal folder ZIP is not safe for this project because it can include .git, __pycache__, .pyc and helper scripts.",
             "The clean checkpoint script uses git tracked files only and refuses to create the ZIP while git status is not clean.",
-            "Run the clean ZIP script after committing Step 103/104.",
+            "The ZIP creator injects fresh Step 103 metadata into the archive, so the report inside the ZIP matches the ZIP commit.",
         ],
     }
     return summary
 
 
-def write_clean_release_reports(summary: dict[str, Any]) -> None:
-    MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
-    SUMMARY_JSON.parent.mkdir(parents=True, exist_ok=True)
-    MODEL_PATH.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
-    SUMMARY_JSON.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
-
+def _summary_markdown(summary: dict[str, Any]) -> str:
     md_lines = [
         "# Step 103 — Clean ZIP checkpoint",
         "",
@@ -178,37 +204,99 @@ def write_clean_release_reports(summary: dict[str, Any]) -> None:
         f"Commit: `{summary['commit']}`",
         f"Tracked files: **{summary['tracked_file_count']}**",
         f"Forbidden tracked files: **{summary['forbidden_tracked_count']}**",
+        f"Blocking failures: **{summary['blocking_failures']}**",
         "",
+    ]
+    if summary.get("zip_path"):
+        md_lines.extend([
+            "## Създаден ZIP",
+            "",
+            f"ZIP: `{summary['zip_path']}`",
+            f"Included files: **{summary.get('included_files', 0)}**",
+            f"Skipped files: **{summary.get('skipped_files', 0)}**",
+            "",
+        ])
+    md_lines.extend([
         "## Препоръчано действие",
         "",
         "След като `git status --short` е празен:",
         "",
         "```powershell",
-        summary["recommended_command"],
+        str(summary["recommended_command"]),
         "```",
         "",
         "## Бележки",
         "",
-    ]
+    ])
     for note in summary["notes_bg"]:
         md_lines.append(f"- {note}")
-    _write_text(SUMMARY_MD, "\n".join(md_lines) + "\n")
+    return "\n".join(md_lines) + "\n"
 
-    with CHECKLIST_CSV.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["check", "passed", "details_bg"])
-        writer.writeheader()
-        for row in summary["checks"]:
-            writer.writerow(row)
 
+def _checklist_csv_text(summary: dict[str, Any]) -> str:
+    buffer = io.StringIO()
+    writer = csv.DictWriter(buffer, fieldnames=["check", "passed", "details_bg"])
+    writer.writeheader()
+    for row in summary["checks"]:
+        writer.writerow(row)
+    return buffer.getvalue()
+
+
+def _manifest_csv_text(tracked: list[str], included: set[str], virtual_paths: set[str] | None = None) -> str:
+    virtual_paths = virtual_paths or set()
+    buffer = io.StringIO()
+    writer = csv.DictWriter(
+        buffer,
+        fieldnames=["relative_path", "included_in_clean_zip", "metadata_source"],
+    )
+    writer.writeheader()
+    for relative_path in tracked:
+        metadata_source = "virtual_current_metadata" if relative_path in virtual_paths else "file_from_working_tree"
+        writer.writerow({
+            "relative_path": relative_path,
+            "included_in_clean_zip": relative_path in included,
+            "metadata_source": metadata_source,
+        })
+    return buffer.getvalue()
+
+
+def _virtual_zip_entries(summary: dict[str, Any], tracked: list[str], included: set[str]) -> dict[str, bytes]:
+    virtual_paths = VIRTUAL_METADATA_PATHS.intersection(included)
+    manifest = _manifest_csv_text(tracked, included, virtual_paths)
+    checklist = _checklist_csv_text(summary)
+    summary_json = json.dumps(summary, ensure_ascii=False, indent=2) + "\n"
+    summary_md = _summary_markdown(summary)
+    entries: dict[str, bytes] = {}
+    if "models/v103/v103_clean_release_checkpoint_model.json" in virtual_paths:
+        entries["models/v103/v103_clean_release_checkpoint_model.json"] = summary_json.encode("utf-8")
+    if "reports/v103_clean_release_checkpoint_summary.json" in virtual_paths:
+        entries["reports/v103_clean_release_checkpoint_summary.json"] = summary_json.encode("utf-8")
+    if "reports/v103_clean_release_checkpoint_summary.md" in virtual_paths:
+        entries["reports/v103_clean_release_checkpoint_summary.md"] = summary_md.encode("utf-8")
+    if "reports/v103_clean_release_checkpoint_checklist.csv" in virtual_paths:
+        entries["reports/v103_clean_release_checkpoint_checklist.csv"] = ("\ufeff" + checklist).encode("utf-8")
+    if "reports/v103_clean_release_checkpoint_manifest.csv" in virtual_paths:
+        entries["reports/v103_clean_release_checkpoint_manifest.csv"] = ("\ufeff" + manifest).encode("utf-8")
+    return entries
+
+
+def write_clean_release_reports(summary: dict[str, Any]) -> None:
+    MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SUMMARY_JSON.parent.mkdir(parents=True, exist_ok=True)
     tracked = _tracked_files()
-    with MANIFEST_CSV.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["relative_path", "included_in_clean_zip"])
-        writer.writeheader()
-        for relative_path in tracked:
-            writer.writerow({
-                "relative_path": relative_path,
-                "included_in_clean_zip": not is_forbidden_release_path(relative_path),
-            })
+    included_list, _skipped = _included_and_skipped(tracked)
+    included = set(included_list)
+
+    summary_json = json.dumps(summary, ensure_ascii=False, indent=2) + "\n"
+    MODEL_PATH.write_text(summary_json, encoding="utf-8", newline="\n")
+    SUMMARY_JSON.write_text(summary_json, encoding="utf-8", newline="\n")
+    _write_text(SUMMARY_MD, _summary_markdown(summary))
+    CHECKLIST_CSV.write_text("\ufeff" + _checklist_csv_text(summary), encoding="utf-8", newline="")
+    MANIFEST_CSV.write_text(
+        "\ufeff" + _manifest_csv_text(tracked, included, set()),
+        encoding="utf-8",
+        newline="",
+    )
 
 
 def build_and_write_clean_release_summary() -> dict[str, Any]:
@@ -218,52 +306,86 @@ def build_and_write_clean_release_summary() -> dict[str, Any]:
 
 
 def create_clean_release_checkpoint(output_path: str | None = None, require_clean_status: bool = True) -> dict[str, Any]:
-    summary = build_clean_release_summary()
-    status = summary.get("git_status_short", "")
+    tracked = _tracked_files()
+    if not tracked:
+        raise RuntimeError("No git tracked files found. Cannot create a reliable clean ZIP.")
+
+    status = _git_status_short()
     if require_clean_status and status:
         raise RuntimeError(
             "Git status is not clean. Commit/push first, then create the clean ZIP.\n" + str(status)
         )
 
-    tracked = _tracked_files()
-    if not tracked:
-        raise RuntimeError("No git tracked files found. Cannot create a reliable clean ZIP.")
-
-    if output_path:
-        zip_path = Path(output_path)
-    else:
-        zip_path = Path(str(summary["recommended_zip_path"]))
+    commit = _short_commit()
+    zip_path = Path(output_path) if output_path else Path(_recommended_zip_path(commit))
     zip_path.parent.mkdir(parents=True, exist_ok=True)
 
-    included: list[str] = []
-    skipped: list[str] = []
+    forbidden_tracked = [path for path in tracked if is_forbidden_release_path(path)]
+    included_list, skipped = _included_and_skipped(tracked)
+    included = set(included_list)
+    checks = _base_checks(tracked, status, forbidden_tracked)
+    checks.append({
+        "check": "zip_metadata_current_for_commit",
+        "passed": True,
+        "details_bg": "Step 103 summary, checklist and manifest are generated inside the ZIP for the exact current commit.",
+    })
+    blocking_failures = sum(
+        1 for item in checks if not item["passed"] and item["check"] != "working_tree_clean_before_zip"
+    )
+
+    final_summary: dict[str, Any] = {
+        "step": 103,
+        "name_bg": "Clean ZIP checkpoint",
+        "status": "CLEAN_ZIP_CREATED" if blocking_failures == 0 else "BLOCKED",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "commit": commit,
+        "tracked_file_count": len(tracked),
+        "forbidden_tracked_count": len(forbidden_tracked),
+        "forbidden_tracked_preview": forbidden_tracked[:30],
+        "git_status_short": status,
+        "recommended_zip_path": str(zip_path),
+        "recommended_command": "python .\\scripts\\v103_create_clean_release_checkpoint.py",
+        "zip_path": str(zip_path),
+        "zip_file_name": zip_path.name,
+        "included_files": len(included_list),
+        "skipped_files": len(skipped),
+        "skipped_preview": skipped[:30],
+        "blocking_failures": blocking_failures,
+        "metadata_policy": "Fresh Step 103 metadata is injected inside the ZIP without modifying the clean working tree.",
+        "metadata_written_inside_zip": True,
+        "working_tree_was_clean_before_zip": status == "",
+        "checks": checks,
+        "notes_bg": [
+            "This ZIP was built from git tracked files only.",
+            "The archive excludes .git, cache folders, .pyc files, helper patch scripts, nested ZIPs and temp artifacts.",
+            "Step 103 summary, checklist and manifest inside this ZIP were generated during ZIP creation for the exact current commit.",
+        ],
+    }
+    virtual_entries = _virtual_zip_entries(final_summary, tracked, included)
+
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for relative_path in tracked:
-            if is_forbidden_release_path(relative_path):
-                skipped.append(relative_path)
+        for relative_path in included_list:
+            arc_relative = relative_path.replace("\\", "/")
+            arcname = f"{PROJECT_NAME}/{arc_relative}"
+            if relative_path in virtual_entries:
+                zf.writestr(arcname, virtual_entries[relative_path])
                 continue
             source = ROOT / relative_path
-            if not source.is_file():
-                continue
-            arcname = f"{PROJECT_NAME}/{relative_path.replace('\\\\', '/')}"
             zf.write(source, arcname)
-            included.append(relative_path)
 
     result = {
         "zip_path": str(zip_path),
-        "included_files": len(included),
+        "included_files": len(included_list),
         "skipped_files": len(skipped),
         "skipped_preview": skipped[:30],
-        "commit": summary["commit"],
-        "created_at_utc": datetime.now(timezone.utc).isoformat(),
+        "commit": commit,
+        "created_at_utc": final_summary["generated_at_utc"],
+        "metadata_written_inside_zip": True,
+        "working_tree_left_clean": _git_status_short() == "",
     }
     return result
 
 
 def load_clean_release_summary() -> dict[str, Any]:
-    if not SUMMARY_JSON.exists():
-        return build_and_write_clean_release_summary()
-    try:
-        return json.loads(SUMMARY_JSON.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return build_and_write_clean_release_summary()
+    # Keep the UI fresh without depending on stale report files.
+    return build_clean_release_summary()

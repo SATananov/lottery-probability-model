@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 from src.v103_clean_release_checkpoint_engine import (
-    build_and_write_clean_release_summary,
+    build_clean_release_summary,
     create_clean_release_checkpoint,
 )
 
@@ -17,7 +17,9 @@ def render_v103_clean_release_checkpoint_section() -> None:
     st.title("Clean ZIP checkpoint")
     st.caption("Контрол за чист release ZIP без .git, cache, helper patch файлове и nested ZIP артефакти.")
 
-    summary = build_and_write_clean_release_summary()
+    # Build a live UI summary without writing reports to disk.
+    # This prevents the Step 103 page from making git status dirty after a clean commit.
+    summary = build_clean_release_summary()
 
     c1, c2, c3 = st.columns(3)
     c1.metric("Статус", str(summary.get("status", "UNKNOWN")))
@@ -40,7 +42,7 @@ def render_v103_clean_release_checkpoint_section() -> None:
         except Exception as exc:  # noqa: BLE001
             st.error(str(exc))
         else:
-            st.success("Clean ZIP checkpoint е създаден.")
+            st.success("Clean ZIP checkpoint е създаден с актуален metadata report вътре в архива.")
             st.code(str(result.get("zip_path")), language="text")
             st.write(result)
 

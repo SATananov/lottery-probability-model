@@ -1,0 +1,34 @@
+{
+  "step": "103.1",
+  "name_bg": "Clean ZIP metadata finalizer",
+  "status": "METADATA_FINALIZED",
+  "generated_at_utc": "2026-06-24T10:12:49.594415+00:00",
+  "blocking_failures": 0,
+  "checks": [
+    {
+      "check": "zip_metadata_injected_inside_archive",
+      "passed": true,
+      "details_bg": "Clean ZIP creation injects fresh Step 103 summary/checklist/manifest into the archive."
+    },
+    {
+      "check": "clean_zip_status_created",
+      "passed": true,
+      "details_bg": "The report inside the ZIP can show CLEAN_ZIP_CREATED for the exact current commit."
+    },
+    {
+      "check": "ui_no_disk_write_on_render",
+      "passed": true,
+      "details_bg": "Opening the Step 103 Streamlit page builds a live summary without dirtying tracked report files."
+    },
+    {
+      "check": "create_script_reports_clean_tree_state",
+      "passed": true,
+      "details_bg": "The terminal create script reports whether metadata was written inside the ZIP and the working tree stayed clean."
+    }
+  ],
+  "notes_bg": [
+    "This is a metadata/report finalizer only; it does not change prediction math or ticket generation logic.",
+    "The clean ZIP report inside the archive is now generated at ZIP creation time for the exact current commit.",
+    "The Step 103 UI no longer writes reports on every render, so it should not dirty git status after a clean commit."
+  ]
+}

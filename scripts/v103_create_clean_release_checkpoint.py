@@ -16,6 +16,8 @@ def main() -> None:
     print("INCLUDED_FILES", result["included_files"])
     print("SKIPPED_FILES", result["skipped_files"])
     print("COMMIT", result["commit"])
+    print("METADATA_WRITTEN_INSIDE_ZIP", result["metadata_written_inside_zip"])
+    print("WORKING_TREE_LEFT_CLEAN", result["working_tree_left_clean"])
 
 
 if __name__ == "__main__":

@@ -2,15 +2,16 @@
   "step": 103,
   "name_bg": "Clean ZIP checkpoint",
   "status": "WAITING_FOR_CLEAN_GIT_STATUS",
-  "generated_at_utc": "2026-06-24T09:57:39.968361+00:00",
-  "commit": "467090e",
-  "tracked_file_count": 909,
+  "generated_at_utc": "2026-06-24T10:12:49.736597+00:00",
+  "commit": "630d438",
+  "tracked_file_count": 926,
   "forbidden_tracked_count": 0,
   "forbidden_tracked_preview": [],
-  "git_status_short": "M src/add_draws_section.py\n M streamlit_app.py\n?? models/v103/\n?? models/v104/\n?? reports/v103_clean_release_checkpoint_checklist.csv\n?? reports/v103_clean_release_checkpoint_manifest.csv\n?? reports/v103_clean_release_checkpoint_summary.json\n?? reports/v103_clean_release_checkpoint_summary.md\n?? reports/v104_final_audit_refresh_checklist.csv\n?? reports/v104_final_audit_refresh_summary.json\n?? reports/v104_final_audit_refresh_summary.md\n?? reports/v104_final_step_statuses.csv\n?? scripts/v103_build_clean_release_checkpoint.py\n?? scripts/v103_create_clean_release_checkpoint.py\n?? scripts/v104_build_final_audit_refresh.py\n?? src/v103_clean_release_checkpoint_engine.py\n?? src/v103_clean_release_checkpoint_section.py\n?? src/v104_final_audit_refresh_engine.py\n?? src/v104_final_audit_refresh_section.py",
-  "recommended_zip_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model_step103_104_clean-checkpoint_20260624_1257_467090e.zip",
+  "git_status_short": "M models/v103/v103_clean_release_checkpoint_model.json\n M reports/v103_clean_release_checkpoint_manifest.csv\n M reports/v103_clean_release_checkpoint_summary.json\n M reports/v103_clean_release_checkpoint_summary.md\n M scripts/v103_create_clean_release_checkpoint.py\n M src/v103_clean_release_checkpoint_engine.py\n M src/v103_clean_release_checkpoint_section.py\n?? models/v103_1/\n?? reports/v103_1_clean_zip_metadata_finalizer_summary.json\n?? reports/v103_1_clean_zip_metadata_finalizer_summary.md\n?? scripts/v103_1_build_clean_zip_metadata_finalizer.py\n?? src/v103_1_clean_zip_metadata_finalizer_engine.py",
+  "recommended_zip_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model_step103_104_clean-checkpoint_20260624_1312_630d438.zip",
   "recommended_command": "python .\\scripts\\v103_create_clean_release_checkpoint.py",
   "blocking_failures": 0,
+  "metadata_policy": "Live UI summary is computed without writing files. Clean ZIP metadata is generated inside the ZIP at creation time.",
   "checks": [
     {
       "check": "git_available",
@@ -36,6 +37,6 @@
   "notes_bg": [
     "Normal folder ZIP is not safe for this project because it can include .git, __pycache__, .pyc and helper scripts.",
     "The clean checkpoint script uses git tracked files only and refuses to create the ZIP while git status is not clean.",
-    "Run the clean ZIP script after committing Step 103/104."
+    "The ZIP creator injects fresh Step 103 metadata into the archive, so the report inside the ZIP matches the ZIP commit."
   ]
 }
