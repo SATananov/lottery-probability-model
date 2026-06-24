@@ -65,18 +65,60 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v99_build_final_user_dashboard.py",
     ROOT / "scripts" / "v100_build_final_release_lock.py",
     ROOT / "scripts" / "v101_build_real_use_protocol.py",
+    ROOT / "scripts" / "v102_build_runtime_hardening.py",
+]
+
+HEAVY_LAB_SCRIPT_NAMES = {
+    "v67_build_weighted_ticket_builder.py",
+    "v75_build_neural_meta_learner.py",
+}
+
+DEFAULT_REFRESH_TIMEOUT_SECONDS = 120
+
+FAST_MODEL_SCRIPTS = [
+    script for script in MODEL_SCRIPTS if script.name not in HEAVY_LAB_SCRIPT_NAMES
+]
+
+HEAVY_LAB_SCRIPTS = [
+    script for script in MODEL_SCRIPTS if script.name in HEAVY_LAB_SCRIPT_NAMES
 ]
 
 
-def run_command(args: list[str]) -> tuple[bool, str]:
-    completed = subprocess.run(
-        args,
-        cwd=str(ROOT),
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
+def refresh_mode_label_to_value(label: str) -> str:
+    if str(label).strip().startswith("Пълен"):
+        return "full"
+    if str(label).strip().startswith("Само"):
+        return "heavy"
+    return "fast"
+
+
+def run_command(args: list[str], timeout_seconds: int | None = None) -> tuple[bool, str]:
+    try:
+        completed = subprocess.run(
+            args,
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=timeout_seconds,
+        )
+    except subprocess.TimeoutExpired as exc:
+        stdout = exc.stdout or ""
+        stderr = exc.stderr or ""
+        if isinstance(stdout, bytes):
+            stdout = stdout.decode("utf-8", errors="replace")
+        if isinstance(stderr, bytes):
+            stderr = stderr.decode("utf-8", errors="replace")
+        output = (stdout or "") + ("\n" + stderr if stderr else "")
+        timeout_text = (
+            f"Прекъснато след {timeout_seconds} секунди. "
+            "Скриптът е твърде тежък за автоматичния refresh и трябва да се пуска ръчно."
+        )
+        return False, (timeout_text + "\n" + output.strip()).strip()
+    except FileNotFoundError as exc:
+        return False, f"Командата не е намерена: {exc}"
+
     output = (completed.stdout or "") + ("\n" + completed.stderr if completed.stderr else "")
     return completed.returncode == 0, output.strip()
 
@@ -306,16 +348,35 @@ def import_uploaded_rows(uploaded_file: Any, replace_existing: bool) -> int:
     return len(imported)
 
 
-def refresh_models() -> list[tuple[str, bool, str]]:
+def refresh_models(
+    refresh_mode: str = "fast",
+    timeout_seconds: int = DEFAULT_REFRESH_TIMEOUT_SECONDS,
+) -> list[tuple[str, bool, str]]:
     results: list[tuple[str, bool, str]] = []
 
-    for script in MODEL_SCRIPTS:
+    if refresh_mode == "full":
+        scripts = MODEL_SCRIPTS
+    elif refresh_mode == "heavy":
+        scripts = HEAVY_LAB_SCRIPTS
+    else:
+        scripts = FAST_MODEL_SCRIPTS
+
+    for script in scripts:
         if not script.exists():
             results.append((script.name, False, "Файлът липсва."))
             continue
 
-        ok, output = run_command([sys.executable, str(script)])
+        script_timeout = max(30, int(timeout_seconds or DEFAULT_REFRESH_TIMEOUT_SECONDS))
+        ok, output = run_command([sys.executable, str(script)], timeout_seconds=script_timeout)
         results.append((script.name, ok, output[-2000:]))
+
+    if refresh_mode == "fast" and HEAVY_LAB_SCRIPTS:
+        skipped = ", ".join(script.name for script in HEAVY_LAB_SCRIPTS)
+        results.append((
+            "heavy_lab_refresh",
+            True,
+            "Бързият режим пропусна тежките лабораторни скриптове: " + skipped,
+        ))
 
     return results
 
@@ -440,10 +501,53 @@ def render() -> None:
     st.caption("Записва един тираж с едно или две тегления. Всяко теглене има 6 основни числа и отделно допълнително число.")
 
     auto_update = st.checkbox(
-        "Автоматично обнови цялата верига след запис",
+        "Автоматично обнови анализите след запис",
         value=True,
         key="add_draw_auto_update_models",
+        help=(
+            "По подразбиране се използва бърз режим, който пропуска тежките лабораторни скриптове "
+            "и не позволява един бавен процес да блокира приложението."
+        ),
     )
+
+    if auto_update:
+        refresh_mode_label = st.selectbox(
+            "Режим на обновяване след запис",
+            options=[
+                "Бърз режим за реален тираж",
+                "Пълен режим с тежки лаборатории",
+                "Само тежки лаборатории",
+            ],
+            index=0,
+            key="add_draw_refresh_mode",
+            help=(
+                "Бързият режим е препоръчителен за реално добавяне на тираж. "
+                "Пълният режим може да отнеме много време, защото включва тежки генератори и обучение."
+            ),
+        )
+        refresh_mode = refresh_mode_label_to_value(refresh_mode_label)
+        refresh_timeout_seconds = int(st.number_input(
+            "Максимално време за един скрипт",
+            min_value=30,
+            max_value=900,
+            value=DEFAULT_REFRESH_TIMEOUT_SECONDS,
+            step=30,
+            key="add_draw_refresh_timeout_seconds",
+            help="Ако отделен скрипт надвиши това време, refresh-ът продължава и показва предупреждение.",
+        ))
+        if refresh_mode == "fast":
+            st.caption(
+                "Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. "
+                "Те остават налични за ръчно пускане от съответните контролни страници."
+            )
+        else:
+            st.warning(
+                "Избран е тежък refresh режим. Използвай го ръчно, когато искаш пълно преизчисляване, "
+                "а не като стандартен поток след всеки нов тираж."
+            )
+    else:
+        refresh_mode = "fast"
+        refresh_timeout_seconds = DEFAULT_REFRESH_TIMEOUT_SECONDS
 
     auto_github = st.checkbox(
         "Синхронизирай новите данни и модели в GitHub",
@@ -698,8 +802,11 @@ def render() -> None:
         st.success(f"Записани са {saved_count} тегления към тираж {draw_no} / {year}.")
 
         if auto_update:
-            with st.spinner("Обновяване на моделите..."):
-                model_results = refresh_models()
+            with st.spinner("Обновяване на анализите в избрания режим..."):
+                model_results = refresh_models(
+                    refresh_mode=refresh_mode,
+                    timeout_seconds=refresh_timeout_seconds,
+                )
 
             for script_name, ok, output in model_results:
                 if ok:

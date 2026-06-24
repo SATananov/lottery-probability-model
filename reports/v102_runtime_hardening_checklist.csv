@@ -1,0 +1,6 @@
+check,passed,details_bg
+fast_refresh_mode,True,Има отделен бърз refresh режим и отделен списък с тежки лабораторни скриптове.
+timeout_guard,True,Автоматичното обновяване има timeout защита за отделен скрипт.
+heavy_scripts_excluded_from_default,True,"v67 и v75 остават налични, но не са default fast refresh блокер."
+user_facing_shortcut_label,True,Sidebar shortcut вече описва реалното действие по-точно.
+step102_page_wired,True,Step 102 контролна страница е добавена в навигацията.

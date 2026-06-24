@@ -3774,6 +3774,12 @@ def render_v101_real_use_protocol_page() -> None:
     return _render()
 # STEP101_REAL_USE_PROTOCOL_WRAPPER_END
 
+# STEP102_RUNTIME_HARDENING_WRAPPER_START
+def render_v102_runtime_hardening_page() -> None:
+    from src.v102_runtime_hardening_section import render_v102_runtime_hardening_section as _render
+    return _render()
+# STEP102_RUNTIME_HARDENING_WRAPPER_END
+
 
 def main() -> None:
     page_glossary()
@@ -3783,6 +3789,7 @@ def main() -> None:
         "Финално табло": render_v99_final_user_dashboard_page,
         "Финално заключване": render_v100_final_release_lock_page,
         "Протокол за реална употреба": render_v101_real_use_protocol_page,
+        "Runtime защита": render_v102_runtime_hardening_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3857,6 +3864,7 @@ def main() -> None:
             'Финално табло',
             'Финално заключване',
             'Протокол за реална употреба',
+            'Runtime защита',
 
             'Табло',
             'Препоръки',
@@ -3955,7 +3963,7 @@ def main() -> None:
     available_navigation_pages = visible_navigation_groups.get(selected_navigation_group, list(pages.keys()))
     choice = st.sidebar.radio('Страница', available_navigation_pages)
     # STEP64_GROUPED_NAVIGATION_END
-    if st.sidebar.button("Обнови данните", use_container_width=True, key="sidebar_add_draw_shortcut_btn"):
+    if st.sidebar.button("➕ Добави нов тираж", use_container_width=True, key="sidebar_add_draw_shortcut_btn"):
         _open_add_draw_from_sidebar_shortcut()
         st.cache_data.clear()
         st.rerun()
