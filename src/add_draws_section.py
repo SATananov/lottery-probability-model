@@ -465,11 +465,18 @@ def render() -> None:
         st.markdown("\n\n".join(flow_lines))
 
     if controlled_snapshot.get("active_plan_available"):
+        active_plan_cost_text = controlled_snapshot.get("active_plan_cost_text")
+        if not active_plan_cost_text:
+            try:
+                active_plan_cost_text = f"{float(controlled_snapshot.get('active_plan_cost_eur', 0.0)):.2f}"
+            except (TypeError, ValueError):
+                active_plan_cost_text = "0.00"
+
         st.info(
             "Активният бюджетен план е наличен: "
             f"{controlled_snapshot.get('active_plan_type', '')}, "
             f"{controlled_snapshot.get('active_plan_combinations', 0)} комбинации, "
-            f"{controlled_snapshot.get('active_plan_cost_eur', 0.0)} EUR. "
+            f"{active_plan_cost_text} EUR. "
             "Step 95 ще го провери със същите въведени числа преди запис."
         )
     else:

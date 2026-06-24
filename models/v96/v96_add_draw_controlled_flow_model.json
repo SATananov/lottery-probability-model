@@ -1,5 +1,6 @@
 {
   "step": 96,
+  "maintenance_step": "96.1",
   "status": "OK",
   "title_bg": "Контролиран ред при добавяне на тираж",
   "intro_bg": "Тази секция показва точния ред на действията при добавяне на нов тираж. Целта е първо да се оцени активният план срещу новите числа, после да се записва и обновява.",
@@ -49,11 +50,13 @@
   ],
   "current_snapshot": {
     "active_plan_available": true,
-    "active_plan_type": "",
+    "active_plan_type": "Хибрид",
     "active_plan_combinations": 11,
-    "active_plan_cost_eur": 0.0,
+    "active_plan_cost_eur": 9.9,
+    "active_plan_cost_text": "9.90",
     "v95_status": "WAITING_NEXT_DRAW",
     "v95_expected_state_before_next_draw": "WAITING_NEXT_DRAW",
+    "step96_1_fix_bg": "Step 96.1 коригира четенето на активния Step 94 план: strategy_type/cost_eur вместо празни legacy ключове.",
     "add_draw_rule_bg": "Въведените числа в Добавяне на тираж са единственият вход за Step 95 проверката."
   },
   "safe_note_bg": "Step 96 е UX/control слой за страницата Добавяне на тираж. Той не променя прогнозните модели и не обещава печалба; целта е правилен ред на действията."

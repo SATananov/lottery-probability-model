@@ -101,6 +101,28 @@ def _find_active_plan(v94_payload: dict[str, Any]) -> dict[str, Any]:
     return {}
 
 
+def _first_present(mapping: dict[str, Any], keys: list[str], default: Any = "") -> Any:
+    for key in keys:
+        value = mapping.get(key)
+        if value not in (None, ""):
+            return value
+    return default
+
+
+def _as_int(value: Any, default: int = 0) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _as_float(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
 def _current_snapshot() -> dict[str, Any]:
     v94_payload = _read_json(V94_MODEL_PATH)
     v95_payload = _read_json(V95_MODEL_PATH)
@@ -108,13 +130,36 @@ def _current_snapshot() -> dict[str, Any]:
     active_plan = _find_active_plan(v94_payload)
     v95_result = v95_payload.get("result", {}) if isinstance(v95_payload.get("result", {}), dict) else {}
 
+    active_plan_type = ""
+    active_plan_combinations = 0
+    active_plan_cost_eur = 0.0
+
+    if active_plan:
+        active_plan_type = str(
+            _first_present(
+                active_plan,
+                ["strategy_type", "recommended_type", "plan_type", "preference_label"],
+                "",
+            )
+        )
+        active_plan_combinations = _as_int(
+            _first_present(active_plan, ["combination_count", "recommended_combinations", "max_budget_combinations"], 0),
+            0,
+        )
+        active_plan_cost_eur = _as_float(
+            _first_present(active_plan, ["cost_eur", "estimated_cost_eur", "total_cost_eur"], 0.0),
+            0.0,
+        )
+
     return {
         "active_plan_available": bool(active_plan),
-        "active_plan_type": active_plan.get("recommended_type", "") if active_plan else "",
-        "active_plan_combinations": active_plan.get("combination_count", 0) if active_plan else 0,
-        "active_plan_cost_eur": active_plan.get("estimated_cost_eur", 0.0) if active_plan else 0.0,
+        "active_plan_type": active_plan_type,
+        "active_plan_combinations": active_plan_combinations,
+        "active_plan_cost_eur": active_plan_cost_eur,
+        "active_plan_cost_text": f"{active_plan_cost_eur:.2f}",
         "v95_status": v95_payload.get("status") or v95_result.get("status", "UNKNOWN"),
         "v95_expected_state_before_next_draw": "WAITING_NEXT_DRAW",
+        "step96_1_fix_bg": "Step 96.1 коригира четенето на активния Step 94 план: strategy_type/cost_eur вместо празни legacy ключове.",
         "add_draw_rule_bg": "Въведените числа в Добавяне на тираж са единственият вход за Step 95 проверката.",
     }
 
@@ -124,6 +169,7 @@ def build_add_draw_controlled_flow_model() -> dict[str, Any]:
 
     payload = {
         "step": 96,
+        "maintenance_step": "96.1",
         "status": "OK",
         "title_bg": "Контролиран ред при добавяне на тираж",
         "intro_bg": (
@@ -138,11 +184,14 @@ def build_add_draw_controlled_flow_model() -> dict[str, Any]:
     _write_json(MODEL_PATH, payload)
     _write_json(SUMMARY_JSON_PATH, {
         "step": 96,
+        "maintenance_step": "96.1",
         "status": "OK",
         "workflow_step_count": len(WORKFLOW_STEPS),
         "active_plan_available": snapshot.get("active_plan_available", False),
         "active_plan_type": snapshot.get("active_plan_type", ""),
         "active_plan_combinations": snapshot.get("active_plan_combinations", 0),
+        "active_plan_cost_eur": snapshot.get("active_plan_cost_eur", 0.0),
+        "active_plan_cost_text": snapshot.get("active_plan_cost_text", "0.00"),
         "v95_status": snapshot.get("v95_status", "UNKNOWN"),
         "safe_note_bg": SAFE_NOTE_BG,
     })
@@ -169,6 +218,7 @@ def build_add_draw_controlled_flow_model() -> dict[str, Any]:
         f"- Активен план: {'Да' if snapshot.get('active_plan_available') else 'Не'}",
         f"- Тип план: {snapshot.get('active_plan_type', '')}",
         f"- Комбинации: {snapshot.get('active_plan_combinations', 0)}",
+        f"- Цена: {snapshot.get('active_plan_cost_text', '0.00')} EUR",
         f"- Step 95 статус: {snapshot.get('v95_status', 'UNKNOWN')}",
         "",
         SAFE_NOTE_BG,
@@ -189,6 +239,7 @@ def load_add_draw_controlled_flow_summary() -> dict[str, Any]:
             return payload
     return {
         "step": 96,
+        "maintenance_step": "96.1",
         "status": "FALLBACK",
         "title_bg": "Контролиран ред при добавяне на тираж",
         "intro_bg": "Първо се правят pre-save проверки, после се записва тиражът и се обновяват моделите.",
