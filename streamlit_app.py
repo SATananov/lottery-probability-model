@@ -3747,11 +3747,18 @@ def render_v98_active_plan_result_history_page() -> None:
     return _render()
 # STEP98_ACTIVE_PLAN_RESULT_HISTORY_WRAPPER_END
 
+# STEP99_FINAL_USER_DASHBOARD_WRAPPER_START
+def render_v99_final_user_dashboard_page() -> None:
+    from src.v99_final_user_dashboard_section import render_v99_final_user_dashboard_section as _render
+    return _render()
+# STEP99_FINAL_USER_DASHBOARD_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
 
         "Потребителско меню": render_v87_synthesized_user_menu_section,
+        "Финално табло": render_v99_final_user_dashboard_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3823,6 +3830,7 @@ def main() -> None:
         '🏠 Начало и отчети': [
 
             'Потребителско меню',
+            'Финално табло',
 
             'Табло',
             'Препоръки',

@@ -1,0 +1,183 @@
+{
+  "step": 99,
+  "status": "READY_WAITING_NEXT_DRAW",
+  "title_bg": "Финално потребителско табло",
+  "generated_at_utc": "2026-06-24T04:56:19+00:00",
+  "active_plan": {
+    "plan_id": "v94_active_20260623T163844Z0000",
+    "status": "ACTIVE",
+    "strategy_type": "Хибрид",
+    "strategy_label": "Звезден фиш + допълнителни системни комбинации (претеглените моделни числа)",
+    "combination_count": 11,
+    "cost_eur": 9.9,
+    "cost_text": "9.90",
+    "saved_after_draw_date": "2026-06-21",
+    "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44",
+    "real_result_rows": 0,
+    "next_status_bg": "Активният план е готов, но още няма следващ реален тираж след заключването му.",
+    "combinations": [
+      [
+        7,
+        12,
+        25,
+        26,
+        34,
+        42
+      ],
+      [
+        4,
+        22,
+        24,
+        29,
+        37,
+        44
+      ],
+      [
+        2,
+        21,
+        28,
+        33,
+        45,
+        48
+      ],
+      [
+        11,
+        20,
+        23,
+        27,
+        38,
+        41
+      ],
+      [
+        1,
+        2,
+        18,
+        22,
+        37,
+        49
+      ],
+      [
+        1,
+        4,
+        21,
+        22,
+        38,
+        49
+      ],
+      [
+        2,
+        4,
+        18,
+        21,
+        37,
+        38
+      ],
+      [
+        1,
+        2,
+        18,
+        21,
+        38,
+        49
+      ],
+      [
+        2,
+        4,
+        21,
+        22,
+        37,
+        49
+      ],
+      [
+        1,
+        4,
+        18,
+        22,
+        37,
+        38
+      ],
+      [
+        1,
+        2,
+        22,
+        37,
+        38,
+        49
+      ]
+    ]
+  },
+  "dataset": {
+    "dataset_rows": 10058,
+    "canonical_rows": 10058,
+    "latest_draw_date": "2026-06-21",
+    "latest_draw_year": "2026",
+    "latest_draw_number": "48",
+    "latest_draw_position": "1",
+    "latest_numbers": [
+      6,
+      13,
+      16,
+      19,
+      42,
+      44
+    ],
+    "latest_numbers_text": "6, 13, 16, 19, 42, 44"
+  },
+  "statuses": {
+    "step95_status": "WAITING_NEXT_DRAW",
+    "step96_status": "OK",
+    "step97_status": "READY",
+    "step98_status": "WAITING_NEXT_DRAW",
+    "active_plan_available": "true"
+  },
+  "next_action": {
+    "title_bg": "Въведи следващия реален тираж",
+    "description_bg": "Когато излезе новият тираж, отвори Добавяне на тираж. Step 95 ще оцени активния план преди запис, Step 97/98 ще обновят lifecycle и историята.",
+    "page_bg": "Добавяне на тираж",
+    "priority": "HIGH"
+  },
+  "actions": [
+    {
+      "order": 1,
+      "status": "готово",
+      "title_bg": "Активен план",
+      "description_bg": "Планът е избран и заключен за следващия реален тираж.",
+      "page_bg": "План и резултат",
+      "is_ready": true
+    },
+    {
+      "order": 2,
+      "status": "чака",
+      "title_bg": "Следващ реален тираж",
+      "description_bg": "Въведи новия тираж в Добавяне на тираж. Pre-save проверките трябва да останат включени.",
+      "page_bg": "Добавяне на тираж",
+      "is_ready": true
+    },
+    {
+      "order": 3,
+      "status": "READY",
+      "title_bg": "Lifecycle контрол",
+      "description_bg": "Провери реда на процеса: оценка преди запис, запис, refresh, история и sync.",
+      "page_bg": "Реален цикъл на тираж",
+      "is_ready": true
+    },
+    {
+      "order": 4,
+      "status": "WAITING_NEXT_DRAW",
+      "title_bg": "История на резултатите",
+      "description_bg": "След нов реален тираж тук ще се вижда колко попадения е дал активният план.",
+      "page_bg": "История на активния план",
+      "is_ready": true
+    }
+  ],
+  "issues": [],
+  "source_files": {
+    "active_plan": "models/v94/v94_active_budget_plan_tracker_model.json",
+    "step95": "models/v95/v95_active_plan_auto_evaluation_model.json",
+    "step96": "models/v96/v96_add_draw_controlled_flow_model.json",
+    "step97": "models/v97/v97_real_draw_lifecycle_model.json",
+    "step98": "models/v98/v98_active_plan_result_history_model.json"
+  },
+  "method_bg": "Step 99 събира най-важното от Step 94 до Step 98 в един потребителски екран: активен план, текущ статус, последен dataset, следващо действие, lifecycle и история.",
+  "safe_note_bg": "Step 99 е финално потребителско табло. То обединява вече създадените проверки, активния план, историята и следващото действие. Не добавя нова прогноза, не променя математиката и не гарантира печалба."
+}
