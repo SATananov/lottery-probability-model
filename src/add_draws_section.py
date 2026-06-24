@@ -13,6 +13,7 @@ import streamlit as st
 from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack_against_draw
 from src.v95_active_plan_auto_evaluation_engine import evaluate_active_plan_against_pending_draw
 from src.v96_add_draw_controlled_flow_engine import load_add_draw_controlled_flow_summary
+from src.v97_real_draw_lifecycle_engine import load_real_draw_lifecycle_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,6 +60,7 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v94_build_active_budget_plan_tracker.py",
     ROOT / "scripts" / "v95_build_active_plan_auto_evaluation.py",
     ROOT / "scripts" / "v96_build_add_draw_controlled_flow.py",
+    ROOT / "scripts" / "v97_build_real_draw_lifecycle.py",
 ]
 
 
@@ -463,6 +465,17 @@ def render() -> None:
 
     if flow_lines:
         st.markdown("\n\n".join(flow_lines))
+
+    lifecycle = load_real_draw_lifecycle_summary()
+    lifecycle_state = lifecycle.get("current_state", {}) or {}
+    lifecycle_plan = lifecycle_state.get("active_plan", {}) or {}
+    st.markdown("#### Реален цикъл на нов тираж")
+    st.caption(lifecycle.get("next_user_action_bg", ""))
+    lifecycle_cols = st.columns(4)
+    lifecycle_cols[0].metric("Lifecycle", lifecycle.get("status", "UNKNOWN"))
+    lifecycle_cols[1].metric("Dataset редове", int(lifecycle_state.get("dataset_rows", 0)))
+    lifecycle_cols[2].metric("Step 95", (lifecycle_state.get("step95", {}) or {}).get("status", "UNKNOWN"))
+    lifecycle_cols[3].metric("План", f"{lifecycle_plan.get('strategy_type', '-')} / {lifecycle_plan.get('combination_count', 0)}")
 
     if controlled_snapshot.get("active_plan_available"):
         active_plan_cost_text = controlled_snapshot.get("active_plan_cost_text")

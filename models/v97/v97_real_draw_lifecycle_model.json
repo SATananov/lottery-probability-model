@@ -1,0 +1,218 @@
+{
+  "artifact_map": [
+    {
+      "artifact_group": "Активен план",
+      "owner_step": "94",
+      "path": "models/v94/v94_active_budget_plan_tracker_model.json",
+      "purpose_bg": "Пази заключения бюджетен план и комбинациите за следващ тираж."
+    },
+    {
+      "artifact_group": "Pre-save резултат",
+      "owner_step": "95",
+      "path": "models/v95/v95_active_plan_auto_evaluation_model.json",
+      "purpose_bg": "Пази последния статус на автоматичната проверка на активния план."
+    },
+    {
+      "artifact_group": "Pre-save history",
+      "owner_step": "95",
+      "path": "reports/v95_active_plan_auto_evaluation_history.csv",
+      "purpose_bg": "Пази реална история само когато има нов тираж след активния план."
+    },
+    {
+      "artifact_group": "Контролиран ред",
+      "owner_step": "96",
+      "path": "models/v96/v96_add_draw_controlled_flow_model.json",
+      "purpose_bg": "Показва правилния ред в страницата Добавяне на тираж."
+    },
+    {
+      "artifact_group": "Реален цикъл",
+      "owner_step": "97",
+      "path": "models/v97/v97_real_draw_lifecycle_model.json",
+      "purpose_bg": "Обобщава lifecycle състоянието и readiness за следващ реален тираж."
+    },
+    {
+      "artifact_group": "Основен dataset",
+      "owner_step": "core",
+      "path": "data/historical_draws.csv",
+      "purpose_bg": "Реалният исторически dataset, който се обновява след Add Draw."
+    },
+    {
+      "artifact_group": "Canonical dataset",
+      "owner_step": "41",
+      "path": "data/v41_canonical_draw_events.csv",
+      "purpose_bg": "Каноничният набор от събития за моделните build стъпки."
+    }
+  ],
+  "current_state": {
+    "active_plan": {
+      "active_plan_available": true,
+      "combination_count": 11,
+      "cost_eur": 9.9,
+      "cost_text": "9.90",
+      "plan_id": "v94_active_20260623T163844Z0000",
+      "saved_after_draw": {
+        "date": "2026-06-21",
+        "draw_event_id": "2026-48-1",
+        "draw_key": "2026-48-1|2026|1|2026-06-21|6, 13, 16, 19, 42, 44",
+        "draw_number": "48",
+        "drawing_no": "1",
+        "event_index": 10058,
+        "numbers": [
+          6,
+          13,
+          16,
+          19,
+          42,
+          44
+        ],
+        "numbers_text": "6, 13, 16, 19, 42, 44",
+        "source": "historical_draws.csv",
+        "year": "2026"
+      },
+      "strategy_type": "Хибрид"
+    },
+    "add_draw_wiring": {
+      "add_draw_file_exists": true,
+      "refresh_after_save_reference": true,
+      "save_draws_reference": true,
+      "v95_before_save_draws": true,
+      "v95_pre_save_reference": true,
+      "v97_refresh_script_present": true
+    },
+    "anti_backfit": {
+      "draw_not_after_marker": true,
+      "history_duplicate_guard": true,
+      "is_draw_after_saved_guard": true,
+      "v95_engine_exists": true,
+      "waiting_next_draw_marker": true
+    },
+    "dataset_rows": 10058,
+    "latest_draw_date": "2026-06-21",
+    "latest_draw_numbers": "6,13,16,19,42,44",
+    "step95": {
+      "evaluation_type": "",
+      "history_rows": 0,
+      "latest_best_hit_count": 0,
+      "latest_rows_with_3_plus": 0,
+      "latest_rows_with_4_plus": 0,
+      "message_bg": "Активният бюджетен план чака следващ реален тираж. Последният наличен тираж все още не е след плана.",
+      "status": "WAITING_NEXT_DRAW"
+    },
+    "step96": {
+      "active_plan_combinations": 11,
+      "active_plan_cost_text": "9.90",
+      "active_plan_type": "Хибрид",
+      "maintenance_step": "96.1",
+      "status": "OK",
+      "v95_status": "WAITING_NEXT_DRAW",
+      "workflow_step_count": 6
+    }
+  },
+  "datasets": [
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_position": "1",
+      "latest_year": "2026",
+      "parse_ok": true,
+      "path": "data/historical_draws.csv",
+      "rows": 10058
+    },
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_position": "1",
+      "latest_year": "2026",
+      "parse_ok": true,
+      "path": "data/v40_normalized_draw_events.csv",
+      "rows": 10058
+    },
+    {
+      "exists": true,
+      "latest_date": "2026-06-21",
+      "latest_draw_no": "48",
+      "latest_numbers": "6,13,16,19,42,44",
+      "latest_position": "1",
+      "latest_year": "2026",
+      "parse_ok": true,
+      "path": "data/v41_canonical_draw_events.csv",
+      "rows": 10058
+    }
+  ],
+  "generated_at_utc": "2026-06-24T04:27:09+00:00",
+  "issues": [],
+  "lifecycle_steps": [
+    {
+      "action_bg": "Потребителят има запазен активен бюджетен план преди следващия реален тираж.",
+      "expected_artifact_bg": "models/v94/v94_active_budget_plan_tracker_model.json",
+      "guard_bg": "Планът помни последния тираж, след който е запазен, за да няма backfit.",
+      "page_bg": "План и резултат / Бюджетен съветник",
+      "phase_bg": "Подготовка",
+      "status_rule_bg": "Активният план трябва да е наличен и да има комбинации.",
+      "step_order": 1
+    },
+    {
+      "action_bg": "Step 95 оценява активния план със същите въведени числа преди запис в dataset-а.",
+      "expected_artifact_bg": "reports/v95_active_plan_auto_evaluation_latest_result.csv",
+      "guard_bg": "Ако тиражът не е след активния план, Step 95 не записва реален резултат.",
+      "page_bg": "Добавяне на тираж",
+      "phase_bg": "Pre-save проверка",
+      "status_rule_bg": "Статусът е EVALUATED само за реално следващ тираж; иначе остава WAITING/DRAW_NOT_AFTER_ACTIVE_PLAN.",
+      "step_order": 2
+    },
+    {
+      "action_bg": "Step 73 оценява текущия пакет преди dataset refresh.",
+      "expected_artifact_bg": "reports/v73_ticket_pack_performance_history.csv",
+      "guard_bg": "Оценката се прави преди новите числа да станат част от историческите данни.",
+      "page_bg": "Добавяне на тираж",
+      "phase_bg": "Pre-save пакет",
+      "status_rule_bg": "При грешка записът се спира.",
+      "step_order": 3
+    },
+    {
+      "action_bg": "След успешни проверки новият тираж се записва в historical_draws.csv.",
+      "expected_artifact_bg": "data/historical_draws.csv",
+      "guard_bg": "Валидни 6 различни числа между 1 и 49; bonus не се смесва с основните числа.",
+      "page_bg": "Добавяне на тираж",
+      "phase_bg": "Запис",
+      "status_rule_bg": "Dataset row count се увеличава само след успешен запис или replace на съществуващо теглене.",
+      "step_order": 4
+    },
+    {
+      "action_bg": "След запис се изпълнява refresh chain за зависимите модели и отчети.",
+      "expected_artifact_bg": "models/ и reports/",
+      "guard_bg": "Step 94/95/96/97 са в края на веригата, за да отчетат актуалното състояние.",
+      "page_bg": "Добавяне на тираж / Обновяване на анализите",
+      "phase_bg": "Обновяване",
+      "status_rule_bg": "Всички важни build scripts трябва да минават без грешка.",
+      "step_order": 5
+    },
+    {
+      "action_bg": "След refresh промените се commit/push-ват и Git статусът се изчиства.",
+      "expected_artifact_bg": "Git commit + чист working tree",
+      "guard_bg": "Не се прави clean ZIP при нечист статус.",
+      "page_bg": "GitHub sync / Контрол на синхрона",
+      "phase_bg": "Синхрон",
+      "status_rule_bg": "git status --short трябва да е празен.",
+      "step_order": 6
+    },
+    {
+      "action_bg": "Създава се clean ZIP от committed Git state и се проверява строго.",
+      "expected_artifact_bg": "*_FINAL-clean_*.zip",
+      "guard_bg": "Без helper/cache/temp/patch/nested ZIP файлове и без broken Cyrillic.",
+      "page_bg": "Финален пакет / clean ZIP",
+      "phase_bg": "Checkpoint",
+      "status_rule_bg": "ZIP integrity, compile, JSON/CSV parse и логическите проверки трябва да минат.",
+      "step_order": 7
+    }
+  ],
+  "next_user_action_bg": "Когато излезе нов реален тираж, въведи числата в Добавяне на тираж. Системата първо ще оцени активния план и пакета, после ще запише тиража и ще обнови веригата.",
+  "safe_note_bg": "Step 97 е контролен слой за реалния цикъл на нов тираж: преди запис, запис, обновяване, проверка и clean checkpoint. Той не променя прогнозната математика и не обещава печалба.",
+  "status": "READY",
+  "step": 97,
+  "title_bg": "Реален цикъл на нов тираж"
+}

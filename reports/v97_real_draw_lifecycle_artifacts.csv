@@ -1,0 +1,8 @@
+﻿artifact_group,path,purpose_bg,owner_step
+Активен план,models/v94/v94_active_budget_plan_tracker_model.json,Пази заключения бюджетен план и комбинациите за следващ тираж.,94
+Pre-save резултат,models/v95/v95_active_plan_auto_evaluation_model.json,Пази последния статус на автоматичната проверка на активния план.,95
+Pre-save history,reports/v95_active_plan_auto_evaluation_history.csv,Пази реална история само когато има нов тираж след активния план.,95
+Контролиран ред,models/v96/v96_add_draw_controlled_flow_model.json,Показва правилния ред в страницата Добавяне на тираж.,96
+Реален цикъл,models/v97/v97_real_draw_lifecycle_model.json,Обобщава lifecycle състоянието и readiness за следващ реален тираж.,97
+Основен dataset,data/historical_draws.csv,"Реалният исторически dataset, който се обновява след Add Draw.",core
+Canonical dataset,data/v41_canonical_draw_events.csv,Каноничният набор от събития за моделните build стъпки.,41

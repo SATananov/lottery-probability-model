@@ -1,0 +1,20 @@
+{
+  "active_plan_available": true,
+  "active_plan_combinations": 11,
+  "active_plan_cost_eur": 9.9,
+  "active_plan_cost_text": "9.90",
+  "active_plan_type": "Хибрид",
+  "anti_backfit_guard_ok": true,
+  "dataset_rows": 10058,
+  "issues_count": 0,
+  "latest_draw_date": "2026-06-21",
+  "latest_draw_numbers": "6,13,16,19,42,44",
+  "refresh_after_save": true,
+  "safe_note_bg": "Step 97 е контролен слой за реалния цикъл на нов тираж: преди запис, запис, обновяване, проверка и clean checkpoint. Той не променя прогнозната математика и не обещава печалба.",
+  "status": "READY",
+  "step": 97,
+  "step95_status": "WAITING_NEXT_DRAW",
+  "step96_status": "OK",
+  "v95_before_save_draws": true,
+  "v97_refresh_script_present": true
+}
