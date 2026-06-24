@@ -2876,6 +2876,16 @@ def page_update_draws():
     import src.add_draws_section as add_draws_section
     reload(add_draws_section)
     add_draws_section.render()
+
+# ADD_DRAW_SIDEBAR_SHORTCUT_START
+def _open_add_draw_from_sidebar_shortcut() -> None:
+    st.session_state["selected_page"] = "Добавяне на тираж"
+    st.session_state["page"] = "Добавяне на тираж"
+    st.session_state["current_page"] = "Добавяне на тираж"
+    st.session_state["main_section"] = "✅ Финален план за игра"
+    page_update_draws()
+    st.stop()
+# ADD_DRAW_SIDEBAR_SHORTCUT_END
 def page_glossary() -> None:
     with st.expander(tr("term_help"), expanded=False):
         st.markdown(
@@ -3945,7 +3955,8 @@ def main() -> None:
     available_navigation_pages = visible_navigation_groups.get(selected_navigation_group, list(pages.keys()))
     choice = st.sidebar.radio('Страница', available_navigation_pages)
     # STEP64_GROUPED_NAVIGATION_END
-    if st.sidebar.button(tr("refresh")):
+    if st.sidebar.button("Обнови данните", use_container_width=True, key="sidebar_add_draw_shortcut_btn"):
+        _open_add_draw_from_sidebar_shortcut()
         st.cache_data.clear()
         st.rerun()
     pages[choice]()
