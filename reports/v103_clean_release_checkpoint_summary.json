@@ -1,0 +1,41 @@
+{
+  "step": 103,
+  "name_bg": "Clean ZIP checkpoint",
+  "status": "WAITING_FOR_CLEAN_GIT_STATUS",
+  "generated_at_utc": "2026-06-24T09:57:39.968361+00:00",
+  "commit": "467090e",
+  "tracked_file_count": 909,
+  "forbidden_tracked_count": 0,
+  "forbidden_tracked_preview": [],
+  "git_status_short": "M src/add_draws_section.py\n M streamlit_app.py\n?? models/v103/\n?? models/v104/\n?? reports/v103_clean_release_checkpoint_checklist.csv\n?? reports/v103_clean_release_checkpoint_manifest.csv\n?? reports/v103_clean_release_checkpoint_summary.json\n?? reports/v103_clean_release_checkpoint_summary.md\n?? reports/v104_final_audit_refresh_checklist.csv\n?? reports/v104_final_audit_refresh_summary.json\n?? reports/v104_final_audit_refresh_summary.md\n?? reports/v104_final_step_statuses.csv\n?? scripts/v103_build_clean_release_checkpoint.py\n?? scripts/v103_create_clean_release_checkpoint.py\n?? scripts/v104_build_final_audit_refresh.py\n?? src/v103_clean_release_checkpoint_engine.py\n?? src/v103_clean_release_checkpoint_section.py\n?? src/v104_final_audit_refresh_engine.py\n?? src/v104_final_audit_refresh_section.py",
+  "recommended_zip_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model_step103_104_clean-checkpoint_20260624_1257_467090e.zip",
+  "recommended_command": "python .\\scripts\\v103_create_clean_release_checkpoint.py",
+  "blocking_failures": 0,
+  "checks": [
+    {
+      "check": "git_available",
+      "passed": true,
+      "details_bg": "Git tracked file list is available for clean ZIP creation."
+    },
+    {
+      "check": "working_tree_clean_before_zip",
+      "passed": false,
+      "details_bg": "Clean ZIP should be created after commit/push, when git status is empty."
+    },
+    {
+      "check": "forbidden_tracked_files",
+      "passed": true,
+      "details_bg": "Tracked files do not include .git, cache, helper patch files, nested ZIPs, or temp artifacts."
+    },
+    {
+      "check": "tracked_zip_strategy",
+      "passed": true,
+      "details_bg": "ZIP creation uses tracked project files only, so .git and cache folders are excluded by design."
+    }
+  ],
+  "notes_bg": [
+    "Normal folder ZIP is not safe for this project because it can include .git, __pycache__, .pyc and helper scripts.",
+    "The clean checkpoint script uses git tracked files only and refuses to create the ZIP while git status is not clean.",
+    "Run the clean ZIP script after committing Step 103/104."
+  ]
+}

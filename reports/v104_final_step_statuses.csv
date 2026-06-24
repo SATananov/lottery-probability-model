@@ -1,0 +1,9 @@
+﻿step,report,exists,status
+v95,reports\v95_active_plan_auto_evaluation_summary.json,True,WAITING_NEXT_DRAW
+v97,reports\v97_real_draw_lifecycle_summary.json,True,READY
+v98,reports\v98_active_plan_result_history_summary.json,True,WAITING_NEXT_DRAW
+v99,reports\v99_final_user_dashboard_summary.json,True,READY_WAITING_NEXT_DRAW
+v100,reports\v100_final_release_lock_summary.json,True,V1_LOCKED_WAITING_NEXT_DRAW
+v101,reports\v101_real_use_protocol_summary.json,True,WAITING_NEXT_REAL_DRAW
+v102,reports\v102_runtime_hardening_summary.json,True,RUNTIME_HARDENED
+v103,reports\v103_clean_release_checkpoint_summary.json,True,WAITING_FOR_CLEAN_GIT_STATUS

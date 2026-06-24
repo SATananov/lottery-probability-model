@@ -66,6 +66,8 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v100_build_final_release_lock.py",
     ROOT / "scripts" / "v101_build_real_use_protocol.py",
     ROOT / "scripts" / "v102_build_runtime_hardening.py",
+    ROOT / "scripts" / "v103_build_clean_release_checkpoint.py",
+    ROOT / "scripts" / "v104_build_final_audit_refresh.py",
 ]
 
 HEAVY_LAB_SCRIPT_NAMES = {

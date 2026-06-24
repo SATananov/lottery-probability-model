@@ -3780,6 +3780,18 @@ def render_v102_runtime_hardening_page() -> None:
     return _render()
 # STEP102_RUNTIME_HARDENING_WRAPPER_END
 
+# STEP103_CLEAN_RELEASE_CHECKPOINT_WRAPPER_START
+def render_v103_clean_release_checkpoint_page() -> None:
+    from src.v103_clean_release_checkpoint_section import render_v103_clean_release_checkpoint_section as _render
+    return _render()
+# STEP103_CLEAN_RELEASE_CHECKPOINT_WRAPPER_END
+
+# STEP104_FINAL_AUDIT_REFRESH_WRAPPER_START
+def render_v104_final_audit_refresh_page() -> None:
+    from src.v104_final_audit_refresh_section import render_v104_final_audit_refresh_section as _render
+    return _render()
+# STEP104_FINAL_AUDIT_REFRESH_WRAPPER_END
+
 
 def main() -> None:
     page_glossary()
@@ -3790,6 +3802,8 @@ def main() -> None:
         "Финално заключване": render_v100_final_release_lock_page,
         "Протокол за реална употреба": render_v101_real_use_protocol_page,
         "Runtime защита": render_v102_runtime_hardening_page,
+        "Clean ZIP checkpoint": render_v103_clean_release_checkpoint_page,
+        "Финален одит след Step 102": render_v104_final_audit_refresh_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3865,6 +3879,8 @@ def main() -> None:
             'Финално заключване',
             'Протокол за реална употреба',
             'Runtime защита',
+            'Clean ZIP checkpoint',
+            'Финален одит след Step 102',
 
             'Табло',
             'Препоръки',

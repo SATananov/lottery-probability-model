@@ -1,0 +1,5 @@
+﻿check,passed,details_bg
+git_available,True,Git tracked file list is available for clean ZIP creation.
+working_tree_clean_before_zip,False,"Clean ZIP should be created after commit/push, when git status is empty."
+forbidden_tracked_files,True,"Tracked files do not include .git, cache, helper patch files, nested ZIPs, or temp artifacts."
+tracked_zip_strategy,True,"ZIP creation uses tracked project files only, so .git and cache folders are excluded by design."
