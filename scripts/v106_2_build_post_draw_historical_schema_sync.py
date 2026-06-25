@@ -167,8 +167,8 @@ def build_step() -> dict:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "checklist": checklist,
         "notes_bg": [
-            "????????? ???? ????? ?????????? ?????? ????? ? ????????????? ????? historical, normalized ? canonical datasets.",
-            "???? builder ? ???????? verifier ? ?? ?????? ?? ???????? apply helper ???????.",
+            "\u041f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u0434\u0430\u043b\u0438 \u0440\u044a\u0447\u043d\u043e \u0432\u044a\u0432\u0435\u0434\u0435\u043d\u0438\u044f\u0442 \u0440\u0435\u0430\u043b\u0435\u043d \u0442\u0438\u0440\u0430\u0436 \u0435 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0438\u0440\u0430\u043d \u043c\u0435\u0436\u0434\u0443 historical, normalized \u0438 canonical datasets.",
+            "\u0422\u043e\u0437\u0438 builder \u0435 \u0441\u0442\u0430\u0431\u0438\u043b\u0435\u043d verifier \u0438 \u043d\u0435 \u0437\u0430\u0432\u0438\u0441\u0438 \u043e\u0442 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u0438 apply helper \u0444\u0430\u0439\u043b\u043e\u0432\u0435.",
         ],
     }
 
