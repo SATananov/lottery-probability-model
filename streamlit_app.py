@@ -3795,6 +3795,12 @@ def render_v104_final_audit_refresh_page() -> None:
     return _render()
 # STEP104_FINAL_AUDIT_REFRESH_WRAPPER_END
 
+# STEP107_MODEL_TRAINING_POLICY_WRAPPER_START
+def render_v107_model_training_policy_page() -> None:
+    from src.v107_model_training_policy_section import render_v107_model_training_policy_section as _render
+    return _render()
+# STEP107_MODEL_TRAINING_POLICY_WRAPPER_END
+
 
 def main() -> None:
     page_glossary()
@@ -3807,6 +3813,7 @@ def main() -> None:
         "Runtime защита": render_v102_runtime_hardening_page,
         "Clean ZIP checkpoint": render_v103_clean_release_checkpoint_page,
         "Финален одит след Step 102": render_v104_final_audit_refresh_page,
+        "Политика за обучение": render_v107_model_training_policy_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3920,6 +3927,7 @@ def main() -> None:
             'Разширена лаборатория',
             'МЛ лаборатория',
             'Център за обучение',
+            'Политика за обучение',
             'Стратегическа лаборатория',
             'Вероятности',
             'Финален обобщен анализ',

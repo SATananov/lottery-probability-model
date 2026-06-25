@@ -1,0 +1,118 @@
+{
+  "step": 107,
+  "name_bg": "Политика за обучение и refresh control",
+  "status": "TRAINING_POLICY_READY",
+  "blocking_failures": 0,
+  "generated_at_utc": "2026-06-25T17:44:28.902112+00:00",
+  "dataset": {
+    "row_counts": {
+      "historical": 10059,
+      "normalized": 10059,
+      "canonical": 10059
+    },
+    "dataset_rows": 10059,
+    "datasets_synced": true,
+    "latest_draw": {
+      "date": "2026-06-25",
+      "draw_no": "49",
+      "draw_position": "1",
+      "numbers": [
+        5,
+        11,
+        44,
+        46,
+        47,
+        48
+      ]
+    }
+  },
+  "real_result_rows_since_active_plan": 1,
+  "policy_decision": {
+    "level": "NO_RETRAIN_NOW",
+    "label_bg": "Не обучавай тежки модели сега",
+    "message_bg": "Има твърде малко нови реални резултати. След всеки тираж правим само бърз синхрон, оценка и dashboard refresh.",
+    "recommended_action_bg": "Изчакай поне 5 реални резултата преди лек статистически refresh.",
+    "next_threshold_bg": "Остават 4 реални резултата до първа препоръка за лек refresh."
+  },
+  "thresholds": {
+    "auto_every_draw_bg": "dataset sync + active plan result + lifecycle/dashboard refresh",
+    "light_statistical_refresh_after_real_results": 5,
+    "recommended_statistical_refresh_after_real_results": 10,
+    "manual_heavy_lab_review_after_real_results": 20
+  },
+  "policy_table": [
+    {
+      "group_bg": "След всеки реален тираж",
+      "cadence_bg": "Автоматично / бърз режим",
+      "scripts_bg": "v40_create_normalized_draw_events.py, v41_build_canonical_draw_events.py, v95_build_active_plan_auto_evaluation.py, v97_build_real_draw_lifecycle.py, v98_build_active_plan_result_history.py, v99_build_final_user_dashboard.py, v100_build_final_release_lock.py, v101_build_real_use_protocol.py, v106_2_build_post_draw_historical_schema_sync.py, v106_1_build_post_draw_dataset_sync.py, v106_build_post_draw_status_sync.py, v107_build_model_training_policy_refresh_control.py",
+      "decision_bg": "Винаги да се пуска",
+      "reason_bg": "Синхронизира dataset-ите, оценява активния план и обновява lifecycle/dashboard статусите."
+    },
+    {
+      "group_bg": "Лек статистически refresh",
+      "cadence_bg": "Ръчно след 5–10 реални резултата",
+      "scripts_bg": "v42_build_combined_positive_negative_foundation.py, v43_1_refine_interval_rhythm_foundation.py, v44_1_refine_final_ensemble_ticket_foundation.py, v45_train_prediction_engine_pro.py, v50_build_pair_group_intelligence.py, v51_build_ticket_portfolio_intelligence.py, v53_build_ticket_coverage_intelligence.py, v54_build_pattern_balance_engine.py, v55_build_number_profile_center.py, v56_build_draw_similarity_search.py, v57_build_hot_cold_stable_center.py, v58_build_smart_ensemble_score_2.py, v59_build_smart_ticket_builder_2.py, v65_build_model_weighting_center.py, v66_build_weighted_smart_ensemble.py, v68_build_weighted_portfolio_optimizer.py, v69_build_portfolio_improvement_suggestions.py, v70_build_applied_candidate_portfolio.py, v71_build_ticket_pack_export.py, v73_build_ticket_pack_performance_tracker.py, v74_build_model_dependency_sync_center.py, v76_build_explainability_validation_center.py, v77_build_decision_recommendation_center.py, v78_build_final_play_plan_center.py, v79_build_ticket_pack_export_center.py, v80_build_final_system_audit_center.py, v81_build_final_ux_navigation_center.py, v82_build_final_release_package_center.py, v94_build_active_budget_plan_tracker.py",
+      "decision_bg": "Не е нужен след всеки един тираж",
+      "reason_bg": "Един нов тираж почти не променя стабилно статистическата картина при над 10 000 реда история."
+    },
+    {
+      "group_bg": "Тежки лабораторни модели",
+      "cadence_bg": "Само ръчно / лабораторно",
+      "scripts_bg": "v67_build_weighted_ticket_builder.py, v75_build_neural_meta_learner.py, v85_neural_epoch_comparison_audit.py",
+      "decision_bg": "Да не се пуска автоматично",
+      "reason_bg": "Тези процеси са бавни и могат да блокират app-а; използват се само за отделен експеримент и сравнение."
+    },
+    {
+      "group_bg": "Активен план",
+      "cadence_bg": "След нов checkpoint или доказана нужда",
+      "scripts_bg": "v77, v78, v94, v95, v98, v99, v100, v101",
+      "decision_bg": "Не сменяй плана само заради един слаб/силен тираж",
+      "reason_bg": "Лотарията е случайна. Единичният резултат не е достатъчна причина за промяна на стратегията."
+    }
+  ],
+  "checks": [
+    {
+      "check": "datasets_synced",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "historical=10059, normalized=10059, canonical=10059"
+    },
+    {
+      "check": "latest_draw_valid",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "latest=2026-06-25 [5, 11, 44, 46, 47, 48]"
+    },
+    {
+      "check": "runtime_hardening_active",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "Step102=RUNTIME_HARDENED"
+    },
+    {
+      "check": "post_draw_sync_active",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "Step106=POST_DRAW_SYNCED"
+    },
+    {
+      "check": "heavy_labs_not_default",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "v67/v75 са отделени от fast refresh режима."
+    },
+    {
+      "check": "step107_page_wired",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "Step 107 е достъпен в навигацията."
+    },
+    {
+      "check": "step107_refresh_chain_wired",
+      "passed": true,
+      "blocking": "yes",
+      "details_bg": "Step 107 се обновява след бъдещ Add Draw fast refresh."
+    }
+  ],
+  "safe_note_bg": "Step 107 не обучава модели. Той дефинира кога кое се обновява, за да няма тежко обучение след всеки единичен тираж."
+}

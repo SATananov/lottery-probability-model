@@ -2,7 +2,7 @@
   "step": 104,
   "name_bg": "Финален одит след Step 102",
   "status": "FINAL_AUDIT_REFRESHED",
-  "generated_at_utc": "2026-06-25T16:36:52.866469+00:00",
+  "generated_at_utc": "2026-06-25T17:37:43.632394+00:00",
   "blocking_failures": 0,
   "dataset": {
     "exists": true,
@@ -23,6 +23,7 @@
     "has_step_102": true,
     "has_step_103": true,
     "has_step_104": true,
+    "has_step_106": true,
     "has_fast_mode": true,
     "heavy_scripts_declared": true,
     "timeout_guard": true
@@ -42,7 +43,7 @@
       "step": "v97",
       "report": "reports\\v97_real_draw_lifecycle_summary.json",
       "exists": true,
-      "status": "REVIEW"
+      "status": "READY"
     },
     {
       "step": "v98",
@@ -54,19 +55,19 @@
       "step": "v99",
       "report": "reports\\v99_final_user_dashboard_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "READY_WAITING_NEXT_DRAW"
     },
     {
       "step": "v100",
       "report": "reports\\v100_final_release_lock_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "V1_LOCKED_WAITING_NEXT_DRAW"
     },
     {
       "step": "v101",
       "report": "reports\\v101_real_use_protocol_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "WAITING_NEXT_REAL_DRAW"
     },
     {
       "step": "v102",
@@ -79,6 +80,24 @@
       "report": "reports\\v103_clean_release_checkpoint_summary.json",
       "exists": true,
       "status": "WAITING_FOR_CLEAN_GIT_STATUS"
+    },
+    {
+      "step": "v106",
+      "report": "reports\\v106_post_draw_status_sync_summary.json",
+      "exists": true,
+      "status": "POST_DRAW_SYNCED"
+    },
+    {
+      "step": "v106_2",
+      "report": "reports\\v106_2_post_draw_historical_schema_sync_summary.json",
+      "exists": true,
+      "status": "POST_DRAW_DATASETS_SYNCED"
+    },
+    {
+      "step": "v106_1",
+      "report": "reports\\v106_1_post_draw_dataset_sync_summary.json",
+      "exists": true,
+      "status": "POST_DRAW_DATASETS_SYNCED"
     }
   ],
   "checks": [
@@ -106,6 +125,11 @@
       "check": "final_audit_current",
       "passed": true,
       "details_bg": "Step 103/104 са включени след Step 102, така че финалният одит вече е актуален."
+    },
+    {
+      "check": "post_draw_status_sync_active",
+      "passed": true,
+      "details_bg": "Step 106 е включен, за да синхронизира post-draw статусите след реален тираж."
     },
     {
       "check": "active_text_encoding",

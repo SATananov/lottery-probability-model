@@ -4,5 +4,6 @@ dataset_rows_synced,True,Dataset-ът съдържа очаквания мини
 dataset_numbers_valid,True,Числата са в диапазон 1–49 и няма дублирани числа вътре в тираж.
 runtime_hardening_active,True,Step 102 runtime защита е активна в Add Draw refresh flow.
 final_audit_current,True,"Step 103/104 са включени след Step 102, така че финалният одит вече е актуален."
+post_draw_status_sync_active,True,"Step 106 е включен, за да синхронизира post-draw статусите след реален тираж."
 active_text_encoding,True,В активните app/source файлове няма видими broken Cyrillic markers.
 old_audit_superseded,True,Старите Step 80/81/82 отчети вече се третират като исторически; Step 104 е актуалният финален одит.
