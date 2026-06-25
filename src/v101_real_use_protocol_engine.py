@@ -200,7 +200,12 @@ def _flow_snapshot() -> dict[str, Any]:
     app_text = STREAMLIT_APP_PATH.read_text(encoding="utf-8") if STREAMLIT_APP_PATH.exists() else ""
     add_text = ADD_DRAWS_PATH.read_text(encoding="utf-8") if ADD_DRAWS_PATH.exists() else ""
     save_pos = add_text.find("save_draws(")
-    refresh_pos = add_text.find("refresh_models()")
+    refresh_candidates = [
+        add_text.find("model_results = refresh_models("),
+        add_text.find("refresh_models("),
+        add_text.find("refresh_models()"),
+    ]
+    refresh_pos = next((idx for idx in refresh_candidates if idx != -1), -1)
     step73_pos = add_text.find("evaluate_current_pack_against_draw")
     step95_pos = add_text.find("evaluate_active_plan_against_pending_draw")
     step100_script_pos = add_text.find("v100_build_final_release_lock.py")
@@ -304,7 +309,7 @@ def build_real_use_protocol() -> dict[str, Any]:
         _check("Step 100", "V1 lock е активен", statuses.get("step100_status") == "V1_LOCKED_WAITING_NEXT_DRAW", statuses.get("step100_status", "UNKNOWN")),
         _check("Step 100", "Няма Step 100 blocking failures", len(step100_failures) == 0, f"blocking_failures={len(step100_failures)}"),
         _check("Данни", "Dataset-ите са синхронизирани", bool(dataset.get("datasets_synced")), f"historical={dataset.get('historical_rows')}, normalized={dataset.get('normalized_rows')}, canonical={dataset.get('canonical_rows')}"),
-        _check("Данни", "Checkpoint latest draw остава 2026-06-21", dataset.get("latest_draw_date") == "2026-06-21" and dataset.get("latest_numbers") == [6, 13, 16, 19, 42, 44], f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
+        _check("Данни", "Последният тираж е валиден и актуален", bool(dataset.get("latest_draw_date")) and len(dataset.get("latest_numbers") or []) == 6 and int(dataset.get("historical_rows") or 0) >= 10058, f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
         _check("Активен план", "Активният план е Хибрид", active_plan.get("strategy_type") == "Хибрид", active_plan.get("strategy_type", "-")),
         _check("Активен план", "Планът има 11 комбинации", active_plan.get("combination_count") == 11, str(active_plan.get("combination_count"))),
         _check("Активен план", "Бюджетът е 9.90 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 9.90, active_plan.get("cost_text", "-")),

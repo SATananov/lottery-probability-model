@@ -1,0 +1,5 @@
+check,status,blocking,details_bg
+dataset_files_exist,OK,yes,"historical=True, normalized=True, canonical=True"
+post_draw_row_counts_synced,OK,yes,"historical=10059, normalized=10059, canonical=10059"
+latest_draw_has_six_numbers,OK,yes,"latest_draw={'date': '2026-06-25', 'draw_no': '49', 'numbers': [5, 11, 44, 46, 47, 48]}"
+latest_draw_numbers_valid,OK,yes,"numbers=[5, 11, 44, 46, 47, 48]"

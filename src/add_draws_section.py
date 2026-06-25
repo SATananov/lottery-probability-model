@@ -22,6 +22,8 @@ DATA_PATH = ROOT / "data" / "historical_draws.csv"
 NUMBER_COLS = [f"n{i}" for i in range(1, 7)]
 
 MODEL_SCRIPTS = [
+    ROOT / "scripts" / "v40_create_normalized_draw_events.py",
+    ROOT / "scripts" / "v41_build_canonical_draw_events.py",
     ROOT / "scripts" / "v41_train_rules_aware_models.py",
     ROOT / "scripts" / "v42_build_combined_positive_negative_foundation.py",
     ROOT / "scripts" / "v43_1_refine_interval_rhythm_foundation.py",
@@ -65,6 +67,8 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v99_build_final_user_dashboard.py",
     ROOT / "scripts" / "v100_build_final_release_lock.py",
     ROOT / "scripts" / "v101_build_real_use_protocol.py",
+    ROOT / "scripts" / "v106_build_post_draw_status_sync.py",
+    ROOT / "scripts" / "v106_2_build_post_draw_historical_schema_sync.py",
     ROOT / "scripts" / "v102_build_runtime_hardening.py",
     ROOT / "scripts" / "v103_build_clean_release_checkpoint.py",
     ROOT / "scripts" / "v104_build_final_audit_refresh.py",
@@ -142,11 +146,43 @@ def read_dataset() -> tuple[list[dict[str, str]], list[str]]:
 
 
 def ensure_columns(fieldnames: list[str]) -> list[str]:
-    for column in ["date", "year", "draw_no", "draw_position", *NUMBER_COLS, "bonus_number", "source"]:
+    for column in ["draw_id", "date", "year", "draw_number", "draw_no", "draw_position", *NUMBER_COLS, "bonus_number", "source_url", "source"]:
         if column not in fieldnames:
             fieldnames.append(column)
     return fieldnames
 
+
+
+
+def _finalize_rows_for_v40_v41(rows: list[dict[str, str]], fieldnames: list[str]) -> list[dict[str, str]]:
+    existing_ids: list[int] = []
+    for row in rows:
+        try:
+            value = int(float(str(row.get("draw_id", "")).strip()))
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            existing_ids.append(value)
+    next_id = (max(existing_ids) if existing_ids else 0) + 1
+
+    for row in rows:
+        for column in fieldnames:
+            row.setdefault(column, "")
+        if not str(row.get("draw_number", "")).strip() and str(row.get("draw_no", "")).strip():
+            row["draw_number"] = str(row.get("draw_no", "")).strip()
+        if not str(row.get("draw_no", "")).strip() and str(row.get("draw_number", "")).strip():
+            row["draw_no"] = str(row.get("draw_number", "")).strip()
+        if not str(row.get("draw_position", "")).strip():
+            row["draw_position"] = "1"
+        row.setdefault("source_url", "")
+        try:
+            valid_id = int(float(str(row.get("draw_id", "")).strip())) > 0
+        except (TypeError, ValueError):
+            valid_id = False
+        if not valid_id:
+            row["draw_id"] = str(next_id)
+            next_id += 1
+    return rows
 
 def normalize_numbers(values: list[Any]) -> list[int]:
     numbers: list[int] = []
@@ -198,9 +234,11 @@ def build_row(
     row["date"] = draw_date.isoformat()
     row["year"] = str(year)
     row["draw_no"] = str(draw_no)
+    row["draw_number"] = str(draw_no)
     row["draw_position"] = str(draw_position)
     row["bonus_number"] = "" if bonus is None else str(bonus)
     row["source"] = source.strip()
+    row["source_url"] = ""
 
     for column, number in zip(NUMBER_COLS, sorted(numbers)):
         row[column] = str(number)
@@ -250,6 +288,7 @@ def save_draws(
     ]
 
     rows.extend(new_rows)
+    rows = _finalize_rows_for_v40_v41(rows, fieldnames)
 
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     with DATA_PATH.open("w", encoding="utf-8", newline="") as f:

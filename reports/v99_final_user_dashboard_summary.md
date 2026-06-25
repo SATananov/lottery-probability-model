@@ -1,6 +1,6 @@
 # Step 99 — Финално потребителско табло
 
-Статус: **CHECK_REQUIRED**
+Статус: **READY_WAITING_NEXT_DRAW**
 
 ## Активен план
 - Тип: Хибрид
@@ -10,7 +10,7 @@
 
 ## Статуси
 - Step 95: WAITING_NEXT_DRAW
-- Step 97: REVIEW
+- Step 97: READY
 - Step 98: HAS_HISTORY
 
 ## Dataset

@@ -1,14 +1,14 @@
 ﻿area_bg,check_bg,status,blocking,details_bg
-Данни,Dataset-ите са синхронизирани,FAIL,yes,"historical=10059, normalized=10058, canonical=10058"
-Данни,Последният тираж е очакваният checkpoint,FAIL,yes,"2026-06-25 — 5, 11, 44, 46, 47, 48"
+Данни,Dataset-ите са синхронизирани,OK,yes,"historical=10059, normalized=10059, canonical=10059"
+Данни,Последният тираж е валиден и актуален,OK,yes,"2026-06-25 — 5, 11, 44, 46, 47, 48"
 Активен план,Планът е наличен,OK,yes,v94_active_20260623T163844Z0000
 Активен план,Типът е Хибрид,OK,yes,Хибрид
 Активен план,Комбинациите са 11,OK,yes,11
 Активен план,Цената е 9.90 EUR,OK,yes,9.90 EUR
 Статуси,Step 95 чака следващ реален тираж,OK,yes,WAITING_NEXT_DRAW
-Статуси,Step 97 lifecycle е готов,FAIL,yes,REVIEW
-Статуси,Step 98 историята чака следващ тираж,FAIL,yes,HAS_HISTORY
-Статуси,Step 99 финалното табло е готово,FAIL,yes,CHECK_REQUIRED
+Статуси,Step 97 lifecycle е готов,OK,yes,READY
+Статуси,Step 98 историята е готова,OK,yes,HAS_HISTORY
+Статуси,Step 99 финалното табло е готово,OK,yes,READY_WAITING_NEXT_DRAW
 Навигация,Финалното табло е вързано,OK,yes,Финално табло
 Навигация,Финалното заключване е вързано,OK,yes,Финално заключване
 Add Draw,Step 95 pre-save проверката е преди запис,OK,yes,evaluate_active_plan_against_pending_draw преди save_draws

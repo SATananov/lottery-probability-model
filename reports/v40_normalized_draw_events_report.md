@@ -1,18 +1,18 @@
 # v40 Normalized Draw Events Report
 
 Status: **PASS**
-Source данни: `data\historical_draws.csv`
-Output данни: `data\v40_normalized_draw_events.csv`
+Source dataset: `data\historical_draws.csv`
+Output dataset: `data\v40_normalized_draw_events.csv`
 
 ## Summary
-- Source rows: **10058**
-- Normalized rows: **10058**
+- Source rows: **10059**
+- Normalized rows: **10059**
 - Years: **1958 - 2026**
-- Rows in 2026: **49**
-- Max 2026 draw number: **48**
+- Rows in 2026: **50**
+- Max 2026 draw number: **49**
 
 ## Drawing number counts
-- drawing_no `1`: **5176** row(s)
+- drawing_no `1`: **5177** row(s)
 - drawing_no `2`: **3587** row(s)
 - drawing_no `3`: **1280** row(s)
 - drawing_no `4`: **15** row(s)
@@ -32,7 +32,7 @@ Output данни: `data\v40_normalized_draw_events.csv`
 - 2023: rows=105, drawing_no_counts={'1': 105}
 - 2024: rows=104, drawing_no_counts={'1': 104}
 - 2025: rows=105, drawing_no_counts={'1': 105}
-- 2026: rows=49, drawing_no_counts={'1': 49}
+- 2026: rows=50, drawing_no_counts={'1': 50}
 
 ## Target columns
 ```text
@@ -56,7 +56,7 @@ data_status
 
 ## Important notes
 - historical_draws.csv was not modified.
-- v40_normalized_draw_events.csv is a foundation данни, not yet a complete official two-drawing данни.
+- v40_normalized_draw_events.csv is a foundation dataset, not yet a complete official two-drawing dataset.
 - bonus_number is intentionally blank until real bonus-number data is imported from a trusted source.
 - Do not retrain two-drawing or bonus-number models until drawing 2 and bonus numbers are imported.
-- Ticket checker logic should compare every поле във фиша against every drawing_no inside the selected draw.
+- Ticket checker logic should compare every ticket table against every drawing_no inside the selected draw.

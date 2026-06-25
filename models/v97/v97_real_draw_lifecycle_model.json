@@ -73,7 +73,7 @@
     },
     "add_draw_wiring": {
       "add_draw_file_exists": true,
-      "refresh_after_save_reference": false,
+      "refresh_after_save_reference": true,
       "save_draws_reference": true,
       "v95_before_save_draws": true,
       "v95_pre_save_reference": true,
@@ -122,31 +122,29 @@
     },
     {
       "exists": true,
-      "latest_date": "2026-06-21",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
+      "latest_date": "2026-06-25",
+      "latest_draw_no": "49",
+      "latest_numbers": "5,11,44,46,47,48",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v40_normalized_draw_events.csv",
-      "rows": 10058
+      "rows": 10059
     },
     {
       "exists": true,
-      "latest_date": "2026-06-21",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
+      "latest_date": "2026-06-25",
+      "latest_draw_no": "49",
+      "latest_numbers": "5,11,44,46,47,48",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v41_canonical_draw_events.csv",
-      "rows": 10058
+      "rows": 10059
     }
   ],
-  "generated_at_utc": "2026-06-25T16:36:51+00:00",
-  "issues": [
-    "Add Draw не показва refresh след save_draws."
-  ],
+  "generated_at_utc": "2026-06-25T17:26:32+00:00",
+  "issues": [],
   "lifecycle_steps": [
     {
       "action_bg": "Потребителят има запазен активен бюджетен план преди следващия реален тираж.",
@@ -212,9 +210,9 @@
       "step_order": 7
     }
   ],
-  "next_user_action_bg": "Прегледай предупрежденията преди следващ реален тираж.",
+  "next_user_action_bg": "Когато излезе нов реален тираж, въведи числата в Добавяне на тираж. Системата първо ще оцени активния план и пакета, после ще запише тиража и ще обнови веригата.",
   "safe_note_bg": "Step 97 е контролен слой за реалния цикъл на нов тираж: преди запис, запис, обновяване, проверка и clean checkpoint. Той не променя прогнозната математика и не обещава печалба.",
-  "status": "REVIEW",
+  "status": "READY",
   "step": 97,
   "title_bg": "Реален цикъл на нов тираж"
 }

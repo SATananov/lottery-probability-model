@@ -276,16 +276,30 @@ def build_final_user_dashboard() -> dict[str, Any]:
     actions = _build_actions(active_plan, statuses)
 
     issues: list[str] = []
+    warnings: list[str] = []
     if not active_plan.get("plan_id"):
         issues.append("Няма активен план.")
-    if statuses.get("step95_status") != "WAITING_NEXT_DRAW":
-        issues.append("Step 95 не е в режим WAITING_NEXT_DRAW; провери дали има нов реален резултат.")
-    if statuses.get("step97_status") != "READY":
-        issues.append("Step 97 lifecycle не е READY.")
-    if dataset.get("dataset_rows") != 10058:
-        issues.append("Броят редове в dataset-а е различен от очаквания checkpoint 10058.")
 
-    dashboard_status = "READY_WAITING_NEXT_DRAW" if not issues or all("Step 95" in item for item in issues) else "CHECK_REQUIRED"
+    step95_status = statuses.get("step95_status")
+    step97_status = statuses.get("step97_status")
+    step98_status = statuses.get("step98_status")
+    dataset_rows = int(dataset.get("dataset_rows") or 0)
+    canonical_rows = int(dataset.get("canonical_rows") or 0)
+
+    if step95_status not in {"WAITING_NEXT_DRAW", "EVALUATED", "DRAW_NOT_AFTER_ACTIVE_PLAN", "NO_ACTIVE_PLAN"}:
+        issues.append(f"Step 95 статусът е неочакван: {step95_status}")
+    if step97_status not in {"READY", "POST_DRAW_RECORDED"}:
+        issues.append(f"Step 97 lifecycle не е готов за следващ цикъл: {step97_status}")
+    if step98_status not in {"WAITING_NEXT_DRAW", "HAS_HISTORY"}:
+        issues.append(f"Step 98 историята е в неочакван статус: {step98_status}")
+    if dataset_rows < 10058:
+        issues.append(f"Dataset-ът има по-малко редове от базовия checkpoint: {dataset_rows}")
+    if canonical_rows and canonical_rows != dataset_rows:
+        issues.append(f"Canonical dataset не е синхронизиран: canonical={canonical_rows}, historical={dataset_rows}")
+    if dataset_rows > 10058:
+        warnings.append("Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние.")
+
+    dashboard_status = "READY_WAITING_NEXT_DRAW" if not issues else "CHECK_REQUIRED"
 
     payload = {
         "step": 99,
@@ -298,6 +312,7 @@ def build_final_user_dashboard() -> dict[str, Any]:
         "next_action": next_action,
         "actions": actions,
         "issues": issues,
+        "warnings": warnings,
         "source_files": {
             "active_plan": "models/v94/v94_active_budget_plan_tracker_model.json",
             "step95": "models/v95/v95_active_plan_auto_evaluation_model.json",

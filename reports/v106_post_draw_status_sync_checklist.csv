@@ -1,0 +1,8 @@
+﻿check,passed,details_bg
+datasets_synced_after_draw,True,"rows=10059, latest=2026-06-25 [5, 11, 44, 46, 47, 48]"
+lifecycle_ready,True,v97=READY
+history_available,True,v98=HAS_HISTORY
+dashboard_ready,True,v99=READY_WAITING_NEXT_DRAW
+release_lock_ready,True,v100=V1_LOCKED_WAITING_NEXT_DRAW
+real_use_protocol_ready,True,v101=WAITING_NEXT_REAL_DRAW
+explainability_refreshed,True,"v76_valid_draws=10059, dataset_rows=10059"

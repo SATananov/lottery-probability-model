@@ -1,31 +1,31 @@
 # v41 Canonical Rules-Aware Draw Events Audit
 
-Status: canonical данни built. No model retraining was performed.
+Status: canonical dataset built. No model retraining was performed.
 
 ## Summary
 
-- Source данни: `data\historical_draws.csv`
-- Canonical данни: `data\v41_canonical_draw_events.csv`
-- Total draw events: 10058
-- Total unique draws: 5176
+- Source dataset: `data\historical_draws.csv`
+- Canonical dataset: `data\v41_canonical_draw_events.csv`
+- Total draw events: 10059
+- Total unique draws: 5177
 - Years: 1958–2026 (69 years)
-- Date available rows: 49
+- Date available rows: 50
 - Date missing rows: 10009
 - Bonus available rows: 0
-- Bonus missing rows: 10058
+- Bonus missing rows: 10059
 - Invalid rows: 0
 - Duplicate keys: 0
 
 ## Drawing number counts
 
-- drawing_no=1: 5176
+- drawing_no=1: 5177
 - drawing_no=2: 3587
 - drawing_no=3: 1280
 - drawing_no=4: 15
 
 ## Drawings per draw distribution
 
-- 1 drawing(s) per draw: 1589 draws
+- 1 drawing(s) per draw: 1590 draws
 - 2 drawing(s) per draw: 2307 draws
 - 3 drawing(s) per draw: 1265 draws
 - 4 drawing(s) per draw: 15 draws
@@ -102,11 +102,11 @@ Status: canonical данни built. No model retraining was performed.
 | 2023 | 105 | 105 | {1: 105} | 1 |
 | 2024 | 104 | 104 | {1: 104} | 1 |
 | 2025 | 105 | 105 | {1: 105} | 1 |
-| 2026 | 49 | 49 | {1: 49} | 1 |
+| 2026 | 50 | 50 | {1: 50} | 1 |
 
 ## Important notes
 
 - Each row is treated as one real draw event.
-- `drawing_no` is derived from `draw_position` in the source данни.
+- `drawing_no` is derived from `draw_position` in the source dataset.
 - Bonus numbers are not invented; they remain missing until a reliable source is added.
-- This данни is ready for review before v41 model retraining.
+- This dataset is ready for review before v41 model retraining.

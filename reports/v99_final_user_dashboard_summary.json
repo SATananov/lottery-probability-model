@@ -1,8 +1,8 @@
 {
   "step": 99,
-  "status": "CHECK_REQUIRED",
+  "status": "READY_WAITING_NEXT_DRAW",
   "title_bg": "Финално потребителско табло",
-  "generated_at_utc": "2026-06-25T16:36:52+00:00",
+  "generated_at_utc": "2026-06-25T17:26:32+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "status": "ACTIVE",
@@ -108,7 +108,7 @@
   },
   "dataset": {
     "dataset_rows": 10059,
-    "canonical_rows": 10058,
+    "canonical_rows": 10059,
     "latest_draw_date": "2026-06-25",
     "latest_draw_year": "2026",
     "latest_draw_number": "49",
@@ -126,7 +126,7 @@
   "statuses": {
     "step95_status": "WAITING_NEXT_DRAW",
     "step96_status": "OK",
-    "step97_status": "REVIEW",
+    "step97_status": "READY",
     "step98_status": "HAS_HISTORY",
     "active_plan_available": "true"
   },
@@ -155,11 +155,11 @@
     },
     {
       "order": 3,
-      "status": "REVIEW",
+      "status": "READY",
       "title_bg": "Lifecycle контрол",
       "description_bg": "Провери реда на процеса: оценка преди запис, запис, refresh, история и sync.",
       "page_bg": "Реален цикъл на тираж",
-      "is_ready": false
+      "is_ready": true
     },
     {
       "order": 4,
@@ -170,9 +170,9 @@
       "is_ready": true
     }
   ],
-  "issues": [
-    "Step 97 lifecycle не е READY.",
-    "Броят редове в dataset-а е различен от очаквания checkpoint 10058."
+  "issues": [],
+  "warnings": [
+    "Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние."
   ],
   "source_files": {
     "active_plan": "models/v94/v94_active_budget_plan_tracker_model.json",

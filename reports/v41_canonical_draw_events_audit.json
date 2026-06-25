@@ -1,30 +1,30 @@
 {
-  "status": "canonical_данни_built_no_model_retrain",
+  "status": "canonical_dataset_built_no_model_retrain",
   "source_dataset": "data\\historical_draws.csv",
   "canonical_dataset": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10058,
-  "total_unique_draws": 5176,
+  "total_draw_events": 10059,
+  "total_unique_draws": 5177,
   "years": {
     "min": 1958,
     "max": 2026,
     "count": 69
   },
   "drawing_no_counts": {
-    "1": 5176,
+    "1": 5177,
     "2": 3587,
     "3": 1280,
     "4": 15
   },
   "drawings_per_draw_distribution": {
-    "1": 1589,
+    "1": 1590,
     "2": 2307,
     "3": 1265,
     "4": 15
   },
-  "date_available_rows": 49,
+  "date_available_rows": 50,
   "date_missing_rows": 10009,
   "bonus_available_rows": 0,
-  "bonus_missing_rows": 10058,
+  "bonus_missing_rows": 10059,
   "invalid_rows_count": 0,
   "duplicate_keys_count": 0,
   "invalid_rows_sample": [],
@@ -1022,16 +1022,16 @@
       "bonus_available_rows": 0
     },
     "2026": {
-      "draw_events": 49,
-      "unique_draws": 49,
+      "draw_events": 50,
+      "unique_draws": 50,
       "drawing_no_counts": {
-        "1": 49
+        "1": 50
       },
       "drawings_per_draw_distribution": {
-        "1": 49
+        "1": 50
       },
       "max_drawing_no": 1,
-      "date_available_rows": 49,
+      "date_available_rows": 50,
       "bonus_available_rows": 0
     }
   }

@@ -1,0 +1,105 @@
+{
+  "step": 106,
+  "status": "POST_DRAW_SYNCED",
+  "generated_at_utc": "2026-06-25T17:26:35+00:00",
+  "blocking_failures": 0,
+  "safe_note_bg": "Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058.",
+  "dataset": {
+    "files": {
+      "historical_draws.csv": {
+        "rows": 10059,
+        "latest_date": "2026-06-25",
+        "latest_numbers": [
+          5,
+          11,
+          44,
+          46,
+          47,
+          48
+        ]
+      },
+      "v40_normalized_draw_events.csv": {
+        "rows": 10059,
+        "latest_date": "2026-06-25",
+        "latest_numbers": [
+          5,
+          11,
+          44,
+          46,
+          47,
+          48
+        ]
+      },
+      "v41_canonical_draw_events.csv": {
+        "rows": 10059,
+        "latest_date": "2026-06-25",
+        "latest_numbers": [
+          5,
+          11,
+          44,
+          46,
+          47,
+          48
+        ]
+      }
+    },
+    "rows": 10059,
+    "datasets_synced": true,
+    "latest_date": "2026-06-25",
+    "latest_numbers": [
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
+    ]
+  },
+  "statuses": {
+    "v97": "READY",
+    "v98": "HAS_HISTORY",
+    "v99": "READY_WAITING_NEXT_DRAW",
+    "v100": "V1_LOCKED_WAITING_NEXT_DRAW",
+    "v101": "WAITING_NEXT_REAL_DRAW",
+    "v76": "OK"
+  },
+  "run_results": [],
+  "checklist": [
+    {
+      "check": "datasets_synced_after_draw",
+      "passed": true,
+      "details_bg": "rows=10059, latest=2026-06-25 [5, 11, 44, 46, 47, 48]"
+    },
+    {
+      "check": "lifecycle_ready",
+      "passed": true,
+      "details_bg": "v97=READY"
+    },
+    {
+      "check": "history_available",
+      "passed": true,
+      "details_bg": "v98=HAS_HISTORY"
+    },
+    {
+      "check": "dashboard_ready",
+      "passed": true,
+      "details_bg": "v99=READY_WAITING_NEXT_DRAW"
+    },
+    {
+      "check": "release_lock_ready",
+      "passed": true,
+      "details_bg": "v100=V1_LOCKED_WAITING_NEXT_DRAW"
+    },
+    {
+      "check": "real_use_protocol_ready",
+      "passed": true,
+      "details_bg": "v101=WAITING_NEXT_REAL_DRAW"
+    },
+    {
+      "check": "explainability_refreshed",
+      "passed": true,
+      "details_bg": "v76_valid_draws=10059, dataset_rows=10059"
+    }
+  ],
+  "next_action_bg": "Commit/push промените и направи clean ZIP checkpoint."
+}

@@ -254,7 +254,14 @@ def _add_draw_wiring_snapshot() -> dict[str, Any]:
     text = ADD_DRAWS_SECTION.read_text(encoding="utf-8", errors="replace") if ADD_DRAWS_SECTION.exists() else ""
     v95_index = text.find("evaluation = evaluate_active_plan_against_pending_draw")
     save_index = text.find("saved_count = save_draws(")
-    refresh_index = text.find("model_results = refresh_models()")
+    # Step 106: Step 102 changed refresh_models to accept mode/timeout arguments.
+    # Detect both the old exact call and the current argument-based call.
+    refresh_candidates = [
+        text.find("model_results = refresh_models("),
+        text.find("refresh_models("),
+        text.find("refresh_models()"),
+    ]
+    refresh_index = next((idx for idx in refresh_candidates if idx >= 0), -1)
     v97_script_present = "v97_build_real_draw_lifecycle.py" in text
     return {
         "add_draw_file_exists": ADD_DRAWS_SECTION.exists(),

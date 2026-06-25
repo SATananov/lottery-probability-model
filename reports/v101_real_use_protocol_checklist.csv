@@ -1,13 +1,13 @@
 ﻿area_bg,check_bg,status,blocking,details_bg
-Step 100,V1 lock е активен,FAIL,yes,CHECK_REQUIRED
-Step 100,Няма Step 100 blocking failures,FAIL,yes,blocking_failures=5
-Данни,Dataset-ите са синхронизирани,FAIL,yes,"historical=10059, normalized=10058, canonical=10058"
-Данни,Checkpoint latest draw остава 2026-06-21,FAIL,yes,"2026-06-25 — 5, 11, 44, 46, 47, 48"
+Step 100,V1 lock е активен,OK,yes,V1_LOCKED_WAITING_NEXT_DRAW
+Step 100,Няма Step 100 blocking failures,OK,yes,blocking_failures=0
+Данни,Dataset-ите са синхронизирани,OK,yes,"historical=10059, normalized=10059, canonical=10059"
+Данни,Последният тираж е валиден и актуален,OK,yes,"2026-06-25 — 5, 11, 44, 46, 47, 48"
 Активен план,Активният план е Хибрид,OK,yes,Хибрид
 Активен план,Планът има 11 комбинации,OK,yes,11
 Активен план,Бюджетът е 9.90 EUR,OK,yes,9.90 EUR
 Add Draw,Step 73 pre-save остава преди save,OK,yes,evaluate_current_pack_against_draw преди save_draws
 Add Draw,Step 95 pre-save остава преди save,OK,yes,evaluate_active_plan_against_pending_draw преди save_draws
-Add Draw,Refresh chain остава след save,FAIL,yes,refresh_models след save_draws
+Add Draw,Refresh chain остава след save,OK,yes,refresh_models след save_draws
 Add Draw,Step 101 е след Step 100 в refresh chain,OK,yes,v101_build_real_use_protocol.py след v100_build_final_release_lock.py
 Навигация,Страницата е вързана в app-а,OK,yes,Протокол за реална употреба

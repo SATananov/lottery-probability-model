@@ -144,7 +144,7 @@ def _dataset_snapshot() -> dict[str, Any]:
         "latest_draw_position": latest.get("draw_position", ""),
         "latest_numbers": latest_numbers,
         "latest_numbers_text": _numbers_text(latest_numbers),
-        "datasets_synced": len(historical) == len(normalized) == len(canonical) == 10058,
+        "datasets_synced": len(historical) == len(normalized) == len(canonical) and len(historical) >= 10058,
     }
 
 
@@ -257,14 +257,14 @@ def build_final_release_lock() -> dict[str, Any]:
 
     checklist = [
         _check("Данни", "Dataset-ите са синхронизирани", bool(dataset.get("datasets_synced")), f"historical={dataset.get('historical_rows')}, normalized={dataset.get('normalized_rows')}, canonical={dataset.get('canonical_rows')}"),
-        _check("Данни", "Последният тираж е очакваният checkpoint", dataset.get("latest_draw_date") == "2026-06-21" and dataset.get("latest_numbers") == [6, 13, 16, 19, 42, 44], f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
+        _check("Данни", "Последният тираж е валиден и актуален", bool(dataset.get("latest_draw_date")) and len(dataset.get("latest_numbers") or []) == 6 and int(dataset.get("historical_rows") or 0) >= 10058, f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
         _check("Активен план", "Планът е наличен", bool(active_plan.get("plan_id") or active_plan.get("strategy_type")), active_plan.get("plan_id", "")),
         _check("Активен план", "Типът е Хибрид", active_plan.get("strategy_type") == "Хибрид", active_plan.get("strategy_type", "-")),
         _check("Активен план", "Комбинациите са 11", active_plan.get("combination_count") == 11, str(active_plan.get("combination_count"))),
         _check("Активен план", "Цената е 9.90 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 9.90, active_plan.get("cost_text", "-")),
         _check("Статуси", "Step 95 чака следващ реален тираж", statuses.get("step95_status") == "WAITING_NEXT_DRAW", statuses.get("step95_status", "UNKNOWN")),
         _check("Статуси", "Step 97 lifecycle е готов", statuses.get("step97_status") == "READY", statuses.get("step97_status", "UNKNOWN")),
-        _check("Статуси", "Step 98 историята чака следващ тираж", statuses.get("step98_status") == "WAITING_NEXT_DRAW", statuses.get("step98_status", "UNKNOWN")),
+        _check("Статуси", "Step 98 историята е готова", statuses.get("step98_status") in {"WAITING_NEXT_DRAW", "HAS_HISTORY"}, statuses.get("step98_status", "UNKNOWN")),
         _check("Статуси", "Step 99 финалното табло е готово", statuses.get("step99_status") == "READY_WAITING_NEXT_DRAW", statuses.get("step99_status", "UNKNOWN")),
         _check("Навигация", "Финалното табло е вързано", bool(flow.get("final_dashboard_page_wired")), "Финално табло"),
         _check("Навигация", "Финалното заключване е вързано", bool(flow.get("release_lock_page_wired")), "Финално заключване"),
@@ -277,7 +277,7 @@ def build_final_release_lock() -> dict[str, Any]:
     blocking_failures = [row for row in checklist if row.get("status") != "OK" and row.get("blocking") == "yes"]
     warnings = [
         "Старите raw source файлове могат да съдържат known replacement-character маркери; те не са активен UI/model/report слой.",
-        "Следващата реална проверка ще стане едва след въвеждане на нов тираж след 2026-06-21.",
+        "След всеки реален тираж Step 95/97/98/99/100/101 трябва да се синхронизират към новото post-draw състояние.",
     ]
 
     status = "V1_LOCKED_WAITING_NEXT_DRAW" if not blocking_failures else "CHECK_REQUIRED"

@@ -23,6 +23,9 @@ STATUS_REPORTS = {
     "v101": ROOT / "reports" / "v101_real_use_protocol_summary.json",
     "v102": ROOT / "reports" / "v102_runtime_hardening_summary.json",
     "v103": ROOT / "reports" / "v103_clean_release_checkpoint_summary.json",
+    "v106": ROOT / "reports" / "v106_post_draw_status_sync_summary.json",
+    "v106_2": ROOT / "reports" / "v106_2_post_draw_historical_schema_sync_summary.json",
+    "v106_1": ROOT / "reports" / "v106_1_post_draw_dataset_sync_summary.json",
 }
 ACTIVE_TEXT_TARGETS = [
     ROOT / "streamlit_app.py",
@@ -112,6 +115,7 @@ def _refresh_chain_checks() -> dict[str, Any]:
         "has_step_102": "v102_build_runtime_hardening.py" in add_draws,
         "has_step_103": "v103_build_clean_release_checkpoint.py" in add_draws,
         "has_step_104": "v104_build_final_audit_refresh.py" in add_draws,
+        "has_step_106": "v106_build_post_draw_status_sync.py" in add_draws,
         "has_fast_mode": "FAST_MODEL_SCRIPTS" in add_draws,
         "heavy_scripts_declared": "v67_build_weighted_ticket_builder.py" in add_draws and "v75_build_neural_meta_learner.py" in add_draws,
         "timeout_guard": "timeout=timeout_seconds" in add_draws,
@@ -165,6 +169,11 @@ def build_final_audit_refresh_summary() -> dict[str, Any]:
             "check": "final_audit_current",
             "passed": refresh["has_step_103"] and refresh["has_step_104"],
             "details_bg": "Step 103/104 са включени след Step 102, така че финалният одит вече е актуален.",
+        },
+        {
+            "check": "post_draw_status_sync_active",
+            "passed": bool(refresh.get("has_step_106")),
+            "details_bg": "Step 106 е включен, за да синхронизира post-draw статусите след реален тираж.",
         },
         {
             "check": "active_text_encoding",
