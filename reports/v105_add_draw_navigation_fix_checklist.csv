@@ -1,0 +1,7 @@
+check,passed,details
+sidebar shortcut stores pending navigation group,True,Shortcut does not render the page directly after sidebar widgets are already created.
+sidebar shortcut stores pending add-draw page,True,Next rerun opens the add-draw page through normal navigation state.
+navigation group selectbox has stable key,True,The selected main section persists across Streamlit reruns.
+page radio has stable key,True,The selected page persists while the user types in draw input fields.
+choice is mirrored in session state,True,Other app layers can still read the current selected page.
+Step 105 marker present,True,Patch is auditable in streamlit_app.py.

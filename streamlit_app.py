@@ -2879,12 +2879,15 @@ def page_update_draws():
 
 # ADD_DRAW_SIDEBAR_SHORTCUT_START
 def _open_add_draw_from_sidebar_shortcut() -> None:
-    st.session_state["selected_page"] = "Добавяне на тираж"
-    st.session_state["page"] = "Добавяне на тираж"
-    st.session_state["current_page"] = "Добавяне на тираж"
-    st.session_state["main_section"] = "✅ Финален план за игра"
-    page_update_draws()
-    st.stop()
+    target_group = "✅ Финален план за игра"
+    target_page = "Добавяне на тираж"
+    st.session_state["_pending_navigation_group"] = target_group
+    st.session_state["_pending_navigation_page"] = target_page
+    st.session_state["selected_page"] = target_page
+    st.session_state["page"] = target_page
+    st.session_state["current_page"] = target_page
+    st.session_state["main_section"] = target_group
+    st.rerun()
 # ADD_DRAW_SIDEBAR_SHORTCUT_END
 def page_glossary() -> None:
     with st.expander(tr("term_help"), expanded=False):
@@ -3972,17 +3975,39 @@ def main() -> None:
         visible_navigation_groups['🗂️ Други'] = other_pages
     if not visible_navigation_groups:
         visible_navigation_groups['📋 Всички страници'] = list(pages.keys())
+    # STEP105_ADD_DRAW_NAVIGATION_PERSISTENCE_FIX_START
+    navigation_group_options = list(visible_navigation_groups.keys())
+    pending_navigation_group = st.session_state.pop("_pending_navigation_group", None)
+    pending_navigation_page = st.session_state.pop("_pending_navigation_page", None)
+
+    if pending_navigation_group in navigation_group_options:
+        st.session_state["nav_group_select"] = pending_navigation_group
+    if st.session_state.get("nav_group_select") not in navigation_group_options:
+        st.session_state["nav_group_select"] = navigation_group_options[0]
+
     selected_navigation_group = st.sidebar.selectbox(
         'Главен раздел',
-        list(visible_navigation_groups.keys()),
+        navigation_group_options,
+        key="nav_group_select",
     )
     available_navigation_pages = visible_navigation_groups.get(selected_navigation_group, list(pages.keys()))
-    choice = st.sidebar.radio('Страница', available_navigation_pages)
+    if not available_navigation_pages:
+        available_navigation_pages = list(pages.keys())
+
+    if pending_navigation_page in available_navigation_pages:
+        st.session_state["nav_page_radio"] = pending_navigation_page
+    if st.session_state.get("nav_page_radio") not in available_navigation_pages:
+        st.session_state["nav_page_radio"] = available_navigation_pages[0]
+
+    choice = st.sidebar.radio('Страница', available_navigation_pages, key="nav_page_radio")
+    st.session_state["selected_page"] = choice
+    st.session_state["page"] = choice
+    st.session_state["current_page"] = choice
+    # STEP105_ADD_DRAW_NAVIGATION_PERSISTENCE_FIX_END
     # STEP64_GROUPED_NAVIGATION_END
     if st.sidebar.button("➕ Добави нов тираж", use_container_width=True, key="sidebar_add_draw_shortcut_btn"):
-        _open_add_draw_from_sidebar_shortcut()
         st.cache_data.clear()
-        st.rerun()
+        _open_add_draw_from_sidebar_shortcut()
     pages[choice]()
 if __name__ == "__main__":
     main()

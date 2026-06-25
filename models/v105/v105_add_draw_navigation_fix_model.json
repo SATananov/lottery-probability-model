@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "step": "105",
+    "name": "Add Draw Navigation Persistence Fix",
+    "status": "NAVIGATION_PERSISTENT",
+    "generated_at": "2026-06-25T19:30:08",
+    "blocking_failures": 0,
+    "user_facing_result": "Бутонът 'Добави нов тираж' вече отваря страницата чрез устойчиво навигационно състояние и не трябва да връща към 'Потребителско меню' при въвеждане на числата.",
+    "checks": [
+      {
+        "check": "sidebar shortcut stores pending navigation group",
+        "passed": true,
+        "details": "Shortcut does not render the page directly after sidebar widgets are already created."
+      },
+      {
+        "check": "sidebar shortcut stores pending add-draw page",
+        "passed": true,
+        "details": "Next rerun opens the add-draw page through normal navigation state."
+      },
+      {
+        "check": "navigation group selectbox has stable key",
+        "passed": true,
+        "details": "The selected main section persists across Streamlit reruns."
+      },
+      {
+        "check": "page radio has stable key",
+        "passed": true,
+        "details": "The selected page persists while the user types in draw input fields."
+      },
+      {
+        "check": "choice is mirrored in session state",
+        "passed": true,
+        "details": "Other app layers can still read the current selected page."
+      },
+      {
+        "check": "Step 105 marker present",
+        "passed": true,
+        "details": "Patch is auditable in streamlit_app.py."
+      }
+    ]
+  }
+}
