@@ -1,9 +1,9 @@
 {
   "step": 101,
-  "status": "WAITING_NEXT_REAL_DRAW",
+  "status": "CHECK_REQUIRED",
   "title_bg": "Протокол за реална употреба",
-  "generated_at_utc": "2026-06-24T09:01:43+00:00",
-  "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW",
+  "generated_at_utc": "2026-06-25T16:36:52+00:00",
+  "step100_status": "CHECK_REQUIRED",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "strategy_type": "Хибрид",
@@ -17,20 +17,20 @@
     "historical": {
       "path": "data/historical_draws.csv",
       "exists": true,
-      "rows": 10058,
-      "latest_draw_date": "2026-06-21",
+      "rows": 10059,
+      "latest_draw_date": "2026-06-25",
       "latest_numbers": [
-        6,
-        13,
-        16,
-        19,
-        42,
-        44
+        5,
+        11,
+        44,
+        46,
+        47,
+        48
       ],
-      "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+      "latest_numbers_text": "5, 11, 44, 46, 47, 48",
       "year_min": 1958,
       "year_max": 2026,
-      "rows_2026": 49
+      "rows_2026": 50
     },
     "normalized": {
       "path": "data/v40_normalized_draw_events.csv",
@@ -68,36 +68,36 @@
       "year_max": 2026,
       "rows_2026": 49
     },
-    "historical_rows": 10058,
+    "historical_rows": 10059,
     "normalized_rows": 10058,
     "canonical_rows": 10058,
-    "datasets_synced": true,
-    "latest_draw_date": "2026-06-21",
+    "datasets_synced": false,
+    "latest_draw_date": "2026-06-25",
     "latest_numbers": [
-      6,
-      13,
-      16,
-      19,
-      42,
-      44
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
     ],
-    "latest_numbers_text": "6, 13, 16, 19, 42, 44",
+    "latest_numbers_text": "5, 11, 44, 46, 47, 48",
     "latest_draw_year": "2026",
-    "latest_draw_no": "48",
+    "latest_draw_no": "49",
     "latest_draw_position": "1"
   },
   "statuses": {
     "step95_status": "WAITING_NEXT_DRAW",
-    "step97_status": "READY",
-    "step98_status": "WAITING_NEXT_DRAW",
-    "step99_status": "READY_WAITING_NEXT_DRAW",
-    "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW"
+    "step97_status": "REVIEW",
+    "step98_status": "HAS_HISTORY",
+    "step99_status": "CHECK_REQUIRED",
+    "step100_status": "CHECK_REQUIRED"
   },
   "flow": {
     "real_use_protocol_page_wired": true,
     "step73_before_save": true,
     "step95_before_save": true,
-    "refresh_after_save": true,
+    "refresh_after_save": false,
     "add_draw_has_step100": true,
     "add_draw_has_step101": true,
     "step101_after_step100": true
@@ -150,30 +150,30 @@
     {
       "area_bg": "Step 100",
       "check_bg": "V1 lock е активен",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "V1_LOCKED_WAITING_NEXT_DRAW"
+      "details_bg": "CHECK_REQUIRED"
     },
     {
       "area_bg": "Step 100",
       "check_bg": "Няма Step 100 blocking failures",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "blocking_failures=0"
+      "details_bg": "blocking_failures=5"
     },
     {
       "area_bg": "Данни",
       "check_bg": "Dataset-ите са синхронизирани",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "historical=10058, normalized=10058, canonical=10058"
+      "details_bg": "historical=10059, normalized=10058, canonical=10058"
     },
     {
       "area_bg": "Данни",
       "check_bg": "Checkpoint latest draw остава 2026-06-21",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "2026-06-21 — 6, 13, 16, 19, 42, 44"
+      "details_bg": "2026-06-25 — 5, 11, 44, 46, 47, 48"
     },
     {
       "area_bg": "Активен план",
@@ -213,7 +213,7 @@
     {
       "area_bg": "Add Draw",
       "check_bg": "Refresh chain остава след save",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
       "details_bg": "refresh_models след save_draws"
     },
@@ -232,8 +232,44 @@
       "details_bg": "Протокол за реална употреба"
     }
   ],
-  "blocking_failures": [],
-  "next_action_bg": "Изчакай следващия реален тираж и го въведи през Добавяне на тираж.",
+  "blocking_failures": [
+    {
+      "area_bg": "Step 100",
+      "check_bg": "V1 lock е активен",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "CHECK_REQUIRED"
+    },
+    {
+      "area_bg": "Step 100",
+      "check_bg": "Няма Step 100 blocking failures",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "blocking_failures=5"
+    },
+    {
+      "area_bg": "Данни",
+      "check_bg": "Dataset-ите са синхронизирани",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "historical=10059, normalized=10058, canonical=10058"
+    },
+    {
+      "area_bg": "Данни",
+      "check_bg": "Checkpoint latest draw остава 2026-06-21",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "2026-06-25 — 5, 11, 44, 46, 47, 48"
+    },
+    {
+      "area_bg": "Add Draw",
+      "check_bg": "Refresh chain остава след save",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "refresh_models след save_draws"
+    }
+  ],
+  "next_action_bg": "Прегледай блокиращите проверки преди реална употреба.",
   "method_bg": "Step 101 е operational protocol слой. Той фиксира реда на работа след Step 100 и не променя прогнозната логика.",
   "safe_note_bg": "Step 101 е протокол за реална употреба след заключен Step 100. Той описва кога и как да се използва апът при следващ реален тираж. Не добавя нов модел, не променя математиката, не променя тегла, не генерира нови числа и не гарантира печалба.",
   "locked_scope_bg": "Без нови модели, без промяна на тегла, без промяна на ticket builder, без промяна на dataset преди следващ реален тираж."

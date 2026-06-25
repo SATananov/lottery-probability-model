@@ -165,7 +165,7 @@
     "reserve_count": 8,
     "safe_note": "Step 77 подрежда и препоръчва кандидат комбинации според статистически сигнали, обяснимост и структурна валидация. Това не е гаранция за печалба.",
     "source_step": "76",
-    "state_hash": "fb903823e50ef03e",
+    "state_hash": "95c0efee983e81af",
     "status": "OK",
     "step": 77,
     "strong_count": 0,
@@ -185,7 +185,7 @@
     "valid_draws": 10058,
     "watch_count": 0
   },
-  "state_hash": "4c3373649e4bab96",
+  "state_hash": "3dcb99e8f07d683d",
   "summary": {
     "active_numbers_coverage": "2,7,21,25,27,28,30,34,40,42,43,45",
     "active_tickets": 3,
@@ -206,7 +206,7 @@
     "reserve_tickets": 3,
     "safe_note": "Step 78 подрежда финален план за игра от вече оценените кандидат комбинации. Това е статистическа организация и контрол на риска, не гаранция за печалба.",
     "source_step": "77",
-    "state_hash": "4c3373649e4bab96",
+    "state_hash": "3dcb99e8f07d683d",
     "status": "OK",
     "step": 78,
     "unique_active_numbers": 12,

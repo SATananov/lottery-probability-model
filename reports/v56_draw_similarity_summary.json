@@ -2,10 +2,10 @@
   "status": "completed",
   "module": "Draw Similarity Search",
   "version": "v56",
-  "total_draws": 10058,
+  "total_draws": 10059,
   "sample_query": "6, 13, 16, 19, 42, 44",
   "sample_result": {
-    "total_draws": 10058,
+    "total_draws": 10059,
     "query_count": 1,
     "valid_count": 1,
     "invalid_count": 0,
@@ -26,7 +26,7 @@
         "query_text": "6, 13, 16, 19, 42, 44",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10058,
+        "total_draws": 10059,
         "historical_similarity_score": 100.0,
         "band": "Има точно историческо съвпадение",
         "max_match_count": 6,
@@ -40,7 +40,7 @@
           "4": 10,
           "3": 187,
           "2": 1327,
-          "1": 4146,
+          "1": 4147,
           "0": 4387
         },
         "closest_draws": [

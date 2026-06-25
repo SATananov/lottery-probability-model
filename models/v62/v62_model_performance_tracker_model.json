@@ -2,29 +2,30 @@
   "summary": {
     "step": "62",
     "name": "Model Performance Tracker",
-    "total_draws": 10058,
+    "total_draws": 10059,
     "latest_draw": {
-      "date": "2026-06-21",
+      "date": "2026-06-25",
       "year": "2026",
-      "draw_number": "48",
+      "draw_number": "49",
       "draw_position": "1",
       "numbers": [
-        6,
-        13,
-        16,
-        19,
-        42,
-        44
+        5,
+        11,
+        44,
+        46,
+        47,
+        48
       ]
     },
     "models_evaluated": 10,
     "models_with_candidate_signal": 4,
-    "best_hits": 6,
+    "best_hits": 2,
     "best_models": [
-      "v41_latest_predictions"
+      "v44_1_final_ensemble_ticket",
+      "v42_combined_prediction"
     ],
-    "average_best_hits": 2.75,
-    "history_rows": 10,
+    "average_best_hits": 1.5,
+    "history_rows": 20,
     "generated_reports": [
       "reports/v62_model_performance_summary.json",
       "reports/v62_model_performance_summary.md",
@@ -35,25 +36,14 @@
   },
   "latest_performance": [
     {
-      "model_name": "v41_latest_predictions",
-      "source_file": "models\\v41\\v41_latest_predictions.json",
-      "source_exists": true,
-      "candidate_count": 4,
-      "best_hits": 6,
-      "best_candidate": "6 13 16 19 42 44",
-      "hit_numbers": "6 13 16 19 42 44",
-      "coverage_percent": 100.0,
-      "status": "ok"
-    },
-    {
       "model_name": "v44_1_final_ensemble_ticket",
       "source_file": "models\\v44_1\\v44_1_final_ensemble_ticket_prediction.json",
       "source_exists": true,
       "candidate_count": 4,
-      "best_hits": 3,
-      "best_candidate": "1 2 13 16 37 42",
-      "hit_numbers": "13 16 42",
-      "coverage_percent": 50.0,
+      "best_hits": 2,
+      "best_candidate": "1 2 11 13 42 48",
+      "hit_numbers": "11 48",
+      "coverage_percent": 33.33,
       "status": "ok"
     },
     {
@@ -62,9 +52,20 @@
       "source_exists": true,
       "candidate_count": 1,
       "best_hits": 2,
-      "best_candidate": "2 13 37 38 42 49",
-      "hit_numbers": "13 42",
+      "best_candidate": "11 13 37 38 42 48",
+      "hit_numbers": "11 48",
       "coverage_percent": 33.33,
+      "status": "ok"
+    },
+    {
+      "model_name": "v41_latest_predictions",
+      "source_file": "models\\v41\\v41_latest_predictions.json",
+      "source_exists": true,
+      "candidate_count": 4,
+      "best_hits": 1,
+      "best_candidate": "1 3 7 9 11 21",
+      "hit_numbers": "11",
+      "coverage_percent": 16.67,
       "status": "ok"
     },
     {
@@ -72,10 +73,10 @@
       "source_file": "models\\v45\\v45_final_prediction_tickets.json",
       "source_exists": true,
       "candidate_count": 4,
-      "best_hits": 0,
+      "best_hits": 1,
       "best_candidate": "4 11 18 21 34 36",
-      "hit_numbers": "",
-      "coverage_percent": 0.0,
+      "hit_numbers": "11",
+      "coverage_percent": 16.67,
       "status": "ok"
     },
     {
@@ -102,7 +103,7 @@
     },
     {
       "model_name": "v57_hot_cold_stable",
-      "source_file": "models/v57/v57_hot_cold_stable_model.json",
+      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v57\\v57_hot_cold_stable_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,
@@ -113,7 +114,7 @@
     },
     {
       "model_name": "v58_smart_ensemble",
-      "source_file": "models/v58/v58_smart_ensemble_model.json",
+      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v58\\v58_smart_ensemble_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,
@@ -124,7 +125,7 @@
     },
     {
       "model_name": "v59_smart_ticket_builder_2",
-      "source_file": "models/v59/v59_smart_ticket_builder_2_model.json",
+      "source_file": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\models\\v59\\v59_smart_ticket_builder_2_model.json",
       "source_exists": false,
       "candidate_count": 0,
       "best_hits": 0,

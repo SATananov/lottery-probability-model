@@ -193,7 +193,7 @@
     "warning_items": 10,
     "warning_tickets": 0
   },
-  "state_hash": "fb903823e50ef03e",
+  "state_hash": "95c0efee983e81af",
   "summary": {
     "best_decision_score": 62.744,
     "best_numbers": "2,21,25,34,43,45",
@@ -210,7 +210,7 @@
     "reserve_count": 8,
     "safe_note": "Step 77 подрежда и препоръчва кандидат комбинации според статистически сигнали, обяснимост и структурна валидация. Това не е гаранция за печалба.",
     "source_step": "76",
-    "state_hash": "fb903823e50ef03e",
+    "state_hash": "95c0efee983e81af",
     "status": "OK",
     "step": 77,
     "strong_count": 0,

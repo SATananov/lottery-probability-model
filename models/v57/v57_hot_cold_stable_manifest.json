@@ -2,9 +2,9 @@
   "module": "hot_cold_stable_number_center",
   "version": "v57",
   "user_facing_name_bg": "Горещи, студени и стабилни числа",
-  "total_draws": 10058,
+  "total_draws": 10059,
   "numbers_profiled": 49,
-  "data_path": "data/historical_draws.csv",
+  "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
   "purpose_bg": "Класифицира числата според историческа сила, скорошна активност, закъснение и стабилност.",
   "not_a_prediction_bg": "Модулът не предсказва бъдещи тегления и не гарантира печалба. Той показва само историческо поведение и текущ статистически ритъм.",
   "metrics": [

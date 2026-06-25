@@ -1,53 +1,53 @@
 {
   "status": "completed",
-  "module": "Умен генератор на комбинации 2",
+  "module": "Smart Ticket Builder 2",
   "version": "v59",
-  "total_draws": 10058,
+  "total_draws": 10059,
   "selected_count": 5,
-  "average_final_score": 80.56,
-  "best_score": 81.22,
-  "weakest_score": 79.38,
-  "coverage_score": 88.0,
+  "average_final_score": 81.24,
+  "best_score": 83.41,
+  "weakest_score": 79.91,
+  "coverage_score": 86.8,
   "selected_tickets": [
     [
       2,
       17,
       24,
       31,
-      35,
-      38
+      34,
+      37
     ],
     [
-      2,
-      13,
+      11,
+      12,
       17,
-      29,
+      28,
       34,
-      47
+      43
     ],
     [
       4,
-      8,
-      13,
+      12,
+      27,
       29,
       37,
-      38
+      48
     ],
     [
       4,
       9,
-      25,
-      37,
-      44,
+      24,
+      36,
+      43,
       46
     ],
     [
-      1,
-      16,
+      11,
       21,
-      42,
-      43,
-      48
+      22,
+      28,
+      33,
+      38
     ]
   ],
   "safety_bg": "Умен генератор на комбинации 2 генерира статистически балансирани предложения. Той не предсказва печеливши числа и не гарантира печалба."

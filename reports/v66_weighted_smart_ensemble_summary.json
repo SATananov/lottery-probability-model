@@ -1,6 +1,6 @@
 {
   "step": "66",
-  "name": "Weighted Smart Комбиниран анализ Integration",
+  "name": "Претеглена обединена оценка",
   "source_weights": "reports/v65_model_weights.csv",
   "numbers_scored": 49,
   "sources_used": 8,
@@ -18,12 +18,12 @@
   "top_weighted_score_percent": 100.0,
   "top_number_status": "водещ претеглен сигнал",
   "reference_tickets_count": 4,
-  "generated_at": "2026-06-22T12:18:36+00:00",
+  "generated_at": "2026-06-25T16:36:39+00:00",
   "generated_reports": [
     "reports/v66_weighted_smart_ensemble_summary.json",
     "reports/v66_weighted_smart_ensemble_summary.md",
     "reports/v66_weighted_smart_ensemble_scores.csv",
     "models/v66/v66_weighted_smart_ensemble_model.json"
   ],
-  "safe_note": "This is a weighted statistical комбиниран анализ layer. It is not a гаранция за печалба or a promise of future lottery results."
+  "safe_note": "This is a weighted statistical ensemble layer. It is not a гаранция за печалба or a promise of future lottery results."
 }

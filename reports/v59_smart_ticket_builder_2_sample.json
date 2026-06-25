@@ -1,5 +1,5 @@
 {
-  "total_draws": 10058,
+  "total_draws": 10059,
   "strategy": "Балансиран",
   "seed": 59,
   "requested_ticket_count": 5,
@@ -13,40 +13,40 @@
       17,
       24,
       31,
-      35,
-      38
+      34,
+      37
     ],
     [
-      2,
-      13,
+      11,
+      12,
       17,
-      29,
+      28,
       34,
-      47
+      43
     ],
     [
       4,
-      8,
-      13,
+      12,
+      27,
       29,
       37,
-      38
+      48
     ],
     [
       4,
       9,
-      25,
-      37,
-      44,
+      24,
+      36,
+      43,
       46
     ],
     [
-      1,
-      16,
+      11,
       21,
-      42,
-      43,
-      48
+      22,
+      28,
+      33,
+      38
     ]
   ],
   "selected_rows": [
@@ -56,16 +56,16 @@
         17,
         24,
         31,
-        35,
-        38
+        34,
+        37
       ],
-      "combination_text": "2, 17, 24, 31, 35, 38",
-      "final_score": 81.22,
-      "band": "Добра статистическа структура",
+      "combination_text": "2, 17, 24, 31, 34, 37",
+      "final_score": 83.41,
+      "band": "Много силна статистическа структура",
       "pattern_score": 100.0,
-      "coverage_score": 88.0,
-      "number_profile_score": 61.42,
-      "hot_cold_balance_score": 80.0,
+      "coverage_score": 86.8,
+      "number_profile_score": 67.17,
+      "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
         "Не са открити сериозни проблеми в обединената оценка."
@@ -77,19 +77,19 @@
     },
     {
       "combination": [
-        2,
-        13,
+        11,
+        12,
         17,
-        29,
+        28,
         34,
-        47
+        43
       ],
-      "combination_text": "2, 13, 17, 29, 34, 47",
-      "final_score": 81.17,
+      "combination_text": "11, 12, 17, 28, 34, 43",
+      "final_score": 81.67,
       "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
-      "coverage_score": 88.0,
-      "number_profile_score": 59.79,
+      "pattern_score": 96.0,
+      "coverage_score": 86.8,
+      "number_profile_score": 63.59,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -103,18 +103,18 @@
     {
       "combination": [
         4,
-        8,
-        13,
+        12,
+        27,
         29,
         37,
-        38
+        48
       ],
-      "combination_text": "4, 8, 13, 29, 37, 38",
-      "final_score": 81.11,
+      "combination_text": "4, 12, 27, 29, 37, 48",
+      "final_score": 80.91,
       "band": "Добра статистическа структура",
-      "pattern_score": 96.0,
-      "coverage_score": 88.0,
-      "number_profile_score": 60.47,
+      "pattern_score": 97.0,
+      "coverage_score": 86.8,
+      "number_profile_score": 59.5,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -129,17 +129,17 @@
       "combination": [
         4,
         9,
-        25,
-        37,
-        44,
+        24,
+        36,
+        43,
         46
       ],
-      "combination_text": "4, 9, 25, 37, 44, 46",
-      "final_score": 79.9,
+      "combination_text": "4, 9, 24, 36, 43, 46",
+      "final_score": 80.28,
       "band": "Добра статистическа структура",
       "pattern_score": 97.0,
-      "coverage_score": 88.0,
-      "number_profile_score": 54.48,
+      "coverage_score": 86.8,
+      "number_profile_score": 56.88,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -152,19 +152,19 @@
     },
     {
       "combination": [
-        1,
-        16,
+        11,
         21,
-        42,
-        43,
-        48
+        22,
+        28,
+        33,
+        38
       ],
-      "combination_text": "1, 16, 21, 42, 43, 48",
-      "final_score": 79.38,
+      "combination_text": "11, 21, 22, 28, 33, 38",
+      "final_score": 79.91,
       "band": "Добра статистическа структура",
-      "pattern_score": 96.0,
-      "coverage_score": 88.0,
-      "number_profile_score": 53.23,
+      "pattern_score": 92.0,
+      "coverage_score": 86.8,
+      "number_profile_score": 59.93,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -183,16 +183,141 @@
         17,
         24,
         31,
-        35,
-        38
+        34,
+        37
       ],
-      "combination_text": "2, 17, 24, 31, 35, 38",
-      "final_score": 79.14,
+      "combination_text": "2, 17, 24, 31, 34, 37",
+      "final_score": 81.52,
       "band": "Добра статистическа структура",
       "pattern_score": 100.0,
       "coverage_score": 75.0,
-      "number_profile_score": 61.42,
-      "hot_cold_balance_score": 80.0,
+      "number_profile_score": 67.17,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        2,
+        17,
+        24,
+        26,
+        35,
+        43
+      ],
+      "combination_text": "2, 17, 24, 26, 35, 43",
+      "final_score": 79.98,
+      "band": "Добра статистическа структура",
+      "pattern_score": 100.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 60.75,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        11,
+        12,
+        17,
+        28,
+        34,
+        43
+      ],
+      "combination_text": "11, 12, 17, 28, 34, 43",
+      "final_score": 79.78,
+      "band": "Добра статистическа структура",
+      "pattern_score": 96.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 63.59,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        4,
+        12,
+        27,
+        29,
+        37,
+        48
+      ],
+      "combination_text": "4, 12, 27, 29, 37, 48",
+      "final_score": 79.02,
+      "band": "Добра статистическа структура",
+      "pattern_score": 97.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 59.5,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        3,
+        15,
+        18,
+        34,
+        37,
+        42
+      ],
+      "combination_text": "3, 15, 18, 34, 37, 42",
+      "final_score": 78.78,
+      "band": "Добра статистическа структура",
+      "pattern_score": 100.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 55.73,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        8,
+        22,
+        24,
+        34,
+        35,
+        43
+      ],
+      "combination_text": "8, 22, 24, 34, 35, 43",
+      "final_score": 78.78,
+      "band": "Добра статистическа структура",
+      "pattern_score": 93.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 62.15,
+      "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
         "Не са открити сериозни проблеми в обединената оценка."
@@ -212,61 +337,11 @@
         47
       ],
       "combination_text": "2, 13, 17, 29, 34, 47",
-      "final_score": 79.09,
+      "final_score": 78.76,
       "band": "Добра статистическа структура",
       "pattern_score": 97.0,
       "coverage_score": 75.0,
-      "number_profile_score": 59.79,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        4,
-        8,
-        13,
-        29,
-        37,
-        38
-      ],
-      "combination_text": "4, 8, 13, 29, 37, 38",
-      "final_score": 79.03,
-      "band": "Добра статистическа структура",
-      "pattern_score": 96.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 60.47,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        4,
-        12,
-        28,
-        29,
-        37,
-        48
-      ],
-      "combination_text": "4, 12, 28, 29, 37, 48",
-      "final_score": 78.81,
-      "band": "Добра статистическа структура",
-      "pattern_score": 90.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 65.04,
+      "number_profile_score": 58.4,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -287,11 +362,11 @@
         49
       ],
       "combination_text": "10, 13, 20, 26, 37, 49",
-      "final_score": 78.23,
+      "final_score": 78.56,
       "band": "Добра статистическа структура",
       "pattern_score": 100.0,
       "coverage_score": 75.0,
-      "number_profile_score": 53.47,
+      "number_profile_score": 54.83,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -304,20 +379,20 @@
     },
     {
       "combination": [
-        2,
-        17,
+        4,
+        9,
         24,
-        26,
         36,
-        43
+        43,
+        46
       ],
-      "combination_text": "2, 17, 24, 26, 36, 43",
-      "final_score": 78.18,
+      "combination_text": "4, 9, 24, 36, 43, 46",
+      "final_score": 78.39,
       "band": "Добра статистическа структура",
       "pattern_score": 97.0,
       "coverage_score": 75.0,
-      "number_profile_score": 60.17,
-      "hot_cold_balance_score": 80.0,
+      "number_profile_score": 56.88,
+      "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
         "Не са открити сериозни проблеми в обединената оценка."
@@ -337,11 +412,11 @@
         38
       ],
       "combination_text": "11, 21, 22, 28, 33, 38",
-      "final_score": 77.87,
+      "final_score": 78.02,
       "band": "Добра статистическа структура",
       "pattern_score": 92.0,
       "coverage_score": 75.0,
-      "number_profile_score": 59.31,
+      "number_profile_score": 59.93,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -354,44 +429,19 @@
     },
     {
       "combination": [
-        4,
-        9,
+        11,
+        22,
         25,
-        37,
-        44,
-        46
+        26,
+        38,
+        49
       ],
-      "combination_text": "4, 9, 25, 37, 44, 46",
-      "final_score": 77.82,
+      "combination_text": "11, 22, 25, 26, 38, 49",
+      "final_score": 77.97,
       "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
+      "pattern_score": 93.0,
       "coverage_score": 75.0,
-      "number_profile_score": 54.48,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        8,
-        12,
-        23,
-        37,
-        45,
-        46
-      ],
-      "combination_text": "8, 12, 23, 37, 45, 46",
-      "final_score": 77.63,
-      "band": "Добра статистическа структура",
-      "pattern_score": 96.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 54.64,
+      "number_profile_score": 58.78,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -412,134 +462,9 @@
         44
       ],
       "combination_text": "6, 17, 24, 29, 34, 44",
-      "final_score": 77.52,
+      "final_score": 77.85,
       "band": "Добра статистическа структура",
       "pattern_score": 89.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 60.57,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        4,
-        17,
-        22,
-        28,
-        35,
-        38
-      ],
-      "combination_text": "4, 17, 22, 28, 35, 38",
-      "final_score": 77.4,
-      "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 63.25,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 66.0,
-      "warnings": [
-        "Комбинацията има много близки исторически тиражи с 5 съвпадения."
-      ],
-      "recommendations": [
-        "Използвай това само като контекст за сходство с минали тегления.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        11,
-        17,
-        33,
-        38,
-        42,
-        48
-      ],
-      "combination_text": "11, 17, 33, 38, 42, 48",
-      "final_score": 77.39,
-      "band": "Добра статистическа структура",
-      "pattern_score": 87.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 61.86,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        3,
-        15,
-        18,
-        35,
-        37,
-        42
-      ],
-      "combination_text": "3, 15, 18, 35, 37, 42",
-      "final_score": 77.37,
-      "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 52.62,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        1,
-        16,
-        21,
-        42,
-        43,
-        48
-      ],
-      "combination_text": "1, 16, 21, 42, 43, 48",
-      "final_score": 77.3,
-      "band": "Добра статистическа структура",
-      "pattern_score": 96.0,
-      "coverage_score": 75.0,
-      "number_profile_score": 53.23,
-      "hot_cold_balance_score": 85.0,
-      "similarity_context_score": 80.0,
-      "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
-      ],
-      "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
-        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
-      ]
-    },
-    {
-      "combination": [
-        8,
-        22,
-        24,
-        34,
-        36,
-        43
-      ],
-      "combination_text": "8, 22, 24, 34, 36, 43",
-      "final_score": 77.19,
-      "band": "Добра статистическа структура",
-      "pattern_score": 86.0,
       "coverage_score": 75.0,
       "number_profile_score": 61.94,
       "hot_cold_balance_score": 85.0,
@@ -554,19 +479,19 @@
     },
     {
       "combination": [
-        2,
-        7,
-        18,
-        21,
+        12,
+        24,
+        29,
         30,
-        45
+        35,
+        43
       ],
-      "combination_text": "2, 7, 18, 21, 30, 45",
-      "final_score": 77.11,
+      "combination_text": "12, 24, 29, 30, 35, 43",
+      "final_score": 77.63,
       "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
+      "pattern_score": 93.0,
       "coverage_score": 75.0,
-      "number_profile_score": 51.53,
+      "number_profile_score": 57.38,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -579,19 +504,19 @@
     },
     {
       "combination": [
-        10,
-        21,
-        24,
-        39,
-        42,
-        48
+        9,
+        14,
+        17,
+        23,
+        29,
+        38
       ],
-      "combination_text": "10, 21, 24, 39, 42, 48",
-      "final_score": 77.08,
+      "combination_text": "9, 14, 17, 23, 29, 38",
+      "final_score": 77.54,
       "band": "Добра статистическа структура",
-      "pattern_score": 97.0,
+      "pattern_score": 94.0,
       "coverage_score": 75.0,
-      "number_profile_score": 51.42,
+      "number_profile_score": 56.08,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -605,18 +530,43 @@
     {
       "combination": [
         4,
-        13,
         17,
-        18,
-        34,
-        35
+        22,
+        27,
+        35,
+        38
       ],
-      "combination_text": "4, 13, 17, 18, 34, 35",
-      "final_score": 76.99,
+      "combination_text": "4, 17, 22, 27, 35, 38",
+      "final_score": 77.51,
       "band": "Добра статистическа структура",
-      "pattern_score": 83.0,
+      "pattern_score": 100.0,
       "coverage_score": 75.0,
-      "number_profile_score": 63.87,
+      "number_profile_score": 60.94,
+      "hot_cold_balance_score": 85.0,
+      "similarity_context_score": 66.0,
+      "warnings": [
+        "Комбинацията има много близки исторически тиражи с 5 съвпадения."
+      ],
+      "recommendations": [
+        "Използвай това само като контекст за сходство с минали тегления.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        2,
+        7,
+        18,
+        21,
+        30,
+        45
+      ],
+      "combination_text": "2, 7, 18, 21, 30, 45",
+      "final_score": 77.32,
+      "band": "Добра статистическа структура",
+      "pattern_score": 97.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 52.4,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -630,18 +580,68 @@
     {
       "combination": [
         11,
-        16,
-        28,
-        37,
-        46,
-        47
+        17,
+        22,
+        33,
+        42,
+        43
       ],
-      "combination_text": "11, 16, 28, 37, 46, 47",
-      "final_score": 76.83,
+      "combination_text": "11, 17, 22, 33, 42, 43",
+      "final_score": 77.22,
       "band": "Добра статистическа структура",
       "pattern_score": 93.0,
       "coverage_score": 75.0,
-      "number_profile_score": 54.06,
+      "number_profile_score": 59.83,
+      "hot_cold_balance_score": 80.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        8,
+        9,
+        22,
+        33,
+        44,
+        49
+      ],
+      "combination_text": "8, 9, 22, 33, 44, 49",
+      "final_score": 77.07,
+      "band": "Добра статистическа структура",
+      "pattern_score": 96.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 56.47,
+      "hot_cold_balance_score": 80.0,
+      "similarity_context_score": 80.0,
+      "warnings": [
+        "Не са открити сериозни проблеми в обединената оценка."
+      ],
+      "recommendations": [
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
+      ]
+    },
+    {
+      "combination": [
+        8,
+        23,
+        27,
+        31,
+        34,
+        36
+      ],
+      "combination_text": "8, 23, 27, 31, 34, 36",
+      "final_score": 76.93,
+      "band": "Добра статистическа структура",
+      "pattern_score": 93.0,
+      "coverage_score": 75.0,
+      "number_profile_score": 54.44,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -654,19 +654,19 @@
     },
     {
       "combination": [
-        1,
-        20,
-        21,
-        31,
-        37,
-        48
+        4,
+        13,
+        17,
+        18,
+        33,
+        34
       ],
-      "combination_text": "1, 20, 21, 31, 37, 48",
-      "final_score": 76.7,
+      "combination_text": "4, 13, 17, 18, 33, 34",
+      "final_score": 76.83,
       "band": "Добра статистическа структура",
-      "pattern_score": 85.0,
+      "pattern_score": 83.0,
       "coverage_score": 75.0,
-      "number_profile_score": 60.83,
+      "number_profile_score": 63.21,
       "hot_cold_balance_score": 85.0,
       "similarity_context_score": 80.0,
       "warnings": [
@@ -679,73 +679,71 @@
     }
   ],
   "final_ensemble": {
-    "total_draws": 10058,
+    "total_draws": 10059,
     "query_count": 5,
     "valid_count": 5,
     "invalid_count": 0,
-    "average_final_score": 80.56,
-    "best_score": 81.22,
-    "weakest_score": 79.38,
+    "average_final_score": 81.24,
+    "best_score": 83.41,
+    "weakest_score": 79.91,
     "portfolio_coverage": {
       "ticket_count": 5,
       "invalid_count": 0,
       "total_number_slots": 30,
       "unique_numbers": [
-        1,
         2,
         4,
-        8,
         9,
-        13,
-        16,
+        11,
+        12,
         17,
         21,
+        22,
         24,
-        25,
+        27,
+        28,
         29,
         31,
+        33,
         34,
-        35,
+        36,
         37,
         38,
-        42,
         43,
-        44,
         46,
-        47,
         48
       ],
-      "unique_numbers_count": 23,
-      "unique_coverage_out_of_49": 0.4694,
+      "unique_numbers_count": 21,
+      "unique_coverage_out_of_49": 0.4286,
       "max_possible_unique_numbers": 30,
-      "coverage_efficiency": 0.7667,
-      "average_pairwise_overlap": 0.7,
+      "coverage_efficiency": 0.7,
+      "average_pairwise_overlap": 0.9,
       "maximum_pairwise_overlap": 2,
-      "repeated_pairs_count": 3,
+      "repeated_pairs_count": 2,
       "repeated_triples_count": 0,
       "duplicate_tickets_count": 0,
       "odd_even_distribution": {
-        "odd": 16,
-        "even": 14
+        "odd": 14,
+        "even": 16
       },
       "low_high_distribution": {
         "low_1_24": 14,
         "high_25_49": 16
       },
       "range_distribution": {
-        "1-9": 7,
-        "10-19": 5,
-        "20-29": 5,
-        "30-39": 7,
-        "40-49": 6
+        "1-9": 4,
+        "10-19": 6,
+        "20-29": 8,
+        "30-39": 8,
+        "40-49": 4
       },
-      "coverage_score": 88.0,
+      "coverage_score": 86.8,
       "band": "Отлично покритие",
       "warnings": [
         "Не са открити сериозни проблеми в покритието."
       ],
       "recommendations": [
-        "Фишът има приемливо разнообразие. Можеш да го сравниш и с оценката на комбинация и анализа на двойки/групи."
+        "Фишът има приемливо разнообразие. Можеш да го сравниш и с оценката на фиш и анализа на двойки/групи."
       ],
       "validation_rows": [
         {
@@ -755,24 +753,24 @@
             17,
             24,
             31,
-            35,
-            38
+            34,
+            37
           ],
-          "combination_text": "2, 17, 24, 31, 35, 38",
+          "combination_text": "2, 17, 24, 31, 34, 37",
           "is_valid": true,
           "status": "Валидна"
         },
         {
           "ticket_index": 2,
           "combination": [
-            2,
-            13,
+            11,
+            12,
             17,
-            29,
+            28,
             34,
-            47
+            43
           ],
-          "combination_text": "2, 13, 17, 29, 34, 47",
+          "combination_text": "11, 12, 17, 28, 34, 43",
           "is_valid": true,
           "status": "Валидна"
         },
@@ -780,13 +778,13 @@
           "ticket_index": 3,
           "combination": [
             4,
-            8,
-            13,
+            12,
+            27,
             29,
             37,
-            38
+            48
           ],
-          "combination_text": "4, 8, 13, 29, 37, 38",
+          "combination_text": "4, 12, 27, 29, 37, 48",
           "is_valid": true,
           "status": "Валидна"
         },
@@ -795,26 +793,26 @@
           "combination": [
             4,
             9,
-            25,
-            37,
-            44,
+            24,
+            36,
+            43,
             46
           ],
-          "combination_text": "4, 9, 25, 37, 44, 46",
+          "combination_text": "4, 9, 24, 36, 43, 46",
           "is_valid": true,
           "status": "Валидна"
         },
         {
           "ticket_index": 5,
           "combination": [
-            1,
-            16,
+            11,
             21,
-            42,
-            43,
-            48
+            22,
+            28,
+            33,
+            38
           ],
-          "combination_text": "1, 16, 21, 42, 43, 48",
+          "combination_text": "11, 21, 22, 28, 33, 38",
           "is_valid": true,
           "status": "Валидна"
         }
@@ -822,22 +820,15 @@
       "top_repeated_pairs": [
         {
           "pair": [
-            2,
-            17
+            11,
+            28
           ],
           "count": 2
         },
         {
           "pair": [
-            4,
-            37
-          ],
-          "count": 2
-        },
-        {
-          "pair": [
-            13,
-            29
+            17,
+            34
           ],
           "count": 2
         }
@@ -852,19 +843,19 @@
           17,
           24,
           31,
-          35,
-          38
+          34,
+          37
         ],
-        "combination_text": "2, 17, 24, 31, 35, 38",
+        "combination_text": "2, 17, 24, 31, 34, 37",
         "is_valid": true,
         "status": "Валидна",
-        "final_score": 81.22,
-        "band": "Добра статистическа структура",
+        "final_score": 83.41,
+        "band": "Много силна статистическа структура",
         "components": {
           "pattern_score": 100.0,
-          "coverage_score": 88.0,
-          "number_profile_score": 61.42,
-          "hot_cold_balance_score": 80.0,
+          "coverage_score": 86.8,
+          "number_profile_score": 67.17,
+          "hot_cold_balance_score": 85.0,
           "similarity_context_score": 80.0
         },
         "pattern": {
@@ -874,13 +865,13 @@
             17,
             24,
             31,
-            35,
-            38
+            34,
+            37
           ],
-          "combination_text": "2, 17, 24, 31, 35, 38",
+          "combination_text": "2, 17, 24, 31, 34, 37",
           "is_valid": true,
           "status": "Валидна",
-          "sum": 147,
+          "sum": 145,
           "sum_band": "Балансирана сума",
           "odd_count": 3,
           "even_count": 3,
@@ -890,15 +881,15 @@
             15,
             7,
             7,
-            4,
+            3,
             3
           ],
           "min_gap": 3,
           "max_gap": 15,
-          "average_gap": 7.2,
+          "average_gap": 7.0,
           "longest_consecutive_run": 1,
           "consecutive_pairs": 0,
-          "max_same_final_digit_count": 1,
+          "max_same_final_digit_count": 2,
           "range_count_used": 4,
           "range_distribution": {
             "1-9": 1,
@@ -912,11 +903,11 @@
             "1": 1,
             "2": 1,
             "3": 0,
-            "4": 1,
-            "5": 1,
+            "4": 2,
+            "5": 0,
             "6": 0,
-            "7": 1,
-            "8": 1,
+            "7": 2,
+            "8": 0,
             "9": 0
           },
           "pattern_score": 100.0,
@@ -935,95 +926,161 @@
             17,
             24,
             31,
-            35,
-            38
+            34,
+            37
           ],
-          "query_text": "2, 17, 24, 31, 35, 38",
+          "query_text": "2, 17, 24, 31, 34, 37",
           "is_valid": true,
           "status": "Валидна",
-          "total_draws": 10058,
-          "historical_similarity_score": 60.67,
+          "total_draws": 10059,
+          "historical_similarity_score": 61.67,
           "band": "Има близки исторически тиражи",
           "max_match_count": 4,
           "exact_matches_count": 0,
           "five_matches_count": 0,
-          "four_matches_count": 6,
-          "three_matches_count": 211,
+          "four_matches_count": 15,
+          "three_matches_count": 189,
           "match_distribution": {
             "6": 0,
             "5": 0,
-            "4": 6,
-            "3": 211,
-            "2": 1325,
-            "1": 4075,
-            "0": 4441
+            "4": 15,
+            "3": 189,
+            "2": 1396,
+            "1": 4056,
+            "0": 4403
           },
           "closest_draws": [
             {
-              "event_index": 9780,
-              "year": 2023,
-              "draw_no": 9780,
+              "event_index": 9907,
+              "year": 2025,
+              "draw_no": 9907,
               "date": "",
               "draw_numbers": [
                 2,
                 17,
-                30,
-                35,
-                38,
-                41
-              ],
-              "draw_numbers_text": "2, 17, 30, 35, 38, 41",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                35,
-                38
-              ],
-              "matching_numbers_text": "2, 17, 35, 38",
-              "different_query_numbers": [
-                24,
-                31
-              ],
-              "different_query_numbers_text": "24, 31",
-              "different_draw_numbers": [
-                30,
-                41
-              ],
-              "different_draw_numbers_text": "30, 41"
-            },
-            {
-              "event_index": 8526,
-              "year": 2013,
-              "draw_no": 8526,
-              "date": "",
-              "draw_numbers": [
-                24,
-                29,
+                26,
                 31,
-                35,
                 37,
-                38
+                44
               ],
-              "draw_numbers_text": "24, 29, 31, 35, 37, 38",
+              "draw_numbers_text": "2, 17, 26, 31, 37, 44",
               "match_count": 4,
               "matching_numbers": [
-                24,
-                31,
-                35,
-                38
-              ],
-              "matching_numbers_text": "24, 31, 35, 38",
-              "different_query_numbers": [
                 2,
-                17
-              ],
-              "different_query_numbers_text": "2, 17",
-              "different_draw_numbers": [
-                29,
+                17,
+                31,
                 37
               ],
-              "different_draw_numbers_text": "29, 37"
+              "matching_numbers_text": "2, 17, 31, 37",
+              "different_query_numbers": [
+                24,
+                34
+              ],
+              "different_query_numbers_text": "24, 34",
+              "different_draw_numbers": [
+                26,
+                44
+              ],
+              "different_draw_numbers_text": "26, 44"
+            },
+            {
+              "event_index": 9555,
+              "year": 2021,
+              "draw_no": 9555,
+              "date": "",
+              "draw_numbers": [
+                17,
+                23,
+                29,
+                31,
+                34,
+                37
+              ],
+              "draw_numbers_text": "17, 23, 29, 31, 34, 37",
+              "match_count": 4,
+              "matching_numbers": [
+                17,
+                31,
+                34,
+                37
+              ],
+              "matching_numbers_text": "17, 31, 34, 37",
+              "different_query_numbers": [
+                2,
+                24
+              ],
+              "different_query_numbers_text": "2, 24",
+              "different_draw_numbers": [
+                23,
+                29
+              ],
+              "different_draw_numbers_text": "23, 29"
+            },
+            {
+              "event_index": 9191,
+              "year": 2018,
+              "draw_no": 9191,
+              "date": "",
+              "draw_numbers": [
+                2,
+                4,
+                17,
+                31,
+                37,
+                48
+              ],
+              "draw_numbers_text": "2, 4, 17, 31, 37, 48",
+              "match_count": 4,
+              "matching_numbers": [
+                2,
+                17,
+                31,
+                37
+              ],
+              "matching_numbers_text": "2, 17, 31, 37",
+              "different_query_numbers": [
+                24,
+                34
+              ],
+              "different_query_numbers_text": "24, 34",
+              "different_draw_numbers": [
+                4,
+                48
+              ],
+              "different_draw_numbers_text": "4, 48"
+            },
+            {
+              "event_index": 9084,
+              "year": 2017,
+              "draw_no": 9084,
+              "date": "",
+              "draw_numbers": [
+                8,
+                17,
+                29,
+                31,
+                34,
+                37
+              ],
+              "draw_numbers_text": "8, 17, 29, 31, 34, 37",
+              "match_count": 4,
+              "matching_numbers": [
+                17,
+                31,
+                34,
+                37
+              ],
+              "matching_numbers_text": "17, 31, 34, 37",
+              "different_query_numbers": [
+                2,
+                24
+              ],
+              "different_query_numbers_text": "2, 24",
+              "different_draw_numbers": [
+                8,
+                29
+              ],
+              "different_draw_numbers_text": "8, 29"
             },
             {
               "event_index": 6637,
@@ -1044,254 +1101,184 @@
                 2,
                 17,
                 24,
-                35
-              ],
-              "matching_numbers_text": "2, 17, 24, 35",
-              "different_query_numbers": [
-                31,
-                38
-              ],
-              "different_query_numbers_text": "31, 38",
-              "different_draw_numbers": [
-                11,
                 37
               ],
-              "different_draw_numbers_text": "11, 37"
-            },
-            {
-              "event_index": 3480,
-              "year": 1993,
-              "draw_no": 3480,
-              "date": "",
-              "draw_numbers": [
-                1,
-                2,
-                11,
-                17,
-                31,
-                38
-              ],
-              "draw_numbers_text": "1, 2, 11, 17, 31, 38",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                31,
-                38
-              ],
-              "matching_numbers_text": "2, 17, 31, 38",
+              "matching_numbers_text": "2, 17, 24, 37",
               "different_query_numbers": [
-                24,
+                31,
+                34
+              ],
+              "different_query_numbers_text": "31, 34",
+              "different_draw_numbers": [
+                11,
                 35
               ],
-              "different_query_numbers_text": "24, 35",
-              "different_draw_numbers": [
-                1,
-                11
-              ],
-              "different_draw_numbers_text": "1, 11"
+              "different_draw_numbers_text": "11, 35"
             },
             {
-              "event_index": 642,
-              "year": 1968,
-              "draw_no": 642,
+              "event_index": 6343,
+              "year": 2005,
+              "draw_no": 6343,
+              "date": "",
+              "draw_numbers": [
+                9,
+                16,
+                17,
+                24,
+                34,
+                37
+              ],
+              "draw_numbers_text": "9, 16, 17, 24, 34, 37",
+              "match_count": 4,
+              "matching_numbers": [
+                17,
+                24,
+                34,
+                37
+              ],
+              "matching_numbers_text": "17, 24, 34, 37",
+              "different_query_numbers": [
+                2,
+                31
+              ],
+              "different_query_numbers_text": "2, 31",
+              "different_draw_numbers": [
+                9,
+                16
+              ],
+              "different_draw_numbers_text": "9, 16"
+            },
+            {
+              "event_index": 6128,
+              "year": 2004,
+              "draw_no": 6128,
               "date": "",
               "draw_numbers": [
                 2,
-                8,
-                13,
+                12,
+                17,
+                18,
                 24,
-                35,
-                38
+                34
               ],
-              "draw_numbers_text": "2, 8, 13, 24, 35, 38",
+              "draw_numbers_text": "2, 12, 17, 18, 24, 34",
+              "match_count": 4,
+              "matching_numbers": [
+                2,
+                17,
+                24,
+                34
+              ],
+              "matching_numbers_text": "2, 17, 24, 34",
+              "different_query_numbers": [
+                31,
+                37
+              ],
+              "different_query_numbers_text": "31, 37",
+              "different_draw_numbers": [
+                12,
+                18
+              ],
+              "different_draw_numbers_text": "12, 18"
+            },
+            {
+              "event_index": 6078,
+              "year": 2004,
+              "draw_no": 6078,
+              "date": "",
+              "draw_numbers": [
+                2,
+                24,
+                25,
+                30,
+                34,
+                37
+              ],
+              "draw_numbers_text": "2, 24, 25, 30, 34, 37",
               "match_count": 4,
               "matching_numbers": [
                 2,
                 24,
-                35,
-                38
+                34,
+                37
               ],
-              "matching_numbers_text": "2, 24, 35, 38",
+              "matching_numbers_text": "2, 24, 34, 37",
               "different_query_numbers": [
                 17,
                 31
               ],
               "different_query_numbers_text": "17, 31",
               "different_draw_numbers": [
-                8,
-                13
+                25,
+                30
               ],
-              "different_draw_numbers_text": "8, 13"
+              "different_draw_numbers_text": "25, 30"
             },
             {
-              "event_index": 432,
-              "year": 1966,
-              "draw_no": 432,
+              "event_index": 2353,
+              "year": 1983,
+              "draw_no": 2353,
               "date": "",
               "draw_numbers": [
-                3,
-                16,
-                17,
+                2,
+                10,
                 24,
                 31,
-                38
+                37,
+                43
               ],
-              "draw_numbers_text": "3, 16, 17, 24, 31, 38",
+              "draw_numbers_text": "2, 10, 24, 31, 37, 43",
               "match_count": 4,
               "matching_numbers": [
-                17,
+                2,
                 24,
                 31,
-                38
-              ],
-              "matching_numbers_text": "17, 24, 31, 38",
-              "different_query_numbers": [
-                2,
-                35
-              ],
-              "different_query_numbers_text": "2, 35",
-              "different_draw_numbers": [
-                3,
-                16
-              ],
-              "different_draw_numbers_text": "3, 16"
-            },
-            {
-              "event_index": 10046,
-              "year": 2026,
-              "draw_no": 10046,
-              "date": "2026-05-10",
-              "draw_numbers": [
-                2,
-                23,
-                24,
-                27,
-                37,
-                38
-              ],
-              "draw_numbers_text": "2, 23, 24, 27, 37, 38",
-              "match_count": 3,
-              "matching_numbers": [
-                2,
-                24,
-                38
-              ],
-              "matching_numbers_text": "2, 24, 38",
-              "different_query_numbers": [
-                17,
-                31,
-                35
-              ],
-              "different_query_numbers_text": "17, 31, 35",
-              "different_draw_numbers": [
-                23,
-                27,
                 37
               ],
-              "different_draw_numbers_text": "23, 27, 37"
+              "matching_numbers_text": "2, 24, 31, 37",
+              "different_query_numbers": [
+                17,
+                34
+              ],
+              "different_query_numbers_text": "17, 34",
+              "different_draw_numbers": [
+                10,
+                43
+              ],
+              "different_draw_numbers_text": "10, 43"
             },
             {
-              "event_index": 10002,
-              "year": 2025,
-              "draw_no": 10002,
+              "event_index": 2111,
+              "year": 1981,
+              "draw_no": 2111,
               "date": "",
               "draw_numbers": [
                 2,
+                16,
+                19,
                 24,
                 31,
-                36,
-                40,
-                48
+                34
               ],
-              "draw_numbers_text": "2, 24, 31, 36, 40, 48",
-              "match_count": 3,
+              "draw_numbers_text": "2, 16, 19, 24, 31, 34",
+              "match_count": 4,
               "matching_numbers": [
                 2,
                 24,
-                31
+                31,
+                34
               ],
-              "matching_numbers_text": "2, 24, 31",
+              "matching_numbers_text": "2, 24, 31, 34",
               "different_query_numbers": [
                 17,
-                35,
-                38
+                37
               ],
-              "different_query_numbers_text": "17, 35, 38",
+              "different_query_numbers_text": "17, 37",
               "different_draw_numbers": [
-                36,
-                40,
-                48
+                16,
+                19
               ],
-              "different_draw_numbers_text": "36, 40, 48"
-            },
-            {
-              "event_index": 9979,
-              "year": 2025,
-              "draw_no": 9979,
-              "date": "",
-              "draw_numbers": [
-                2,
-                13,
-                24,
-                26,
-                35,
-                42
-              ],
-              "draw_numbers_text": "2, 13, 24, 26, 35, 42",
-              "match_count": 3,
-              "matching_numbers": [
-                2,
-                24,
-                35
-              ],
-              "matching_numbers_text": "2, 24, 35",
-              "different_query_numbers": [
-                17,
-                31,
-                38
-              ],
-              "different_query_numbers_text": "17, 31, 38",
-              "different_draw_numbers": [
-                13,
-                26,
-                42
-              ],
-              "different_draw_numbers_text": "13, 26, 42"
-            },
-            {
-              "event_index": 9908,
-              "year": 2025,
-              "draw_no": 9908,
-              "date": "",
-              "draw_numbers": [
-                2,
-                18,
-                31,
-                33,
-                35,
-                47
-              ],
-              "draw_numbers_text": "2, 18, 31, 33, 35, 47",
-              "match_count": 3,
-              "matching_numbers": [
-                2,
-                31,
-                35
-              ],
-              "matching_numbers_text": "2, 31, 35",
-              "different_query_numbers": [
-                17,
-                24,
-                38
-              ],
-              "different_query_numbers_text": "17, 24, 38",
-              "different_draw_numbers": [
-                18,
-                33,
-                47
-              ],
-              "different_draw_numbers_text": "18, 33, 47"
+              "different_draw_numbers_text": "16, 19"
             }
           ],
           "warnings": [
@@ -1303,15 +1290,15 @@
           ]
         },
         "number_profile_details": {
-          "average_profile_score": 61.42,
-          "min_profile_score": 51.56,
-          "max_profile_score": 75.52,
+          "average_profile_score": 67.17,
+          "min_profile_score": 51.87,
+          "max_profile_score": 76.67,
           "statuses": [
             "Нормален ритъм",
             "Нормален ритъм",
             "Нормален ритъм",
             "Нормален ритъм",
-            "Нормален ритъм",
+            "Силно закъсняло",
             "Активно напоследък"
           ],
           "bands": [
@@ -1319,20 +1306,20 @@
             "Силен профил",
             "Нормален профил",
             "Нормален профил",
-            "Нормален профил",
-            "Нормален профил"
+            "Силен профил",
+            "Силен профил"
           ]
         },
         "hot_cold_details": {
           "hot_count": 2,
           "cold_count": 0,
           "stable_count": 0,
-          "overdue_count": 0,
+          "overdue_count": 2,
           "historically_strong_count": 0,
           "historically_weak_count": 0,
-          "average_recent_activity": 89.74,
-          "average_stability": 57.78,
-          "average_overdue": 40.95
+          "average_recent_activity": 87.7,
+          "average_stability": 57.59,
+          "average_overdue": 53.42
         },
         "warnings": [
           "Не са открити сериозни проблеми в обединената оценка."
@@ -1345,78 +1332,78 @@
       {
         "query_index": 2,
         "combination": [
-          2,
-          13,
+          11,
+          12,
           17,
-          29,
+          28,
           34,
-          47
+          43
         ],
-        "combination_text": "2, 13, 17, 29, 34, 47",
+        "combination_text": "11, 12, 17, 28, 34, 43",
         "is_valid": true,
         "status": "Валидна",
-        "final_score": 81.17,
+        "final_score": 81.67,
         "band": "Добра статистическа структура",
         "components": {
-          "pattern_score": 97.0,
-          "coverage_score": 88.0,
-          "number_profile_score": 59.79,
+          "pattern_score": 96.0,
+          "coverage_score": 86.8,
+          "number_profile_score": 63.59,
           "hot_cold_balance_score": 85.0,
           "similarity_context_score": 80.0
         },
         "pattern": {
           "ticket_index": 2,
           "combination": [
-            2,
-            13,
+            11,
+            12,
             17,
-            29,
+            28,
             34,
-            47
+            43
           ],
-          "combination_text": "2, 13, 17, 29, 34, 47",
+          "combination_text": "11, 12, 17, 28, 34, 43",
           "is_valid": true,
           "status": "Валидна",
-          "sum": 142,
+          "sum": 145,
           "sum_band": "Балансирана сума",
-          "odd_count": 4,
-          "even_count": 2,
+          "odd_count": 3,
+          "even_count": 3,
           "low_count": 3,
           "high_count": 3,
           "gaps": [
-            11,
-            4,
-            12,
+            1,
             5,
-            13
+            11,
+            6,
+            9
           ],
-          "min_gap": 4,
-          "max_gap": 13,
-          "average_gap": 9.0,
-          "longest_consecutive_run": 1,
-          "consecutive_pairs": 0,
-          "max_same_final_digit_count": 2,
-          "range_count_used": 5,
+          "min_gap": 1,
+          "max_gap": 11,
+          "average_gap": 6.4,
+          "longest_consecutive_run": 2,
+          "consecutive_pairs": 1,
+          "max_same_final_digit_count": 1,
+          "range_count_used": 4,
           "range_distribution": {
-            "1-9": 1,
-            "10-19": 2,
+            "1-9": 0,
+            "10-19": 3,
             "20-29": 1,
             "30-39": 1,
             "40-49": 1
           },
           "final_digit_distribution": {
             "0": 0,
-            "1": 0,
+            "1": 1,
             "2": 1,
             "3": 1,
             "4": 1,
             "5": 0,
             "6": 0,
-            "7": 2,
-            "8": 0,
-            "9": 1
+            "7": 1,
+            "8": 1,
+            "9": 0
           },
-          "pattern_score": 97.0,
+          "pattern_score": 96.0,
           "band": "Отличен баланс",
           "warnings": [
             "Не са открити сериозни структурни проблеми."
@@ -1428,364 +1415,368 @@
         "similarity": {
           "query_index": 2,
           "query_numbers": [
-            2,
-            13,
+            11,
+            12,
             17,
-            29,
+            28,
             34,
-            47
+            43
           ],
-          "query_text": "2, 13, 17, 29, 34, 47",
+          "query_text": "11, 12, 17, 28, 34, 43",
           "is_valid": true,
           "status": "Валидна",
-          "total_draws": 10058,
-          "historical_similarity_score": 61.67,
+          "total_draws": 10059,
+          "historical_similarity_score": 59.17,
           "band": "Има близки исторически тиражи",
           "max_match_count": 4,
           "exact_matches_count": 0,
           "five_matches_count": 0,
-          "four_matches_count": 9,
-          "three_matches_count": 198,
+          "four_matches_count": 5,
+          "three_matches_count": 177,
           "match_distribution": {
             "6": 0,
             "5": 0,
-            "4": 9,
-            "3": 198,
-            "2": 1353,
-            "1": 4129,
-            "0": 4369
+            "4": 5,
+            "3": 177,
+            "2": 1421,
+            "1": 4161,
+            "0": 4295
           },
           "closest_draws": [
             {
-              "event_index": 9129,
-              "year": 2017,
-              "draw_no": 9129,
+              "event_index": 9647,
+              "year": 2022,
+              "draw_no": 9647,
               "date": "",
               "draw_numbers": [
-                2,
-                6,
-                29,
-                34,
-                41,
-                47
-              ],
-              "draw_numbers_text": "2, 6, 29, 34, 41, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                29,
-                34,
-                47
-              ],
-              "matching_numbers_text": "2, 29, 34, 47",
-              "different_query_numbers": [
-                13,
-                17
-              ],
-              "different_query_numbers_text": "13, 17",
-              "different_draw_numbers": [
-                6,
-                41
-              ],
-              "different_draw_numbers_text": "6, 41"
-            },
-            {
-              "event_index": 8216,
-              "year": 2012,
-              "draw_no": 8216,
-              "date": "",
-              "draw_numbers": [
-                2,
                 4,
-                10,
-                29,
-                34,
-                47
-              ],
-              "draw_numbers_text": "2, 4, 10, 29, 34, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                29,
-                34,
-                47
-              ],
-              "matching_numbers_text": "2, 29, 34, 47",
-              "different_query_numbers": [
-                13,
-                17
-              ],
-              "different_query_numbers_text": "13, 17",
-              "different_draw_numbers": [
-                4,
-                10
-              ],
-              "different_draw_numbers_text": "4, 10"
-            },
-            {
-              "event_index": 7153,
-              "year": 2008,
-              "draw_no": 7153,
-              "date": "",
-              "draw_numbers": [
-                2,
-                17,
-                29,
-                37,
-                43,
-                47
-              ],
-              "draw_numbers_text": "2, 17, 29, 37, 43, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                29,
-                47
-              ],
-              "matching_numbers_text": "2, 17, 29, 47",
-              "different_query_numbers": [
-                13,
-                34
-              ],
-              "different_query_numbers_text": "13, 34",
-              "different_draw_numbers": [
-                37,
+                11,
+                12,
+                28,
+                35,
                 43
               ],
-              "different_draw_numbers_text": "37, 43"
-            },
-            {
-              "event_index": 6844,
-              "year": 2007,
-              "draw_no": 6844,
-              "date": "",
-              "draw_numbers": [
-                2,
-                5,
-                16,
-                17,
-                29,
-                47
-              ],
-              "draw_numbers_text": "2, 5, 16, 17, 29, 47",
+              "draw_numbers_text": "4, 11, 12, 28, 35, 43",
               "match_count": 4,
               "matching_numbers": [
-                2,
-                17,
-                29,
-                47
-              ],
-              "matching_numbers_text": "2, 17, 29, 47",
-              "different_query_numbers": [
-                13,
-                34
-              ],
-              "different_query_numbers_text": "13, 34",
-              "different_draw_numbers": [
-                5,
-                16
-              ],
-              "different_draw_numbers_text": "5, 16"
-            },
-            {
-              "event_index": 6386,
-              "year": 2005,
-              "draw_no": 6386,
-              "date": "",
-              "draw_numbers": [
-                2,
-                17,
-                20,
-                30,
-                34,
-                47
-              ],
-              "draw_numbers_text": "2, 17, 20, 30, 34, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                34,
-                47
-              ],
-              "matching_numbers_text": "2, 17, 34, 47",
-              "different_query_numbers": [
-                13,
-                29
-              ],
-              "different_query_numbers_text": "13, 29",
-              "different_draw_numbers": [
-                20,
-                30
-              ],
-              "different_draw_numbers_text": "20, 30"
-            },
-            {
-              "event_index": 3981,
-              "year": 1997,
-              "draw_no": 3981,
-              "date": "",
-              "draw_numbers": [
-                2,
-                9,
-                13,
-                17,
-                37,
-                47
-              ],
-              "draw_numbers_text": "2, 9, 13, 17, 37, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                13,
-                17,
-                47
-              ],
-              "matching_numbers_text": "2, 13, 17, 47",
-              "different_query_numbers": [
-                29,
-                34
-              ],
-              "different_query_numbers_text": "29, 34",
-              "different_draw_numbers": [
-                9,
-                37
-              ],
-              "different_draw_numbers_text": "9, 37"
-            },
-            {
-              "event_index": 3389,
-              "year": 1992,
-              "draw_no": 3389,
-              "date": "",
-              "draw_numbers": [
-                2,
-                17,
-                29,
-                40,
-                41,
-                47
-              ],
-              "draw_numbers_text": "2, 17, 29, 40, 41, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                29,
-                47
-              ],
-              "matching_numbers_text": "2, 17, 29, 47",
-              "different_query_numbers": [
-                13,
-                34
-              ],
-              "different_query_numbers_text": "13, 34",
-              "different_draw_numbers": [
-                40,
-                41
-              ],
-              "different_draw_numbers_text": "40, 41"
-            },
-            {
-              "event_index": 1278,
-              "year": 1973,
-              "draw_no": 1278,
-              "date": "",
-              "draw_numbers": [
-                2,
+                11,
                 12,
-                13,
-                33,
-                34,
-                47
-              ],
-              "draw_numbers_text": "2, 12, 13, 33, 34, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                13,
-                34,
-                47
-              ],
-              "matching_numbers_text": "2, 13, 34, 47",
-              "different_query_numbers": [
-                17,
-                29
-              ],
-              "different_query_numbers_text": "17, 29",
-              "different_draw_numbers": [
-                12,
-                33
-              ],
-              "different_draw_numbers_text": "12, 33"
-            },
-            {
-              "event_index": 928,
-              "year": 1970,
-              "draw_no": 928,
-              "date": "",
-              "draw_numbers": [
-                2,
-                17,
-                29,
-                34,
-                39,
-                44
-              ],
-              "draw_numbers_text": "2, 17, 29, 34, 39, 44",
-              "match_count": 4,
-              "matching_numbers": [
-                2,
-                17,
-                29,
-                34
-              ],
-              "matching_numbers_text": "2, 17, 29, 34",
-              "different_query_numbers": [
-                13,
-                47
-              ],
-              "different_query_numbers_text": "13, 47",
-              "different_draw_numbers": [
-                39,
-                44
-              ],
-              "different_draw_numbers_text": "39, 44"
-            },
-            {
-              "event_index": 9988,
-              "year": 2025,
-              "draw_no": 9988,
-              "date": "",
-              "draw_numbers": [
-                13,
-                17,
                 28,
-                32,
-                46,
-                47
+                43
               ],
-              "draw_numbers_text": "13, 17, 28, 32, 46, 47",
+              "matching_numbers_text": "11, 12, 28, 43",
+              "different_query_numbers": [
+                17,
+                34
+              ],
+              "different_query_numbers_text": "17, 34",
+              "different_draw_numbers": [
+                4,
+                35
+              ],
+              "different_draw_numbers_text": "4, 35"
+            },
+            {
+              "event_index": 8115,
+              "year": 2011,
+              "draw_no": 8115,
+              "date": "",
+              "draw_numbers": [
+                12,
+                15,
+                17,
+                34,
+                43,
+                48
+              ],
+              "draw_numbers_text": "12, 15, 17, 34, 43, 48",
+              "match_count": 4,
+              "matching_numbers": [
+                12,
+                17,
+                34,
+                43
+              ],
+              "matching_numbers_text": "12, 17, 34, 43",
+              "different_query_numbers": [
+                11,
+                28
+              ],
+              "different_query_numbers_text": "11, 28",
+              "different_draw_numbers": [
+                15,
+                48
+              ],
+              "different_draw_numbers_text": "15, 48"
+            },
+            {
+              "event_index": 3470,
+              "year": 1993,
+              "draw_no": 3470,
+              "date": "",
+              "draw_numbers": [
+                4,
+                11,
+                17,
+                32,
+                34,
+                43
+              ],
+              "draw_numbers_text": "4, 11, 17, 32, 34, 43",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                17,
+                34,
+                43
+              ],
+              "matching_numbers_text": "11, 17, 34, 43",
+              "different_query_numbers": [
+                12,
+                28
+              ],
+              "different_query_numbers_text": "12, 28",
+              "different_draw_numbers": [
+                4,
+                32
+              ],
+              "different_draw_numbers_text": "4, 32"
+            },
+            {
+              "event_index": 2936,
+              "year": 1988,
+              "draw_no": 2936,
+              "date": "",
+              "draw_numbers": [
+                9,
+                11,
+                12,
+                18,
+                28,
+                43
+              ],
+              "draw_numbers_text": "9, 11, 12, 18, 28, 43",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                12,
+                28,
+                43
+              ],
+              "matching_numbers_text": "11, 12, 28, 43",
+              "different_query_numbers": [
+                17,
+                34
+              ],
+              "different_query_numbers_text": "17, 34",
+              "different_draw_numbers": [
+                9,
+                18
+              ],
+              "different_draw_numbers_text": "9, 18"
+            },
+            {
+              "event_index": 2550,
+              "year": 1985,
+              "draw_no": 2550,
+              "date": "",
+              "draw_numbers": [
+                11,
+                12,
+                17,
+                20,
+                43,
+                44
+              ],
+              "draw_numbers_text": "11, 12, 17, 20, 43, 44",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                12,
+                17,
+                43
+              ],
+              "matching_numbers_text": "11, 12, 17, 43",
+              "different_query_numbers": [
+                28,
+                34
+              ],
+              "different_query_numbers_text": "28, 34",
+              "different_draw_numbers": [
+                20,
+                44
+              ],
+              "different_draw_numbers_text": "20, 44"
+            },
+            {
+              "event_index": 9989,
+              "year": 2025,
+              "draw_no": 9989,
+              "date": "",
+              "draw_numbers": [
+                5,
+                11,
+                21,
+                28,
+                39,
+                43
+              ],
+              "draw_numbers_text": "5, 11, 21, 28, 39, 43",
               "match_count": 3,
               "matching_numbers": [
-                13,
-                17,
-                47
+                11,
+                28,
+                43
               ],
-              "matching_numbers_text": "13, 17, 47",
+              "matching_numbers_text": "11, 28, 43",
               "different_query_numbers": [
-                2,
-                29,
+                12,
+                17,
                 34
               ],
-              "different_query_numbers_text": "2, 29, 34",
+              "different_query_numbers_text": "12, 17, 34",
               "different_draw_numbers": [
+                5,
+                21,
+                39
+              ],
+              "different_draw_numbers_text": "5, 21, 39"
+            },
+            {
+              "event_index": 9945,
+              "year": 2025,
+              "draw_no": 9945,
+              "date": "",
+              "draw_numbers": [
+                3,
+                11,
+                25,
+                28,
+                43,
+                45
+              ],
+              "draw_numbers_text": "3, 11, 25, 28, 43, 45",
+              "match_count": 3,
+              "matching_numbers": [
+                11,
+                28,
+                43
+              ],
+              "matching_numbers_text": "11, 28, 43",
+              "different_query_numbers": [
+                12,
+                17,
+                34
+              ],
+              "different_query_numbers_text": "12, 17, 34",
+              "different_draw_numbers": [
+                3,
+                25,
+                45
+              ],
+              "different_draw_numbers_text": "3, 25, 45"
+            },
+            {
+              "event_index": 9914,
+              "year": 2025,
+              "draw_no": 9914,
+              "date": "",
+              "draw_numbers": [
+                8,
+                11,
+                12,
+                17,
+                22,
+                41
+              ],
+              "draw_numbers_text": "8, 11, 12, 17, 22, 41",
+              "match_count": 3,
+              "matching_numbers": [
+                11,
+                12,
+                17
+              ],
+              "matching_numbers_text": "11, 12, 17",
+              "different_query_numbers": [
+                28,
+                34,
+                43
+              ],
+              "different_query_numbers_text": "28, 34, 43",
+              "different_draw_numbers": [
+                8,
+                22,
+                41
+              ],
+              "different_draw_numbers_text": "8, 22, 41"
+            },
+            {
+              "event_index": 9875,
+              "year": 2024,
+              "draw_no": 9875,
+              "date": "",
+              "draw_numbers": [
+                5,
+                11,
+                12,
                 28,
                 32,
-                46
+                48
               ],
-              "different_draw_numbers_text": "28, 32, 46"
+              "draw_numbers_text": "5, 11, 12, 28, 32, 48",
+              "match_count": 3,
+              "matching_numbers": [
+                11,
+                12,
+                28
+              ],
+              "matching_numbers_text": "11, 12, 28",
+              "different_query_numbers": [
+                17,
+                34,
+                43
+              ],
+              "different_query_numbers_text": "17, 34, 43",
+              "different_draw_numbers": [
+                5,
+                32,
+                48
+              ],
+              "different_draw_numbers_text": "5, 32, 48"
+            },
+            {
+              "event_index": 9841,
+              "year": 2024,
+              "draw_no": 9841,
+              "date": "",
+              "draw_numbers": [
+                4,
+                9,
+                15,
+                17,
+                28,
+                43
+              ],
+              "draw_numbers_text": "4, 9, 15, 17, 28, 43",
+              "match_count": 3,
+              "matching_numbers": [
+                17,
+                28,
+                43
+              ],
+              "matching_numbers_text": "17, 28, 43",
+              "different_query_numbers": [
+                11,
+                12,
+                34
+              ],
+              "different_query_numbers_text": "11, 12, 34",
+              "different_draw_numbers": [
+                4,
+                9,
+                15
+              ],
+              "different_draw_numbers_text": "4, 9, 15"
             }
           ],
           "warnings": [
@@ -1797,20 +1788,20 @@
           ]
         },
         "number_profile_details": {
-          "average_profile_score": 59.79,
-          "min_profile_score": 43.65,
-          "max_profile_score": 75.52,
+          "average_profile_score": 63.59,
+          "min_profile_score": 53.02,
+          "max_profile_score": 76.67,
           "statuses": [
             "Нормален ритъм",
-            "Активно напоследък",
+            "Закъсняло",
             "Нормален ритъм",
             "Нормален ритъм",
             "Силно закъсняло",
-            "Закъсняло"
+            "Нормален ритъм"
           ],
           "bands": [
+            "Силен профил",
             "Нормален профил",
-            "По-слаб профил",
             "Силен профил",
             "Нормален профил",
             "Силен профил",
@@ -1824,9 +1815,9 @@
           "overdue_count": 2,
           "historically_strong_count": 0,
           "historically_weak_count": 0,
-          "average_recent_activity": 83.97,
-          "average_stability": 57.79,
-          "average_overdue": 43.06
+          "average_recent_activity": 91.51,
+          "average_stability": 57.38,
+          "average_overdue": 44.67
         },
         "warnings": [
           "Не са открити сериозни проблеми в обединената оценка."
@@ -1840,21 +1831,21 @@
         "query_index": 3,
         "combination": [
           4,
-          8,
-          13,
+          12,
+          27,
           29,
           37,
-          38
+          48
         ],
-        "combination_text": "4, 8, 13, 29, 37, 38",
+        "combination_text": "4, 12, 27, 29, 37, 48",
         "is_valid": true,
         "status": "Валидна",
-        "final_score": 81.11,
+        "final_score": 80.91,
         "band": "Добра статистическа структура",
         "components": {
-          "pattern_score": 96.0,
-          "coverage_score": 88.0,
-          "number_profile_score": 60.47,
+          "pattern_score": 97.0,
+          "coverage_score": 86.8,
+          "number_profile_score": 59.5,
           "hot_cold_balance_score": 85.0,
           "similarity_context_score": 80.0
         },
@@ -1862,55 +1853,55 @@
           "ticket_index": 3,
           "combination": [
             4,
-            8,
-            13,
+            12,
+            27,
             29,
             37,
-            38
+            48
           ],
-          "combination_text": "4, 8, 13, 29, 37, 38",
+          "combination_text": "4, 12, 27, 29, 37, 48",
           "is_valid": true,
           "status": "Валидна",
-          "sum": 129,
+          "sum": 157,
           "sum_band": "Балансирана сума",
           "odd_count": 3,
           "even_count": 3,
-          "low_count": 3,
-          "high_count": 3,
+          "low_count": 2,
+          "high_count": 4,
           "gaps": [
-            4,
-            5,
-            16,
             8,
-            1
+            15,
+            2,
+            8,
+            11
           ],
-          "min_gap": 1,
-          "max_gap": 16,
-          "average_gap": 6.8,
-          "longest_consecutive_run": 2,
-          "consecutive_pairs": 1,
+          "min_gap": 2,
+          "max_gap": 15,
+          "average_gap": 8.8,
+          "longest_consecutive_run": 1,
+          "consecutive_pairs": 0,
           "max_same_final_digit_count": 2,
-          "range_count_used": 4,
+          "range_count_used": 5,
           "range_distribution": {
-            "1-9": 2,
+            "1-9": 1,
             "10-19": 1,
-            "20-29": 1,
-            "30-39": 2,
-            "40-49": 0
+            "20-29": 2,
+            "30-39": 1,
+            "40-49": 1
           },
           "final_digit_distribution": {
             "0": 0,
             "1": 0,
-            "2": 0,
-            "3": 1,
+            "2": 1,
+            "3": 0,
             "4": 1,
             "5": 0,
             "6": 0,
-            "7": 1,
-            "8": 2,
+            "7": 2,
+            "8": 1,
             "9": 1
           },
-          "pattern_score": 96.0,
+          "pattern_score": 97.0,
           "band": "Отличен баланс",
           "warnings": [
             "Не са открити сериозни структурни проблеми."
@@ -1923,363 +1914,365 @@
           "query_index": 3,
           "query_numbers": [
             4,
-            8,
-            13,
+            12,
+            27,
             29,
             37,
-            38
+            48
           ],
-          "query_text": "4, 8, 13, 29, 37, 38",
+          "query_text": "4, 12, 27, 29, 37, 48",
           "is_valid": true,
           "status": "Валидна",
-          "total_draws": 10058,
+          "total_draws": 10059,
           "historical_similarity_score": 61.67,
           "band": "Има близки исторически тиражи",
           "max_match_count": 4,
           "exact_matches_count": 0,
           "five_matches_count": 0,
-          "four_matches_count": 9,
-          "three_matches_count": 182,
+          "four_matches_count": 7,
+          "three_matches_count": 190,
           "match_distribution": {
             "6": 0,
             "5": 0,
-            "4": 9,
-            "3": 182,
-            "2": 1395,
-            "1": 4128,
-            "0": 4344
+            "4": 7,
+            "3": 190,
+            "2": 1387,
+            "1": 4154,
+            "0": 4321
           },
           "closest_draws": [
             {
-              "event_index": 9041,
-              "year": 2016,
-              "draw_no": 9041,
+              "event_index": 8869,
+              "year": 2015,
+              "draw_no": 8869,
               "date": "",
               "draw_numbers": [
                 4,
-                8,
-                13,
-                15,
-                29,
-                41
+                12,
+                16,
+                27,
+                37,
+                49
               ],
-              "draw_numbers_text": "4, 8, 13, 15, 29, 41",
+              "draw_numbers_text": "4, 12, 16, 27, 37, 49",
               "match_count": 4,
               "matching_numbers": [
                 4,
-                8,
-                13,
-                29
+                12,
+                27,
+                37
               ],
-              "matching_numbers_text": "4, 8, 13, 29",
+              "matching_numbers_text": "4, 12, 27, 37",
               "different_query_numbers": [
-                37,
-                38
+                29,
+                48
               ],
-              "different_query_numbers_text": "37, 38",
+              "different_query_numbers_text": "29, 48",
               "different_draw_numbers": [
-                15,
-                41
+                16,
+                49
               ],
-              "different_draw_numbers_text": "15, 41"
+              "different_draw_numbers_text": "16, 49"
             },
             {
-              "event_index": 7984,
+              "event_index": 7800,
               "year": 2010,
-              "draw_no": 7984,
+              "draw_no": 7800,
               "date": "",
               "draw_numbers": [
                 4,
-                13,
+                11,
+                16,
                 27,
-                29,
-                38,
-                47
-              ],
-              "draw_numbers_text": "4, 13, 27, 29, 38, 47",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                13,
-                29,
-                38
-              ],
-              "matching_numbers_text": "4, 13, 29, 38",
-              "different_query_numbers": [
-                8,
-                37
-              ],
-              "different_query_numbers_text": "8, 37",
-              "different_draw_numbers": [
-                27,
-                47
-              ],
-              "different_draw_numbers_text": "27, 47"
-            },
-            {
-              "event_index": 6076,
-              "year": 2004,
-              "draw_no": 6076,
-              "date": "",
-              "draw_numbers": [
-                4,
-                8,
-                37,
-                38,
-                40,
-                45
-              ],
-              "draw_numbers_text": "4, 8, 37, 38, 40, 45",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                8,
-                37,
-                38
-              ],
-              "matching_numbers_text": "4, 8, 37, 38",
-              "different_query_numbers": [
-                13,
-                29
-              ],
-              "different_query_numbers_text": "13, 29",
-              "different_draw_numbers": [
-                40,
-                45
-              ],
-              "different_draw_numbers_text": "40, 45"
-            },
-            {
-              "event_index": 6054,
-              "year": 2004,
-              "draw_no": 6054,
-              "date": "",
-              "draw_numbers": [
-                4,
-                8,
-                13,
-                24,
                 29,
                 48
               ],
-              "draw_numbers_text": "4, 8, 13, 24, 29, 48",
+              "draw_numbers_text": "4, 11, 16, 27, 29, 48",
               "match_count": 4,
               "matching_numbers": [
                 4,
-                8,
-                13,
-                29
-              ],
-              "matching_numbers_text": "4, 8, 13, 29",
-              "different_query_numbers": [
-                37,
-                38
-              ],
-              "different_query_numbers_text": "37, 38",
-              "different_draw_numbers": [
-                24,
+                27,
+                29,
                 48
               ],
-              "different_draw_numbers_text": "24, 48"
-            },
-            {
-              "event_index": 4922,
-              "year": 2000,
-              "draw_no": 4922,
-              "date": "",
-              "draw_numbers": [
-                4,
-                8,
-                13,
-                28,
-                38,
-                46
-              ],
-              "draw_numbers_text": "4, 8, 13, 28, 38, 46",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                8,
-                13,
-                38
-              ],
-              "matching_numbers_text": "4, 8, 13, 38",
+              "matching_numbers_text": "4, 27, 29, 48",
               "different_query_numbers": [
-                29,
+                12,
                 37
               ],
-              "different_query_numbers_text": "29, 37",
+              "different_query_numbers_text": "12, 37",
               "different_draw_numbers": [
-                28,
-                46
+                11,
+                16
               ],
-              "different_draw_numbers_text": "28, 46"
+              "different_draw_numbers_text": "11, 16"
             },
             {
-              "event_index": 4515,
-              "year": 1999,
-              "draw_no": 4515,
+              "event_index": 5563,
+              "year": 2003,
+              "draw_no": 5563,
               "date": "",
               "draw_numbers": [
-                4,
-                8,
-                11,
-                13,
-                27,
-                29
+                7,
+                12,
+                29,
+                37,
+                44,
+                48
               ],
-              "draw_numbers_text": "4, 8, 11, 13, 27, 29",
+              "draw_numbers_text": "7, 12, 29, 37, 44, 48",
               "match_count": 4,
               "matching_numbers": [
-                4,
-                8,
-                13,
-                29
-              ],
-              "matching_numbers_text": "4, 8, 13, 29",
-              "different_query_numbers": [
+                12,
+                29,
                 37,
-                38
+                48
               ],
-              "different_query_numbers_text": "37, 38",
-              "different_draw_numbers": [
-                11,
+              "matching_numbers_text": "12, 29, 37, 48",
+              "different_query_numbers": [
+                4,
                 27
               ],
-              "different_draw_numbers_text": "11, 27"
+              "different_query_numbers_text": "4, 27",
+              "different_draw_numbers": [
+                7,
+                44
+              ],
+              "different_draw_numbers_text": "7, 44"
             },
             {
-              "event_index": 4296,
-              "year": 1998,
-              "draw_no": 4296,
+              "event_index": 5092,
+              "year": 2001,
+              "draw_no": 5092,
               "date": "",
               "draw_numbers": [
                 4,
-                8,
+                21,
                 29,
-                38,
-                43,
+                32,
+                37,
                 48
               ],
-              "draw_numbers_text": "4, 8, 29, 38, 43, 48",
+              "draw_numbers_text": "4, 21, 29, 32, 37, 48",
               "match_count": 4,
               "matching_numbers": [
                 4,
-                8,
-                29,
-                38
-              ],
-              "matching_numbers_text": "4, 8, 29, 38",
-              "different_query_numbers": [
-                13,
-                37
-              ],
-              "different_query_numbers_text": "13, 37",
-              "different_draw_numbers": [
-                43,
-                48
-              ],
-              "different_draw_numbers_text": "43, 48"
-            },
-            {
-              "event_index": 945,
-              "year": 1970,
-              "draw_no": 945,
-              "date": "",
-              "draw_numbers": [
-                11,
-                13,
                 29,
                 37,
-                38,
-                49
+                48
               ],
-              "draw_numbers_text": "11, 13, 29, 37, 38, 49",
-              "match_count": 4,
-              "matching_numbers": [
-                13,
-                29,
-                37,
-                38
-              ],
-              "matching_numbers_text": "13, 29, 37, 38",
+              "matching_numbers_text": "4, 29, 37, 48",
               "different_query_numbers": [
-                4,
-                8
+                12,
+                27
               ],
-              "different_query_numbers_text": "4, 8",
+              "different_query_numbers_text": "12, 27",
               "different_draw_numbers": [
-                11,
-                49
+                21,
+                32
               ],
-              "different_draw_numbers_text": "11, 49"
+              "different_draw_numbers_text": "21, 32"
             },
             {
-              "event_index": 404,
-              "year": 1965,
-              "draw_no": 404,
+              "event_index": 3706,
+              "year": 1995,
+              "draw_no": 3706,
               "date": "",
               "draw_numbers": [
                 4,
-                13,
+                12,
                 29,
-                38,
-                46,
-                48
+                34,
+                37,
+                44
               ],
-              "draw_numbers_text": "4, 13, 29, 38, 46, 48",
+              "draw_numbers_text": "4, 12, 29, 34, 37, 44",
               "match_count": 4,
               "matching_numbers": [
                 4,
-                13,
+                12,
                 29,
-                38
-              ],
-              "matching_numbers_text": "4, 13, 29, 38",
-              "different_query_numbers": [
-                8,
                 37
               ],
-              "different_query_numbers_text": "8, 37",
-              "different_draw_numbers": [
-                46,
+              "matching_numbers_text": "4, 12, 29, 37",
+              "different_query_numbers": [
+                27,
                 48
               ],
-              "different_draw_numbers_text": "46, 48"
+              "different_query_numbers_text": "27, 48",
+              "different_draw_numbers": [
+                34,
+                44
+              ],
+              "different_draw_numbers_text": "34, 44"
             },
             {
-              "event_index": 9846,
-              "year": 2024,
-              "draw_no": 9846,
+              "event_index": 1808,
+              "year": 1978,
+              "draw_no": 1808,
               "date": "",
               "draw_numbers": [
-                1,
-                6,
+                4,
                 8,
-                26,
+                12,
+                27,
                 29,
-                38
+                31
               ],
-              "draw_numbers_text": "1, 6, 8, 26, 29, 38",
+              "draw_numbers_text": "4, 8, 12, 27, 29, 31",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                12,
+                27,
+                29
+              ],
+              "matching_numbers_text": "4, 12, 27, 29",
+              "different_query_numbers": [
+                37,
+                48
+              ],
+              "different_query_numbers_text": "37, 48",
+              "different_draw_numbers": [
+                8,
+                31
+              ],
+              "different_draw_numbers_text": "8, 31"
+            },
+            {
+              "event_index": 847,
+              "year": 1969,
+              "draw_no": 847,
+              "date": "",
+              "draw_numbers": [
+                4,
+                24,
+                27,
+                29,
+                37,
+                45
+              ],
+              "draw_numbers_text": "4, 24, 27, 29, 37, 45",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                27,
+                29,
+                37
+              ],
+              "matching_numbers_text": "4, 27, 29, 37",
+              "different_query_numbers": [
+                12,
+                48
+              ],
+              "different_query_numbers_text": "12, 48",
+              "different_draw_numbers": [
+                24,
+                45
+              ],
+              "different_draw_numbers_text": "24, 45"
+            },
+            {
+              "event_index": 9986,
+              "year": 2025,
+              "draw_no": 9986,
+              "date": "",
+              "draw_numbers": [
+                4,
+                12,
+                30,
+                42,
+                48,
+                49
+              ],
+              "draw_numbers_text": "4, 12, 30, 42, 48, 49",
               "match_count": 3,
               "matching_numbers": [
-                8,
-                29,
-                38
-              ],
-              "matching_numbers_text": "8, 29, 38",
-              "different_query_numbers": [
                 4,
-                13,
+                12,
+                48
+              ],
+              "matching_numbers_text": "4, 12, 48",
+              "different_query_numbers": [
+                27,
+                29,
                 37
               ],
-              "different_query_numbers_text": "4, 13, 37",
+              "different_query_numbers_text": "27, 29, 37",
+              "different_draw_numbers": [
+                30,
+                42,
+                49
+              ],
+              "different_draw_numbers_text": "30, 42, 49"
+            },
+            {
+              "event_index": 9881,
+              "year": 2024,
+              "draw_no": 9881,
+              "date": "",
+              "draw_numbers": [
+                12,
+                29,
+                30,
+                40,
+                47,
+                48
+              ],
+              "draw_numbers_text": "12, 29, 30, 40, 47, 48",
+              "match_count": 3,
+              "matching_numbers": [
+                12,
+                29,
+                48
+              ],
+              "matching_numbers_text": "12, 29, 48",
+              "different_query_numbers": [
+                4,
+                27,
+                37
+              ],
+              "different_query_numbers_text": "4, 27, 37",
+              "different_draw_numbers": [
+                30,
+                40,
+                47
+              ],
+              "different_draw_numbers_text": "30, 40, 47"
+            },
+            {
+              "event_index": 9870,
+              "year": 2024,
+              "draw_no": 9870,
+              "date": "",
+              "draw_numbers": [
+                1,
+                3,
+                8,
+                12,
+                37,
+                48
+              ],
+              "draw_numbers_text": "1, 3, 8, 12, 37, 48",
+              "match_count": 3,
+              "matching_numbers": [
+                12,
+                37,
+                48
+              ],
+              "matching_numbers_text": "12, 37, 48",
+              "different_query_numbers": [
+                4,
+                27,
+                29
+              ],
+              "different_query_numbers_text": "4, 27, 29",
               "different_draw_numbers": [
                 1,
-                6,
-                26
+                3,
+                8
               ],
-              "different_draw_numbers_text": "1, 6, 26"
+              "different_draw_numbers_text": "1, 3, 8"
             }
           ],
           "warnings": [
@@ -2291,16 +2284,16 @@
           ]
         },
         "number_profile_details": {
-          "average_profile_score": 60.47,
-          "min_profile_score": 43.65,
-          "max_profile_score": 74.06,
+          "average_profile_score": 59.5,
+          "min_profile_score": 32.6,
+          "max_profile_score": 76.15,
           "statuses": [
             "Закъсняло",
+            "Закъсняло",
+            "Нормален ритъм",
             "Нормален ритъм",
             "Активно напоследък",
-            "Нормален ритъм",
-            "Активно напоследък",
-            "Активно напоследък"
+            "Нормален ритъм"
           ],
           "bands": [
             "Силен профил",
@@ -2312,15 +2305,15 @@
           ]
         },
         "hot_cold_details": {
-          "hot_count": 3,
+          "hot_count": 1,
           "cold_count": 0,
           "stable_count": 0,
-          "overdue_count": 1,
+          "overdue_count": 3,
           "historically_strong_count": 0,
           "historically_weak_count": 0,
-          "average_recent_activity": 93.28,
-          "average_stability": 57.85,
-          "average_overdue": 28.78
+          "average_recent_activity": 91.51,
+          "average_stability": 57.28,
+          "average_overdue": 49.5
         },
         "warnings": [
           "Не са открити сериозни проблеми в обединената оценка."
@@ -2335,20 +2328,20 @@
         "combination": [
           4,
           9,
-          25,
-          37,
-          44,
+          24,
+          36,
+          43,
           46
         ],
-        "combination_text": "4, 9, 25, 37, 44, 46",
+        "combination_text": "4, 9, 24, 36, 43, 46",
         "is_valid": true,
         "status": "Валидна",
-        "final_score": 79.9,
+        "final_score": 80.28,
         "band": "Добра статистическа структура",
         "components": {
           "pattern_score": 97.0,
-          "coverage_score": 88.0,
-          "number_profile_score": 54.48,
+          "coverage_score": 86.8,
+          "number_profile_score": 56.88,
           "hot_cold_balance_score": 85.0,
           "similarity_context_score": 80.0
         },
@@ -2357,29 +2350,29 @@
           "combination": [
             4,
             9,
-            25,
-            37,
-            44,
+            24,
+            36,
+            43,
             46
           ],
-          "combination_text": "4, 9, 25, 37, 44, 46",
+          "combination_text": "4, 9, 24, 36, 43, 46",
           "is_valid": true,
           "status": "Валидна",
-          "sum": 165,
+          "sum": 162,
           "sum_band": "Балансирана сума",
-          "odd_count": 3,
-          "even_count": 3,
-          "low_count": 2,
-          "high_count": 4,
+          "odd_count": 2,
+          "even_count": 4,
+          "low_count": 3,
+          "high_count": 3,
           "gaps": [
             5,
-            16,
+            15,
             12,
             7,
-            2
+            3
           ],
-          "min_gap": 2,
-          "max_gap": 16,
+          "min_gap": 3,
+          "max_gap": 15,
           "average_gap": 8.4,
           "longest_consecutive_run": 1,
           "consecutive_pairs": 0,
@@ -2396,11 +2389,11 @@
             "0": 0,
             "1": 0,
             "2": 0,
-            "3": 0,
+            "3": 1,
             "4": 2,
-            "5": 1,
-            "6": 1,
-            "7": 1,
+            "5": 0,
+            "6": 2,
+            "7": 0,
             "8": 0,
             "9": 1
           },
@@ -2418,363 +2411,361 @@
           "query_numbers": [
             4,
             9,
-            25,
-            37,
-            44,
+            24,
+            36,
+            43,
             46
           ],
-          "query_text": "4, 9, 25, 37, 44, 46",
+          "query_text": "4, 9, 24, 36, 43, 46",
           "is_valid": true,
           "status": "Валидна",
-          "total_draws": 10058,
+          "total_draws": 10059,
           "historical_similarity_score": 61.67,
           "band": "Има близки исторически тиражи",
           "max_match_count": 4,
           "exact_matches_count": 0,
           "five_matches_count": 0,
-          "four_matches_count": 8,
-          "three_matches_count": 209,
+          "four_matches_count": 11,
+          "three_matches_count": 195,
           "match_distribution": {
             "6": 0,
             "5": 0,
-            "4": 8,
-            "3": 209,
-            "2": 1367,
-            "1": 4188,
-            "0": 4286
+            "4": 11,
+            "3": 195,
+            "2": 1353,
+            "1": 4123,
+            "0": 4377
           },
           "closest_draws": [
             {
-              "event_index": 7094,
-              "year": 2007,
-              "draw_no": 7094,
+              "event_index": 9673,
+              "year": 2022,
+              "draw_no": 9673,
               "date": "",
               "draw_numbers": [
                 4,
+                6,
                 9,
                 21,
-                25,
-                39,
+                36,
                 46
               ],
-              "draw_numbers_text": "4, 9, 21, 25, 39, 46",
+              "draw_numbers_text": "4, 6, 9, 21, 36, 46",
               "match_count": 4,
               "matching_numbers": [
                 4,
                 9,
-                25,
+                36,
                 46
               ],
-              "matching_numbers_text": "4, 9, 25, 46",
+              "matching_numbers_text": "4, 9, 36, 46",
               "different_query_numbers": [
-                37,
-                44
+                24,
+                43
               ],
-              "different_query_numbers_text": "37, 44",
+              "different_query_numbers_text": "24, 43",
               "different_draw_numbers": [
-                21,
-                39
+                6,
+                21
               ],
-              "different_draw_numbers_text": "21, 39"
+              "different_draw_numbers_text": "6, 21"
             },
             {
-              "event_index": 5661,
-              "year": 2003,
-              "draw_no": 5661,
+              "event_index": 9544,
+              "year": 2021,
+              "draw_no": 9544,
               "date": "",
               "draw_numbers": [
-                4,
                 9,
-                16,
+                12,
                 19,
-                25,
-                44
-              ],
-              "draw_numbers_text": "4, 9, 16, 19, 25, 44",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                9,
-                25,
-                44
-              ],
-              "matching_numbers_text": "4, 9, 25, 44",
-              "different_query_numbers": [
-                37,
-                46
-              ],
-              "different_query_numbers_text": "37, 46",
-              "different_draw_numbers": [
-                16,
-                19
-              ],
-              "different_draw_numbers_text": "16, 19"
-            },
-            {
-              "event_index": 5589,
-              "year": 2003,
-              "draw_no": 5589,
-              "date": "",
-              "draw_numbers": [
-                4,
-                9,
-                12,
-                13,
-                25,
-                37
-              ],
-              "draw_numbers_text": "4, 9, 12, 13, 25, 37",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                9,
-                25,
-                37
-              ],
-              "matching_numbers_text": "4, 9, 25, 37",
-              "different_query_numbers": [
-                44,
-                46
-              ],
-              "different_query_numbers_text": "44, 46",
-              "different_draw_numbers": [
-                12,
-                13
-              ],
-              "different_draw_numbers_text": "12, 13"
-            },
-            {
-              "event_index": 5228,
-              "year": 2001,
-              "draw_no": 5228,
-              "date": "",
-              "draw_numbers": [
-                4,
-                6,
-                9,
-                12,
-                25,
-                44
-              ],
-              "draw_numbers_text": "4, 6, 9, 12, 25, 44",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                9,
-                25,
-                44
-              ],
-              "matching_numbers_text": "4, 9, 25, 44",
-              "different_query_numbers": [
-                37,
-                46
-              ],
-              "different_query_numbers_text": "37, 46",
-              "different_draw_numbers": [
-                6,
-                12
-              ],
-              "different_draw_numbers_text": "6, 12"
-            },
-            {
-              "event_index": 3258,
-              "year": 1991,
-              "draw_no": 3258,
-              "date": "",
-              "draw_numbers": [
-                4,
-                13,
-                25,
-                37,
+                36,
                 43,
                 46
               ],
-              "draw_numbers_text": "4, 13, 25, 37, 43, 46",
+              "draw_numbers_text": "9, 12, 19, 36, 43, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                9,
+                36,
+                43,
+                46
+              ],
+              "matching_numbers_text": "9, 36, 43, 46",
+              "different_query_numbers": [
+                4,
+                24
+              ],
+              "different_query_numbers_text": "4, 24",
+              "different_draw_numbers": [
+                12,
+                19
+              ],
+              "different_draw_numbers_text": "12, 19"
+            },
+            {
+              "event_index": 8931,
+              "year": 2015,
+              "draw_no": 8931,
+              "date": "",
+              "draw_numbers": [
+                4,
+                9,
+                13,
+                28,
+                36,
+                46
+              ],
+              "draw_numbers_text": "4, 9, 13, 28, 36, 46",
               "match_count": 4,
               "matching_numbers": [
                 4,
-                25,
-                37,
+                9,
+                36,
                 46
               ],
-              "matching_numbers_text": "4, 25, 37, 46",
+              "matching_numbers_text": "4, 9, 36, 46",
               "different_query_numbers": [
-                9,
-                44
-              ],
-              "different_query_numbers_text": "9, 44",
-              "different_draw_numbers": [
-                13,
+                24,
                 43
               ],
-              "different_draw_numbers_text": "13, 43"
-            },
-            {
-              "event_index": 2446,
-              "year": 1984,
-              "draw_no": 2446,
-              "date": "",
-              "draw_numbers": [
-                4,
-                9,
-                11,
-                37,
-                41,
-                44
-              ],
-              "draw_numbers_text": "4, 9, 11, 37, 41, 44",
-              "match_count": 4,
-              "matching_numbers": [
-                4,
-                9,
-                37,
-                44
-              ],
-              "matching_numbers_text": "4, 9, 37, 44",
-              "different_query_numbers": [
-                25,
-                46
-              ],
-              "different_query_numbers_text": "25, 46",
+              "different_query_numbers_text": "24, 43",
               "different_draw_numbers": [
-                11,
-                41
-              ],
-              "different_draw_numbers_text": "11, 41"
-            },
-            {
-              "event_index": 1699,
-              "year": 1977,
-              "draw_no": 1699,
-              "date": "",
-              "draw_numbers": [
-                9,
-                25,
-                34,
-                44,
-                46,
-                48
-              ],
-              "draw_numbers_text": "9, 25, 34, 44, 46, 48",
-              "match_count": 4,
-              "matching_numbers": [
-                9,
-                25,
-                44,
-                46
-              ],
-              "matching_numbers_text": "9, 25, 44, 46",
-              "different_query_numbers": [
-                4,
-                37
-              ],
-              "different_query_numbers_text": "4, 37",
-              "different_draw_numbers": [
-                34,
-                48
-              ],
-              "different_draw_numbers_text": "34, 48"
-            },
-            {
-              "event_index": 1360,
-              "year": 1974,
-              "draw_no": 1360,
-              "date": "",
-              "draw_numbers": [
-                6,
-                9,
-                25,
-                28,
-                44,
-                46
-              ],
-              "draw_numbers_text": "6, 9, 25, 28, 44, 46",
-              "match_count": 4,
-              "matching_numbers": [
-                9,
-                25,
-                44,
-                46
-              ],
-              "matching_numbers_text": "9, 25, 44, 46",
-              "different_query_numbers": [
-                4,
-                37
-              ],
-              "different_query_numbers_text": "4, 37",
-              "different_draw_numbers": [
-                6,
+                13,
                 28
               ],
-              "different_draw_numbers_text": "6, 28"
+              "different_draw_numbers_text": "13, 28"
             },
             {
-              "event_index": 10023,
-              "year": 2026,
-              "draw_no": 10023,
-              "date": "2026-02-19",
-              "draw_numbers": [
-                22,
-                25,
-                37,
-                44,
-                45,
-                48
-              ],
-              "draw_numbers_text": "22, 25, 37, 44, 45, 48",
-              "match_count": 3,
-              "matching_numbers": [
-                25,
-                37,
-                44
-              ],
-              "matching_numbers_text": "25, 37, 44",
-              "different_query_numbers": [
-                4,
-                9,
-                46
-              ],
-              "different_query_numbers_text": "4, 9, 46",
-              "different_draw_numbers": [
-                22,
-                45,
-                48
-              ],
-              "different_draw_numbers_text": "22, 45, 48"
-            },
-            {
-              "event_index": 9834,
-              "year": 2024,
-              "draw_no": 9834,
+              "event_index": 8370,
+              "year": 2012,
+              "draw_no": 8370,
               "date": "",
               "draw_numbers": [
-                8,
-                17,
-                25,
-                31,
-                37,
-                44
-              ],
-              "draw_numbers_text": "8, 17, 25, 31, 37, 44",
-              "match_count": 3,
-              "matching_numbers": [
-                25,
-                37,
-                44
-              ],
-              "matching_numbers_text": "25, 37, 44",
-              "different_query_numbers": [
                 4,
                 9,
+                38,
+                43,
+                45,
                 46
               ],
-              "different_query_numbers_text": "4, 9, 46",
-              "different_draw_numbers": [
-                8,
-                17,
-                31
+              "draw_numbers_text": "4, 9, 38, 43, 45, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                9,
+                43,
+                46
               ],
-              "different_draw_numbers_text": "8, 17, 31"
+              "matching_numbers_text": "4, 9, 43, 46",
+              "different_query_numbers": [
+                24,
+                36
+              ],
+              "different_query_numbers_text": "24, 36",
+              "different_draw_numbers": [
+                38,
+                45
+              ],
+              "different_draw_numbers_text": "38, 45"
+            },
+            {
+              "event_index": 7582,
+              "year": 2009,
+              "draw_no": 7582,
+              "date": "",
+              "draw_numbers": [
+                4,
+                11,
+                24,
+                43,
+                44,
+                46
+              ],
+              "draw_numbers_text": "4, 11, 24, 43, 44, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                24,
+                43,
+                46
+              ],
+              "matching_numbers_text": "4, 24, 43, 46",
+              "different_query_numbers": [
+                9,
+                36
+              ],
+              "different_query_numbers_text": "9, 36",
+              "different_draw_numbers": [
+                11,
+                44
+              ],
+              "different_draw_numbers_text": "11, 44"
+            },
+            {
+              "event_index": 6170,
+              "year": 2004,
+              "draw_no": 6170,
+              "date": "",
+              "draw_numbers": [
+                14,
+                24,
+                30,
+                36,
+                43,
+                46
+              ],
+              "draw_numbers_text": "14, 24, 30, 36, 43, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                24,
+                36,
+                43,
+                46
+              ],
+              "matching_numbers_text": "24, 36, 43, 46",
+              "different_query_numbers": [
+                4,
+                9
+              ],
+              "different_query_numbers_text": "4, 9",
+              "different_draw_numbers": [
+                14,
+                30
+              ],
+              "different_draw_numbers_text": "14, 30"
+            },
+            {
+              "event_index": 4561,
+              "year": 1999,
+              "draw_no": 4561,
+              "date": "",
+              "draw_numbers": [
+                4,
+                9,
+                12,
+                21,
+                43,
+                46
+              ],
+              "draw_numbers_text": "4, 9, 12, 21, 43, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                9,
+                43,
+                46
+              ],
+              "matching_numbers_text": "4, 9, 43, 46",
+              "different_query_numbers": [
+                24,
+                36
+              ],
+              "different_query_numbers_text": "24, 36",
+              "different_draw_numbers": [
+                12,
+                21
+              ],
+              "different_draw_numbers_text": "12, 21"
+            },
+            {
+              "event_index": 4526,
+              "year": 1999,
+              "draw_no": 4526,
+              "date": "",
+              "draw_numbers": [
+                4,
+                9,
+                19,
+                23,
+                24,
+                43
+              ],
+              "draw_numbers_text": "4, 9, 19, 23, 24, 43",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                9,
+                24,
+                43
+              ],
+              "matching_numbers_text": "4, 9, 24, 43",
+              "different_query_numbers": [
+                36,
+                46
+              ],
+              "different_query_numbers_text": "36, 46",
+              "different_draw_numbers": [
+                19,
+                23
+              ],
+              "different_draw_numbers_text": "19, 23"
+            },
+            {
+              "event_index": 2336,
+              "year": 1983,
+              "draw_no": 2336,
+              "date": "",
+              "draw_numbers": [
+                1,
+                4,
+                9,
+                24,
+                25,
+                36
+              ],
+              "draw_numbers_text": "1, 4, 9, 24, 25, 36",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                9,
+                24,
+                36
+              ],
+              "matching_numbers_text": "4, 9, 24, 36",
+              "different_query_numbers": [
+                43,
+                46
+              ],
+              "different_query_numbers_text": "43, 46",
+              "different_draw_numbers": [
+                1,
+                25
+              ],
+              "different_draw_numbers_text": "1, 25"
+            },
+            {
+              "event_index": 1665,
+              "year": 1977,
+              "draw_no": 1665,
+              "date": "",
+              "draw_numbers": [
+                4,
+                5,
+                34,
+                36,
+                43,
+                46
+              ],
+              "draw_numbers_text": "4, 5, 34, 36, 43, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                4,
+                36,
+                43,
+                46
+              ],
+              "matching_numbers_text": "4, 36, 43, 46",
+              "different_query_numbers": [
+                9,
+                24
+              ],
+              "different_query_numbers_text": "9, 24",
+              "different_draw_numbers": [
+                5,
+                34
+              ],
+              "different_draw_numbers_text": "5, 34"
             }
           ],
           "warnings": [
@@ -2786,13 +2777,13 @@
           ]
         },
         "number_profile_details": {
-          "average_profile_score": 54.48,
-          "min_profile_score": 38.44,
-          "max_profile_score": 74.06,
+          "average_profile_score": 56.88,
+          "min_profile_score": 36.36,
+          "max_profile_score": 69.38,
           "statuses": [
             "Закъсняло",
             "Нормален ритъм",
-            "Закъсняло",
+            "Нормален ритъм",
             "Активно напоследък",
             "Нормален ритъм",
             "Нормален ритъм"
@@ -2802,20 +2793,20 @@
             "Нормален профил",
             "Нормален профил",
             "Силен профил",
-            "По-слаб профил",
+            "Нормален профил",
             "По-слаб профил"
           ]
         },
         "hot_cold_details": {
-          "hot_count": 1,
+          "hot_count": 2,
           "cold_count": 0,
           "stable_count": 0,
           "overdue_count": 2,
           "historically_strong_count": 0,
           "historically_weak_count": 0,
-          "average_recent_activity": 85.87,
-          "average_stability": 57.04,
-          "average_overdue": 46.42
+          "average_recent_activity": 94.64,
+          "average_stability": 57.47,
+          "average_overdue": 45.02
         },
         "warnings": [
           "Не са открити сериозни проблеми в обединената оценка."
@@ -2828,64 +2819,64 @@
       {
         "query_index": 5,
         "combination": [
-          1,
-          16,
+          11,
           21,
-          42,
-          43,
-          48
+          22,
+          28,
+          33,
+          38
         ],
-        "combination_text": "1, 16, 21, 42, 43, 48",
+        "combination_text": "11, 21, 22, 28, 33, 38",
         "is_valid": true,
         "status": "Валидна",
-        "final_score": 79.38,
+        "final_score": 79.91,
         "band": "Добра статистическа структура",
         "components": {
-          "pattern_score": 96.0,
-          "coverage_score": 88.0,
-          "number_profile_score": 53.23,
+          "pattern_score": 92.0,
+          "coverage_score": 86.8,
+          "number_profile_score": 59.93,
           "hot_cold_balance_score": 85.0,
           "similarity_context_score": 80.0
         },
         "pattern": {
           "ticket_index": 5,
           "combination": [
-            1,
-            16,
+            11,
             21,
-            42,
-            43,
-            48
+            22,
+            28,
+            33,
+            38
           ],
-          "combination_text": "1, 16, 21, 42, 43, 48",
+          "combination_text": "11, 21, 22, 28, 33, 38",
           "is_valid": true,
           "status": "Валидна",
-          "sum": 171,
+          "sum": 153,
           "sum_band": "Балансирана сума",
           "odd_count": 3,
           "even_count": 3,
           "low_count": 3,
           "high_count": 3,
           "gaps": [
-            15,
-            5,
-            21,
+            10,
             1,
+            6,
+            5,
             5
           ],
           "min_gap": 1,
-          "max_gap": 21,
-          "average_gap": 9.4,
+          "max_gap": 10,
+          "average_gap": 5.4,
           "longest_consecutive_run": 2,
           "consecutive_pairs": 1,
           "max_same_final_digit_count": 2,
-          "range_count_used": 4,
+          "range_count_used": 3,
           "range_distribution": {
-            "1-9": 1,
+            "1-9": 0,
             "10-19": 1,
-            "20-29": 1,
-            "30-39": 0,
-            "40-49": 3
+            "20-29": 3,
+            "30-39": 2,
+            "40-49": 0
           },
           "final_digit_distribution": {
             "0": 0,
@@ -2894,12 +2885,12 @@
             "3": 1,
             "4": 0,
             "5": 0,
-            "6": 1,
+            "6": 0,
             "7": 0,
-            "8": 1,
+            "8": 2,
             "9": 0
           },
-          "pattern_score": 96.0,
+          "pattern_score": 92.0,
           "band": "Отличен баланс",
           "warnings": [
             "Не са открити сериозни структурни проблеми."
@@ -2911,363 +2902,364 @@
         "similarity": {
           "query_index": 5,
           "query_numbers": [
-            1,
-            16,
+            11,
             21,
-            42,
-            43,
-            48
+            22,
+            28,
+            33,
+            38
           ],
-          "query_text": "1, 16, 21, 42, 43, 48",
+          "query_text": "11, 21, 22, 28, 33, 38",
           "is_valid": true,
           "status": "Валидна",
-          "total_draws": 10058,
+          "total_draws": 10059,
           "historical_similarity_score": 61.67,
           "band": "Има близки исторически тиражи",
           "max_match_count": 4,
           "exact_matches_count": 0,
           "five_matches_count": 0,
-          "four_matches_count": 11,
-          "three_matches_count": 189,
+          "four_matches_count": 9,
+          "three_matches_count": 188,
           "match_distribution": {
             "6": 0,
             "5": 0,
-            "4": 11,
-            "3": 189,
-            "2": 1336,
-            "1": 4186,
-            "0": 4336
+            "4": 9,
+            "3": 188,
+            "2": 1344,
+            "1": 4234,
+            "0": 4284
           },
           "closest_draws": [
             {
-              "event_index": 8514,
-              "year": 2013,
-              "draw_no": 8514,
-              "date": "",
-              "draw_numbers": [
-                1,
-                14,
-                16,
-                43,
-                48,
-                49
-              ],
-              "draw_numbers_text": "1, 14, 16, 43, 48, 49",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                16,
-                43,
-                48
-              ],
-              "matching_numbers_text": "1, 16, 43, 48",
-              "different_query_numbers": [
-                21,
-                42
-              ],
-              "different_query_numbers_text": "21, 42",
-              "different_draw_numbers": [
-                14,
-                49
-              ],
-              "different_draw_numbers_text": "14, 49"
-            },
-            {
-              "event_index": 8292,
+              "event_index": 8260,
               "year": 2012,
-              "draw_no": 8292,
+              "draw_no": 8260,
               "date": "",
               "draw_numbers": [
-                1,
-                16,
-                21,
-                22,
-                43,
-                49
-              ],
-              "draw_numbers_text": "1, 16, 21, 22, 43, 49",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                16,
-                21,
-                43
-              ],
-              "matching_numbers_text": "1, 16, 21, 43",
-              "different_query_numbers": [
-                42,
-                48
-              ],
-              "different_query_numbers_text": "42, 48",
-              "different_draw_numbers": [
-                22,
-                49
-              ],
-              "different_draw_numbers_text": "22, 49"
-            },
-            {
-              "event_index": 7844,
-              "year": 2010,
-              "draw_no": 7844,
-              "date": "",
-              "draw_numbers": [
-                1,
-                7,
-                21,
-                36,
-                42,
-                43
-              ],
-              "draw_numbers_text": "1, 7, 21, 36, 42, 43",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                21,
-                42,
-                43
-              ],
-              "matching_numbers_text": "1, 21, 42, 43",
-              "different_query_numbers": [
-                16,
-                48
-              ],
-              "different_query_numbers_text": "16, 48",
-              "different_draw_numbers": [
-                7,
-                36
-              ],
-              "different_draw_numbers_text": "7, 36"
-            },
-            {
-              "event_index": 7160,
-              "year": 2008,
-              "draw_no": 7160,
-              "date": "",
-              "draw_numbers": [
-                16,
-                21,
-                23,
-                43,
-                48,
-                49
-              ],
-              "draw_numbers_text": "16, 21, 23, 43, 48, 49",
-              "match_count": 4,
-              "matching_numbers": [
-                16,
-                21,
-                43,
-                48
-              ],
-              "matching_numbers_text": "16, 21, 43, 48",
-              "different_query_numbers": [
-                1,
-                42
-              ],
-              "different_query_numbers_text": "1, 42",
-              "different_draw_numbers": [
-                23,
-                49
-              ],
-              "different_draw_numbers_text": "23, 49"
-            },
-            {
-              "event_index": 5862,
-              "year": 2003,
-              "draw_no": 5862,
-              "date": "",
-              "draw_numbers": [
-                1,
-                5,
-                6,
-                21,
-                42,
-                48
-              ],
-              "draw_numbers_text": "1, 5, 6, 21, 42, 48",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                21,
-                42,
-                48
-              ],
-              "matching_numbers_text": "1, 21, 42, 48",
-              "different_query_numbers": [
-                16,
-                43
-              ],
-              "different_query_numbers_text": "16, 43",
-              "different_draw_numbers": [
-                5,
-                6
-              ],
-              "different_draw_numbers_text": "5, 6"
-            },
-            {
-              "event_index": 5508,
-              "year": 2002,
-              "draw_no": 5508,
-              "date": "",
-              "draw_numbers": [
-                1,
-                36,
-                37,
-                42,
-                43,
-                48
-              ],
-              "draw_numbers_text": "1, 36, 37, 42, 43, 48",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                42,
-                43,
-                48
-              ],
-              "matching_numbers_text": "1, 42, 43, 48",
-              "different_query_numbers": [
-                16,
-                21
-              ],
-              "different_query_numbers_text": "16, 21",
-              "different_draw_numbers": [
-                36,
-                37
-              ],
-              "different_draw_numbers_text": "36, 37"
-            },
-            {
-              "event_index": 2951,
-              "year": 1988,
-              "draw_no": 2951,
-              "date": "",
-              "draw_numbers": [
-                1,
-                3,
-                4,
-                16,
-                21,
-                48
-              ],
-              "draw_numbers_text": "1, 3, 4, 16, 21, 48",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                16,
-                21,
-                48
-              ],
-              "matching_numbers_text": "1, 16, 21, 48",
-              "different_query_numbers": [
-                42,
-                43
-              ],
-              "different_query_numbers_text": "42, 43",
-              "different_draw_numbers": [
-                3,
-                4
-              ],
-              "different_draw_numbers_text": "3, 4"
-            },
-            {
-              "event_index": 2010,
-              "year": 1980,
-              "draw_no": 2010,
-              "date": "",
-              "draw_numbers": [
-                1,
-                16,
-                41,
-                43,
-                48,
-                49
-              ],
-              "draw_numbers_text": "1, 16, 41, 43, 48, 49",
-              "match_count": 4,
-              "matching_numbers": [
-                1,
-                16,
-                43,
-                48
-              ],
-              "matching_numbers_text": "1, 16, 43, 48",
-              "different_query_numbers": [
-                21,
-                42
-              ],
-              "different_query_numbers_text": "21, 42",
-              "different_draw_numbers": [
-                41,
-                49
-              ],
-              "different_draw_numbers_text": "41, 49"
-            },
-            {
-              "event_index": 1803,
-              "year": 1978,
-              "draw_no": 1803,
-              "date": "",
-              "draw_numbers": [
-                1,
                 10,
-                16,
+                11,
                 21,
+                28,
                 38,
-                48
+                40
               ],
-              "draw_numbers_text": "1, 10, 16, 21, 38, 48",
+              "draw_numbers_text": "10, 11, 21, 28, 38, 40",
               "match_count": 4,
               "matching_numbers": [
-                1,
-                16,
+                11,
                 21,
-                48
-              ],
-              "matching_numbers_text": "1, 16, 21, 48",
-              "different_query_numbers": [
-                42,
-                43
-              ],
-              "different_query_numbers_text": "42, 43",
-              "different_draw_numbers": [
-                10,
+                28,
                 38
               ],
-              "different_draw_numbers_text": "10, 38"
+              "matching_numbers_text": "11, 21, 28, 38",
+              "different_query_numbers": [
+                22,
+                33
+              ],
+              "different_query_numbers_text": "22, 33",
+              "different_draw_numbers": [
+                10,
+                40
+              ],
+              "different_draw_numbers_text": "10, 40"
             },
             {
-              "event_index": 1739,
-              "year": 1978,
-              "draw_no": 1739,
+              "event_index": 8118,
+              "year": 2011,
+              "draw_no": 8118,
               "date": "",
               "draw_numbers": [
-                1,
-                16,
-                28,
-                42,
-                45,
-                48
+                11,
+                21,
+                22,
+                32,
+                33,
+                40
               ],
-              "draw_numbers_text": "1, 16, 28, 42, 45, 48",
+              "draw_numbers_text": "11, 21, 22, 32, 33, 40",
               "match_count": 4,
               "matching_numbers": [
-                1,
-                16,
-                42,
-                48
+                11,
+                21,
+                22,
+                33
               ],
-              "matching_numbers_text": "1, 16, 42, 48",
+              "matching_numbers_text": "11, 21, 22, 33",
+              "different_query_numbers": [
+                28,
+                38
+              ],
+              "different_query_numbers_text": "28, 38",
+              "different_draw_numbers": [
+                32,
+                40
+              ],
+              "different_draw_numbers_text": "32, 40"
+            },
+            {
+              "event_index": 7980,
+              "year": 2010,
+              "draw_no": 7980,
+              "date": "",
+              "draw_numbers": [
+                5,
+                21,
+                22,
+                24,
+                33,
+                38
+              ],
+              "draw_numbers_text": "5, 21, 22, 24, 33, 38",
+              "match_count": 4,
+              "matching_numbers": [
+                21,
+                22,
+                33,
+                38
+              ],
+              "matching_numbers_text": "21, 22, 33, 38",
+              "different_query_numbers": [
+                11,
+                28
+              ],
+              "different_query_numbers_text": "11, 28",
+              "different_draw_numbers": [
+                5,
+                24
+              ],
+              "different_draw_numbers_text": "5, 24"
+            },
+            {
+              "event_index": 7324,
+              "year": 2008,
+              "draw_no": 7324,
+              "date": "",
+              "draw_numbers": [
+                11,
+                19,
+                21,
+                22,
+                25,
+                28
+              ],
+              "draw_numbers_text": "11, 19, 21, 22, 25, 28",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                21,
+                22,
+                28
+              ],
+              "matching_numbers_text": "11, 21, 22, 28",
+              "different_query_numbers": [
+                33,
+                38
+              ],
+              "different_query_numbers_text": "33, 38",
+              "different_draw_numbers": [
+                19,
+                25
+              ],
+              "different_draw_numbers_text": "19, 25"
+            },
+            {
+              "event_index": 7185,
+              "year": 2008,
+              "draw_no": 7185,
+              "date": "",
+              "draw_numbers": [
+                9,
+                22,
+                28,
+                33,
+                38,
+                47
+              ],
+              "draw_numbers_text": "9, 22, 28, 33, 38, 47",
+              "match_count": 4,
+              "matching_numbers": [
+                22,
+                28,
+                33,
+                38
+              ],
+              "matching_numbers_text": "22, 28, 33, 38",
+              "different_query_numbers": [
+                11,
+                21
+              ],
+              "different_query_numbers_text": "11, 21",
+              "different_draw_numbers": [
+                9,
+                47
+              ],
+              "different_draw_numbers_text": "9, 47"
+            },
+            {
+              "event_index": 6413,
+              "year": 2005,
+              "draw_no": 6413,
+              "date": "",
+              "draw_numbers": [
+                4,
+                11,
+                21,
+                33,
+                38,
+                46
+              ],
+              "draw_numbers_text": "4, 11, 21, 33, 38, 46",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                21,
+                33,
+                38
+              ],
+              "matching_numbers_text": "11, 21, 33, 38",
+              "different_query_numbers": [
+                22,
+                28
+              ],
+              "different_query_numbers_text": "22, 28",
+              "different_draw_numbers": [
+                4,
+                46
+              ],
+              "different_draw_numbers_text": "4, 46"
+            },
+            {
+              "event_index": 5428,
+              "year": 2002,
+              "draw_no": 5428,
+              "date": "",
+              "draw_numbers": [
+                4,
+                11,
+                22,
+                28,
+                38,
+                40
+              ],
+              "draw_numbers_text": "4, 11, 22, 28, 38, 40",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                22,
+                28,
+                38
+              ],
+              "matching_numbers_text": "11, 22, 28, 38",
               "different_query_numbers": [
                 21,
-                43
+                33
               ],
-              "different_query_numbers_text": "21, 43",
+              "different_query_numbers_text": "21, 33",
               "different_draw_numbers": [
-                28,
-                45
+                4,
+                40
               ],
-              "different_draw_numbers_text": "28, 45"
+              "different_draw_numbers_text": "4, 40"
+            },
+            {
+              "event_index": 3283,
+              "year": 1991,
+              "draw_no": 3283,
+              "date": "",
+              "draw_numbers": [
+                8,
+                10,
+                22,
+                28,
+                33,
+                38
+              ],
+              "draw_numbers_text": "8, 10, 22, 28, 33, 38",
+              "match_count": 4,
+              "matching_numbers": [
+                22,
+                28,
+                33,
+                38
+              ],
+              "matching_numbers_text": "22, 28, 33, 38",
+              "different_query_numbers": [
+                11,
+                21
+              ],
+              "different_query_numbers_text": "11, 21",
+              "different_draw_numbers": [
+                8,
+                10
+              ],
+              "different_draw_numbers_text": "8, 10"
+            },
+            {
+              "event_index": 723,
+              "year": 1968,
+              "draw_no": 723,
+              "date": "",
+              "draw_numbers": [
+                11,
+                21,
+                22,
+                24,
+                33,
+                42
+              ],
+              "draw_numbers_text": "11, 21, 22, 24, 33, 42",
+              "match_count": 4,
+              "matching_numbers": [
+                11,
+                21,
+                22,
+                33
+              ],
+              "matching_numbers_text": "11, 21, 22, 33",
+              "different_query_numbers": [
+                28,
+                38
+              ],
+              "different_query_numbers_text": "28, 38",
+              "different_draw_numbers": [
+                24,
+                42
+              ],
+              "different_draw_numbers_text": "24, 42"
+            },
+            {
+              "event_index": 10039,
+              "year": 2026,
+              "draw_no": 10039,
+              "date": "2026-04-16",
+              "draw_numbers": [
+                11,
+                18,
+                21,
+                38,
+                48,
+                49
+              ],
+              "draw_numbers_text": "11, 18, 21, 38, 48, 49",
+              "match_count": 3,
+              "matching_numbers": [
+                11,
+                21,
+                38
+              ],
+              "matching_numbers_text": "11, 21, 38",
+              "different_query_numbers": [
+                22,
+                28,
+                33
+              ],
+              "different_query_numbers_text": "22, 28, 33",
+              "different_draw_numbers": [
+                18,
+                48,
+                49
+              ],
+              "different_draw_numbers_text": "18, 48, 49"
             }
           ],
           "warnings": [
@@ -3279,36 +3271,36 @@
           ]
         },
         "number_profile_details": {
-          "average_profile_score": 53.23,
-          "min_profile_score": 42.6,
-          "max_profile_score": 75.42,
+          "average_profile_score": 59.93,
+          "min_profile_score": 52.6,
+          "max_profile_score": 66.14,
           "statuses": [
             "Нормален ритъм",
-            "Нормален ритъм",
             "Закъсняло",
-            "Активно напоследък",
             "Нормален ритъм",
-            "Закъсняло"
+            "Нормален ритъм",
+            "Нормален ритъм",
+            "Активно напоследък"
           ],
           "bands": [
+            "Силен профил",
             "Нормален профил",
-            "По-слаб профил",
+            "Силен профил",
             "Нормален профил",
-            "По-слаб профил",
             "Нормален профил",
-            "Силен профил"
+            "Нормален профил"
           ]
         },
         "hot_cold_details": {
-          "hot_count": 1,
+          "hot_count": 2,
           "cold_count": 0,
           "stable_count": 0,
-          "overdue_count": 2,
+          "overdue_count": 1,
           "historically_strong_count": 0,
           "historically_weak_count": 0,
-          "average_recent_activity": 95.39,
-          "average_stability": 57.46,
-          "average_overdue": 38.51
+          "average_recent_activity": 95.31,
+          "average_stability": 57.48,
+          "average_overdue": 36.41
         },
         "warnings": [
           "Не са открити сериозни проблеми в обединената оценка."
@@ -3322,15 +3314,15 @@
     "band": "Добра статистическа структура",
     "safety_note_bg": "Обединената оценка е статистически контролен слой. Тя не предсказва печеливши числа и не увеличава математическата гаранция за печалба."
   },
-  "average_final_score": 80.56,
-  "best_score": 81.22,
-  "weakest_score": 79.38,
-  "coverage_score": 88.0,
+  "average_final_score": 81.24,
+  "best_score": 83.41,
+  "weakest_score": 79.91,
+  "coverage_score": 86.8,
   "warnings": [
     "Не са открити сериозни проблеми в предложения фиш."
   ],
   "recommendations": [
-    "Предложеният комбинация е подходящ за допълнителна проверка в модулите за баланс, покритие и историческа близост.",
+    "Предложеният фиш е подходящ за допълнителна проверка в модулите за баланс, покритие и историческа близост.",
     "Това не е предсказание и не е гаранция за печалба. Използвай го като статистически помощник за изграждане на фиш."
   ],
   "safety_note_bg": "Умен генератор на комбинации 2 генерира статистически балансирани предложения. Той не предсказва печеливши числа и не гарантира печалба."

@@ -1,7 +1,7 @@
 # Step 101 — Протокол за реална употреба
 
-Статус: **WAITING_NEXT_REAL_DRAW**
-Step 100: **V1_LOCKED_WAITING_NEXT_DRAW**
+Статус: **CHECK_REQUIRED**
+Step 100: **CHECK_REQUIRED**
 
 ## Активен план
 - Тип: Хибрид
@@ -9,8 +9,8 @@ Step 100: **V1_LOCKED_WAITING_NEXT_DRAW**
 - Цена: 9.90 EUR
 
 ## Dataset checkpoint
-- Редове: 10058
-- Последен тираж: 2026-06-21 — 6, 13, 16, 19, 42, 44
+- Редове: 10059
+- Последен тираж: 2026-06-25 — 5, 11, 44, 46, 47, 48
 
 ## Протокол
 1. **Преди следващия тираж** — Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.
@@ -21,10 +21,14 @@ Step 100: **V1_LOCKED_WAITING_NEXT_DRAW**
 6. **След проверка** — Комитни само ако compile/JSON/CSV/Cyrillic/checkpoint проверките са чисти, после направи clean ZIP.
 
 ## Блокиращи проверки
-- Няма блокиращи проблеми.
+- Step 100: V1 lock е активен — CHECK_REQUIRED
+- Step 100: Няма Step 100 blocking failures — blocking_failures=5
+- Данни: Dataset-ите са синхронизирани — historical=10059, normalized=10058, canonical=10058
+- Данни: Checkpoint latest draw остава 2026-06-21 — 2026-06-25 — 5, 11, 44, 46, 47, 48
+- Add Draw: Refresh chain остава след save — refresh_models след save_draws
 
 ## Следващо действие
-Изчакай следващия реален тираж и го въведи през Добавяне на тираж.
+Прегледай блокиращите проверки преди реална употреба.
 
 Без нови модели, без промяна на тегла, без промяна на ticket builder, без промяна на dataset преди следващ реален тираж.
 

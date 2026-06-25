@@ -1,4 +1,4 @@
-# V51 Ticket Пакет Intelligence
+# V51 Ticket Portfolio Intelligence
 
 Status: `v51_ticket_portfolio_intelligence_completed`
 Overall score: **62.78 / 100**
@@ -6,7 +6,7 @@ Rating: **medium**
 
 Important: this is statistical analysis only. It is not a guarantee of winnings.
 
-## Пакет metrics
+## Portfolio metrics
 - combination_count: 4
 - average_combo_score: 72.53
 - unique_numbers: 14

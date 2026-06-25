@@ -4,7 +4,7 @@ Status: v41 model retraining completed on canonical draw events.
 
 ## Dataset
 
-- Canonical данни: `data\v41_canonical_draw_events.csv`
+- Canonical dataset: `data\v41_canonical_draw_events.csv`
 - Total draw events: 10058
 - Train events: 8046
 - Test events: 2012
@@ -56,4 +56,4 @@ Status: v41 model retraining completed on canonical draw events.
 
 Lottery draws are random. These models produce ranking scores and diagnostics, not guaranteed winning numbers.
 
-Bonus-number modeling is intentionally blocked because bonus-number data is not available in the canonical данни.
+Bonus-number modeling is intentionally blocked because bonus-number data is not available in the canonical dataset.

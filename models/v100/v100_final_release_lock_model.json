@@ -1,8 +1,8 @@
 {
   "step": 100,
-  "status": "V1_LOCKED_WAITING_NEXT_DRAW",
+  "status": "CHECK_REQUIRED",
   "title_bg": "Финално заключване v1",
-  "generated_at_utc": "2026-06-24T09:01:43+00:00",
+  "generated_at_utc": "2026-06-25T16:36:52+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "strategy_type": "Хибрид",
@@ -13,29 +13,29 @@
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44"
   },
   "dataset": {
-    "historical_rows": 10058,
+    "historical_rows": 10059,
     "normalized_rows": 10058,
     "canonical_rows": 10058,
-    "latest_draw_date": "2026-06-21",
+    "latest_draw_date": "2026-06-25",
     "latest_draw_year": "2026",
-    "latest_draw_no": "48",
+    "latest_draw_no": "49",
     "latest_draw_position": "1",
     "latest_numbers": [
-      6,
-      13,
-      16,
-      19,
-      42,
-      44
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
     ],
-    "latest_numbers_text": "6, 13, 16, 19, 42, 44",
-    "datasets_synced": true
+    "latest_numbers_text": "5, 11, 44, 46, 47, 48",
+    "datasets_synced": false
   },
   "statuses": {
     "step95_status": "WAITING_NEXT_DRAW",
-    "step97_status": "READY",
-    "step98_status": "WAITING_NEXT_DRAW",
-    "step99_status": "READY_WAITING_NEXT_DRAW"
+    "step97_status": "REVIEW",
+    "step98_status": "HAS_HISTORY",
+    "step99_status": "CHECK_REQUIRED"
   },
   "flow": {
     "final_dashboard_page_wired": true,
@@ -54,16 +54,16 @@
     {
       "area_bg": "Данни",
       "check_bg": "Dataset-ите са синхронизирани",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "historical=10058, normalized=10058, canonical=10058"
+      "details_bg": "historical=10059, normalized=10058, canonical=10058"
     },
     {
       "area_bg": "Данни",
       "check_bg": "Последният тираж е очакваният checkpoint",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "2026-06-21 — 6, 13, 16, 19, 42, 44"
+      "details_bg": "2026-06-25 — 5, 11, 44, 46, 47, 48"
     },
     {
       "area_bg": "Активен план",
@@ -103,23 +103,23 @@
     {
       "area_bg": "Статуси",
       "check_bg": "Step 97 lifecycle е готов",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "READY"
+      "details_bg": "REVIEW"
     },
     {
       "area_bg": "Статуси",
       "check_bg": "Step 98 историята чака следващ тираж",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "WAITING_NEXT_DRAW"
+      "details_bg": "HAS_HISTORY"
     },
     {
       "area_bg": "Статуси",
       "check_bg": "Step 99 финалното табло е готово",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
-      "details_bg": "READY_WAITING_NEXT_DRAW"
+      "details_bg": "CHECK_REQUIRED"
     },
     {
       "area_bg": "Навигация",
@@ -164,12 +164,48 @@
       "details_bg": "v97, v98, v99, v100"
     }
   ],
-  "blocking_failures": [],
+  "blocking_failures": [
+    {
+      "area_bg": "Данни",
+      "check_bg": "Dataset-ите са синхронизирани",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "historical=10059, normalized=10058, canonical=10058"
+    },
+    {
+      "area_bg": "Данни",
+      "check_bg": "Последният тираж е очакваният checkpoint",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "2026-06-25 — 5, 11, 44, 46, 47, 48"
+    },
+    {
+      "area_bg": "Статуси",
+      "check_bg": "Step 97 lifecycle е готов",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "REVIEW"
+    },
+    {
+      "area_bg": "Статуси",
+      "check_bg": "Step 98 историята чака следващ тираж",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "HAS_HISTORY"
+    },
+    {
+      "area_bg": "Статуси",
+      "check_bg": "Step 99 финалното табло е готово",
+      "status": "FAIL",
+      "blocking": "yes",
+      "details_bg": "CHECK_REQUIRED"
+    }
+  ],
   "warnings": [
     "Старите raw source файлове могат да съдържат known replacement-character маркери; те не са активен UI/model/report слой.",
     "Следващата реална проверка ще стане едва след въвеждане на нов тираж след 2026-06-21."
   ],
-  "next_action_bg": "Въведи следващия реален тираж",
+  "next_action_bg": "Прегледай блокиращите проверки",
   "method_bg": "Step 100 заключва v1 workflow чрез контролен checklist върху Step 94–99, dataset sync, Add Draw реда и потребителската навигация. Това е QA/release слой, не прогнозен модел.",
   "safe_note_bg": "Step 100 е финално заключване на v1 workflow. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба."
 }

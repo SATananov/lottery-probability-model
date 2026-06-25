@@ -2,7 +2,7 @@
   "status": "completed",
   "module": "Hot / Cold / Stable Number Center",
   "version": "v57",
-  "total_draws": 10058,
+  "total_draws": 10059,
   "numbers_profiled": 49,
   "group_summary": [
     {
@@ -37,10 +37,10 @@
         12,
         4,
         21,
-        48,
-        47,
         41,
-        20
+        20,
+        27,
+        23
       ]
     },
     {
@@ -55,43 +55,43 @@
     },
     {
       "group": "Исторически слаби",
-      "count": 2,
+      "count": 1,
       "numbers": [
-        23,
         40
       ]
     },
     {
       "group": "Неутрални",
-      "count": 27,
+      "count": 28,
       "numbers": [
         33,
         2,
         17,
-        46,
         3,
-        11,
-        5,
-        27,
         22,
         43,
         1,
         31,
         9,
+        11,
         26,
         8,
+        48,
         16,
-        45,
         39,
-        6,
-        15,
+        45,
+        46,
         35,
-        10,
+        15,
         29,
+        44,
+        6,
+        10,
         19,
         14,
-        44,
-        7
+        7,
+        5,
+        47
       ]
     }
   ],
@@ -139,6 +139,10 @@
   ],
   "top_cold": [
     {
+      "number": 34,
+      "recent_100_ratio": 0.49
+    },
+    {
       "number": 32,
       "recent_100_ratio": 0.5717
     },
@@ -147,7 +151,7 @@
       "recent_100_ratio": 0.5717
     },
     {
-      "number": 34,
+      "number": 45,
       "recent_100_ratio": 0.5717
     },
     {
@@ -156,14 +160,6 @@
     },
     {
       "number": 44,
-      "recent_100_ratio": 0.6533
-    },
-    {
-      "number": 45,
-      "recent_100_ratio": 0.6533
-    },
-    {
-      "number": 47,
       "recent_100_ratio": 0.735
     },
     {
@@ -177,47 +173,51 @@
     {
       "number": 25,
       "recent_100_ratio": 0.8167
+    },
+    {
+      "number": 1,
+      "recent_100_ratio": 0.8167
     }
   ],
   "top_overdue": [
     {
       "number": 34,
-      "draws_since_last_seen": 29
+      "draws_since_last_seen": 30
     },
     {
       "number": 25,
-      "draws_since_last_seen": 24
+      "draws_since_last_seen": 25
     },
     {
       "number": 12,
-      "draws_since_last_seen": 22
+      "draws_since_last_seen": 23
     },
     {
       "number": 4,
-      "draws_since_last_seen": 20
+      "draws_since_last_seen": 21
     },
     {
       "number": 21,
-      "draws_since_last_seen": 19
-    },
-    {
-      "number": 48,
-      "draws_since_last_seen": 19
+      "draws_since_last_seen": 20
     },
     {
       "number": 41,
-      "draws_since_last_seen": 18
-    },
-    {
-      "number": 47,
-      "draws_since_last_seen": 18
+      "draws_since_last_seen": 19
     },
     {
       "number": 18,
-      "draws_since_last_seen": 15
+      "draws_since_last_seen": 16
     },
     {
       "number": 20,
+      "draws_since_last_seen": 14
+    },
+    {
+      "number": 23,
+      "draws_since_last_seen": 13
+    },
+    {
+      "number": 24,
       "draws_since_last_seen": 13
     }
   ],

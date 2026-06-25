@@ -1,8 +1,8 @@
 # v45 Prediction Engine Pro Training Summary
 
-Status: v45 training верига completed.
+Status: v45 training pipeline completed.
 
-## Важно уточнение
+## Safety note
 
 Lottery draws are random. These outputs are statistical rankings and rule-aware ticket suggestions, not guaranteed winning numbers.
 

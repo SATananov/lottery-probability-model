@@ -2,21 +2,21 @@
   "step": 104,
   "name_bg": "Финален одит след Step 102",
   "status": "FINAL_AUDIT_REFRESHED",
-  "generated_at_utc": "2026-06-24T10:34:30.905386+00:00",
+  "generated_at_utc": "2026-06-25T16:36:52.866469+00:00",
   "blocking_failures": 0,
   "dataset": {
     "exists": true,
-    "rows": 10058,
+    "rows": 10059,
     "valid_numbers": true,
     "duplicate_inside_draws": 0,
-    "latest_date": "2026-06-21",
+    "latest_date": "2026-06-25",
     "latest_numbers": [
-      6,
-      13,
-      16,
-      19,
-      42,
-      44
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
     ]
   },
   "refresh_chain": {
@@ -42,31 +42,31 @@
       "step": "v97",
       "report": "reports\\v97_real_draw_lifecycle_summary.json",
       "exists": true,
-      "status": "READY"
+      "status": "REVIEW"
     },
     {
       "step": "v98",
       "report": "reports\\v98_active_plan_result_history_summary.json",
       "exists": true,
-      "status": "WAITING_NEXT_DRAW"
+      "status": "HAS_HISTORY"
     },
     {
       "step": "v99",
       "report": "reports\\v99_final_user_dashboard_summary.json",
       "exists": true,
-      "status": "READY_WAITING_NEXT_DRAW"
+      "status": "CHECK_REQUIRED"
     },
     {
       "step": "v100",
       "report": "reports\\v100_final_release_lock_summary.json",
       "exists": true,
-      "status": "V1_LOCKED_WAITING_NEXT_DRAW"
+      "status": "CHECK_REQUIRED"
     },
     {
       "step": "v101",
       "report": "reports\\v101_real_use_protocol_summary.json",
       "exists": true,
-      "status": "WAITING_NEXT_REAL_DRAW"
+      "status": "CHECK_REQUIRED"
     },
     {
       "step": "v102",
