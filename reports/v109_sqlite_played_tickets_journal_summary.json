@@ -7,8 +7,8 @@
   "exports_dir": "data\\user_journal_exports",
   "counts": {
     "draw_entries": 1,
-    "played_tickets": 0,
-    "played_ticket_lines": 0,
+    "played_tickets": 3,
+    "played_ticket_lines": 12,
     "played_ticket_results": 0
   },
   "latest_dataset_draw": {
@@ -64,7 +64,7 @@
   },
   "default_ticket_mode_bg": "основни комбинации от Step 79",
   "safe_note_bg": "Step 109 пази локален SQLite дневник на реално въведени тиражи и изиграни фишове. Това е отчетност и проследимост, не гаранция за печалба.",
-  "generated_at_utc": "2026-06-26T16:06:46+00:00",
+  "generated_at_utc": "2026-06-26T16:42:41+00:00",
   "checks": [
     {
       "check": "sqlite_db_exists",

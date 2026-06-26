@@ -4,8 +4,8 @@
 - Blocking failures: `0`
 - Database: `data\user_journal.db`
 - Draw entries: `1`
-- Played tickets: `0`
-- Played lines: `0`
+- Played tickets: `3`
+- Played lines: `12`
 - Results: `0`
 
 ## Latest draw

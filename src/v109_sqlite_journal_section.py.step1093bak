@@ -14,7 +14,6 @@ from src.v109_sqlite_journal_engine import (
     table_rows,
     write_artifacts,
 )
-from src.v109_3_ticket_pack_source_clarity_engine import latest_dataset_context
 from src.v109_2_ticket_pack_4line_engine import (
     DEFAULT_TICKET_COUNT,
     LINES_PER_TICKET,
@@ -193,51 +192,6 @@ def _inject_journal_css() -> None:
             border: 1px solid rgba(255,255,255,0.36);
             box-shadow: inset 0 2px 7px rgba(255,255,255,0.28), 0 8px 16px rgba(0,0,0,0.32);
         }
-
-        .source-context-panel {
-            border: 1px solid rgba(225,190,92,0.22);
-            border-radius: 20px;
-            padding: 18px 20px;
-            margin: 14px 0 18px 0;
-            background: linear-gradient(135deg, rgba(40,54,72,0.58), rgba(225,190,92,0.065));
-        }
-        .source-context-title {
-            color: #f7e9bf;
-            font-weight: 900;
-            font-size: 1.05rem;
-            margin-bottom: 8px;
-        }
-        .source-context-text {
-            color: rgba(246,241,232,0.82);
-            line-height: 1.55;
-            margin-bottom: 12px;
-        }
-        .source-chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-top: 10px;
-        }
-        .source-chip {
-            display: inline-flex;
-            border: 1px solid rgba(225,190,92,0.24);
-            border-radius: 999px;
-            padding: 7px 11px;
-            background: rgba(225,190,92,0.08);
-            color: #f4e4b4;
-            font-size: 0.86rem;
-            font-weight: 800;
-        }
-        .ticket-source-strip {
-            border-left: 3px solid rgba(225,190,92,0.72);
-            padding: 8px 11px;
-            margin: 10px 0 14px 0;
-            border-radius: 10px;
-            background: rgba(225,190,92,0.055);
-            color: rgba(246,241,232,0.80);
-            font-size: 0.91rem;
-            line-height: 1.45;
-        }
         .journal-result-note {
             border-radius: 14px;
             border: 1px solid rgba(51, 153, 255, 0.22);
@@ -297,43 +251,6 @@ def _latest_numbers(latest: dict[str, Any]) -> str:
     if isinstance(numbers, list):
         return ", ".join(str(number) for number in numbers)
     return str(numbers or "—")
-
-
-def _numbers_inline(numbers: list[int] | str | None) -> str:
-    if numbers is None:
-        return "—"
-    if isinstance(numbers, list):
-        return ", ".join(str(number) for number in numbers)
-    return str(numbers or "—")
-
-
-def _render_source_context_panel(context: dict[str, Any]) -> None:
-    latest = context.get("latest_draw") or {}
-    latest_date = latest.get("date") or "—"
-    latest_numbers = _numbers_inline(latest.get("numbers"))
-    dataset_rows = context.get("dataset_rows") or "—"
-    recommendation = context.get("training_recommendation") or "Не обучавай тежки модели сега"
-    heavy_status = context.get("heavy_training_status") or "Тежко обучение не е пускано"
-    source_statement = context.get("source_statement") or "Числата са текуща препоръка от активния финален план и наличните модели."
-    st.markdown(
-        f"""
-        <div class="source-context-panel">
-            <div class="source-context-title">Как са избрани тези фишове?</div>
-            <div class="source-context-text">
-                {escape(str(source_statement))}
-                Това е пакет за игра от текущото състояние на системата, а не обещание за резултат.
-            </div>
-            <div class="source-chip-row">
-                <span class="source-chip">Данни: {escape(str(dataset_rows))} тиража</span>
-                <span class="source-chip">Последен тираж: {escape(str(latest_date))}</span>
-                <span class="source-chip">Последни числа: {escape(str(latest_numbers))}</span>
-                <span class="source-chip">{escape(str(heavy_status))}</span>
-                <span class="source-chip">{escape(str(recommendation))}</span>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
 
 def _mode_display(value: Any) -> str:
@@ -464,10 +381,6 @@ def _editable_ticket_cards(cards: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     </div>
                     <div class="physical-ticket-badge">реален фиш · 4 реда</div>
                 </div>
-                <div class="ticket-source-strip">
-                    Източник: {escape(str((card.get('source_context') or {}).get('source_label') or card.get('strategy') or 'Текущ модел'))}<br>
-                    Можеш да редактираш числата. След редакция дневникът пази точно това, което реално си играл.
-                </div>
             </div>
             """,
             unsafe_allow_html=True,
@@ -575,8 +488,6 @@ def render_v109_sqlite_journal_section() -> None:
         '<div class="journal-muted">Автоматичното предложение подрежда фишове по 4 комбинации. Можеш да запазиш само това, което реално ще играеш, или да редактираш редовете ръчно.</div>',
         unsafe_allow_html=True,
     )
-
-    _render_source_context_panel(latest_dataset_context())
 
     package_cols = st.columns(4)
     ticket_count = package_cols[0].selectbox("Брой фишове", [1, 2, 3], index=2, key="v1092_ticket_count")

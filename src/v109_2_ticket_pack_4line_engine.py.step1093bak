@@ -7,8 +7,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from src.v109_3_ticket_pack_source_clarity_engine import enrich_ticket_cards_with_source_context
-
 from src.v109_sqlite_journal_engine import (
     connect,
     export_csv_mirrors,
@@ -143,7 +141,7 @@ def build_suggested_ticket_cards(ticket_count: int = DEFAULT_TICKET_COUNT) -> li
         )
     )
 
-    return enrich_ticket_cards_with_source_context(cards[:requested])
+    return cards[:requested]
 
 
 def parse_numbers_text(value: str) -> list[int]:

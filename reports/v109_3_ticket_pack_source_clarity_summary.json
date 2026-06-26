@@ -1,0 +1,49 @@
+{
+  "step": "109.3",
+  "name": "Ticket Pack Source Clarity",
+  "status": "TICKET_SOURCE_CLARIFIED",
+  "blocking_failures": 0,
+  "dataset_rows": 10059,
+  "latest_draw": {
+    "date": "2026-06-25",
+    "draw_number": "49",
+    "numbers": [
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
+    ]
+  },
+  "source_statement": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение.",
+  "training_recommendation": "Не обучавай тежки модели сега",
+  "heavy_training_status": "Тежко обучение не е пускано за този пакет",
+  "generated_at_utc": "2026-06-26T16:40:05+00:00",
+  "checklist": [
+    {
+      "check": "dataset_context_available",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "dataset_rows=10059"
+    },
+    {
+      "check": "latest_draw_available",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "latest_draw={'date': '2026-06-25', 'draw_number': '49', 'numbers': [5, 11, 44, 46, 47, 48]}"
+    },
+    {
+      "check": "datasets_synced",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "row_counts={'historical': 10059, 'normalized': 10059, 'canonical': 10059}"
+    },
+    {
+      "check": "step107_policy_available",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "step107=TRAINING_POLICY_READY, recommendation=Не обучавай тежки модели сега"
+    }
+  ]
+}

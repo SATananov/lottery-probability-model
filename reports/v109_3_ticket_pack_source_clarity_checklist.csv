@@ -1,0 +1,5 @@
+check,status,blocking,details_bg
+dataset_context_available,OK,yes,dataset_rows=10059
+latest_draw_available,OK,yes,"latest_draw={'date': '2026-06-25', 'draw_number': '49', 'numbers': [5, 11, 44, 46, 47, 48]}"
+datasets_synced,OK,yes,"row_counts={'historical': 10059, 'normalized': 10059, 'canonical': 10059}"
+step107_policy_available,OK,yes,"step107=TRAINING_POLICY_READY, recommendation=Не обучавай тежки модели сега"
