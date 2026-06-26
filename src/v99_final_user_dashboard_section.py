@@ -6,6 +6,7 @@ from typing import Any
 
 import pandas as pd
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status, polish_dataframe
 
 from src.v99_final_user_dashboard_engine import (
     ACTIONS_CSV_PATH,
@@ -121,12 +122,12 @@ CSS = """
 def render_v99_final_user_dashboard_section() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     st.title("Финално табло")
-    st.caption("Step 99 — един ясен потребителски екран за активния план, следващото действие, реалния цикъл и историята.")
+    st.caption("Ясен потребителски екран за активния план, следващото действие, реалния цикъл и историята.")
     st.warning(SAFE_NOTE_BG)
 
     if st.button("Обнови финалното табло", key="v99_rebuild_btn"):
         payload = build_and_save()
-        st.success(f"Step 99 е обновен. Статус: {payload.get('status', 'UNKNOWN')}")
+        st.success(f"Финалното табло е обновено. Статус: {friendly_status(payload.get('status'))}")
         st.rerun()
 
     payload = load_final_user_dashboard()
@@ -138,17 +139,17 @@ def render_v99_final_user_dashboard_section() -> None:
     issues = payload.get("issues", []) or []
 
     cols = st.columns(5)
-    cols[0].metric("Статус", payload.get("status", "UNKNOWN"))
+    cols[0].metric("Статус", friendly_status(payload.get("status")))
     cols[1].metric("План", active_plan.get("strategy_type", "-"))
     cols[2].metric("Комбинации", int(active_plan.get("combination_count", 0) or 0))
     cols[3].metric("Цена", _format_money(active_plan.get("cost_eur", 0.0)))
     cols[4].metric("История", int(active_plan.get("real_result_rows", 0) or 0))
 
     status_cols = st.columns(4)
-    status_cols[0].metric("Step 95", statuses.get("step95_status", "UNKNOWN"))
-    status_cols[1].metric("Step 97", statuses.get("step97_status", "UNKNOWN"))
-    status_cols[2].metric("Step 98", statuses.get("step98_status", "UNKNOWN"))
-    status_cols[3].metric("Dataset", int(dataset.get("dataset_rows", 0) or 0))
+    status_cols[0].metric("Преди запис", friendly_status(statuses.get("step95_status")))
+    status_cols[1].metric("Реален цикъл", friendly_status(statuses.get("step97_status")))
+    status_cols[2].metric("История", friendly_status(statuses.get("step98_status")))
+    status_cols[3].metric("Редове в данните", int(dataset.get("dataset_rows", 0) or 0))
 
     st.markdown("### Следващо действие")
     st.success(f"**{next_action.get('title_bg', '-')}**")
@@ -176,7 +177,7 @@ def render_v99_final_user_dashboard_section() -> None:
 <div class="v99-action-card">
   <div class="v99-action-title">{action.get('order', '')}. {action.get('title_bg', '')}</div>
   <div>{action.get('description_bg', '')}</div>
-  <div class="v99-action-meta">Статус: <b>{action.get('status', '-')}</b> · Страница: <b>{action.get('page_bg', '-')}</b> · Готово: <b>{ready}</b></div>
+  <div class="v99-action-meta">Статус: <b>{friendly_status(action.get('status'))}</b> · Страница: <b>{action.get('page_bg', '-')}</b> · Готово: <b>{ready}</b></div>
 </div>
 """,
                 unsafe_allow_html=True,
@@ -208,7 +209,6 @@ def render_v99_final_user_dashboard_section() -> None:
 
     with tabs[3]:
         st.markdown(
-            "Step 99 не генерира нови числа и не променя моделите. Той събира вече готовите слоеве: "
-            "Step 94 активен план, Step 95 pre-save проверка, Step 96 контролиран ред, Step 97 lifecycle и Step 98 история."
+            "Това табло не генерира нови числа и не променя моделите. То събира вече готовите проверки: активен план, проверка преди запис, реален цикъл и история."
         )
         st.warning(SAFE_NOTE_BG)

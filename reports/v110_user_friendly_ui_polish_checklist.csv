@@ -1,0 +1,4 @@
+check,status,blocking,details_bg
+target_files_present,OK,yes,Проверени файлове: 10
+no_broken_cyrillic_markers,OK,yes,Няма счупена кирилица в проверените user-facing файлове.
+visible_developer_terms_reduced,OK,no,Няма основни остатъчни developer маркери в проверените user-facing файлове.

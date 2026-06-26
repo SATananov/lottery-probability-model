@@ -2,28 +2,29 @@ from __future__ import annotations
 
 import pandas as pd
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status
 
 from src.v102_runtime_hardening_engine import load_runtime_hardening_summary, write_runtime_hardening_artifacts
 
 
 def render_v102_runtime_hardening_section() -> None:
-    st.title("Runtime защита")
+    st.title("Защита при обновяване")
     st.caption(
         "Контролна страница за бързото обновяване след реален тираж, timeout защитата "
         "и отделянето на тежките лабораторни процеси от стандартния поток."
     )
 
-    if st.button("Обнови Step 102 проверката", use_container_width=True, key="v102_refresh_btn"):
+    if st.button("Обнови проверката", use_container_width=True, key="v102_refresh_btn"):
         summary = write_runtime_hardening_artifacts()
-        st.success("Step 102 проверката е обновена.")
+        st.success("Проверката е обновена.")
     else:
         summary = load_runtime_hardening_summary()
 
     cols = st.columns(4)
-    cols[0].metric("Статус", summary.get("status", "UNKNOWN"))
-    cols[1].metric("Blocking failures", int(summary.get("blocking_failures", 0)))
+    cols[0].metric("Статус", friendly_status(summary.get("status")))
+    cols[1].metric("Проблеми за преглед", int(summary.get("blocking_failures", 0)))
     cols[2].metric("Default timeout", f"{summary.get('default_timeout_seconds', 0)} сек.")
-    cols[3].metric("Тежки скриптове", len(summary.get("heavy_scripts_kept_manual", [])))
+    cols[3].metric("Само ръчно", len(summary.get("heavy_scripts_kept_manual", [])))
 
     st.markdown("### Какво прави тази защита")
     for item in summary.get("what_changed_bg", []):

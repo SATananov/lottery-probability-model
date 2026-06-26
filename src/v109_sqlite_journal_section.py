@@ -471,7 +471,7 @@ def _render_ticket_card_preview(card: dict[str, Any]) -> None:
                     <span class="ticket-role">{escape(str(line.get('role') or 'комбинация'))}</span>
                 </div>
                 {_numbers_html(line.get('numbers'))}
-                <div class="journal-muted" style="margin-top:10px;">Източник: {escape(str(line.get('source_group') or line.get('source_ticket_id') or '—'))}</div>
+                <div class="journal-muted" style="margin-top:10px;">Произход: {escape(str(line.get('model_source_label') or line.get('source_group') or 'Текуща препоръка'))}</div>
             </div>
             """,
             unsafe_allow_html=True,
@@ -583,7 +583,7 @@ def render_v109_sqlite_journal_section() -> None:
 
     c1, c2 = st.columns(2)
     with c1:
-        if st.button("Синхронизирай последния реален тираж", use_container_width=True, key="v109_sync_latest_draw_btn"):
+        if st.button("Обнови реалния тираж в дневника", use_container_width=True, key="v109_sync_latest_draw_btn"):
             result = sync_latest_draw_entry(note="Ръчно обновяване от страницата Дневник на фишовете.")
             write_artifacts(sync_latest_draw=False, evaluate_open=False)
             if result.get("inserted"):
@@ -592,7 +592,7 @@ def render_v109_sqlite_journal_section() -> None:
                 st.info("Последният реален тираж вече е наличен в дневника.")
             st.rerun()
     with c2:
-        if st.button("Провери чакащите фишове", use_container_width=True, key="v109_evaluate_open_tickets_btn"):
+        if st.button("Оцени фишовете с излязъл тираж", use_container_width=True, key="v109_evaluate_open_tickets_btn"):
             result = evaluate_open_tickets_against_latest_draw()
             write_artifacts(sync_latest_draw=True, evaluate_open=False)
             st.success(f"Проверени фишове: {result.get('evaluated', 0)}")
@@ -600,6 +600,7 @@ def render_v109_sqlite_journal_section() -> None:
 
     st.markdown("---")
     st.markdown("## Подготви фишове за игра")
+    st.info("Избери дали искаш пакет само от видимия финален план или разширен пакет с ясно маркиран допълващ фиш.")
     st.markdown(
         '<div class="journal-muted">Автоматичното предложение подрежда фишове по 4 комбинации. Можеш да запазиш само това, което реално ще играеш, или да редактираш редовете ръчно.</div>',
         unsafe_allow_html=True,

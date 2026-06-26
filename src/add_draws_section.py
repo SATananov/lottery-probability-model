@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status
 
 from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack_against_draw
 from src.v95_active_plan_auto_evaluation_engine import evaluate_active_plan_against_pending_draw
@@ -625,9 +626,9 @@ def render() -> None:
     st.markdown("#### Реален цикъл на нов тираж")
     st.caption(lifecycle.get("next_user_action_bg", ""))
     lifecycle_cols = st.columns(4)
-    lifecycle_cols[0].metric("Lifecycle", lifecycle.get("status", "UNKNOWN"))
-    lifecycle_cols[1].metric("Dataset редове", int(lifecycle_state.get("dataset_rows", 0)))
-    lifecycle_cols[2].metric("Step 95", (lifecycle_state.get("step95", {}) or {}).get("status", "UNKNOWN"))
+    lifecycle_cols[0].metric("Състояние", friendly_status(lifecycle.get("status")))
+    lifecycle_cols[1].metric("Редове в данните", int(lifecycle_state.get("dataset_rows", 0)))
+    lifecycle_cols[2].metric("Преди запис", friendly_status((lifecycle_state.get("step95", {}) or {}).get("status")))
     lifecycle_cols[3].metric("План", f"{lifecycle_plan.get('strategy_type', '-')} / {lifecycle_plan.get('combination_count', 0)}")
 
     if controlled_snapshot.get("active_plan_available"):
@@ -643,11 +644,11 @@ def render() -> None:
             f"{controlled_snapshot.get('active_plan_type', '')}, "
             f"{controlled_snapshot.get('active_plan_combinations', 0)} комбинации, "
             f"{active_plan_cost_text} EUR. "
-            "Step 95 ще го провери със същите въведени числа преди запис."
+            "Системата ще го провери със същите въведени числа преди запис."
         )
     else:
         st.warning(
-            "Няма активен бюджетен план. Step 95 ще бъде пропуснат, докато не се запази план от Бюджетния съветник."
+            "Няма активен бюджетен план. Проверката на активния план ще бъде пропусната, докато не се запази план от Бюджетния съветник."
         )
 
     evaluate_pack_before_save = st.checkbox(
@@ -655,8 +656,8 @@ def render() -> None:
         value=True,
         key="add_draw_evaluate_pack_before_save",
         help=(
-            "Първо проверява активния Step 71 пакет срещу въведените числа "
-            "и записва Step 73 performance history. След това тиражът се записва в dataset-а."
+            "Първо проверява активния пакет срещу въведените числа "
+            "и записва история на представянето. След това тиражът се записва в данните."
         ),
     )
 
@@ -665,7 +666,7 @@ def render() -> None:
         value=True,
         key="add_draw_evaluate_active_budget_plan_before_save",
         help=(
-            "Взема същите въведени числа от тази страница и проверява активния Step 94 план "
+            "Взема същите въведени числа от тази страница и проверява активния план "
             "преди dataset-ът да бъде обновен. Така няма второ въвеждане и няма backfit."
         ),
     )
@@ -764,7 +765,7 @@ def render() -> None:
 
         pre_save_evaluations = []
         if evaluate_pack_before_save:
-            st.info("Step 73: оценявам текущия Step 71 пакет преди запис в dataset-а.")
+            st.info("Оценявам текущия пакет преди запис в данните.")
 
             for position, numbers, _bonus in payloads:
                 try:
@@ -778,20 +779,20 @@ def render() -> None:
                     pre_save_evaluations.append(evaluation)
                     history = evaluation["history_row"]
                     st.success(
-                        f"Step 73 OK — теглене {position}: "
+                        f"Пакетът е проверен — теглене {position}: "
                         f"най-добър фиш {history['best_ticket_id']} с "
                         f"{history['best_hit_count']} попадения; "
                         f"пакетът покрива {history['package_unique_hits']} от 6 числа."
                     )
                 except Exception as exc:
                     st.error(
-                        "Step 73 оценката не успя. Тиражът не беше записан, "
+                        "Оценката на пакета не успя. Тиражът не беше записан, "
                         f"за да не се наруши правилният процес преди обновяване: {exc}"
                     )
                     return
 
         if evaluate_active_budget_plan_before_save:
-            st.info("Step 95: проверявам активния бюджетен план срещу въведените числа преди запис в dataset-а.")
+            st.info("Проверявам активния план срещу въведените числа преди запис в данните.")
 
             for position, numbers, _bonus in payloads:
                 try:
@@ -806,7 +807,7 @@ def render() -> None:
                     )
                 except Exception as exc:
                     st.error(
-                        "Step 95 проверката на активния бюджетен план не успя. "
+                        "Проверката на активния план не успя. "
                         f"Тиражът не беше записан, за да не се наруши редът преди обновяване: {exc}"
                     )
                     return
@@ -818,7 +819,7 @@ def render() -> None:
                     already_recorded = bool(evaluation.get("already_recorded"))
                     suffix = " Историята вече имаше запис за този план и тираж." if already_recorded else ""
                     st.success(
-                        f"Step 95 OK — теглене {position}: "
+                        f"Активният план е проверен — теглене {position}: "
                         f"най-добра комбинация с {summary.get('best_hit_count', 0)} попадения; "
                         f"комбинации 3+ = {summary.get('rows_with_3_plus', 0)}; "
                         f"комбинации 4+ = {summary.get('rows_with_4_plus', 0)}."
@@ -829,7 +830,7 @@ def render() -> None:
                 elif status == "DRAW_NOT_AFTER_ACTIVE_PLAN":
                     st.warning(message or "Въведеният тираж не е след активния план; Step 95 не записва реален резултат.")
                 else:
-                    st.warning(message or f"Step 95 статус: {status}")
+                    st.warning(message or f"Статус на проверката: {friendly_status(status)}")
 
         try:
             saved_count = save_draws(

@@ -6,6 +6,7 @@ from typing import Any
 
 import pandas as pd
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status, polish_dataframe
 
 from src.v101_real_use_protocol_engine import (
     CHECKLIST_CSV_PATH,
@@ -97,12 +98,12 @@ def _csv_bytes(rows: list[dict[str, Any]]) -> bytes:
 def render_v101_real_use_protocol_section() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     st.title("Протокол за реална употреба")
-    st.caption("Step 101 — operational protocol след заключен Step 100. Без нови модели, без промяна на математиката, без нови числа.")
+    st.caption("Практически протокол след заключен план. Без нови модели, без промяна на математиката, без нови числа.")
     st.warning(SAFE_NOTE_BG)
 
     if st.button("Обнови протокола", key="v101_rebuild_btn"):
         payload = build_and_save()
-        st.success(f"Step 101 е обновен. Статус: {payload.get('status', 'UNKNOWN')}")
+        st.success(f"Протоколът е обновен. Статус: {friendly_status(payload.get('status'))}")
         st.rerun()
 
     payload = load_real_use_protocol()
@@ -116,7 +117,7 @@ def render_v101_real_use_protocol_section() -> None:
         f"""
         <div class="v101-card">
             <div class="v101-title">Статус на реалния протокол</div>
-            <span class="{pill_class}">{status}</span>
+            <span class="{pill_class}">{friendly_status(status)}</span>
             <div class="v101-meta">Следващо действие: {payload.get('next_action_bg', '-')}</div>
         </div>
         """,
@@ -124,13 +125,13 @@ def render_v101_real_use_protocol_section() -> None:
     )
 
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Step 100", payload.get("step100_status", "UNKNOWN"))
+    c1.metric("Финално заключване", friendly_status(payload.get("step100_status")))
     c2.metric("План", active_plan.get("strategy_type", "-"))
     c3.metric("Комбинации", active_plan.get("combination_count", 0))
     c4.metric("Цена", active_plan.get("cost_text", "-"))
 
     d1, d2, d3 = st.columns(3)
-    d1.metric("Dataset редове", dataset.get("historical_rows", 0))
+    d1.metric("Редове в данните", dataset.get("historical_rows", 0))
     d2.metric("Последен тираж", dataset.get("latest_draw_date", "-"))
     d3.metric("Последни числа", dataset.get("latest_numbers_text", "-"))
 

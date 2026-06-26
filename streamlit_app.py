@@ -3807,6 +3807,13 @@ def render_v109_sqlite_journal_page() -> None:
     return _render()
 # STEP109_SQLITE_JOURNAL_WRAPPER_END
 
+# STEP110_USER_FRIENDLY_UI_POLISH_WRAPPER_START
+def render_v110_user_friendly_ui_polish_page() -> None:
+    from src.v110_user_friendly_ui_polish_section import render_v110_user_friendly_ui_polish_section as _render
+    return _render()
+# STEP110_USER_FRIENDLY_UI_POLISH_WRAPPER_END
+
+
 
 def main() -> None:
     page_glossary()
@@ -3820,6 +3827,7 @@ def main() -> None:
         "Clean ZIP checkpoint": render_v103_clean_release_checkpoint_page,
         "Финален одит след Step 102": render_v104_final_audit_refresh_page,
         "Политика за обучение": render_v107_model_training_policy_page,
+        "Потребителска яснота": render_v110_user_friendly_ui_polish_page,
         "Защита от празен фиш": render_v88_anti_zero_coverage_section,
         "Финален статистически избор": render_v89_final_statistical_portfolio_selector_section,
         "Интеграция на моделните резултати": render_v90_selector_source_expansion_section,
@@ -3887,6 +3895,7 @@ def main() -> None:
 
         "Подобни исторически тиражи": render_v56_draw_similarity_section,
     }
+    from src.v110_user_friendly_ui_helpers import friendly_page_label as _v110_page_label
     # STEP64_GROUPED_NAVIGATION_START
     navigation_groups = {
         '🏠 Начало и отчети': [
@@ -3898,6 +3907,7 @@ def main() -> None:
             'Runtime защита',
             'Clean ZIP checkpoint',
             'Финален одит след Step 102',
+            'Потребителска яснота',
 
             'Табло',
             'Препоръки',
@@ -4015,7 +4025,7 @@ def main() -> None:
     if st.session_state.get("nav_page_radio") not in available_navigation_pages:
         st.session_state["nav_page_radio"] = available_navigation_pages[0]
 
-    choice = st.sidebar.radio('Страница', available_navigation_pages, key="nav_page_radio")
+    choice = st.sidebar.radio('Страница', available_navigation_pages, key="nav_page_radio", format_func=_v110_page_label)
     st.session_state["selected_page"] = choice
     st.session_state["page"] = choice
     st.session_state["current_page"] = choice

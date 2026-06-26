@@ -6,6 +6,7 @@ from typing import Any
 
 import pandas as pd
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status, polish_dataframe
 
 from src.v100_final_release_lock_engine import (
     CHECKLIST_CSV_PATH,
@@ -104,12 +105,12 @@ CSS = """
 def render_v100_final_release_lock_section() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     st.title("Финално заключване")
-    st.caption("Step 100 — контролен release lock за v1 workflow: активен план, Add Draw цикъл, история, финално табло и dataset sync.")
+    st.caption("Контролен екран: активен план, добавяне на тираж, история, финално табло и синхрон на данните.")
     st.warning(SAFE_NOTE_BG)
 
     if st.button("Обнови финалното заключване", key="v100_rebuild_btn"):
         payload = build_and_save()
-        st.success(f"Step 100 е обновен. Статус: {payload.get('status', 'UNKNOWN')}")
+        st.success(f"Финалното заключване е обновено. Статус: {friendly_status(payload.get('status'))}")
         st.rerun()
 
     payload = load_final_release_lock()
@@ -120,17 +121,17 @@ def render_v100_final_release_lock_section() -> None:
     warnings = payload.get("warnings", []) or []
 
     cols = st.columns(5)
-    cols[0].metric("Статус", payload.get("status", "UNKNOWN"))
+    cols[0].metric("Статус", friendly_status(payload.get("status")))
     cols[1].metric("План", active_plan.get("strategy_type", "-"))
     cols[2].metric("Комбинации", int(active_plan.get("combination_count", 0) or 0))
     cols[3].metric("Цена", _format_money(active_plan.get("cost_eur", 0.0)))
-    cols[4].metric("Dataset", int(dataset.get("historical_rows", 0) or 0))
+    cols[4].metric("Редове в данните", int(dataset.get("historical_rows", 0) or 0))
 
     status_cols = st.columns(4)
-    status_cols[0].metric("Step 95", statuses.get("step95_status", "UNKNOWN"))
-    status_cols[1].metric("Step 97", statuses.get("step97_status", "UNKNOWN"))
-    status_cols[2].metric("Step 98", statuses.get("step98_status", "UNKNOWN"))
-    status_cols[3].metric("Step 99", statuses.get("step99_status", "UNKNOWN"))
+    status_cols[0].metric("Преди запис", friendly_status(statuses.get("step95_status")))
+    status_cols[1].metric("Реален цикъл", friendly_status(statuses.get("step97_status")))
+    status_cols[2].metric("История", friendly_status(statuses.get("step98_status")))
+    status_cols[3].metric("Табло", friendly_status(statuses.get("step99_status")))
 
     if failures:
         st.error("Има блокиращи проверки. Прегледай checklist-а преди финален release.")
@@ -141,7 +142,7 @@ def render_v100_final_release_lock_section() -> None:
 
     st.info(f"Следващо действие: {payload.get('next_action_bg', '-')}")
 
-    tabs = st.tabs(["Checklist", "Dataset", "Артефакти", "Бележки"])
+    tabs = st.tabs(["Проверки", "Данни", "Артефакти", "Бележки"])
 
     with tabs[0]:
         checklist_rows = _read_rows(CHECKLIST_CSV_PATH)
@@ -178,5 +179,5 @@ def render_v100_final_release_lock_section() -> None:
     with tabs[3]:
         for warning in warnings:
             st.write(f"- {warning}")
-        st.markdown("Step 100 е QA/release слой. Той не генерира числа, не обучава модел и не променя прогнозната логика.")
+        st.markdown("Това е контролен екран. Той не генерира числа, не обучава модел и не променя прогнозната логика.")
         st.warning(SAFE_NOTE_BG)

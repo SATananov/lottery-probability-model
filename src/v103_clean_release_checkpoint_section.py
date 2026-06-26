@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 import streamlit as st
+from src.v110_user_friendly_ui_helpers import friendly_status
 
 from src.v103_clean_release_checkpoint_engine import (
     build_clean_release_summary,
@@ -14,7 +15,7 @@ def _checks_df(summary: dict) -> pd.DataFrame:
 
 
 def render_v103_clean_release_checkpoint_section() -> None:
-    st.title("Clean ZIP checkpoint")
+    st.title("Чист архив на проекта")
     st.caption("Контрол за чист release ZIP без .git, cache, helper patch файлове и nested ZIP артефакти.")
 
     # Build a live UI summary without writing reports to disk.
@@ -22,16 +23,16 @@ def render_v103_clean_release_checkpoint_section() -> None:
     summary = build_clean_release_summary()
 
     c1, c2, c3 = st.columns(3)
-    c1.metric("Статус", str(summary.get("status", "UNKNOWN")))
+    c1.metric("Статус", friendly_status(summary.get("status")))
     c2.metric("Tracked файлове", int(summary.get("tracked_file_count", 0)))
-    c3.metric("Blocking failures", int(summary.get("blocking_failures", 0)))
+    c3.metric("Проблеми за преглед", int(summary.get("blocking_failures", 0)))
 
     status = str(summary.get("git_status_short", ""))
     if status:
-        st.warning("Git status не е празен. Първо commit/push, после clean ZIP.")
+        st.warning("Има незаписани промени. Първо commit/push, после създай чист архив.")
         st.code(status, language="text")
     else:
-        st.success("Git status е празен. Можеш да създадеш clean ZIP checkpoint.")
+        st.success("Няма незаписани промени. Можеш да създадеш чист архив.")
 
     st.subheader("Команда за терминала")
     st.code(str(summary.get("recommended_command", "python .\\scripts\\v103_create_clean_release_checkpoint.py")), language="powershell")
