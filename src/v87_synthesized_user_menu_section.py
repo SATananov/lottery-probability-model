@@ -49,6 +49,10 @@ UI = {
 }
 
 V86_SUMMARY_PATH = ROOT / "reports" / "v86_model_registry_summary.json"
+V106_SUMMARY_PATH = ROOT / "reports" / "v106_post_draw_status_sync_summary.json"
+V107_SUMMARY_PATH = ROOT / "reports" / "v107_model_training_policy_refresh_control_summary.json"
+CANONICAL_DATA_PATH = ROOT / "data" / "v41_canonical_draw_events.csv"
+HISTORICAL_DATA_PATH = ROOT / "data" / "historical_draws.csv"
 REPORTS_DIR = ROOT / "reports"
 MODELS_DIR = ROOT / "models"
 
@@ -196,6 +200,128 @@ def _read_csv_rows(path: Path):
             return list(csv.DictReader(f))
     except Exception:
         return []
+
+
+def _safe_int_for_live_status(value, default=None):
+    try:
+        if value is None or str(value).strip() == "":
+            return default
+        return int(float(str(value).strip()))
+    except Exception:
+        return default
+
+
+def _pick_for_live_status(row, names, default=""):
+    if not isinstance(row, dict):
+        return default
+    for name in names:
+        value = row.get(name)
+        if value is not None and str(value).strip() != "":
+            return str(value).strip()
+    return default
+
+
+def _numbers_from_live_row(row):
+    if not isinstance(row, dict):
+        return []
+    column_sets = [
+        ["n1", "n2", "n3", "n4", "n5", "n6"],
+        ["num1", "num2", "num3", "num4", "num5", "num6"],
+        ["number_1", "number_2", "number_3", "number_4", "number_5", "number_6"],
+        ["ball1", "ball2", "ball3", "ball4", "ball5", "ball6"],
+        ["number1", "number2", "number3", "number4", "number5", "number6"],
+    ]
+    for columns in column_sets:
+        values = [_safe_int_for_live_status(row.get(col)) for col in columns]
+        if all(value is not None for value in values):
+            values = [int(value) for value in values]
+            if len(values) == 6 and len(set(values)) == 6 and all(1 <= n <= 49 for n in values):
+                return sorted(values)
+
+    text_value = _pick_for_live_status(row, ["numbers", "draw_numbers", "combination"], "")
+    if text_value:
+        cleaned = (
+            text_value.replace("[", "")
+            .replace("]", "")
+            .replace(";", ",")
+            .replace("|", ",")
+            .replace(" ", ",")
+        )
+        values = []
+        for part in cleaned.split(","):
+            number = _safe_int_for_live_status(part)
+            if number is not None:
+                values.append(int(number))
+        if len(values) >= 6:
+            values = values[:6]
+            if len(set(values)) == 6 and all(1 <= n <= 49 for n in values):
+                return sorted(values)
+    return []
+
+
+def _latest_snapshot_from_csv(path: Path):
+    rows = _read_csv_rows(path)
+    if not rows:
+        return None
+
+    def sort_key(row):
+        date = _pick_for_live_status(row, ["date", "draw_date"], "")
+        year = _safe_int_for_live_status(_pick_for_live_status(row, ["year"], ""), 0) or 0
+        draw_no = _safe_int_for_live_status(
+            _pick_for_live_status(row, ["draw_number", "draw_no", "draw_id", "drawing_no"], ""),
+            0,
+        ) or 0
+        return (date, year, draw_no)
+
+    latest = max(rows, key=sort_key)
+    return {
+        "dataset_rows": len(rows),
+        "latest_draw_date": _pick_for_live_status(latest, ["date", "draw_date"], "-"),
+        "latest_draw_no": _pick_for_live_status(latest, ["draw_number", "draw_no", "draw_id", "drawing_no"], "-"),
+        "latest_numbers": _numbers_from_live_row(latest),
+        "source": path.relative_to(ROOT).as_posix(),
+    }
+
+
+def _load_live_user_menu_status():
+    v107 = _load_json(V107_SUMMARY_PATH) or {}
+    v107_dataset = v107.get("dataset") if isinstance(v107, dict) else None
+    if isinstance(v107_dataset, dict):
+        latest = v107_dataset.get("latest_draw") or {}
+        row_counts = v107_dataset.get("row_counts") or {}
+        dataset_rows = v107_dataset.get("dataset_rows") or row_counts.get("historical")
+        latest_date = latest.get("date") if isinstance(latest, dict) else None
+        latest_numbers = latest.get("numbers") if isinstance(latest, dict) else None
+        if dataset_rows and latest_date:
+            return {
+                "dataset_rows": dataset_rows,
+                "latest_draw_date": latest_date,
+                "latest_draw_no": latest.get("draw_no") if isinstance(latest, dict) else "-",
+                "latest_numbers": latest_numbers or [],
+                "source": "reports/v107_model_training_policy_refresh_control_summary.json",
+            }
+
+    v106 = _load_json(V106_SUMMARY_PATH) or {}
+    v106_dataset = v106.get("dataset") if isinstance(v106, dict) else None
+    if isinstance(v106_dataset, dict):
+        dataset_rows = v106_dataset.get("rows")
+        latest_date = v106_dataset.get("latest_date")
+        latest_numbers = v106_dataset.get("latest_numbers") or []
+        if dataset_rows and latest_date:
+            return {
+                "dataset_rows": dataset_rows,
+                "latest_draw_date": latest_date,
+                "latest_draw_no": "-",
+                "latest_numbers": latest_numbers,
+                "source": "reports/v106_post_draw_status_sync_summary.json",
+            }
+
+    for path in [CANONICAL_DATA_PATH, HISTORICAL_DATA_PATH]:
+        snapshot = _latest_snapshot_from_csv(path)
+        if snapshot:
+            return snapshot
+
+    return {}
 
 def _as_int_list(value):
     if not isinstance(value, (list, tuple)):
@@ -437,8 +563,9 @@ def render_v87_synthesized_user_menu_section():
     st.caption(UI["caption"])
 
     summary = _load_json(V86_SUMMARY_PATH) or {}
-    dataset_rows = summary.get("dataset_rows", 0)
-    latest_draw = summary.get("latest_draw_date", "-")
+    live_status = _load_live_user_menu_status()
+    dataset_rows = live_status.get("dataset_rows") or summary.get("dataset_rows", 0)
+    latest_draw = live_status.get("latest_draw_date") or summary.get("latest_draw_date", "-")
     registered_models = summary.get("models_registered", 0)
     active_models = summary.get("active_models", 0)
 

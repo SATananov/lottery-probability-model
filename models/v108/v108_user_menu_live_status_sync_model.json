@@ -1,0 +1,19 @@
+{
+  "step": 108,
+  "status": "USER_MENU_LIVE_STATUS_SYNCED",
+  "blocking_failures": 0,
+  "live_status": {
+    "source": "v107",
+    "rows": 10059,
+    "latest_date": "2026-06-25",
+    "latest_draw_no": "49",
+    "latest_numbers": [
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
+    ]
+  }
+}

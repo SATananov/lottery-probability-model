@@ -1,0 +1,60 @@
+{
+  "step": 108,
+  "name_bg": "User Menu Live Status Sync",
+  "status": "USER_MENU_LIVE_STATUS_SYNCED",
+  "blocking_failures": 0,
+  "generated_at_utc": "2026-06-26T14:42:40.365582+00:00",
+  "live_status": {
+    "source": "v107",
+    "rows": 10059,
+    "latest_date": "2026-06-25",
+    "latest_draw_no": "49",
+    "latest_numbers": [
+      5,
+      11,
+      44,
+      46,
+      47,
+      48
+    ]
+  },
+  "checklist": [
+    {
+      "check": "user_menu_uses_live_status_loader",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "Потребителското меню вече зарежда live dataset status, а не само стария v86 model registry."
+    },
+    {
+      "check": "user_menu_not_bound_to_v86_dataset_metrics",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "Редовете и последният тираж не трябва да идват директно от v86 summary."
+    },
+    {
+      "check": "live_dataset_rows_current",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "rows=10059, source=v107"
+    },
+    {
+      "check": "live_latest_draw_current",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "latest_date=2026-06-25, numbers=[5, 11, 44, 46, 47, 48]"
+    },
+    {
+      "check": "post_draw_sync_green",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "v106_status=POST_DRAW_SYNCED, blockers=0"
+    },
+    {
+      "check": "training_policy_green",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "v107_status=TRAINING_POLICY_READY, blockers=0"
+    }
+  ],
+  "safe_note_bg": "Step 108 поправя потребителското меню да показва текущия post-draw dataset status, вместо остарял v86 registry snapshot."
+}
