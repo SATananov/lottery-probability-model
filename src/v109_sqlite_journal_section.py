@@ -246,6 +246,34 @@ def _inject_journal_css() -> None:
             padding: 14px 16px;
             margin: 14px 0;
         }
+        .package-mode-panel {
+            border: 1px solid rgba(225,190,92,0.22);
+            border-radius: 18px;
+            padding: 16px 18px;
+            margin: 14px 0 18px 0;
+            background: linear-gradient(135deg, rgba(225,190,92,0.10), rgba(22,28,36,0.42));
+        }
+        .package-mode-title {
+            color: #f7e9bf;
+            font-weight: 900;
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+        }
+        .package-mode-text {
+            color: rgba(246,241,232,0.82);
+            line-height: 1.52;
+        }
+        .source-scope-label {
+            display: inline-flex;
+            border-radius: 999px;
+            border: 1px solid rgba(225,190,92,0.28);
+            background: rgba(225,190,92,0.10);
+            color: #f5e7bd;
+            padding: 6px 10px;
+            font-size: 0.82rem;
+            font-weight: 850;
+            margin-top: 8px;
+        }
         @media (max-width: 900px) {
             .pack-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .physical-ticket-head { flex-direction: column; }
@@ -461,11 +489,12 @@ def _editable_ticket_cards(cards: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     <div>
                         <div class="physical-ticket-title">{escape(str(card.get('title') or 'Фиш'))}</div>
                         <div class="physical-ticket-subtitle">Можеш да оставиш предложенията или да редактираш числата преди запис.</div>
+                        <span class="source-scope-label">Източник: {escape('само от финалния план' if card.get('package_scope') == 'final_plan' else 'допълващ модел')}</span>
                     </div>
                     <div class="physical-ticket-badge">реален фиш · 4 реда</div>
                 </div>
                 <div class="ticket-source-strip">
-                    Източник: {escape(str((card.get('source_context') or {}).get('source_label') or card.get('strategy') or 'Текущ модел'))}<br>
+                    {escape(str(card.get('source_note') or 'Източникът е текущият модел.'))}<br>
                     Можеш да редактираш числата. След редакция дневникът пази точно това, което реално си играл.
                 </div>
             </div>
@@ -578,13 +607,55 @@ def render_v109_sqlite_journal_section() -> None:
 
     _render_source_context_panel(latest_dataset_context())
 
+    package_mode_label = st.radio(
+        "Източник на пакета",
+        [
+            "Само финалният план — 2 фиша / 8 комбинации",
+            "Разширен пакет — 3 фиша / 12 комбинации",
+        ],
+        index=1,
+        horizontal=True,
+        key="v1094_package_mode",
+    )
+    package_mode = "final_plan_only" if package_mode_label.startswith("Само") else "extended"
+    if package_mode == "final_plan_only":
+        st.markdown(
+            """
+            <div class="package-mode-panel">
+                <div class="package-mode-title">Само финалният план</div>
+                <div class="package-mode-text">
+                    Този режим използва само видимите 8 комбинации от страницата „Финален план“.
+                    Това прави 2 реални фиша по 4 комбинации. Няма допълващи редове извън финалната таблица.
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        available_ticket_counts = [1, 2]
+        default_index = 1
+    else:
+        st.markdown(
+            """
+            <div class="package-mode-panel">
+                <div class="package-mode-title">Разширен пакет</div>
+                <div class="package-mode-text">
+                    Първите 2 фиша идват от видимия финален план. Третият фиш е ясно маркиран като
+                    допълващ модел извън финалната таблица. Така се вижда откъде идват всичките 12 комбинации.
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        available_ticket_counts = [1, 2, 3]
+        default_index = 2
+
     package_cols = st.columns(4)
-    ticket_count = package_cols[0].selectbox("Брой фишове", [1, 2, 3], index=2, key="v1092_ticket_count")
+    ticket_count = package_cols[0].selectbox("Брой фишове", available_ticket_counts, index=default_index, key="v1092_ticket_count")
     edit_mode = package_cols[1].toggle("Ръчна редакция", value=False, key="v1092_manual_edit")
     package_cols[2].metric("Комбинации във фиш", LINES_PER_TICKET)
     package_cols[3].metric("Общо комбинации", int(ticket_count) * LINES_PER_TICKET)
 
-    suggested_cards = build_suggested_ticket_cards(int(ticket_count))
+    suggested_cards = build_suggested_ticket_cards(int(ticket_count), package_mode=package_mode)
     st.markdown(
         f"""
         <div class="pack-summary">

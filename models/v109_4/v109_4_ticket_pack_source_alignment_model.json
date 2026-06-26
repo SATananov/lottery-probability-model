@@ -1,0 +1,56 @@
+{
+  "step": "109.4",
+  "name": "Ticket Pack Source Alignment",
+  "status": "TICKET_PACK_SOURCES_ALIGNED",
+  "blocking_failures": 0,
+  "lines_per_ticket": 4,
+  "final_plan_only": {
+    "tickets": 2,
+    "total_lines": 8,
+    "explanation_bg": "Само видимият финален план: 2 фиша по 4 комбинации от 8 реда."
+  },
+  "extended_package": {
+    "tickets": 3,
+    "total_lines": 12,
+    "explanation_bg": "2 фиша от финалния план + 1 допълващ фиш извън финалната таблица."
+  },
+  "checklist": [
+    {
+      "check": "final_plan_only_has_two_tickets",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "final_cards=2"
+    },
+    {
+      "check": "final_plan_tickets_have_four_lines",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "[4, 4]"
+    },
+    {
+      "check": "extended_has_three_tickets",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "extended_cards=3"
+    },
+    {
+      "check": "extended_tickets_have_four_lines",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "[4, 4, 4]"
+    },
+    {
+      "check": "third_ticket_is_marked_supplementary",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "third_scope=supplementary"
+    },
+    {
+      "check": "extended_lines_are_unique",
+      "status": "OK",
+      "blocking": "no",
+      "details_bg": "unique=12, total=12"
+    }
+  ],
+  "generated_at_utc": "2026-06-26T16:59:46+00:00"
+}

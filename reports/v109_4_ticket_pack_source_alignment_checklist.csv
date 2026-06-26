@@ -1,0 +1,7 @@
+check,status,blocking,details_bg
+final_plan_only_has_two_tickets,OK,yes,final_cards=2
+final_plan_tickets_have_four_lines,OK,yes,"[4, 4]"
+extended_has_three_tickets,OK,yes,extended_cards=3
+extended_tickets_have_four_lines,OK,yes,"[4, 4, 4]"
+third_ticket_is_marked_supplementary,OK,yes,third_scope=supplementary
+extended_lines_are_unique,OK,no,"unique=12, total=12"

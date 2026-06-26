@@ -85,66 +85,79 @@ def _decorate_card(card_index: int, title: str, subtitle: str, strategy: str, li
     }
 
 
-def build_suggested_ticket_cards(ticket_count: int = DEFAULT_TICKET_COUNT) -> list[dict[str, Any]]:
+def build_suggested_ticket_cards(
+    ticket_count: int = DEFAULT_TICKET_COUNT,
+    package_mode: str = "extended",
+) -> list[dict[str, Any]]:
     """Build user-facing physical ticket cards.
 
-    One physical Bulgarian lottery ticket is treated as four combinations/lines.
-    The function returns up to three cards, each with four lines where possible.
-    It does not change the database and does not promise any result.
+    One physical lottery ticket is treated as four combinations/lines.
+
+    package_mode values:
+    - final_plan_only: use only the visible final plan rows. With eight final-plan rows this gives up to two tickets.
+    - extended: use two tickets from the final plan, then one clearly labeled supplementary ticket.
+
+    The function does not write to the database and does not promise any result.
     """
-    requested = max(1, min(int(ticket_count or DEFAULT_TICKET_COUNT), DEFAULT_TICKET_COUNT))
+    mode = str(package_mode or "extended").strip().lower()
+    if mode not in {"final_plan_only", "extended"}:
+        mode = "extended"
 
-    export_candidates = [_normalize_candidate(item, "Финален модел") for item in ticket_pack_candidates("all_export")]
-    active_candidates = [_normalize_candidate(item, "Активен план", "активен план") for item in ticket_pack_candidates("active_plan_all_11")]
+    max_cards = 2 if mode == "final_plan_only" else DEFAULT_TICKET_COUNT
+    requested = max(1, min(int(ticket_count or max_cards), max_cards))
 
-    seen: set[tuple[int, ...]] = set()
-    ordered_export: list[dict[str, Any]] = []
-    _unique_extend(ordered_export, export_candidates, seen)
+    export_candidates = [_normalize_candidate(item, "Финален план") for item in ticket_pack_candidates("all_export")]
+    active_candidates = [_normalize_candidate(item, "Допълващ модел", "допълващ модел") for item in ticket_pack_candidates("active_plan_all_11")]
+
+    seen_final: set[tuple[int, ...]] = set()
+    final_rows: list[dict[str, Any]] = []
+    _unique_extend(final_rows, export_candidates, seen_final)
 
     cards: list[dict[str, Any]] = []
 
-    first_lines = ordered_export[:LINES_PER_TICKET]
-    if len(first_lines) < LINES_PER_TICKET:
-        _unique_extend(first_lines, active_candidates, seen, LINES_PER_TICKET)
-    cards.append(
-        _decorate_card(
-            1,
-            "Фиш 1 — Основен модел",
-            "Най-високо класираните редове от финалния пакет.",
-            "основен модел",
-            first_lines,
-        )
+    first_lines = final_rows[:LINES_PER_TICKET]
+    card = _decorate_card(
+        1,
+        "Фиш 1 — Финален план · основни редове",
+        "Първите 4 реда от видимия финален план.",
+        "финален план",
+        first_lines,
     )
+    card["package_scope"] = "final_plan"
+    card["source_note"] = "Този фиш е съставен само от редове, които се виждат във Финален план."
+    cards.append(card)
 
-    second_lines = ordered_export[LINES_PER_TICKET:LINES_PER_TICKET * 2]
-    if len(second_lines) < LINES_PER_TICKET:
-        _unique_extend(second_lines, active_candidates, seen, LINES_PER_TICKET)
-    cards.append(
-        _decorate_card(
+    second_lines = final_rows[LINES_PER_TICKET:LINES_PER_TICKET * 2]
+    if second_lines:
+        card = _decorate_card(
             2,
-            "Фиш 2 — Резервен модел",
-            "Алтернативни редове от резервния/наблюдавания слой.",
-            "резервен модел",
+            "Фиш 2 — Финален план · резервни редове",
+            "Следващите 4 реда от видимия финален план.",
+            "финален план",
             second_lines,
         )
-    )
+        card["package_scope"] = "final_plan"
+        card["source_note"] = "Този фиш също е само от видимия финален план."
+        cards.append(card)
 
-    third_lines: list[dict[str, Any]] = []
-    _unique_extend(third_lines, active_candidates, seen, LINES_PER_TICKET)
-    if len(third_lines) < LINES_PER_TICKET:
-        _unique_extend(third_lines, export_candidates, seen, LINES_PER_TICKET)
-    cards.append(
-        _decorate_card(
+    if mode == "extended":
+        seen_all = {_line_key(item.get("numbers") or []) for item in final_rows if len(item.get("numbers") or []) == 6}
+        supplement_lines: list[dict[str, Any]] = []
+        _unique_extend(supplement_lines, active_candidates, seen_all, LINES_PER_TICKET)
+        if len(supplement_lines) < LINES_PER_TICKET:
+            _unique_extend(supplement_lines, final_rows, seen_all, LINES_PER_TICKET)
+        card = _decorate_card(
             3,
-            "Фиш 3 — Разширено покритие",
-            "Допълнителен фиш от активния системен план за по-широк профил.",
-            "разширено покритие",
-            third_lines,
+            "Фиш 3 — Допълващ модел извън финалната таблица",
+            "Разширен фиш от наличните допълващи модели. Той не е изцяло част от видимите 8 реда във Финален план.",
+            "допълващ модел",
+            supplement_lines,
         )
-    )
+        card["package_scope"] = "supplementary"
+        card["source_note"] = "Този фиш е допълващ: използва редове от активния модел извън видимата финална таблица, когато са налични."
+        cards.append(card)
 
     return enrich_ticket_cards_with_source_context(cards[:requested])
-
 
 def parse_numbers_text(value: str) -> list[int]:
     text = str(value or "").strip()
@@ -325,7 +338,7 @@ def build_step_summary() -> dict[str, Any]:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     initialize_database()
-    cards = build_suggested_ticket_cards(DEFAULT_TICKET_COUNT)
+    cards = build_suggested_ticket_cards(DEFAULT_TICKET_COUNT, package_mode="extended")
 
     checks: list[dict[str, Any]] = []
 
