@@ -71,6 +71,8 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v106_1_build_post_draw_dataset_sync.py",
     ROOT / "scripts" / "v106_build_post_draw_status_sync.py",
     ROOT / "scripts" / "v107_build_model_training_policy_refresh_control.py",
+    ROOT / "scripts" / "v109_build_sqlite_played_tickets_journal.py",
+    ROOT / "scripts" / "v109_1_build_journal_ui_bulgarian_polish.py",
     ROOT / "scripts" / "v102_build_runtime_hardening.py",
     ROOT / "scripts" / "v103_build_clean_release_checkpoint.py",
     ROOT / "scripts" / "v104_build_final_audit_refresh.py",

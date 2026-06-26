@@ -1,0 +1,62 @@
+{
+  "step": "109.1",
+  "name": "Journal UI Bulgarian Polish",
+  "status": "JOURNAL_UI_POLISHED",
+  "blocking_failures": 0,
+  "section_path": "src\\v109_sqlite_journal_section.py",
+  "generated_at_utc": "2026-06-26T15:40:03+00:00",
+  "checks": [
+    {
+      "check": "section_exists",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "src\\v109_sqlite_journal_section.py"
+    },
+    {
+      "check": "friendly_refresh_button",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "бутонът е без Step номер"
+    },
+    {
+      "check": "friendly_ticket_mode",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "режимът не показва Step 79"
+    },
+    {
+      "check": "friendly_status_label",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "статусът е човешки"
+    },
+    {
+      "check": "visual_number_balls",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "числата се показват като визуални топки/карти"
+    },
+    {
+      "check": "technical_paths_softened",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "пътищата са омекотени в основния изглед"
+    },
+    {
+      "check": "translated_table_headers",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "табличните колони имат български имена"
+    },
+    {
+      "check": "no_broken_cyrillic",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "няма счупена кирилица"
+    }
+  ],
+  "notes_bg": [
+    "Step 109.1 прави дневника по-ясен и визуално по-близък до стила на app-а.",
+    "Промяната е UI polish; SQLite схемата, записите и резултатната логика не се променят."
+  ]
+}

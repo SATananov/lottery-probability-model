@@ -1,0 +1,8 @@
+{
+  "step": "109.2",
+  "status": "TICKET_PACK_READY",
+  "blocking_failures": 0,
+  "ticket_count": 3,
+  "lines_per_ticket": 4,
+  "total_suggested_lines": 12
+}

@@ -3801,6 +3801,12 @@ def render_v107_model_training_policy_page() -> None:
     return _render()
 # STEP107_MODEL_TRAINING_POLICY_WRAPPER_END
 
+# STEP109_SQLITE_JOURNAL_WRAPPER_START
+def render_v109_sqlite_journal_page() -> None:
+    from src.v109_sqlite_journal_section import render_v109_sqlite_journal_section as _render
+    return _render()
+# STEP109_SQLITE_JOURNAL_WRAPPER_END
+
 
 def main() -> None:
     page_glossary()
@@ -3823,6 +3829,7 @@ def main() -> None:
         "План и резултат": render_v94_active_budget_plan_tracker_page,
         "Реален цикъл на тираж": render_v97_real_draw_lifecycle_page,
         "История на активния план": render_v98_active_plan_result_history_page,
+        "Дневник на фишовете": render_v109_sqlite_journal_page,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3952,6 +3959,7 @@ def main() -> None:
             'Добавяне на тираж',
             'Реален цикъл на тираж',
             'История на активния план',
+            'Дневник на фишовете',
             'Анализ на нов тираж',
             'Обяснимост и валидация',
             'Решение и препоръка',

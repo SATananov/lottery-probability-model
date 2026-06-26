@@ -1,0 +1,9 @@
+check,status,blocking,details_bg
+section_exists,OK,yes,src\v109_sqlite_journal_section.py
+friendly_refresh_button,OK,yes,бутонът е без Step номер
+friendly_ticket_mode,OK,yes,режимът не показва Step 79
+friendly_status_label,OK,yes,статусът е човешки
+visual_number_balls,OK,yes,числата се показват като визуални топки/карти
+technical_paths_softened,OK,yes,пътищата са омекотени в основния изглед
+translated_table_headers,OK,yes,табличните колони имат български имена
+no_broken_cyrillic,OK,yes,няма счупена кирилица

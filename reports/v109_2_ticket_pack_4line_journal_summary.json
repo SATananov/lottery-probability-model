@@ -1,0 +1,282 @@
+{
+  "step": "109.2",
+  "name": "Ticket Pack = 4 Lines",
+  "status": "TICKET_PACK_READY",
+  "blocking_failures": 0,
+  "ticket_count": 3,
+  "lines_per_ticket": 4,
+  "total_suggested_lines": 12,
+  "suggested_cards": [
+    {
+      "ticket_no": 1,
+      "title": "Фиш 1 — Основен модел",
+      "subtitle": "Най-високо класираните редове от финалния пакет.",
+      "strategy": "основен модел",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "5",
+          "role": "основна комбинация",
+          "numbers": [
+            2,
+            21,
+            25,
+            34,
+            43,
+            45
+          ],
+          "numbers_text": "2, 21, 25, 34, 43, 45",
+          "decision_score": 62.744,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "включен във финалния пакет"
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "8",
+          "role": "основна комбинация",
+          "numbers": [
+            2,
+            21,
+            30,
+            40,
+            42,
+            45
+          ],
+          "numbers_text": "2, 21, 30, 40, 42, 45",
+          "decision_score": 62.224,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "включен във финалния пакет"
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "4",
+          "role": "основна комбинация",
+          "numbers": [
+            7,
+            21,
+            27,
+            28,
+            34,
+            45
+          ],
+          "numbers_text": "7, 21, 27, 28, 34, 45",
+          "decision_score": 61.671,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "включен във финалния пакет"
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "3",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            11,
+            25,
+            27,
+            38,
+            45
+          ],
+          "numbers_text": "2, 11, 25, 27, 38, 45",
+          "decision_score": 61.634,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "пази като резервен вариант"
+        }
+      ]
+    },
+    {
+      "ticket_no": 2,
+      "title": "Фиш 2 — Резервен модел",
+      "subtitle": "Алтернативни редове от резервния/наблюдавания слой.",
+      "strategy": "резервен модел",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "6",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            13,
+            19,
+            25,
+            30,
+            44
+          ],
+          "numbers_text": "2, 13, 19, 25, 30, 44",
+          "decision_score": 61.547,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "пази като резервен вариант"
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "1",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            21,
+            29,
+            41,
+            42,
+            44
+          ],
+          "numbers_text": "2, 21, 29, 41, 42, 44",
+          "decision_score": 61.325,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "пази като резервен вариант"
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "2",
+          "role": "само наблюдение",
+          "numbers": [
+            11,
+            20,
+            21,
+            27,
+            34,
+            44
+          ],
+          "numbers_text": "11, 20, 21, 27, 34, 44",
+          "decision_score": 61.222,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "не влиза в основния пакет"
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "7",
+          "role": "само наблюдение",
+          "numbers": [
+            3,
+            13,
+            25,
+            30,
+            38,
+            44
+          ],
+          "numbers_text": "3, 13, 25, 30, 38, 44",
+          "decision_score": 61.178,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален модел",
+          "note": "не влиза в основния пакет"
+        }
+      ]
+    },
+    {
+      "ticket_no": 3,
+      "title": "Фиш 3 — Разширено покритие",
+      "subtitle": "Допълнителен фиш от активния системен план за по-широк профил.",
+      "strategy": "разширено покритие",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "1",
+          "role": "активен план",
+          "numbers": [
+            7,
+            12,
+            25,
+            26,
+            34,
+            42
+          ],
+          "numbers_text": "7, 12, 25, 26, 34, 42",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Активен план",
+          "note": "Ред от active plan v94."
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "2",
+          "role": "активен план",
+          "numbers": [
+            4,
+            22,
+            24,
+            29,
+            37,
+            44
+          ],
+          "numbers_text": "4, 22, 24, 29, 37, 44",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Активен план",
+          "note": "Ред от active plan v94."
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "3",
+          "role": "активен план",
+          "numbers": [
+            2,
+            21,
+            28,
+            33,
+            45,
+            48
+          ],
+          "numbers_text": "2, 21, 28, 33, 45, 48",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Активен план",
+          "note": "Ред от active plan v94."
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "4",
+          "role": "активен план",
+          "numbers": [
+            11,
+            20,
+            23,
+            27,
+            38,
+            41
+          ],
+          "numbers_text": "11, 20, 23, 27, 38, 41",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Активен план",
+          "note": "Ред от active plan v94."
+        }
+      ]
+    }
+  ],
+  "safe_note_bg": "Един реален фиш се третира като 4 комбинации. Това е дневник и организация на играта, не гаранция за печалба.",
+  "generated_at_utc": "2026-06-26T16:01:15+00:00",
+  "checks": [
+    {
+      "check": "cards_created",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "cards=3"
+    },
+    {
+      "check": "three_ticket_suggestion_available",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "cards=3"
+    },
+    {
+      "check": "each_ticket_has_four_lines",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "[4, 4, 4]"
+    },
+    {
+      "check": "all_suggested_lines_valid",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "валидирани са 6 числа между 1 и 49 без повторение"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+check,status,blocking,details_bg
+cards_created,OK,yes,cards=3
+three_ticket_suggestion_available,OK,yes,cards=3
+each_ticket_has_four_lines,OK,yes,"[4, 4, 4]"
+all_suggested_lines_valid,OK,yes,валидирани са 6 числа между 1 и 49 без повторение
