@@ -3,7 +3,7 @@
   "name_bg": "Политика за обучение и refresh control",
   "status": "TRAINING_POLICY_READY",
   "blocking_failures": 0,
-  "generated_at_utc": "2026-06-25T17:45:40.902461+00:00",
+  "generated_at_utc": "2026-06-26T14:52:00.323508+00:00",
   "dataset": {
     "row_counts": {
       "historical": 10059,

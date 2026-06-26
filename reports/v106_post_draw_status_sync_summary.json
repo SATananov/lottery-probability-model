@@ -1,7 +1,7 @@
 {
   "step": 106,
   "status": "POST_DRAW_SYNCED",
-  "generated_at_utc": "2026-06-25T17:32:17+00:00",
+  "generated_at_utc": "2026-06-26T14:52:00+00:00",
   "blocking_failures": 0,
   "safe_note_bg": "Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058.",
   "dataset": {
