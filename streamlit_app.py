@@ -3833,6 +3833,12 @@ def page_history() -> None:
     return _render()
 # STEP111_10_FULL_HISTORICAL_DRAWS_VIEW_END
 
+# STEP111_11_DATA_REALITY_CENTER_WRAPPER_START
+def render_v111_11_data_reality_center_page() -> None:
+    from src.v111_11_data_reality_center_section import render_v111_11_data_reality_center_section as _render
+    return _render()
+# STEP111_11_DATA_REALITY_CENTER_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3857,6 +3863,7 @@ def main() -> None:
         "История на активния план": render_v98_active_plan_result_history_page,
         "Дневник на фишовете": render_v109_sqlite_journal_page,
         "Проверена история 2026": render_v111_8_verified_2026_prize_history_page,
+        "Матрица на данните": render_v111_11_data_reality_center_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -3951,6 +3958,7 @@ def main() -> None:
         '📊 Исторически анализи': [
             'Историческа статистика',
             'Проверена история 2026',
+            'Матрица на данните',
             'История на печалбите',
             'Анализ на минали тегления',
             'Подобни исторически тиражи',
