@@ -3822,6 +3822,12 @@ def render_v110_user_friendly_ui_polish_page() -> None:
 
 
 
+# STEP111_7_HISTORICAL_PRIZE_ARCHIVE_HARVESTER_WRAPPER_START
+def render_v111_7_historical_prize_archive_page() -> None:
+    from src.v111_7_historical_prize_archive_section import render_v111_7_historical_prize_archive_section as _render
+    return _render()
+# STEP111_7_HISTORICAL_PRIZE_ARCHIVE_HARVESTER_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3845,6 +3851,7 @@ def main() -> None:
         "Реален цикъл на тираж": render_v97_real_draw_lifecycle_page,
         "История на активния план": render_v98_active_plan_result_history_page,
         "Дневник на фишовете": render_v109_sqlite_journal_page,
+        "Исторически архив на печалби": render_v111_7_historical_prize_archive_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -3938,6 +3945,7 @@ def main() -> None:
         ],
         '📊 Исторически анализи': [
             'Историческа статистика',
+            'Исторически архив на печалби',
             'История на печалбите',
             'Анализ на минали тегления',
             'Подобни исторически тиражи',
