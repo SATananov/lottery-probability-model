@@ -1,0 +1,61 @@
+{
+  "step": 111,
+  "status": "PRIZE_WINNER_IMPORT_READY",
+  "blocking_failures": 0,
+  "official_source": "https://info.toto.bg/results/6x49",
+  "imported_draws": 1,
+  "interval_summary": {
+    "6": {
+      "category": 6,
+      "total_draws": 1,
+      "event_count": 0,
+      "draws_without_event": 1,
+      "avg_interval": null,
+      "median_interval": null,
+      "max_interval": null,
+      "current_gap": 1,
+      "last_event_date": null,
+      "last_event_draw": null,
+      "last_event_winners": null
+    },
+    "5": {
+      "category": 5,
+      "total_draws": 1,
+      "event_count": 1,
+      "draws_without_event": 0,
+      "avg_interval": null,
+      "median_interval": null,
+      "max_interval": null,
+      "current_gap": 0,
+      "last_event_date": "2026-06-25",
+      "last_event_draw": 49,
+      "last_event_winners": 2
+    },
+    "4": {
+      "category": 4,
+      "total_draws": 1,
+      "event_count": 1,
+      "draws_without_event": 0,
+      "avg_interval": null,
+      "median_interval": null,
+      "max_interval": null,
+      "current_gap": 0,
+      "last_event_date": "2026-06-25",
+      "last_event_draw": 49,
+      "last_event_winners": 442
+    },
+    "3": {
+      "category": 3,
+      "total_draws": 1,
+      "event_count": 1,
+      "draws_without_event": 0,
+      "avg_interval": null,
+      "median_interval": null,
+      "max_interval": null,
+      "current_gap": 0,
+      "last_event_date": "2026-06-25",
+      "last_event_draw": 49,
+      "last_event_winners": 7164
+    }
+  }
+}

@@ -3807,6 +3807,13 @@ def render_v109_sqlite_journal_page() -> None:
     return _render()
 # STEP109_SQLITE_JOURNAL_WRAPPER_END
 
+
+# STEP111_PRIZE_WINNER_HISTORY_WRAPPER_START
+def render_v111_prize_winner_history_page() -> None:
+    from src.v111_prize_winner_history_section import render_v111_prize_winner_history_section as _render
+    return _render()
+# STEP111_PRIZE_WINNER_HISTORY_WRAPPER_END
+
 # STEP110_USER_FRIENDLY_UI_POLISH_WRAPPER_START
 def render_v110_user_friendly_ui_polish_page() -> None:
     from src.v110_user_friendly_ui_polish_section import render_v110_user_friendly_ui_polish_section as _render
@@ -3838,6 +3845,7 @@ def main() -> None:
         "Реален цикъл на тираж": render_v97_real_draw_lifecycle_page,
         "История на активния план": render_v98_active_plan_result_history_page,
         "Дневник на фишовете": render_v109_sqlite_journal_page,
+        "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
         tr("recommendations"): page_recommendations,
@@ -3930,6 +3938,7 @@ def main() -> None:
         ],
         '📊 Исторически анализи': [
             'Историческа статистика',
+            'История на печалбите',
             'Анализ на минали тегления',
             'Подобни исторически тиражи',
             'Център за историческа проверка',

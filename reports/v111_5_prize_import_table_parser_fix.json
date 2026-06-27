@@ -1,0 +1,18 @@
+{
+  "step": "111.5",
+  "status": "PRIZE_IMPORT_TABLE_PARSER_FIXED",
+  "blocking_failures": 0,
+  "sample_draw": "2026-49",
+  "sample_numbers": "5, 11, 44, 46, 47, 48",
+  "sample_winners_5": 2,
+  "sample_winners_4": 442,
+  "sample_winners_3": 7164,
+  "parsed_categories": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "bad_cyrillic_files": [],
+  "failures": []
+}

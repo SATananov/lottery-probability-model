@@ -1,0 +1,64 @@
+{
+  "step": "111.1",
+  "name": "Prize import parser fix",
+  "status": "PRIZE_IMPORT_PARSER_FIXED",
+  "blocking_failures": 0,
+  "sample_record": {
+    "draw_key": "2026-49",
+    "draw_year": 2026,
+    "draw_number": 49,
+    "draw_date": "2026-06-25",
+    "numbers_text": "5, 11, 44, 46, 47, 48",
+    "jackpot_eur": 2189497.94,
+    "source_url": "https://info.toto.bg/results/6x49/2026-49",
+    "imported_at_utc": "2026-06-27T03:30:44+00:00",
+    "note": "Импортирано от официалната страница на Български спортен тотализатор.",
+    "n1": 5,
+    "n2": 11,
+    "n3": 44,
+    "n4": 46,
+    "n5": 47,
+    "n6": 48,
+    "winners_6": 0,
+    "prize_6_eur": 0.0,
+    "total_6_eur": 0.0,
+    "winners_5": 2,
+    "prize_5_eur": 11417.3,
+    "total_5_eur": 22834.6,
+    "winners_4": 442,
+    "prize_4_eur": 57.1,
+    "total_4_eur": 25238.2,
+    "winners_3": 7164,
+    "prize_3_eur": 7.6,
+    "total_3_eur": 54446.4
+  },
+  "base_step_status": "PRIZE_WINNER_IMPORT_READY",
+  "imported_draws": 0,
+  "checks": [
+    {
+      "check": "sample_draw_parsed",
+      "status": "OK",
+      "details_bg": "Тестовият тираж се разчита коректно."
+    },
+    {
+      "check": "sample_numbers_parsed",
+      "status": "OK",
+      "details_bg": "Печелившите числа се разчитат коректно."
+    },
+    {
+      "check": "sample_winners_parsed",
+      "status": "OK",
+      "details_bg": "Печалбите по категории се разчитат коректно."
+    },
+    {
+      "check": "sample_jackpot_parsed",
+      "status": "OK",
+      "details_bg": "Джакпотът се разчита коректно."
+    },
+    {
+      "check": "cyrillic_safe",
+      "status": "OK",
+      "details_bg": "Кирилицата в новите файлове е чиста."
+    }
+  ]
+}
