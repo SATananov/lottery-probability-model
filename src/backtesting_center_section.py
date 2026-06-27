@@ -39,6 +39,51 @@ def _read_csv(path: Path) -> pd.DataFrame:
         return pd.DataFrame()
 
 
+def _prepare_backtest_table_for_display(df: pd.DataFrame) -> pd.DataFrame:
+    """Return a display-safe copy with friendly and unique Bulgarian column labels."""
+    if df is None or df.empty:
+        return pd.DataFrame() if df is None else df.copy()
+
+    label_map = {
+        "model": T("\\u041c\\u043e\\u0434\\u0435\\u043b"),
+        "model_name": T("\\u041c\\u043e\\u0434\\u0435\\u043b"),
+        "event_index": T("\\u0420\\u0435\\u0434"),
+        "draw_year": T("\\u0413\\u043e\\u0434\\u0438\\u043d\\u0430"),
+        "year": T("\\u0413\\u043e\\u0434\\u0438\\u043d\\u0430"),
+        T("\\u0413\\u043e\\u0434\\u0438\\u043d\\u0430"): T("\\u0413\\u043e\\u0434\\u0438\\u043d\\u0430"),
+        "draw_number": T("\\u0422\\u0438\\u0440\\u0430\\u0436 \\u2116"),
+        "draw_no": T("\\u0422\\u0438\\u0440\\u0430\\u0436 \\u2116"),
+        T("\\u0422\\u0438\\u0440\\u0430\\u0436 \\u2116"): T("\\u0422\\u0438\\u0440\\u0430\\u0436 \\u2116"),
+        "draw_date": T("\\u0414\\u0430\\u0442\\u0430"),
+        "date": T("\\u0414\\u0430\\u0442\\u0430"),
+        T("\\u0414\\u0430\\u0442\\u0430"): T("\\u0414\\u0430\\u0442\\u0430"),
+        "predicted_top6": T("\\u041f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "predicted_numbers": T("\\u041f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "actual_numbers": T("\\u0420\\u0435\\u0430\\u043b\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "real_numbers": T("\\u0420\\u0435\\u0430\\u043b\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "hits": T("\\u041f\\u043e\\u0437\\u043d\\u0430\\u0442\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "hit_count": T("\\u041f\\u043e\\u0437\\u043d\\u0430\\u0442\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        "matched_numbers": T("\\u041f\\u043e\\u0437\\u043d\\u0430\\u0442\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+        T("\\u041f\\u043e\\u0437\\u043d\\u0430\\u0442\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"): T("\\u041f\\u043e\\u0437\\u043d\\u0430\\u0442\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430"),
+    }
+
+    result = df.copy()
+    new_columns: list[str] = []
+    seen: dict[str, int] = {}
+
+    for column in result.columns:
+        base = label_map.get(str(column), str(column))
+        count = seen.get(base, 0) + 1
+        seen[base] = count
+        if count == 1:
+            new_columns.append(base)
+        else:
+            new_columns.append(f"{base} ({count})")
+
+    result.columns = new_columns
+    return result
+
+
 def _best_available_column(df: pd.DataFrame, candidates: list[str]) -> str | None:
     for col in candidates:
         if col in df.columns:
@@ -143,7 +188,8 @@ def _show_raw_results(df: pd.DataFrame) -> None:
         shown["model"] = shown["model"].map(_model_label)
 
     max_rows = st.slider(T("\\u0411\\u0440\\u043e\\u0439 \\u0440\\u0435\\u0434\\u043e\\u0432\\u0435 \\u0437\\u0430 \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430\\u043d\\u0435"), min_value=20, max_value=500, value=100, step=20)
-    st.dataframe(shown.head(max_rows), hide_index=True, use_container_width=True)
+    display_df = _prepare_backtest_table_for_display(shown.head(max_rows))
+    st.dataframe(display_df, hide_index=True, use_container_width=True)
 
 
 def render() -> None:
