@@ -1,0 +1,70 @@
+{
+  "status": "JACKPOT_CYCLE_READY",
+  "blocking_failures": 0,
+  "rows": 26,
+  "analysis_rows": 26,
+  "official_or_manual_rows": 26,
+  "years": [
+    2026
+  ],
+  "first_draw": {
+    "draw_key": "2026-24",
+    "draw_date": "2026-03-29",
+    "jackpot_eur": 1260571.36
+  },
+  "latest_draw": {
+    "draw_key": "2026-49",
+    "draw_year": 2026,
+    "draw_number": 49,
+    "draw_date": "2026-06-25",
+    "numbers": "5, 11, 44, 46, 47, 48",
+    "jackpot_eur": 2189497.94
+  },
+  "six_events": [
+    {
+      "draw_key": "2026-35",
+      "draw_year": 2026,
+      "draw_number": 35,
+      "draw_date": "2026-05-07",
+      "numbers": "3, 8, 13, 20, 42, 49",
+      "winners_6": 1,
+      "prize_6_eur": 2230994.3,
+      "jackpot_eur": 2230994.3
+    }
+  ],
+  "six_event_count": 1,
+  "last_six_draw": {
+    "draw_key": "2026-35",
+    "draw_year": 2026,
+    "draw_number": 35,
+    "draw_date": "2026-05-07",
+    "numbers": "3, 8, 13, 20, 42, 49",
+    "winners_6": 1,
+    "prize_6_eur": 2230994.3,
+    "jackpot_eur": 2230994.3
+  },
+  "gap_after_last_six": 14,
+  "cycle_label_bg": "натрупващ се цикъл",
+  "restart_draw": {
+    "draw_key": "2026-36",
+    "draw_date": "2026-05-10",
+    "jackpot_eur": 1086605.1
+  },
+  "current_cycle_draws": 14,
+  "jackpot_growth_eur": 1102892.84,
+  "avg_growth_per_draw_eur": 84837.91,
+  "max_jackpot": {
+    "draw_key": "2026-35",
+    "draw_date": "2026-05-07",
+    "jackpot_eur": 2230994.3
+  },
+  "min_jackpot": {
+    "draw_key": "2026-36",
+    "draw_date": "2026-05-10",
+    "jackpot_eur": 1086605.1
+  },
+  "confidence_note_bg": "Данните са проверени, но периодът е още кратък. Анализът е начален.",
+  "ticket_pack_recommendation_bg": "Има натрупване след последната 6-ца. Разширен пакет може да се разглежда, но само в предварително избран бюджет.",
+  "safe_note_bg": "Анализът описва историята на джакпота и наличните печалби. Той не предсказва следващия тираж и не гарантира печалба.",
+  "generated_at_utc": "2026-06-27T07:50:13Z"
+}

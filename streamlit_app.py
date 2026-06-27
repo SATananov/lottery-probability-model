@@ -3845,6 +3845,12 @@ def render_v112_prize_statistics_page() -> None:
     return _render()
 # STEP112_PRIZE_STATISTICS_WRAPPER_END
 
+# STEP113_JACKPOT_CYCLE_WRAPPER_START
+def render_v113_jackpot_cycle_page() -> None:
+    from src.v113_jackpot_cycle_section import render_v113_jackpot_cycle_section as _render
+    return _render()
+# STEP113_JACKPOT_CYCLE_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3871,6 +3877,7 @@ def main() -> None:
         "Проверена история 2026": render_v111_8_verified_2026_prize_history_page,
         "Матрица на данните": render_v111_11_data_reality_center_page,
         "Статистика на печалбите": render_v112_prize_statistics_page,
+        "Джакпот цикъл": render_v113_jackpot_cycle_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -3967,6 +3974,7 @@ def main() -> None:
             'Проверена история 2026',
             'Матрица на данните',
             'Статистика на печалбите',
+            'Джакпот цикъл',
             'История на печалбите',
             'Анализ на минали тегления',
             'Подобни исторически тиражи',
