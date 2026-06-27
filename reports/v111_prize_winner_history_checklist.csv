@@ -2,4 +2,4 @@ check,status,blocking,details_bg
 sqlite_table_ready,OK,yes,Локалната SQLite база е налична.
 csv_export_ready,OK,yes,CSV архивът за печалбите е създаден.
 importer_ready,OK,yes,Импортът от официалния сайт на БСТ е готов за ръчно стартиране.
-has_imported_rows,OK,no,Импортирани тиражи: 1
+has_imported_rows,OK,no,Импортирани тиражи: 26
