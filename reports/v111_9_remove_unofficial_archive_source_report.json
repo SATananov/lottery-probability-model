@@ -1,0 +1,54 @@
+{
+  "step": "111.9",
+  "status": "OFFICIAL_ONLY_PRIZE_SOURCE_READY",
+  "created_at_utc": "2026-06-27T06:14:41+00:00",
+  "blocking_failures": 0,
+  "checks": [
+    {
+      "name": "streamlit_page_removed",
+      "status": "OK",
+      "blocking": "yes"
+    },
+    {
+      "name": "cyrillic_safe",
+      "status": "OK",
+      "blocking": "yes"
+    }
+  ],
+  "streamlit_app": {
+    "wrapper_blocks": 0,
+    "page_lines": 0,
+    "navigation_lines": 0,
+    "changed": false,
+    "virtbg_visible_in_streamlit_app": false
+  },
+  "obsolete_files": {
+    "removed_files": [],
+    "removed_dirs": []
+  },
+  "csv_purge": [
+    {
+      "label": "main_prize_winner_history",
+      "path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\prize_winner_history.csv",
+      "exists": true,
+      "kept": 26,
+      "removed": 0,
+      "backup": null
+    },
+    {
+      "label": "export_prize_winner_history",
+      "path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\user_journal_exports\\prize_winner_history.csv",
+      "exists": true,
+      "kept": 26,
+      "removed": 0,
+      "backup": null
+    }
+  ],
+  "sqlite_purge": {
+    "path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\user_journal.db",
+    "exists": true,
+    "table_exists": true,
+    "removed": 0
+  },
+  "official_manual_2026_page_kept": true
+}

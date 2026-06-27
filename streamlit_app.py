@@ -55,7 +55,6 @@ except Exception:  # pragma: no cover
     _bg34_inspect = None
 
 
-
 def _bg34_is_bulgarian() -> bool:
     """Use the app language key instead of scanning all session values."""
     try:
@@ -3821,18 +3820,18 @@ def render_v110_user_friendly_ui_polish_page() -> None:
 # STEP110_USER_FRIENDLY_UI_POLISH_WRAPPER_END
 
 
-
-# STEP111_7_HISTORICAL_PRIZE_ARCHIVE_HARVESTER_WRAPPER_START
-def render_v111_7_historical_prize_archive_page() -> None:
-    from src.v111_7_historical_prize_archive_section import render_v111_7_historical_prize_archive_section as _render
-    return _render()
-# STEP111_7_HISTORICAL_PRIZE_ARCHIVE_HARVESTER_WRAPPER_END
-
 # STEP111_8_VERIFIED_2026_PRIZE_HISTORY_WRAPPER_START
 def render_v111_8_verified_2026_prize_history_page() -> None:
     from src.v111_8_verified_2026_prize_history_section import render_v111_8_verified_2026_prize_history_section as _render
     return _render()
 # STEP111_8_VERIFIED_2026_PRIZE_HISTORY_WRAPPER_END
+
+
+# STEP111_10_FULL_HISTORICAL_DRAWS_VIEW_START
+def page_history() -> None:
+    from src.v111_10_full_historical_draws_section import render_full_historical_draws_section as _render
+    return _render()
+# STEP111_10_FULL_HISTORICAL_DRAWS_VIEW_END
 
 def main() -> None:
     page_glossary()
@@ -3857,7 +3856,6 @@ def main() -> None:
         "Реален цикъл на тираж": render_v97_real_draw_lifecycle_page,
         "История на активния план": render_v98_active_plan_result_history_page,
         "Дневник на фишовете": render_v109_sqlite_journal_page,
-        "Исторически архив на печалби": render_v111_7_historical_prize_archive_page,
         "Проверена история 2026": render_v111_8_verified_2026_prize_history_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
@@ -3952,7 +3950,6 @@ def main() -> None:
         ],
         '📊 Исторически анализи': [
             'Историческа статистика',
-            'Исторически архив на печалби',
             'Проверена история 2026',
             'История на печалбите',
             'Анализ на минали тегления',

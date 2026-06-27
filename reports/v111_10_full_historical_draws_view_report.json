@@ -1,0 +1,10 @@
+{
+  "step": "111.10",
+  "status": "FULL_HISTORICAL_DRAWS_VIEW_READY",
+  "blocking_failures": 0,
+  "failures": [],
+  "historical_draw_rows": 10059,
+  "first_year": 1958,
+  "last_year": 2026,
+  "bad_count": 0
+}
