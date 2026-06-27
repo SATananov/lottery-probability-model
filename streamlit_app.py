@@ -3851,6 +3851,12 @@ def render_v113_jackpot_cycle_page() -> None:
     return _render()
 # STEP113_JACKPOT_CYCLE_WRAPPER_END
 
+# STEP114_TICKET_VALUE_WRAPPER_START
+def render_v114_ticket_value_page() -> None:
+    from src.v114_ticket_value_section import render_v114_ticket_value_section as _render
+    return _render()
+# STEP114_TICKET_VALUE_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3878,6 +3884,7 @@ def main() -> None:
         "Матрица на данните": render_v111_11_data_reality_center_page,
         "Статистика на печалбите": render_v112_prize_statistics_page,
         "Джакпот цикъл": render_v113_jackpot_cycle_page,
+        "Реална стойност на фишовете": render_v114_ticket_value_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -3975,6 +3982,7 @@ def main() -> None:
             'Матрица на данните',
             'Статистика на печалбите',
             'Джакпот цикъл',
+            'Реална стойност на фишовете',
             'История на печалбите',
             'Анализ на минали тегления',
             'Подобни исторически тиражи',
