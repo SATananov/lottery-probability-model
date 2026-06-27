@@ -1,0 +1,63 @@
+{
+  "status": "PRIZE_STATISTICS_READY",
+  "blocking_failures": 0,
+  "rows": 26,
+  "valid_number_rows": 26,
+  "valid_number_ratio": 1.0,
+  "verified_like_rows": 26,
+  "years": [
+    2026
+  ],
+  "draw_number_min": 24,
+  "draw_number_max": 49,
+  "source_counts": {
+    "БСТ / ръчно проверено": 26
+  },
+  "six_winning_draws": 1,
+  "last_six": {
+    "draw_key": "2026-35",
+    "draw_year": 2026,
+    "draw_number": 35,
+    "draw_date": "2026-05-07",
+    "numbers": "3, 8, 13, 20, 42, 49",
+    "winners_6": 1,
+    "prize_6_eur": 2230994.3,
+    "jackpot_eur": 2230994.3
+  },
+  "current_gap_after_last_six": 14,
+  "averages": {
+    "winners_5": 12.04,
+    "winners_4": 609.15,
+    "winners_3": 10674.5,
+    "jackpot_eur": 1687006.33
+  },
+  "maximums": {
+    "winners_5": {
+      "draw_key": "2026-26",
+      "draw_date": "2026-04-05",
+      "value": 40.0,
+      "numbers": "1, 6, 7, 12, 13, 19"
+    },
+    "winners_4": {
+      "draw_key": "2026-26",
+      "draw_date": "2026-04-05",
+      "value": 1433.0,
+      "numbers": "1, 6, 7, 12, 13, 19"
+    },
+    "winners_3": {
+      "draw_key": "2026-26",
+      "draw_date": "2026-04-05",
+      "value": 19684.0,
+      "numbers": "1, 6, 7, 12, 13, 19"
+    },
+    "jackpot_eur": {
+      "draw_key": "2026-35",
+      "draw_date": "2026-05-07",
+      "value": 2230994.3,
+      "numbers": "3, 8, 13, 20, 42, 49"
+    }
+  },
+  "confidence": "ограничена, но проверена",
+  "confidence_note_bg": "Данните са проверени, но периодът е кратък. Изводите са начални.",
+  "generated_at_utc": "2026-06-27T07:34:33Z"
+}
