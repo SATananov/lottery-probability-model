@@ -461,10 +461,30 @@ if not getattr(st, "_lottery_bulgarian_final_clean_v36", False):
         return _bg34_orig_file_uploader(_bg34_text(label), *args, **kwargs)
     def _bg34_download_button(label, *args, **kwargs):
         return _bg34_orig_download_button(_bg34_text(label), *args, **kwargs)
+
+    def _bg34_unique_dataframe_columns(data):
+        """Return a copy with unique column labels after UI translation."""
+        if data is None:
+            return data
+        try:
+            if isinstance(data, pd.DataFrame):
+                result = data.copy()
+                seen: dict[str, int] = {}
+                unique_columns: list[str] = []
+                for column in result.columns:
+                    base = str(column)
+                    count = seen.get(base, 0) + 1
+                    seen[base] = count
+                    unique_columns.append(base if count == 1 else f"{base} ({count})")
+                result.columns = unique_columns
+                return result
+        except Exception:
+            return data
+        return data
     def _bg34_dataframe_widget(data=None, *args, **kwargs):
-        return _bg34_orig_dataframe(_bg34_translate_dataframe(data), *args, **kwargs)
+        return _bg34_orig_dataframe(_bg34_unique_dataframe_columns(_bg34_translate_dataframe(data)), *args, **kwargs)
     def _bg34_table_widget(data=None, *args, **kwargs):
-        return _bg34_orig_table(_bg34_translate_dataframe(data), *args, **kwargs)
+        return _bg34_orig_table(_bg34_unique_dataframe_columns(_bg34_translate_dataframe(data)), *args, **kwargs)
     st.markdown = _bg34_markdown
     st.write = _bg34_write
     st.caption = _bg34_caption
