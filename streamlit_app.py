@@ -3863,6 +3863,12 @@ def render_v115_play_decision_center_page() -> None:
     return _render()
 # STEP115_PLAY_DECISION_CENTER_WRAPPER_END
 
+# STEP116_PLAYED_PACK_LOCK_WRAPPER_START
+def render_v116_played_pack_lock_page() -> None:
+    from src.v116_played_pack_lock_section import render_v116_played_pack_lock_section as _render
+    return _render()
+# STEP116_PLAYED_PACK_LOCK_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3892,6 +3898,7 @@ def main() -> None:
         "Джакпот цикъл": render_v113_jackpot_cycle_page,
         "Реална стойност на фишовете": render_v114_ticket_value_page,
         "Решение за игра": render_v115_play_decision_center_page,
+        "Реално играни фишове": render_v116_played_pack_lock_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -4032,6 +4039,7 @@ def main() -> None:
             'Реален цикъл на тираж',
             'История на активния план',
             'Дневник на фишовете',
+            'Реално играни фишове',
             'Анализ на нов тираж',
             'Обяснимост и валидация',
             'Решение и препоръка',
