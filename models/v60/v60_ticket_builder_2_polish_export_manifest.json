@@ -2,10 +2,10 @@
   "module": "ticket_builder_2_polish_export",
   "version": "v60",
   "user_facing_name_bg": "Интелигентен генератор 2",
-  "total_draws": 10059,
+  "total_draws": 10060,
   "selected_count": 5,
-  "average_final_score": 80.43,
-  "coverage_score": 88.0,
+  "average_final_score": 81.49,
+  "coverage_score": 94.0,
   "purpose_bg": "Полира потребителския изглед на Интелигентен генератор 2 и добавя TXT, CSV и JSON експорт.",
   "not_a_prediction_bg": "Модулът не предсказва печеливши числа и не гарантира печалба. Той е статистически помощник за изграждане и експортиране на фиш.",
   "exports": [

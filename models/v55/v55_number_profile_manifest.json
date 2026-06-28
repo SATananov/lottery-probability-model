@@ -2,7 +2,7 @@
   "module": "number_profile_center",
   "version": "v55",
   "user_facing_name_bg": "Профил на число",
-  "total_draws": 10059,
+  "total_draws": 10060,
   "numbers_profiled": 49,
   "data_path": "C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\historical_draws.csv",
   "purpose_bg": "Създава статистически профил за всяко число от 1 до 49: честота, последна поява, интервали, скорошна активност и участие в двойки/тройки.",

@@ -2,7 +2,7 @@
   "step": 99,
   "status": "READY_WAITING_NEXT_DRAW",
   "title_bg": "Финално потребителско табло",
-  "generated_at_utc": "2026-06-25T17:26:32+00:00",
+  "generated_at_utc": "2026-06-28T16:45:30+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "status": "ACTIVE",
@@ -13,7 +13,7 @@
     "cost_text": "9.90",
     "saved_after_draw_date": "2026-06-21",
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44",
-    "real_result_rows": 1,
+    "real_result_rows": 2,
     "next_status_bg": "Историята има реални резултати. След следващ тираж ще се добави нов ред.",
     "combinations": [
       [
@@ -107,34 +107,34 @@
     ]
   },
   "dataset": {
-    "dataset_rows": 10059,
-    "canonical_rows": 10059,
-    "latest_draw_date": "2026-06-25",
+    "dataset_rows": 10060,
+    "canonical_rows": 10060,
+    "latest_draw_date": "2026-06-28",
     "latest_draw_year": "2026",
-    "latest_draw_number": "49",
+    "latest_draw_number": "50",
     "latest_draw_position": "1",
     "latest_numbers": [
-      5,
-      11,
-      44,
-      46,
-      47,
-      48
+      2,
+      4,
+      17,
+      33,
+      35,
+      38
     ],
-    "latest_numbers_text": "5, 11, 44, 46, 47, 48"
+    "latest_numbers_text": "2, 4, 17, 33, 35, 38"
   },
   "statuses": {
-    "step95_status": "WAITING_NEXT_DRAW",
+    "step95_status": "EVALUATED",
     "step96_status": "OK",
     "step97_status": "READY",
     "step98_status": "HAS_HISTORY",
     "active_plan_available": "true"
   },
   "next_action": {
-    "title_bg": "Въведи следващия реален тираж",
-    "description_bg": "Когато излезе новият тираж, отвори Добавяне на тираж. Step 95 ще оцени активния план преди запис, Step 97/98 ще обновят lifecycle и историята.",
-    "page_bg": "Добавяне на тираж",
-    "priority": "HIGH"
+    "title_bg": "Прегледай резултата и реши дали да обновиш плана",
+    "description_bg": "След реален резултат прегледай История на активния план, после използвай Бюджетен съветник при нужда от нов план.",
+    "page_bg": "История на активния план",
+    "priority": "MEDIUM"
   },
   "actions": [
     {
@@ -147,7 +147,7 @@
     },
     {
       "order": 2,
-      "status": "чака",
+      "status": "проверено",
       "title_bg": "Следващ реален тираж",
       "description_bg": "Въведи новия тираж в Добавяне на тираж. Pre-save проверките трябва да останат включени.",
       "page_bg": "Добавяне на тираж",

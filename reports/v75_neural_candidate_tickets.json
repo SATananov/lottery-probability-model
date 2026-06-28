@@ -1,9 +1,9 @@
 {
-  "state_hash": "760bbfb3d861f1c4",
+  "state_hash": "68515dba5a1ca32b",
   "tickets": [
     {
       "low_count": 2,
-      "neural_ticket_score": 0.516563,
+      "neural_ticket_score": 0.51657,
       "numbers": [
         2,
         21,
@@ -18,7 +18,7 @@
     },
     {
       "low_count": 3,
-      "neural_ticket_score": 0.51528,
+      "neural_ticket_score": 0.515299,
       "numbers": [
         11,
         20,
@@ -33,7 +33,7 @@
     },
     {
       "low_count": 2,
-      "neural_ticket_score": 0.520419,
+      "neural_ticket_score": 0.520484,
       "numbers": [
         2,
         11,
@@ -48,7 +48,7 @@
     },
     {
       "low_count": 2,
-      "neural_ticket_score": 0.520892,
+      "neural_ticket_score": 0.520881,
       "numbers": [
         7,
         21,
@@ -63,7 +63,7 @@
     },
     {
       "low_count": 2,
-      "neural_ticket_score": 0.534294,
+      "neural_ticket_score": 0.534301,
       "numbers": [
         2,
         21,
@@ -78,7 +78,7 @@
     },
     {
       "low_count": 3,
-      "neural_ticket_score": 0.519335,
+      "neural_ticket_score": 0.519329,
       "numbers": [
         2,
         13,
@@ -93,7 +93,7 @@
     },
     {
       "low_count": 2,
-      "neural_ticket_score": 0.514728,
+      "neural_ticket_score": 0.514723,
       "numbers": [
         3,
         13,
@@ -108,7 +108,7 @@
     },
     {
       "low_count": 2,
-      "neural_ticket_score": 0.527801,
+      "neural_ticket_score": 0.527819,
       "numbers": [
         2,
         21,

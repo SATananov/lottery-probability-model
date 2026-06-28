@@ -1,38 +1,38 @@
 {
   "step": 107,
   "name_bg": "Политика за обучение и refresh control",
-  "status": "TRAINING_POLICY_READY",
-  "blocking_failures": 0,
-  "generated_at_utc": "2026-06-26T14:52:00.323508+00:00",
+  "status": "CHECK_REQUIRED",
+  "blocking_failures": 1,
+  "generated_at_utc": "2026-06-28T16:45:31.726244+00:00",
   "dataset": {
     "row_counts": {
-      "historical": 10059,
-      "normalized": 10059,
-      "canonical": 10059
+      "historical": 10060,
+      "normalized": 10060,
+      "canonical": 10060
     },
-    "dataset_rows": 10059,
+    "dataset_rows": 10060,
     "datasets_synced": true,
     "latest_draw": {
-      "date": "2026-06-25",
-      "draw_no": "49",
+      "date": "2026-06-28",
+      "draw_no": "50",
       "draw_position": "1",
       "numbers": [
-        5,
-        11,
-        44,
-        46,
-        47,
-        48
+        2,
+        4,
+        17,
+        33,
+        35,
+        38
       ]
     }
   },
-  "real_result_rows_since_active_plan": 1,
+  "real_result_rows_since_active_plan": 2,
   "policy_decision": {
     "level": "NO_RETRAIN_NOW",
     "label_bg": "Не обучавай тежки модели сега",
     "message_bg": "Има твърде малко нови реални резултати. След всеки тираж правим само бърз синхрон, оценка и dashboard refresh.",
     "recommended_action_bg": "Изчакай поне 5 реални резултата преди лек статистически refresh.",
-    "next_threshold_bg": "Остават 4 реални резултата до първа препоръка за лек refresh."
+    "next_threshold_bg": "Остават 3 реални резултата до първа препоръка за лек refresh."
   },
   "thresholds": {
     "auto_every_draw_bg": "dataset sync + active plan result + lifecycle/dashboard refresh",
@@ -75,13 +75,13 @@
       "check": "datasets_synced",
       "passed": true,
       "blocking": "yes",
-      "details_bg": "historical=10059, normalized=10059, canonical=10059"
+      "details_bg": "historical=10060, normalized=10060, canonical=10060"
     },
     {
       "check": "latest_draw_valid",
       "passed": true,
       "blocking": "yes",
-      "details_bg": "latest=2026-06-25 [5, 11, 44, 46, 47, 48]"
+      "details_bg": "latest=2026-06-28 [2, 4, 17, 33, 35, 38]"
     },
     {
       "check": "runtime_hardening_active",
@@ -91,9 +91,9 @@
     },
     {
       "check": "post_draw_sync_active",
-      "passed": true,
+      "passed": false,
       "blocking": "yes",
-      "details_bg": "Step106=POST_DRAW_SYNCED"
+      "details_bg": "Step106=CHECK_REQUIRED"
     },
     {
       "check": "heavy_labs_not_default",

@@ -5,7 +5,7 @@
 Проверени артефакти: **27**
 Проверки на файлово качество: **33**
 Проверени планове за синхронизация: **3**
-Намерени проблеми: **1**
+Намерени проблеми: **4**
 
 **Важно:** Step 80 е контролен слой. Той не е прогноза и не е гаранция за печалба.
 
@@ -13,9 +13,9 @@
 
 | Dataset | Редове | 2026 | Последна дата | Последни числа | Статус |
 |---|---:|---:|---|---|---|
-| `data/historical_draws.csv` | 10059 | 50 | 2026-06-25 | 5,11,44,46,47,48 | Провери |
-| `data/v40_normalized_draw_events.csv` | 10058 | 49 | 2026-06-21 | 6,13,16,19,42,44 | OK |
-| `data/v41_canonical_draw_events.csv` | 10058 | 49 | 2026-06-21 | 6,13,16,19,42,44 | OK |
+| `data/historical_draws.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
+| `data/v40_normalized_draw_events.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
+| `data/v41_canonical_draw_events.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
 
 ## Sync планове
 
@@ -28,3 +28,6 @@
 ## Нужда от преглед
 
 - `data/historical_draws.csv` — Провери — 
+- `data/v40_normalized_draw_events.csv` — Провери — 
+- `data/v41_canonical_draw_events.csv` — Провери — 
+- `active_text_files` — Провери — scripts/v111_6_build_prize_import_captcha_safe_manual_import.py: ????; scripts/v111_9_remove_unofficial_archive_source.py: ????; scripts/v114_build_ticket_value.py: ????; scripts/v116_1_fix_backtesting_duplicate_columns.py: ????; step114_ticket_value_patch_files/scripts/v114_build_ticket_value.py: ????; step111_9_remove_unofficial_archive_source_patch_files/scripts/v111_9_remove_unofficial_archive_source.py: ????

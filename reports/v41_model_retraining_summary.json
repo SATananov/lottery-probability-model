@@ -1,8 +1,8 @@
 {
   "status": "v41_model_retraining_completed",
   "canonical_dataset": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10058,
-  "train_events": 8046,
+  "total_draw_events": 10060,
+  "train_events": 8048,
   "test_events": 2012,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
@@ -37,13 +37,13 @@
     {
       "model": "recency_250_baseline",
       "test_events": 2012,
-      "average_hits_top6": 0.7470178926441352,
+      "average_hits_top6": 0.7475149105367793,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 865,
-        "1": 828,
-        "2": 283,
+        "1": 827,
+        "2": 284,
         "3": 35,
         "4": 1
       },
@@ -55,17 +55,17 @@
     {
       "model": "sgd_number_classifier",
       "test_events": 2012,
-      "average_hits_top6": 0.7415506958250497,
+      "average_hits_top6": 0.7475149105367793,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 878,
-        "1": 814,
-        "2": 283,
-        "3": 36,
+        "0": 849,
+        "1": 859,
+        "2": 268,
+        "3": 35,
         "4": 1
       },
-      "events_with_3plus_hits": 37,
+      "events_with_3plus_hits": 36,
       "events_with_4plus_hits": 1,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
@@ -74,13 +74,13 @@
   "best_model_by_average_hits_top6": {
     "model": "recency_250_baseline",
     "test_events": 2012,
-    "average_hits_top6": 0.7470178926441352,
+    "average_hits_top6": 0.7475149105367793,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
       "0": 865,
-      "1": 828,
-      "2": 283,
+      "1": 827,
+      "2": 284,
       "3": 35,
       "4": 1
     },

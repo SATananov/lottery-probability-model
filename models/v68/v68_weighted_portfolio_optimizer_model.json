@@ -5,45 +5,44 @@
     "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
     "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
     "tickets_analyzed": 8,
-    "unique_numbers_covered": 18,
-    "coverage_percent": 36.73,
+    "unique_numbers_covered": 19,
+    "coverage_percent": 38.78,
     "covered_top10_numbers": 10,
     "covered_top20_numbers": 17,
-    "average_ticket_step66_score": 75.139,
-    "average_ticket_overlap": 1.893,
-    "max_ticket_overlap": 3,
-    "repeated_pairs_count": 25,
-    "repeated_triples_count": 4,
-    "coverage_score": 36.735,
+    "average_ticket_step66_score": 76.089,
+    "average_ticket_overlap": 1.821,
+    "max_ticket_overlap": 2,
+    "repeated_pairs_count": 23,
+    "repeated_triples_count": 0,
+    "coverage_score": 38.776,
     "top20_coverage_score": 85.0,
-    "diversity_score": 65.929,
-    "repetition_score": 5.5,
-    "portfolio_score": 59.658,
+    "diversity_score": 67.214,
+    "repetition_score": 42.5,
+    "portfolio_score": 64.298,
     "portfolio_status": "приемлив портфейл с нужда от наблюдение",
     "undercovered_top20_numbers": [
       {
-        "number": 11,
-        "step66_rank": 13,
-        "weighted_score_percent": 64.449
+        "number": 16,
+        "step66_rank": 15,
+        "weighted_score_percent": 58.754
       },
       {
-        "number": 24,
-        "step66_rank": 17,
-        "weighted_score_percent": 57.553
+        "number": 43,
+        "step66_rank": 18,
+        "weighted_score_percent": 54.099
       },
       {
-        "number": 12,
+        "number": 48,
         "step66_rank": 20,
-        "weighted_score_percent": 55.437
+        "weighted_score_percent": 52.077
       }
     ],
     "recommendations": [
       "Портфолиото покрива сравнително малко уникални числа. Следваща оптимизация може да увеличи diversity.",
-      "Има силни Step 66 числа, които не са покрити в портфолиото: 11, 24, 12.",
-      "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията.",
-      "Има повторени тройки. Това повишава концентрацията и може да се оптимизира."
+      "Има силни Step 66 числа, които не са покрити в портфолиото: 16, 43, 48.",
+      "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията."
     ],
-    "generated_at": "2026-06-25T16:36:39+00:00",
+    "generated_at": "2026-06-28T16:45:24+00:00",
     "generated_reports": [
       "reports/v68_weighted_portfolio_summary.json",
       "reports/v68_weighted_portfolio_summary.md",
@@ -58,114 +57,114 @@
   },
   "ticket_analysis": [
     {
-      "ticket_id": 5,
-      "strategy_label": "Балансирана комбинация по ниски/високи числа",
-      "numbers": "1,3,22,38,42,49",
-      "average_step66_score": 72.61,
-      "average_step67_score": 75.825,
-      "unique_help_count": 2,
-      "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 2,
-      "average_overlap_with_other_tickets": 1.571,
-      "portfolio_contribution_score": 59.935,
-      "balance_status": "добър структурен баланс",
-      "risk_note": "Контролирана статистическа комбинация."
-    },
-    {
-      "ticket_id": 1,
-      "strategy_label": "Балансирана претеглена комбинация",
-      "numbers": "1,2,4,18,37,49",
-      "average_step66_score": 83.167,
-      "average_step67_score": 88.116,
+      "ticket_id": 3,
+      "strategy_label": "Диверсифицирана претеглена комбинация",
+      "numbers": "1,2,11,23,37,44",
+      "average_step66_score": 85.131,
+      "average_step67_score": 78.7,
       "unique_help_count": 0,
       "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 3,
-      "average_overlap_with_other_tickets": 2.143,
-      "portfolio_contribution_score": 51.742,
-      "balance_status": "добър структурен баланс",
-      "risk_note": "Контролирана статистическа комбинация."
-    },
-    {
-      "ticket_id": 6,
-      "strategy_label": "Разпределена диапазонна комбинация",
-      "numbers": "1,13,22,34,37,48",
-      "average_step66_score": 73.785,
-      "average_step67_score": 74.847,
-      "unique_help_count": 1,
-      "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 3,
-      "average_overlap_with_other_tickets": 1.857,
-      "portfolio_contribution_score": 51.582,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 2.0,
+      "portfolio_contribution_score": 56.822,
       "balance_status": "добър структурен баланс",
       "risk_note": "Контролирана статистическа комбинация."
     },
     {
       "ticket_id": 7,
       "strategy_label": "Консервативно ядро",
-      "numbers": "2,4,17,22,29,38",
-      "average_step66_score": 69.893,
-      "average_step67_score": 74.595,
-      "unique_help_count": 1,
+      "numbers": "2,12,18,24,37,49",
+      "average_step66_score": 69.453,
+      "average_step67_score": 72.062,
+      "unique_help_count": 2,
       "top20_numbers_count": 5,
       "max_overlap_with_other_ticket": 2,
       "average_overlap_with_other_tickets": 1.571,
-      "portfolio_contribution_score": 50.441,
+      "portfolio_contribution_score": 55.199,
       "balance_status": "добър структурен баланс",
       "risk_note": "Контролирана статистическа комбинация."
     },
     {
-      "ticket_id": 3,
-      "strategy_label": "Диверсифицирана претеглена комбинация",
-      "numbers": "2,13,21,23,38,49",
-      "average_step66_score": 71.622,
-      "average_step67_score": 78.881,
+      "ticket_id": 5,
+      "strategy_label": "Балансирана комбинация по ниски/високи числа",
+      "numbers": "1,3,17,34,38,44",
+      "average_step66_score": 72.71,
+      "average_step67_score": 72.62,
+      "unique_help_count": 1,
+      "top20_numbers_count": 6,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 1.714,
+      "portfolio_contribution_score": 54.99,
+      "balance_status": "добър структурен баланс",
+      "risk_note": "Контролирана статистическа комбинация."
+    },
+    {
+      "ticket_id": 1,
+      "strategy_label": "Балансирана претеглена комбинация",
+      "numbers": "1,4,18,22,34,37",
+      "average_step66_score": 80.156,
+      "average_step67_score": 80.666,
       "unique_help_count": 0,
       "top20_numbers_count": 6,
       "max_overlap_with_other_ticket": 2,
-      "average_overlap_with_other_tickets": 1.857,
-      "portfolio_contribution_score": 49.392,
-      "balance_status": "добър структурен баланс",
-      "risk_note": "Контролирана статистическа комбинация."
-    },
-    {
-      "ticket_id": 8,
-      "strategy_label": "Разширена статистическа комбинация",
-      "numbers": "1,18,21,23,34,37",
-      "average_step66_score": 78.371,
-      "average_step67_score": 82.255,
-      "unique_help_count": 0,
-      "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 3,
-      "average_overlap_with_other_tickets": 2.143,
-      "portfolio_contribution_score": 49.104,
+      "average_overlap_with_other_tickets": 2.0,
+      "portfolio_contribution_score": 54.086,
       "balance_status": "добър структурен баланс",
       "risk_note": "Контролирана статистическа комбинация."
     },
     {
       "ticket_id": 2,
       "strategy_label": "Комбинация с висока претеглена оценка",
-      "numbers": "1,4,21,34,38,44",
-      "average_step66_score": 77.633,
-      "average_step67_score": 82.579,
+      "numbers": "1,2,4,21,38,49",
+      "average_step66_score": 79.721,
+      "average_step67_score": 81.032,
       "unique_help_count": 0,
       "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 3,
-      "average_overlap_with_other_tickets": 2.143,
-      "portfolio_contribution_score": 48.698,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 2.0,
+      "portfolio_contribution_score": 53.847,
+      "balance_status": "добър структурен баланс",
+      "risk_note": "Контролирана статистическа комбинация."
+    },
+    {
+      "ticket_id": 6,
+      "strategy_label": "Разпределена диапазонна комбинация",
+      "numbers": "2,13,18,23,34,38",
+      "average_step66_score": 73.558,
+      "average_step67_score": 72.506,
+      "unique_help_count": 1,
+      "top20_numbers_count": 5,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 1.714,
+      "portfolio_contribution_score": 52.457,
       "balance_status": "добър структурен баланс",
       "risk_note": "Контролирана статистическа комбинация."
     },
     {
       "ticket_id": 4,
       "strategy_label": "Балансирана комбинация по нечетни/четни числа",
-      "numbers": "2,17,23,34,37,44",
-      "average_step66_score": 74.028,
-      "average_step67_score": 76.866,
+      "numbers": "2,17,21,34,37,42",
+      "average_step66_score": 75.606,
+      "average_step67_score": 73.652,
       "unique_help_count": 0,
       "top20_numbers_count": 6,
-      "max_overlap_with_other_ticket": 3,
-      "average_overlap_with_other_tickets": 1.857,
-      "portfolio_contribution_score": 46.716,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 2.0,
+      "portfolio_contribution_score": 51.583,
+      "balance_status": "добър структурен баланс",
+      "risk_note": "Контролирана статистическа комбинация."
+    },
+    {
+      "ticket_id": 8,
+      "strategy_label": "Разширена статистическа комбинация",
+      "numbers": "1,11,17,22,42,49",
+      "average_step66_score": 72.376,
+      "average_step67_score": 71.746,
+      "unique_help_count": 0,
+      "top20_numbers_count": 6,
+      "max_overlap_with_other_ticket": 2,
+      "average_overlap_with_other_tickets": 1.571,
+      "portfolio_contribution_score": 49.807,
       "balance_status": "добър структурен баланс",
       "risk_note": "Контролирана статистическа комбинация."
     }
@@ -185,10 +184,10 @@
     {
       "number": 2,
       "step66_rank": 2,
-      "weighted_score_percent": 90.106,
-      "source_count": 8,
-      "covered_count": 4,
-      "coverage_percent": 50.0,
+      "weighted_score_percent": 96.664,
+      "source_count": 7,
+      "covered_count": 5,
+      "coverage_percent": 62.5,
       "number_group": "01-09",
       "coverage_status": "силен сигнал с висока експозиция",
       "step66_status": "водещ претеглен сигнал"
@@ -196,7 +195,7 @@
     {
       "number": 37,
       "step66_rank": 3,
-      "weighted_score_percent": 83.931,
+      "weighted_score_percent": 88.682,
       "source_count": 6,
       "covered_count": 4,
       "coverage_percent": 50.0,
@@ -205,87 +204,87 @@
       "step66_status": "водещ претеглен сигнал"
     },
     {
-      "number": 4,
+      "number": 11,
       "step66_rank": 4,
-      "weighted_score_percent": 79.622,
-      "source_count": 8,
-      "covered_count": 3,
-      "coverage_percent": 37.5,
-      "number_group": "01-09",
-      "coverage_status": "добре покрит силен сигнал",
-      "step66_status": "водещ претеглен сигнал"
-    },
-    {
-      "number": 18,
-      "step66_rank": 5,
-      "weighted_score_percent": 74.232,
+      "weighted_score_percent": 81.848,
       "source_count": 7,
       "covered_count": 2,
       "coverage_percent": 25.0,
       "number_group": "10-19",
       "coverage_status": "добре покрит силен сигнал",
-      "step66_status": "силен потвърден сигнал"
-    },
-    {
-      "number": 34,
-      "step66_rank": 6,
-      "weighted_score_percent": 73.785,
-      "source_count": 8,
-      "covered_count": 4,
-      "coverage_percent": 50.0,
-      "number_group": "30-39",
-      "coverage_status": "силен сигнал с висока експозиция",
-      "step66_status": "силен потвърден сигнал"
+      "step66_status": "водещ претеглен сигнал"
     },
     {
       "number": 38,
-      "step66_rank": 7,
-      "weighted_score_percent": 73.752,
-      "source_count": 6,
-      "covered_count": 4,
-      "coverage_percent": 50.0,
+      "step66_rank": 5,
+      "weighted_score_percent": 78.864,
+      "source_count": 7,
+      "covered_count": 3,
+      "coverage_percent": 37.5,
       "number_group": "30-39",
-      "coverage_status": "силен сигнал с висока експозиция",
-      "step66_status": "силен потвърден сигнал"
+      "coverage_status": "добре покрит силен сигнал",
+      "step66_status": "водещ претеглен сигнал"
     },
     {
       "number": 22,
-      "step66_rank": 8,
-      "weighted_score_percent": 72.427,
-      "source_count": 6,
-      "covered_count": 3,
-      "coverage_percent": 37.5,
+      "step66_rank": 6,
+      "weighted_score_percent": 75.323,
+      "source_count": 8,
+      "covered_count": 2,
+      "coverage_percent": 25.0,
       "number_group": "20-29",
       "coverage_status": "добре покрит силен сигнал",
-      "step66_status": "силен потвърден сигнал"
+      "step66_status": "водещ претеглен сигнал"
+    },
+    {
+      "number": 4,
+      "step66_rank": 7,
+      "weighted_score_percent": 75.262,
+      "source_count": 7,
+      "covered_count": 2,
+      "coverage_percent": 25.0,
+      "number_group": "01-09",
+      "coverage_status": "добре покрит силен сигнал",
+      "step66_status": "водещ претеглен сигнал"
     },
     {
       "number": 21,
+      "step66_rank": 8,
+      "weighted_score_percent": 75.183,
+      "source_count": 6,
+      "covered_count": 2,
+      "coverage_percent": 25.0,
+      "number_group": "20-29",
+      "coverage_status": "добре покрит силен сигнал",
+      "step66_status": "водещ претеглен сигнал"
+    },
+    {
+      "number": 18,
       "step66_rank": 9,
-      "weighted_score_percent": 71.601,
-      "source_count": 8,
+      "weighted_score_percent": 73.298,
+      "source_count": 5,
       "covered_count": 3,
       "coverage_percent": 37.5,
-      "number_group": "20-29",
+      "number_group": "10-19",
       "coverage_status": "добре покрит силен сигнал",
       "step66_status": "силен потвърден сигнал"
     },
     {
-      "number": 49,
+      "number": 23,
       "step66_rank": 10,
-      "weighted_score_percent": 71.111,
-      "source_count": 6,
-      "covered_count": 3,
-      "coverage_percent": 37.5,
-      "number_group": "40-49",
+      "weighted_score_percent": 72.382,
+      "source_count": 5,
+      "covered_count": 2,
+      "coverage_percent": 25.0,
+      "number_group": "20-29",
       "coverage_status": "добре покрит силен сигнал",
       "step66_status": "силен потвърден сигнал"
     },
     {
       "number": 44,
       "step66_rank": 11,
-      "weighted_score_percent": 67.041,
-      "source_count": 7,
+      "weighted_score_percent": 71.212,
+      "source_count": 8,
       "covered_count": 2,
       "coverage_percent": 25.0,
       "number_group": "40-49",
@@ -293,53 +292,64 @@
       "step66_status": "силен потвърден сигнал"
     },
     {
-      "number": 23,
+      "number": 34,
       "step66_rank": 12,
-      "weighted_score_percent": 66.675,
-      "source_count": 5,
-      "covered_count": 3,
-      "coverage_percent": 37.5,
-      "number_group": "20-29",
-      "coverage_status": "добре покрит силен сигнал",
+      "weighted_score_percent": 68.374,
+      "source_count": 6,
+      "covered_count": 4,
+      "coverage_percent": 50.0,
+      "number_group": "30-39",
+      "coverage_status": "силен сигнал с висока експозиция",
       "step66_status": "силен потвърден сигнал"
     },
     {
-      "number": 11,
+      "number": 42,
       "step66_rank": 13,
-      "weighted_score_percent": 64.449,
-      "source_count": 5,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "10-19",
-      "coverage_status": "непокрит top 20 сигнал",
+      "weighted_score_percent": 64.116,
+      "source_count": 8,
+      "covered_count": 2,
+      "coverage_percent": 25.0,
+      "number_group": "40-49",
+      "coverage_status": "добре покрит силен сигнал",
       "step66_status": "силен потвърден сигнал"
     },
     {
       "number": 17,
       "step66_rank": 14,
-      "weighted_score_percent": 62.632,
+      "weighted_score_percent": 60.615,
       "source_count": 8,
-      "covered_count": 2,
-      "coverage_percent": 25.0,
+      "covered_count": 3,
+      "coverage_percent": 37.5,
       "number_group": "10-19",
       "coverage_status": "добре покрит силен сигнал",
       "step66_status": "силен потвърден сигнал"
     },
     {
-      "number": 42,
+      "number": 16,
       "step66_rank": 15,
-      "weighted_score_percent": 59.857,
-      "source_count": 7,
+      "weighted_score_percent": 58.754,
+      "source_count": 6,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "10-19",
+      "coverage_status": "непокрит top 20 сигнал",
+      "step66_status": "балансиран сигнал"
+    },
+    {
+      "number": 24,
+      "step66_rank": 16,
+      "weighted_score_percent": 58.226,
+      "source_count": 5,
       "covered_count": 1,
       "coverage_percent": 12.5,
-      "number_group": "40-49",
+      "number_group": "20-29",
       "coverage_status": "покрит силен сигнал",
       "step66_status": "балансиран сигнал"
     },
     {
       "number": 3,
-      "step66_rank": 16,
-      "weighted_score_percent": 58.511,
+      "step66_rank": 17,
+      "weighted_score_percent": 57.194,
       "source_count": 7,
       "covered_count": 1,
       "coverage_percent": 12.5,
@@ -348,97 +358,53 @@
       "step66_status": "балансиран сигнал"
     },
     {
-      "number": 24,
-      "step66_rank": 17,
-      "weighted_score_percent": 57.553,
-      "source_count": 6,
+      "number": 43,
+      "step66_rank": 18,
+      "weighted_score_percent": 54.099,
+      "source_count": 8,
       "covered_count": 0,
       "coverage_percent": 0.0,
-      "number_group": "20-29",
+      "number_group": "40-49",
       "coverage_status": "непокрит top 20 сигнал",
       "step66_status": "балансиран сигнал"
     },
     {
-      "number": 13,
-      "step66_rank": 18,
-      "weighted_score_percent": 56.488,
-      "source_count": 7,
-      "covered_count": 2,
-      "coverage_percent": 25.0,
-      "number_group": "10-19",
+      "number": 49,
+      "step66_rank": 19,
+      "weighted_score_percent": 52.355,
+      "source_count": 8,
+      "covered_count": 3,
+      "coverage_percent": 37.5,
+      "number_group": "40-49",
       "coverage_status": "добре покрит силен сигнал",
       "step66_status": "балансиран сигнал"
     },
     {
       "number": 48,
-      "step66_rank": 19,
-      "weighted_score_percent": 56.079,
-      "source_count": 8,
-      "covered_count": 1,
-      "coverage_percent": 12.5,
-      "number_group": "40-49",
-      "coverage_status": "покрит силен сигнал",
-      "step66_status": "балансиран сигнал"
-    },
-    {
-      "number": 12,
       "step66_rank": 20,
-      "weighted_score_percent": 55.437,
-      "source_count": 7,
+      "weighted_score_percent": 52.077,
+      "source_count": 8,
       "covered_count": 0,
       "coverage_percent": 0.0,
-      "number_group": "10-19",
+      "number_group": "40-49",
       "coverage_status": "непокрит top 20 сигнал",
       "step66_status": "балансиран сигнал"
     },
     {
-      "number": 28,
+      "number": 13,
       "step66_rank": 21,
-      "weighted_score_percent": 54.84,
+      "weighted_score_percent": 51.763,
       "source_count": 6,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "20-29",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "балансиран сигнал"
-    },
-    {
-      "number": 16,
-      "step66_rank": 22,
-      "weighted_score_percent": 53.513,
-      "source_count": 7,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
+      "covered_count": 1,
+      "coverage_percent": 12.5,
       "number_group": "10-19",
-      "coverage_status": "непокрит резервен сигнал",
+      "coverage_status": "покрит резервен сигнал",
       "step66_status": "балансиран сигнал"
     },
     {
       "number": 36,
-      "step66_rank": 23,
-      "weighted_score_percent": 52.695,
-      "source_count": 7,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "30-39",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "балансиран сигнал"
-    },
-    {
-      "number": 43,
-      "step66_rank": 24,
-      "weighted_score_percent": 50.853,
-      "source_count": 6,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "40-49",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "балансиран сигнал"
-    },
-    {
-      "number": 30,
-      "step66_rank": 25,
-      "weighted_score_percent": 46.626,
+      "step66_rank": 22,
+      "weighted_score_percent": 51.626,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -448,9 +414,9 @@
     },
     {
       "number": 33,
-      "step66_rank": 26,
-      "weighted_score_percent": 46.242,
-      "source_count": 6,
+      "step66_rank": 23,
+      "weighted_score_percent": 48.69,
+      "source_count": 7,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "30-39",
@@ -458,9 +424,53 @@
       "step66_status": "балансиран сигнал"
     },
     {
-      "number": 20,
+      "number": 6,
+      "step66_rank": 24,
+      "weighted_score_percent": 48.351,
+      "source_count": 8,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "01-09",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "балансиран сигнал"
+    },
+    {
+      "number": 12,
+      "step66_rank": 25,
+      "weighted_score_percent": 47.491,
+      "source_count": 6,
+      "covered_count": 1,
+      "coverage_percent": 12.5,
+      "number_group": "10-19",
+      "coverage_status": "покрит резервен сигнал",
+      "step66_status": "балансиран сигнал"
+    },
+    {
+      "number": 30,
+      "step66_rank": 26,
+      "weighted_score_percent": 47.462,
+      "source_count": 5,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "30-39",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "балансиран сигнал"
+    },
+    {
+      "number": 28,
       "step66_rank": 27,
-      "weighted_score_percent": 45.886,
+      "weighted_score_percent": 47.1,
+      "source_count": 6,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "20-29",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "балансиран сигнал"
+    },
+    {
+      "number": 20,
+      "step66_rank": 28,
+      "weighted_score_percent": 46.416,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -470,8 +480,8 @@
     },
     {
       "number": 26,
-      "step66_rank": 28,
-      "weighted_score_percent": 45.138,
+      "step66_rank": 29,
+      "weighted_score_percent": 45.837,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -481,8 +491,8 @@
     },
     {
       "number": 46,
-      "step66_rank": 29,
-      "weighted_score_percent": 44.655,
+      "step66_rank": 30,
+      "weighted_score_percent": 44.89,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -491,76 +501,54 @@
       "step66_status": "сигнал за наблюдение"
     },
     {
-      "number": 9,
-      "step66_rank": 30,
-      "weighted_score_percent": 44.131,
-      "source_count": 6,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "01-09",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "сигнал за наблюдение"
-    },
-    {
-      "number": 19,
+      "number": 29,
       "step66_rank": 31,
-      "weighted_score_percent": 43.694,
-      "source_count": 7,
+      "weighted_score_percent": 44.882,
+      "source_count": 8,
       "covered_count": 0,
       "coverage_percent": 0.0,
-      "number_group": "10-19",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "сигнал за наблюдение"
-    },
-    {
-      "number": 6,
-      "step66_rank": 32,
-      "weighted_score_percent": 43.648,
-      "source_count": 7,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "01-09",
+      "number_group": "20-29",
       "coverage_status": "непокрит резервен сигнал",
       "step66_status": "сигнал за наблюдение"
     },
     {
       "number": 8,
+      "step66_rank": 32,
+      "weighted_score_percent": 43.519,
+      "source_count": 6,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "01-09",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "сигнал за наблюдение"
+    },
+    {
+      "number": 35,
       "step66_rank": 33,
-      "weighted_score_percent": 42.652,
+      "weighted_score_percent": 43.277,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
-      "number_group": "01-09",
+      "number_group": "30-39",
       "coverage_status": "непокрит резервен сигнал",
       "step66_status": "сигнал за наблюдение"
     },
     {
-      "number": 7,
+      "number": 9,
       "step66_rank": 34,
-      "weighted_score_percent": 40.883,
+      "weighted_score_percent": 41.536,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "01-09",
       "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "сигнал за наблюдение"
-    },
-    {
-      "number": 29,
-      "step66_rank": 35,
-      "weighted_score_percent": 40.819,
-      "source_count": 6,
-      "covered_count": 1,
-      "coverage_percent": 12.5,
-      "number_group": "20-29",
-      "coverage_status": "покрит резервен сигнал",
       "step66_status": "сигнал за наблюдение"
     },
     {
       "number": 39,
-      "step66_rank": 36,
-      "weighted_score_percent": 40.326,
-      "source_count": 4,
+      "step66_rank": 35,
+      "weighted_score_percent": 41.205,
+      "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "30-39",
@@ -569,8 +557,19 @@
     },
     {
       "number": 15,
+      "step66_rank": 36,
+      "weighted_score_percent": 40.544,
+      "source_count": 5,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "10-19",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "сигнал за наблюдение"
+    },
+    {
+      "number": 19,
       "step66_rank": 37,
-      "weighted_score_percent": 40.127,
+      "weighted_score_percent": 40.001,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -581,7 +580,7 @@
     {
       "number": 5,
       "step66_rank": 38,
-      "weighted_score_percent": 38.971,
+      "weighted_score_percent": 39.804,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -592,40 +591,40 @@
     {
       "number": 10,
       "step66_rank": 39,
-      "weighted_score_percent": 38.64,
+      "weighted_score_percent": 39.506,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "10-19",
-      "coverage_status": "непокрит резервен сигнал",
-      "step66_status": "сигнал за наблюдение"
-    },
-    {
-      "number": 35,
-      "step66_rank": 40,
-      "weighted_score_percent": 38.614,
-      "source_count": 5,
-      "covered_count": 0,
-      "coverage_percent": 0.0,
-      "number_group": "30-39",
       "coverage_status": "непокрит резервен сигнал",
       "step66_status": "сигнал за наблюдение"
     },
     {
       "number": 14,
-      "step66_rank": 41,
-      "weighted_score_percent": 37.618,
+      "step66_rank": 40,
+      "weighted_score_percent": 38.424,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "10-19",
+      "coverage_status": "непокрит резервен сигнал",
+      "step66_status": "сигнал за наблюдение"
+    },
+    {
+      "number": 7,
+      "step66_rank": 41,
+      "weighted_score_percent": 38.226,
+      "source_count": 6,
+      "covered_count": 0,
+      "coverage_percent": 0.0,
+      "number_group": "01-09",
       "coverage_status": "непокрит резервен сигнал",
       "step66_status": "сигнал за наблюдение"
     },
     {
       "number": 27,
       "step66_rank": 42,
-      "weighted_score_percent": 37.471,
+      "weighted_score_percent": 37.72,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -636,7 +635,7 @@
     {
       "number": 45,
       "step66_rank": 43,
-      "weighted_score_percent": 36.213,
+      "weighted_score_percent": 37.036,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -647,7 +646,7 @@
     {
       "number": 47,
       "step66_rank": 44,
-      "weighted_score_percent": 36.051,
+      "weighted_score_percent": 36.88,
       "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -658,7 +657,7 @@
     {
       "number": 31,
       "step66_rank": 45,
-      "weighted_score_percent": 34.678,
+      "weighted_score_percent": 35.602,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -669,7 +668,7 @@
     {
       "number": 25,
       "step66_rank": 46,
-      "weighted_score_percent": 34.18,
+      "weighted_score_percent": 34.732,
       "source_count": 6,
       "covered_count": 0,
       "coverage_percent": 0.0,
@@ -680,8 +679,8 @@
     {
       "number": 40,
       "step66_rank": 47,
-      "weighted_score_percent": 30.97,
-      "source_count": 4,
+      "weighted_score_percent": 31.717,
+      "source_count": 3,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "40-49",
@@ -691,8 +690,8 @@
     {
       "number": 41,
       "step66_rank": 48,
-      "weighted_score_percent": 30.636,
-      "source_count": 4,
+      "weighted_score_percent": 31.586,
+      "source_count": 5,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "40-49",
@@ -702,8 +701,8 @@
     {
       "number": 32,
       "step66_rank": 49,
-      "weighted_score_percent": 30.117,
-      "source_count": 5,
+      "weighted_score_percent": 29.38,
+      "source_count": 4,
       "covered_count": 0,
       "coverage_percent": 0.0,
       "number_group": "30-39",
@@ -722,49 +721,49 @@
       "ticket_a": 1,
       "ticket_b": 3,
       "overlap": 2,
-      "shared_numbers": "2,49"
+      "shared_numbers": "1,37"
     },
     {
       "ticket_a": 1,
       "ticket_b": 4,
       "overlap": 2,
-      "shared_numbers": "2,37"
+      "shared_numbers": "34,37"
     },
     {
       "ticket_a": 1,
       "ticket_b": 5,
       "overlap": 2,
-      "shared_numbers": "1,49"
+      "shared_numbers": "1,34"
     },
     {
       "ticket_a": 1,
       "ticket_b": 6,
       "overlap": 2,
-      "shared_numbers": "1,37"
+      "shared_numbers": "18,34"
     },
     {
       "ticket_a": 1,
       "ticket_b": 7,
       "overlap": 2,
-      "shared_numbers": "2,4"
+      "shared_numbers": "18,37"
     },
     {
       "ticket_a": 1,
       "ticket_b": 8,
-      "overlap": 3,
-      "shared_numbers": "1,18,37"
+      "overlap": 2,
+      "shared_numbers": "1,22"
     },
     {
       "ticket_a": 2,
       "ticket_b": 3,
       "overlap": 2,
-      "shared_numbers": "21,38"
+      "shared_numbers": "1,2"
     },
     {
       "ticket_a": 2,
       "ticket_b": 4,
       "overlap": 2,
-      "shared_numbers": "34,44"
+      "shared_numbers": "2,21"
     },
     {
       "ticket_a": 2,
@@ -776,129 +775,123 @@
       "ticket_a": 2,
       "ticket_b": 6,
       "overlap": 2,
-      "shared_numbers": "1,34"
+      "shared_numbers": "2,38"
     },
     {
       "ticket_a": 2,
       "ticket_b": 7,
       "overlap": 2,
-      "shared_numbers": "4,38"
+      "shared_numbers": "2,49"
     },
     {
       "ticket_a": 2,
       "ticket_b": 8,
-      "overlap": 3,
-      "shared_numbers": "1,21,34"
+      "overlap": 2,
+      "shared_numbers": "1,49"
     },
     {
       "ticket_a": 3,
       "ticket_b": 4,
       "overlap": 2,
+      "shared_numbers": "2,37"
+    },
+    {
+      "ticket_a": 3,
+      "ticket_b": 5,
+      "overlap": 2,
+      "shared_numbers": "1,44"
+    },
+    {
+      "ticket_a": 3,
+      "ticket_b": 6,
+      "overlap": 2,
       "shared_numbers": "2,23"
     },
     {
       "ticket_a": 3,
-      "ticket_b": 5,
-      "overlap": 2,
-      "shared_numbers": "38,49"
-    },
-    {
-      "ticket_a": 3,
-      "ticket_b": 6,
-      "overlap": 1,
-      "shared_numbers": "13"
-    },
-    {
-      "ticket_a": 3,
       "ticket_b": 7,
       "overlap": 2,
-      "shared_numbers": "2,38"
+      "shared_numbers": "2,37"
     },
     {
       "ticket_a": 3,
       "ticket_b": 8,
       "overlap": 2,
-      "shared_numbers": "21,23"
+      "shared_numbers": "1,11"
     },
     {
       "ticket_a": 4,
       "ticket_b": 5,
+      "overlap": 2,
+      "shared_numbers": "17,34"
+    },
+    {
+      "ticket_a": 4,
+      "ticket_b": 6,
+      "overlap": 2,
+      "shared_numbers": "2,34"
+    },
+    {
+      "ticket_a": 4,
+      "ticket_b": 7,
+      "overlap": 2,
+      "shared_numbers": "2,37"
+    },
+    {
+      "ticket_a": 4,
+      "ticket_b": 8,
+      "overlap": 2,
+      "shared_numbers": "17,42"
+    },
+    {
+      "ticket_a": 5,
+      "ticket_b": 6,
+      "overlap": 2,
+      "shared_numbers": "34,38"
+    },
+    {
+      "ticket_a": 5,
+      "ticket_b": 7,
       "overlap": 0,
       "shared_numbers": ""
     },
     {
-      "ticket_a": 4,
-      "ticket_b": 6,
-      "overlap": 2,
-      "shared_numbers": "34,37"
-    },
-    {
-      "ticket_a": 4,
-      "ticket_b": 7,
-      "overlap": 2,
-      "shared_numbers": "2,17"
-    },
-    {
-      "ticket_a": 4,
-      "ticket_b": 8,
-      "overlap": 3,
-      "shared_numbers": "23,34,37"
-    },
-    {
-      "ticket_a": 5,
-      "ticket_b": 6,
-      "overlap": 2,
-      "shared_numbers": "1,22"
-    },
-    {
-      "ticket_a": 5,
-      "ticket_b": 7,
-      "overlap": 2,
-      "shared_numbers": "22,38"
-    },
-    {
       "ticket_a": 5,
       "ticket_b": 8,
-      "overlap": 1,
-      "shared_numbers": "1"
+      "overlap": 2,
+      "shared_numbers": "1,17"
     },
     {
       "ticket_a": 6,
       "ticket_b": 7,
-      "overlap": 1,
-      "shared_numbers": "22"
+      "overlap": 2,
+      "shared_numbers": "2,18"
     },
     {
       "ticket_a": 6,
       "ticket_b": 8,
-      "overlap": 3,
-      "shared_numbers": "1,34,37"
+      "overlap": 0,
+      "shared_numbers": ""
     },
     {
       "ticket_a": 7,
       "ticket_b": 8,
-      "overlap": 0,
-      "shared_numbers": ""
+      "overlap": 1,
+      "shared_numbers": "49"
     }
   ],
   "repeated_pairs": [
     {
-      "pair": "1,34",
-      "n1": 1,
-      "n2": 34,
-      "count": 3
-    },
-    {
-      "pair": "1,37",
-      "n1": 1,
+      "pair": "2,37",
+      "n1": 2,
       "n2": 37,
       "count": 3
     },
     {
-      "pair": "34,37",
-      "n1": 34,
-      "n2": 37,
-      "count": 3
+      "pair": "1,2",
+      "n1": 1,
+      "n2": 2,
+      "count": 2
     },
     {
       "pair": "1,4",
@@ -907,15 +900,15 @@
       "count": 2
     },
     {
-      "pair": "1,18",
+      "pair": "1,11",
       "n1": 1,
-      "n2": 18,
+      "n2": 11,
       "count": 2
     },
     {
-      "pair": "1,21",
+      "pair": "1,17",
       "n1": 1,
-      "n2": 21,
+      "n2": 17,
       "count": 2
     },
     {
@@ -925,9 +918,27 @@
       "count": 2
     },
     {
+      "pair": "1,34",
+      "n1": 1,
+      "n2": 34,
+      "count": 2
+    },
+    {
+      "pair": "1,37",
+      "n1": 1,
+      "n2": 37,
+      "count": 2
+    },
+    {
       "pair": "1,38",
       "n1": 1,
       "n2": 38,
+      "count": 2
+    },
+    {
+      "pair": "1,44",
+      "n1": 1,
+      "n2": 44,
       "count": 2
     },
     {
@@ -937,15 +948,15 @@
       "count": 2
     },
     {
-      "pair": "2,4",
+      "pair": "2,18",
       "n1": 2,
-      "n2": 4,
+      "n2": 18,
       "count": 2
     },
     {
-      "pair": "2,17",
+      "pair": "2,21",
       "n1": 2,
-      "n2": 17,
+      "n2": 21,
       "count": 2
     },
     {
@@ -955,9 +966,9 @@
       "count": 2
     },
     {
-      "pair": "2,37",
+      "pair": "2,34",
       "n1": 2,
-      "n2": 37,
+      "n2": 34,
       "count": 2
     },
     {
@@ -973,9 +984,21 @@
       "count": 2
     },
     {
-      "pair": "4,38",
-      "n1": 4,
-      "n2": 38,
+      "pair": "17,34",
+      "n1": 17,
+      "n2": 34,
+      "count": 2
+    },
+    {
+      "pair": "17,42",
+      "n1": 17,
+      "n2": 42,
+      "count": 2
+    },
+    {
+      "pair": "18,34",
+      "n1": 18,
+      "n2": 34,
       "count": 2
     },
     {
@@ -985,89 +1008,24 @@
       "count": 2
     },
     {
-      "pair": "21,23",
-      "n1": 21,
-      "n2": 23,
-      "count": 2
-    },
-    {
-      "pair": "21,34",
-      "n1": 21,
-      "n2": 34,
-      "count": 2
-    },
-    {
-      "pair": "21,38",
-      "n1": 21,
-      "n2": 38,
-      "count": 2
-    },
-    {
-      "pair": "22,38",
-      "n1": 22,
-      "n2": 38,
-      "count": 2
-    },
-    {
-      "pair": "23,34",
-      "n1": 23,
-      "n2": 34,
-      "count": 2
-    },
-    {
-      "pair": "23,37",
-      "n1": 23,
+      "pair": "34,37",
+      "n1": 34,
       "n2": 37,
       "count": 2
     },
     {
-      "pair": "34,44",
+      "pair": "34,38",
       "n1": 34,
-      "n2": 44,
-      "count": 2
-    },
-    {
-      "pair": "38,49",
-      "n1": 38,
-      "n2": 49,
+      "n2": 38,
       "count": 2
     }
   ],
-  "repeated_triples": [
-    {
-      "triple": "1,18,37",
-      "n1": 1,
-      "n2": 18,
-      "n3": 37,
-      "count": 2
-    },
-    {
-      "triple": "1,21,34",
-      "n1": 1,
-      "n2": 21,
-      "n3": 34,
-      "count": 2
-    },
-    {
-      "triple": "1,34,37",
-      "n1": 1,
-      "n2": 34,
-      "n3": 37,
-      "count": 2
-    },
-    {
-      "triple": "23,34,37",
-      "n1": 23,
-      "n2": 34,
-      "n3": 37,
-      "count": 2
-    }
-  ],
+  "repeated_triples": [],
   "group_occurrence": {
     "01-09": 13,
-    "10-19": 6,
-    "20-29": 10,
-    "30-39": 12,
+    "10-19": 10,
+    "20-29": 7,
+    "30-39": 11,
     "40-49": 7
   },
   "formula": {

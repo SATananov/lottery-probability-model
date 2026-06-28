@@ -2,140 +2,140 @@
   "status": "completed",
   "module": "Number Profile Center",
   "version": "v55",
-  "total_draws": 10059,
+  "total_draws": 10060,
   "numbers_profiled": 49,
   "top_by_score": [
     {
-      "number": 17,
-      "profile_score": 76.67,
-      "status": "Нормален ритъм",
-      "appearances": 1267,
-      "draws_since_last_seen": 6
-    },
-    {
       "number": 37,
-      "profile_score": 76.15,
+      "profile_score": 78.65,
       "status": "Активно напоследък",
       "appearances": 1276,
-      "draws_since_last_seen": 4
+      "draws_since_last_seen": 5
     },
     {
       "number": 34,
-      "profile_score": 72.29,
+      "profile_score": 69.69,
       "status": "Силно закъсняло",
       "appearances": 1291,
-      "draws_since_last_seen": 30
-    },
-    {
-      "number": 4,
-      "profile_score": 69.38,
-      "status": "Закъсняло",
-      "appearances": 1276,
-      "draws_since_last_seen": 21
-    },
-    {
-      "number": 36,
-      "profile_score": 66.25,
-      "status": "Активно напоследък",
-      "appearances": 1221,
-      "draws_since_last_seen": 10
-    },
-    {
-      "number": 22,
-      "profile_score": 66.14,
-      "status": "Нормален ритъм",
-      "appearances": 1250,
-      "draws_since_last_seen": 2
-    },
-    {
-      "number": 11,
-      "profile_score": 65.94,
-      "status": "Нормален ритъм",
-      "appearances": 1274,
-      "draws_since_last_seen": 0
+      "draws_since_last_seen": 31
     },
     {
       "number": 49,
-      "profile_score": 65.31,
+      "profile_score": 68.85,
       "status": "Активно напоследък",
       "appearances": 1274,
-      "draws_since_last_seen": 6
+      "draws_since_last_seen": 7
     },
     {
-      "number": 2,
-      "profile_score": 64.37,
+      "number": 11,
+      "profile_score": 68.44,
       "status": "Нормален ритъм",
-      "appearances": 1222,
-      "draws_since_last_seen": 8
+      "appearances": 1274,
+      "draws_since_last_seen": 1
+    },
+    {
+      "number": 22,
+      "profile_score": 68.12,
+      "status": "Нормален ритъм",
+      "appearances": 1250,
+      "draws_since_last_seen": 3
+    },
+    {
+      "number": 17,
+      "profile_score": 67.39,
+      "status": "Нормален ритъм",
+      "appearances": 1268,
+      "draws_since_last_seen": 0
+    },
+    {
+      "number": 36,
+      "profile_score": 66.56,
+      "status": "Активно напоследък",
+      "appearances": 1221,
+      "draws_since_last_seen": 11
+    },
+    {
+      "number": 29,
+      "profile_score": 63.85,
+      "status": "Нормален ритъм",
+      "appearances": 1256,
+      "draws_since_last_seen": 3
     },
     {
       "number": 18,
-      "profile_score": 62.6,
+      "profile_score": 63.02,
       "status": "Закъсняло",
       "appearances": 1196,
-      "draws_since_last_seen": 16
+      "draws_since_last_seen": 17
+    },
+    {
+      "number": 24,
+      "profile_score": 61.56,
+      "status": "Закъсняло",
+      "appearances": 1240,
+      "draws_since_last_seen": 14
     }
   ],
   "top_overdue": [
     {
       "number": 34,
-      "draws_since_last_seen": 30,
+      "draws_since_last_seen": 31,
       "average_interval": 7.77,
       "status": "Силно закъсняло"
     },
     {
       "number": 25,
-      "draws_since_last_seen": 25,
+      "draws_since_last_seen": 26,
       "average_interval": 8.1,
       "status": "Силно закъсняло"
     },
     {
       "number": 12,
-      "draws_since_last_seen": 23,
+      "draws_since_last_seen": 24,
       "average_interval": 8.04,
       "status": "Закъсняло"
     },
     {
-      "number": 4,
-      "draws_since_last_seen": 21,
-      "average_interval": 7.85,
-      "status": "Закъсняло"
-    },
-    {
       "number": 21,
-      "draws_since_last_seen": 20,
+      "draws_since_last_seen": 21,
       "average_interval": 7.79,
       "status": "Закъсняло"
     },
     {
       "number": 41,
-      "draws_since_last_seen": 19,
+      "draws_since_last_seen": 20,
       "average_interval": 8.56,
       "status": "Закъсняло"
     },
     {
       "number": 18,
-      "draws_since_last_seen": 16,
+      "draws_since_last_seen": 17,
       "average_interval": 8.4,
       "status": "Закъсняло"
     },
     {
       "number": 20,
-      "draws_since_last_seen": 14,
+      "draws_since_last_seen": 15,
       "average_interval": 8.22,
       "status": "Закъсняло"
     },
     {
       "number": 23,
-      "draws_since_last_seen": 13,
+      "draws_since_last_seen": 14,
       "average_interval": 8.6,
-      "status": "Нормален ритъм"
+      "status": "Закъсняло"
     },
     {
       "number": 24,
-      "draws_since_last_seen": 13,
+      "draws_since_last_seen": 14,
       "average_interval": 8.1,
-      "status": "Нормален ритъм"
+      "status": "Закъсняло"
+    },
+    {
+      "number": 27,
+      "draws_since_last_seen": 14,
+      "average_interval": 8.38,
+      "status": "Закъсняло"
     }
   ],
   "safety_bg": "Резултатът е исторически статистически профил, не обещание за бъдещо теглене."

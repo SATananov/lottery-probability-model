@@ -8,6 +8,6 @@
   "active_plan_combinations": 11,
   "active_plan_cost_eur": 9.9,
   "active_plan_cost_text": "9.90",
-  "v95_status": "WAITING_NEXT_DRAW",
+  "v95_status": "EVALUATED",
   "safe_note_bg": "Step 96 е UX/control слой за страницата Добавяне на тираж. Той не променя прогнозните модели и не обещава печалба; целта е правилен ред на действията."
 }

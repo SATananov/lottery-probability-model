@@ -2,21 +2,21 @@
   "module": "draw_result_analyzer",
   "version": "v61",
   "user_facing_name_bg": "Анализ на нов тираж",
-  "total_draws": 10059,
+  "total_draws": 10060,
   "latest_draw": {
-    "event_index": 10059,
-    "date": "2026-06-25",
+    "event_index": 10060,
+    "date": "2026-06-28",
     "year": 2026,
-    "draw_no": 49.0,
+    "draw_no": 50,
     "numbers": [
-      5,
-      11,
-      44,
-      46,
-      47,
-      48
+      2,
+      4,
+      17,
+      33,
+      35,
+      38
     ],
-    "numbers_text": "5, 11, 44, 46, 47, 48"
+    "numbers_text": "2, 4, 17, 33, 35, 38"
   },
   "depends_on": [
     "data/historical_draws.csv",

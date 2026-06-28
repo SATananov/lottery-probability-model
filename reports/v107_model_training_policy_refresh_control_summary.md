@@ -1,9 +1,9 @@
 # Step 107 — Политика за обучение и refresh control
 
-Статус: **TRAINING_POLICY_READY**
-Blocking failures: **0**
-Dataset rows: **10059**
-Real result rows since active plan: **1**
+Статус: **CHECK_REQUIRED**
+Blocking failures: **1**
+Dataset rows: **10060**
+Real result rows since active plan: **2**
 
 ## Текуща препоръка
 
@@ -29,10 +29,10 @@ Real result rows since active plan: **1**
 
 ## Проверки
 
-- OK: `datasets_synced` — historical=10059, normalized=10059, canonical=10059
-- OK: `latest_draw_valid` — latest=2026-06-25 [5, 11, 44, 46, 47, 48]
+- OK: `datasets_synced` — historical=10060, normalized=10060, canonical=10060
+- OK: `latest_draw_valid` — latest=2026-06-28 [2, 4, 17, 33, 35, 38]
 - OK: `runtime_hardening_active` — Step102=RUNTIME_HARDENED
-- OK: `post_draw_sync_active` — Step106=POST_DRAW_SYNCED
+- FAIL: `post_draw_sync_active` — Step106=CHECK_REQUIRED
 - OK: `heavy_labs_not_default` — v67/v75 са отделени от fast refresh режима.
 - OK: `step107_page_wired` — Step 107 е достъпен в навигацията.
 - OK: `step107_refresh_chain_wired` — Step 107 се обновява след бъдещ Add Draw fast refresh.

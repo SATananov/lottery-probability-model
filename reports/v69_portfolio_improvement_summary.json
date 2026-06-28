@@ -6,36 +6,36 @@
   "source_portfolio": "reports/v68_weighted_portfolio_summary.json",
   "suggestions_generated": 60,
   "candidate_changes_applied": 3,
-  "baseline_portfolio_score": 59.658,
-  "candidate_portfolio_score": 69.333,
-  "portfolio_score_delta": 9.675,
+  "baseline_portfolio_score": 64.298,
+  "candidate_portfolio_score": 71.448,
+  "portfolio_score_delta": 7.15,
   "baseline_top20_coverage": 17,
   "candidate_top20_coverage": 20,
-  "baseline_unique_numbers": 18,
-  "candidate_unique_numbers": 21,
-  "baseline_repeated_pairs": 25,
-  "candidate_repeated_pairs": 19,
-  "baseline_repeated_triples": 4,
-  "candidate_repeated_triples": 1,
+  "baseline_unique_numbers": 19,
+  "candidate_unique_numbers": 22,
+  "baseline_repeated_pairs": 23,
+  "candidate_repeated_pairs": 17,
+  "baseline_repeated_triples": 0,
+  "candidate_repeated_triples": 0,
   "undercovered_top20_before": [
     {
-      "number": 11,
-      "step66_rank": 13,
-      "weighted_score_percent": 64.449
+      "number": 16,
+      "step66_rank": 15,
+      "weighted_score_percent": 58.754
     },
     {
-      "number": 24,
-      "step66_rank": 17,
-      "weighted_score_percent": 57.553
+      "number": 43,
+      "step66_rank": 18,
+      "weighted_score_percent": 54.099
     },
     {
-      "number": 12,
+      "number": 48,
       "step66_rank": 20,
-      "weighted_score_percent": 55.437
+      "weighted_score_percent": 52.077
     }
   ],
   "undercovered_top20_after": [],
-  "generated_at": "2026-06-25T16:36:40+00:00",
+  "generated_at": "2026-06-28T16:45:24+00:00",
   "generated_reports": [
     "reports/v69_portfolio_improvement_summary.json",
     "reports/v69_portfolio_improvement_summary.md",

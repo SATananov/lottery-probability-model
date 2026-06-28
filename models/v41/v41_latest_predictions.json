@@ -4,41 +4,41 @@
   "uses_bonus_number": false,
   "latest_seen_event": {
     "year": 2026,
-    "draw_number": 48,
+    "draw_number": 50,
     "drawing_no": 1,
     "numbers": [
-      6,
-      13,
-      16,
-      19,
-      42,
-      44
+      2,
+      4,
+      17,
+      33,
+      35,
+      38
     ]
   },
   "prediction_sets": {
     "frequency_baseline": [
-      34,
       44,
+      34,
       21,
       4,
       37,
-      49
+      11
     ],
     "recency_250_baseline": [
       23,
       37,
       38,
-      22,
       2,
+      22,
       18
     ],
     "sgd_number_classifier": [
-      1,
-      9,
-      7,
-      3,
-      11,
-      21
+      37,
+      38,
+      23,
+      36,
+      2,
+      42
     ]
   },
   "warning": "Lottery draws are random. These are ranking-based model outputs, not guaranteed winning numbers."

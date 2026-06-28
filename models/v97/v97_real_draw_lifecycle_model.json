@@ -86,17 +86,17 @@
       "v95_engine_exists": true,
       "waiting_next_draw_marker": true
     },
-    "dataset_rows": 10059,
-    "latest_draw_date": "2026-06-25",
-    "latest_draw_numbers": "5,11,44,46,47,48",
+    "dataset_rows": 10060,
+    "latest_draw_date": "2026-06-28",
+    "latest_draw_numbers": "2,4,17,33,35,38",
     "step95": {
-      "evaluation_type": "",
-      "history_rows": 1,
-      "latest_best_hit_count": 0,
-      "latest_rows_with_3_plus": 0,
+      "evaluation_type": "ADD_DRAW_PRE_SAVE_REAL_RESULT",
+      "history_rows": 2,
+      "latest_best_hit_count": 3,
+      "latest_rows_with_3_plus": 1,
       "latest_rows_with_4_plus": 0,
-      "message_bg": "Активният бюджетен план чака следващ реален тираж. Последният наличен тираж все още не е след плана.",
-      "status": "WAITING_NEXT_DRAW"
+      "message_bg": "Активният бюджетен план е проверен срещу въведения нов тираж преди обновяване на dataset-а.",
+      "status": "EVALUATED"
     },
     "step96": {
       "active_plan_combinations": 11,
@@ -104,46 +104,46 @@
       "active_plan_type": "Хибрид",
       "maintenance_step": "96.1",
       "status": "OK",
-      "v95_status": "WAITING_NEXT_DRAW",
+      "v95_status": "EVALUATED",
       "workflow_step_count": 6
     }
   },
   "datasets": [
     {
       "exists": true,
-      "latest_date": "2026-06-25",
-      "latest_draw_no": "49",
-      "latest_numbers": "5,11,44,46,47,48",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/historical_draws.csv",
-      "rows": 10059
+      "rows": 10060
     },
     {
       "exists": true,
-      "latest_date": "2026-06-25",
-      "latest_draw_no": "49",
-      "latest_numbers": "5,11,44,46,47,48",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v40_normalized_draw_events.csv",
-      "rows": 10059
+      "rows": 10060
     },
     {
       "exists": true,
-      "latest_date": "2026-06-25",
-      "latest_draw_no": "49",
-      "latest_numbers": "5,11,44,46,47,48",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v41_canonical_draw_events.csv",
-      "rows": 10059
+      "rows": 10060
     }
   ],
-  "generated_at_utc": "2026-06-25T17:26:32+00:00",
+  "generated_at_utc": "2026-06-28T16:45:30+00:00",
   "issues": [],
   "lifecycle_steps": [
     {

@@ -19,7 +19,7 @@
     "top_weighted_score_percent": 100.0,
     "top_number_status": "водещ претеглен сигнал",
     "reference_tickets_count": 4,
-    "generated_at": "2026-06-25T16:36:39+00:00",
+    "generated_at": "2026-06-28T16:45:23+00:00",
     "generated_reports": [
       "reports/v66_weighted_smart_ensemble_summary.json",
       "reports/v66_weighted_smart_ensemble_summary.md",
@@ -32,8 +32,8 @@
     {
       "model_name": "v44_1_final_ensemble_ticket",
       "model_label": "v44.1 — финална обединена комбинация",
-      "original_adaptive_weight": 0.20166,
-      "used_weight": 0.230903,
+      "original_adaptive_weight": 0.20034,
+      "used_weight": 0.227368,
       "source_files": [
         "reports/v44_1_final_ensemble_number_scores.csv",
         "reports/v44_1_final_ensemble_ticket_summary.json",
@@ -42,22 +42,10 @@
       ]
     },
     {
-      "model_name": "v42_combined_prediction",
-      "model_label": "v42 — комбиниран позитивен/негативен модел",
-      "original_adaptive_weight": 0.180926,
-      "used_weight": 0.207163,
-      "source_files": [
-        "models/v42/v42_combined_prediction.json",
-        "reports/v42_combined_positive_negative_scores.csv",
-        "reports/v42_combined_positive_negative_summary.json",
-        "models/v42/v42_positive_negative_number_scores.json"
-      ]
-    },
-    {
       "model_name": "v41_latest_predictions",
       "model_label": "v41 — последни прогнозни сигнали",
-      "original_adaptive_weight": 0.162459,
-      "used_weight": 0.186018,
+      "original_adaptive_weight": 0.185735,
+      "used_weight": 0.210792,
       "source_files": [
         "models/v41/v41_latest_predictions.json",
         "models/v41/v41_frequency_main_numbers_model.json",
@@ -70,10 +58,22 @@
       ]
     },
     {
+      "model_name": "v42_combined_prediction",
+      "model_label": "v42 — комбиниран позитивен/негативен модел",
+      "original_adaptive_weight": 0.180339,
+      "used_weight": 0.204668,
+      "source_files": [
+        "models/v42/v42_combined_prediction.json",
+        "reports/v42_combined_positive_negative_scores.csv",
+        "reports/v42_combined_positive_negative_summary.json",
+        "models/v42/v42_positive_negative_number_scores.json"
+      ]
+    },
+    {
       "model_name": "v45_final_prediction_tickets",
       "model_label": "v45 — Prediction Dashboard Pro",
-      "original_adaptive_weight": 0.075012,
-      "used_weight": 0.08589,
+      "original_adaptive_weight": 0.076966,
+      "used_weight": 0.087349,
       "source_files": [
         "models/v45/v45_final_prediction_tickets.json",
         "reports/v45_training_summary.json",
@@ -84,8 +84,8 @@
     {
       "model_name": "v51_ticket_portfolio_intelligence",
       "model_label": "v51 — пакет от комбинации",
-      "original_adaptive_weight": 0.063324,
-      "used_weight": 0.072507,
+      "original_adaptive_weight": 0.059437,
+      "used_weight": 0.067456,
       "source_files": [
         "reports/v51_current_pro_ticket_score.csv"
       ]
@@ -93,8 +93,8 @@
     {
       "model_name": "v57_hot_cold_stable",
       "model_label": "v57 — горещи, студени и стабилни",
-      "original_adaptive_weight": 0.063324,
-      "used_weight": 0.072507,
+      "original_adaptive_weight": 0.059437,
+      "used_weight": 0.067456,
       "source_files": [
         "reports/v57_hot_cold_stable_numbers.csv",
         "reports/v57_hot_cold_stable_numbers.json",
@@ -104,8 +104,8 @@
     {
       "model_name": "v58_smart_ensemble",
       "model_label": "v58 — обединена оценка",
-      "original_adaptive_weight": 0.063324,
-      "used_weight": 0.072507,
+      "original_adaptive_weight": 0.059437,
+      "used_weight": 0.067456,
       "source_files": [
         "reports/v58_smart_ensemble_scores_sample.csv",
         "reports/v58_smart_ensemble_scores_sample.json"
@@ -114,8 +114,8 @@
     {
       "model_name": "v59_smart_ticket_builder_2",
       "model_label": "v59 — интелигентен генератор 2",
-      "original_adaptive_weight": 0.063324,
-      "used_weight": 0.072507,
+      "original_adaptive_weight": 0.059437,
+      "used_weight": 0.067456,
       "source_files": [
         "reports/v59_smart_ticket_builder_2_summary.json",
         "reports/v59_smart_ticket_builder_2_sample.csv",
@@ -127,7 +127,7 @@
     {
       "rank": 1,
       "number": 1,
-      "weighted_score": 87.793329,
+      "weighted_score": 83.807746,
       "weighted_score_percent": 100.0,
       "source_count": 7,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
@@ -136,323 +136,323 @@
     {
       "rank": 2,
       "number": 2,
-      "weighted_score": 79.107218,
-      "weighted_score_percent": 90.106,
-      "source_count": 8,
+      "weighted_score": 81.012278,
+      "weighted_score_percent": 96.664,
+      "source_count": 7,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "водещ претеглен сигнал"
     },
     {
       "rank": 3,
       "number": 37,
-      "weighted_score": 73.686006,
-      "weighted_score_percent": 83.931,
+      "weighted_score": 74.321986,
+      "weighted_score_percent": 88.682,
       "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v41 — последни прогнозни сигнали",
+      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "водещ претеглен сигнал"
     },
     {
       "rank": 4,
-      "number": 4,
-      "weighted_score": 69.902736,
-      "weighted_score_percent": 79.622,
-      "source_count": 8,
+      "number": 11,
+      "weighted_score": 68.594549,
+      "weighted_score_percent": 81.848,
+      "source_count": 7,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "водещ претеглен сигнал"
     },
     {
       "rank": 5,
-      "number": 18,
-      "weighted_score": 65.17042,
-      "weighted_score_percent": 74.232,
+      "number": 38,
+      "weighted_score": 66.094047,
+      "weighted_score_percent": 78.864,
       "source_count": 7,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
-      "status": "силен потвърден сигнал"
+      "status": "водещ претеглен сигнал"
     },
     {
       "rank": 6,
-      "number": 34,
-      "weighted_score": 64.778298,
-      "weighted_score_percent": 73.785,
+      "number": 22,
+      "weighted_score": 63.126823,
+      "weighted_score_percent": 75.323,
       "source_count": 8,
-      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v51 — пакет от комбинации",
-      "status": "силен потвърден сигнал"
+      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
+      "status": "водещ претеглен сигнал"
     },
     {
       "rank": 7,
-      "number": 38,
-      "weighted_score": 64.749224,
-      "weighted_score_percent": 73.752,
-      "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v41 — последни прогнозни сигнали",
-      "status": "силен потвърден сигнал"
+      "number": 4,
+      "weighted_score": 63.075745,
+      "weighted_score_percent": 75.262,
+      "source_count": 7,
+      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
+      "status": "водещ претеглен сигнал"
     },
     {
       "rank": 8,
-      "number": 22,
-      "weighted_score": 63.586145,
-      "weighted_score_percent": 72.427,
+      "number": 21,
+      "weighted_score": 63.008855,
+      "weighted_score_percent": 75.183,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
-      "status": "силен потвърден сигнал"
+      "status": "водещ претеглен сигнал"
     },
     {
       "rank": 9,
-      "number": 21,
-      "weighted_score": 62.860993,
-      "weighted_score_percent": 71.601,
-      "source_count": 8,
+      "number": 18,
+      "weighted_score": 61.429809,
+      "weighted_score_percent": 73.298,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 10,
-      "number": 49,
-      "weighted_score": 62.431027,
-      "weighted_score_percent": 71.111,
-      "source_count": 6,
+      "number": 23,
+      "weighted_score": 60.661982,
+      "weighted_score_percent": 72.382,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 11,
       "number": 44,
-      "weighted_score": 58.857732,
-      "weighted_score_percent": 67.041,
-      "source_count": 7,
+      "weighted_score": 59.680912,
+      "weighted_score_percent": 71.212,
+      "source_count": 8,
       "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 12,
-      "number": 23,
-      "weighted_score": 58.536372,
-      "weighted_score_percent": 66.675,
-      "source_count": 5,
-      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v42 — комбиниран позитивен/негативен модел",
+      "number": 34,
+      "weighted_score": 57.302906,
+      "weighted_score_percent": 68.374,
+      "source_count": 6,
+      "top_sources": "v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v59 — интелигентен генератор 2",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 13,
-      "number": 11,
-      "weighted_score": 56.582111,
-      "weighted_score_percent": 64.449,
-      "source_count": 5,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
+      "number": 42,
+      "weighted_score": 53.734446,
+      "weighted_score_percent": 64.116,
+      "source_count": 8,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v58 — обединена оценка",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 14,
       "number": 17,
-      "weighted_score": 54.986518,
-      "weighted_score_percent": 62.632,
+      "weighted_score": 50.800108,
+      "weighted_score_percent": 60.615,
       "source_count": 8,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v51 — пакет от комбинации",
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "силен потвърден сигнал"
     },
     {
       "rank": 15,
-      "number": 42,
-      "weighted_score": 52.550468,
-      "weighted_score_percent": 59.857,
-      "source_count": 7,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v58 — обединена оценка",
-      "status": "балансиран сигнал"
-    },
-    {
-      "rank": 16,
-      "number": 3,
-      "weighted_score": 51.368741,
-      "weighted_score_percent": 58.511,
-      "source_count": 7,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
-      "status": "балансиран сигнал"
-    },
-    {
-      "rank": 17,
-      "number": 24,
-      "weighted_score": 50.527547,
-      "weighted_score_percent": 57.553,
+      "number": 16,
+      "weighted_score": 49.240116,
+      "weighted_score_percent": 58.754,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
       "status": "балансиран сигнал"
     },
     {
-      "rank": 18,
-      "number": 13,
-      "weighted_score": 49.592426,
-      "weighted_score_percent": 56.488,
+      "rank": 16,
+      "number": 24,
+      "weighted_score": 48.79796,
+      "weighted_score_percent": 58.226,
+      "source_count": 5,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
+      "status": "балансиран сигнал"
+    },
+    {
+      "rank": 17,
+      "number": 3,
+      "weighted_score": 47.933067,
+      "weighted_score_percent": 57.194,
       "source_count": 7,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v41 — последни прогнозни сигнали",
+      "status": "балансиран сигнал"
+    },
+    {
+      "rank": 18,
+      "number": 43,
+      "weighted_score": 45.339278,
+      "weighted_score_percent": 54.099,
+      "source_count": 8,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
       "status": "балансиран сигнал"
     },
     {
       "rank": 19,
+      "number": 49,
+      "weighted_score": 43.877768,
+      "weighted_score_percent": 52.355,
+      "source_count": 8,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "status": "балансиран сигнал"
+    },
+    {
+      "rank": 20,
       "number": 48,
-      "weighted_score": 49.233859,
-      "weighted_score_percent": 56.079,
+      "weighted_score": 43.644592,
+      "weighted_score_percent": 52.077,
       "source_count": 8,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v51 — пакет от комбинации",
       "status": "балансиран сигнал"
     },
     {
-      "rank": 20,
-      "number": 12,
-      "weighted_score": 48.670142,
-      "weighted_score_percent": 55.437,
-      "source_count": 7,
+      "rank": 21,
+      "number": 13,
+      "weighted_score": 43.381283,
+      "weighted_score_percent": 51.763,
+      "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
-      "rank": 21,
-      "number": 28,
-      "weighted_score": 48.145876,
-      "weighted_score_percent": 54.84,
-      "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
-      "status": "балансиран сигнал"
-    },
-    {
       "rank": 22,
-      "number": 16,
-      "weighted_score": 46.980812,
-      "weighted_score_percent": 53.513,
-      "source_count": 7,
+      "number": 36,
+      "weighted_score": 43.266789,
+      "weighted_score_percent": 51.626,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
       "rank": 23,
-      "number": 36,
-      "weighted_score": 46.262705,
-      "weighted_score_percent": 52.695,
+      "number": 33,
+      "weighted_score": 40.806321,
+      "weighted_score_percent": 48.69,
       "source_count": 7,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
       "rank": 24,
-      "number": 43,
-      "weighted_score": 44.645692,
-      "weighted_score_percent": 50.853,
-      "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v59 — интелигентен генератор 2",
+      "number": 6,
+      "weighted_score": 40.522283,
+      "weighted_score_percent": 48.351,
+      "source_count": 8,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v51 — пакет от комбинации",
       "status": "балансиран сигнал"
     },
     {
       "rank": 25,
-      "number": 30,
-      "weighted_score": 40.934784,
-      "weighted_score_percent": 46.626,
-      "source_count": 5,
+      "number": 12,
+      "weighted_score": 39.801151,
+      "weighted_score_percent": 47.491,
+      "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
       "rank": 26,
-      "number": 33,
-      "weighted_score": 40.597573,
-      "weighted_score_percent": 46.242,
-      "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
-      "status": "балансиран сигнал"
-    },
-    {
-      "rank": 27,
-      "number": 20,
-      "weighted_score": 40.285044,
-      "weighted_score_percent": 45.886,
+      "number": 30,
+      "weighted_score": 39.776696,
+      "weighted_score_percent": 47.462,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
+      "rank": 27,
+      "number": 28,
+      "weighted_score": 39.473626,
+      "weighted_score_percent": 47.1,
+      "source_count": 6,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "status": "балансиран сигнал"
+    },
+    {
       "rank": 28,
-      "number": 26,
-      "weighted_score": 39.62851,
-      "weighted_score_percent": 45.138,
+      "number": 20,
+      "weighted_score": 38.899886,
+      "weighted_score_percent": 46.416,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "балансиран сигнал"
     },
     {
       "rank": 29,
+      "number": 26,
+      "weighted_score": 38.415315,
+      "weighted_score_percent": 45.837,
+      "source_count": 5,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "status": "балансиран сигнал"
+    },
+    {
+      "rank": 30,
       "number": 46,
-      "weighted_score": 39.203937,
-      "weighted_score_percent": 44.655,
+      "weighted_score": 37.621383,
+      "weighted_score_percent": 44.89,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
-      "rank": 30,
-      "number": 9,
-      "weighted_score": 38.74422,
-      "weighted_score_percent": 44.131,
-      "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
-      "status": "сигнал за наблюдение"
-    },
-    {
       "rank": 31,
-      "number": 19,
-      "weighted_score": 38.360838,
-      "weighted_score_percent": 43.694,
-      "source_count": 7,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "number": 29,
+      "weighted_score": 37.614732,
+      "weighted_score_percent": 44.882,
+      "source_count": 8,
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v51 — пакет от комбинации",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 32,
-      "number": 6,
-      "weighted_score": 38.320092,
-      "weighted_score_percent": 43.648,
-      "source_count": 7,
+      "number": 8,
+      "weighted_score": 36.472602,
+      "weighted_score_percent": 43.519,
+      "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 33,
-      "number": 8,
-      "weighted_score": 37.445211,
-      "weighted_score_percent": 42.652,
+      "number": 35,
+      "weighted_score": 36.269172,
+      "weighted_score_percent": 43.277,
       "source_count": 6,
-      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
+      "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v41 — последни прогнозни сигнали",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 34,
-      "number": 7,
-      "weighted_score": 35.892491,
-      "weighted_score_percent": 40.883,
+      "number": 9,
+      "weighted_score": 34.810321,
+      "weighted_score_percent": 41.536,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 35,
-      "number": 29,
-      "weighted_score": 35.836571,
-      "weighted_score_percent": 40.819,
-      "source_count": 6,
+      "number": 39,
+      "weighted_score": 34.532628,
+      "weighted_score_percent": 41.205,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 36,
-      "number": 39,
-      "weighted_score": 35.403854,
-      "weighted_score_percent": 40.326,
-      "source_count": 4,
+      "number": 15,
+      "weighted_score": 33.979199,
+      "weighted_score_percent": 40.544,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 37,
-      "number": 15,
-      "weighted_score": 35.229035,
-      "weighted_score_percent": 40.127,
+      "number": 19,
+      "weighted_score": 33.52426,
+      "weighted_score_percent": 40.001,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
@@ -460,8 +460,8 @@
     {
       "rank": 38,
       "number": 5,
-      "weighted_score": 34.213647,
-      "weighted_score_percent": 38.971,
+      "weighted_score": 33.358987,
+      "weighted_score_percent": 39.804,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
@@ -469,35 +469,35 @@
     {
       "rank": 39,
       "number": 10,
-      "weighted_score": 33.923649,
-      "weighted_score_percent": 38.64,
+      "weighted_score": 33.108794,
+      "weighted_score_percent": 39.506,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 40,
-      "number": 35,
-      "weighted_score": 33.900829,
-      "weighted_score_percent": 38.614,
+      "number": 14,
+      "weighted_score": 32.202236,
+      "weighted_score_percent": 38.424,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 41,
-      "number": 14,
-      "weighted_score": 33.025787,
-      "weighted_score_percent": 37.618,
-      "source_count": 5,
+      "number": 7,
+      "weighted_score": 32.036305,
+      "weighted_score_percent": 38.226,
+      "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 42,
       "number": 27,
-      "weighted_score": 32.896661,
-      "weighted_score_percent": 37.471,
+      "weighted_score": 31.612462,
+      "weighted_score_percent": 37.72,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
@@ -505,8 +505,8 @@
     {
       "rank": 43,
       "number": 45,
-      "weighted_score": 31.792637,
-      "weighted_score_percent": 36.213,
+      "weighted_score": 31.03897,
+      "weighted_score_percent": 37.036,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
@@ -514,8 +514,8 @@
     {
       "rank": 44,
       "number": 47,
-      "weighted_score": 31.650189,
-      "weighted_score_percent": 36.051,
+      "weighted_score": 30.907885,
+      "weighted_score_percent": 36.88,
       "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v41 — последни прогнозни сигнали",
       "status": "сигнал за наблюдение"
@@ -523,8 +523,8 @@
     {
       "rank": 45,
       "number": 31,
-      "weighted_score": 30.445172,
-      "weighted_score_percent": 34.678,
+      "weighted_score": 29.836823,
+      "weighted_score_percent": 35.602,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
@@ -532,8 +532,8 @@
     {
       "rank": 46,
       "number": 25,
-      "weighted_score": 30.007863,
-      "weighted_score_percent": 34.18,
+      "weighted_score": 29.107733,
+      "weighted_score_percent": 34.732,
       "source_count": 6,
       "top_sources": "v44.1 — финална обединена комбинация | v57 — горещи, студени и стабилни | v42 — комбиниран позитивен/негативен модел",
       "status": "сигнал за наблюдение"
@@ -541,27 +541,27 @@
     {
       "rank": 47,
       "number": 40,
-      "weighted_score": 27.189491,
-      "weighted_score_percent": 30.97,
-      "source_count": 4,
+      "weighted_score": 26.580974,
+      "weighted_score_percent": 31.717,
+      "source_count": 3,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 48,
       "number": 41,
-      "weighted_score": 26.896619,
-      "weighted_score_percent": 30.636,
-      "source_count": 4,
+      "weighted_score": 26.471143,
+      "weighted_score_percent": 31.586,
+      "source_count": 5,
       "top_sources": "v44.1 — финална обединена комбинация | v57 — горещи, студени и стабилни | v41 — последни прогнозни сигнали",
       "status": "сигнал за наблюдение"
     },
     {
       "rank": 49,
       "number": 32,
-      "weighted_score": 26.440757,
-      "weighted_score_percent": 30.117,
-      "source_count": 5,
+      "weighted_score": 24.622795,
+      "weighted_score_percent": 29.38,
+      "source_count": 4,
       "top_sources": "v44.1 — финална обединена комбинация | v42 — комбиниран позитивен/негативен модел | v57 — горещи, студени и стабилни",
       "status": "сигнал за наблюдение"
     }
@@ -572,10 +572,10 @@
       "numbers": [
         1,
         2,
-        4,
-        18,
-        34,
-        37
+        11,
+        22,
+        37,
+        38
       ],
       "note": "статистическа референтна комбинация, не гаранция"
     },
@@ -583,10 +583,10 @@
       "ticket_id": 2,
       "numbers": [
         2,
+        3,
         17,
-        18,
-        22,
-        24,
+        21,
+        38,
         44
       ],
       "note": "статистическа референтна комбинация, не гаранция"
@@ -594,23 +594,23 @@
     {
       "ticket_id": 3,
       "numbers": [
-        13,
-        21,
-        23,
+        16,
+        18,
+        22,
         34,
         37,
-        42
+        43
       ],
       "note": "статистическа референтна комбинация, не гаранция"
     },
     {
       "ticket_id": 4,
       "numbers": [
-        3,
         4,
         11,
-        38,
-        48,
+        23,
+        24,
+        42,
         49
       ],
       "note": "статистическа референтна комбинация, не гаранция"

@@ -2,7 +2,7 @@
   "module": "smart_ticket_builder_2",
   "version": "v59",
   "user_facing_name_bg": "Интелигентен генератор 2",
-  "total_draws": 10059,
+  "total_draws": 10060,
   "strategy": "Балансиран",
   "seed": 59,
   "requested_ticket_count": 5,

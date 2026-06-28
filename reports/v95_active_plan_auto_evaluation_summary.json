@@ -1,12 +1,12 @@
 {
   "step": 95,
-  "status": "WAITING_NEXT_DRAW",
-  "evaluation_type": "",
+  "status": "EVALUATED",
+  "evaluation_type": "ADD_DRAW_PRE_SAVE_REAL_RESULT",
   "plan_id": "v94_active_20260623T163844Z0000",
-  "draw_key": "",
-  "best_hit_count": 0,
-  "rows_with_3_plus": 0,
+  "draw_key": "2026-50-1|2026|1|2026-06-28|2, 4, 17, 33, 35, 38",
+  "best_hit_count": 3,
+  "rows_with_3_plus": 1,
   "rows_with_4_plus": 0,
-  "message_bg": "Активният бюджетен план чака следващ реален тираж. Последният наличен тираж все още не е след плана.",
+  "message_bg": "Активният бюджетен план е проверен срещу въведения нов тираж преди обновяване на dataset-а.",
   "safe_note_bg": "Step 95 проверява активния бюджетен план срещу числата, въведени в Добавяне на тираж, преди новият тираж да обнови dataset-а. Това е отчет на вече запазен план, не гаранция за печалба."
 }

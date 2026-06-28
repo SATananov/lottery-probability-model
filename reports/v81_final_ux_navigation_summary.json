@@ -3,7 +3,7 @@
   "expected_groups_missing": [
     "🎫 Фишове и генератори"
   ],
-  "generated_at": "2026-06-25T16:36:50+00:00",
+  "generated_at": "2026-06-28T16:45:27+00:00",
   "generated_reports": [
     "reports/v81_final_ux_navigation_summary.json",
     "reports/v81_final_ux_navigation_summary.md",
@@ -17,9 +17,9 @@
   "issues_preview": [
     "Липсва навигационна група: 🎫 Фишове и генератори"
   ],
-  "literal_page_keys_detected": 47,
+  "literal_page_keys_detected": 58,
   "name": "Финален UX контрол",
-  "navigation_pages_count": 69,
+  "navigation_pages_count": 80,
   "safe_note": "Step 81 подрежда финалната навигация и проверява UX структурата на приложението. Това е организационен и визуален контролен слой, не прогноза и не гаранция за печалба.",
   "status": "Има нужда от преглед",
   "step": "81",

@@ -1,11 +1,11 @@
 {
-  "total_draws": 10059,
+  "total_draws": 10060,
   "query_count": 3,
   "valid_count": 3,
   "invalid_count": 0,
-  "average_final_score": 74.06,
-  "best_score": 79.04,
-  "weakest_score": 70.79,
+  "average_final_score": 75.04,
+  "best_score": 79.86,
+  "weakest_score": 72.37,
   "portfolio_coverage": {
     "ticket_count": 3,
     "invalid_count": 0,
@@ -122,12 +122,12 @@
       "combination_text": "6, 13, 16, 19, 42, 44",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 72.36,
+      "final_score": 72.88,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 90.0,
         "coverage_score": 96.0,
-        "number_profile_score": 43.35,
+        "number_profile_score": 45.5,
         "hot_cold_balance_score": 80.0,
         "similarity_context_score": 60.0
       },
@@ -205,7 +205,7 @@
         "query_text": "6, 13, 16, 19, 42, 44",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10059,
+        "total_draws": 10060,
         "historical_similarity_score": 100.0,
         "band": "Има точно историческо съвпадение",
         "max_match_count": 6,
@@ -220,13 +220,13 @@
           "3": 187,
           "2": 1327,
           "1": 4147,
-          "0": 4387
+          "0": 4388
         },
         "closest_draws": [
           {
             "event_index": 10058,
             "year": 2026,
-            "draw_no": 48.0,
+            "draw_no": 48,
             "date": "2026-06-21",
             "draw_numbers": [
               6,
@@ -255,7 +255,7 @@
           {
             "event_index": 8331,
             "year": 2012,
-            "draw_no": 8331,
+            "draw_no": 66,
             "date": "",
             "draw_numbers": [
               6,
@@ -288,7 +288,7 @@
           {
             "event_index": 8023,
             "year": 2011,
-            "draw_no": 8023,
+            "draw_no": 16,
             "date": "",
             "draw_numbers": [
               6,
@@ -321,7 +321,7 @@
           {
             "event_index": 5346,
             "year": 2002,
-            "draw_no": 5346,
+            "draw_no": 33,
             "date": "",
             "draw_numbers": [
               4,
@@ -354,7 +354,7 @@
           {
             "event_index": 3871,
             "year": 1997,
-            "draw_no": 3871,
+            "draw_no": 3,
             "date": "",
             "draw_numbers": [
               5,
@@ -387,7 +387,7 @@
           {
             "event_index": 3617,
             "year": 1994,
-            "draw_no": 3617,
+            "draw_no": 51,
             "date": "",
             "draw_numbers": [
               2,
@@ -420,7 +420,7 @@
           {
             "event_index": 3372,
             "year": 1992,
-            "draw_no": 3372,
+            "draw_no": 40,
             "date": "",
             "draw_numbers": [
               13,
@@ -453,7 +453,7 @@
           {
             "event_index": 3130,
             "year": 1990,
-            "draw_no": 3130,
+            "draw_no": 24,
             "date": "",
             "draw_numbers": [
               2,
@@ -486,7 +486,7 @@
           {
             "event_index": 2261,
             "year": 1982,
-            "draw_no": 2261,
+            "draw_no": 35,
             "date": "",
             "draw_numbers": [
               2,
@@ -519,7 +519,7 @@
           {
             "event_index": 1604,
             "year": 1976,
-            "draw_no": 1604,
+            "draw_no": 46,
             "date": "",
             "draw_numbers": [
               6,
@@ -559,9 +559,9 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 43.35,
-        "min_profile_score": 24.9,
-        "max_profile_score": 58.23,
+        "average_profile_score": 45.5,
+        "min_profile_score": 25.83,
+        "max_profile_score": 60.73,
         "statuses": [
           "Нормален ритъм",
           "Активно напоследък",
@@ -575,7 +575,7 @@
           "Нормален профил",
           "Нормален профил",
           "По-слаб профил",
-          "По-слаб профил",
+          "Нормален профил",
           "По-слаб профил"
         ]
       },
@@ -586,17 +586,15 @@
         "overdue_count": 0,
         "historically_strong_count": 0,
         "historically_weak_count": 0,
-        "average_recent_activity": 96.28,
+        "average_recent_activity": 95.33,
         "average_stability": 57.11,
-        "average_overdue": 4.27
+        "average_overdue": 9.45
       },
       "warnings": [
-        "Комбинацията има точно историческо съвпадение.",
-        "Средният профил на избраните числа е слаб."
+        "Комбинацията има точно историческо съвпадение."
       ],
       "recommendations": [
         "Точното минало съвпадение е само исторически факт, не сигнал за бъдещо теглене.",
-        "Сравни числата в страницата „Профил на число“ и замени най-слабите кандидати.",
         "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
       ]
     },
@@ -613,13 +611,13 @@
       "combination_text": "4, 12, 21, 25, 34, 48",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 79.04,
+      "final_score": 79.86,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 97.0,
         "coverage_score": 96.0,
-        "number_profile_score": 61.41,
-        "hot_cold_balance_score": 66.0,
+        "number_profile_score": 58.18,
+        "hot_cold_balance_score": 74.0,
         "similarity_context_score": 80.0
       },
       "pattern": {
@@ -696,7 +694,7 @@
         "query_text": "4, 12, 21, 25, 34, 48",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10059,
+        "total_draws": 10060,
         "historical_similarity_score": 61.67,
         "band": "Има близки исторически тиражи",
         "max_match_count": 4,
@@ -710,14 +708,14 @@
           "4": 12,
           "3": 196,
           "2": 1418,
-          "1": 4143,
+          "1": 4144,
           "0": 4290
         },
         "closest_draws": [
           {
             "event_index": 9810,
             "year": 2024,
-            "draw_no": 9810,
+            "draw_no": 10,
             "date": "",
             "draw_numbers": [
               4,
@@ -750,7 +748,7 @@
           {
             "event_index": 9559,
             "year": 2021,
-            "draw_no": 9559,
+            "draw_no": 71,
             "date": "",
             "draw_numbers": [
               4,
@@ -783,7 +781,7 @@
           {
             "event_index": 9120,
             "year": 2017,
-            "draw_no": 9120,
+            "draw_no": 50,
             "date": "",
             "draw_numbers": [
               12,
@@ -816,7 +814,7 @@
           {
             "event_index": 6812,
             "year": 2006,
-            "draw_no": 6812,
+            "draw_no": 104,
             "date": "",
             "draw_numbers": [
               21,
@@ -849,7 +847,7 @@
           {
             "event_index": 6233,
             "year": 2005,
-            "draw_no": 6233,
+            "draw_no": 15,
             "date": "",
             "draw_numbers": [
               1,
@@ -882,7 +880,7 @@
           {
             "event_index": 5960,
             "year": 2004,
-            "draw_no": 5960,
+            "draw_no": 28,
             "date": "",
             "draw_numbers": [
               11,
@@ -915,7 +913,7 @@
           {
             "event_index": 5816,
             "year": 2003,
-            "draw_no": 5816,
+            "draw_no": 83,
             "date": "",
             "draw_numbers": [
               4,
@@ -948,7 +946,7 @@
           {
             "event_index": 2797,
             "year": 1987,
-            "draw_no": 2797,
+            "draw_no": 29,
             "date": "",
             "draw_numbers": [
               4,
@@ -981,7 +979,7 @@
           {
             "event_index": 2302,
             "year": 1983,
-            "draw_no": 2302,
+            "draw_no": 1,
             "date": "",
             "draw_numbers": [
               4,
@@ -1014,7 +1012,7 @@
           {
             "event_index": 2109,
             "year": 1981,
-            "draw_no": 2109,
+            "draw_no": 15,
             "date": "",
             "draw_numbers": [
               12,
@@ -1054,11 +1052,11 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 61.41,
+        "average_profile_score": 58.18,
         "min_profile_score": 47.81,
-        "max_profile_score": 72.29,
+        "max_profile_score": 69.69,
         "statuses": [
-          "Закъсняло",
+          "Нормален ритъм",
           "Закъсняло",
           "Закъсняло",
           "Силно закъсняло",
@@ -1066,7 +1064,7 @@
           "Нормален ритъм"
         ],
         "bands": [
-          "Силен профил",
+          "Нормален профил",
           "Нормален профил",
           "Нормален профил",
           "Нормален профил",
@@ -1078,12 +1076,12 @@
         "hot_count": 0,
         "cold_count": 0,
         "stable_count": 0,
-        "overdue_count": 5,
+        "overdue_count": 4,
         "historically_strong_count": 0,
         "historically_weak_count": 0,
-        "average_recent_activity": 78.66,
+        "average_recent_activity": 80.02,
         "average_stability": 56.85,
-        "average_overdue": 83.33
+        "average_overdue": 67.58
       },
       "warnings": [
         "Не са открити сериозни проблеми в обединената оценка."
@@ -1106,13 +1104,13 @@
       "combination_text": "22, 28, 37, 38, 42, 49",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 70.79,
+      "final_score": 72.37,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 60.0,
         "coverage_score": 96.0,
-        "number_profile_score": 60.94,
-        "hot_cold_balance_score": 66.0,
+        "number_profile_score": 60.88,
+        "hot_cold_balance_score": 74.0,
         "similarity_context_score": 80.0
       },
       "pattern": {
@@ -1191,7 +1189,7 @@
         "query_text": "22, 28, 37, 38, 42, 49",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10059,
+        "total_draws": 10060,
         "historical_similarity_score": 61.67,
         "band": "Има близки исторически тиражи",
         "max_match_count": 4,
@@ -1205,14 +1203,14 @@
           "4": 16,
           "3": 194,
           "2": 1344,
-          "1": 4184,
+          "1": 4185,
           "0": 4321
         },
         "closest_draws": [
           {
             "event_index": 9497,
             "year": 2021,
-            "draw_no": 9497,
+            "draw_no": 9,
             "date": "",
             "draw_numbers": [
               2,
@@ -1245,7 +1243,7 @@
           {
             "event_index": 9012,
             "year": 2016,
-            "draw_no": 9012,
+            "draw_no": 46,
             "date": "",
             "draw_numbers": [
               2,
@@ -1278,7 +1276,7 @@
           {
             "event_index": 7100,
             "year": 2007,
-            "draw_no": 7100,
+            "draw_no": 96,
             "date": "",
             "draw_numbers": [
               7,
@@ -1311,7 +1309,7 @@
           {
             "event_index": 6655,
             "year": 2006,
-            "draw_no": 6655,
+            "draw_no": 52,
             "date": "",
             "draw_numbers": [
               5,
@@ -1344,7 +1342,7 @@
           {
             "event_index": 6643,
             "year": 2006,
-            "draw_no": 6643,
+            "draw_no": 48,
             "date": "",
             "draw_numbers": [
               22,
@@ -1377,7 +1375,7 @@
           {
             "event_index": 6457,
             "year": 2005,
-            "draw_no": 6457,
+            "draw_no": 90,
             "date": "",
             "draw_numbers": [
               3,
@@ -1410,7 +1408,7 @@
           {
             "event_index": 6247,
             "year": 2005,
-            "draw_no": 6247,
+            "draw_no": 20,
             "date": "",
             "draw_numbers": [
               2,
@@ -1443,7 +1441,7 @@
           {
             "event_index": 6220,
             "year": 2005,
-            "draw_no": 6220,
+            "draw_no": 11,
             "date": "",
             "draw_numbers": [
               1,
@@ -1476,7 +1474,7 @@
           {
             "event_index": 5394,
             "year": 2002,
-            "draw_no": 5394,
+            "draw_no": 49,
             "date": "",
             "draw_numbers": [
               12,
@@ -1509,7 +1507,7 @@
           {
             "event_index": 4881,
             "year": 2000,
-            "draw_no": 4881,
+            "draw_no": 67,
             "date": "",
             "draw_numbers": [
               8,
@@ -1549,9 +1547,9 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 60.94,
-        "min_profile_score": 44.58,
-        "max_profile_score": 76.15,
+        "average_profile_score": 60.88,
+        "min_profile_score": 46.46,
+        "max_profile_score": 78.65,
         "statuses": [
           "Нормален ритъм",
           "Нормален ритъм",
@@ -1565,26 +1563,26 @@
           "Нормален профил",
           "Силен профил",
           "Нормален профил",
-          "По-слаб профил",
+          "Нормален профил",
           "Силен профил"
         ]
       },
       "hot_cold_details": {
-        "hot_count": 5,
+        "hot_count": 4,
         "cold_count": 0,
         "stable_count": 0,
         "overdue_count": 0,
         "historically_strong_count": 0,
         "historically_weak_count": 0,
-        "average_recent_activity": 100.0,
+        "average_recent_activity": 99.94,
         "average_stability": 57.52,
-        "average_overdue": 20.93
+        "average_overdue": 17.57
       },
       "warnings": [
-        "Комбинацията е силно натоварена с горещи напоследък числа."
+        "Не са открити сериозни проблеми в обединената оценка."
       ],
       "recommendations": [
-        "Избягвай прекалено едностранен избор само по скорошна активност.",
+        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
         "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
       ]
     }

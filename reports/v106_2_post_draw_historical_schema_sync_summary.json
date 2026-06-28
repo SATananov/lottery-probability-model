@@ -3,25 +3,25 @@
   "name": "Post-draw Historical Schema Sync",
   "status": "POST_DRAW_DATASETS_SYNCED",
   "blocking_failures": 0,
-  "dataset_rows": 10059,
+  "dataset_rows": 10060,
   "row_counts": {
-    "historical": 10059,
-    "normalized": 10059,
-    "canonical": 10059
+    "historical": 10060,
+    "normalized": 10060,
+    "canonical": 10060
   },
   "latest_draw": {
-    "date": "2026-06-25",
-    "draw_no": "49",
+    "date": "2026-06-28",
+    "draw_no": "50",
     "numbers": [
-      5,
-      11,
-      44,
-      46,
-      47,
-      48
+      2,
+      4,
+      17,
+      33,
+      35,
+      38
     ]
   },
-  "generated_at_utc": "2026-06-25T17:32:16.978785+00:00",
+  "generated_at_utc": "2026-06-28T16:45:29.248591+00:00",
   "checklist": [
     {
       "check": "dataset_files_exist",
@@ -33,19 +33,19 @@
       "check": "post_draw_row_counts_synced",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "historical=10059, normalized=10059, canonical=10059"
+      "details_bg": "historical=10060, normalized=10060, canonical=10060"
     },
     {
       "check": "latest_draw_has_six_numbers",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "latest_draw={'date': '2026-06-25', 'draw_no': '49', 'numbers': [5, 11, 44, 46, 47, 48]}"
+      "details_bg": "latest_draw={'date': '2026-06-28', 'draw_no': '50', 'numbers': [2, 4, 17, 33, 35, 38]}"
     },
     {
       "check": "latest_draw_numbers_valid",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "numbers=[5, 11, 44, 46, 47, 48]"
+      "details_bg": "numbers=[2, 4, 17, 33, 35, 38]"
     }
   ],
   "notes_bg": [

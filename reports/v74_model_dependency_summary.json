@@ -4,50 +4,48 @@
     "datasets_checked": 3,
     "datasets_existing": 3,
     "latest_draw_signatures": [
-      "2026-06-21 | 48 | 6,13,16,19,42,44",
-      "2026-06-25 | 49 | 5,11,44,46,47,48"
+      "2026-06-28 | 50 | 2,4,17,33,35,38"
     ],
-    "latest_draw_synced": false,
+    "latest_draw_synced": true,
     "row_counts": [
-      10058,
-      10059
+      10060
     ],
-    "rows_synced": false
+    "rows_synced": true
   },
   "datasets": [
     {
       "exists": true,
-      "latest_date": "2026-06-25",
-      "latest_draw_no": "49",
-      "latest_numbers": "5,11,44,46,47,48",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_year": "2026",
-      "mtime": "2026-06-25T19:34:06",
+      "mtime": "2026-06-28T19:42:40",
       "path": "data/historical_draws.csv",
-      "rows": 10059
+      "rows": 10060
     },
     {
       "exists": true,
-      "latest_date": "2026-06-21",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_year": "2026",
-      "mtime": "2026-06-23T14:59:44",
+      "mtime": "2026-06-28T19:42:41",
       "path": "data/v40_normalized_draw_events.csv",
-      "rows": 10058
+      "rows": 10060
     },
     {
       "exists": true,
-      "latest_date": "2026-06-21",
-      "latest_draw_no": "48",
-      "latest_numbers": "6,13,16,19,42,44",
+      "latest_date": "2026-06-28",
+      "latest_draw_no": "50",
+      "latest_numbers": "2,4,17,33,35,38",
       "latest_year": "2026",
-      "mtime": "2026-06-23T14:59:44",
+      "mtime": "2026-06-28T19:42:41",
       "path": "data/v41_canonical_draw_events.csv",
-      "rows": 10058
+      "rows": 10060
     }
   ],
   "ensemble_sources": 8,
-  "generated_at": "2026-06-25T16:36:51+00:00",
+  "generated_at": "2026-06-28T16:45:27+00:00",
   "generated_reports": [
     "reports/v74_model_dependency_summary.json",
     "reports/v74_model_dependency_summary.md",
@@ -73,9 +71,9 @@
     "Model Dependency & Sync Center"
   ],
   "safe_note": "Step 74 е контролен слой за синхрон между набори данни, модели, отчети и стъпки от веригата. Той не е прогноза и не е гаранция за печалба.",
-  "stale_models": 3,
-  "state_hash": "16273c76007d1b6557ead2b80a63db65c076569b21201ca66407b4a4b51e0316",
+  "stale_models": 2,
+  "state_hash": "089110bf0519c92fb1b9ad51125ede736e98414f64b614785a5bbd6fdbb1a2af",
   "status": "Има нужда от преглед",
   "step": "74",
-  "synced_models": 29
+  "synced_models": 30
 }

@@ -2,7 +2,7 @@
   "version": "v51",
   "type": "ticket_portfolio_intelligence",
   "portfolio": {
-    "overall_score": 62.78,
+    "overall_score": 62.63,
     "rating": "medium",
     "warning_codes": [],
     "strength_codes": [
@@ -11,12 +11,12 @@
     ],
     "metrics": {
       "combination_count": 4,
-      "average_combo_score": 72.53,
-      "unique_numbers": 14,
+      "average_combo_score": 72.99,
+      "unique_numbers": 13,
       "max_repeat": 3,
       "average_overlap": 2.0,
       "max_overlap": 2,
-      "coverage_score": 0.58333,
+      "coverage_score": 0.54167,
       "overlap_score": 0.33333,
       "repeat_score": 0.33333
     }

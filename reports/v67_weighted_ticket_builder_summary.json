@@ -1,6 +1,6 @@
 {
   "step": "67",
-  "name": "Weighted Ticket Builder Integration",
+  "name": "Умен генератор с тегла",
   "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
   "tickets_generated": 8,
   "strategies_used": [
@@ -13,10 +13,10 @@
     "conservative_core",
     "exploratory_weighted"
   ],
-  "top_average_weighted_score_ticket_id": 1,
-  "top_average_weighted_score": 88.116,
+  "top_average_weighted_score_ticket_id": 2,
+  "top_average_weighted_score": 81.032,
   "historical_exact_matches": 0,
-  "generated_at": "2026-06-22T12:20:14+00:00",
+  "generated_at": "2026-06-28T16:42:22+00:00",
   "generated_reports": [
     "reports/v67_weighted_ticket_builder_summary.json",
     "reports/v67_weighted_ticket_builder_summary.md",

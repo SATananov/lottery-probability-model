@@ -1,8 +1,8 @@
 ﻿model_name,source_file,source_exists,candidate_count,best_hits,coverage_percent,best_candidate,hit_numbers,status
-v44_1_final_ensemble_ticket,models\v44_1\v44_1_final_ensemble_ticket_prediction.json,True,4,2,33.33,1 2 11 13 42 48,11 48,ok
-v42_combined_prediction,models\v42\v42_combined_prediction.json,True,1,2,33.33,11 13 37 38 42 48,11 48,ok
-v41_latest_predictions,models\v41\v41_latest_predictions.json,True,4,1,16.67,1 3 7 9 11 21,11,ok
-v45_final_prediction_tickets,models\v45\v45_final_prediction_tickets.json,True,4,1,16.67,4 11 18 21 34 36,11,ok
+v41_latest_predictions,models\v41\v41_latest_predictions.json,True,4,6,100.0,2 4 17 33 35 38,2 4 17 33 35 38,ok
+v44_1_final_ensemble_ticket,models\v44_1\v44_1_final_ensemble_ticket_prediction.json,True,4,5,83.33,2 4 17 33 38 42,2 4 17 33 38,ok
+v42_combined_prediction,models\v42\v42_combined_prediction.json,True,1,4,66.67,2 4 17 37 38 42,2 4 17 38,ok
+v45_final_prediction_tickets,models\v45\v45_final_prediction_tickets.json,True,4,1,16.67,11 17 22 43 44 48,17,ok
 v50_pair_group_intelligence,models\v50\v50_pair_group_intelligence.json,True,0,0,0.0,,,no_candidate_signal
 v51_ticket_portfolio_intelligence,models\v51\v51_ticket_portfolio_intelligence.json,True,0,0,0.0,,,no_candidate_signal
 v57_hot_cold_stable,C:\Users\stana\Desktop\lottery-probability-model\models\v57\v57_hot_cold_stable_model.json,False,0,0,0.0,,,no_candidate_signal

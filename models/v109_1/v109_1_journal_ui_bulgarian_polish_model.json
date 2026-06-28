@@ -1,6 +1,6 @@
 {
   "step": "109.1",
-  "status": "JOURNAL_UI_POLISHED",
-  "blocking_failures": 0,
+  "status": "CHECK_REQUIRED",
+  "blocking_failures": 2,
   "section_path": "src\\v109_sqlite_journal_section.py"
 }

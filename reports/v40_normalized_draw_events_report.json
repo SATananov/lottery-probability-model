@@ -2,14 +2,14 @@
   "status": "PASS",
   "source_dataset": "data\\historical_draws.csv",
   "output_dataset": "data\\v40_normalized_draw_events.csv",
-  "source_rows": 10059,
-  "normalized_rows": 10059,
+  "source_rows": 10060,
+  "normalized_rows": 10060,
   "year_min": 1958,
   "year_max": 2026,
-  "rows_2026": 50,
-  "max_2026_draw_number": 49,
+  "rows_2026": 51,
+  "max_2026_draw_number": 50,
   "drawing_no_counts": {
-    "1": 5177,
+    "1": 5178,
     "2": 3587,
     "3": 1280,
     "4": 15
@@ -104,9 +104,9 @@
       }
     },
     "2026": {
-      "rows": 50,
+      "rows": 51,
       "drawing_no_counts": {
-        "1": 50
+        "1": 51
       }
     }
   },

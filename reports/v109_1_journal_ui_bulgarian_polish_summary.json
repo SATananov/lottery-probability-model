@@ -1,10 +1,10 @@
 {
   "step": "109.1",
   "name": "Journal UI Bulgarian Polish",
-  "status": "JOURNAL_UI_POLISHED",
-  "blocking_failures": 0,
+  "status": "CHECK_REQUIRED",
+  "blocking_failures": 2,
   "section_path": "src\\v109_sqlite_journal_section.py",
-  "generated_at_utc": "2026-06-26T15:40:03+00:00",
+  "generated_at_utc": "2026-06-28T16:45:31+00:00",
   "checks": [
     {
       "check": "section_exists",
@@ -20,7 +20,7 @@
     },
     {
       "check": "friendly_ticket_mode",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
       "details_bg": "режимът не показва Step 79"
     },
@@ -44,7 +44,7 @@
     },
     {
       "check": "translated_table_headers",
-      "status": "OK",
+      "status": "FAIL",
       "blocking": "yes",
       "details_bg": "табличните колони имат български имена"
     },

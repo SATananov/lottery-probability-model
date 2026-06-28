@@ -8,7 +8,7 @@
   "budget_eur": 10.0,
   "combination_count": 11,
   "cost_eur": 9.9,
-  "result_status": "WAITING_NEXT_DRAW",
-  "demo_best_hit_count": 1,
+  "result_status": "EVALUATED",
+  "demo_best_hit_count": 3,
   "safe_note_bg": "Това е дневник за план и резултат. Запазва препоръка преди следващ тираж и после я сравнява с новия реален тираж. Не е прогноза, не е гаранция и не доказва бъдещ резултат."
 }

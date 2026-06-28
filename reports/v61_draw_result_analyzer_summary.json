@@ -2,94 +2,66 @@
   "module": "draw_result_analyzer",
   "version": "v61",
   "user_facing_name_bg": "Анализ на нов тираж",
-  "total_draws": 10059,
-  "previous_draws_compared": 10058,
+  "total_draws": 10060,
+  "previous_draws_compared": 10059,
   "latest_draw": {
-    "event_index": 10059,
-    "date": "2026-06-25",
+    "event_index": 10060,
+    "date": "2026-06-28",
     "year": 2026,
-    "draw_no": 49.0,
+    "draw_no": 50,
     "numbers": [
-      5,
-      11,
-      44,
-      46,
-      47,
-      48
+      2,
+      4,
+      17,
+      33,
+      35,
+      38
     ],
-    "numbers_text": "5, 11, 44, 46, 47, 48"
+    "numbers_text": "2, 4, 17, 33, 35, 38"
   },
-  "pattern_band": "Среден баланс",
-  "pattern_score": 55.0,
+  "pattern_band": "Отличен баланс",
+  "pattern_score": 96.0,
   "group_counts": {
     "hot_count": 0,
     "cold_count": 0,
     "stable_count": 0,
     "overdue_count": 0,
-    "unique_group_count": 1
+    "unique_group_count": 2
   },
   "model_signal_summary": {
     "signal_count": 27,
-    "best_hit_count": 2,
-    "average_hit_count": 0.56,
-    "signals_with_3_or_more": 0,
-    "signals_with_4_or_more": 0,
+    "best_hit_count": 5,
+    "average_hit_count": 0.81,
+    "signals_with_3_or_more": 2,
+    "signals_with_4_or_more": 2,
     "best_signals": [
-      {
-        "source_key": "v42_combined",
-        "source_bg": "v42 комбиниран позитивен/негативен анализ",
-        "candidate_label": "combined_numbers",
-        "candidate_numbers": [
-          11,
-          13,
-          37,
-          38,
-          42,
-          48
-        ],
-        "candidate_text": "11, 13, 37, 38, 42, 48",
-        "note_bg": "Обединен номерен сигнал от v42.",
-        "hit_count": 2,
-        "matching_numbers": [
-          11,
-          48
-        ],
-        "missing_numbers": [
-          13,
-          37,
-          38,
-          42
-        ],
-        "matching_numbers_text": "11, 48",
-        "missing_numbers_text": "13, 37, 38, 42"
-      },
       {
         "source_key": "v44_1_combined_positive_negative",
         "source_bg": "v44.1 финален ансамбъл",
         "candidate_label": "combined_positive_negative",
         "candidate_numbers": [
-          1,
           2,
-          11,
-          13,
-          42,
-          48
-        ],
-        "candidate_text": "1, 2, 11, 13, 42, 48",
-        "note_bg": "Финален ensemble ticket candidate.",
-        "hit_count": 2,
-        "matching_numbers": [
-          11,
-          48
-        ],
-        "missing_numbers": [
-          1,
-          2,
-          13,
+          4,
+          17,
+          33,
+          38,
           42
         ],
-        "matching_numbers_text": "11, 48",
-        "missing_numbers_text": "1, 2, 13, 42"
+        "candidate_text": "2, 4, 17, 33, 38, 42",
+        "note_bg": "Финален ensemble ticket candidate.",
+        "hit_count": 5,
+        "matching_numbers": [
+          2,
+          4,
+          17,
+          33,
+          38
+        ],
+        "missing_numbers": [
+          42
+        ],
+        "matching_numbers_text": "2, 4, 17, 33, 38",
+        "missing_numbers_text": "42"
       }
     ]
   },
@@ -99,9 +71,9 @@
     "watch_pair_hits_count": 0
   },
   "historical_similarity_summary": {
-    "max_match_count": 5,
-    "four_matches_count": 11,
-    "five_matches_count": 1,
+    "max_match_count": 4,
+    "four_matches_count": 5,
+    "five_matches_count": 0,
     "exact_matches_count": 0
   },
   "safety_note_bg": "Това е анализ след излизане на тиража. Той сравнява реалния тираж с текущи статистически артефакти и исторически профили, но не е доказателство за предсказание и не е гаранция за печалба."

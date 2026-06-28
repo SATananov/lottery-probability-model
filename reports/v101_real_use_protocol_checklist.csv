@@ -1,8 +1,8 @@
 ﻿area_bg,check_bg,status,blocking,details_bg
-Step 100,V1 lock е активен,OK,yes,V1_LOCKED_WAITING_NEXT_DRAW
-Step 100,Няма Step 100 blocking failures,OK,yes,blocking_failures=0
-Данни,Dataset-ите са синхронизирани,OK,yes,"historical=10059, normalized=10059, canonical=10059"
-Данни,Последният тираж е валиден и актуален,OK,yes,"2026-06-25 — 5, 11, 44, 46, 47, 48"
+Step 100,V1 lock е активен,FAIL,yes,CHECK_REQUIRED
+Step 100,Няма Step 100 blocking failures,FAIL,yes,blocking_failures=1
+Данни,Dataset-ите са синхронизирани,OK,yes,"historical=10060, normalized=10060, canonical=10060"
+Данни,Последният тираж е валиден и актуален,OK,yes,"2026-06-28 — 2, 4, 17, 33, 35, 38"
 Активен план,Активният план е Хибрид,OK,yes,Хибрид
 Активен план,Планът има 11 комбинации,OK,yes,11
 Активен план,Бюджетът е 9.90 EUR,OK,yes,9.90 EUR

@@ -1,5 +1,5 @@
 check,status,blocking,details_bg
 sqlite_db_exists,OK,yes,C:\Users\stana\Desktop\lottery-probability-model\data\user_journal.db
-draw_entries_table_ready,OK,yes,draw_entries=1
-latest_dataset_draw_valid,OK,yes,"{""date"": ""2026-06-25"", ""draw_number"": ""49"", ""drawing_position"": ""1"", ""numbers"": [5, 11, 44, 46, 47, 48]}"
+draw_entries_table_ready,OK,yes,draw_entries=2
+latest_dataset_draw_valid,OK,yes,"{""date"": ""2026-06-28"", ""draw_number"": ""50"", ""drawing_position"": ""1"", ""numbers"": [2, 4, 17, 33, 35, 38]}"
 csv_exports_written,OK,yes,C:\Users\stana\Desktop\lottery-probability-model\data\user_journal_exports

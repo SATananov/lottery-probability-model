@@ -1,6 +1,6 @@
 ﻿check,passed,details_bg,blocking
-derived_datasets_match_historical,True,"historical=10059, normalized=10059, canonical=10059",yes
-latest_draw_propagated,True,"latest=2026-06-25 [5, 11, 44, 46, 47, 48]",yes
-v76_refreshed_to_current_dataset,True,"v76_valid_draws=10059, dataset_rows=10059",yes
-v106_post_draw_synced,True,"v106=POST_DRAW_SYNCED, blocking=0",yes
-final_controls_ready,True,"v99=READY_WAITING_NEXT_DRAW, v100=V1_LOCKED_WAITING_NEXT_DRAW, v101=WAITING_NEXT_REAL_DRAW",yes
+derived_datasets_match_historical,True,"historical=10060, normalized=10060, canonical=10060",yes
+latest_draw_propagated,True,"latest=2026-06-28 [2, 4, 17, 33, 35, 38]",yes
+v76_refreshed_to_current_dataset,True,"v76_valid_draws=10060, dataset_rows=10060",yes
+v106_post_draw_synced,False,"v106=CHECK_REQUIRED, blocking=2",yes
+final_controls_ready,False,"v99=READY_WAITING_NEXT_DRAW, v100=CHECK_REQUIRED, v101=CHECK_REQUIRED",yes

@@ -4,45 +4,44 @@
   "source_tickets": "reports/v67_weighted_ticket_builder_tickets.csv",
   "source_scores": "reports/v66_weighted_smart_ensemble_scores.csv",
   "tickets_analyzed": 8,
-  "unique_numbers_covered": 18,
-  "coverage_percent": 36.73,
+  "unique_numbers_covered": 19,
+  "coverage_percent": 38.78,
   "covered_top10_numbers": 10,
   "covered_top20_numbers": 17,
-  "average_ticket_step66_score": 75.139,
-  "average_ticket_overlap": 1.893,
-  "max_ticket_overlap": 3,
-  "repeated_pairs_count": 25,
-  "repeated_triples_count": 4,
-  "coverage_score": 36.735,
+  "average_ticket_step66_score": 76.089,
+  "average_ticket_overlap": 1.821,
+  "max_ticket_overlap": 2,
+  "repeated_pairs_count": 23,
+  "repeated_triples_count": 0,
+  "coverage_score": 38.776,
   "top20_coverage_score": 85.0,
-  "diversity_score": 65.929,
-  "repetition_score": 5.5,
-  "portfolio_score": 59.658,
+  "diversity_score": 67.214,
+  "repetition_score": 42.5,
+  "portfolio_score": 64.298,
   "portfolio_status": "приемлив портфейл с нужда от наблюдение",
   "undercovered_top20_numbers": [
     {
-      "number": 11,
-      "step66_rank": 13,
-      "weighted_score_percent": 64.449
+      "number": 16,
+      "step66_rank": 15,
+      "weighted_score_percent": 58.754
     },
     {
-      "number": 24,
-      "step66_rank": 17,
-      "weighted_score_percent": 57.553
+      "number": 43,
+      "step66_rank": 18,
+      "weighted_score_percent": 54.099
     },
     {
-      "number": 12,
+      "number": 48,
       "step66_rank": 20,
-      "weighted_score_percent": 55.437
+      "weighted_score_percent": 52.077
     }
   ],
   "recommendations": [
     "Портфолиото покрива сравнително малко уникални числа. Следваща оптимизация може да увеличи diversity.",
-    "Има силни Step 66 числа, които не са покрити в портфолиото: 11, 24, 12.",
-    "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията.",
-    "Има повторени тройки. Това повишава концентрацията и може да се оптимизира."
+    "Има силни Step 66 числа, които не са покрити в портфолиото: 16, 43, 48.",
+    "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията."
   ],
-  "generated_at": "2026-06-25T16:36:39+00:00",
+  "generated_at": "2026-06-28T16:45:24+00:00",
   "generated_reports": [
     "reports/v68_weighted_portfolio_summary.json",
     "reports/v68_weighted_portfolio_summary.md",
