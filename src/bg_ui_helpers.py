@@ -212,6 +212,18 @@ def _translate_value(value: Any) -> Any:
     return BG_VALUE_LABELS.get(key, value)
 
 
+
+def _v1164_unique_columns(columns):
+    seen = {}
+    result = []
+    for column in columns:
+        base = str(column)
+        count = seen.get(base, 0) + 1
+        seen[base] = count
+        result.append(base if count == 1 else f"{base} ({count})")
+    return result
+
+
 def localize_table(data: Any) -> Any:
     """Return a display-only Bulgarian version of common table columns/values.
 
@@ -229,6 +241,7 @@ def localize_table(data: Any) -> Any:
     if pd is not None and isinstance(data, pd.DataFrame):
         df = data.copy()
         df = df.rename(columns={column: _translate_column_name(column) for column in df.columns})
+        df.columns = _v1164_unique_columns(df.columns)
         try:
             return df.map(_translate_value)
         except AttributeError:  # older pandas
