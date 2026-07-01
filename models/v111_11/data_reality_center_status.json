@@ -1,0 +1,11 @@
+{
+  "step": "111.11",
+  "status": "DATA_REALITY_CENTER_READY",
+  "blocking_failures": 0,
+  "failures": [],
+  "historical_draw_rows": 10060,
+  "prize_history_rows": 26,
+  "played_tickets": 3,
+  "evaluated_ticket_results": 3,
+  "bad_count": 0
+}
