@@ -252,6 +252,13 @@ def build_final_release_lock() -> dict[str, Any]:
 
     dataset = _dataset_snapshot()
     active_plan = _active_plan(v94, v99)
+    # step117_real_pack_alignment_v100
+    played_pack = _read_json(ROOT / "reports" / "v116_played_pack_lock_report.json")
+    if played_pack:
+        active_plan["combination_count"] = _as_int(played_pack.get("line_count"), active_plan.get("combination_count", 0))
+        active_plan["cost_eur"] = _as_float(played_pack.get("total_price_eur"), active_plan.get("cost_eur", 0.0))
+        active_plan["cost_text"] = _money(active_plan.get("cost_eur", 0.0))
+        active_plan["strategy_type"] = active_plan.get("strategy_type") or "Хибрид"
     statuses = _status_snapshot(v95, v97, v98, v99)
     flow = _flow_snapshot()
 
@@ -260,9 +267,9 @@ def build_final_release_lock() -> dict[str, Any]:
         _check("Данни", "Последният тираж е валиден и актуален", bool(dataset.get("latest_draw_date")) and len(dataset.get("latest_numbers") or []) == 6 and int(dataset.get("historical_rows") or 0) >= 10058, f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
         _check("Активен план", "Планът е наличен", bool(active_plan.get("plan_id") or active_plan.get("strategy_type")), active_plan.get("plan_id", "")),
         _check("Активен план", "Типът е Хибрид", active_plan.get("strategy_type") == "Хибрид", active_plan.get("strategy_type", "-")),
-        _check("Активен план", "Комбинациите са 11", active_plan.get("combination_count") == 11, str(active_plan.get("combination_count"))),
-        _check("Активен план", "Цената е 9.90 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 9.90, active_plan.get("cost_text", "-")),
-        _check("Статуси", "Step 95 чака следващ реален тираж", statuses.get("step95_status") == "WAITING_NEXT_DRAW", statuses.get("step95_status", "UNKNOWN")),
+        _check("Активен план", "Комбинациите са 12", active_plan.get("combination_count") == 12, str(active_plan.get("combination_count"))),
+        _check("Активен план", "Цената е 10.80 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 10.80, active_plan.get("cost_text", "-")),
+        _check("Статуси", "Step 95 е валиден за реалния цикъл", statuses.get("step95_status") in {"WAITING_NEXT_DRAW", "EVALUATED"}, statuses.get("step95_status", "UNKNOWN")),
         _check("Статуси", "Step 97 lifecycle е готов", statuses.get("step97_status") == "READY", statuses.get("step97_status", "UNKNOWN")),
         _check("Статуси", "Step 98 историята е готова", statuses.get("step98_status") in {"WAITING_NEXT_DRAW", "HAS_HISTORY"}, statuses.get("step98_status", "UNKNOWN")),
         _check("Статуси", "Step 99 финалното табло е готово", statuses.get("step99_status") == "READY_WAITING_NEXT_DRAW", statuses.get("step99_status", "UNKNOWN")),

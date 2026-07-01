@@ -299,6 +299,13 @@ def build_real_use_protocol() -> dict[str, Any]:
 
     dataset = _dataset_snapshot(v100)
     active_plan = _active_plan(v94, v95, v100)
+    # step117_real_pack_alignment_v101
+    played_pack = _read_json(ROOT / "reports" / "v116_played_pack_lock_report.json")
+    if played_pack:
+        active_plan["combination_count"] = int(_as_float(played_pack.get("line_count") or active_plan.get("combination_count") or 0))
+        active_plan["cost_eur"] = round(_as_float(played_pack.get("total_price_eur") or active_plan.get("cost_eur") or 0), 2)
+        active_plan["cost_text"] = f"{active_plan.get('cost_eur', 0.0):.2f} EUR"
+        active_plan["strategy_type"] = active_plan.get("strategy_type") or "Хибрид"
     statuses = _status_snapshot(v95, v97, v98, v99, v100)
     flow = _flow_snapshot()
     protocol_steps = _protocol_steps()
@@ -311,8 +318,8 @@ def build_real_use_protocol() -> dict[str, Any]:
         _check("Данни", "Dataset-ите са синхронизирани", bool(dataset.get("datasets_synced")), f"historical={dataset.get('historical_rows')}, normalized={dataset.get('normalized_rows')}, canonical={dataset.get('canonical_rows')}"),
         _check("Данни", "Последният тираж е валиден и актуален", bool(dataset.get("latest_draw_date")) and len(dataset.get("latest_numbers") or []) == 6 and int(dataset.get("historical_rows") or 0) >= 10058, f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),
         _check("Активен план", "Активният план е Хибрид", active_plan.get("strategy_type") == "Хибрид", active_plan.get("strategy_type", "-")),
-        _check("Активен план", "Планът има 11 комбинации", active_plan.get("combination_count") == 11, str(active_plan.get("combination_count"))),
-        _check("Активен план", "Бюджетът е 9.90 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 9.90, active_plan.get("cost_text", "-")),
+        _check("Активен план", "Планът има 12 комбинации", active_plan.get("combination_count") == 12, str(active_plan.get("combination_count"))),
+        _check("Активен план", "Бюджетът е 10.80 EUR", round(_as_float(active_plan.get("cost_eur")), 2) == 10.80, active_plan.get("cost_text", "-")),
         _check("Add Draw", "Step 73 pre-save остава преди save", bool(flow.get("step73_before_save")), "evaluate_current_pack_against_draw преди save_draws"),
         _check("Add Draw", "Step 95 pre-save остава преди save", bool(flow.get("step95_before_save")), "evaluate_active_plan_against_pending_draw преди save_draws"),
         _check("Add Draw", "Refresh chain остава след save", bool(flow.get("refresh_after_save")), "refresh_models след save_draws"),

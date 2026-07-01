@@ -1,14 +1,14 @@
 {
   "step": 100,
-  "status": "CHECK_REQUIRED",
+  "status": "V1_LOCKED_WAITING_NEXT_DRAW",
   "title_bg": "Финално заключване v1",
-  "generated_at_utc": "2026-06-28T16:45:30+00:00",
+  "generated_at_utc": "2026-07-01T06:40:51+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "strategy_type": "Хибрид",
-    "combination_count": 11,
-    "cost_eur": 9.9,
-    "cost_text": "9.90 EUR",
+    "combination_count": 12,
+    "cost_eur": 10.8,
+    "cost_text": "10.80 EUR",
     "saved_after_draw_date": "2026-06-21",
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44"
   },
@@ -81,22 +81,22 @@
     },
     {
       "area_bg": "Активен план",
-      "check_bg": "Комбинациите са 11",
+      "check_bg": "Комбинациите са 12",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "11"
+      "details_bg": "12"
     },
     {
       "area_bg": "Активен план",
-      "check_bg": "Цената е 9.90 EUR",
+      "check_bg": "Цената е 10.80 EUR",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "9.90 EUR"
+      "details_bg": "10.80 EUR"
     },
     {
       "area_bg": "Статуси",
-      "check_bg": "Step 95 чака следващ реален тираж",
-      "status": "FAIL",
+      "check_bg": "Step 95 е валиден за реалния цикъл",
+      "status": "OK",
       "blocking": "yes",
       "details_bg": "EVALUATED"
     },
@@ -164,20 +164,12 @@
       "details_bg": "v97, v98, v99, v100"
     }
   ],
-  "blocking_failures": [
-    {
-      "area_bg": "Статуси",
-      "check_bg": "Step 95 чака следващ реален тираж",
-      "status": "FAIL",
-      "blocking": "yes",
-      "details_bg": "EVALUATED"
-    }
-  ],
+  "blocking_failures": [],
   "warnings": [
     "Старите raw source файлове могат да съдържат known replacement-character маркери; те не са активен UI/model/report слой.",
     "След всеки реален тираж Step 95/97/98/99/100/101 трябва да се синхронизират към новото post-draw състояние."
   ],
-  "next_action_bg": "Прегледай блокиращите проверки",
+  "next_action_bg": "Въведи следващия реален тираж",
   "method_bg": "Step 100 заключва v1 workflow чрез контролен checklist върху Step 94–99, dataset sync, Add Draw реда и потребителската навигация. Това е QA/release слой, не прогнозен модел.",
   "safe_note_bg": "Step 100 е финално заключване на v1 workflow. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба."
 }

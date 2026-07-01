@@ -1,15 +1,15 @@
 {
   "step": 101,
-  "status": "CHECK_REQUIRED",
+  "status": "WAITING_NEXT_REAL_DRAW",
   "title_bg": "Протокол за реална употреба",
-  "generated_at_utc": "2026-06-28T16:45:31+00:00",
-  "step100_status": "CHECK_REQUIRED",
+  "generated_at_utc": "2026-07-01T06:40:52+00:00",
+  "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "strategy_type": "Хибрид",
-    "combination_count": 11,
-    "cost_eur": 9.9,
-    "cost_text": "9.90 EUR",
+    "combination_count": 12,
+    "cost_eur": 10.8,
+    "cost_text": "10.80 EUR",
     "saved_after_draw_date": "2026-06-21",
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44"
   },
@@ -91,7 +91,7 @@
     "step97_status": "READY",
     "step98_status": "HAS_HISTORY",
     "step99_status": "READY_WAITING_NEXT_DRAW",
-    "step100_status": "CHECK_REQUIRED"
+    "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW"
   },
   "flow": {
     "real_use_protocol_page_wired": true,
@@ -150,16 +150,16 @@
     {
       "area_bg": "Step 100",
       "check_bg": "V1 lock е активен",
-      "status": "FAIL",
+      "status": "OK",
       "blocking": "yes",
-      "details_bg": "CHECK_REQUIRED"
+      "details_bg": "V1_LOCKED_WAITING_NEXT_DRAW"
     },
     {
       "area_bg": "Step 100",
       "check_bg": "Няма Step 100 blocking failures",
-      "status": "FAIL",
+      "status": "OK",
       "blocking": "yes",
-      "details_bg": "blocking_failures=1"
+      "details_bg": "blocking_failures=0"
     },
     {
       "area_bg": "Данни",
@@ -184,17 +184,17 @@
     },
     {
       "area_bg": "Активен план",
-      "check_bg": "Планът има 11 комбинации",
+      "check_bg": "Планът има 12 комбинации",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "11"
+      "details_bg": "12"
     },
     {
       "area_bg": "Активен план",
-      "check_bg": "Бюджетът е 9.90 EUR",
+      "check_bg": "Бюджетът е 10.80 EUR",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "9.90 EUR"
+      "details_bg": "10.80 EUR"
     },
     {
       "area_bg": "Add Draw",
@@ -232,23 +232,8 @@
       "details_bg": "Протокол за реална употреба"
     }
   ],
-  "blocking_failures": [
-    {
-      "area_bg": "Step 100",
-      "check_bg": "V1 lock е активен",
-      "status": "FAIL",
-      "blocking": "yes",
-      "details_bg": "CHECK_REQUIRED"
-    },
-    {
-      "area_bg": "Step 100",
-      "check_bg": "Няма Step 100 blocking failures",
-      "status": "FAIL",
-      "blocking": "yes",
-      "details_bg": "blocking_failures=1"
-    }
-  ],
-  "next_action_bg": "Прегледай блокиращите проверки преди реална употреба.",
+  "blocking_failures": [],
+  "next_action_bg": "Изчакай следващия реален тираж и го въведи през Добавяне на тираж.",
   "method_bg": "Step 101 е operational protocol слой. Той фиксира реда на работа след Step 100 и не променя прогнозната логика.",
   "safe_note_bg": "Step 101 е протокол за реална употреба след заключен Step 100. Той описва кога и как да се използва апът при следващ реален тираж. Не добавя нов модел, не променя математиката, не променя тегла, не генерира нови числа и не гарантира печалба.",
   "locked_scope_bg": "Без нови модели, без промяна на тегла, без промяна на ticket builder, без промяна на dataset преди следващ реален тираж."
