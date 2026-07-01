@@ -1,0 +1,59 @@
+{
+  "blocking_failures": 0,
+  "checks": [
+    {
+      "blocking": false,
+      "check": "v117_total_lines_is_12",
+      "details": "v117 total_lines=12",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "v117_total_price_is_10_80",
+      "details": "v117 total_price_eur=10.8",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "v96_add_draw_snapshot_uses_12_lines",
+      "details": "v96 active_plan_combinations=12",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "v96_add_draw_snapshot_uses_10_80",
+      "details": "v96 active_plan_cost_eur=10.8",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "v97_lifecycle_plan_uses_12_lines",
+      "details": "v97 combination_count=12",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "v97_lifecycle_plan_uses_10_80",
+      "details": "v97 cost_eur=10.8",
+      "status": "OK"
+    },
+    {
+      "blocking": false,
+      "check": "add_draw_info_label_is_generic_pack_label",
+      "details": "Add Draw reads active_plan_label_bg instead of hard-coded budget-plan text.",
+      "status": "OK"
+    }
+  ],
+  "expected_lines": 12,
+  "expected_total_price_eur": 10.8,
+  "name": "Step 117.1 — Add Draw Ticket Pack Price Sync",
+  "safe_note_bg": "Hotfix слой: синхронизира визуалния Add Draw статус с реалния Step 117 пакет. Не променя числата и не обещава печалба.",
+  "status": "ADD_DRAW_TICKET_PACK_PRICE_SYNC_READY",
+  "step": "117.1",
+  "v117_total_lines": 12,
+  "v117_total_price_eur": 10.8,
+  "v96_active_plan_combinations": 12,
+  "v96_active_plan_cost_eur": 10.8,
+  "v97_active_plan_combinations": 12,
+  "v97_active_plan_cost_eur": 10.8
+}

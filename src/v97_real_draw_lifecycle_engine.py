@@ -21,6 +21,7 @@ ARTIFACTS_CSV = REPORTS_DIR / "v97_real_draw_lifecycle_artifacts.csv"
 V94_MODEL = MODELS_DIR / "v94" / "v94_active_budget_plan_tracker_model.json"
 V95_MODEL = MODELS_DIR / "v95" / "v95_active_plan_auto_evaluation_model.json"
 V96_MODEL = MODELS_DIR / "v96" / "v96_add_draw_controlled_flow_model.json"
+V117_SUMMARY = REPORTS_DIR / "v117_real_ticket_pack_builder_summary.json"
 V95_HISTORY = REPORTS_DIR / "v95_active_plan_auto_evaluation_history.csv"
 ADD_DRAWS_SECTION = ROOT / "src" / "add_draws_section.py"
 V95_ENGINE = ROOT / "src" / "v95_active_plan_auto_evaluation_engine.py"
@@ -190,6 +191,28 @@ def _find_active_plan(v94_payload: dict[str, Any]) -> dict[str, Any]:
     return {}
 
 
+def _real_ticket_pack_snapshot() -> dict[str, Any]:
+    payload = _read_json(V117_SUMMARY)
+    if not payload:
+        return {}
+    total_lines = _as_int(payload.get("total_lines"), 0)
+    total_price = _as_float(payload.get("total_price_eur"), 0.0)
+    if total_lines <= 0 or total_price <= 0:
+        return {}
+    return {
+        "active_plan_available": True,
+        "plan_id": payload.get("plan_id", ""),
+        "strategy_type": payload.get("strategy_type", ""),
+        "combination_count": total_lines,
+        "cost_eur": total_price,
+        "cost_text": f"{total_price:.2f}",
+        "ticket_count": _as_int(payload.get("ticket_count"), 0),
+        "lines_per_ticket": _as_int(payload.get("lines_per_ticket"), 0),
+        "plan_source": "v117_real_ticket_pack_builder",
+        "plan_label_bg": "готов фиш пакет",
+    }
+
+
 def _as_int(value: Any, default: int = 0) -> int:
     try:
         return int(float(str(value).strip()))
@@ -205,6 +228,10 @@ def _as_float(value: Any, default: float = 0.0) -> float:
 
 
 def _active_plan_snapshot() -> dict[str, Any]:
+    real_pack = _real_ticket_pack_snapshot()
+    if real_pack:
+        return real_pack
+
     v94 = _read_json(V94_MODEL)
     plan = _find_active_plan(v94)
     combinations = plan.get("combinations", []) if isinstance(plan.get("combinations", []), list) else []
@@ -216,6 +243,8 @@ def _active_plan_snapshot() -> dict[str, Any]:
         "cost_eur": _as_float(plan.get("cost_eur") or plan.get("estimated_cost_eur"), 0.0),
         "cost_text": f"{_as_float(plan.get('cost_eur') or plan.get('estimated_cost_eur'), 0.0):.2f}",
         "saved_after_draw": plan.get("saved_after_draw", {}) or {},
+        "plan_source": "v94_active_budget_plan",
+        "plan_label_bg": "бюджетен план",
     }
 
 
@@ -246,6 +275,8 @@ def _v96_snapshot() -> dict[str, Any]:
         "active_plan_type": current.get("active_plan_type", ""),
         "active_plan_combinations": current.get("active_plan_combinations", 0),
         "active_plan_cost_text": current.get("active_plan_cost_text", "0.00"),
+        "active_plan_snapshot_source": current.get("active_plan_snapshot_source", ""),
+        "active_plan_label_bg": current.get("active_plan_label_bg", ""),
         "v95_status": current.get("v95_status", "UNKNOWN"),
     }
 
@@ -354,6 +385,8 @@ def build_real_draw_lifecycle_model() -> dict[str, Any]:
         "active_plan_combinations": plan.get("combination_count", 0),
         "active_plan_cost_eur": plan.get("cost_eur", 0.0),
         "active_plan_cost_text": plan.get("cost_text", "0.00"),
+        "active_plan_source": plan.get("plan_source", ""),
+        "active_plan_label_bg": plan.get("plan_label_bg", ""),
         "step95_status": v95.get("status", "UNKNOWN"),
         "step96_status": v96.get("status", "UNKNOWN"),
         "v95_before_save_draws": wiring.get("v95_before_save_draws", False),
@@ -377,6 +410,7 @@ def build_real_draw_lifecycle_model() -> dict[str, Any]:
         f"- Dataset редове: **{primary_dataset.get('rows', 0)}**",
         f"- Последен тираж: **{primary_dataset.get('latest_date', '')}** — **{primary_dataset.get('latest_numbers', '')}**",
         f"- Активен план: **{'Да' if plan.get('active_plan_available') else 'Не'}**",
+        f"- Източник: **{plan.get('plan_label_bg', 'бюджетен план')}**",
         f"- Тип план: **{plan.get('strategy_type', '')}**",
         f"- Комбинации: **{plan.get('combination_count', 0)}**",
         f"- Цена: **{plan.get('cost_text', '0.00')} EUR**",

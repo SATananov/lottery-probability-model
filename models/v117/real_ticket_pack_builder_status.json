@@ -1,0 +1,10 @@
+{
+  "step": "117",
+  "status": "REAL_TICKET_PACK_BUILDER_READY",
+  "blocking_failures": 0,
+  "ticket_count": 3,
+  "lines_per_ticket": 4,
+  "total_lines": 12,
+  "total_price_eur": 10.8,
+  "generated_at_utc": "2026-07-01T08:37:39+00:00"
+}

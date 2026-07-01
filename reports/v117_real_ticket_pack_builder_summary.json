@@ -1,0 +1,381 @@
+{
+  "step": "117",
+  "name": "Step 117 — Real Ticket Pack Builder",
+  "status": "REAL_TICKET_PACK_BUILDER_READY",
+  "blocking_failures": 0,
+  "ticket_count": 3,
+  "lines_per_ticket": 4,
+  "total_lines": 12,
+  "price_per_line_eur": 0.9,
+  "total_price_eur": 10.8,
+  "total_price_label": "10.80 EUR",
+  "package_mode": "extended",
+  "plan_id": "v94_active_20260623T163844Z0000",
+  "strategy_type": "Хибрид",
+  "cards": [
+    {
+      "ticket_no": 1,
+      "title": "Фиш 1 — Финален план · основни редове",
+      "subtitle": "Първите 4 реда от видимия финален план.",
+      "strategy": "финален план",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "5",
+          "role": "основна комбинация",
+          "numbers": [
+            2,
+            21,
+            25,
+            34,
+            43,
+            45
+          ],
+          "numbers_text": "2, 21, 25, 34, 43, 45",
+          "decision_score": 62.744,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "включен във финалния пакет",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "8",
+          "role": "основна комбинация",
+          "numbers": [
+            2,
+            21,
+            30,
+            40,
+            42,
+            45
+          ],
+          "numbers_text": "2, 21, 30, 40, 42, 45",
+          "decision_score": 62.226,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "включен във финалния пакет",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "4",
+          "role": "основна комбинация",
+          "numbers": [
+            7,
+            21,
+            27,
+            28,
+            34,
+            45
+          ],
+          "numbers_text": "7, 21, 27, 28, 34, 45",
+          "decision_score": 61.67,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "включен във финалния пакет",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "3",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            11,
+            25,
+            27,
+            38,
+            45
+          ],
+          "numbers_text": "2, 11, 25, 27, 38, 45",
+          "decision_score": 61.639,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "пази като резервен вариант",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        }
+      ],
+      "package_scope": "final_plan",
+      "source_note": "Този фиш е съставен само от редове, които се виждат във Финален план.",
+      "source_context": {
+        "source_label": "Текущи налични модели",
+        "dataset_rows": 10060,
+        "latest_draw_date": "2026-06-28",
+        "latest_draw_numbers": [
+          2,
+          4,
+          17,
+          33,
+          35,
+          38
+        ],
+        "training_recommendation": "Не обучавай тежки модели сега",
+        "heavy_training_status": "Тежко обучение не е пускано за този пакет",
+        "source_statement": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+      }
+    },
+    {
+      "ticket_no": 2,
+      "title": "Фиш 2 — Финален план · резервни редове",
+      "subtitle": "Следващите 4 реда от видимия финален план.",
+      "strategy": "финален план",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "6",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            13,
+            19,
+            25,
+            30,
+            44
+          ],
+          "numbers_text": "2, 13, 19, 25, 30, 44",
+          "decision_score": 61.546,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "пази като резервен вариант",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "1",
+          "role": "резервна комбинация",
+          "numbers": [
+            2,
+            21,
+            29,
+            41,
+            42,
+            44
+          ],
+          "numbers_text": "2, 21, 29, 41, 42, 44",
+          "decision_score": 61.326,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "пази като резервен вариант",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "2",
+          "role": "само наблюдение",
+          "numbers": [
+            11,
+            20,
+            21,
+            27,
+            34,
+            44
+          ],
+          "numbers_text": "11, 20, 21, 27, 34, 44",
+          "decision_score": 61.224,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "не влиза в основния пакет",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "7",
+          "role": "само наблюдение",
+          "numbers": [
+            3,
+            13,
+            25,
+            30,
+            38,
+            44
+          ],
+          "numbers_text": "3, 13, 25, 30, 38, 44",
+          "decision_score": 61.178,
+          "risk_level": "контролиран риск",
+          "source_group": "Финален план",
+          "note": "не влиза в основния пакет",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        }
+      ],
+      "package_scope": "final_plan",
+      "source_note": "Този фиш също е само от видимия финален план.",
+      "source_context": {
+        "source_label": "Текущи налични модели",
+        "dataset_rows": 10060,
+        "latest_draw_date": "2026-06-28",
+        "latest_draw_numbers": [
+          2,
+          4,
+          17,
+          33,
+          35,
+          38
+        ],
+        "training_recommendation": "Не обучавай тежки модели сега",
+        "heavy_training_status": "Тежко обучение не е пускано за този пакет",
+        "source_statement": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+      }
+    },
+    {
+      "ticket_no": 3,
+      "title": "Фиш 3 — Допълващ модел извън финалната таблица",
+      "subtitle": "Разширен фиш от наличните допълващи модели. Той не е изцяло част от видимите 8 реда във Финален план.",
+      "strategy": "допълващ модел",
+      "line_count": 4,
+      "lines": [
+        {
+          "line_no": 1,
+          "source_ticket_id": "1",
+          "role": "допълващ модел",
+          "numbers": [
+            7,
+            12,
+            25,
+            26,
+            34,
+            42
+          ],
+          "numbers_text": "7, 12, 25, 26, 34, 42",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Допълващ модел",
+          "note": "Ред от active plan v94.",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 2,
+          "source_ticket_id": "2",
+          "role": "допълващ модел",
+          "numbers": [
+            4,
+            22,
+            24,
+            29,
+            37,
+            44
+          ],
+          "numbers_text": "4, 22, 24, 29, 37, 44",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Допълващ модел",
+          "note": "Ред от active plan v94.",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 3,
+          "source_ticket_id": "3",
+          "role": "допълващ модел",
+          "numbers": [
+            2,
+            21,
+            28,
+            33,
+            45,
+            48
+          ],
+          "numbers_text": "2, 21, 28, 33, 45, 48",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Допълващ модел",
+          "note": "Ред от active plan v94.",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        },
+        {
+          "line_no": 4,
+          "source_ticket_id": "4",
+          "role": "допълващ модел",
+          "numbers": [
+            11,
+            20,
+            23,
+            27,
+            38,
+            41
+          ],
+          "numbers_text": "11, 20, 23, 27, 38, 41",
+          "decision_score": 0.0,
+          "risk_level": "",
+          "source_group": "Допълващ модел",
+          "note": "Ред от active plan v94.",
+          "model_source_label": "Текущи налични модели",
+          "source_explanation": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+        }
+      ],
+      "package_scope": "supplementary",
+      "source_note": "Този фиш е допълващ: използва редове от активния модел извън видимата финална таблица, когато са налични.",
+      "source_context": {
+        "source_label": "Текущи налични модели",
+        "dataset_rows": 10060,
+        "latest_draw_date": "2026-06-28",
+        "latest_draw_numbers": [
+          2,
+          4,
+          17,
+          33,
+          35,
+          38
+        ],
+        "training_recommendation": "Не обучавай тежки модели сега",
+        "heavy_training_status": "Тежко обучение не е пускано за този пакет",
+        "source_statement": "Числата са текуща препоръка от активния финален план и наличните модели, не ново тежко преобучение."
+      }
+    }
+  ],
+  "copy_text_path": "reports\\v117_real_ticket_pack_builder_copy.txt",
+  "csv_path": "reports\\v117_real_ticket_pack_builder_cards.csv",
+  "safe_note_bg": "Step 117 подрежда реален пакет за пускане. Той не обещава печалба и не променя вероятностите.",
+  "generated_at_utc": "2026-07-01T08:37:39+00:00",
+  "checks": [
+    {
+      "check": "cards_created",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "фишове=3"
+    },
+    {
+      "check": "requested_ticket_count",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "поискани=3, подготвени=3"
+    },
+    {
+      "check": "each_ticket_has_four_lines",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "[4, 4, 4]"
+    },
+    {
+      "check": "all_lines_have_valid_numbers",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "всяка комбинация има 6 уникални числа между 1 и 49"
+    },
+    {
+      "check": "no_duplicate_combinations_inside_pack",
+      "status": "OK",
+      "blocking": "yes",
+      "details_bg": "редове=12, уникални=12"
+    },
+    {
+      "check": "copy_text_available",
+      "status": "OK",
+      "blocking": "no",
+      "details_bg": "символи=641"
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,7 @@
+check,status,blocking,details_bg
+cards_created,OK,yes,фишове=3
+requested_ticket_count,OK,yes,"поискани=3, подготвени=3"
+each_ticket_has_four_lines,OK,yes,"[4, 4, 4]"
+all_lines_have_valid_numbers,OK,yes,всяка комбинация има 6 уникални числа между 1 и 49
+no_duplicate_combinations_inside_pack,OK,yes,"редове=12, уникални=12"
+copy_text_available,OK,no,символи=641

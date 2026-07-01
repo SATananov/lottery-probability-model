@@ -639,8 +639,9 @@ def render() -> None:
             except (TypeError, ValueError):
                 active_plan_cost_text = "0.00"
 
+        active_plan_label = controlled_snapshot.get("active_plan_label_bg") or "бюджетен план"
         st.info(
-            "Активният бюджетен план е наличен: "
+            f"Активният {active_plan_label} е наличен: "
             f"{controlled_snapshot.get('active_plan_type', '')}, "
             f"{controlled_snapshot.get('active_plan_combinations', 0)} комбинации, "
             f"{active_plan_cost_text} EUR. "

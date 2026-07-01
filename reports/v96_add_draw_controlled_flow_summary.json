@@ -5,9 +5,14 @@
   "workflow_step_count": 6,
   "active_plan_available": true,
   "active_plan_type": "Хибрид",
-  "active_plan_combinations": 11,
-  "active_plan_cost_eur": 9.9,
-  "active_plan_cost_text": "9.90",
+  "active_plan_combinations": 12,
+  "active_plan_cost_eur": 10.8,
+  "active_plan_cost_text": "10.80",
+  "active_plan_snapshot_source": "v117_real_ticket_pack_builder",
+  "active_plan_label_bg": "готов фиш пакет",
+  "real_ticket_pack_available": true,
+  "real_ticket_pack_ticket_count": 3,
+  "real_ticket_pack_lines_per_ticket": 4,
   "v95_status": "EVALUATED",
   "safe_note_bg": "Step 96 е UX/control слой за страницата Добавяне на тираж. Той не променя прогнозните модели и не обещава печалба; целта е правилен ред на действията."
 }
