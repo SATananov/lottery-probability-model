@@ -1,0 +1,19 @@
+{
+  "step": "118",
+  "status": "MODEL_SYSTEM_TICKET_BUILDER_READY",
+  "blocking_failures": 0,
+  "core_numbers": [
+    1,
+    2,
+    4,
+    11,
+    18,
+    21,
+    22,
+    37,
+    38
+  ],
+  "selected_combinations": 12,
+  "total_price_eur": 10.8,
+  "generated_at_utc": "2026-07-01T09:38:54+00:00"
+}

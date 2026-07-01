@@ -2,7 +2,7 @@
   "step": 104,
   "name_bg": "Финален одит след Step 102",
   "status": "FINAL_AUDIT_REFRESHED",
-  "generated_at_utc": "2026-06-28T16:45:32.465509+00:00",
+  "generated_at_utc": "2026-07-01T08:54:00.832156+00:00",
   "blocking_failures": 0,
   "dataset": {
     "exists": true,
@@ -61,13 +61,13 @@
       "step": "v100",
       "report": "reports\\v100_final_release_lock_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "V1_LOCKED_WAITING_NEXT_DRAW"
     },
     {
       "step": "v101",
       "report": "reports\\v101_real_use_protocol_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "WAITING_NEXT_REAL_DRAW"
     },
     {
       "step": "v102",

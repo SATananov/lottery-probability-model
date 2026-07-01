@@ -3895,6 +3895,12 @@ def render_v117_real_ticket_pack_builder_page() -> None:
     return _render()
 # STEP117_REAL_TICKET_PACK_BUILDER_WRAPPER_END
 
+# STEP118_MODEL_SYSTEM_TICKET_BUILDER_WRAPPER_START
+def render_v118_model_system_ticket_builder_page() -> None:
+    from src.v118_model_system_ticket_builder_section import render_v118_model_system_ticket_builder_section as _render
+    return _render()
+# STEP118_MODEL_SYSTEM_TICKET_BUILDER_WRAPPER_END
+
 def main() -> None:
     page_glossary()
     pages = {
@@ -3926,6 +3932,7 @@ def main() -> None:
         "Решение за игра": render_v115_play_decision_center_page,
         "Реално играни фишове": render_v116_played_pack_lock_page,
         "Готов фиш пакет": render_v117_real_ticket_pack_builder_page,
+        "Системен фиш от моделите": render_v118_model_system_ticket_builder_page,
         "История на печалбите": render_v111_prize_winner_history_page,
 
         tr("dashboard"): page_dashboard,
@@ -4067,6 +4074,7 @@ def main() -> None:
             'История на активния план',
             'Дневник на фишовете',
             'Готов фиш пакет',
+            'Системен фиш от моделите',
             'Реално играни фишове',
             'Анализ на нов тираж',
             'Обяснимост и валидация',
