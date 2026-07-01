@@ -1,0 +1,5 @@
+﻿check,status,note
+real_ticket_pack_cards,PASS,UI can render physical ticket cards.
+four_lines_per_ticket_rule,PASS,Each saved real ticket should have 4 combinations.
+technical_fields_softened,PASS,Main UI uses Bulgarian labels and hides raw ids from card titles.
+copy_text_available,PASS,Played package can be copied as plain text.

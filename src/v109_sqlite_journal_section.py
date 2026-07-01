@@ -274,6 +274,16 @@ def _inject_journal_css() -> None:
             font-weight: 850;
             margin-top: 8px;
         }
+        .journal-guidance-card {
+            border: 1px solid rgba(225,190,92,0.22);
+            border-radius: 18px;
+            padding: 16px 18px;
+            margin: 12px 0 18px 0;
+            background: rgba(225,190,92,0.06);
+            color: rgba(246,241,232,0.84);
+            line-height: 1.55;
+        }
+        .journal-guidance-card b { color: #f7e9bf; }
         @media (max-width: 900px) {
             .pack-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .physical-ticket-head { flex-direction: column; }
@@ -396,7 +406,7 @@ def _table_for_display(table_name: str, rows: list[dict[str, Any]]) -> pd.DataFr
         elif table_name == "played_tickets":
             cleaned.append(
                 {
-                    "Фиш ID": row.get("id"),
+                    "Фиш №": row.get("id"),
                     "Дата на игра": row.get("play_date"),
                     "Целеви тираж": row.get("target_draw_date") or "—",
                     "Тираж №": row.get("target_draw_number") or "—",
@@ -410,7 +420,7 @@ def _table_for_display(table_name: str, rows: list[dict[str, Any]]) -> pd.DataFr
         elif table_name == "played_ticket_lines":
             cleaned.append(
                 {
-                    "Фиш ID": row.get("ticket_id"),
+                    "Фиш №": row.get("ticket_id"),
                     "Комбинация": row.get("line_no"),
                     "Роля": row.get("role") or "—",
                     "Числа": row.get("numbers_text"),
@@ -422,8 +432,8 @@ def _table_for_display(table_name: str, rows: list[dict[str, Any]]) -> pd.DataFr
         elif table_name == "played_ticket_results":
             cleaned.append(
                 {
-                    "Фиш ID": row.get("ticket_id"),
-                    "Тираж ID": row.get("draw_entry_id"),
+                    "Фиш №": row.get("ticket_id"),
+                    "Запис на тираж": row.get("draw_entry_id"),
                     "Оценено на": _format_datetime(row.get("evaluated_at_utc")),
                     "Най-добра комбинация": row.get("best_line_no") or "—",
                     "Най-добри попадения": row.get("best_hits"),
@@ -530,15 +540,15 @@ def _editable_ticket_cards(cards: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def render_v109_sqlite_journal_section() -> None:
     _inject_journal_css()
 
-    st.title("Дневник на фишовете")
+    st.title("🎫 Дневник на фишовете")
     st.markdown(
         """
         <div class="journal-hero">
-            <div class="journal-hero-title">Личен дневник за реални тиражи и изиграни фишове</div>
+            <div class="journal-hero-title">Подготви, запази и провери реалните фишове</div>
             <div class="journal-hero-text">
-                Тук се пази какво е въведено като реален тираж, какви фишове са играни
-                и какъв е резултатът им след тегленето. Един реален фиш се приема като 4 комбинации.
-                Дневникът е за отчетност — не променя вероятностите и не обещава печалба.
+                Тук подготвяш пакета за игра, записваш само това, което реално ще пуснеш,
+                и после проверяваш резултата срещу излезлия тираж. Един физически фиш = 4 комбинации.
+                Дневникът е отчетност и контрол — не обещава печалба и не променя вероятностите.
             </div>
             <div class="journal-chip-row">
                 <span class="journal-chip">Локален дневник: активен</span>
@@ -599,17 +609,21 @@ def render_v109_sqlite_journal_section() -> None:
             st.rerun()
 
     st.markdown("---")
-    st.markdown("## Подготви фишове за игра")
-    st.info("Избери дали искаш пакет само от видимия финален план или разширен пакет с ясно маркиран допълващ фиш.")
+    st.markdown("## Какво да пусна?")
     st.markdown(
-        '<div class="journal-muted">Автоматичното предложение подрежда фишове по 4 комбинации. Можеш да запазиш само това, което реално ще играеш, или да редактираш редовете ръчно.</div>',
+        """
+        <div class="journal-guidance-card">
+            <b>Работен режим за реална игра:</b> app-ът подрежда предложенията като физически фишове по 4 реда.
+            Избираш пакет, преглеждаш числата, по желание редактираш, и чак тогава ги записваш като реално играни.
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
     _render_source_context_panel(latest_dataset_context())
 
     package_mode_label = st.radio(
-        "Източник на пакета",
+        "Какъв пакет да подготви app-ът",
         [
             "Само финалният план — 2 фиша / 8 комбинации",
             "Разширен пакет — 3 фиша / 12 комбинации",
@@ -701,7 +715,7 @@ def render_v109_sqlite_journal_section() -> None:
             st.rerun()
 
     st.markdown("---")
-    tab_draws, tab_tickets, tab_lines, tab_results = st.tabs(["Реални тиражи", "Фишове", "Комбинации", "Резултати"])
+    tab_draws, tab_tickets, tab_lines, tab_results = st.tabs(["Реални тиражи", "Запазени фишове", "Редове във фишове", "Проверки"])
     with tab_draws:
         _show_dataframe("Реални тиражи в дневника", table_rows("user_draw_entries", 200), "Още няма синхронизирани тиражи.", "user_draw_entries")
     with tab_tickets:

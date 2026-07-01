@@ -4,10 +4,18 @@ import csv
 import json
 import sqlite3
 from datetime import datetime, timezone
+from html import escape
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+import sys
+
+_IMPORT_ROOT = Path(__file__).resolve().parents[1]
+if str(_IMPORT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_IMPORT_ROOT))
 
 import pandas as pd
+
+from src.v116_1_real_ticket_pack_ui_polish import build_copy_text, build_ui_snapshot, normalize_ticket_rows
 
 try:
     import streamlit as st
@@ -340,6 +348,31 @@ def _inject_css() -> None:
             box-shadow: inset 0 2px 7px rgba(255,255,255,0.30), 0 7px 15px rgba(0,0,0,0.30);
         }
         .lock-badge { display:inline-block; border:1px solid rgba(225,190,92,0.26); border-radius:999px; padding:5px 10px; color:#f5e7bd; background:rgba(225,190,92,0.08); font-size:0.84rem; font-weight:800; }
+
+        .lock-action-strip {
+            border: 1px solid rgba(225,190,92,0.20);
+            border-radius: 18px;
+            padding: 15px 17px;
+            background: rgba(225,190,92,0.06);
+            color: rgba(246,241,232,0.84);
+            line-height: 1.52;
+            margin: 12px 0 16px 0;
+        }
+        .lock-ticket-head { display:flex; justify-content:space-between; gap:14px; align-items:flex-start; }
+        .lock-ticket-title { color:#f7e9bf; font-weight:950; font-size:1.14rem; }
+        .lock-ticket-meta { color:rgba(246,241,232,0.72); line-height:1.55; margin-top:6px; }
+        .lock-result-good {
+            border-left: 3px solid rgba(107, 226, 141, 0.75);
+            padding: 10px 12px;
+            margin-top: 12px;
+            border-radius: 12px;
+            background: rgba(70, 160, 96, 0.14);
+            color: rgba(229,255,237,0.96);
+        }
+        .lock-copy-box textarea { font-family: Consolas, monospace; }
+        @media (max-width: 900px) {
+            .lock-ticket-head { flex-direction: column; }
+        }
         </style>
         """,
         unsafe_allow_html=True,
@@ -358,8 +391,11 @@ def render_v116_played_pack_lock_section() -> None:
     st.markdown(
         """
         <div class="lock-hero">
-          <div class="lock-hero-title">Заключен изглед на това, което реално е пуснато</div>
-          <div class="lock-hero-text">Тази страница не показва нови предложения. Тя показва фишовете, които вече са записани като играни в дневника, с целевия тираж, цената, редовете и статуса им.</div>
+          <div class="lock-hero-title">Заключен изглед на реално пуснатите фишове</div>
+          <div class="lock-hero-text">
+            Тази страница показва само това, което вече е записано като играно.
+            Всеки физически фиш е подреден като 4 комбинации, без сурови технически имена в основния изглед.
+          </div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -369,6 +405,8 @@ def render_v116_played_pack_lock_section() -> None:
     lines = load_played_lines()
     results = load_results()
     snapshot = build_lock_snapshot()
+    cards = normalize_ticket_rows(tickets, lines, results)
+    ui_snapshot = build_ui_snapshot(cards)
 
     if tickets.empty:
         st.info("Все още няма записани реално играни фишове. Запази пакет от страницата „Дневник на фишовете“, след което той ще се появи тук като заключен.")
@@ -381,49 +419,70 @@ def render_v116_played_pack_lock_section() -> None:
     c1.metric("Фишове", _format_int(snapshot.get("ticket_count", 0)))
     c2.metric("Комбинации", _format_int(snapshot.get("line_count", 0)))
     c3.metric("Обща цена", _format_eur(snapshot.get("total_price_eur", 0)))
-    c4.metric("Чакащи", _format_int(snapshot.get("pending_ticket_count", 0)))
+    c4.metric("Проверени", _format_int(snapshot.get("evaluated_ticket_count", 0)))
+
+    st.markdown(
+        """
+        <div class="lock-action-strip">
+            <b>Как да го четеш:</b> това е реалният пакет за отчет — не нова прогноза.
+            Фишовете са показани като „Фиш 1“, „Фиш 2“, „Фиш 3“, а всеки фиш съдържа 4 реда за преписване.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     target_dates = snapshot.get("target_dates", []) or []
     selected_target = None
     if target_dates:
-        selected_target = st.selectbox("Целеви тираж", options=["Всички"] + target_dates, index=0)
+        selected_target = st.selectbox("Покажи целеви тираж", options=["Всички"] + target_dates, index=0)
 
-    view_tickets = tickets.copy()
-    if selected_target and selected_target != "Всички" and "target_draw_date" in view_tickets.columns:
-        view_tickets = view_tickets[view_tickets["target_draw_date"].astype(str) == selected_target].copy()
-    view_tickets = _ticket_sort(view_tickets)
+    view_cards = cards
+    if selected_target and selected_target != "Всички":
+        view_cards = [card for card in cards if str(card.get("target_draw_date")) == selected_target]
 
-    st.caption("Ако си играл днес за неделния тираж, тук трябва да виждаш точно пуснатите фишове. След реалния тираж дневникът ще ги провери.")
+    copy_text = build_copy_text(view_cards)
+    with st.expander("Текст за преписване / копиране", expanded=False):
+        st.text_area(
+            "Копирай пакета така, както е пуснат",
+            value=copy_text,
+            height=220,
+            key="v116_1_copy_text",
+        )
+        st.caption("Текстът е само за удобство при преписване. Не променя дневника и не прави нова прогноза.")
 
-    for _, ticket in view_tickets.iterrows():
-        ticket_id = _safe_int(ticket.get("id"), 0)
-        target = str(ticket.get("target_draw_date", "") or "—")
-        play_date = str(ticket.get("play_date", "") or "—")
-        status = _status_label(ticket.get("status", ""))
-        total_price = _format_eur(ticket.get("total_price_eur", 0))
-        note = str(ticket.get("note", "") or "")
-        ticket_lines = lines[lines.get("ticket_id", pd.Series(dtype=int)).apply(_safe_int) == ticket_id].copy() if not lines.empty else pd.DataFrame()
-        ticket_results = results[results.get("ticket_id", pd.Series(dtype=int)).apply(_safe_int) == ticket_id].copy() if not results.empty else pd.DataFrame()
-        if not ticket_lines.empty and "line_no" in ticket_lines.columns:
-            ticket_lines = ticket_lines.sort_values("line_no")
-
+    for card in view_cards:
+        status = escape(str(card.get("status") or "—"))
+        display_name = escape(str(card.get("display_name") or "Фиш"))
+        play_date = escape(str(card.get("play_date") or "—"))
+        target = escape(str(card.get("target_draw_date") or "—"))
+        target_number = escape(str(card.get("target_draw_number") or "—"))
+        total_price = escape(str(card.get("total_price_label") or "—"))
+        note = escape(str(card.get("note") or ""))
         st.markdown(
             f"""
             <div class="lock-card">
-              <div class="lock-card-title">🎫 Фиш #{ticket_id} <span class="lock-badge">{status}</span></div>
-              <div class="lock-muted">Играно на: <b>{play_date}</b> · Целеви тираж: <b>{target}</b> · Цена: <b>{total_price}</b></div>
+              <div class="lock-ticket-head">
+                <div>
+                  <div class="lock-ticket-title">🎫 {display_name}</div>
+                  <div class="lock-ticket-meta">
+                    Играно на: <b>{play_date}</b> · Целеви тираж: <b>{target}</b> · Номер: <b>{target_number}</b><br>
+                    Структура: <b>{len(card.get('lines', []))} комбинации</b> · Цена: <b>{total_price}</b>
+                  </div>
+                </div>
+                <span class="lock-badge">{status}</span>
+              </div>
               <div class="lock-muted">{note}</div>
             </div>
             """,
             unsafe_allow_html=True,
         )
-        if ticket_lines.empty:
+        if not card.get("lines"):
             st.warning("За този фиш няма записани редове.")
         else:
-            for _, line in ticket_lines.iterrows():
-                nums = _numbers_from_line(line)
-                role = str(line.get("role", "") or "ред")
-                line_no = _safe_int(line.get("line_no"), 0)
+            for line in card.get("lines", []):
+                nums = line.get("numbers", [])
+                role = escape(str(line.get("role") or "комбинация"))
+                line_no = escape(str(line.get("line_no") or "—"))
                 st.markdown(
                     f"""
                     <div class="lock-line">
@@ -433,13 +492,23 @@ def render_v116_played_pack_lock_section() -> None:
                     """,
                     unsafe_allow_html=True,
                 )
-        if not ticket_results.empty:
-            best = ticket_results.iloc[-1]
-            st.success(f"Проверен резултат: най-добър ред {best.get('best_hits', 0)} числа · общо попадения {best.get('total_hits', 0)}")
+        if card.get("best_hits", 0) or "Проверен" in str(card.get("result_summary")):
+            st.markdown(
+                f"""
+                <div class="lock-result-good">
+                    {escape(str(card.get('result_summary') or 'Проверен'))}<br>
+                    Познати числа: <b>{escape(str(card.get('matched_numbers_text') or '—'))}</b>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
         else:
             st.info("Статус: чака реален тираж и проверка на фиша.")
 
-    if st.button("Обнови заключения отчет"):
+    if ui_snapshot.get("bad_count"):
+        st.warning("Има фишове, които не са точно с 4 комбинации. Провери дневника преди следващ checkpoint.")
+
+    if st.button("Обнови заключения отчет", use_container_width=True, key="v116_refresh_lock_report"):
         saved = build_report()
         st.success(f"Отчетът е обновен. Статус: {saved.get('status')}")
 
@@ -457,7 +526,7 @@ def render_v116_played_pack_lock_section() -> None:
 - Предложен пакет = моделът предлага числа.
 - Реално игран пакет = ти си ги пуснал и си ги записал в дневника.
 - Заключен пакет = app-ът ги показва отделно, за да не ги объркаме с нови предложения.
-- След като въведеш реалния тираж, натискаш „Провери чакащите фишове“ в дневника.
+- След като въведеш реалния тираж, натискаш „Оцени фишовете с излязъл тираж“ в дневника.
             """.strip()
         )
 
