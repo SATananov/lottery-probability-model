@@ -1,14 +1,14 @@
 {
   "step": "72",
   "name": "Интеграция за пълно обновяване на статистическата верига",
-  "mode": "run",
+  "mode": "audit",
   "include_core": false,
   "steps_planned": 20,
   "steps_reported": 20,
   "all_scripts_present": true,
   "all_outputs_present": true,
-  "run_pipeline": true,
-  "run_ok": true,
+  "run_pipeline": false,
+  "run_ok": "",
   "stopped_at": "",
   "weighted_steps": [
     "61",
@@ -33,7 +33,7 @@
     "74"
   ],
   "core_steps_included": [],
-  "generated_at": "2026-06-28T16:43:17+00:00",
+  "generated_at": "2026-06-28T16:57:55+00:00",
   "generated_reports": [
     "reports/v72_pipeline_refresh_summary.json",
     "reports/v72_pipeline_refresh_summary.md",

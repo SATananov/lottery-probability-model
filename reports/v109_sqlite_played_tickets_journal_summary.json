@@ -42,7 +42,7 @@
     "note": "Автоматичен sync от последния dataset тираж."
   },
   "sync_result": {
-    "inserted": true,
+    "inserted": false,
     "draw_entry_id": 29,
     "latest_draw": {
       "date": "2026-06-28",
@@ -59,13 +59,12 @@
     }
   },
   "evaluation_result": {
-    "evaluated": 3,
-    "latest_draw_entry_id": 29,
-    "latest_draw_date": "2026-06-28"
+    "evaluated": 0,
+    "reason": "disabled"
   },
   "default_ticket_mode_bg": "основни комбинации от Step 79",
   "safe_note_bg": "Step 109 пази локален SQLite дневник на реално въведени тиражи и изиграни фишове. Това е отчетност и проследимост, не гаранция за печалба.",
-  "generated_at_utc": "2026-06-28T16:45:31+00:00",
+  "generated_at_utc": "2026-07-01T03:10:38+00:00",
   "checks": [
     {
       "check": "sqlite_db_exists",

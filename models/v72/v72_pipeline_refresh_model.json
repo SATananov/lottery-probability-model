@@ -2,14 +2,14 @@
   "summary": {
     "step": "72",
     "name": "Интеграция за пълно обновяване на статистическата верига",
-    "mode": "run",
+    "mode": "audit",
     "include_core": false,
     "steps_planned": 20,
     "steps_reported": 20,
     "all_scripts_present": true,
     "all_outputs_present": true,
-    "run_pipeline": true,
-    "run_ok": true,
+    "run_pipeline": false,
+    "run_ok": "",
     "stopped_at": "",
     "weighted_steps": [
       "61",
@@ -34,7 +34,7 @@
       "74"
     ],
     "core_steps_included": [],
-    "generated_at": "2026-06-28T16:43:17+00:00",
+    "generated_at": "2026-06-28T16:57:55+00:00",
     "generated_reports": [
       "reports/v72_pipeline_refresh_summary.json",
       "reports/v72_pipeline_refresh_summary.md",
@@ -51,10 +51,10 @@
       "script_exists": true,
       "outputs": "models/v61; reports/v61_draw_result_analyzer_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:40:35",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "V61_DRAW_RESULT_ANALYZER_OK\nTOTAL_DRAWS 10059\nLATEST_DATE 2026-06-25\nLATEST_DRAW 49\nLATEST_NUMBERS 5, 11, 44, 46, 47, 48\nBEST_SIGNAL_HITS 2\nSIGNALS_CHECKED 27"
+      "latest_output_mtime": "2026-06-28T19:45:21",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "62",
@@ -63,10 +63,10 @@
       "script_exists": true,
       "outputs": "models/v62; reports/v62_model_performance_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:40:36",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP62_BUILD_OK\nTOTAL_DRAWS 10059\nLATEST_DRAW {'date': '2026-06-25', 'year': '2026', 'draw_number': '49', 'draw_position': '1', 'numbers': [5, 11, 44, 46, 47, 48]}\nMODELS_EVALUATED 10\nBEST_HITS 2"
+      "latest_output_mtime": "2026-06-28T19:45:22",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "63",
@@ -75,10 +75,10 @@
       "script_exists": true,
       "outputs": "models/v63; reports/v63_model_reliability_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:40:36",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP63_BUILD_OK\nHISTORY_ROWS 20\nTRACKED_DRAWS 2\nMODELS_RANKED 10\nBEST_MODEL v44.1\nBEST_SCORE 65.0"
+      "latest_output_mtime": "2026-06-28T19:45:22",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "65",
@@ -87,10 +87,10 @@
       "script_exists": true,
       "outputs": "models/v65; reports/v65_model_weighting_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:40:36",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP65_BUILD_OK\nMODELS_WEIGHTED 10\nTOP_MODEL v44.1\nTOP_WEIGHT 20.17"
+      "latest_output_mtime": "2026-06-28T19:45:22",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "66",
@@ -99,10 +99,10 @@
       "script_exists": true,
       "outputs": "models/v66; reports/v66_weighted_smart_ensemble_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:40:37",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP66_BUILD_OK\nSOURCES_USED 8\nNUMBERS_SCORED 49\nTOP_NUMBER 1\nTOP_SCORE 100.0"
+      "latest_output_mtime": "2026-06-28T19:45:23",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "67",
@@ -112,9 +112,9 @@
       "outputs": "models/v67; reports/v67_weighted_ticket_builder_summary.json",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-28T19:42:22",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP67_BUILD_OK\nTICKETS_GENERATED 8\nTOP_TICKET_ID 2\nTOP_AVG_SCORE 81.032"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "68",
@@ -123,10 +123,10 @@
       "script_exists": true,
       "outputs": "models/v68; reports/v68_weighted_portfolio_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:23",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP68_BUILD_OK\nTICKETS_ANALYZED 8\nUNIQUE_NUMBERS_COVERED 19\nPORTFOLIO_SCORE 66.619\nPORTFOLIO_STATUS"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "69",
@@ -135,10 +135,10 @@
       "script_exists": true,
       "outputs": "models/v69; reports/v69_portfolio_improvement_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:23",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP69_BUILD_OK\nSUGGESTIONS_GENERATED 48\nCANDIDATE_CHANGES 1\nBASELINE_SCORE 66.619\nCANDIDATE_SCORE 69.588"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "70",
@@ -147,10 +147,10 @@
       "script_exists": true,
       "outputs": "models/v70; reports/v70_applied_candidate_portfolio_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:23",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP70_BUILD_OK\nAPPLIED_TICKETS 8\nAPPLIED_CHANGES 1\nORIGINAL_SCORE 66.619\nAPPLIED_SCORE 69.588"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "71",
@@ -159,10 +159,10 @@
       "script_exists": true,
       "outputs": "models/v71; reports/v71_ticket_pack_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:23",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP71_BUILD_OK\nTICKETS_EXPORTED 8\nCHANGES_INCLUDED 1\nAPPLIED_SCORE 69.588"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "73",
@@ -171,10 +171,10 @@
       "script_exists": true,
       "outputs": "models/v73; reports/v73_ticket_pack_performance_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:23",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP73_BUILD_OK\nACTIVE_PACK_TICKETS 8\nHISTORY_ROWS 1\nSTATUS"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "75",
@@ -184,9 +184,9 @@
       "outputs": "models/v75; reports/v75_neural_meta_learner_summary.json; reports/v75_neural_candidate_tickets.csv",
       "outputs_ok": true,
       "latest_output_mtime": "2026-06-28T19:42:55",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP75_BUILD_OK\nSTATUS\nVALID_DRAWS 10059\nAVG_HITS_TOP6 0.748\nMAX_HITS_TOP6 4\nTOP_NUMBERS 21,34,45,40,2,25"
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "76",
@@ -195,10 +195,10 @@
       "script_exists": true,
       "outputs": "models/v76; reports/v76_explainability_validation_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:56",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP76_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10060\nNUMBERS_EXPLAINED 49\nTICKETS_VALIDATED 8\nWARNING_ITEMS 10"
+      "latest_output_mtime": "2026-06-28T19:45:30",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "77",
@@ -207,10 +207,10 @@
       "script_exists": true,
       "outputs": "models/v77; reports/v77_decision_recommendation_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:56",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP77_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10060\nRECOMMENDATIONS 8\nBEST_TICKET 5\nBEST_SCORE 62.744"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "78",
@@ -219,10 +219,10 @@
       "script_exists": true,
       "outputs": "models/v78; reports/v78_final_play_plan_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:56",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP78_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10060\nCANDIDATES 8\nACTIVE_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5"
+      "latest_output_mtime": "2026-06-28T19:47:11",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "79",
@@ -231,10 +231,10 @@
       "script_exists": true,
       "outputs": "models/v79; reports/v79_ticket_pack_export_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:42:56",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP79_BUILD_OK\nSTATUS OK\nVALID_DRAWS 10060\nCANDIDATES 8\nPLAY_TICKETS 3\nRESERVE_TICKETS 3\nBEST_TICKET 5"
+      "latest_output_mtime": "2026-06-28T19:45:24",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "80",
@@ -243,10 +243,10 @@
       "script_exists": true,
       "outputs": "models/v80; reports/v80_final_system_audit_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:43:17",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP80_BUILD_OK\nSTATUS\nDATASETS_CHECKED 3\nARTIFACTS_CHECKED 27\nQUALITY_CHECKS 33\nSYNC_PLANS_CHECKED 3\nISSUES_FOUND 4"
+      "latest_output_mtime": "2026-06-28T19:45:27",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "81",
@@ -255,10 +255,10 @@
       "script_exists": true,
       "outputs": "models/v81; reports/v81_final_ux_navigation_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:43:17",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP81_BUILD_OK\nSTATUS\nGROUPS_CHECKED 7\nNAVIGATION_PAGES 80\nDUPLICATE_PAGES 0\nSYSTEM_ORDER_OK True\nISSUES_FOUND 1"
+      "latest_output_mtime": "2026-06-28T19:45:27",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "82",
@@ -267,10 +267,10 @@
       "script_exists": true,
       "outputs": "models/v82; reports/v82_final_release_summary.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:43:17",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP82_BUILD_OK\nSTATUS\nREQUIRED_FILES_CHECKED 22\nDATASETS_CHECKED 3\nMANIFEST_FILES 1156\nUNWANTED_RELEASE_FILES 0\nISSUES_FOUND 5"
+      "latest_output_mtime": "2026-06-28T19:45:27",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     },
     {
       "step": "74",
@@ -279,10 +279,10 @@
       "script_exists": true,
       "outputs": "models/v74; reports/v74_model_dependency_summary.json; models/model_registry.json",
       "outputs_ok": true,
-      "latest_output_mtime": "2026-06-28T19:43:17",
-      "run_status": "OK",
-      "run_ok": true,
-      "run_output_tail": "STEP74_BUILD_OK\nSTATUS\nMODELS_CHECKED 32\nSYNCED_MODELS 9\nSTALE_MODELS 23\nMISSING_MODELS 0"
+      "latest_output_mtime": "2026-06-28T19:45:27",
+      "run_status": "planned",
+      "run_ok": "",
+      "run_output_tail": ""
     }
   ]
 }
