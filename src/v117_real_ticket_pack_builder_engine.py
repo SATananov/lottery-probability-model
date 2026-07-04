@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import csv
 import json
@@ -27,8 +27,8 @@ COPY_TEXT = REPORTS_DIR / "v117_real_ticket_pack_builder_copy.txt"
 CHECKLIST_CSV = REPORTS_DIR / "v117_real_ticket_pack_builder_checklist.csv"
 MODEL_JSON = MODELS_DIR / "real_ticket_pack_builder_status.json"
 
-STEP_NAME = "Step 117 — Real Ticket Pack Builder"
-STATUS_READY = "REAL_TICKET_PACK_BUILDER_READY"
+STEP_NAME = "Готов фиш пакет за следващия тираж"
+STATUS_READY = "Пакетът е готов"
 STATUS_CHECK_REQUIRED = "CHECK_REQUIRED"
 
 
@@ -199,7 +199,7 @@ def build_real_ticket_pack_builder(ticket_count: int = DEFAULT_TICKET_COUNT, pac
         "cards": normalized_cards,
         "copy_text_path": str(COPY_TEXT.relative_to(ROOT)),
         "csv_path": str(PACK_CSV.relative_to(ROOT)),
-        "safe_note_bg": "Step 117 подрежда реален пакет за пускане. Той не обещава печалба и не променя вероятностите.",
+        "safe_note_bg": "Готовият фиш пакет подрежда реални комбинации за пускане. Той не обещава печалба и не променя вероятностите.",
         "generated_at_utc": utc_now(),
         "checks": checks,
         "issues": issues,
@@ -230,7 +230,7 @@ def build_real_ticket_pack_builder(ticket_count: int = DEFAULT_TICKET_COUNT, pac
     _write_csv(CHECKLIST_CSV, checks, ["check", "status", "blocking", "details_bg"])
 
     md_lines = [
-        "# Step 117 — Real Ticket Pack Builder",
+        "# Готов фиш пакет за следващия тираж",
         "",
         f"- Status: `{status}`",
         f"- Blocking failures: `{blocking_failures}`",
@@ -274,3 +274,5 @@ def print_summary(summary: dict[str, Any]) -> None:
     print(f"LINES {summary.get('total_lines')}")
     print(f"TOTAL_PRICE_EUR {summary.get('total_price_eur')}")
     print(f"BAD_COUNT {summary.get('blocking_failures')}")
+
+

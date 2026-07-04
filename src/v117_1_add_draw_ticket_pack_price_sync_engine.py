@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -112,7 +112,7 @@ def build_add_draw_ticket_pack_price_sync() -> dict[str, Any]:
 
     payload = {
         "step": "117.1",
-        "name": "Step 117.1 — Add Draw Ticket Pack Price Sync",
+        "name": "Синхронизация на готовия фиш пакет след нов тираж",
         "status": status,
         "blocking_failures": blocking_failures,
         "expected_lines": EXPECTED_LINES,
@@ -124,14 +124,14 @@ def build_add_draw_ticket_pack_price_sync() -> dict[str, Any]:
         "v97_active_plan_combinations": _as_int(v97_plan.get("combination_count"), 0),
         "v97_active_plan_cost_eur": round(_as_float(v97_plan.get("cost_eur"), 0.0), 2),
         "checks": checks,
-        "safe_note_bg": "Hotfix слой: синхронизира визуалния Add Draw статус с реалния Step 117 пакет. Не променя числата и не обещава печалба.",
+        "safe_note_bg": "Hotfix слой: синхронизира визуалния Add Draw статус с реалния готов фиш пакет. Не променя числата и не обещава печалба.",
     }
 
     _write_json(MODEL_JSON, payload)
     _write_json(REPORT_JSON, payload)
 
     md_lines = [
-        "# Step 117.1 — Add Draw Ticket Pack Price Sync",
+        "# Синхронизация на готовия фиш пакет след нов тираж",
         "",
         payload["safe_note_bg"],
         "",
@@ -158,3 +158,4 @@ def print_summary(payload: dict[str, Any]) -> None:
     print(f"ADD_DRAW_LINES {payload.get('v96_active_plan_combinations')}")
     print(f"ADD_DRAW_PRICE_EUR {payload.get('v96_active_plan_cost_eur')}")
     print(f"BAD_COUNT {payload.get('blocking_failures')}")
+
