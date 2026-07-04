@@ -28,7 +28,8 @@ from src.v91_budget_aware_system_builder_engine import (
     unique_numbers,
 )
 from src.v109_2_ticket_pack_4line_engine import LINES_PER_TICKET, validate_numbers
-from src.v109_sqlite_journal_engine import active_plan_metadata, format_numbers, initialize_database
+from src.v109_sqlite_journal_engine import active_plan_metadata, format_numbers, initialize_database, latest_draw_from_dataset
+from src.v117_real_ticket_pack_builder_engine import ensure_current_real_ticket_pack_summary
 from src.v116_1_real_ticket_pack_ui_polish import format_eur, safe_float, safe_int
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -289,8 +290,10 @@ def build_model_system_ticket_builder(
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     initialize_database()
+    v117_summary = ensure_current_real_ticket_pack_summary()
 
     metadata = active_plan_metadata()
+    latest_draw = latest_draw_from_dataset()
     price = safe_float(price_per_line, 0.0)
     if price <= 0:
         price = safe_float(metadata.get("price_per_line_eur"), DEFAULT_PRICE_PER_COMBINATION) or DEFAULT_PRICE_PER_COMBINATION
@@ -367,6 +370,11 @@ def build_model_system_ticket_builder(
         "empty_risk_percent": option.get("empty_risk_percent", 0.0),
         "at_least_one_hit_percent": option.get("at_least_one_hit_percent", 0.0),
         "historical_exact_matches": option.get("historical_exact_matches", 0),
+        "latest_dataset_draw": latest_draw,
+        "latest_dataset_draw_date": latest_draw.get("date") or "",
+        "source_v117_generated_at_utc": v117_summary.get("generated_at_utc") or "",
+        "source_v117_latest_dataset_draw_date": v117_summary.get("latest_dataset_draw_date") or "",
+        "next_target_draw_date": v117_summary.get("next_target_draw_date") or "",
         "model_number_ranking": ranking,
         "current_pack_numbers": pack_numbers,
         "full_system_price_table": full_table,

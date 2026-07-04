@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st
 
 from src.v109_2_ticket_pack_4line_engine import LINES_PER_TICKET, save_ticket_cards_as_played
-from src.v109_sqlite_journal_engine import format_numbers
+from src.v109_sqlite_journal_engine import format_numbers, latest_draw_from_dataset
 from src.v118_model_system_ticket_builder_engine import (
     COPY_TEXT,
     PACK_CSV,
@@ -121,6 +121,14 @@ def _source_from_label(label: str) -> str:
     return DEFAULT_SOURCE
 
 
+def _is_summary_current(summary: dict[str, Any]) -> bool:
+    if not summary:
+        return False
+    summary_latest = str(summary.get("latest_dataset_draw_date") or "").strip()
+    current_latest = str((latest_draw_from_dataset() or {}).get("date") or "").strip()
+    return bool(summary_latest and current_latest and summary_latest == current_latest)
+
+
 def render_v118_model_system_ticket_builder_section() -> None:
     _inject_css()
     st.title("🧩 Системен фиш от моделите")
@@ -170,8 +178,8 @@ def render_v118_model_system_ticket_builder_section() -> None:
 
     price = st.number_input("Цена на една комбинация в EUR", min_value=0.10, max_value=5.00, value=default_price, step=0.10, key="v118_price")
 
-    if refresh or not current:
-        with st.spinner("Строя системен фиш от моделните числа..."):
+    if refresh or not current or not _is_summary_current(current):
+        with st.spinner("Строя системен фиш от актуалните моделни числа..."):
             summary = build_model_system_ticket_builder(
                 core_source=core_source,
                 core_size=int(core_size),
@@ -180,9 +188,18 @@ def render_v118_model_system_ticket_builder_section() -> None:
                 price_per_line=float(price),
                 write_outputs=True,
             )
-        st.success(f"Системният фиш е обновен. Статус: {summary.get('status')}")
+        if refresh:
+            st.success("Системният фиш е обновен и е готов за следващия тираж.")
+        else:
+            st.info("Открит е нов тираж. Системният фиш беше обновен автоматично, за да не показва стар пакет.")
     else:
         summary = current
+
+    latest_draw = summary.get("latest_dataset_draw") or {}
+    latest_draw_date = str(summary.get("latest_dataset_draw_date") or latest_draw.get("date") or "—")
+    latest_draw_numbers = latest_draw.get("numbers") or []
+    if latest_draw_numbers:
+        st.caption(f"Последен въведен тираж: {latest_draw_date} · числа: {', '.join(str(int(n)) for n in latest_draw_numbers)}")
 
     m1, m2, m3, m4, m5 = st.columns(5)
     m1.metric("Ядро", format_numbers(summary.get("core_numbers", [])))

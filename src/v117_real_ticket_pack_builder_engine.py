@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -13,7 +13,7 @@ from src.v109_2_ticket_pack_4line_engine import (
     normalize_cards_from_ui,
     validate_numbers,
 )
-from src.v109_sqlite_journal_engine import active_plan_metadata, initialize_database
+from src.v109_sqlite_journal_engine import active_plan_metadata, default_next_sunday, initialize_database, latest_draw_from_dataset
 from src.v116_1_real_ticket_pack_ui_polish import build_copy_text, format_eur, safe_float, safe_int
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -85,6 +85,49 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) ->
         writer.writerows(rows)
 
 
+def _latest_draw_date_from_summary(summary: dict[str, Any]) -> str:
+    latest = summary.get("latest_dataset_draw")
+    if isinstance(latest, dict) and str(latest.get("date") or "").strip():
+        return str(latest.get("date")).strip()
+    for card in summary.get("cards", []) or []:
+        if not isinstance(card, dict):
+            continue
+        context = card.get("source_context")
+        if isinstance(context, dict) and str(context.get("latest_draw_date") or "").strip():
+            return str(context.get("latest_draw_date")).strip()
+    return ""
+
+
+def _current_latest_draw_date() -> str:
+    latest = latest_draw_from_dataset()
+    return str(latest.get("date") or "").strip()
+
+
+def is_summary_current(summary: dict[str, Any]) -> bool:
+    if not summary:
+        return False
+    summary_latest = _latest_draw_date_from_summary(summary)
+    current_latest = _current_latest_draw_date()
+    return bool(summary_latest and current_latest and summary_latest == current_latest)
+
+
+def ensure_current_real_ticket_pack_summary(
+    ticket_count: int = DEFAULT_TICKET_COUNT,
+    package_mode: str = "extended",
+) -> dict[str, Any]:
+    summary = load_summary()
+    if is_summary_current(summary):
+        return summary
+    return build_real_ticket_pack_builder(ticket_count=ticket_count, package_mode=package_mode)
+
+
+def _next_target_draw_date_label() -> str:
+    try:
+        return default_next_sunday(date.today()).isoformat()
+    except Exception:
+        return ""
+
+
 def build_real_ticket_pack_builder(ticket_count: int = DEFAULT_TICKET_COUNT, package_mode: str = "extended") -> dict[str, Any]:
     """Build a practical physical-ticket pack: 1 ticket = 4 combinations.
 
@@ -98,6 +141,7 @@ def build_real_ticket_pack_builder(ticket_count: int = DEFAULT_TICKET_COUNT, pac
     cards = build_suggested_ticket_cards(ticket_count=int(ticket_count or DEFAULT_TICKET_COUNT), package_mode=package_mode)
     normalized_cards, issues = normalize_cards_from_ui(cards)
     metadata = active_plan_metadata()
+    latest_draw = latest_draw_from_dataset()
     price_per_line = safe_float(metadata.get("price_per_line_eur"), 0.9) or 0.9
     rows = _flatten_cards(normalized_cards, price_per_line)
     copy_text = _card_copy_text(normalized_cards)
@@ -149,6 +193,9 @@ def build_real_ticket_pack_builder(ticket_count: int = DEFAULT_TICKET_COUNT, pac
         "package_mode": package_mode,
         "plan_id": metadata.get("plan_id") or "",
         "strategy_type": metadata.get("strategy_type") or "",
+        "latest_dataset_draw": latest_draw,
+        "latest_dataset_draw_date": latest_draw.get("date") or "",
+        "next_target_draw_date": _next_target_draw_date_label(),
         "cards": normalized_cards,
         "copy_text_path": str(COPY_TEXT.relative_to(ROOT)),
         "csv_path": str(PACK_CSV.relative_to(ROOT)),

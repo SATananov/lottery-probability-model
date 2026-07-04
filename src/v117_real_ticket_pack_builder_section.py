@@ -11,6 +11,8 @@ from src.v117_real_ticket_pack_builder_engine import (
     COPY_TEXT,
     PACK_CSV,
     build_real_ticket_pack_builder,
+    ensure_current_real_ticket_pack_summary,
+    is_summary_current,
     load_summary,
 )
 
@@ -88,7 +90,7 @@ def render_v117_real_ticket_pack_builder_section() -> None:
     st.markdown(
         """
         <div class='v117-hero'>
-          <div class='v117-hero-title'>Step 117 — Real Ticket Pack Builder</div>
+          <div class='v117-hero-title'>Готов фиш пакет за следващия тираж</div>
           <div class='v117-hero-text'>
             Този екран подрежда готов физически пакет за пускане: 1 фиш = 4 комбинации.
             Целта е ясно копиране, печат и запис в дневника, без да се променят моделите и без обещание за печалба.
@@ -118,12 +120,28 @@ def render_v117_real_ticket_pack_builder_section() -> None:
         st.write("")
         refresh = st.button("Обнови пакета", type="primary", use_container_width=True, key="v117_refresh_builder")
 
-    if refresh or not load_summary():
+    current_summary = load_summary()
+    summary_is_current = is_summary_current(current_summary)
+
+    if refresh:
         with st.spinner("Подреждам готовия фиш пакет..."):
             summary = build_real_ticket_pack_builder(ticket_count=int(ticket_count), package_mode=package_mode)
-        st.success(f"Пакетът е обновен. Статус: {summary.get('status')}")
+        st.success("Пакетът е обновен и е готов за следващия тираж.")
+    elif not current_summary or not summary_is_current:
+        with st.spinner("Открит е нов тираж. Обновявам пакета за следващия тираж..."):
+            summary = ensure_current_real_ticket_pack_summary(ticket_count=int(ticket_count), package_mode=package_mode)
+        st.info("Пакетът беше обновен автоматично, за да не виждаш стари числа след последния въведен тираж.")
     else:
-        summary = load_summary()
+        summary = current_summary
+
+    latest_draw = summary.get("latest_dataset_draw") or {}
+    latest_draw_date = str(summary.get("latest_dataset_draw_date") or latest_draw.get("date") or "—")
+    latest_draw_numbers = latest_draw.get("numbers") or []
+    next_target_draw_date = str(summary.get("next_target_draw_date") or _next_sunday().isoformat())
+    if latest_draw_numbers:
+        st.caption(f"Последен въведен тираж: {latest_draw_date} · числа: {', '.join(str(int(n)) for n in latest_draw_numbers)} · целеви следващ тираж: {next_target_draw_date}")
+    else:
+        st.caption(f"Целеви следващ тираж: {next_target_draw_date}")
 
     cards = summary.get("cards", []) or []
     m1, m2, m3, m4 = st.columns(4)
@@ -150,7 +168,7 @@ def render_v117_real_ticket_pack_builder_section() -> None:
     play_date = d1.date_input("Дата на игра", value=date.today(), key="v117_play_date")
     target_draw_date = d2.date_input("Дата на целевия тираж", value=_next_sunday(), key="v117_target_draw_date")
     target_draw_number = d3.text_input("Номер на тиража, ако го знаеш", value="", key="v117_target_draw_number")
-    note = st.text_area("Бележка към записа", value="Записано от Step 117 — Готов фиш пакет", key="v117_note")
+    note = st.text_area("Бележка към записа", value="Записано от готов фиш пакет", key="v117_note")
 
     if st.button("Запази този пакет като реално игран", use_container_width=True, key="v117_save_as_played"):
         result = save_ticket_cards_as_played(
@@ -173,12 +191,12 @@ def render_v117_real_ticket_pack_builder_section() -> None:
         st.download_button(
             "Свали пакета като CSV",
             data=PACK_CSV.read_bytes(),
-            file_name="real_ticket_pack_builder_step117.csv",
+            file_name="gotov-fish-paket.csv",
             mime="text/csv",
             use_container_width=True,
         )
 
-    with st.expander("Проверки на Step 117"):
+    with st.expander("Проверки на готовия пакет"):
         for check in summary.get("checks", []) or []:
             marker = "✅" if check.get("status") == "OK" else "❌"
             st.write(f"{marker} {check.get('check')} — {check.get('details_bg')}")

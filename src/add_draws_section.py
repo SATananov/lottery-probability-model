@@ -74,6 +74,8 @@ MODEL_SCRIPTS = [
     ROOT / "scripts" / "v107_build_model_training_policy_refresh_control.py",
     ROOT / "scripts" / "v109_build_sqlite_played_tickets_journal.py",
     ROOT / "scripts" / "v109_1_build_journal_ui_bulgarian_polish.py",
+    ROOT / "scripts" / "v117_build_real_ticket_pack_builder.py",
+    ROOT / "scripts" / "v118_build_model_system_ticket_builder.py",
     ROOT / "scripts" / "v102_build_runtime_hardening.py",
     ROOT / "scripts" / "v103_build_clean_release_checkpoint.py",
     ROOT / "scripts" / "v104_build_final_audit_refresh.py",
@@ -132,6 +134,61 @@ def run_command(args: list[str], timeout_seconds: int | None = None) -> tuple[bo
 
     output = (completed.stdout or "") + ("\n" + completed.stderr if completed.stderr else "")
     return completed.returncode == 0, output.strip()
+
+
+def _load_next_ticket_pack_summary() -> dict[str, Any]:
+    path = ROOT / "reports" / "v117_real_ticket_pack_builder_summary.json"
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8-sig"))
+    except Exception:
+        return {}
+
+
+def _numbers_text(numbers: Any) -> str:
+    if not isinstance(numbers, list):
+        return "—"
+    values = []
+    for value in numbers:
+        try:
+            values.append(str(int(value)))
+        except Exception:
+            continue
+    return ", ".join(values) if values else "—"
+
+
+def _show_next_ticket_pack_ready() -> None:
+    summary = _load_next_ticket_pack_summary()
+    if not summary:
+        st.warning("Тиражът е записан, но готовият фиш пакет още не е намерен. Отвори 'Готов фиш пакет' и натисни 'Обнови пакета'.")
+        return
+
+    latest_draw = summary.get("latest_dataset_draw") or {}
+    latest_date = summary.get("latest_dataset_draw_date") or latest_draw.get("date") or "—"
+    next_target = summary.get("next_target_draw_date") or "следващ тираж"
+    st.success(
+        "Новият пакет за следващия тираж е готов. "
+        f"Последен въведен тираж: {latest_date}; целеви тираж: {next_target}."
+    )
+    cols = st.columns(4)
+    cols[0].metric("Фишове", summary.get("ticket_count", 0))
+    cols[1].metric("Комбинации", summary.get("total_lines", 0))
+    cols[2].metric("Цена", summary.get("total_price_label", "—"))
+    cols[3].metric("Последни числа", _numbers_text(latest_draw.get("numbers")))
+
+    cards = summary.get("cards") or []
+    if cards:
+        with st.expander("Покажи първия готов фиш", expanded=True):
+            first_card = cards[0]
+            st.write(first_card.get("title") or "Фиш 1")
+            for line in first_card.get("lines", []) or []:
+                st.write(f"Ред {line.get('line_no', '—')}: {line.get('numbers_text') or _numbers_text(line.get('numbers'))}")
+
+    if st.button("Отвори готовия фиш пакет", use_container_width=True, key="add_draw_open_ready_ticket_pack"):
+        st.session_state["_pending_navigation_group"] = "✅ Финален план за игра"
+        st.session_state["_pending_navigation_page"] = "Готов фиш пакет"
+        st.rerun()
 
 
 def read_dataset() -> tuple[list[dict[str, str]], list[str]]:
@@ -863,6 +920,10 @@ def render() -> None:
                 if output:
                     with st.expander(f"Изход: {script_name}"):
                         st.code(output)
+
+            _show_next_ticket_pack_ready()
+        else:
+            st.warning("Тиражът е записан, но автоматичното обновяване е изключено. Пусни обновяване или отвори 'Готов фиш пакет' и натисни 'Обнови пакета'.")
 
         if auto_github:
             with st.spinner("Синхронизация към GitHub..."):
