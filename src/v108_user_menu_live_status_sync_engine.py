@@ -163,15 +163,31 @@ def build_step() -> dict:
         'dataset_rows = summary.get("dataset_rows", 0)' not in source_text,
         "Редовете и последният тираж не трябва да идват директно от v86 summary.",
     )
+    expected_dataset = v106.get("dataset", {}) if isinstance(v106.get("dataset", {}), dict) else {}
+    expected_rows = expected_dataset.get("rows")
+    expected_latest_date = expected_dataset.get("latest_date")
+    expected_latest_numbers = expected_dataset.get("latest_numbers")
+
+    live_numbers = live.get("latest_numbers") if isinstance(live.get("latest_numbers"), list) else []
+    live_numbers_valid = (
+        len(live_numbers) == 6
+        and len(set(live_numbers)) == 6
+        and all(isinstance(number, int) and 1 <= number <= 49 for number in live_numbers)
+    )
+
     add(
         "live_dataset_rows_current",
-        live.get("rows") == 10059,
-        f"rows={live.get('rows')}, source={live.get('source')}",
+        int(live.get("rows") or 0) > 0
+        and (expected_rows in (None, "") or int(live.get("rows") or 0) == int(expected_rows or 0)),
+        f"rows={live.get('rows')}, expected={expected_rows or 'live'}, source={live.get('source')}",
     )
     add(
         "live_latest_draw_current",
-        live.get("latest_date") == "2026-06-25" and live.get("latest_numbers") == [5, 11, 44, 46, 47, 48],
-        f"latest_date={live.get('latest_date')}, numbers={live.get('latest_numbers')}",
+        bool(live.get("latest_date"))
+        and live_numbers_valid
+        and (expected_latest_date in (None, "") or live.get("latest_date") == expected_latest_date)
+        and (not expected_latest_numbers or live_numbers == expected_latest_numbers),
+        f"latest_date={live.get('latest_date')}, expected={expected_latest_date or 'live'}, numbers={live_numbers}",
     )
     add(
         "post_draw_sync_green",

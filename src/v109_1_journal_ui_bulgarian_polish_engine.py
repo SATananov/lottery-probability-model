@@ -34,7 +34,16 @@ def build_summary() -> dict:
 
     add_check("section_exists", SECTION_PATH.exists(), str(SECTION_PATH.relative_to(ROOT)) if SECTION_PATH.exists() else "missing")
     add_check("friendly_refresh_button", "Обнови дневника" in text and "Обнови Step 109 дневника" not in text, "бутонът е без Step номер")
-    add_check("friendly_ticket_mode", "Само основните комбинации от текущия план" in text and "Само основните комбинации от Step 79" not in text, "режимът не показва Step 79")
+    friendly_mode_text_present = (
+        "Само основните комбинации от текущия план" in text
+        or "Само финалният план" in text
+        or "Разширен пакет" in text
+    )
+    add_check(
+        "friendly_ticket_mode",
+        friendly_mode_text_present and "Step 79" not in text,
+        "режимът е описан с потребителски текст, без технически Step 79 етикет",
+    )
     add_check("friendly_status_label", "Дневникът е активен" in text, "статусът е човешки")
     add_check("visual_number_balls", "number-ball" in text and "ticket-line-card" in text, "числата се показват като визуални топки/карти")
     add_check("technical_paths_softened", "Локален дневник: активен" in text and "CSV архив: наличен" in text, "пътищата са омекотени в основния изглед")
