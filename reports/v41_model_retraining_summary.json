@@ -1,29 +1,29 @@
 {
   "status": "v41_model_retraining_completed",
-  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10060,
+  "canonical_dataset": "data/v41_canonical_draw_events.csv",
+  "total_draw_events": 10061,
   "train_events": 8048,
-  "test_events": 2012,
+  "test_events": 2013,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
   "drawing_no_used": true,
   "models_created": [
-    "models\\v41\\v41_frequency_main_numbers_model.json",
-    "models\\v41\\v41_recency_main_numbers_model.json",
-    "models\\v41\\v41_latest_predictions.json"
+    "models/v41/v41_frequency_main_numbers_model.json",
+    "models/v41/v41_recency_main_numbers_model.json",
+    "models/v41/v41_latest_predictions.json"
   ],
   "sgd_model_trained": true,
   "sgd_status": "trained",
-  "sgd_model_path": "models\\v41\\v41_sgd_number_model.joblib",
+  "sgd_model_path": "models/v41/v41_sgd_number_model.joblib",
   "model_metrics": [
     {
       "model": "frequency_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.709741550695825,
+      "test_events": 2013,
+      "average_hits_top6": 0.7093889716840537,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 894,
+        "0": 895,
         "1": 837,
         "2": 253,
         "3": 27,
@@ -36,14 +36,14 @@
     },
     {
       "model": "recency_250_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.7475149105367793,
+      "test_events": 2013,
+      "average_hits_top6": 0.7481371087928465,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 865,
         "1": 827,
-        "2": 284,
+        "2": 285,
         "3": 35,
         "4": 1
       },
@@ -54,13 +54,13 @@
     },
     {
       "model": "sgd_number_classifier",
-      "test_events": 2012,
-      "average_hits_top6": 0.7475149105367793,
+      "test_events": 2013,
+      "average_hits_top6": 0.7476403378042722,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 849,
-        "1": 859,
+        "1": 860,
         "2": 268,
         "3": 35,
         "4": 1
@@ -73,14 +73,14 @@
   ],
   "best_model_by_average_hits_top6": {
     "model": "recency_250_baseline",
-    "test_events": 2012,
-    "average_hits_top6": 0.7475149105367793,
+    "test_events": 2013,
+    "average_hits_top6": 0.7481371087928465,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
       "0": 865,
       "1": 827,
-      "2": 284,
+      "2": 285,
       "3": 35,
       "4": 1
     },

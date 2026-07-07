@@ -2,61 +2,61 @@
   "module": "draw_result_analyzer",
   "version": "v61",
   "user_facing_name_bg": "Анализ на нов тираж",
-  "total_draws": 10060,
-  "previous_draws_compared": 10059,
+  "total_draws": 10061,
+  "previous_draws_compared": 10060,
   "latest_draw": {
-    "event_index": 10060,
-    "date": "2026-06-28",
+    "event_index": 10061,
+    "date": "2026-07-02",
     "year": 2026,
-    "draw_no": 50,
+    "draw_no": 51,
     "numbers": [
-      2,
-      4,
-      17,
+      8,
+      9,
+      12,
+      18,
       33,
-      35,
       38
     ],
-    "numbers_text": "2, 4, 17, 33, 35, 38"
+    "numbers_text": "8, 9, 12, 18, 33, 38"
   },
   "pattern_analysis": {
     "ticket_index": 1,
     "combination": [
-      2,
-      4,
-      17,
+      8,
+      9,
+      12,
+      18,
       33,
-      35,
       38
     ],
-    "combination_text": "2, 4, 17, 33, 35, 38",
+    "combination_text": "8, 9, 12, 18, 33, 38",
     "is_valid": true,
     "status": "Валидна",
-    "sum": 129,
+    "sum": 118,
     "sum_band": "Балансирана сума",
-    "odd_count": 3,
-    "even_count": 3,
-    "low_count": 3,
-    "high_count": 3,
+    "odd_count": 2,
+    "even_count": 4,
+    "low_count": 4,
+    "high_count": 2,
     "gaps": [
-      2,
-      13,
-      16,
-      2,
-      3
+      1,
+      3,
+      6,
+      15,
+      5
     ],
-    "min_gap": 2,
-    "max_gap": 16,
-    "average_gap": 7.2,
-    "longest_consecutive_run": 1,
-    "consecutive_pairs": 0,
-    "max_same_final_digit_count": 1,
+    "min_gap": 1,
+    "max_gap": 15,
+    "average_gap": 6.0,
+    "longest_consecutive_run": 2,
+    "consecutive_pairs": 1,
+    "max_same_final_digit_count": 3,
     "range_count_used": 3,
     "range_distribution": {
       "1-9": 2,
-      "10-19": 1,
+      "10-19": 2,
       "20-29": 0,
-      "30-39": 3,
+      "30-39": 2,
       "40-49": 0
     },
     "final_digit_distribution": {
@@ -64,97 +64,97 @@
       "1": 0,
       "2": 1,
       "3": 1,
-      "4": 1,
-      "5": 1,
+      "4": 0,
+      "5": 0,
       "6": 0,
-      "7": 1,
-      "8": 1,
-      "9": 0
+      "7": 0,
+      "8": 3,
+      "9": 1
     },
-    "pattern_score": 96.0,
-    "band": "Отличен баланс",
+    "pattern_score": 78.0,
+    "band": "Добър баланс",
     "warnings": [
-      "Не са открити сериозни структурни проблеми."
+      "Няколко числа завършват на една и съща цифра."
     ],
     "recommendations": [
-      "Комбинацията има приемлив структурен баланс. Сравни я и с покритието на фиша."
+      "Разнообрази крайните цифри, ако искаш по-балансирана комбинация."
     ]
   },
   "number_profile_rows": [
     {
-      "number": 2,
-      "main_group": "Горещи напоследък",
-      "categories": "Горещо напоследък",
-      "combined_score": 56.56,
-      "profile_score": 54.48,
-      "appearances": 1223,
+      "number": 8,
+      "main_group": "Неутрални",
+      "categories": "Неутрален профил",
+      "combined_score": 57.09,
+      "profile_score": 57.09,
+      "appearances": 1247,
       "recent_50": 7,
-      "recent_100": 17,
+      "recent_100": 10,
+      "recent_250": 32,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.07,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 58.19
+    },
+    {
+      "number": 9,
+      "main_group": "Неутрални",
+      "categories": "Неутрален профил",
+      "combined_score": 55.48,
+      "profile_score": 46.45,
+      "appearances": 1253,
+      "recent_50": 7,
+      "recent_100": 11,
+      "recent_250": 24,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.03,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 58.15
+    },
+    {
+      "number": 12,
+      "main_group": "Неутрални",
+      "categories": "Неутрален профил",
+      "combined_score": 55.49,
+      "profile_score": 43.33,
+      "appearances": 1250,
+      "recent_50": 8,
+      "recent_100": 15,
+      "recent_250": 31,
+      "draws_since_last_seen": 0,
+      "average_interval": 8.05,
+      "current_gap_ratio": 0.0,
+      "interval_stability_score": 56.49
+    },
+    {
+      "number": 18,
+      "main_group": "Горещи напоследък",
+      "categories": "Горещо напоследък, Скорошно активно, но не силно исторически",
+      "combined_score": 55.58,
+      "profile_score": 46.46,
+      "appearances": 1197,
+      "recent_50": 10,
+      "recent_100": 15,
       "recent_250": 38,
       "draws_since_last_seen": 0,
-      "average_interval": 8.23,
+      "average_interval": 8.41,
       "current_gap_ratio": 0.0,
-      "interval_stability_score": 58.01
-    },
-    {
-      "number": 4,
-      "main_group": "Неутрални",
-      "categories": "Неутрален профил",
-      "combined_score": 56.03,
-      "profile_score": 52.29,
-      "appearances": 1277,
-      "recent_50": 6,
-      "recent_100": 13,
-      "recent_250": 26,
-      "draws_since_last_seen": 0,
-      "average_interval": 7.87,
-      "current_gap_ratio": 0.0,
-      "interval_stability_score": 57.94
-    },
-    {
-      "number": 17,
-      "main_group": "Неутрални",
-      "categories": "Неутрален профил",
-      "combined_score": 58.48,
-      "profile_score": 67.39,
-      "appearances": 1268,
-      "recent_50": 7,
-      "recent_100": 13,
-      "recent_250": 33,
-      "draws_since_last_seen": 0,
-      "average_interval": 7.93,
-      "current_gap_ratio": 0.0,
-      "interval_stability_score": 59.19
+      "interval_stability_score": 58.57
     },
     {
       "number": 33,
       "main_group": "Неутрални",
       "categories": "Неутрален профил",
-      "combined_score": 55.23,
-      "profile_score": 41.88,
-      "appearances": 1228,
-      "recent_50": 7,
-      "recent_100": 15,
-      "recent_250": 33,
+      "combined_score": 55.24,
+      "profile_score": 41.98,
+      "appearances": 1229,
+      "recent_50": 8,
+      "recent_100": 16,
+      "recent_250": 34,
       "draws_since_last_seen": 0,
       "average_interval": 8.19,
       "current_gap_ratio": 0.0,
-      "interval_stability_score": 57.2
-    },
-    {
-      "number": 35,
-      "main_group": "Неутрални",
-      "categories": "Неутрален профил",
-      "combined_score": 50.18,
-      "profile_score": 51.77,
-      "appearances": 1244,
-      "recent_50": 4,
-      "recent_100": 8,
-      "recent_250": 37,
-      "draws_since_last_seen": 0,
-      "average_interval": 8.08,
-      "current_gap_ratio": 0.0,
-      "interval_stability_score": 57.4
+      "interval_stability_score": 57.17
     },
     {
       "number": 38,
@@ -162,14 +162,14 @@
       "categories": "Горещо напоследък",
       "combined_score": 55.65,
       "profile_score": 46.46,
-      "appearances": 1232,
+      "appearances": 1233,
       "recent_50": 10,
-      "recent_100": 18,
-      "recent_250": 41,
+      "recent_100": 19,
+      "recent_250": 42,
       "draws_since_last_seen": 0,
-      "average_interval": 8.17,
+      "average_interval": 8.16,
       "current_gap_ratio": 0.0,
-      "interval_stability_score": 56.67
+      "interval_stability_score": 56.64
     }
   ],
   "group_counts": {
@@ -182,127 +182,193 @@
   "historical_similarity_previous_draws": {
     "query_index": 1,
     "query_numbers": [
-      2,
-      4,
-      17,
+      8,
+      9,
+      12,
+      18,
       33,
-      35,
       38
     ],
-    "query_text": "2, 4, 17, 33, 35, 38",
+    "query_text": "8, 9, 12, 18, 33, 38",
     "is_valid": true,
     "status": "Валидна",
-    "total_draws": 10059,
-    "historical_similarity_score": 59.17,
+    "total_draws": 10060,
+    "historical_similarity_score": 61.67,
     "band": "Има близки исторически тиражи",
     "max_match_count": 4,
     "exact_matches_count": 0,
     "five_matches_count": 0,
-    "four_matches_count": 5,
-    "three_matches_count": 175,
+    "four_matches_count": 10,
+    "three_matches_count": 189,
     "match_distribution": {
       "6": 0,
       "5": 0,
-      "4": 5,
-      "3": 175,
-      "2": 1365,
-      "1": 4191,
-      "0": 4323
+      "4": 10,
+      "3": 189,
+      "2": 1305,
+      "1": 4186,
+      "0": 4370
     },
     "closest_draws": [
       {
-        "event_index": 9780,
-        "year": 2023,
-        "draw_no": 84,
+        "event_index": 9595,
+        "year": 2022,
+        "draw_no": 3,
         "date": "",
         "draw_numbers": [
-          2,
-          17,
-          30,
-          35,
+          7,
+          8,
+          18,
+          33,
           38,
-          41
+          40
         ],
-        "draw_numbers_text": "2, 17, 30, 35, 38, 41",
+        "draw_numbers_text": "7, 8, 18, 33, 38, 40",
         "match_count": 4,
         "matching_numbers": [
-          2,
-          17,
-          35,
+          8,
+          18,
+          33,
           38
         ],
-        "matching_numbers_text": "2, 17, 35, 38",
+        "matching_numbers_text": "8, 18, 33, 38",
         "different_query_numbers": [
-          4,
+          9,
+          12
+        ],
+        "different_query_numbers_text": "9, 12",
+        "different_draw_numbers": [
+          7,
+          40
+        ],
+        "different_draw_numbers_text": "7, 40"
+      },
+      {
+        "event_index": 7977,
+        "year": 2010,
+        "draw_no": 96,
+        "date": "",
+        "draw_numbers": [
+          9,
+          10,
+          12,
+          25,
+          33,
+          38
+        ],
+        "draw_numbers_text": "9, 10, 12, 25, 33, 38",
+        "match_count": 4,
+        "matching_numbers": [
+          9,
+          12,
+          33,
+          38
+        ],
+        "matching_numbers_text": "9, 12, 33, 38",
+        "different_query_numbers": [
+          8,
+          18
+        ],
+        "different_query_numbers_text": "8, 18",
+        "different_draw_numbers": [
+          10,
+          25
+        ],
+        "different_draw_numbers_text": "10, 25"
+      },
+      {
+        "event_index": 6511,
+        "year": 2006,
+        "draw_no": 4,
+        "date": "",
+        "draw_numbers": [
+          6,
+          8,
+          9,
+          12,
+          33,
+          34
+        ],
+        "draw_numbers_text": "6, 8, 9, 12, 33, 34",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          12,
           33
         ],
-        "different_query_numbers_text": "4, 33",
-        "different_draw_numbers": [
-          30,
-          41
-        ],
-        "different_draw_numbers_text": "30, 41"
-      },
-      {
-        "event_index": 8111,
-        "year": 2011,
-        "draw_no": 60,
-        "date": "",
-        "draw_numbers": [
-          4,
-          11,
-          13,
-          17,
-          33,
-          35
-        ],
-        "draw_numbers_text": "4, 11, 13, 17, 33, 35",
-        "match_count": 4,
-        "matching_numbers": [
-          4,
-          17,
-          33,
-          35
-        ],
-        "matching_numbers_text": "4, 17, 33, 35",
+        "matching_numbers_text": "8, 9, 12, 33",
         "different_query_numbers": [
-          2,
+          18,
           38
         ],
-        "different_query_numbers_text": "2, 38",
+        "different_query_numbers_text": "18, 38",
         "different_draw_numbers": [
-          11,
-          13
+          6,
+          34
         ],
-        "different_draw_numbers_text": "11, 13"
+        "different_draw_numbers_text": "6, 34"
       },
       {
-        "event_index": 6421,
-        "year": 2005,
-        "draw_no": 78,
+        "event_index": 5099,
+        "year": 2001,
+        "draw_no": 52,
         "date": "",
         "draw_numbers": [
-          2,
-          4,
+          8,
+          9,
+          10,
+          12,
           17,
+          38
+        ],
+        "draw_numbers_text": "8, 9, 10, 12, 17, 38",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          12,
+          38
+        ],
+        "matching_numbers_text": "8, 9, 12, 38",
+        "different_query_numbers": [
+          18,
+          33
+        ],
+        "different_query_numbers_text": "18, 33",
+        "different_draw_numbers": [
+          10,
+          17
+        ],
+        "different_draw_numbers_text": "10, 17"
+      },
+      {
+        "event_index": 4738,
+        "year": 2000,
+        "draw_no": 16,
+        "date": "",
+        "draw_numbers": [
+          8,
+          9,
+          12,
+          18,
           19,
-          21,
-          38
+          21
         ],
-        "draw_numbers_text": "2, 4, 17, 19, 21, 38",
+        "draw_numbers_text": "8, 9, 12, 18, 19, 21",
         "match_count": 4,
         "matching_numbers": [
-          2,
-          4,
-          17,
-          38
+          8,
+          9,
+          12,
+          18
         ],
-        "matching_numbers_text": "2, 4, 17, 38",
+        "matching_numbers_text": "8, 9, 12, 18",
         "different_query_numbers": [
           33,
-          35
+          38
         ],
-        "different_query_numbers_text": "33, 35",
+        "different_query_numbers_text": "33, 38",
         "different_draw_numbers": [
           19,
           21
@@ -310,308 +376,237 @@
         "different_draw_numbers_text": "19, 21"
       },
       {
-        "event_index": 4873,
-        "year": 2000,
-        "draw_no": 63,
+        "event_index": 4350,
+        "year": 1998,
+        "draw_no": 94,
         "date": "",
         "draw_numbers": [
-          2,
-          4,
-          17,
-          30,
-          33,
-          45
+          8,
+          9,
+          18,
+          19,
+          23,
+          38
         ],
-        "draw_numbers_text": "2, 4, 17, 30, 33, 45",
+        "draw_numbers_text": "8, 9, 18, 19, 23, 38",
         "match_count": 4,
         "matching_numbers": [
-          2,
-          4,
-          17,
-          33
-        ],
-        "matching_numbers_text": "2, 4, 17, 33",
-        "different_query_numbers": [
-          35,
-          38
-        ],
-        "different_query_numbers_text": "35, 38",
-        "different_draw_numbers": [
-          30,
-          45
-        ],
-        "different_draw_numbers_text": "30, 45"
-      },
-      {
-        "event_index": 1963,
-        "year": 1979,
-        "draw_no": 606,
-        "date": "",
-        "draw_numbers": [
-          2,
-          3,
-          17,
-          33,
-          35,
-          47
-        ],
-        "draw_numbers_text": "2, 3, 17, 33, 35, 47",
-        "match_count": 4,
-        "matching_numbers": [
-          2,
-          17,
-          33,
-          35
-        ],
-        "matching_numbers_text": "2, 17, 33, 35",
-        "different_query_numbers": [
-          4,
-          38
-        ],
-        "different_query_numbers_text": "4, 38",
-        "different_draw_numbers": [
-          3,
-          47
-        ],
-        "different_draw_numbers_text": "3, 47"
-      },
-      {
-        "event_index": 10016,
-        "year": 2026,
-        "draw_no": 6,
-        "date": "2026-01-25",
-        "draw_numbers": [
-          4,
-          17,
-          20,
-          31,
-          33,
-          44
-        ],
-        "draw_numbers_text": "4, 17, 20, 31, 33, 44",
-        "match_count": 3,
-        "matching_numbers": [
-          4,
-          17,
-          33
-        ],
-        "matching_numbers_text": "4, 17, 33",
-        "different_query_numbers": [
-          2,
-          35,
-          38
-        ],
-        "different_query_numbers_text": "2, 35, 38",
-        "different_draw_numbers": [
-          20,
-          31,
-          44
-        ],
-        "different_draw_numbers_text": "20, 31, 44"
-      },
-      {
-        "event_index": 9987,
-        "year": 2025,
-        "draw_no": 83,
-        "date": "",
-        "draw_numbers": [
-          13,
-          17,
-          23,
-          33,
-          34,
-          38
-        ],
-        "draw_numbers_text": "13, 17, 23, 33, 34, 38",
-        "match_count": 3,
-        "matching_numbers": [
-          17,
-          33,
-          38
-        ],
-        "matching_numbers_text": "17, 33, 38",
-        "different_query_numbers": [
-          2,
-          4,
-          35
-        ],
-        "different_query_numbers_text": "2, 4, 35",
-        "different_draw_numbers": [
-          13,
-          23,
-          34
-        ],
-        "different_draw_numbers_text": "13, 23, 34"
-      },
-      {
-        "event_index": 9953,
-        "year": 2025,
-        "draw_no": 49,
-        "date": "",
-        "draw_numbers": [
-          2,
-          4,
-          13,
-          17,
-          27,
-          43
-        ],
-        "draw_numbers_text": "2, 4, 13, 17, 27, 43",
-        "match_count": 3,
-        "matching_numbers": [
-          2,
-          4,
-          17
-        ],
-        "matching_numbers_text": "2, 4, 17",
-        "different_query_numbers": [
-          33,
-          35,
-          38
-        ],
-        "different_query_numbers_text": "33, 35, 38",
-        "different_draw_numbers": [
-          13,
-          27,
-          43
-        ],
-        "different_draw_numbers_text": "13, 27, 43"
-      },
-      {
-        "event_index": 9908,
-        "year": 2025,
-        "draw_no": 4,
-        "date": "",
-        "draw_numbers": [
-          2,
+          8,
+          9,
           18,
-          31,
-          33,
-          35,
-          47
-        ],
-        "draw_numbers_text": "2, 18, 31, 33, 35, 47",
-        "match_count": 3,
-        "matching_numbers": [
-          2,
-          33,
-          35
-        ],
-        "matching_numbers_text": "2, 33, 35",
-        "different_query_numbers": [
-          4,
-          17,
           38
         ],
-        "different_query_numbers_text": "4, 17, 38",
-        "different_draw_numbers": [
-          18,
-          31,
-          47
-        ],
-        "different_draw_numbers_text": "18, 31, 47"
-      },
-      {
-        "event_index": 9886,
-        "year": 2024,
-        "draw_no": 86,
-        "date": "",
-        "draw_numbers": [
-          11,
-          17,
-          18,
-          35,
-          38,
-          47
-        ],
-        "draw_numbers_text": "11, 17, 18, 35, 38, 47",
-        "match_count": 3,
-        "matching_numbers": [
-          17,
-          35,
-          38
-        ],
-        "matching_numbers_text": "17, 35, 38",
+        "matching_numbers_text": "8, 9, 18, 38",
         "different_query_numbers": [
-          2,
-          4,
+          12,
           33
         ],
-        "different_query_numbers_text": "2, 4, 33",
+        "different_query_numbers_text": "12, 33",
         "different_draw_numbers": [
-          11,
-          18,
-          47
-        ],
-        "different_draw_numbers_text": "11, 18, 47"
-      },
-      {
-        "event_index": 9839,
-        "year": 2024,
-        "draw_no": 39,
-        "date": "",
-        "draw_numbers": [
-          4,
-          10,
-          17,
-          23,
-          38,
-          48
-        ],
-        "draw_numbers_text": "4, 10, 17, 23, 38, 48",
-        "match_count": 3,
-        "matching_numbers": [
-          4,
-          17,
-          38
-        ],
-        "matching_numbers_text": "4, 17, 38",
-        "different_query_numbers": [
-          2,
-          33,
-          35
-        ],
-        "different_query_numbers_text": "2, 33, 35",
-        "different_draw_numbers": [
-          10,
-          23,
-          48
-        ],
-        "different_draw_numbers_text": "10, 23, 48"
-      },
-      {
-        "event_index": 9786,
-        "year": 2023,
-        "draw_no": 90,
-        "date": "",
-        "draw_numbers": [
-          1,
-          4,
-          6,
-          17,
-          23,
-          33
-        ],
-        "draw_numbers_text": "1, 4, 6, 17, 23, 33",
-        "match_count": 3,
-        "matching_numbers": [
-          4,
-          17,
-          33
-        ],
-        "matching_numbers_text": "4, 17, 33",
-        "different_query_numbers": [
-          2,
-          35,
-          38
-        ],
-        "different_query_numbers_text": "2, 35, 38",
-        "different_draw_numbers": [
-          1,
-          6,
+          19,
           23
         ],
-        "different_draw_numbers_text": "1, 6, 23"
+        "different_draw_numbers_text": "19, 23"
+      },
+      {
+        "event_index": 3555,
+        "year": 1994,
+        "draw_no": 20,
+        "date": "",
+        "draw_numbers": [
+          8,
+          9,
+          10,
+          18,
+          23,
+          33
+        ],
+        "draw_numbers_text": "8, 9, 10, 18, 23, 33",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          18,
+          33
+        ],
+        "matching_numbers_text": "8, 9, 18, 33",
+        "different_query_numbers": [
+          12,
+          38
+        ],
+        "different_query_numbers_text": "12, 38",
+        "different_draw_numbers": [
+          10,
+          23
+        ],
+        "different_draw_numbers_text": "10, 23"
+      },
+      {
+        "event_index": 1677,
+        "year": 1977,
+        "draw_no": 29,
+        "date": "",
+        "draw_numbers": [
+          8,
+          9,
+          18,
+          28,
+          33,
+          46
+        ],
+        "draw_numbers_text": "8, 9, 18, 28, 33, 46",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          18,
+          33
+        ],
+        "matching_numbers_text": "8, 9, 18, 33",
+        "different_query_numbers": [
+          12,
+          38
+        ],
+        "different_query_numbers_text": "12, 38",
+        "different_draw_numbers": [
+          28,
+          46
+        ],
+        "different_draw_numbers_text": "28, 46"
+      },
+      {
+        "event_index": 870,
+        "year": 1970,
+        "draw_no": 7,
+        "date": "",
+        "draw_numbers": [
+          1,
+          8,
+          9,
+          12,
+          20,
+          33
+        ],
+        "draw_numbers_text": "1, 8, 9, 12, 20, 33",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          12,
+          33
+        ],
+        "matching_numbers_text": "8, 9, 12, 33",
+        "different_query_numbers": [
+          18,
+          38
+        ],
+        "different_query_numbers_text": "18, 38",
+        "different_draw_numbers": [
+          1,
+          20
+        ],
+        "different_draw_numbers_text": "1, 20"
+      },
+      {
+        "event_index": 289,
+        "year": 1963,
+        "draw_no": 26,
+        "date": "",
+        "draw_numbers": [
+          8,
+          9,
+          12,
+          18,
+          24,
+          37
+        ],
+        "draw_numbers_text": "8, 9, 12, 18, 24, 37",
+        "match_count": 4,
+        "matching_numbers": [
+          8,
+          9,
+          12,
+          18
+        ],
+        "matching_numbers_text": "8, 9, 12, 18",
+        "different_query_numbers": [
+          33,
+          38
+        ],
+        "different_query_numbers_text": "33, 38",
+        "different_draw_numbers": [
+          24,
+          37
+        ],
+        "different_draw_numbers_text": "24, 37"
+      },
+      {
+        "event_index": 10050,
+        "year": 2026,
+        "draw_no": 40,
+        "date": "2026-05-24",
+        "draw_numbers": [
+          8,
+          9,
+          38,
+          43,
+          45,
+          46
+        ],
+        "draw_numbers_text": "8, 9, 38, 43, 45, 46",
+        "match_count": 3,
+        "matching_numbers": [
+          8,
+          9,
+          38
+        ],
+        "matching_numbers_text": "8, 9, 38",
+        "different_query_numbers": [
+          12,
+          18,
+          33
+        ],
+        "different_query_numbers_text": "12, 18, 33",
+        "different_draw_numbers": [
+          43,
+          45,
+          46
+        ],
+        "different_draw_numbers_text": "43, 45, 46"
+      },
+      {
+        "event_index": 10024,
+        "year": 2026,
+        "draw_no": 14,
+        "date": "2026-02-22",
+        "draw_numbers": [
+          9,
+          31,
+          33,
+          37,
+          38,
+          48
+        ],
+        "draw_numbers_text": "9, 31, 33, 37, 38, 48",
+        "match_count": 3,
+        "matching_numbers": [
+          9,
+          33,
+          38
+        ],
+        "matching_numbers_text": "9, 33, 38",
+        "different_query_numbers": [
+          8,
+          12,
+          18
+        ],
+        "different_query_numbers_text": "8, 12, 18",
+        "different_draw_numbers": [
+          31,
+          37,
+          48
+        ],
+        "different_draw_numbers_text": "31, 37, 48"
       }
     ],
     "warnings": [
@@ -624,11 +619,151 @@
   },
   "model_signal_summary": {
     "signal_count": 27,
-    "best_hit_count": 5,
-    "average_hit_count": 0.81,
-    "signals_with_3_or_more": 2,
-    "signals_with_4_or_more": 2,
+    "best_hit_count": 2,
+    "average_hit_count": 0.85,
+    "signals_with_3_or_more": 0,
+    "signals_with_4_or_more": 0,
     "best_signals": [
+      {
+        "source_key": "v41_sgd_number_classifier",
+        "source_bg": "v41 SGD класификатор",
+        "candidate_label": "sgd_number_classifier",
+        "candidate_numbers": [
+          2,
+          18,
+          23,
+          36,
+          37,
+          38
+        ],
+        "candidate_text": "2, 18, 23, 36, 37, 38",
+        "note_bg": "Сравнение с текущия v41 statistical output.",
+        "hit_count": 2,
+        "matching_numbers": [
+          18,
+          38
+        ],
+        "missing_numbers": [
+          2,
+          23,
+          36,
+          37
+        ],
+        "matching_numbers_text": "18, 38",
+        "missing_numbers_text": "2, 23, 36, 37"
+      },
+      {
+        "source_key": "v41_recency_250_baseline",
+        "source_bg": "v41 recent 250 baseline",
+        "candidate_label": "recency_250_baseline",
+        "candidate_numbers": [
+          2,
+          18,
+          22,
+          23,
+          37,
+          38
+        ],
+        "candidate_text": "2, 18, 22, 23, 37, 38",
+        "note_bg": "Сравнение с текущия v41 statistical output.",
+        "hit_count": 2,
+        "matching_numbers": [
+          18,
+          38
+        ],
+        "missing_numbers": [
+          2,
+          22,
+          23,
+          37
+        ],
+        "matching_numbers_text": "18, 38",
+        "missing_numbers_text": "2, 22, 23, 37"
+      },
+      {
+        "source_key": "v43_1_overdue_watchlist_numbers",
+        "source_bg": "v43.1 интервален ритъм — закъснели числа",
+        "candidate_label": "overdue_watchlist_numbers",
+        "candidate_numbers": [
+          12,
+          18,
+          21,
+          25,
+          34,
+          41
+        ],
+        "candidate_text": "12, 18, 21, 25, 34, 41",
+        "note_bg": "Ритъм/интервален контекст, не прогноза.",
+        "hit_count": 2,
+        "matching_numbers": [
+          12,
+          18
+        ],
+        "missing_numbers": [
+          21,
+          25,
+          34,
+          41
+        ],
+        "matching_numbers_text": "12, 18",
+        "missing_numbers_text": "21, 25, 34, 41"
+      },
+      {
+        "source_key": "v43_1_next_window_numbers",
+        "source_bg": "v43.1 интервален ритъм — следващ прозорец",
+        "candidate_label": "next_window_numbers",
+        "candidate_numbers": [
+          12,
+          18,
+          21,
+          25,
+          31,
+          41
+        ],
+        "candidate_text": "12, 18, 21, 25, 31, 41",
+        "note_bg": "Ритъм/интервален контекст, не прогноза.",
+        "hit_count": 2,
+        "matching_numbers": [
+          12,
+          18
+        ],
+        "missing_numbers": [
+          21,
+          25,
+          31,
+          41
+        ],
+        "matching_numbers_text": "12, 18",
+        "missing_numbers_text": "21, 25, 31, 41"
+      },
+      {
+        "source_key": "v43_1_final_refined_rhythm_numbers",
+        "source_bg": "v43.1 интервален ритъм — финален ритъм",
+        "candidate_label": "final_refined_rhythm_numbers",
+        "candidate_numbers": [
+          12,
+          18,
+          21,
+          25,
+          31,
+          41
+        ],
+        "candidate_text": "12, 18, 21, 25, 31, 41",
+        "note_bg": "Ритъм/интервален контекст, не прогноза.",
+        "hit_count": 2,
+        "matching_numbers": [
+          12,
+          18
+        ],
+        "missing_numbers": [
+          21,
+          25,
+          31,
+          41
+        ],
+        "matching_numbers_text": "12, 18",
+        "missing_numbers_text": "21, 25, 31, 41"
+      },
       {
         "source_key": "v44_1_combined_positive_negative",
         "source_bg": "v44.1 финален ансамбъл",
@@ -643,106 +778,106 @@
         ],
         "candidate_text": "2, 4, 17, 33, 38, 42",
         "note_bg": "Финален ensemble ticket candidate.",
-        "hit_count": 5,
+        "hit_count": 2,
         "matching_numbers": [
-          2,
-          4,
-          17,
           33,
           38
         ],
         "missing_numbers": [
+          2,
+          4,
+          17,
           42
         ],
-        "matching_numbers_text": "2, 4, 17, 33, 38",
-        "missing_numbers_text": "42"
+        "matching_numbers_text": "33, 38",
+        "missing_numbers_text": "2, 4, 17, 42"
+      },
+      {
+        "source_key": "v44_1_final_consensus",
+        "source_bg": "v44.1 финален ансамбъл",
+        "candidate_label": "final_consensus",
+        "candidate_numbers": [
+          12,
+          18,
+          21,
+          23,
+          36,
+          37
+        ],
+        "candidate_text": "12, 18, 21, 23, 36, 37",
+        "note_bg": "Финален ensemble ticket candidate.",
+        "hit_count": 2,
+        "matching_numbers": [
+          12,
+          18
+        ],
+        "missing_numbers": [
+          21,
+          23,
+          36,
+          37
+        ],
+        "matching_numbers_text": "12, 18",
+        "missing_numbers_text": "21, 23, 36, 37"
+      },
+      {
+        "source_key": "v60_sample_5",
+        "source_bg": "v60 export sample",
+        "candidate_label": "ticket_5",
+        "candidate_numbers": [
+          8,
+          9,
+          21,
+          26,
+          37,
+          45
+        ],
+        "candidate_text": "8, 9, 21, 26, 37, 45",
+        "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+        "hit_count": 2,
+        "matching_numbers": [
+          8,
+          9
+        ],
+        "missing_numbers": [
+          21,
+          26,
+          37,
+          45
+        ],
+        "matching_numbers_text": "8, 9",
+        "missing_numbers_text": "21, 26, 37, 45"
       }
     ]
   },
   "model_signal_hits": [
-    {
-      "source_key": "v44_1_combined_positive_negative",
-      "source_bg": "v44.1 финален ансамбъл",
-      "candidate_label": "combined_positive_negative",
-      "candidate_numbers": [
-        2,
-        4,
-        17,
-        33,
-        38,
-        42
-      ],
-      "candidate_text": "2, 4, 17, 33, 38, 42",
-      "note_bg": "Финален ensemble ticket candidate.",
-      "hit_count": 5,
-      "matching_numbers": [
-        2,
-        4,
-        17,
-        33,
-        38
-      ],
-      "missing_numbers": [
-        42
-      ],
-      "matching_numbers_text": "2, 4, 17, 33, 38",
-      "missing_numbers_text": "42"
-    },
-    {
-      "source_key": "v42_combined",
-      "source_bg": "v42 комбиниран позитивен/негативен анализ",
-      "candidate_label": "combined_numbers",
-      "candidate_numbers": [
-        2,
-        4,
-        17,
-        37,
-        38,
-        42
-      ],
-      "candidate_text": "2, 4, 17, 37, 38, 42",
-      "note_bg": "Обединен номерен сигнал от v42.",
-      "hit_count": 4,
-      "matching_numbers": [
-        2,
-        4,
-        17,
-        38
-      ],
-      "missing_numbers": [
-        37,
-        42
-      ],
-      "matching_numbers_text": "2, 4, 17, 38",
-      "missing_numbers_text": "37, 42"
-    },
     {
       "source_key": "v41_sgd_number_classifier",
       "source_bg": "v41 SGD класификатор",
       "candidate_label": "sgd_number_classifier",
       "candidate_numbers": [
         2,
+        18,
         23,
         36,
         37,
-        38,
-        42
+        38
       ],
-      "candidate_text": "2, 23, 36, 37, 38, 42",
+      "candidate_text": "2, 18, 23, 36, 37, 38",
       "note_bg": "Сравнение с текущия v41 statistical output.",
       "hit_count": 2,
       "matching_numbers": [
-        2,
+        18,
         38
       ],
       "missing_numbers": [
+        2,
         23,
         36,
-        37,
-        42
+        37
       ],
-      "matching_numbers_text": "2, 38",
-      "missing_numbers_text": "23, 36, 37, 42"
+      "matching_numbers_text": "18, 38",
+      "missing_numbers_text": "2, 23, 36, 37"
     },
     {
       "source_key": "v41_recency_250_baseline",
@@ -760,185 +895,269 @@
       "note_bg": "Сравнение с текущия v41 statistical output.",
       "hit_count": 2,
       "matching_numbers": [
-        2,
+        18,
         38
       ],
       "missing_numbers": [
-        18,
+        2,
         22,
         23,
         37
       ],
-      "matching_numbers_text": "2, 38",
-      "missing_numbers_text": "18, 22, 23, 37"
+      "matching_numbers_text": "18, 38",
+      "missing_numbers_text": "2, 22, 23, 37"
     },
     {
-      "source_key": "v59_sample_1",
-      "source_bg": "v59 Интелигентен генератор 2 sample",
-      "candidate_label": "ticket_1",
+      "source_key": "v43_1_overdue_watchlist_numbers",
+      "source_bg": "v43.1 интервален ритъм — закъснели числа",
+      "candidate_label": "overdue_watchlist_numbers",
+      "candidate_numbers": [
+        12,
+        18,
+        21,
+        25,
+        34,
+        41
+      ],
+      "candidate_text": "12, 18, 21, 25, 34, 41",
+      "note_bg": "Ритъм/интервален контекст, не прогноза.",
+      "hit_count": 2,
+      "matching_numbers": [
+        12,
+        18
+      ],
+      "missing_numbers": [
+        21,
+        25,
+        34,
+        41
+      ],
+      "matching_numbers_text": "12, 18",
+      "missing_numbers_text": "21, 25, 34, 41"
+    },
+    {
+      "source_key": "v43_1_next_window_numbers",
+      "source_bg": "v43.1 интервален ритъм — следващ прозорец",
+      "candidate_label": "next_window_numbers",
+      "candidate_numbers": [
+        12,
+        18,
+        21,
+        25,
+        31,
+        41
+      ],
+      "candidate_text": "12, 18, 21, 25, 31, 41",
+      "note_bg": "Ритъм/интервален контекст, не прогноза.",
+      "hit_count": 2,
+      "matching_numbers": [
+        12,
+        18
+      ],
+      "missing_numbers": [
+        21,
+        25,
+        31,
+        41
+      ],
+      "matching_numbers_text": "12, 18",
+      "missing_numbers_text": "21, 25, 31, 41"
+    },
+    {
+      "source_key": "v43_1_final_refined_rhythm_numbers",
+      "source_bg": "v43.1 интервален ритъм — финален ритъм",
+      "candidate_label": "final_refined_rhythm_numbers",
+      "candidate_numbers": [
+        12,
+        18,
+        21,
+        25,
+        31,
+        41
+      ],
+      "candidate_text": "12, 18, 21, 25, 31, 41",
+      "note_bg": "Ритъм/интервален контекст, не прогноза.",
+      "hit_count": 2,
+      "matching_numbers": [
+        12,
+        18
+      ],
+      "missing_numbers": [
+        21,
+        25,
+        31,
+        41
+      ],
+      "matching_numbers_text": "12, 18",
+      "missing_numbers_text": "21, 25, 31, 41"
+    },
+    {
+      "source_key": "v44_1_combined_positive_negative",
+      "source_bg": "v44.1 финален ансамбъл",
+      "candidate_label": "combined_positive_negative",
       "candidate_numbers": [
         2,
+        4,
         17,
-        24,
-        31,
-        34,
+        33,
+        38,
+        42
+      ],
+      "candidate_text": "2, 4, 17, 33, 38, 42",
+      "note_bg": "Финален ensemble ticket candidate.",
+      "hit_count": 2,
+      "matching_numbers": [
+        33,
+        38
+      ],
+      "missing_numbers": [
+        2,
+        4,
+        17,
+        42
+      ],
+      "matching_numbers_text": "33, 38",
+      "missing_numbers_text": "2, 4, 17, 42"
+    },
+    {
+      "source_key": "v44_1_final_consensus",
+      "source_bg": "v44.1 финален ансамбъл",
+      "candidate_label": "final_consensus",
+      "candidate_numbers": [
+        12,
+        18,
+        21,
+        23,
+        36,
         37
       ],
-      "candidate_text": "2, 17, 24, 31, 34, 37",
+      "candidate_text": "12, 18, 21, 23, 36, 37",
+      "note_bg": "Финален ensemble ticket candidate.",
+      "hit_count": 2,
+      "matching_numbers": [
+        12,
+        18
+      ],
+      "missing_numbers": [
+        21,
+        23,
+        36,
+        37
+      ],
+      "matching_numbers_text": "12, 18",
+      "missing_numbers_text": "21, 23, 36, 37"
+    },
+    {
+      "source_key": "v60_sample_5",
+      "source_bg": "v60 export sample",
+      "candidate_label": "ticket_5",
+      "candidate_numbers": [
+        8,
+        9,
+        21,
+        26,
+        37,
+        45
+      ],
+      "candidate_text": "8, 9, 21, 26, 37, 45",
       "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
       "hit_count": 2,
       "matching_numbers": [
-        2,
-        17
+        8,
+        9
       ],
       "missing_numbers": [
-        24,
+        21,
+        26,
+        37,
+        45
+      ],
+      "matching_numbers_text": "8, 9",
+      "missing_numbers_text": "21, 26, 37, 45"
+    },
+    {
+      "source_key": "v42_combined",
+      "source_bg": "v42 комбиниран позитивен/негативен анализ",
+      "candidate_label": "combined_numbers",
+      "candidate_numbers": [
+        2,
+        4,
+        17,
+        37,
+        38,
+        42
+      ],
+      "candidate_text": "2, 4, 17, 37, 38, 42",
+      "note_bg": "Обединен номерен сигнал от v42.",
+      "hit_count": 1,
+      "matching_numbers": [
+        38
+      ],
+      "missing_numbers": [
+        2,
+        4,
+        17,
+        37,
+        42
+      ],
+      "matching_numbers_text": "38",
+      "missing_numbers_text": "2, 4, 17, 37, 42"
+    },
+    {
+      "source_key": "v43_1_balanced_rhythm_numbers",
+      "source_bg": "v43.1 интервален ритъм — балансиран ритъм",
+      "candidate_label": "balanced_rhythm_numbers",
+      "candidate_numbers": [
+        9,
+        10,
+        30,
+        39,
+        43,
+        49
+      ],
+      "candidate_text": "9, 10, 30, 39, 43, 49",
+      "note_bg": "Ритъм/интервален контекст, не прогноза.",
+      "hit_count": 1,
+      "matching_numbers": [
+        9
+      ],
+      "missing_numbers": [
+        10,
+        30,
+        39,
+        43,
+        49
+      ],
+      "matching_numbers_text": "9",
+      "missing_numbers_text": "10, 30, 39, 43, 49"
+    },
+    {
+      "source_key": "v44_1_interval_rhythm_next_window",
+      "source_bg": "v44.1 финален ансамбъл",
+      "candidate_label": "interval_rhythm_next_window",
+      "candidate_numbers": [
+        12,
+        20,
+        25,
         31,
         34,
-        37
+        41
       ],
-      "matching_numbers_text": "2, 17",
-      "missing_numbers_text": "24, 31, 34, 37"
-    },
-    {
-      "source_key": "v41_frequency_baseline",
-      "source_bg": "v41 честотен baseline",
-      "candidate_label": "frequency_baseline",
-      "candidate_numbers": [
-        4,
-        11,
-        21,
+      "candidate_text": "12, 20, 25, 31, 34, 41",
+      "note_bg": "Финален ensemble ticket candidate.",
+      "hit_count": 1,
+      "matching_numbers": [
+        12
+      ],
+      "missing_numbers": [
+        20,
+        25,
+        31,
         34,
-        37,
-        44
+        41
       ],
-      "candidate_text": "4, 11, 21, 34, 37, 44",
-      "note_bg": "Сравнение с текущия v41 statistical output.",
-      "hit_count": 1,
-      "matching_numbers": [
-        4
-      ],
-      "missing_numbers": [
-        11,
-        21,
-        34,
-        37,
-        44
-      ],
-      "matching_numbers_text": "4",
-      "missing_numbers_text": "11, 21, 34, 37, 44"
-    },
-    {
-      "source_key": "v45_primary",
-      "source_bg": "v45 Prediction Engine Pro — primary",
-      "candidate_label": "primary_numbers",
-      "candidate_numbers": [
-        11,
-        17,
-        22,
-        43,
-        44,
-        48
-      ],
-      "candidate_text": "11, 17, 22, 43, 44, 48",
-      "note_bg": "Primary statistical candidate от v45.",
-      "hit_count": 1,
-      "matching_numbers": [
-        17
-      ],
-      "missing_numbers": [
-        11,
-        22,
-        43,
-        44,
-        48
-      ],
-      "matching_numbers_text": "17",
-      "missing_numbers_text": "11, 22, 43, 44, 48"
-    },
-    {
-      "source_key": "v45_ticket_2",
-      "source_bg": "v45 Prediction Engine Pro — ticket",
-      "candidate_label": "coverage_low_overlap",
-      "candidate_numbers": [
-        6,
-        17,
-        29,
-        37,
-        48,
-        49
-      ],
-      "candidate_text": "6, 17, 29, 37, 48, 49",
-      "note_bg": "Ticket candidate от v45.",
-      "hit_count": 1,
-      "matching_numbers": [
-        17
-      ],
-      "missing_numbers": [
-        6,
-        29,
-        37,
-        48,
-        49
-      ],
-      "matching_numbers_text": "17",
-      "missing_numbers_text": "6, 29, 37, 48, 49"
-    },
-    {
-      "source_key": "v45_ticket_4",
-      "source_bg": "v45 Prediction Engine Pro — ticket",
-      "candidate_label": "historical_signal_alternative",
-      "candidate_numbers": [
-        6,
-        11,
-        35,
-        42,
-        44,
-        49
-      ],
-      "candidate_text": "6, 11, 35, 42, 44, 49",
-      "note_bg": "Ticket candidate от v45.",
-      "hit_count": 1,
-      "matching_numbers": [
-        35
-      ],
-      "missing_numbers": [
-        6,
-        11,
-        42,
-        44,
-        49
-      ],
-      "matching_numbers_text": "35",
-      "missing_numbers_text": "6, 11, 42, 44, 49"
-    },
-    {
-      "source_key": "v45_ticket_1",
-      "source_bg": "v45 Prediction Engine Pro — ticket",
-      "candidate_label": "primary_rule_aware_ml_ensemble",
-      "candidate_numbers": [
-        11,
-        17,
-        22,
-        43,
-        44,
-        48
-      ],
-      "candidate_text": "11, 17, 22, 43, 44, 48",
-      "note_bg": "Ticket candidate от v45.",
-      "hit_count": 1,
-      "matching_numbers": [
-        17
-      ],
-      "missing_numbers": [
-        11,
-        22,
-        43,
-        44,
-        48
-      ],
-      "matching_numbers_text": "17",
-      "missing_numbers_text": "11, 22, 43, 44, 48"
+      "matching_numbers_text": "12",
+      "missing_numbers_text": "20, 25, 31, 34, 41"
     },
     {
       "source_key": "v59_sample_3",
@@ -956,153 +1175,128 @@
       "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
       "hit_count": 1,
       "matching_numbers": [
-        35
+        8
       ],
       "missing_numbers": [
-        8,
         22,
         24,
         34,
+        35,
         43
       ],
-      "matching_numbers_text": "35",
-      "missing_numbers_text": "8, 22, 24, 34, 43"
+      "matching_numbers_text": "8",
+      "missing_numbers_text": "22, 24, 34, 35, 43"
     },
     {
-      "source_key": "v60_sample_3",
-      "source_bg": "v60 export sample",
-      "candidate_label": "ticket_3",
+      "source_key": "v59_sample_4",
+      "source_bg": "v59 Интелигентен генератор 2 sample",
+      "candidate_label": "ticket_4",
       "candidate_numbers": [
-        1,
-        14,
-        17,
-        24,
-        36,
-        43
+        16,
+        18,
+        21,
+        30,
+        45,
+        47
       ],
-      "candidate_text": "1, 14, 17, 24, 36, 43",
+      "candidate_text": "16, 18, 21, 30, 45, 47",
       "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
       "hit_count": 1,
       "matching_numbers": [
-        17
+        18
       ],
       "missing_numbers": [
-        1,
-        14,
-        24,
-        36,
+        16,
+        21,
+        30,
+        45,
+        47
+      ],
+      "matching_numbers_text": "18",
+      "missing_numbers_text": "16, 21, 30, 45, 47"
+    },
+    {
+      "source_key": "v60_sample_1",
+      "source_bg": "v60 export sample",
+      "candidate_label": "ticket_1",
+      "candidate_numbers": [
+        13,
+        18,
+        20,
+        28,
+        34,
         43
       ],
-      "matching_numbers_text": "17",
-      "missing_numbers_text": "1, 14, 24, 36, 43"
+      "candidate_text": "13, 18, 20, 28, 34, 43",
+      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "hit_count": 1,
+      "matching_numbers": [
+        18
+      ],
+      "missing_numbers": [
+        13,
+        20,
+        28,
+        34,
+        43
+      ],
+      "matching_numbers_text": "18",
+      "missing_numbers_text": "13, 20, 28, 34, 43"
     },
     {
-      "source_key": "v43_1_balanced_rhythm_numbers",
-      "source_bg": "v43.1 интервален ритъм — балансиран ритъм",
-      "candidate_label": "balanced_rhythm_numbers",
+      "source_key": "v60_sample_2",
+      "source_bg": "v60 export sample",
+      "candidate_label": "ticket_2",
       "candidate_numbers": [
-        9,
-        10,
-        30,
-        39,
-        43,
+        11,
+        18,
+        22,
+        31,
+        40,
         49
       ],
-      "candidate_text": "9, 10, 30, 39, 43, 49",
-      "note_bg": "Ритъм/интервален контекст, не прогноза.",
-      "hit_count": 0,
-      "matching_numbers": [],
+      "candidate_text": "11, 18, 22, 31, 40, 49",
+      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "hit_count": 1,
+      "matching_numbers": [
+        18
+      ],
       "missing_numbers": [
-        9,
-        10,
-        30,
-        39,
-        43,
+        11,
+        22,
+        31,
+        40,
         49
       ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "9, 10, 30, 39, 43, 49"
+      "matching_numbers_text": "18",
+      "missing_numbers_text": "11, 22, 31, 40, 49"
     },
     {
-      "source_key": "v43_1_overdue_watchlist_numbers",
-      "source_bg": "v43.1 интервален ритъм — закъснели числа",
-      "candidate_label": "overdue_watchlist_numbers",
+      "source_key": "v41_frequency_baseline",
+      "source_bg": "v41 честотен baseline",
+      "candidate_label": "frequency_baseline",
       "candidate_numbers": [
-        12,
-        18,
+        4,
+        11,
         21,
-        25,
         34,
-        41
+        37,
+        44
       ],
-      "candidate_text": "12, 18, 21, 25, 34, 41",
-      "note_bg": "Ритъм/интервален контекст, не прогноза.",
+      "candidate_text": "4, 11, 21, 34, 37, 44",
+      "note_bg": "Сравнение с текущия v41 statistical output.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
-        12,
-        18,
+        4,
+        11,
         21,
-        25,
         34,
-        41
+        37,
+        44
       ],
       "matching_numbers_text": "",
-      "missing_numbers_text": "12, 18, 21, 25, 34, 41"
-    },
-    {
-      "source_key": "v43_1_next_window_numbers",
-      "source_bg": "v43.1 интервален ритъм — следващ прозорец",
-      "candidate_label": "next_window_numbers",
-      "candidate_numbers": [
-        12,
-        18,
-        21,
-        25,
-        31,
-        41
-      ],
-      "candidate_text": "12, 18, 21, 25, 31, 41",
-      "note_bg": "Ритъм/интервален контекст, не прогноза.",
-      "hit_count": 0,
-      "matching_numbers": [],
-      "missing_numbers": [
-        12,
-        18,
-        21,
-        25,
-        31,
-        41
-      ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "12, 18, 21, 25, 31, 41"
-    },
-    {
-      "source_key": "v43_1_final_refined_rhythm_numbers",
-      "source_bg": "v43.1 интервален ритъм — финален ритъм",
-      "candidate_label": "final_refined_rhythm_numbers",
-      "candidate_numbers": [
-        12,
-        18,
-        21,
-        25,
-        31,
-        41
-      ],
-      "candidate_text": "12, 18, 21, 25, 31, 41",
-      "note_bg": "Ритъм/интервален контекст, не прогноза.",
-      "hit_count": 0,
-      "matching_numbers": [],
-      "missing_numbers": [
-        12,
-        18,
-        21,
-        25,
-        31,
-        41
-      ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "12, 18, 21, 25, 31, 41"
+      "missing_numbers_text": "4, 11, 21, 34, 37, 44"
     },
     {
       "source_key": "v44_1_coverage_diversified",
@@ -1132,58 +1326,112 @@
       "missing_numbers_text": "16, 24, 30, 37, 43, 49"
     },
     {
-      "source_key": "v44_1_final_consensus",
-      "source_bg": "v44.1 финален ансамбъл",
-      "candidate_label": "final_consensus",
+      "source_key": "v45_primary",
+      "source_bg": "v45 Prediction Engine Pro — primary",
+      "candidate_label": "primary_numbers",
       "candidate_numbers": [
-        12,
-        18,
-        21,
-        23,
-        36,
-        37
+        11,
+        17,
+        22,
+        43,
+        44,
+        48
       ],
-      "candidate_text": "12, 18, 21, 23, 36, 37",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "candidate_text": "11, 17, 22, 43, 44, 48",
+      "note_bg": "Primary statistical candidate от v45.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
-        12,
-        18,
-        21,
-        23,
-        36,
-        37
+        11,
+        17,
+        22,
+        43,
+        44,
+        48
       ],
       "matching_numbers_text": "",
-      "missing_numbers_text": "12, 18, 21, 23, 36, 37"
+      "missing_numbers_text": "11, 17, 22, 43, 44, 48"
     },
     {
-      "source_key": "v44_1_interval_rhythm_next_window",
-      "source_bg": "v44.1 финален ансамбъл",
-      "candidate_label": "interval_rhythm_next_window",
+      "source_key": "v45_ticket_2",
+      "source_bg": "v45 Prediction Engine Pro — ticket",
+      "candidate_label": "coverage_low_overlap",
       "candidate_numbers": [
-        12,
-        20,
-        25,
-        31,
-        34,
-        41
+        6,
+        17,
+        29,
+        37,
+        48,
+        49
       ],
-      "candidate_text": "12, 20, 25, 31, 34, 41",
-      "note_bg": "Финален ensemble ticket candidate.",
+      "candidate_text": "6, 17, 29, 37, 48, 49",
+      "note_bg": "Ticket candidate от v45.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
-        12,
-        20,
-        25,
-        31,
-        34,
-        41
+        6,
+        17,
+        29,
+        37,
+        48,
+        49
       ],
       "matching_numbers_text": "",
-      "missing_numbers_text": "12, 20, 25, 31, 34, 41"
+      "missing_numbers_text": "6, 17, 29, 37, 48, 49"
+    },
+    {
+      "source_key": "v45_ticket_4",
+      "source_bg": "v45 Prediction Engine Pro — ticket",
+      "candidate_label": "historical_signal_alternative",
+      "candidate_numbers": [
+        6,
+        11,
+        35,
+        42,
+        44,
+        49
+      ],
+      "candidate_text": "6, 11, 35, 42, 44, 49",
+      "note_bg": "Ticket candidate от v45.",
+      "hit_count": 0,
+      "matching_numbers": [],
+      "missing_numbers": [
+        6,
+        11,
+        35,
+        42,
+        44,
+        49
+      ],
+      "matching_numbers_text": "",
+      "missing_numbers_text": "6, 11, 35, 42, 44, 49"
+    },
+    {
+      "source_key": "v45_ticket_1",
+      "source_bg": "v45 Prediction Engine Pro — ticket",
+      "candidate_label": "primary_rule_aware_ml_ensemble",
+      "candidate_numbers": [
+        11,
+        17,
+        22,
+        43,
+        44,
+        48
+      ],
+      "candidate_text": "11, 17, 22, 43, 44, 48",
+      "note_bg": "Ticket candidate от v45.",
+      "hit_count": 0,
+      "matching_numbers": [],
+      "missing_numbers": [
+        11,
+        17,
+        22,
+        43,
+        44,
+        48
+      ],
+      "matching_numbers_text": "",
+      "missing_numbers_text": "11, 17, 22, 43, 44, 48"
     },
     {
       "source_key": "v45_ticket_3",
@@ -1213,6 +1461,33 @@
       "missing_numbers_text": "6, 22, 29, 42, 43, 46"
     },
     {
+      "source_key": "v59_sample_1",
+      "source_bg": "v59 Интелигентен генератор 2 sample",
+      "candidate_label": "ticket_1",
+      "candidate_numbers": [
+        2,
+        17,
+        24,
+        31,
+        34,
+        37
+      ],
+      "candidate_text": "2, 17, 24, 31, 34, 37",
+      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
+      "hit_count": 0,
+      "matching_numbers": [],
+      "missing_numbers": [
+        2,
+        17,
+        24,
+        31,
+        34,
+        37
+      ],
+      "matching_numbers_text": "",
+      "missing_numbers_text": "2, 17, 24, 31, 34, 37"
+    },
+    {
       "source_key": "v59_sample_2",
       "source_bg": "v59 Интелигентен генератор 2 sample",
       "candidate_label": "ticket_2",
@@ -1238,33 +1513,6 @@
       ],
       "matching_numbers_text": "",
       "missing_numbers_text": "10, 13, 20, 26, 37, 49"
-    },
-    {
-      "source_key": "v59_sample_4",
-      "source_bg": "v59 Интелигентен генератор 2 sample",
-      "candidate_label": "ticket_4",
-      "candidate_numbers": [
-        16,
-        18,
-        21,
-        30,
-        45,
-        47
-      ],
-      "candidate_text": "16, 18, 21, 30, 45, 47",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
-      "hit_count": 0,
-      "matching_numbers": [],
-      "missing_numbers": [
-        16,
-        18,
-        21,
-        30,
-        45,
-        47
-      ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "16, 18, 21, 30, 45, 47"
     },
     {
       "source_key": "v59_sample_5",
@@ -1294,58 +1542,31 @@
       "missing_numbers_text": "1, 16, 21, 42, 43, 48"
     },
     {
-      "source_key": "v60_sample_1",
+      "source_key": "v60_sample_3",
       "source_bg": "v60 export sample",
-      "candidate_label": "ticket_1",
+      "candidate_label": "ticket_3",
       "candidate_numbers": [
-        13,
-        18,
-        20,
-        28,
-        34,
+        1,
+        14,
+        17,
+        24,
+        36,
         43
       ],
-      "candidate_text": "13, 18, 20, 28, 34, 43",
+      "candidate_text": "1, 14, 17, 24, 36, 43",
       "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
       "hit_count": 0,
       "matching_numbers": [],
       "missing_numbers": [
-        13,
-        18,
-        20,
-        28,
-        34,
+        1,
+        14,
+        17,
+        24,
+        36,
         43
       ],
       "matching_numbers_text": "",
-      "missing_numbers_text": "13, 18, 20, 28, 34, 43"
-    },
-    {
-      "source_key": "v60_sample_2",
-      "source_bg": "v60 export sample",
-      "candidate_label": "ticket_2",
-      "candidate_numbers": [
-        11,
-        18,
-        22,
-        31,
-        40,
-        49
-      ],
-      "candidate_text": "11, 18, 22, 31, 40, 49",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
-      "hit_count": 0,
-      "matching_numbers": [],
-      "missing_numbers": [
-        11,
-        18,
-        22,
-        31,
-        40,
-        49
-      ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "11, 18, 22, 31, 40, 49"
+      "missing_numbers_text": "1, 14, 17, 24, 36, 43"
     },
     {
       "source_key": "v60_sample_4",
@@ -1373,33 +1594,6 @@
       ],
       "matching_numbers_text": "",
       "missing_numbers_text": "5, 22, 24, 30, 37, 46"
-    },
-    {
-      "source_key": "v60_sample_5",
-      "source_bg": "v60 export sample",
-      "candidate_label": "ticket_5",
-      "candidate_numbers": [
-        8,
-        9,
-        21,
-        26,
-        37,
-        45
-      ],
-      "candidate_text": "8, 9, 21, 26, 37, 45",
-      "note_bg": "Sample generated ticket, използва се само за post-draw overlap context.",
-      "hit_count": 0,
-      "matching_numbers": [],
-      "missing_numbers": [
-        8,
-        9,
-        21,
-        26,
-        37,
-        45
-      ],
-      "matching_numbers_text": "",
-      "missing_numbers_text": "8, 9, 21, 26, 37, 45"
     }
   ],
   "pair_group_context": {
@@ -1410,9 +1604,9 @@
     "watch_pair_hits": []
   },
   "diagnostic_summary_bg": [
-    "Последният тираж има Отличен баланс със сума 129, 3 нечетни и 3 четни числа.",
+    "Последният тираж има Добър баланс със сума 118, 2 нечетни и 4 четни числа.",
     "Класификацията на числата показва 0 горещи, 0 студени, 0 стабилни и 0 overdue/закъснели сигнала.",
-    "Най-близкият текущ модел/артефакт има 5 от 6 съвпадения, а средното съвпадение между проверените сигнали е 0.81 числа.",
+    "Най-близкият текущ модел/артефакт има 2 от 6 съвпадения, а средното съвпадение между проверените сигнали е 0.85 числа.",
     "Историческата близост спрямо предишните тиражи достига максимум 4 от 6 съвпадения.",
     "Това е post-draw диагностичен анализ. Той не доказва предсказателна сила и не гарантира бъдеща печалба."
   ],

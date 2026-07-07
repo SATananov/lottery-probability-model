@@ -1,6 +1,6 @@
-# Step 117.1 — Add Draw Ticket Pack Price Sync
+# Синхронизация на готовия фиш пакет след нов тираж
 
-Hotfix слой: синхронизира визуалния Add Draw статус с реалния Step 117 пакет. Не променя числата и не обещава печалба.
+Hotfix слой: синхронизира визуалния Add Draw статус с реалния готов фиш пакет. Не променя числата и не обещава печалба.
 
 - Status: `ADD_DRAW_TICKET_PACK_PRICE_SYNC_READY`
 - Blocking failures: `0`

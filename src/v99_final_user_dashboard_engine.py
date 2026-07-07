@@ -140,9 +140,41 @@ def _load_dataset_snapshot() -> dict[str, Any]:
     }
 
 
-def _active_plan_from_sources(v94: dict[str, Any], v98: dict[str, Any]) -> dict[str, Any]:
-    plan98 = v98.get("active_plan", {}) if isinstance(v98.get("active_plan"), dict) else {}
+def _active_plan_from_sources(
+    v94: dict[str, Any],
+    v96: dict[str, Any],
+    v97: dict[str, Any],
+    v98: dict[str, Any],
+) -> dict[str, Any]:
     plan94 = v94.get("active_plan", {}) if isinstance(v94.get("active_plan"), dict) else {}
+    plan98 = v98.get("active_plan", {}) if isinstance(v98.get("active_plan"), dict) else {}
+
+    v96_snapshot = v96.get("current_snapshot", {}) if isinstance(v96.get("current_snapshot"), dict) else {}
+    v97_state = v97.get("current_state", {}) if isinstance(v97.get("current_state"), dict) else {}
+    plan97 = v97_state.get("active_plan", {}) if isinstance(v97_state.get("active_plan"), dict) else {}
+
+    if plan97.get("plan_source") == "v117_real_ticket_pack_builder" or v96_snapshot.get("active_plan_snapshot_source") == "v117_real_ticket_pack_builder":
+        source = plan97 or {}
+        count = _as_int(source.get("combination_count") or v96_snapshot.get("active_plan_combinations"), 0)
+        cost = _as_float(source.get("cost_eur") or v96_snapshot.get("active_plan_cost_eur"), 0.0)
+        return {
+            "plan_id": source.get("plan_id") or plan94.get("plan_id", ""),
+            "status": "ACTIVE",
+            "strategy_type": source.get("strategy_type") or v96_snapshot.get("active_plan_type") or plan94.get("strategy_type", ""),
+            "strategy_label": "Готов фиш пакет · 3 фиша × 4 комбинации",
+            "combination_count": count,
+            "cost_eur": round(cost, 2),
+            "cost_text": f"{cost:.2f}",
+            "saved_after_draw_date": source.get("saved_after_draw_date") or ((plan94.get("saved_after_draw", {}) or {}).get("date", "")),
+            "saved_after_draw_numbers": source.get("saved_after_draw_numbers") or ((plan94.get("saved_after_draw", {}) or {}).get("numbers_text", "")),
+            "real_result_rows": _as_int(plan98.get("real_result_rows"), 0),
+            "next_status_bg": plan98.get("next_status_bg", ""),
+            "plan_source": "v117_real_ticket_pack_builder",
+            "ticket_count": _as_int(source.get("ticket_count"), 3),
+            "lines_per_ticket": _as_int(source.get("lines_per_ticket"), 4),
+            "combinations": plan94.get("combinations", []) or [],
+        }
+
     source = plan98 or plan94
     return {
         "plan_id": source.get("plan_id", ""),
@@ -156,6 +188,7 @@ def _active_plan_from_sources(v94: dict[str, Any], v98: dict[str, Any]) -> dict[
         "saved_after_draw_numbers": source.get("saved_after_draw_numbers") or ((plan94.get("saved_after_draw", {}) or {}).get("numbers_text", "")),
         "real_result_rows": _as_int(source.get("real_result_rows"), 0),
         "next_status_bg": source.get("next_status_bg", ""),
+        "plan_source": "v98_or_v94",
         "combinations": plan94.get("combinations", []) or [],
     }
 
@@ -269,7 +302,7 @@ def build_final_user_dashboard() -> dict[str, Any]:
     v97 = _read_json(V97_MODEL_PATH)
     v98 = _read_json(V98_MODEL_PATH)
 
-    active_plan = _active_plan_from_sources(v94, v98)
+    active_plan = _active_plan_from_sources(v94, v96, v97, v98)
     dataset = _load_dataset_snapshot()
     statuses = _statuses(v95, v96, v97, v98)
     next_action = _next_action(active_plan, statuses)
@@ -314,7 +347,7 @@ def build_final_user_dashboard() -> dict[str, Any]:
         "issues": issues,
         "warnings": warnings,
         "source_files": {
-            "active_plan": "models/v94/v94_active_budget_plan_tracker_model.json",
+            "active_plan": "models/v97/v97_real_draw_lifecycle_model.json + models/v96/v96_add_draw_controlled_flow_model.json",
             "step95": "models/v95/v95_active_plan_auto_evaluation_model.json",
             "step96": "models/v96/v96_add_draw_controlled_flow_model.json",
             "step97": "models/v97/v97_real_draw_lifecycle_model.json",

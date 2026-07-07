@@ -1,7 +1,7 @@
 {
   "step": "117",
-  "name": "Step 117 — Real Ticket Pack Builder",
-  "status": "REAL_TICKET_PACK_BUILDER_READY",
+  "name": "Готов фиш пакет за следващия тираж",
+  "status": "Пакетът е готов",
   "blocking_failures": 0,
   "ticket_count": 3,
   "lines_per_ticket": 4,
@@ -12,6 +12,21 @@
   "package_mode": "extended",
   "plan_id": "v94_active_20260623T163844Z0000",
   "strategy_type": "Хибрид",
+  "latest_dataset_draw": {
+    "date": "2026-07-02",
+    "draw_number": "51",
+    "drawing_position": "1",
+    "numbers": [
+      8,
+      9,
+      12,
+      18,
+      33,
+      38
+    ]
+  },
+  "latest_dataset_draw_date": "2026-07-02",
+  "next_target_draw_date": "2026-07-12",
   "cards": [
     {
       "ticket_no": 1,
@@ -105,14 +120,14 @@
       "source_note": "Този фиш е съставен само от редове, които се виждат във Финален план.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10060,
-        "latest_draw_date": "2026-06-28",
+        "dataset_rows": 10061,
+        "latest_draw_date": "2026-07-02",
         "latest_draw_numbers": [
-          2,
-          4,
-          17,
+          8,
+          9,
+          12,
+          18,
           33,
-          35,
           38
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -212,14 +227,14 @@
       "source_note": "Този фиш също е само от видимия финален план.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10060,
-        "latest_draw_date": "2026-06-28",
+        "dataset_rows": 10061,
+        "latest_draw_date": "2026-07-02",
         "latest_draw_numbers": [
-          2,
-          4,
-          17,
+          8,
+          9,
+          12,
+          18,
           33,
-          35,
           38
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -319,14 +334,14 @@
       "source_note": "Този фиш е допълващ: използва редове от активния модел извън видимата финална таблица, когато са налични.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10060,
-        "latest_draw_date": "2026-06-28",
+        "dataset_rows": 10061,
+        "latest_draw_date": "2026-07-02",
         "latest_draw_numbers": [
-          2,
-          4,
-          17,
+          8,
+          9,
+          12,
+          18,
           33,
-          35,
           38
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -335,10 +350,10 @@
       }
     }
   ],
-  "copy_text_path": "reports\\v117_real_ticket_pack_builder_copy.txt",
-  "csv_path": "reports\\v117_real_ticket_pack_builder_cards.csv",
-  "safe_note_bg": "Step 117 подрежда реален пакет за пускане. Той не обещава печалба и не променя вероятностите.",
-  "generated_at_utc": "2026-07-01T08:37:39+00:00",
+  "copy_text_path": "reports/v117_real_ticket_pack_builder_copy.txt",
+  "csv_path": "reports/v117_real_ticket_pack_builder_cards.csv",
+  "safe_note_bg": "Готовият фиш пакет подрежда реални комбинации за пускане. Той не обещава печалба и не променя вероятностите.",
+  "generated_at_utc": "2026-07-07T13:22:01+00:00",
   "checks": [
     {
       "check": "cards_created",

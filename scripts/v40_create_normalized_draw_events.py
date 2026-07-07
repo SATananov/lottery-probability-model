@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -102,7 +102,8 @@ def create_normalized_events() -> dict[str, Any]:
         axis=1,
     )
     normalized["source_draw_id"] = clean["draw_id"].astype(int)
-    normalized["date"] = clean["date"].astype(str)
+    normalized["date"] = clean["date"].fillna("").astype(str)
+    normalized["date"] = normalized["date"].replace({"nan": "", "None": "", "NaT": ""})
     normalized["year"] = clean["year"].astype(int)
     normalized["draw_number"] = clean["draw_number"].astype(int)
 
@@ -117,7 +118,8 @@ def create_normalized_events() -> dict[str, Any]:
     # Keep it blank until real source data is imported.
     normalized["bonus_number"] = ""
 
-    normalized["source_url"] = clean["source_url"].astype(str)
+    normalized["source_url"] = clean["source_url"].fillna("").astype(str)
+    normalized["source_url"] = normalized["source_url"].replace({"nan": "", "None": "", "NaT": ""})
 
     # This marks that these rows come from the stable v39 dataset.
     normalized["rules_version"] = "legacy_v39_known_draw_position"

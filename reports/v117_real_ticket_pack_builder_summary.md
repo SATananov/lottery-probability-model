@@ -1,6 +1,6 @@
-# Step 117 — Real Ticket Pack Builder
+# Готов фиш пакет за следващия тираж
 
-- Status: `REAL_TICKET_PACK_BUILDER_READY`
+- Status: `Пакетът е готов`
 - Blocking failures: `0`
 - Фишове: `3`
 - Комбинации във фиш: `4`

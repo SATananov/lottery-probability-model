@@ -71,9 +71,9 @@
       "v95_engine_exists": true,
       "waiting_next_draw_marker": true
     },
-    "dataset_rows": 10060,
-    "latest_draw_date": "2026-06-28",
-    "latest_draw_numbers": "2,4,17,33,35,38",
+    "dataset_rows": 10061,
+    "latest_draw_date": "2026-07-02",
+    "latest_draw_numbers": "8,9,12,18,33,38",
     "step95": {
       "evaluation_type": "ADD_DRAW_PRE_SAVE_REAL_RESULT",
       "history_rows": 2,
@@ -98,39 +98,39 @@
   "datasets": [
     {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_draw_no": "50",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-02",
+      "latest_draw_no": "51",
+      "latest_numbers": "8,9,12,18,33,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/historical_draws.csv",
-      "rows": 10060
+      "rows": 10061
     },
     {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_draw_no": "50",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-02",
+      "latest_draw_no": "51",
+      "latest_numbers": "8,9,12,18,33,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v40_normalized_draw_events.csv",
-      "rows": 10060
+      "rows": 10061
     },
     {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_draw_no": "50",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-02",
+      "latest_draw_no": "51",
+      "latest_numbers": "8,9,12,18,33,38",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v41_canonical_draw_events.csv",
-      "rows": 10060
+      "rows": 10061
     }
   ],
-  "generated_at_utc": "2026-07-01T08:35:27+00:00",
+  "generated_at_utc": "2026-07-07T13:18:47+00:00",
   "issues": [],
   "lifecycle_steps": [
     {

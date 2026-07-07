@@ -3,7 +3,7 @@
   "name_bg": "User Menu Live Status Sync",
   "status": "USER_MENU_LIVE_STATUS_SYNCED",
   "blocking_failures": 0,
-  "generated_at_utc": "2026-07-07T12:05:34.213089+00:00",
+  "generated_at_utc": "2026-07-07T13:21:59.854384+00:00",
   "live_status": {
     "source": "v107",
     "rows": 10061,

@@ -8,10 +8,10 @@
 - Цена: 10.80 EUR
 
 ## Dataset
-- historical_draws.csv: 10060 реда
-- v40_normalized_draw_events.csv: 10060 реда
-- v41_canonical_draw_events.csv: 10060 реда
-- Последен тираж: 2026-06-28 — 2, 4, 17, 33, 35, 38
+- historical_draws.csv: 10061 реда
+- v40_normalized_draw_events.csv: 10061 реда
+- v41_canonical_draw_events.csv: 10061 реда
+- Последен тираж: 2026-07-02 — 8, 9, 12, 18, 33, 38
 
 ## Статуси
 - Step 95: EVALUATED

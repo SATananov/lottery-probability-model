@@ -1,21 +1,21 @@
 # Step 106 — Post-draw статус синхрон
 
-Статус: **CHECK_REQUIRED**
-Blocking failures: **2**
+Статус: **POST_DRAW_SYNCED**
+Blocking failures: **0**
 
 Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058.
 
 ## Dataset
-- Редове: **10060**
-- Последен тираж: **2026-06-28** — **[2, 4, 17, 33, 35, 38]**
+- Редове: **10061**
+- Последен тираж: **2026-07-02** — **[8, 9, 12, 18, 33, 38]**
 
 ## Статуси
 - v97: **READY**
 - v98: **HAS_HISTORY**
 - v99: **READY_WAITING_NEXT_DRAW**
-- v100: **CHECK_REQUIRED**
-- v101: **CHECK_REQUIRED**
+- v100: **V1_LOCKED_WAITING_NEXT_DRAW**
+- v101: **WAITING_NEXT_REAL_DRAW**
 - v76: **OK**
 
 ## Следващо действие
-Прегледай failed checks/scripts преди commit.
+Commit/push промените и направи clean ZIP checkpoint.

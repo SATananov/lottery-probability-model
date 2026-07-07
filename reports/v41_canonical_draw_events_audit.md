@@ -4,28 +4,28 @@ Status: canonical dataset built. No model retraining was performed.
 
 ## Summary
 
-- Source dataset: `data\historical_draws.csv`
-- Canonical dataset: `data\v41_canonical_draw_events.csv`
-- Total draw events: 10060
-- Total unique draws: 5178
+- Source dataset: `data/historical_draws.csv`
+- Canonical dataset: `data/v41_canonical_draw_events.csv`
+- Total draw events: 10061
+- Total unique draws: 5179
 - Years: 1958–2026 (69 years)
-- Date available rows: 51
+- Date available rows: 52
 - Date missing rows: 10009
 - Bonus available rows: 0
-- Bonus missing rows: 10060
+- Bonus missing rows: 10061
 - Invalid rows: 0
 - Duplicate keys: 0
 
 ## Drawing number counts
 
-- drawing_no=1: 5178
+- drawing_no=1: 5179
 - drawing_no=2: 3587
 - drawing_no=3: 1280
 - drawing_no=4: 15
 
 ## Drawings per draw distribution
 
-- 1 drawing(s) per draw: 1591 draws
+- 1 drawing(s) per draw: 1592 draws
 - 2 drawing(s) per draw: 2307 draws
 - 3 drawing(s) per draw: 1265 draws
 - 4 drawing(s) per draw: 15 draws
@@ -102,7 +102,7 @@ Status: canonical dataset built. No model retraining was performed.
 | 2023 | 105 | 105 | {1: 105} | 1 |
 | 2024 | 104 | 104 | {1: 104} | 1 |
 | 2025 | 105 | 105 | {1: 105} | 1 |
-| 2026 | 51 | 51 | {1: 51} | 1 |
+| 2026 | 52 | 52 | {1: 52} | 1 |
 
 ## Important notes
 

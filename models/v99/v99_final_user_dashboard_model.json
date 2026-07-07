@@ -2,19 +2,22 @@
   "step": 99,
   "status": "READY_WAITING_NEXT_DRAW",
   "title_bg": "Финално потребителско табло",
-  "generated_at_utc": "2026-06-28T16:49:37+00:00",
+  "generated_at_utc": "2026-07-07T13:21:46+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "status": "ACTIVE",
     "strategy_type": "Хибрид",
-    "strategy_label": "Звезден фиш + допълнителни системни комбинации (претеглените моделни числа)",
-    "combination_count": 11,
-    "cost_eur": 9.9,
-    "cost_text": "9.90",
+    "strategy_label": "Готов фиш пакет · 3 фиша × 4 комбинации",
+    "combination_count": 12,
+    "cost_eur": 10.8,
+    "cost_text": "10.80",
     "saved_after_draw_date": "2026-06-21",
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44",
     "real_result_rows": 2,
     "next_status_bg": "Историята има реални резултати. След следващ тираж ще се добави нов ред.",
+    "plan_source": "v117_real_ticket_pack_builder",
+    "ticket_count": 3,
+    "lines_per_ticket": 4,
     "combinations": [
       [
         7,
@@ -107,21 +110,21 @@
     ]
   },
   "dataset": {
-    "dataset_rows": 10060,
-    "canonical_rows": 10060,
-    "latest_draw_date": "2026-06-28",
+    "dataset_rows": 10061,
+    "canonical_rows": 10061,
+    "latest_draw_date": "2026-07-02",
     "latest_draw_year": "2026",
-    "latest_draw_number": "50",
+    "latest_draw_number": "51",
     "latest_draw_position": "1",
     "latest_numbers": [
-      2,
-      4,
-      17,
+      8,
+      9,
+      12,
+      18,
       33,
-      35,
       38
     ],
-    "latest_numbers_text": "2, 4, 17, 33, 35, 38"
+    "latest_numbers_text": "8, 9, 12, 18, 33, 38"
   },
   "statuses": {
     "step95_status": "EVALUATED",
@@ -175,7 +178,7 @@
     "Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние."
   ],
   "source_files": {
-    "active_plan": "models/v94/v94_active_budget_plan_tracker_model.json",
+    "active_plan": "models/v97/v97_real_draw_lifecycle_model.json + models/v96/v96_add_draw_controlled_flow_model.json",
     "step95": "models/v95/v95_active_plan_auto_evaluation_model.json",
     "step96": "models/v96/v96_add_draw_controlled_flow_model.json",
     "step97": "models/v97/v97_real_draw_lifecycle_model.json",
