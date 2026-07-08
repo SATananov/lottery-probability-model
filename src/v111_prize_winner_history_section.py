@@ -217,7 +217,7 @@ def render_v111_prize_winner_history_section() -> None:
             default_end = 49 if int(year) == 2026 else 104
             end_draw = st.number_input("До тираж", min_value=1, max_value=150, value=default_end, step=1)
         st.info("За първи тест избери 2026 и тиражи 1–49. Ако БСТ върне CAPTCHA към Python, това не е грешка в апа — използвай ръчния CSV импорт по-долу.")
-        if st.button("Импортирай печалбите от БСТ", use_container_width=True):
+        if st.button("Импортирай печалбите от БСТ", width="stretch"):
             with st.spinner("Чета официалните страници и записвам историята локално..."):
                 try:
                     summary = import_year_range(int(year), int(start_draw), int(end_draw))
@@ -248,7 +248,7 @@ def render_v111_prize_winner_history_section() -> None:
             template.encode("utf-8-sig"),
             file_name="prize_winner_history_template.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
         )
         uploaded_csv = st.file_uploader("Качи попълнен CSV файл", type=["csv"], key="v111_manual_csv_upload")
         manual_csv_text = st.text_area(
@@ -258,7 +258,7 @@ def render_v111_prize_winner_history_section() -> None:
             placeholder=template,
             key="v111_manual_csv_text",
         )
-        if st.button("Импортирай CSV в локалната история", use_container_width=True):
+        if st.button("Импортирай CSV в локалната история", width="stretch"):
             try:
                 csv_text = ""
                 if uploaded_csv is not None:
@@ -276,7 +276,7 @@ def render_v111_prize_winner_history_section() -> None:
             except Exception as exc:
                 st.error(f"CSV импортът не успя: {exc}")
 
-        if st.button("Обнови локалните отчети", use_container_width=True):
+        if st.button("Обнови локалните отчети", width="stretch"):
             summary = write_artifacts()
             st.success(f"Отчетите са обновени. Проверки с проблеми: {summary.get('blocking_failures')}.")
 
@@ -284,14 +284,14 @@ def render_v111_prize_winner_history_section() -> None:
     with tabs[0]:
         rows = draw_dataframe_rows(limit=300)
         if rows:
-            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
             if DATA_PATH.exists():
                 st.download_button(
                     "Свали CSV архива",
                     DATA_PATH.read_bytes(),
                     file_name="prize_winner_history.csv",
                     mime="text/csv",
-                    use_container_width=True,
+                    width="stretch",
                 )
         else:
             st.info("Още няма импортирана история на печалбите. Стартирай импорт от БСТ от панела по-горе.")

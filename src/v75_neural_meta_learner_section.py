@@ -97,12 +97,12 @@ def render_v75_neural_meta_learner_section() -> None:
             "кратък_тренд",
         ]
         existing = [c for c in columns if c in scores.columns]
-        st.dataframe(_display_df(scores[existing].head(20)), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(scores[existing].head(20)), width="stretch", hide_index=True)
 
     if Path(CANDIDATE_TICKETS_CSV).exists():
         st.subheader("Кандидат комбинации от невронния слой")
         tickets = pd.read_csv(CANDIDATE_TICKETS_CSV)
-        st.dataframe(_display_df(tickets), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(tickets), width="stretch", hide_index=True)
 
     with st.expander("Метод и безопасност"):
         st.markdown(

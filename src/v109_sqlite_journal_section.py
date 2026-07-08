@@ -453,7 +453,7 @@ def _table_for_display(table_name: str, rows: list[dict[str, Any]]) -> pd.DataFr
 def _show_dataframe(title: str, rows: list[dict[str, Any]], empty_text: str, table_name: str) -> None:
     st.markdown(f"### {title}")
     if rows:
-        st.dataframe(_table_for_display(table_name, rows), use_container_width=True, hide_index=True)
+        st.dataframe(_table_for_display(table_name, rows), width="stretch", hide_index=True)
     else:
         st.info(empty_text)
 
@@ -560,7 +560,7 @@ def render_v109_sqlite_journal_section() -> None:
         unsafe_allow_html=True,
     )
 
-    if st.button("Обнови дневника", use_container_width=True, key="v109_refresh_journal_btn"):
+    if st.button("Обнови дневника", width="stretch", key="v109_refresh_journal_btn"):
         summary = write_artifacts(sync_latest_draw=True, evaluate_open=True)
         st.success("Дневникът е обновен.")
     else:
@@ -593,7 +593,7 @@ def render_v109_sqlite_journal_section() -> None:
 
     c1, c2 = st.columns(2)
     with c1:
-        if st.button("Обнови реалния тираж в дневника", use_container_width=True, key="v109_sync_latest_draw_btn"):
+        if st.button("Обнови реалния тираж в дневника", width="stretch", key="v109_sync_latest_draw_btn"):
             result = sync_latest_draw_entry(note="Ръчно обновяване от страницата Дневник на фишовете.")
             write_artifacts(sync_latest_draw=False, evaluate_open=False)
             if result.get("inserted"):
@@ -602,7 +602,7 @@ def render_v109_sqlite_journal_section() -> None:
                 st.info("Последният реален тираж вече е наличен в дневника.")
             st.rerun()
     with c2:
-        if st.button("Оцени фишовете с излязъл тираж", use_container_width=True, key="v109_evaluate_open_tickets_btn"):
+        if st.button("Оцени фишовете с излязъл тираж", width="stretch", key="v109_evaluate_open_tickets_btn"):
             result = evaluate_open_tickets_against_latest_draw()
             write_artifacts(sync_latest_draw=True, evaluate_open=False)
             st.success(f"Проверени фишове: {result.get('evaluated', 0)}")
@@ -696,7 +696,7 @@ def render_v109_sqlite_journal_section() -> None:
     target_draw_number = input_cols[2].text_input("Номер на тиража, ако го знаеш", value="", key="v109_target_draw_number")
     note = st.text_area("Бележка към пакета", value="", key="v109_play_note")
 
-    if st.button("Запази избраните фишове като изиграни", use_container_width=True, key="v1092_save_ticket_cards_btn"):
+    if st.button("Запази избраните фишове като изиграни", width="stretch", key="v1092_save_ticket_cards_btn"):
         result = save_ticket_cards_as_played(
             cards=cards_to_save,
             play_date=str(play_date),

@@ -174,7 +174,7 @@ def render_v118_model_system_ticket_builder_section() -> None:
             available.append(DEFAULT_TARGET_LINES)
             available = sorted(set(available))
         target_lines = col_lines.selectbox("Комбинации", available, index=available.index(DEFAULT_TARGET_LINES) if DEFAULT_TARGET_LINES in available else len(available) - 1, key="v118_target_lines")
-    refresh = col_refresh.button("Обнови", type="primary", use_container_width=True, key="v118_refresh")
+    refresh = col_refresh.button("Обнови", type="primary", width="stretch", key="v118_refresh")
 
     price = st.number_input("Цена на една комбинация в EUR", min_value=0.10, max_value=5.00, value=default_price, step=0.10, key="v118_price")
 
@@ -229,11 +229,11 @@ def render_v118_model_system_ticket_builder_section() -> None:
 
     with tabs[1]:
         st.caption("Пълното комбиниране става скъпо бързо. Тази таблица използва текущата цена на една комбинация.")
-        st.dataframe(_full_system_table(summary, float(price)), use_container_width=True, hide_index=True)
+        st.dataframe(_full_system_table(summary, float(price)), width="stretch", hide_index=True)
 
     with tabs[2]:
         st.caption("Това са числата, от които се избира ядрото. Те идват от моделния скоринг, не от ръчно въвеждане.")
-        st.dataframe(_ranking_table(summary), use_container_width=True, hide_index=True)
+        st.dataframe(_ranking_table(summary), width="stretch", hide_index=True)
         pack_numbers = summary.get("current_pack_numbers", [])
         if pack_numbers:
             st.info("Числа, намерени в текущия готов пакет: " + format_numbers(pack_numbers))
@@ -250,7 +250,7 @@ def render_v118_model_system_ticket_builder_section() -> None:
         target_draw_date = d2.date_input("Дата на целевия тираж", value=_next_sunday(), key="v118_target_draw_date")
         target_draw_number = d3.text_input("Номер на тиража, ако го знаеш", value="", key="v118_target_draw_number")
         note = st.text_area("Бележка", value="Записано от системен фиш от моделите", key="v118_note")
-        if st.button("Запази системния пакет като реално игран", use_container_width=True, disabled=not can_save, key="v118_save_as_played"):
+        if st.button("Запази системния пакет като реално игран", width="stretch", disabled=not can_save, key="v118_save_as_played"):
             result = save_ticket_cards_as_played(
                 cards=cards,
                 play_date=str(play_date),
@@ -270,7 +270,7 @@ def render_v118_model_system_ticket_builder_section() -> None:
                 data=PACK_CSV.read_bytes(),
                 file_name="model_system_ticket_builder_step118.csv",
                 mime="text/csv",
-                use_container_width=True,
+                width="stretch",
             )
 
     with st.expander("Проверки"):

@@ -77,7 +77,7 @@ def _show_table(rows, columns):
             item[label] = value
         shown.append(item)
     if pd is not None:
-        st.dataframe(pd.DataFrame(shown), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(shown), width="stretch", hide_index=True)
     else:
         st.table(shown)
 
@@ -97,7 +97,7 @@ def _show_plan(plan):
             "Наличен": "Да" if item.get("script_exists") else "Не",
         })
     if pd is not None:
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
     else:
         st.table(rows)
 

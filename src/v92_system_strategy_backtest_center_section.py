@@ -83,7 +83,7 @@ def _translate_dataframe(rows: list[dict[str, Any]]) -> pd.DataFrame:
 def _show_table(title: str, rows: list[dict[str, Any]]) -> None:
     st.subheader(title)
     if rows:
-        st.dataframe(_translate_dataframe(rows), use_container_width=True, hide_index=True)
+        st.dataframe(_translate_dataframe(rows), width="stretch", hide_index=True)
     else:
         st.info("Няма налични редове за показване.")
 

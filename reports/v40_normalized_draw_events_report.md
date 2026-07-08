@@ -5,14 +5,14 @@ Source dataset: `data/historical_draws.csv`
 Output dataset: `data/v40_normalized_draw_events.csv`
 
 ## Summary
-- Source rows: **10061**
-- Normalized rows: **10061**
+- Source rows: **10062**
+- Normalized rows: **10062**
 - Years: **1958 - 2026**
-- Rows in 2026: **52**
-- Max 2026 draw number: **51**
+- Rows in 2026: **53**
+- Max 2026 draw number: **52**
 
 ## Drawing number counts
-- drawing_no `1`: **5179** row(s)
+- drawing_no `1`: **5180** row(s)
 - drawing_no `2`: **3587** row(s)
 - drawing_no `3`: **1280** row(s)
 - drawing_no `4`: **15** row(s)
@@ -32,7 +32,7 @@ Output dataset: `data/v40_normalized_draw_events.csv`
 - 2023: rows=105, drawing_no_counts={'1': 105}
 - 2024: rows=104, drawing_no_counts={'1': 104}
 - 2025: rows=105, drawing_no_counts={'1': 105}
-- 2026: rows=52, drawing_no_counts={'1': 52}
+- 2026: rows=53, drawing_no_counts={'1': 53}
 
 ## Target columns
 ```text

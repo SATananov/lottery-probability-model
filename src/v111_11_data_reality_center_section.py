@@ -306,7 +306,7 @@ def render_v111_11_data_reality_center_section() -> None:
 
     with tab_matrix:
         st.subheader("Реална картина по тиражи")
-        st.dataframe(matrix, hide_index=True, use_container_width=True)
+        st.dataframe(matrix, hide_index=True, width="stretch")
         csv_data = matrix.to_csv(index=False).encode("utf-8-sig")
         st.download_button(
             "Свали матрицата като CSV",
@@ -317,7 +317,7 @@ def render_v111_11_data_reality_center_section() -> None:
 
     with tab_quality:
         st.subheader("Покритие по години")
-        st.dataframe(_coverage_by_year(draws, official_prizes), hide_index=True, use_container_width=True)
+        st.dataframe(_coverage_by_year(draws, official_prizes), hide_index=True, width="stretch")
         st.markdown(
             """
 **Как да го четеш:**

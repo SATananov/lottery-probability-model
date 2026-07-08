@@ -356,7 +356,7 @@ def render_v113_jackpot_cycle_section() -> None:
     df = load_prize_history()
     if df.empty:
         st.warning("Още няма активна история на печалбите. Първо добави проверени записи от БСТ.")
-        if st.button("Обнови отчета", use_container_width=True):
+        if st.button("Обнови отчета", width="stretch"):
             stats = write_jackpot_cycle_reports()
             st.success(f"Отчетът е обновен. Статус: {stats.get('status')}")
         return
@@ -439,7 +439,7 @@ def render_v113_jackpot_cycle_section() -> None:
             for col in ["Печалба 6 EUR", "Джакпот EUR"]:
                 if col in six_df.columns:
                     six_df[col] = six_df[col].apply(_format_eur)
-            st.dataframe(six_df, use_container_width=True, hide_index=True)
+            st.dataframe(six_df, width="stretch", hide_index=True)
         st.caption("Един запис със 6-ца не е достатъчен за надежден интервален модел. Той е полезен за джакпот цикъл и контрол на бюджета.")
 
     with tab_value:
@@ -465,16 +465,16 @@ def render_v113_jackpot_cycle_section() -> None:
         st.markdown("### Данни за джакпот цикъла")
         table_df = view_df.copy()
         table_df["jackpot_change_eur"] = table_df["jackpot_eur"].diff().fillna(0.0)
-        st.dataframe(_prepare_display(table_df), use_container_width=True, hide_index=True)
+        st.dataframe(_prepare_display(table_df), width="stretch", hide_index=True)
         csv_bytes = table_df.drop(columns=["draw_date_dt"], errors="ignore").to_csv(index=False).encode("utf-8-sig")
         st.download_button(
             "Свали данните за цикъла като CSV",
             data=csv_bytes,
             file_name="jackpot_cycle_data.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
         )
 
-    if st.button("Обнови локалния отчет", use_container_width=True):
+    if st.button("Обнови локалния отчет", width="stretch"):
         new_stats = write_jackpot_cycle_reports()
         st.success(f"Отчетът е обновен. Статус: {new_stats.get('status')}. Записи: {new_stats.get('analysis_rows', 0)}.")

@@ -76,7 +76,7 @@ def _show_group(title: str, items: list[dict]) -> None:
         st.info("Няма числа в тази група по текущите критерии.")
         return
 
-    st.dataframe(_items_to_df(items), use_container_width=True, hide_index=True)
+    st.dataframe(_items_to_df(items), width="stretch", hide_index=True)
 
 
 def render_v57_hot_cold_stable_section() -> None:
@@ -120,7 +120,7 @@ def render_v57_hot_cold_stable_section() -> None:
             }
         )
 
-    st.dataframe(summary_rows, use_container_width=True, hide_index=True)
+    st.dataframe(summary_rows, width="stretch", hide_index=True)
 
     tab_hot, tab_cold, tab_overdue, tab_stable, tab_historical, tab_all = st.tabs(
         [
@@ -176,7 +176,7 @@ def render_v57_hot_cold_stable_section() -> None:
         ascending = sort_option == "Число"
         sorted_df = df.sort_values(sort_col, ascending=ascending)
 
-        st.dataframe(_bg_table(sorted_df), use_container_width=True, hide_index=True)
+        st.dataframe(_bg_table(sorted_df), width="stretch", hide_index=True)
 
     st.markdown("### Детайли за избрано число")
 

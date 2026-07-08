@@ -185,7 +185,7 @@ def _show_next_ticket_pack_ready() -> None:
             for line in first_card.get("lines", []) or []:
                 st.write(f"Ред {line.get('line_no', '—')}: {line.get('numbers_text') or _numbers_text(line.get('numbers'))}")
 
-    if st.button("Отвори готовия фиш пакет", use_container_width=True, key="add_draw_open_ready_ticket_pack"):
+    if st.button("Отвори готовия фиш пакет", width="stretch", key="add_draw_open_ready_ticket_pack"):
         st.session_state["_pending_navigation_group"] = "✅ Финален план за игра"
         st.session_state["_pending_navigation_page"] = "Готов фиш пакет"
         st.rerun()
@@ -807,7 +807,7 @@ def render() -> None:
         key="add_draw_source_note",
     )
 
-    if st.button("Запази тиража", use_container_width=True, key="add_draw_save_btn"):
+    if st.button("Запази тиража", width="stretch", key="add_draw_save_btn"):
         payloads: list[tuple[int, list[int], int | None]] = [(1, draw1_numbers, draw1_bonus)]
         errors = validate_draw(draw1_numbers, draw1_bonus, "Теглене 1")
 

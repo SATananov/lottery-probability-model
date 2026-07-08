@@ -2638,7 +2638,7 @@ def page_ml_lab() -> None:
                 try:
                     st.altair_chart(chart, width="stretch")
                 except TypeError:
-                    st.altair_chart(chart, use_container_width=True)
+                    st.altair_chart(chart, width="stretch")
             except Exception:
                 st.scatter_chart(chart_df, x=x_col, y=y_col, size=score_col, height=460)
             st.markdown("#### " + _v39_ml_text("\u0414\u0430\u043d\u043d\u0438 \u0437\u0430\u0434 \u043a\u0430\u0440\u0442\u0430\u0442\u0430", "Data Behind the Map"))
@@ -3638,7 +3638,7 @@ def page_history() -> None:
     if recent_display.empty:
         st.warning(_bg("d09dd18fd0bcd0b020d0b4d0bed181d182d0b0d182d18ad187d0bdd0be20d0b4d0b0d0bdd0bdd0b820d0b7d0b020d0bfd0bed181d0bbd0b5d0b4d0bdd0b820d182d0b8d180d0b0d0b6d0b82e"))
     else:
-        st.dataframe(recent_display, hide_index=True, use_container_width=True)
+        st.dataframe(recent_display, hide_index=True, width="stretch")
     st.info(
         _bg("d098d181d182d0bed180d0b8d187d0b5d181d0bad0b0d182d0b020d181d182d0b0d182d0b8d181d182d0b8d0bad0b020d0bfd0bed0bcd0b0d0b3d0b020d0b7d0b020d181d180d0b0d0b2d0bdd0b5d0bdd0b8d0b520d0b820d0bed0b1d183d187d0b5d0bdd0b8d0b52c20d0bdd0be20d0bdd0b520d0bfd180d0b5d0b4d181d0bad0b0d0b7d0b2d0b020d0b1d18ad0b4d0b5d18920d182d0b8d180d0b0d0b620d0b820d0bdd0b520d0b3d0b0d180d0b0d0bdd182d0b8d180d0b020d0bfd0b5d187d0b0d0bbd0b1d0b02e")
     )
@@ -4137,7 +4137,7 @@ def main() -> None:
     st.session_state["current_page"] = choice
     # STEP105_ADD_DRAW_NAVIGATION_PERSISTENCE_FIX_END
     # STEP64_GROUPED_NAVIGATION_END
-    if st.sidebar.button("➕ Добави нов тираж", use_container_width=True, key="sidebar_add_draw_shortcut_btn"):
+    if st.sidebar.button("➕ Добави нов тираж", width="stretch", key="sidebar_add_draw_shortcut_btn"):
         st.cache_data.clear()
         _open_add_draw_from_sidebar_shortcut()
     pages[choice]()

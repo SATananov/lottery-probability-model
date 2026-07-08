@@ -147,7 +147,7 @@ def render_v100_final_release_lock_section() -> None:
     with tabs[0]:
         checklist_rows = _read_rows(CHECKLIST_CSV_PATH)
         if checklist_rows:
-            st.dataframe(_rename_rows(checklist_rows, CHECKLIST_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(checklist_rows, CHECKLIST_LABELS), width="stretch", hide_index=True)
             st.download_button(
                 "Свали checklist CSV",
                 data=_csv_bytes(checklist_rows),
@@ -166,7 +166,7 @@ def render_v100_final_release_lock_section() -> None:
     with tabs[2]:
         manifest_rows = _read_rows(MANIFEST_CSV_PATH)
         if manifest_rows:
-            st.dataframe(_rename_rows(manifest_rows, MANIFEST_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(manifest_rows, MANIFEST_LABELS), width="stretch", hide_index=True)
             st.download_button(
                 "Свали manifest CSV",
                 data=_csv_bytes(manifest_rows),

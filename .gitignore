@@ -25,3 +25,7 @@ fix_*.ps1
 apply_*.ps1
 data/manual_backups/
 reports/manual_update_retrain_log.md
+.ipynb_checkpoints/
+_clean_zip_diagnostics/
+*.sqlite-journal
+*.db-journal

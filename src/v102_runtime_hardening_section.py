@@ -14,7 +14,7 @@ def render_v102_runtime_hardening_section() -> None:
         "и отделянето на тежките лабораторни процеси от стандартния поток."
     )
 
-    if st.button("Обнови проверката", use_container_width=True, key="v102_refresh_btn"):
+    if st.button("Обнови проверката", width="stretch", key="v102_refresh_btn"):
         summary = write_runtime_hardening_artifacts()
         st.success("Проверката е обновена.")
     else:
@@ -34,7 +34,7 @@ def render_v102_runtime_hardening_section() -> None:
     if checks:
         st.markdown("### Проверки")
         df = pd.DataFrame(checks)
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.dataframe(df, width="stretch", hide_index=True)
 
     heavy = summary.get("heavy_scripts_kept_manual", [])
     if heavy:

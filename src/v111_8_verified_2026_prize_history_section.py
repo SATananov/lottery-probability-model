@@ -131,7 +131,7 @@ def render_v111_8_verified_2026_prize_history_section() -> None:
 
     col1, col2 = st.columns([2, 1])
     with col1:
-        if st.button("Импортирай проверените тиражи 24–49/2026", use_container_width=True):
+        if st.button("Импортирай проверените тиражи 24–49/2026", width="stretch"):
             with st.spinner("Записвам проверената история в CSV и SQLite..."):
                 summary = import_verified_2026_history(clean_invalid_existing_rows=True)
                 if summary.get("blocking_failures", 0) == 0:
@@ -150,12 +150,12 @@ def render_v111_8_verified_2026_prize_history_section() -> None:
                 SOURCE_CSV.read_bytes(),
                 file_name="verified_2026_prize_history_draws_24_49.csv",
                 mime="text/csv",
-                use_container_width=True,
+                width="stretch",
             )
 
     tabs = st.tabs(["Начална статистика", "Проверки", "Данни"])
     with tabs[0]:
-        st.dataframe(_category_table(stats), use_container_width=True, hide_index=True)
+        st.dataframe(_category_table(stats), width="stretch", hide_index=True)
         last_six = stats.get("last_six_draw") or {}
         st.info(
             f"В проверения пакет има {stats.get('six_winning_draws_count')} тираж със 6-ца. Последната 6-ца е тираж {last_six.get('draw_number', '—')} / {last_six.get('draw_date', '—')}. След нея има {stats.get('current_gap_after_last_six')} тиража без нова 6-ца до тираж 49."
@@ -165,6 +165,6 @@ def render_v111_8_verified_2026_prize_history_section() -> None:
             st.error("Има блокираща проверка. Не импортирай преди поправка.")
         else:
             st.success("Всички блокиращи проверки са зелени.")
-        st.dataframe(pd.DataFrame(checks), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(checks), width="stretch", hide_index=True)
     with tabs[2]:
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)

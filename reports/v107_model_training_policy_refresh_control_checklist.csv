@@ -1,6 +1,6 @@
 check,passed,blocking,details_bg
-datasets_synced,True,yes,"historical=10061, normalized=10061, canonical=10061"
-latest_draw_valid,True,yes,"latest=2026-07-02 [8, 9, 12, 18, 33, 38]"
+datasets_synced,True,yes,"historical=10062, normalized=10062, canonical=10062"
+latest_draw_valid,True,yes,"latest=2026-07-05 [4, 11, 21, 28, 36, 49]"
 runtime_hardening_active,True,yes,Step102=RUNTIME_HARDENED
 post_draw_sync_active,True,yes,Step106=POST_DRAW_SYNCED
 heavy_labs_not_default,True,yes,v67/v75 са отделени от fast refresh режима.

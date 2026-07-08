@@ -14,7 +14,7 @@ def render_v107_model_training_policy_section() -> None:
         "След единичен нов тираж обикновено обновяваме само отчетите и дневника."
     )
 
-    if st.button("Обнови политиката за обучение", use_container_width=True, key="v107_refresh_policy_btn"):
+    if st.button("Обнови политиката за обучение", width="stretch", key="v107_refresh_policy_btn"):
         summary = write_artifacts()
         st.success("Политиката за обучение е обновена.")
     else:
@@ -49,12 +49,12 @@ def render_v107_model_training_policy_section() -> None:
     st.markdown("### Политика по групи")
     policy_table = summary.get("policy_table", []) or []
     if policy_table:
-        st.dataframe(polish_dataframe(pd.DataFrame(policy_table)), use_container_width=True, hide_index=True)
+        st.dataframe(polish_dataframe(pd.DataFrame(policy_table)), width="stretch", hide_index=True)
 
     st.markdown("### Проверки")
     checks = summary.get("checks", []) or []
     if checks:
-        st.dataframe(polish_dataframe(pd.DataFrame(checks)), use_container_width=True, hide_index=True)
+        st.dataframe(polish_dataframe(pd.DataFrame(checks)), width="stretch", hide_index=True)
 
     st.warning(
         "Тази страница не обучава модели и не обещава печалба. Тя пази проекта от ненужно тежко обучение "

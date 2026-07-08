@@ -176,16 +176,16 @@ def render() -> None:
 
     with tabs[0]:
         st.subheader(T("\\u041d\\u0430\\u0439-\\u0441\\u0438\\u043b\\u043d\\u0438 \\u0434\\u0432\\u043e\\u0439\\u043a\\u0438 \\u043f\\u043e \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0438\\u0440\\u0430\\u043d \\u0441\\u0438\\u0433\\u043d\\u0430\\u043b"))
-        st.dataframe(_rename_pair_columns(pair_df.head(100)), hide_index=True, use_container_width=True)
+        st.dataframe(_rename_pair_columns(pair_df.head(100)), hide_index=True, width="stretch")
 
     with tabs[1]:
         st.subheader(T("\\u0414\\u0432\\u043e\\u0439\\u043a\\u0438 \\u0441 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u044f, \\u043d\\u043e \\u0441 \\u043f\\u043e-\\u0434\\u044a\\u043b\\u044a\\u0433 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0432\\u0430\\u043b"))
         watch = pair_df.sort_values(["watch_score", "gap"], ascending=False)
-        st.dataframe(_rename_pair_columns(watch.head(100)), hide_index=True, use_container_width=True)
+        st.dataframe(_rename_pair_columns(watch.head(100)), hide_index=True, width="stretch")
 
     with tabs[2]:
         st.subheader(T("\\u041d\\u0430\\u0439-\\u0441\\u0438\\u043b\\u043d\\u0438 \\u0442\\u0440\\u043e\\u0439\\u043a\\u0438"))
-        st.dataframe(_rename_group_columns(group_df.head(100)), hide_index=True, use_container_width=True)
+        st.dataframe(_rename_group_columns(group_df.head(100)), hide_index=True, width="stretch")
 
     with tabs[3]:
         combos = _load_pro_combinations()
@@ -193,7 +193,7 @@ def render() -> None:
             st.info(T("\\u041d\\u044f\\u043c\\u0430 \\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u0438 Pro \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438."))
         else:
             rows = [_evaluate_combo(combo, pair_df, group_df) for combo in combos]
-            st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
 
     with tabs[4]:
         st.markdown(

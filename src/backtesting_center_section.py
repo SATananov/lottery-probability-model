@@ -108,7 +108,7 @@ def _show_model_cards(df: pd.DataFrame) -> None:
     max_col = _best_available_column(df, ["max_hits_top6", "max_hits"])
 
     if not model_col or not avg_col:
-        st.dataframe(df, hide_index=True, use_container_width=True)
+        st.dataframe(df, hide_index=True, width="stretch")
         return
 
     view = df.copy()
@@ -144,7 +144,7 @@ def _show_model_cards(df: pd.DataFrame) -> None:
             rename_map[col] = T("\\u0423\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438 ") + col.replace("hits_", "")
 
     shown = view[columns_to_show].rename(columns=rename_map)
-    st.dataframe(shown, hide_index=True, use_container_width=True)
+    st.dataframe(shown, hide_index=True, width="stretch")
 
 
 def _show_distribution(df: pd.DataFrame) -> None:
@@ -168,7 +168,7 @@ def _show_distribution(df: pd.DataFrame) -> None:
     cols = [T("\\u041c\\u043e\\u0434\\u0435\\u043b")] + hit_cols
     shown = view[cols].copy()
     shown = shown.rename(columns={col: T("\\u0423\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438 ") + col.replace("hits_", "") for col in hit_cols})
-    st.dataframe(shown, hide_index=True, use_container_width=True)
+    st.dataframe(shown, hide_index=True, width="stretch")
 
     if avg_col:
         chart_df = view[[T("\\u041c\\u043e\\u0434\\u0435\\u043b"), avg_col]].rename(columns={avg_col: T("\\u0421\\u0440\\u0435\\u0434\\u043d\\u043e \\u0443\\u0446\\u0435\\u043b\\u0435\\u043d\\u0438 \\u0447\\u0438\\u0441\\u043b\\u0430")})
@@ -189,7 +189,7 @@ def _show_raw_results(df: pd.DataFrame) -> None:
 
     max_rows = st.slider(T("\\u0411\\u0440\\u043e\\u0439 \\u0440\\u0435\\u0434\\u043e\\u0432\\u0435 \\u0437\\u0430 \\u043f\\u043e\\u043a\\u0430\\u0437\\u0432\\u0430\\u043d\\u0435"), min_value=20, max_value=500, value=100, step=20)
     display_df = _prepare_backtest_table_for_display(shown.head(max_rows))
-    st.dataframe(display_df, hide_index=True, use_container_width=True)
+    st.dataframe(display_df, hide_index=True, width="stretch")
 
 
 def render() -> None:

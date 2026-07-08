@@ -68,7 +68,7 @@ def _show_pairs(profile: dict) -> None:
         for item in pairs
     ]
 
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.dataframe(rows, width="stretch", hide_index=True)
 
 
 def _show_triples(profile: dict) -> None:
@@ -85,7 +85,7 @@ def _show_triples(profile: dict) -> None:
         for item in triples
     ]
 
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.dataframe(rows, width="stretch", hide_index=True)
 
 
 def render_v55_number_profile_section() -> None:
@@ -186,12 +186,12 @@ def render_v55_number_profile_section() -> None:
     ascending = sort_option in {"Число", "Среден интервал"}
     sorted_df = df.sort_values(sort_col, ascending=ascending)
 
-    st.dataframe(_bg_table(sorted_df), use_container_width=True, hide_index=True)
+    st.dataframe(_bg_table(sorted_df), width="stretch", hide_index=True)
 
     st.markdown("#### Топ 10 по профилна оценка")
     top_10 = df.sort_values("profile_score", ascending=False).head(10)
-    st.dataframe(_bg_table(top_10), use_container_width=True, hide_index=True)
+    st.dataframe(_bg_table(top_10), width="stretch", hide_index=True)
 
     st.markdown("#### Топ 10 най-дълго непоявявали се")
     overdue_10 = df.sort_values("draws_since_last_seen", ascending=False).head(10)
-    st.dataframe(_bg_table(overdue_10), use_container_width=True, hide_index=True)
+    st.dataframe(_bg_table(overdue_10), width="stretch", hide_index=True)

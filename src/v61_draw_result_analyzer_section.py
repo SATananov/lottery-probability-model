@@ -182,7 +182,7 @@ def render_v61_draw_result_analyzer_section() -> None:
 
     number_df = number_rows_to_dataframe(result)
     if not number_df.empty:
-        st.dataframe(_bg_number_table(number_df), use_container_width=True, hide_index=True)
+        st.dataframe(_bg_number_table(number_df), width="stretch", hide_index=True)
 
     st.markdown("### Сравнение с текущите статистически артефакти")
     s1, s2, s3, s4 = st.columns(4)
@@ -193,7 +193,7 @@ def render_v61_draw_result_analyzer_section() -> None:
 
     signal_df = model_signals_to_dataframe(result)
     if not signal_df.empty:
-        st.dataframe(_bg_model_table(signal_df), use_container_width=True, hide_index=True)
+        st.dataframe(_bg_model_table(signal_df), width="stretch", hide_index=True)
 
     st.markdown("### Историческа близост без самия последен тираж")
     h1, h2, h3, h4 = st.columns(4)
@@ -204,7 +204,7 @@ def render_v61_draw_result_analyzer_section() -> None:
 
     closest_df = closest_draws_to_dataframe(result)
     if not closest_df.empty:
-        st.dataframe(_bg_closest_table(closest_df), use_container_width=True, hide_index=True)
+        st.dataframe(_bg_closest_table(closest_df), width="stretch", hide_index=True)
 
     st.markdown("### Контекст на двойките")
     pair_context = result.get("pair_group_context", {})
@@ -215,7 +215,7 @@ def render_v61_draw_result_analyzer_section() -> None:
 
     pair_rows = pair_context.get("top_pair_hits", []) + pair_context.get("watch_pair_hits", [])
     if pair_rows:
-        st.dataframe(pd.DataFrame(pair_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(pair_rows), width="stretch", hide_index=True)
     else:
         st.caption("Няма двойки от последния тираж, които да попадат в текущите водещи или наблюдавани списъци от анализа на двойки.")
 

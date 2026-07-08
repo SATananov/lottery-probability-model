@@ -41,13 +41,13 @@ def _show_rows_table(rows: list[dict]) -> None:
             }
         )
 
-    st.dataframe(table_rows, use_container_width=True, hide_index=True)
+    st.dataframe(table_rows, width="stretch", hide_index=True)
 
 
 def _show_distribution(title: str, data: dict[str, int]) -> None:
     st.markdown(f"#### {title}")
     rows = [{"Показател": key, "Брой": value} for key, value in data.items()]
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.dataframe(rows, width="stretch", hide_index=True)
 
 
 def render_v54_pattern_balance_section() -> None:

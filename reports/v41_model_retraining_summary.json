@@ -1,8 +1,8 @@
 {
   "status": "v41_model_retraining_completed",
   "canonical_dataset": "data/v41_canonical_draw_events.csv",
-  "total_draw_events": 10061,
-  "train_events": 8048,
+  "total_draw_events": 10062,
+  "train_events": 8049,
   "test_events": 2013,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
@@ -19,17 +19,17 @@
     {
       "model": "frequency_baseline",
       "test_events": 2013,
-      "average_hits_top6": 0.7093889716840537,
+      "average_hits_top6": 0.7103825136612022,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 895,
-        "1": 837,
+        "1": 836,
         "2": 253,
-        "3": 27,
+        "3": 28,
         "4": 1
       },
-      "events_with_3plus_hits": 28,
+      "events_with_3plus_hits": 29,
       "events_with_4plus_hits": 1,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
@@ -37,12 +37,12 @@
     {
       "model": "recency_250_baseline",
       "test_events": 2013,
-      "average_hits_top6": 0.7481371087928465,
+      "average_hits_top6": 0.7476403378042722,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 865,
-        "1": 827,
+        "0": 866,
+        "1": 826,
         "2": 285,
         "3": 35,
         "4": 1
@@ -55,18 +55,18 @@
     {
       "model": "sgd_number_classifier",
       "test_events": 2013,
-      "average_hits_top6": 0.7476403378042722,
+      "average_hits_top6": 0.7436661698956781,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 849,
-        "1": 860,
-        "2": 268,
-        "3": 35,
-        "4": 1
+        "0": 861,
+        "1": 840,
+        "2": 281,
+        "3": 29,
+        "4": 2
       },
-      "events_with_3plus_hits": 36,
-      "events_with_4plus_hits": 1,
+      "events_with_3plus_hits": 31,
+      "events_with_4plus_hits": 2,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     }
@@ -74,12 +74,12 @@
   "best_model_by_average_hits_top6": {
     "model": "recency_250_baseline",
     "test_events": 2013,
-    "average_hits_top6": 0.7481371087928465,
+    "average_hits_top6": 0.7476403378042722,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 865,
-      "1": 827,
+      "0": 866,
+      "1": 826,
       "2": 285,
       "3": 35,
       "4": 1

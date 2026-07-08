@@ -304,7 +304,7 @@ def render_v112_prize_statistics_section() -> None:
 
     if df.empty:
         st.warning("Още няма импортната история на печалбите. Първо добави проверени данни от БСТ или CSV импорт.")
-        if st.button("Обнови отчета", use_container_width=True):
+        if st.button("Обнови отчета", width="stretch"):
             write_statistics_reports()
             st.success("Отчетът е обновен. Няма налични записи за анализ.")
         return
@@ -395,33 +395,33 @@ def render_v112_prize_statistics_section() -> None:
                 "winners_4": "4 числа",
                 "winners_3": "3 числа",
             })
-            st.dataframe(category_view, use_container_width=True, hide_index=True)
+            st.dataframe(category_view, width="stretch", hide_index=True)
 
     with tab_quality:
         st.markdown("### Качество и произход")
         source_counts = view_df.apply(lambda r: _source_kind(r.get("note"), r.get("source_url")), axis=1).value_counts().reset_index()
         source_counts.columns = ["Източник", "Записи"]
-        st.dataframe(source_counts, use_container_width=True, hide_index=True)
+        st.dataframe(source_counts, width="stretch", hide_index=True)
         invalid = view_df[~view_df["valid_numbers"]].copy() if "valid_numbers" in view_df.columns else pd.DataFrame()
         if invalid.empty:
             st.success("Всички показани записи имат 6 различни числа от 1 до 49.")
         else:
             st.warning(f"Има {len(invalid)} записа със съмнителни числа. Те не трябва да се използват за силен анализ.")
-            st.dataframe(_display_df(invalid), use_container_width=True, hide_index=True)
+            st.dataframe(_display_df(invalid), width="stretch", hide_index=True)
         st.caption("Проверените БСТ screenshots са най-надеждният слой. Неофициални или стари редове трябва да стоят отделно/карантинирани.")
 
     with tab_table:
         st.markdown("### Данни за избрания период")
-        st.dataframe(_display_df(view_df), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(view_df), width="stretch", hide_index=True)
         csv_bytes = view_df.drop(columns=["draw_date_dt"], errors="ignore").to_csv(index=False).encode("utf-8-sig")
         st.download_button(
             "Свали избраните записи като CSV",
             data=csv_bytes,
             file_name="selected_prize_winner_history.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
         )
 
-    if st.button("Обнови локалния отчет", use_container_width=True):
+    if st.button("Обнови локалния отчет", width="stretch"):
         new_stats = write_statistics_reports()
         st.success(f"Отчетът е обновен. Записи: {new_stats.get('rows', 0)}. Статус: {new_stats.get('status')}.")

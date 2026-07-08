@@ -164,7 +164,7 @@ def _render_combo_card(table_index: int, numbers: list[int]) -> None:
                     label,
                     key=f"v40_combo_{table_index}_{number}",
                     disabled=disabled,
-                    use_container_width=False,
+                    width="content",
                 ):
                     _toggle_number(table_index, number)
 
@@ -180,7 +180,7 @@ def _render_combo_card(table_index: int, numbers: list[int]) -> None:
         if st.button(
             T["clear_combo"],
             key=f"v40_clear_combo_{table_index}",
-            use_container_width=True,
+            width="stretch",
         ):
             _clear_combo(table_index)
 
@@ -237,13 +237,13 @@ def _ticket_builder() -> tuple[pd.DataFrame, list[str]]:
     _sync_ticket_tables(count)
 
     a, b = st.columns(2)
-    if a.button(T["load_demo"], key="v40_load_demo_ticket", use_container_width=True):
+    if a.button(T["load_demo"], key="v40_load_demo_ticket", width="stretch"):
         st.session_state["v40_ticket_tables"] = [row[:] for row in DEMO_TICKET_TABLES]
         st.session_state["v40_ticket_table_count"] = len(DEMO_TICKET_TABLES)
         st.session_state.pop("v40_ticket_results", None)
         _rerun()
 
-    if b.button(T["clear_all"], key="v40_clear_all_ticket", use_container_width=True):
+    if b.button(T["clear_all"], key="v40_clear_all_ticket", width="stretch"):
         st.session_state["v40_ticket_tables"] = [[] for _ in range(count)]
         st.session_state.pop("v40_ticket_results", None)
         _rerun()
@@ -447,7 +447,7 @@ def _render_results(tickets: pd.DataFrame, draws: pd.DataFrame, results: pd.Data
     _render_best_result(results, is_demo)
 
     with st.expander(T["details"], expanded=False):
-        st.dataframe(_results_preview(results, is_demo), use_container_width=True, hide_index=True)
+        st.dataframe(_results_preview(results, is_demo), width="stretch", hide_index=True)
 
     csv_data = results.to_csv(index=False).encode("utf-8-sig")
     json_data = json.dumps(results.to_dict(orient="records"), ensure_ascii=False, indent=2).encode("utf-8")
@@ -550,7 +550,7 @@ def render_ticket_checker_page() -> None:
         T["run"],
         key="v40_run_ticket_check",
         type="primary",
-        use_container_width=True,
+        width="stretch",
         disabled=not can_check,
     ):
         try:

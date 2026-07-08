@@ -117,7 +117,7 @@ def _render_result(result: dict[str, Any], *, title: str) -> None:
 
     rows = result.get("rows", []) or []
     if rows:
-        st.dataframe(_result_dataframe(rows), use_container_width=True, hide_index=True)
+        st.dataframe(_result_dataframe(rows), width="stretch", hide_index=True)
         st.download_button(
             "Свали резултат CSV",
             data=_csv_bytes(rows),
@@ -180,7 +180,7 @@ def render_v94_active_budget_plan_tracker_section() -> None:
         if history.empty:
             st.info("Все още няма история на запазени планове.")
         else:
-            st.dataframe(history, use_container_width=True, hide_index=True)
+            st.dataframe(history, width="stretch", hide_index=True)
 
     with tabs[4]:
         st.markdown(

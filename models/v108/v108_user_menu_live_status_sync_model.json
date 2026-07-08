@@ -4,16 +4,16 @@
   "blocking_failures": 0,
   "live_status": {
     "source": "v107",
-    "rows": 10061,
-    "latest_date": "2026-07-02",
-    "latest_draw_no": "51",
+    "rows": 10062,
+    "latest_date": "2026-07-05",
+    "latest_draw_no": "52",
     "latest_numbers": [
-      8,
-      9,
-      12,
-      18,
-      33,
-      38
+      4,
+      11,
+      21,
+      28,
+      36,
+      49
     ]
   }
 }

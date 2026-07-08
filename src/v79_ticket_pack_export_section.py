@@ -260,7 +260,7 @@ def render_v79_ticket_pack_export_section() -> None:
     if export_df.empty:
         st.info("Няма генериран пакет за изтегляне.")
     else:
-        st.dataframe(_v841_combo_visible_polish_df(_display_df(export_df)), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(export_df)), width="stretch", hide_index=True)
 
 
     # Визуални фишове от заключения запис — реален игрови лист за изпълнение.
@@ -276,7 +276,7 @@ def render_v79_ticket_pack_export_section() -> None:
     if проверки_df.empty:
         st.info("Няма проверки.")
     else:
-        st.dataframe(_v841_combo_visible_polish_df(_display_df(проверки_df)), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(проверки_df)), width="stretch", hide_index=True)
 
     with st.expander("Как да се чете финалният пакет"):
         st.markdown(

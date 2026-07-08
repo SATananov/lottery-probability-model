@@ -120,7 +120,7 @@ def render_v97_real_draw_lifecycle_section() -> None:
     with tabs[0]:
         rows = _read_rows(CHECKLIST_CSV)
         if rows:
-            st.dataframe(_rename_rows(rows, CHECKLIST_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(rows, CHECKLIST_LABELS), width="stretch", hide_index=True)
             st.download_button(
                 "Свали lifecycle checklist CSV",
                 data=_csv_bytes(rows),
@@ -133,7 +133,7 @@ def render_v97_real_draw_lifecycle_section() -> None:
     with tabs[1]:
         rows = _read_rows(ARTIFACTS_CSV)
         if rows:
-            st.dataframe(_rename_rows(rows, ARTIFACT_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(rows, ARTIFACT_LABELS), width="stretch", hide_index=True)
         else:
             st.info("Няма artifact map редове.")
 
@@ -151,7 +151,7 @@ def render_v97_real_draw_lifecycle_section() -> None:
                 "latest_position": "Теглене",
                 "parse_ok": "Parse OK",
             }
-            st.dataframe(_rename_rows(datasets, labels), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(datasets, labels), width="stretch", hide_index=True)
         else:
             st.info("Няма dataset status информация.")
 

@@ -39,7 +39,7 @@ def _load_rows(path: Path, limit: int | None = None) -> list[dict[str, str]]:
 def _show_rows(title: str, rows: list[dict[str, str]]) -> None:
     st.subheader(title)
     if rows:
-        st.dataframe(rows, use_container_width=True, hide_index=True)
+        st.dataframe(rows, width="stretch", hide_index=True)
     else:
         st.info("Няма налични редове за показване.")
 

@@ -101,15 +101,15 @@ def _show_table(rows: list[dict[str, Any]]) -> None:
         return
 
     if pd is None:
-        st.dataframe(rows, use_container_width=True)
+        st.dataframe(rows, width="stretch")
         return
 
     df = pd.DataFrame(rows)
 
     try:
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.dataframe(df, width="stretch", hide_index=True)
     except TypeError:
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(df, width="stretch")
 
 
 def render() -> None:

@@ -37,7 +37,7 @@ def render_v103_clean_release_checkpoint_section() -> None:
     st.subheader("Команда за терминала")
     st.code(str(summary.get("recommended_command", "python .\\scripts\\v103_create_clean_release_checkpoint.py")), language="powershell")
 
-    if st.button("Създай clean ZIP checkpoint", use_container_width=True):
+    if st.button("Създай clean ZIP checkpoint", width="stretch"):
         try:
             result = create_clean_release_checkpoint()
         except Exception as exc:  # noqa: BLE001
@@ -48,7 +48,7 @@ def render_v103_clean_release_checkpoint_section() -> None:
             st.write(result)
 
     st.subheader("Проверки")
-    st.dataframe(_checks_df(summary), use_container_width=True, hide_index=True)
+    st.dataframe(_checks_df(summary), width="stretch", hide_index=True)
 
     forbidden_preview = summary.get("forbidden_tracked_preview") or []
     if forbidden_preview:

@@ -80,7 +80,7 @@ def _show_dataframe(rows):
     localized = _localize_score_rows(rows)
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(localized), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(localized), width="stretch", hide_index=True)
     else:
         st.table(localized)
 
@@ -128,7 +128,7 @@ def render_v66_weighted_smart_ensemble_section():
             })
 
         if pd is not None:
-            st.dataframe(pd.DataFrame(source_rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(source_rows), width="stretch", hide_index=True)
         else:
             st.table(source_rows)
 

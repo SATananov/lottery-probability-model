@@ -1,7 +1,7 @@
 check,status,blocking,details_bg
 user_menu_uses_live_status_loader,OK,yes,"Потребителското меню вече зарежда live dataset status, а не само стария v86 model registry."
 user_menu_not_bound_to_v86_dataset_metrics,OK,yes,Редовете и последният тираж не трябва да идват директно от v86 summary.
-live_dataset_rows_current,OK,yes,"rows=10061, expected=10061, source=v107"
-live_latest_draw_current,OK,yes,"latest_date=2026-07-02, expected=2026-07-02, numbers=[8, 9, 12, 18, 33, 38]"
+live_dataset_rows_current,OK,yes,"rows=10062, expected=10062, source=v107"
+live_latest_draw_current,OK,yes,"latest_date=2026-07-05, expected=2026-07-05, numbers=[4, 11, 21, 28, 36, 49]"
 post_draw_sync_green,OK,yes,"v106_status=POST_DRAW_SYNCED, blockers=0"
 training_policy_green,OK,yes,"v107_status=TRAINING_POLICY_READY, blockers=0"

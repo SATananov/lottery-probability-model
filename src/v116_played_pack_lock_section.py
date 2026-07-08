@@ -508,7 +508,7 @@ def render_v116_played_pack_lock_section() -> None:
     if ui_snapshot.get("bad_count"):
         st.warning("Има фишове, които не са точно с 4 комбинации. Провери дневника преди следващ checkpoint.")
 
-    if st.button("Обнови заключения отчет", use_container_width=True, key="v116_refresh_lock_report"):
+    if st.button("Обнови заключения отчет", width="stretch", key="v116_refresh_lock_report"):
         saved = build_report()
         st.success(f"Отчетът е обновен. Статус: {saved.get('status')}")
 

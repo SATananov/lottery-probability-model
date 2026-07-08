@@ -109,7 +109,7 @@ def render_v89_final_statistical_portfolio_selector_section() -> None:
             )
 
     st.subheader(_t("\\u0421\\u0440\\u0430\\u0432\\u043d\\u0435\\u043d\\u0438\\u0435 \\u043d\\u0430 \\u043f\\u0430\\u043a\\u0435\\u0442\\u0438\\u0442\\u0435"))
-    st.dataframe(_comparison_table(model), use_container_width=True, hide_index=True)
+    st.dataframe(_comparison_table(model), width="stretch", hide_index=True)
 
     st.subheader(_t("\\u0411\\u0430\\u043b\\u0430\\u043d\\u0441\\u0438\\u0440\\u0430\\u043d \\u043f\\u0440\\u0435\\u043f\\u043e\\u0440\\u044a\\u0447\\u0430\\u043d \\u043f\\u0430\\u043a\\u0435\\u0442"))
     st.write(
@@ -117,7 +117,7 @@ def render_v89_final_statistical_portfolio_selector_section() -> None:
             "\\u0422\\u043e\\u0432\\u0430 \\u0435 \\u043f\\u0430\\u043a\\u0435\\u0442\\u044a\\u0442, \\u043a\\u043e\\u0439\\u0442\\u043e \\u0441\\u044a\\u0431\\u0438\\u0440\\u0430 \\u043d\\u0430\\u0439-\\u0434\\u043e\\u0431\\u044a\\u0440 \\u043e\\u0431\\u0449 \\u0431\\u0430\\u043b\\u0430\\u043d\\u0441 \\u043c\\u0435\\u0436\\u0434\\u0443 \\u043c\\u043e\\u0434\\u0435\\u043b\\u043d\\u0430 \\u0441\\u0438\\u043b\\u0430, \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e, \\u043f\\u043e\\u043a\\u0440\\u0438\\u0442\\u0438\\u0435 \\u0438 \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0430 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442."
         )
     )
-    st.dataframe(_package_table(balanced), use_container_width=True, hide_index=True)
+    st.dataframe(_package_table(balanced), width="stretch", hide_index=True)
 
     with st.expander(_t("\\u041a\\u0430\\u043a \\u0441\\u0435 \\u0441\\u043c\\u044f\\u0442\\u0430 \\u0438\\u0437\\u0431\\u043e\\u0440\\u044a\\u0442?")):
         st.markdown(

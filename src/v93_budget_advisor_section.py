@@ -190,7 +190,7 @@ def render_v93_budget_advisor_section() -> None:
         st.markdown("#### Сравнени варианти за този бюджет")
         candidates = advice.get("candidate_plans", []) or []
         if candidates:
-            st.dataframe(_candidate_dataframe(candidates), use_container_width=True, hide_index=True)
+            st.dataframe(_candidate_dataframe(candidates), width="stretch", hide_index=True)
         else:
             st.info("Няма достатъчен бюджет за валиден вариант.")
 

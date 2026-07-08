@@ -418,7 +418,7 @@ def render_v114_ticket_value_section() -> None:
     st.caption("Сравнява запазените фишове с вече изтеглен тираж и проверените печалби от БСТ.")
     st.info("Това е отчет след тиража: цена на фиша, попадения, реална категория и възможна печалба по БСТ. Не е прогноза.")
 
-    if st.button("Обнови реалната стойност", use_container_width=True, key="v114_refresh_ticket_value"):
+    if st.button("Обнови реалната стойност", width="stretch", key="v114_refresh_ticket_value"):
         summary = write_artifacts()
         st.success("Анализът е обновен.")
     else:
@@ -463,20 +463,20 @@ def render_v114_ticket_value_section() -> None:
     with tab_tickets:
         rows = summary.get("ticket_rows") or []
         if rows:
-            st.dataframe(_rename_ticket_rows(rows), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_ticket_rows(rows), width="stretch", hide_index=True)
         else:
             st.info("Още няма фишове за показване.")
 
     with tab_lines:
         rows = summary.get("line_rows") or []
         if rows:
-            st.dataframe(_rename_line_rows(rows), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_line_rows(rows), width="stretch", hide_index=True)
             st.download_button(
                 "Свали CSV с оценката по комбинации",
                 data=pd.DataFrame(rows).to_csv(index=False).encode("utf-8-sig"),
                 file_name="ticket_line_value.csv",
                 mime="text/csv",
-                use_container_width=True,
+                width="stretch",
             )
         else:
             st.info("Още няма комбинации за оценка.")

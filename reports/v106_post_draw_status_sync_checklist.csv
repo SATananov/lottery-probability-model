@@ -1,8 +1,8 @@
 ﻿check,passed,details_bg
-datasets_synced_after_draw,True,"rows=10061, latest=2026-07-02 [8, 9, 12, 18, 33, 38]"
+datasets_synced_after_draw,True,"rows=10062, latest=2026-07-05 [4, 11, 21, 28, 36, 49]"
 lifecycle_ready,True,v97=READY
 history_available,True,v98=HAS_HISTORY
 dashboard_ready,True,v99=READY_WAITING_NEXT_DRAW
 release_lock_ready,True,v100=V1_LOCKED_WAITING_NEXT_DRAW
 real_use_protocol_ready,True,v101=WAITING_NEXT_REAL_DRAW
-explainability_refreshed,True,"v76_valid_draws=10061, dataset_rows=10061"
+explainability_refreshed,True,"v76_valid_draws=10062, dataset_rows=10062"

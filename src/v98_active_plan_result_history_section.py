@@ -140,7 +140,7 @@ def render_v98_active_plan_result_history_section() -> None:
     with tabs[0]:
         rows = _read_rows(HISTORY_CSV_PATH)
         if rows:
-            st.dataframe(_rename_rows(rows, HISTORY_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(rows, HISTORY_LABELS), width="stretch", hide_index=True)
             st.download_button(
                 "Свали история CSV",
                 data=_csv_bytes(rows),
@@ -153,7 +153,7 @@ def render_v98_active_plan_result_history_section() -> None:
     with tabs[1]:
         rows = _read_rows(PLAN_SUMMARY_CSV_PATH)
         if rows:
-            st.dataframe(_rename_rows(rows, PLAN_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(rows, PLAN_LABELS), width="stretch", hide_index=True)
         else:
             st.info("Няма обобщение за активния план.")
 

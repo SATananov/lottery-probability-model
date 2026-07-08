@@ -102,21 +102,21 @@ def render_v76_explainability_validation_section() -> None:
     if numbers_df.empty:
         st.info("Още няма генерирани обяснения. Натисни бутона за обновяване.")
     else:
-        st.dataframe(_display_df(numbers_df.head(49)), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(numbers_df.head(49)), width="stretch", hide_index=True)
 
     st.subheader("Валидация на фишове")
     tickets_df = _read_csv(TICKET_VALIDATION_CSV)
     if tickets_df.empty:
         st.info("Още няма генерирана валидация на фишове.")
     else:
-        st.dataframe(_display_df(tickets_df), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(tickets_df), width="stretch", hide_index=True)
 
     st.subheader("Предупредителни бележки")
     warnings_df = _read_csv(WARNINGS_CSV)
     if warnings_df.empty:
         st.success("Няма активни предупредителни бележки.")
     else:
-        st.dataframe(_display_df(warnings_df), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(warnings_df), width="stretch", hide_index=True)
 
     with st.expander("Как да се чете този център"):
         st.markdown(

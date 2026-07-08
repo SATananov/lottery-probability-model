@@ -2,7 +2,7 @@
   "step": 99,
   "status": "READY_WAITING_NEXT_DRAW",
   "title_bg": "Финално потребителско табло",
-  "generated_at_utc": "2026-07-07T13:21:46+00:00",
+  "generated_at_utc": "2026-07-08T10:31:25+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "status": "ACTIVE",
@@ -110,21 +110,21 @@
     ]
   },
   "dataset": {
-    "dataset_rows": 10061,
-    "canonical_rows": 10061,
-    "latest_draw_date": "2026-07-02",
+    "dataset_rows": 10062,
+    "canonical_rows": 10062,
+    "latest_draw_date": "2026-07-05",
     "latest_draw_year": "2026",
-    "latest_draw_number": "51",
+    "latest_draw_number": "52",
     "latest_draw_position": "1",
     "latest_numbers": [
-      8,
-      9,
-      12,
-      18,
-      33,
-      38
+      4,
+      11,
+      21,
+      28,
+      36,
+      49
     ],
-    "latest_numbers_text": "8, 9, 12, 18, 33, 38"
+    "latest_numbers_text": "4, 11, 21, 28, 36, 49"
   },
   "statuses": {
     "step95_status": "EVALUATED",

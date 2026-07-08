@@ -139,12 +139,12 @@ def _show_dataframe(rows: list[dict[str, Any]]) -> None:
         st.info("Няма данни за показване.")
         return
     if pd is None:
-        st.dataframe(rows, use_container_width=True)
+        st.dataframe(rows, width="stretch")
         return
     try:
-        st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
     except TypeError:
-        st.dataframe(pd.DataFrame(rows), use_container_width=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch")
 
 
 def _render_number_cards(numbers: list[int]) -> None:
@@ -277,7 +277,7 @@ def render() -> None:
                 df = pd.read_csv(BACKTEST_BY_MODEL_PATH)
                 if "model" in df.columns:
                     df["model"] = df["model"].map(_model_label)
-                st.dataframe(df, hide_index=True, use_container_width=True)
+                st.dataframe(df, hide_index=True, width="stretch")
 
     with tabs[2]:
         st.subheader("Топ числа по комбинирана оценка")
@@ -288,9 +288,9 @@ def render() -> None:
         if FEATURE_IMPORTANCE_PATH.exists() and pd is not None:
             df = pd.read_csv(FEATURE_IMPORTANCE_PATH)
             try:
-                st.dataframe(df, hide_index=True, use_container_width=True)
+                st.dataframe(df, hide_index=True, width="stretch")
             except TypeError:
-                st.dataframe(df, use_container_width=True)
+                st.dataframe(df, width="stretch")
         else:
             st.info("Няма файл с фактори.")
 

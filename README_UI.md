@@ -1,33 +1,45 @@
-# Streamlit Visual App
+# Streamlit App Guide
 
-This optional UI turns the lottery probability project into a local visual dashboard.
+The Streamlit app is the visual dashboard for the Lottery Probability Model 6/49 project. It is intended for local use, model review, controlled data updates, ticket-pack preparation, and report inspection.
 
-## Run
+## Start the app
 
-Install dependencies:
+From the project root:
 
 ```powershell
 python -m pip install -r requirements.txt
+python -m streamlit run app.py
 ```
 
-Start the app:
+The browser normally opens at:
 
-```powershell
-python -m streamlit run streamlit_app.py
+```text
+http://localhost:8501
 ```
 
-The browser will open a local dashboard with:
+## What to check first
 
-- dataset audit summary;
-- mathematical odds;
-- combined model recommendations;
-- hot, cold + gap, middle, and gap model explorer;
-- historical number frequency charts;
-- probability lab;
-- markdown reports.
+Open the user menu/dashboard and confirm:
 
-## Important note
+```text
+Dataset rows: 10062
+Latest draw: 2026-07-05 · Draw 52 · 4, 11, 21, 28, 36, 49
+Ready ticket pack: 3 tickets × 4 lines = 12 combinations
+Total price: 10.80 EUR
+```
 
-This app does not make lottery results predictable. Every exact 6-number ticket still has the same fair jackpot odds: `1 in 13,983,816`.
+## Main UI areas
 
-The displayed confidence values are relative model scores among generated candidates, not guaranteed real-world probabilities.
+- User menu and dashboard status.
+- Add Draw controlled workflow.
+- Real ticket-pack builder.
+- Model system ticket builder.
+- Played-ticket journal.
+- Historical analysis and prize history sections.
+- Model comparison, registry, reliability, and weighting sections.
+- Probability and ML laboratories.
+- Reports and final plan views.
+
+## Notes
+
+The app displays statistical analysis and model scores only. It does not make lottery results predictable and does not change the theoretical chance of a 6/49 ticket.

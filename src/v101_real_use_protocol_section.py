@@ -138,7 +138,7 @@ def render_v101_real_use_protocol_section() -> None:
     st.subheader("Ред за реална употреба")
     protocol_rows = payload.get("protocol_steps", []) or _read_rows(PROTOCOL_STEPS_CSV_PATH)
     if protocol_rows:
-        st.dataframe(_rename_rows(protocol_rows, PROTOCOL_LABELS), use_container_width=True, hide_index=True)
+        st.dataframe(_rename_rows(protocol_rows, PROTOCOL_LABELS), width="stretch", hide_index=True)
         st.download_button(
             "Изтегли протокола CSV",
             data=_csv_bytes(protocol_rows),
@@ -152,7 +152,7 @@ def render_v101_real_use_protocol_section() -> None:
     st.subheader("Контролен checklist")
     checklist_rows = payload.get("checklist", []) or _read_rows(CHECKLIST_CSV_PATH)
     if checklist_rows:
-        st.dataframe(_rename_rows(checklist_rows, CHECKLIST_LABELS), use_container_width=True, hide_index=True)
+        st.dataframe(_rename_rows(checklist_rows, CHECKLIST_LABELS), width="stretch", hide_index=True)
         st.download_button(
             "Изтегли checklist CSV",
             data=_csv_bytes(checklist_rows),

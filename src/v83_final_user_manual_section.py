@@ -107,7 +107,7 @@ def _show_table(title: str, rows: list[dict[str, str]], preferred_order: list[st
 
     st.dataframe(
         _translate_rows(rows, preferred_order),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 

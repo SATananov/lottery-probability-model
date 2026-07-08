@@ -159,13 +159,13 @@ def render_v56_draw_similarity_section() -> None:
             st.markdown("#### Разпределение на съвпаденията")
             st.dataframe(
                 _distribution_table(analysis["match_distribution"]),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )
 
             st.markdown("#### Най-близки исторически тиражи")
             st.dataframe(
                 _closest_draws_table(analysis["closest_draws"]),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )

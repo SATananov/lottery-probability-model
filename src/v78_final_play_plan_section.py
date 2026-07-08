@@ -245,21 +245,21 @@ def render_v78_final_play_plan_section() -> None:
     if plan_df.empty:
         st.info("Няма генериран финален план.")
     else:
-        st.dataframe(_v841_combo_visible_polish_df(_display_df(plan_df)), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(plan_df)), width="stretch", hide_index=True)
 
     st.subheader("Действия")
     actions_df = _read_csv(V78_PLAY_ACTIONS_CSV)
     if actions_df.empty:
         st.info("Няма генерирани действия.")
     else:
-        st.dataframe(_v841_combo_visible_polish_df(_display_df(actions_df)), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(actions_df)), width="stretch", hide_index=True)
 
     st.subheader("Предупреждения")
     warnings_df = _read_csv(V78_PLAY_WARNINGS_CSV)
     if warnings_df.empty:
         st.success("Няма комбинации с повишен риск във финалния план.")
     else:
-        st.dataframe(_v841_combo_visible_polish_df(_display_df(warnings_df)), use_container_width=True, hide_index=True)
+        st.dataframe(_v841_combo_visible_polish_df(_display_df(warnings_df)), width="stretch", hide_index=True)
 
     with st.expander("Как да се чете финалният план"):
         st.markdown(

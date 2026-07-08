@@ -178,7 +178,7 @@ def render_full_historical_draws_section() -> None:
             view = filtered.sort_values(["_year", "_draw_number", "_draw_position"], ascending=[True, True, True], kind="stable").head(50)
         else:
             view = filtered
-        st.dataframe(_display_df(view), hide_index=True, use_container_width=True)
+        st.dataframe(_display_df(view), hide_index=True, width="stretch")
         csv_data = _display_df(filtered).to_csv(index=False).encode("utf-8-sig")
         st.download_button(
             "Свали избраната история като CSV",
@@ -189,13 +189,13 @@ def render_full_historical_draws_section() -> None:
 
     with tab_freq:
         freq = _frequency_table(filtered)
-        st.dataframe(freq, hide_index=True, use_container_width=True)
+        st.dataframe(freq, hide_index=True, width="stretch")
         top = freq.head(10)
         if not top.empty:
             st.caption("Най-често срещани числа в избрания диапазон")
             st.bar_chart(top.set_index("Число"))
 
     with tab_years:
-        st.dataframe(_year_coverage(df), hide_index=True, use_container_width=True)
+        st.dataframe(_year_coverage(df), hide_index=True, width="stretch")
 
     st.info("Тази страница показва история и честоти. Тя не предсказва бъдещ тираж и не гарантира печалба.")

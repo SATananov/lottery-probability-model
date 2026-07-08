@@ -203,7 +203,7 @@ def render_v99_final_user_dashboard_section() -> None:
     with tabs[2]:
         snapshot_rows = _read_rows(SNAPSHOT_CSV_PATH)
         if snapshot_rows:
-            st.dataframe(_rename_rows(snapshot_rows, SNAPSHOT_LABELS), use_container_width=True, hide_index=True)
+            st.dataframe(_rename_rows(snapshot_rows, SNAPSHOT_LABELS), width="stretch", hide_index=True)
         else:
             st.info("Няма snapshot данни.")
 

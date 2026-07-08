@@ -236,7 +236,7 @@ def render_v59_smart_ticket_builder_2_section() -> None:
         st.success("Фишът е запазен. Отвори страницата „Обединена оценка“, за да го провериш там.")
 
     st.markdown("### Таблица на предложенията")
-    st.dataframe(_bg_table(df), use_container_width=True, hide_index=True)
+    st.dataframe(_bg_table(df), width="stretch", hide_index=True)
 
     st.markdown("### Карти на комбинациите")
 
@@ -268,4 +268,4 @@ def render_v59_smart_ticket_builder_2_section() -> None:
                 }
             )
 
-        st.dataframe(preview_rows, use_container_width=True, hide_index=True)
+        st.dataframe(preview_rows, width="stretch", hide_index=True)

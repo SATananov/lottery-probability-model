@@ -119,7 +119,7 @@ def _show_table(rows, columns):
     localized = _localize_rows(rows, columns)
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(localized), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(localized), width="stretch", hide_index=True)
     else:
         st.table(localized)
 
@@ -199,7 +199,7 @@ def render_v68_weighted_portfolio_optimizer_section():
     with st.expander("Припокриване между комбинациите"):
         if overlaps:
             if pd is not None:
-                st.dataframe(pd.DataFrame(overlaps), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(overlaps), width="stretch", hide_index=True)
             else:
                 st.table(overlaps)
         else:
@@ -209,7 +209,7 @@ def render_v68_weighted_portfolio_optimizer_section():
         st.markdown("**Повторени двойки**")
         if pairs:
             if pd is not None:
-                st.dataframe(pd.DataFrame(pairs), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(pairs), width="stretch", hide_index=True)
             else:
                 st.table(pairs)
         else:
@@ -218,7 +218,7 @@ def render_v68_weighted_portfolio_optimizer_section():
         st.markdown("**Повторени тройки**")
         if triples:
             if pd is not None:
-                st.dataframe(pd.DataFrame(triples), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(triples), width="stretch", hide_index=True)
             else:
                 st.table(triples)
         else:

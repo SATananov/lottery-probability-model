@@ -95,7 +95,7 @@ def render_v91_budget_aware_system_builder_section() -> None:
     st.subheader("Практическа системна препоръка")
     st.write(f"**{practical.get('label', '')}**")
     st.write(f"Ядро: **{_numbers_text(practical.get('core_numbers', []))}**")
-    st.dataframe(_combination_table(practical), use_container_width=True, hide_index=True)
+    st.dataframe(_combination_table(practical), width="stretch", hide_index=True)
 
     if best_under_10:
         st.subheader("Най-силен вариант до 10 EUR")
@@ -107,7 +107,7 @@ def render_v91_budget_aware_system_builder_section() -> None:
         st.write(f"Ядро: **{_numbers_text(best_under_10.get('core_numbers', []))}**")
 
     st.subheader("Сравнение на системните варианти")
-    st.dataframe(_options_table(model.get("options", [])), use_container_width=True, hide_index=True)
+    st.dataframe(_options_table(model.get("options", [])), width="stretch", hide_index=True)
 
     with st.expander("Пълна система срещу редуцирана система"):
         st.markdown(
@@ -165,6 +165,6 @@ def render_v91_budget_aware_system_builder_section() -> None:
     custom_cols[3].metric("Покритие", f"{float(custom.get('pool_coverage_percent', 0.0)):.2f}%")
     custom_cols[4].metric("Оценка", f"{float(custom.get('system_score', 0.0)):.1f}")
 
-    st.dataframe(_combination_table(custom), use_container_width=True, hide_index=True)
+    st.dataframe(_combination_table(custom), width="stretch", hide_index=True)
 
     st.warning(model.get("safe_note_bg", "Това е статистически метод, не гаранция за печалба."))

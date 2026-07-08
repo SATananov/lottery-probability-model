@@ -95,7 +95,7 @@ def _score_table(rows: list[dict[str, Any]], limit: int | None = 12) -> None:
             }
         )
 
-    st.dataframe(pd.DataFrame(display_rows), hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(display_rows), hide_index=True, width="stretch")
 
 
 def render_interval_rhythm_analysis() -> None:

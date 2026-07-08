@@ -110,7 +110,7 @@ def _show_table(rows):
     localized = _localize_rows(rows)
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(localized), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(localized), width="stretch", hide_index=True)
     else:
         st.table(localized)
 

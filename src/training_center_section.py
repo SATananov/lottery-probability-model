@@ -223,7 +223,7 @@ def _render_status_table() -> None:
             }
         )
 
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
 
 
 def _render_v45_summary() -> None:
@@ -332,7 +332,7 @@ def _render_backtest_preview() -> None:
         )
     )
 
-    st.dataframe(shown, hide_index=True, use_container_width=True)
+    st.dataframe(shown, hide_index=True, width="stretch")
 
 def _render_training_buttons() -> None:
     st.subheader(T("\\u0420\\u044a\\u0447\\u043d\\u043e \\u043e\\u0431\\u043d\\u043e\\u0432\\u044f\\u0432\\u0430\\u043d\\u0435"))

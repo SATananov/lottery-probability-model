@@ -58,7 +58,7 @@ def _show_history(rows):
         })
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(shown), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(shown), width="stretch", hide_index=True)
     else:
         st.table(shown)
 
@@ -76,7 +76,7 @@ def _show_ticket_results(rows):
         })
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(shown), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(shown), width="stretch", hide_index=True)
     else:
         st.table(shown)
 

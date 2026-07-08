@@ -206,7 +206,7 @@ def render_v42_combined_analysis() -> None:
     st.caption(_bg("d09dd0b520d0b520d0bfd0b5d187d0b5d0bbd0b8d0b2d188d0b020d0bfd180d0bed0b3d0bdd0bed0b7d0b0"))
 
     if details:
-        st.dataframe(_details_dataframe(details), hide_index=True, use_container_width=True)
+        st.dataframe(_details_dataframe(details), hide_index=True, width="stretch")
 
     dataset = scores.get("dataset", {})
     data_col_1, data_col_2, data_col_3 = st.columns(3)
@@ -217,12 +217,12 @@ def render_v42_combined_analysis() -> None:
     st.subheader(_bg("d0a2d0bed0bf20d0bad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bdd0b820d187d0b8d181d0bbd0b0"))
     top_combined = summary.get("top_combined_numbers", [])[:12]
     if top_combined:
-        st.dataframe(_combined_dataframe(top_combined), hide_index=True, use_container_width=True)
+        st.dataframe(_combined_dataframe(top_combined), hide_index=True, width="stretch")
 
     st.subheader(_bg("d0a2d0bed0bf20d180d0b8d181d0ba20d0bed18220d0bed182d181d18ad181d182d0b2d0b8d0b5"))
     top_risk = summary.get("top_absence_risk_numbers", [])[:12]
     if top_risk:
-        st.dataframe(_risk_dataframe(top_risk), hide_index=True, use_container_width=True)
+        st.dataframe(_risk_dataframe(top_risk), hide_index=True, width="stretch")
 
     all_number_rows = scores.get("numbers", [])
     avoided = sorted(
@@ -235,7 +235,7 @@ def render_v42_combined_analysis() -> None:
         _bg("d0a2d0bed0b2d0b020d0bdd0b520d0bed0b7d0bdd0b0d187d0b0d0b2d0b02c20d187d0b520d182d0b5d0b7d0b820d187d0b8d181d0bbd0b020d0bdd18fd0bcd0b020d0b4d0b020d181d0b520d0bfd0b0d0b4d0bdd0b0d1822e20d09ed0b7d0bdd0b0d187d0b0d0b2d0b020d181d0b0d0bcd0be2c20d187d0b520d181d0bfd0bed180d0b5d0b420d182d0b5d0bad183d189d0b8d18f20d0b0d0bdd0b0d0bbd0b8d0b720d0b8d0bcd0b0d18220d0bfd0be2dd181d0bbd0b0d0b120d0bad0bed0bcd0b1d0b8d0bdd0b8d180d0b0d0bd20d0bfd180d0bed184d0b8d0bb20d0b8d0bbd0b820d0bfd0be2dd0b2d0b8d181d0bed0ba20d180d0b8d181d0ba20d0bed18220d0bed182d181d18ad181d182d0b2d0b8d0b52e")
     )
     if avoided:
-        st.dataframe(_details_dataframe(avoided), hide_index=True, use_container_width=True)
+        st.dataframe(_details_dataframe(avoided), hide_index=True, width="stretch")
 
 
     # USER_COMBINATION_CHECKER_UI_START
@@ -264,7 +264,7 @@ def render_v42_combined_analysis() -> None:
     check_clicked = st.button(
         _bg("d09fd180d0bed0b2d0b5d180d0b820d0bad0bed0bcd0b1d0b8d0bdd0b0d186d0b8d18fd182d0b0"),
         type="primary",
-        use_container_width=True,
+        width="stretch",
     )
 
     if check_clicked:
@@ -336,7 +336,7 @@ def render_v42_combined_analysis() -> None:
 
                 details_df = _combination_details_dataframe(evaluation["details"])
                 if not details_df.empty:
-                    st.dataframe(details_df, hide_index=True, use_container_width=True)
+                    st.dataframe(details_df, hide_index=True, width="stretch")
 
                 strongest_numbers = [str(row.get("number")) for row in evaluation["strongest"]]
                 risk_numbers = [str(row.get("number")) for row in evaluation["highest_risk"]]

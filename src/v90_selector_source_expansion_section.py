@@ -54,7 +54,7 @@ def render_v90_selector_source_expansion_section() -> None:
         )
 
     if rows:
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
     else:
         st.warning(_t("\u041d\u044f\u043c\u0430 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438 \u043a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043f\u0430\u043a\u0435\u0442\u0438."))
 

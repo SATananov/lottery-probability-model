@@ -15,23 +15,23 @@
   ],
   "uses_bonus_number": false,
   "uses_drawing_no": true,
-  "train_events": 8048,
+  "train_events": 8049,
   "test_events": 2013,
   "metrics": {
     "model": "sgd_number_classifier",
     "test_events": 2013,
-    "average_hits_top6": 0.7476403378042722,
+    "average_hits_top6": 0.7436661698956781,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 849,
-      "1": 860,
-      "2": 268,
-      "3": 35,
-      "4": 1
+      "0": 861,
+      "1": 840,
+      "2": 281,
+      "3": 29,
+      "4": 2
     },
-    "events_with_3plus_hits": 36,
-    "events_with_4plus_hits": 1,
+    "events_with_3plus_hits": 31,
+    "events_with_4plus_hits": 2,
     "events_with_5plus_hits": 0,
     "events_with_6_hits": 0
   },

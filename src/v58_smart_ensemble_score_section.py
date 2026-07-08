@@ -141,7 +141,7 @@ def render_v58_smart_ensemble_score_section() -> None:
 
     st.markdown("### Обобщена таблица")
     summary_df = ensemble_to_dataframe(result)
-    st.dataframe(_bg_summary_table(summary_df), use_container_width=True, hide_index=True)
+    st.dataframe(_bg_summary_table(summary_df), width="stretch", hide_index=True)
 
     st.markdown("### Детайли по комбинации")
 
@@ -161,7 +161,7 @@ def render_v58_smart_ensemble_score_section() -> None:
             st.caption(f"Обща оценка: {score:.2f} / 100")
 
             st.markdown("#### Компоненти")
-            st.dataframe(_component_table(item["components"]), use_container_width=True, hide_index=True)
+            st.dataframe(_component_table(item["components"]), width="stretch", hide_index=True)
 
             hot = item["hot_cold_details"]
             prof = item["number_profile_details"]

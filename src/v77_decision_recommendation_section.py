@@ -99,14 +99,14 @@ def render_v77_decision_recommendation_section() -> None:
     if rec_df.empty:
         st.info("Няма генерирани препоръки.")
     else:
-        st.dataframe(_display_df(rec_df), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(rec_df), width="stretch", hide_index=True)
 
     st.subheader("Предупредителни препоръки")
     warnings_df = _read_csv(V77_DECISION_WARNINGS_CSV)
     if warnings_df.empty:
         st.success("Няма комбинации с повишен риск според оценката.")
     else:
-        st.dataframe(_display_df(warnings_df), use_container_width=True, hide_index=True)
+        st.dataframe(_display_df(warnings_df), width="stretch", hide_index=True)
 
     with st.expander("Как да се чете този раздел"):
         st.markdown(

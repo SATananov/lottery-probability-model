@@ -11,7 +11,7 @@ def render_v110_user_friendly_ui_polish_section() -> None:
     st.title("Потребителска яснота")
     st.caption("Проверка дали основните екрани говорят на разбираем български, без излишни технически термини.")
 
-    if st.button("Обнови проверката", use_container_width=True, key="v110_refresh_ui_polish_btn"):
+    if st.button("Обнови проверката", width="stretch", key="v110_refresh_ui_polish_btn"):
         summary = build_and_write()
         st.success("Проверката е обновена.")
     else:
@@ -29,6 +29,6 @@ def render_v110_user_friendly_ui_polish_section() -> None:
     checks = summary.get("checks", []) or []
     if checks:
         st.markdown("### Проверки")
-        st.dataframe(polish_dataframe(pd.DataFrame(checks)), use_container_width=True, hide_index=True)
+        st.dataframe(polish_dataframe(pd.DataFrame(checks)), width="stretch", hide_index=True)
 
     st.info("Тази страница е контролна. Тя не променя числата, моделите, фишовете или резултатите.")

@@ -26,12 +26,12 @@ def render_v104_final_audit_refresh_section() -> None:
         st.warning("Има проверки, които искат внимание.")
 
     st.subheader("Проверки")
-    st.dataframe(pd.DataFrame(summary.get("checks", [])), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(summary.get("checks", [])), width="stretch", hide_index=True)
 
     st.subheader("Статуси на финалните слоеве")
-    st.dataframe(polish_dataframe(pd.DataFrame(summary.get("step_statuses", []))), use_container_width=True, hide_index=True)
+    st.dataframe(polish_dataframe(pd.DataFrame(summary.get("step_statuses", []))), width="stretch", hide_index=True)
 
     markers = summary.get("active_text_markers", {}).get("findings", [])
     if markers:
         st.subheader("Encoding markers")
-        st.dataframe(pd.DataFrame(markers), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(markers), width="stretch", hide_index=True)

@@ -215,28 +215,28 @@ def render_v80_final_system_audit_section() -> None:
     if dataset_df.empty:
         st.info("Няма таблица за одит на данните.")
     else:
-        st.dataframe(_v80_translate_dataframe(dataset_df), use_container_width=True, hide_index=True)
+        st.dataframe(_v80_translate_dataframe(dataset_df), width="stretch", hide_index=True)
 
     st.subheader("Планове за синхронизация")
     sync_df = _read_csv(SYNC_PLAN_AUDIT_CSV)
     if sync_df.empty:
         st.info("Няма таблица за одит на плановете за синхронизация.")
     else:
-        st.dataframe(_v80_translate_dataframe(sync_df), use_container_width=True, hide_index=True)
+        st.dataframe(_v80_translate_dataframe(sync_df), width="stretch", hide_index=True)
 
     with st.expander("Step 76–79 артефакти"):
         artifact_df = _read_csv(ARTIFACT_AUDIT_CSV)
         if artifact_df.empty:
             st.info("Няма таблица за одит на артефактите.")
         else:
-            st.dataframe(_v80_translate_dataframe(artifact_df), use_container_width=True, hide_index=True)
+            st.dataframe(_v80_translate_dataframe(artifact_df), width="stretch", hide_index=True)
 
     with st.expander("Файлово качество: компилация, етикети, кирилица"):
         quality_df = _read_csv(FILE_QUALITY_AUDIT_CSV)
         if quality_df.empty:
             st.info("Няма таблица за одит на качеството.")
         else:
-            st.dataframe(_v80_translate_dataframe(quality_df), use_container_width=True, hide_index=True)
+            st.dataframe(_v80_translate_dataframe(quality_df), width="stretch", hide_index=True)
 
     with st.expander("Как да се чете Step 80"):
         st.markdown(

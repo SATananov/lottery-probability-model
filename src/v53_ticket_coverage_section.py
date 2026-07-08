@@ -61,13 +61,13 @@ def _show_validation_table(rows: list[dict]) -> None:
             }
         )
 
-    st.dataframe(table_rows, use_container_width=True, hide_index=True)
+    st.dataframe(table_rows, width="stretch", hide_index=True)
 
 
 def _show_small_table(title: str, data: dict[str, int]) -> None:
     st.markdown(f"#### {title}")
     rows = [{"Показател": key, "Брой": value} for key, value in data.items()]
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.dataframe(rows, width="stretch", hide_index=True)
 
 
 def render_v53_ticket_coverage_section() -> None:
@@ -163,7 +163,7 @@ def render_v53_ticket_coverage_section() -> None:
             {"Двойка": ", ".join(str(number) for number in row["pair"]), "Повторения": row["count"]}
             for row in result["top_repeated_pairs"]
         ]
-        st.dataframe(pair_rows, use_container_width=True, hide_index=True)
+        st.dataframe(pair_rows, width="stretch", hide_index=True)
 
     if result["top_repeated_triples"]:
         st.markdown("#### Най-често повторени тройки")
@@ -171,4 +171,4 @@ def render_v53_ticket_coverage_section() -> None:
             {"Тройка": ", ".join(str(number) for number in row["triple"]), "Повторения": row["count"]}
             for row in result["top_repeated_triples"]
         ]
-        st.dataframe(triple_rows, use_container_width=True, hide_index=True)
+        st.dataframe(triple_rows, width="stretch", hide_index=True)

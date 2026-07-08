@@ -118,7 +118,7 @@ def render_v117_real_ticket_pack_builder_section() -> None:
         ticket_count = st.selectbox("Брой фишове", available_counts, index=len(available_counts) - 1, key="v117_ticket_count")
     with col_refresh:
         st.write("")
-        refresh = st.button("Обнови пакета", type="primary", use_container_width=True, key="v117_refresh_builder")
+        refresh = st.button("Обнови пакета", type="primary", width="stretch", key="v117_refresh_builder")
 
     current_summary = load_summary()
     summary_is_current = is_summary_current(current_summary)
@@ -170,7 +170,7 @@ def render_v117_real_ticket_pack_builder_section() -> None:
     target_draw_number = d3.text_input("Номер на тиража, ако го знаеш", value="", key="v117_target_draw_number")
     note = st.text_area("Бележка към записа", value="Записано от готов фиш пакет", key="v117_note")
 
-    if st.button("Запази този пакет като реално игран", use_container_width=True, key="v117_save_as_played"):
+    if st.button("Запази този пакет като реално игран", width="stretch", key="v117_save_as_played"):
         result = save_ticket_cards_as_played(
             cards=cards,
             play_date=str(play_date),
@@ -193,7 +193,7 @@ def render_v117_real_ticket_pack_builder_section() -> None:
             data=PACK_CSV.read_bytes(),
             file_name="gotov-fish-paket.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
         )
 
     with st.expander("Проверки на готовия пакет"):

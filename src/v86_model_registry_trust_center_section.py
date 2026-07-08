@@ -89,7 +89,7 @@ def _display_rows(rows):
         })
 
     if pd is not None:
-        st.dataframe(pd.DataFrame(visible), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(visible), width="stretch", hide_index=True)
     else:
         st.table(visible)
 

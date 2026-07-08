@@ -554,7 +554,7 @@ def render() -> None:
     )
 
     st.subheader(T("\\u0422\\u0430\\u0431\\u043b\\u0438\\u0446\\u0430 \\u0437\\u0430 \\u043a\\u043e\\u043f\\u0438\\u0440\\u0430\\u043d\\u0435"))
-    st.dataframe(export_df, hide_index=True, use_container_width=True)
+    st.dataframe(export_df, hide_index=True, width="stretch")
 
     csv_bytes = export_df.to_csv(index=False).encode("utf-8-sig")
     st.download_button(
@@ -709,7 +709,7 @@ def _step52_render_smart_ticket_intelligence() -> None:
     _step52_st.progress(min(max(score / 100.0, 0.0), 1.0))
 
     with _step52_st.expander(_step52_t("\\u041e\\u0446\\u0435\\u043d\\u043a\\u0430 \\u043f\\u043e \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0438"), expanded=True):
-        _step52_st.dataframe(_step52_rename_combo_columns(df), hide_index=True, use_container_width=True)
+        _step52_st.dataframe(_step52_rename_combo_columns(df), hide_index=True, width="stretch")
 
     col_left, col_right = _step52_st.columns(2)
 
@@ -1146,7 +1146,7 @@ def _step521_render_dynamic_ticket_evaluator() -> None:
     _step521_st.dataframe(
         _step521_rename_rows(_step521_pd.DataFrame([{k: v for k, v in row.items() if k != "numbers"} for row in rows])),
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
     )
 
     col_left, col_right = _step521_st.columns(2)

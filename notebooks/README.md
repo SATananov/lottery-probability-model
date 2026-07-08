@@ -1,18 +1,21 @@
-# Lottery Probability Model — ML Notebooks
+# ML Notebooks
 
-Тази папка съдържа обяснителни и аналитични notebooks за ML/статистическите модели в проекта.
+This folder contains explanatory and analytical notebooks for the Lottery Probability Model 6/49 project.
 
-## Стартиране
+The notebooks document the data, models, scoring logic, comparisons, ticket-pack construction, backtesting, and model limitations using readable explanations, tables, and charts.
+
+## Start
+
+From the project root:
 
 ```powershell
-cd "C:\Users\stana\Desktop\lottery-probability-model"
 python -m pip install -r requirements-notebooks.txt
 jupyter notebook
 ```
 
-Във VS Code можеш директно да отвориш `.ipynb` файловете.
+The notebooks can also be opened directly in VS Code.
 
-## Препоръчителен ред
+## Recommended order
 
 1. `00_project_overview.ipynb`
 2. `01_data_overview_and_quality.ipynb`
@@ -27,6 +30,14 @@ jupyter notebook
 11. `10_backtest_and_performance.ipynb`
 12. `11_explainability_and_conclusions.ipynb`
 
-## Важно
+## Purpose
 
-Тези notebooks са за анализ, визуализация и обяснение. Те не гарантират печалба. Лотарийните тегления остават случайни събития.
+- Explain each model in plain language.
+- Show the input datasets and generated reports.
+- Visualize frequencies, gaps, patterns, scores, and performance history.
+- Make the project easier to review and maintain.
+- Keep model limitations clear.
+
+## Important limitation
+
+The notebooks are educational and analytical. They do not guarantee future lottery results.

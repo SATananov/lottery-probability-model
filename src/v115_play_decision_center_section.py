@@ -378,7 +378,7 @@ def render_v115_play_decision_center_section() -> None:
     st.markdown("### Последни БСТ записи")
     show_cols = [c for c in ["draw_year", "draw_number", "draw_date", "numbers_text", "jackpot_eur", "winners_6", "winners_5", "winners_4", "winners_3"] if c in prize_df.columns]
     if show_cols:
-        st.dataframe(prize_df[show_cols].tail(20).iloc[::-1], use_container_width=True, hide_index=True)
+        st.dataframe(prize_df[show_cols].tail(20).iloc[::-1], width="stretch", hide_index=True)
 
 
 if __name__ == "__main__":
