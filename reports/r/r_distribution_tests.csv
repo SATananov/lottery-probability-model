@@ -1,0 +1,7 @@
+"test","statistic","p_value","note"
+"chi_square_uniform_number_frequency",42.7501490757305,0.68720634672537,"Chi-square test against uniform number frequency."
+"draw_sum_mean",150.108228980322,NA,"Average sum of six numbers."
+"draw_sum_sd",33.2716306377034,NA,"Standard deviation of draw sums."
+"odd_count_mean",3.05158020274299,NA,"Average odd count."
+"low_count_mean",2.93559928443649,NA,"Average low count where low <= 24."
+"spread_mean",35.7227191413238,NA,"Average spread between max and min number."
