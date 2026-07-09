@@ -53,3 +53,6 @@ data/*.db-journal
 
 data/user_journal.db
 data/user_journal_exports/
+
+data/user_journal.db
+data/user_journal_exports/
