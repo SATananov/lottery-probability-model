@@ -50,3 +50,6 @@ data/*.db-journal
 # Notebook checkpoints
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+
+data/user_journal.db
+data/user_journal_exports/
