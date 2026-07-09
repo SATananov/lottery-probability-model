@@ -1,116 +1,12 @@
 {
-  "inserted": [
-    {
-      "draw_key": "2026-52",
-      "draw_year": "2026",
-      "draw_number": "52",
-      "draw_date": "2026-07-05",
-      "n1": "4",
-      "n2": "11",
-      "n3": "21",
-      "n4": "28",
-      "n5": "36",
-      "n6": "49",
-      "numbers_text": "4, 11, 21, 28, 36, 49",
-      "jackpot_eur": "2454504.13",
-      "winners_6": "0",
-      "prize_6_eur": "0.00",
-      "total_6_eur": "0.00",
-      "winners_5": "20",
-      "prize_5_eur": "1163.00",
-      "total_5_eur": "23260.00",
-      "winners_4": "726",
-      "prize_4_eur": "35.40",
-      "total_4_eur": "25700.40",
-      "winners_3": "11545",
-      "prize_3_eur": "4.80",
-      "total_3_eur": "55416.00",
-      "source_url": "https://info.toto.bg/results/6x49/2026-52",
-      "imported_at_utc": "2026-07-09T12:07:50+00:00",
-      "note": "BST official sync",
-      "validation_errors": ""
-    },
-    {
-      "draw_key": "2026-51",
-      "draw_year": "2026",
-      "draw_number": "51",
-      "draw_date": "2026-07-02",
-      "n1": "8",
-      "n2": "9",
-      "n3": "12",
-      "n4": "18",
-      "n5": "33",
-      "n6": "38",
-      "numbers_text": "8, 9, 12, 18, 33, 38",
-      "jackpot_eur": "2365137.01",
-      "winners_6": "0",
-      "prize_6_eur": "0.00",
-      "total_6_eur": "0.00",
-      "winners_5": "17",
-      "prize_5_eur": "1186.40",
-      "total_5_eur": "20168.80",
-      "winners_4": "835",
-      "prize_4_eur": "26.70",
-      "total_4_eur": "22294.50",
-      "winners_3": "13615",
-      "prize_3_eur": "3.50",
-      "total_3_eur": "47652.50",
-      "source_url": "https://info.toto.bg/results/6x49/2026-51",
-      "imported_at_utc": "2026-07-09T12:07:50+00:00",
-      "note": "BST official sync",
-      "validation_errors": ""
-    }
-  ],
+  "inserted": [],
   "updated": [],
   "skipped": [],
   "final_count": 28,
   "data_path": "data\\prize_winner_history.csv",
   "export_path": "data\\user_journal_exports\\prize_winner_history.csv",
-  "checked_at_utc": "2026-07-09T12:07:50+00:00",
+  "checked_at_utc": "2026-07-09T12:18:01+00:00",
   "official_base_url": "https://info.toto.bg/results/6x49",
-  "latest_candidates": [
-    {
-      "draw_key": "2026-52",
-      "draw_year": 2026,
-      "draw_number": 52,
-      "source_url": "https://info.toto.bg/results/6x49/2026-52",
-      "exists_local": false
-    },
-    {
-      "draw_key": "2026-51",
-      "draw_year": 2026,
-      "draw_number": 51,
-      "source_url": "https://info.toto.bg/results/6x49/2026-51",
-      "exists_local": false
-    },
-    {
-      "draw_key": "2026-50",
-      "draw_year": 2026,
-      "draw_number": 50,
-      "source_url": "https://info.toto.bg/results/6x49/2026-50",
-      "exists_local": false
-    },
-    {
-      "draw_key": "2026-49",
-      "draw_year": 2026,
-      "draw_number": 49,
-      "source_url": "https://info.toto.bg/results/6x49/2026-49",
-      "exists_local": true
-    },
-    {
-      "draw_key": "2026-48",
-      "draw_year": 2026,
-      "draw_number": 48,
-      "source_url": "https://info.toto.bg/results/6x49/2026-48",
-      "exists_local": true
-    }
-  ],
-  "parse_errors": [
-    {
-      "draw_year": 2026,
-      "draw_number": 50,
-      "source_url": "https://info.toto.bg/results/6x49/2026-50",
-      "error": "Официалният сайт на БСТ временно блокира автоматичния импорт с CAPTCHA за тираж 50/2026. Това не е грешка в данните. Отвори страницата в браузър или използвай ръчния CSV импорт в апа."
-    }
-  ]
+  "latest_candidates": [],
+  "parse_errors": []
 }

@@ -354,3 +354,51 @@ python tools/sync_bst_official_latest.py --recent 5 --write
 Синхронизацията не променя математическата вероятност и не предсказва бъдещи тиражи. Тя само поддържа локалните данни в синхрон с официално публикуваните резултати.
 
 <!-- BST_OFFICIAL_SYNC_LAYER_END -->
+
+<!-- STEP120_POST_BST_MODEL_REFRESH_START -->
+
+## Step 120 — Post-BST Sync Model Data Refresh
+
+След БСТ официална синхронизация проектът има отделна стъпка за синхронизиране на моделния dataset слой.
+
+Streamlit страницата е достъпна от менюто:
+
+```text
+📊 Исторически анализи
+    Обновяване на моделни данни
+```
+
+Тази стъпка взима валидираните официални БСТ записи от:
+
+```text
+data/prize_winner_history.csv
+```
+
+и ги синхронизира към:
+
+```text
+data/historical_draws.csv
+data/v40_normalized_draw_events.csv
+data/v41_canonical_draw_events.csv
+```
+
+Така страниците за анализ и моделните dataset-и виждат последните официално публикувани тиражи.
+
+Важно: Step 120 не retrain-ва тежките ML модели автоматично. Той обновява dataset слоя и записва статус дали моделните данни са синхронизирани. Пълното retraining решение остава отделна ръчна стъпка.
+
+CLI вариант:
+
+```bash
+python tools/refresh_model_data_after_bst_sync.py
+python tools/refresh_model_data_after_bst_sync.py --write
+```
+
+Отчети:
+
+```text
+reports/v120_post_bst_model_data_refresh_summary.md
+reports/v120_post_bst_model_data_refresh_checklist.csv
+models/v120_post_bst_model_data_refresh_status.json
+```
+
+<!-- STEP120_POST_BST_MODEL_REFRESH_END -->

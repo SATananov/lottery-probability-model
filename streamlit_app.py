@@ -49,6 +49,7 @@ from src.v86_model_registry_trust_center_section import render_v86_model_registr
 from src.v87_synthesized_user_menu_section import render_v87_synthesized_user_menu_section
 from src.r_statistical_layer_section import render_r_statistical_layer_section
 from src.bst_official_sync_section import render_bst_official_sync_section
+from src.post_bst_model_data_refresh_section import render_post_bst_model_data_refresh_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
 # Final Bulgarian display layer. It changes only visible Streamlit text and dataframe headers.
 try:
@@ -3930,6 +3931,7 @@ def main() -> None:
         "Матрица на данните": render_v111_11_data_reality_center_page,
         "R статистически слой": render_r_statistical_layer_section,
         "БСТ официална синхронизация": render_bst_official_sync_section,
+        "Обновяване на моделни данни": render_post_bst_model_data_refresh_section,
         "Статистика на печалбите": render_v112_prize_statistics_page,
         "Джакпот цикъл": render_v113_jackpot_cycle_page,
         "Реална стойност на фишовете": render_v114_ticket_value_page,
@@ -4032,6 +4034,7 @@ def main() -> None:
             'Историческа статистика',
             'Проверена история 2026',
             'БСТ официална синхронизация',
+            'Обновяване на моделни данни',
             'Матрица на данните',
             'R статистически слой',
             'Статистика на печалбите',

@@ -1,4 +1,1 @@
 status,draw_year,draw_number,draw_date,numbers_text,jackpot_eur,source_url,message
-inserted,2026,52,2026-07-05,"4, 11, 21, 28, 36, 49",2454504.13,https://info.toto.bg/results/6x49/2026-52,
-inserted,2026,51,2026-07-02,"8, 9, 12, 18, 33, 38",2365137.01,https://info.toto.bg/results/6x49/2026-51,
-parse_error,2026,50,,,,https://info.toto.bg/results/6x49/2026-50,Официалният сайт на БСТ временно блокира автоматичния импорт с CAPTCHA за тираж 50/2026. Това не е грешка в данните. Отвори страницата в браузър или използвай ръчния CSV импорт в апа.
