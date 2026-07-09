@@ -302,3 +302,55 @@ reports/archive/
 
 <!-- FINAL_RELEASE_R_LAYER_END -->
 
+<!-- BST_OFFICIAL_SYNC_LAYER_START -->
+
+## БСТ официална синхронизация
+
+Проектът включва отделен слой за синхронизация с официално публикуваните резултати на БСТ за Тото 2 — 6 от 49.
+
+Streamlit страницата е достъпна от менюто:
+
+```text
+📊 Исторически анализи
+    БСТ официална синхронизация
+```
+
+Целта на тази страница е да държи БСТ/печалбената история актуална, така че страниците за решение за игра, джакпот цикъл, реална стойност на фишовете и статистика на печалбите да не изостават от последния официално публикуван тираж.
+
+Слоят чете официалната БСТ страница:
+
+```text
+https://info.toto.bg/results/6x49
+```
+
+и записва валидираните резултати в:
+
+```text
+data/prize_winner_history.csv
+data/user_journal_exports/prize_winner_history.csv
+```
+
+Запазват се и raw snapshots за проверка:
+
+```text
+data/raw/bst_official_sync/
+```
+
+Допълнителни отчети:
+
+```text
+reports/bst_official_sync_summary.md
+reports/bst_official_sync_checklist.csv
+models/bst_official_sync_status.json
+```
+
+CLI вариант:
+
+```bash
+python tools/sync_bst_official_latest.py --recent 5
+python tools/sync_bst_official_latest.py --recent 5 --write
+```
+
+Синхронизацията не променя математическата вероятност и не предсказва бъдещи тиражи. Тя само поддържа локалните данни в синхрон с официално публикуваните резултати.
+
+<!-- BST_OFFICIAL_SYNC_LAYER_END -->
