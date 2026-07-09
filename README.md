@@ -1,4 +1,4 @@
-# Lottery Probability Model 6/49
+﻿# Lottery Probability Model 6/49
 
 Local Python and Streamlit project for analysis of Bulgarian Toto 2 — 6/49 historical draws. The application combines data validation, probability calculations, statistical models, model comparison, ticket-pack construction, journal tracking, and explanatory ML notebooks.
 
@@ -261,21 +261,20 @@ model retraining
 - част от моделите може да са обучени върху малко по-стар snapshot;
 - пълно retraining решение трябва да се прави осъзнато, а не автоматично след всеки тираж.
 
-### Local journal policy
+### Personal operational journal policy
 
-Локалният runtime journal файл не трябва да се третира като публичен release artifact:
+This repository is maintained as a personal operational lottery analysis app.
+
+The SQLite journal data may be committed intentionally so that the local app state and GitHub state remain synchronized for the owner.
+
+The following files/folders can be part of the real working project state:
 
 ```text
 data/user_journal.db
+data/user_journal_exports/
 ```
 
-За GitHub release трябва да се използва demo/example snapshot, например:
-
-```text
-data/demo_user_journal.db
-```
-
-Истинският локален journal state трябва да остане локален и да бъде пазен от commit чрез `.gitignore`, когато проектът се използва реално.
+This is intentional for this repository. The app is not only a public template; it is also the owner's real working Streamlit application.
 
 ### Reports archive policy
 
@@ -302,3 +301,4 @@ reports/archive/
 Моделите, статистиките и R слоят служат за анализ, проверка, визуализация и дисциплинирано планиране, не за гарантирано предсказване.
 
 <!-- FINAL_RELEASE_R_LAYER_END -->
+
