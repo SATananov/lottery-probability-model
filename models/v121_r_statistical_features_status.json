@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-07-09T12:38:57+00:00",
+  "latest_draw": {
+    "year": 2026,
+    "draw_number": 52,
+    "date": "2026-07-05",
+    "numbers": [
+      4,
+      11,
+      21,
+      28,
+      36,
+      49
+    ]
+  },
+  "feature_outputs": {
+    "number_features": "reports\\v121_r_statistical_number_features.csv",
+    "pair_features": "reports\\v121_r_statistical_pair_features.csv",
+    "blended_scores": "reports\\v121_r_blended_number_scores.csv"
+  },
+  "ticket_pack": "reports\\v121_r_feature_ticket_pack.csv",
+  "ticket_count": 12,
+  "model_retraining": {
+    "performed": false,
+    "policy": "R features are integrated as scoring artifacts and ticket-builder inputs, not as heavy ML retraining."
+  }
+}

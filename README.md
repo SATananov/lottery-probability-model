@@ -402,3 +402,48 @@ models/v120_post_bst_model_data_refresh_status.json
 ```
 
 <!-- STEP120_POST_BST_MODEL_REFRESH_END -->
+
+<!-- STEP121_R_STATISTICAL_FEATURES_START -->
+
+## Step 121 — R Statistical Features Integration
+
+Step 121 превръща независимите R статистически отчети в Python-readable feature слой.
+
+Streamlit страницата е достъпна от менюто:
+
+```text
+📊 Исторически анализи
+    R feature интеграция
+```
+
+Входни R отчети:
+
+```text
+reports/r/r_frequency_statistics.csv
+reports/r/r_gap_statistics.csv
+reports/r/r_pair_analysis.csv
+reports/r/r_monte_carlo_baseline.csv
+```
+
+Изходни feature artifacts:
+
+```text
+reports/v121_r_statistical_number_features.csv
+reports/v121_r_statistical_pair_features.csv
+reports/v121_r_blended_number_scores.csv
+reports/v121_r_feature_ticket_pack.csv
+reports/v121_r_statistical_features_summary.md
+models/v121_r_statistical_features_status.json
+```
+
+Step 121 не retrain-ва тежките ML модели автоматично. Той добавя активен R scoring/feature слой, който може да подпомага ticket builder логиката и бъдещи retraining решения.
+
+CLI вариант:
+
+```bash
+python tools/integrate_r_statistical_features.py
+python tools/integrate_r_statistical_features.py --features
+python tools/integrate_r_statistical_features.py --tickets
+```
+
+<!-- STEP121_R_STATISTICAL_FEATURES_END -->
