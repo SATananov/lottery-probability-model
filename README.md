@@ -447,3 +447,33 @@ python tools/integrate_r_statistical_features.py --tickets
 ```
 
 <!-- STEP121_R_STATISTICAL_FEATURES_END -->
+
+
+<!-- STEP140_PRODUCTION_OPERATIONS_MODULE_CLOSURE_START -->
+
+## Step 140 — Production Operations Final QA & Clean Module Closure
+
+Step 140 closes the complete Step 131–140 Production Operations / Incident Evidence / Recovery Governance module.
+
+Final closure command:
+
+```bash
+python tools/run_production_operations_module_closure.py --write
+```
+
+Verification:
+
+```bash
+python scripts/verify_step_140.py
+```
+
+A successful final result is:
+
+```text
+Production Operations / Incident Evidence / Recovery Governance
+MODULE CLOSED
+```
+
+The closure layer is read-only and does not perform activation, ingestion, automatic restore, evidence cleanup, downstream refresh or ML retraining.
+
+<!-- STEP140_PRODUCTION_OPERATIONS_MODULE_CLOSURE_END -->
