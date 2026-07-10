@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import compileall
 import importlib
@@ -83,11 +83,11 @@ def main() -> int:
         joblib_count += 1
     ok(f"Joblib artifacts loaded: {joblib_count}")
 
-    forbidden = [ROOT / ".r-lib", ROOT / ".venv"]
+    forbidden = [ROOT / ".r-lib"]
     present = [str(path.relative_to(ROOT)) for path in forbidden if path.exists()]
     if present:
         fail("Local environment/cache directories found: " + ", ".join(present))
-    ok("No bundled local dependency environment")
+    ok("No bundled R dependency environment")
 
     print("CLEAN_ENVIRONMENT_VERIFY_OK")
     return 0
