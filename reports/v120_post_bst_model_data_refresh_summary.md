@@ -1,21 +1,21 @@
 # Step 120 — Post-BST Sync Model Data Refresh
 
-- Refreshed at UTC: `2026-07-09T12:27:30+00:00`
+- Refreshed at UTC: `2026-07-10T03:07:01+00:00`
 - Final status: **MODEL_DATA_SYNCED**
-- Latest prize history draw: **2026 / 52**
-- Latest historical draw: **2026 / 52**
-- Latest v40 normalized draw: **2026 / 52**
-- Latest v41 canonical draw: **2026 / 52**
+- Latest prize history draw: **2026 / 53**
+- Latest historical draw: **2026 / 53**
+- Latest v40 normalized draw: **2026 / 53**
+- Latest v41 canonical draw: **2026 / 53**
 
 ## Inserted records
 
-- historical_draws.csv: **0**
-- v40_normalized_draw_events.csv: **0**
-- v41_canonical_draw_events.csv: **0**
+- historical_draws.csv: **1**
+- v40_normalized_draw_events.csv: **1**
+- v41_canonical_draw_events.csv: **1**
 
 ## Updated records
 
-- historical_draws.csv repairs: **3**
+- historical_draws.csv repairs: **1**
 
 ## Model retraining policy
 

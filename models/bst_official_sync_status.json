@@ -1,12 +1,109 @@
 {
-  "inserted": [],
+  "inserted": [
+    {
+      "draw_key": "2026-53",
+      "draw_year": "2026",
+      "draw_number": "53",
+      "draw_date": "2026-07-09",
+      "n1": "12",
+      "n2": "17",
+      "n3": "23",
+      "n4": "30",
+      "n5": "38",
+      "n6": "41",
+      "numbers_text": "12, 17, 23, 30, 38, 41",
+      "jackpot_eur": "2538119.44",
+      "winners_6": "0",
+      "prize_6_eur": "0.00",
+      "total_6_eur": "0.00",
+      "winners_5": "11",
+      "prize_5_eur": "1978.40",
+      "total_5_eur": "21762.40",
+      "winners_4": "688",
+      "prize_4_eur": "35.00",
+      "total_4_eur": "24080.00",
+      "winners_3": "11695",
+      "prize_3_eur": "4.40",
+      "total_3_eur": "51458.00",
+      "source_url": "https://info.toto.bg/results/6x49/2026-53",
+      "imported_at_utc": "2026-07-10T03:06:31+00:00",
+      "note": "BST official sync",
+      "validation_errors": ""
+    },
+    {
+      "draw_key": "2026-50",
+      "draw_year": "2026",
+      "draw_number": "50",
+      "draw_date": "2026-06-28",
+      "n1": "2",
+      "n2": "4",
+      "n3": "17",
+      "n4": "33",
+      "n5": "35",
+      "n6": "38",
+      "numbers_text": "2, 4, 17, 33, 35, 38",
+      "jackpot_eur": "2287643.62",
+      "winners_6": "0",
+      "prize_6_eur": "0.00",
+      "total_6_eur": "0.00",
+      "winners_5": "12",
+      "prize_5_eur": "2128.70",
+      "total_5_eur": "25544.40",
+      "winners_4": "597",
+      "prize_4_eur": "47.30",
+      "total_4_eur": "28238.10",
+      "winners_3": "11447",
+      "prize_3_eur": "5.30",
+      "total_3_eur": "60669.10",
+      "source_url": "https://info.toto.bg/results/6x49/2026-50",
+      "imported_at_utc": "2026-07-10T03:06:31+00:00",
+      "note": "BST official sync",
+      "validation_errors": ""
+    }
+  ],
   "updated": [],
   "skipped": [],
-  "final_count": 28,
+  "final_count": 30,
   "data_path": "data\\prize_winner_history.csv",
   "export_path": "data\\user_journal_exports\\prize_winner_history.csv",
-  "checked_at_utc": "2026-07-09T12:18:01+00:00",
+  "checked_at_utc": "2026-07-10T03:06:31+00:00",
   "official_base_url": "https://info.toto.bg/results/6x49",
-  "latest_candidates": [],
+  "latest_candidates": [
+    {
+      "draw_key": "2026-53",
+      "draw_year": 2026,
+      "draw_number": 53,
+      "source_url": "https://info.toto.bg/results/6x49/2026-53",
+      "exists_local": false
+    },
+    {
+      "draw_key": "2026-52",
+      "draw_year": 2026,
+      "draw_number": 52,
+      "source_url": "https://info.toto.bg/results/6x49/2026-52",
+      "exists_local": true
+    },
+    {
+      "draw_key": "2026-51",
+      "draw_year": 2026,
+      "draw_number": 51,
+      "source_url": "https://info.toto.bg/results/6x49/2026-51",
+      "exists_local": true
+    },
+    {
+      "draw_key": "2026-50",
+      "draw_year": 2026,
+      "draw_number": 50,
+      "source_url": "https://info.toto.bg/results/6x49/2026-50",
+      "exists_local": false
+    },
+    {
+      "draw_key": "2026-49",
+      "draw_year": 2026,
+      "draw_number": 49,
+      "source_url": "https://info.toto.bg/results/6x49/2026-49",
+      "exists_local": true
+    }
+  ],
   "parse_errors": []
 }
