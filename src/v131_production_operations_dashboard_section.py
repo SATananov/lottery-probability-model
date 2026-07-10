@@ -11,6 +11,7 @@ from src.v135_incident_evidence_retention_section import render_v135_incident_ev
 from src.v136_incident_evidence_recovery_drill_section import render_v136_incident_evidence_recovery_drill_section
 from src.v137_recovery_drill_audit_reconciliation_section import render_v137_recovery_drill_audit_reconciliation_section
 from src.v138_recovery_exception_sla_section import render_v138_recovery_exception_sla_section
+from src.v139_recovery_exception_management_summary_section import render_v139_recovery_exception_management_summary_section
 
 
 def _yes_no(value: bool) -> str:
@@ -109,7 +110,7 @@ def render_v131_production_operations_dashboard_section() -> None:
             st.info('Няма Step 124 ingestion backups. Recovery ще стане готов след първото реално ingestion събитие.')
 
     with tab_evidence:
-        evidence_export_tab, evidence_verify_tab, evidence_registry_tab, evidence_retention_tab, evidence_recovery_tab, evidence_reconciliation_tab, evidence_follow_up_tab = st.tabs(['Създаване на bundle', 'Проверка на целостта', 'Registry history', 'Retention & archive', 'Recovery drill', 'Drill reconciliation', 'Exception follow-up'])
+        evidence_export_tab, evidence_verify_tab, evidence_registry_tab, evidence_retention_tab, evidence_recovery_tab, evidence_reconciliation_tab, evidence_follow_up_tab, evidence_management_tab = st.tabs(['Създаване на bundle', 'Проверка на целостта', 'Registry history', 'Retention & archive', 'Recovery drill', 'Drill reconciliation', 'Exception follow-up', 'Management summary'])
         with evidence_export_tab:
             render_v132_production_incident_evidence_section(timeout_seconds=timeout)
         with evidence_verify_tab:
@@ -124,5 +125,7 @@ def render_v131_production_operations_dashboard_section() -> None:
             render_v137_recovery_drill_audit_reconciliation_section()
         with evidence_follow_up_tab:
             render_v138_recovery_exception_sla_section()
+        with evidence_management_tab:
+            render_v139_recovery_exception_management_summary_section()
 
     st.info('Dashboard-ът е read-only. Не прилага тираж, не отключва production и не стартира тежко ML retraining.')
