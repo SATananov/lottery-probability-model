@@ -2,11 +2,11 @@
   "step": "126",
   "name": "Startup Automation and Operator Controls",
   "trigger": "startup",
-  "started_at_utc": "2026-07-10T07:29:35+00:00",
-  "checked_at_utc": "2026-07-10T07:29:35+00:00",
-  "finished_at_utc": "2026-07-10T07:29:36+00:00",
-  "status": "check_failed",
-  "message": "Официалният източник не е достъпен. Локалните данни не са променени.",
+  "started_at_utc": "2026-07-10T14:47:05+00:00",
+  "checked_at_utc": "2026-07-10T14:47:05+00:00",
+  "finished_at_utc": "2026-07-10T14:47:06+00:00",
+  "status": "up_to_date",
+  "message": "Локалният официален тираж е актуален.",
   "config": {
     "auto_check_enabled": true,
     "auto_apply_enabled": false,
@@ -18,7 +18,7 @@
   "detection": {
     "step": "123",
     "name": "BST Official Draw Detection Foundation",
-    "checked_at_utc": "2026-07-10T07:29:35+00:00",
+    "checked_at_utc": "2026-07-10T14:47:05+00:00",
     "official_source_url": "https://info.toto.bg/results/6x49",
     "mode": "read_only_detection",
     "writes_draw_data": false,
@@ -37,16 +37,45 @@
       ],
       "draw_key": "2026-53"
     },
-    "official_latest_draw": {},
-    "status": "official_unavailable",
-    "draw_delta": null,
-    "message": "Официалната страница не съдържа разпознаваем 6/49 тираж.",
+    "official_latest_draw": {
+      "year": 2026,
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "numbers": [
+        12,
+        17,
+        23,
+        30,
+        38,
+        41
+      ],
+      "source_url": "https://info.toto.bg/results/6x49/2026-53",
+      "draw_key": "2026-53"
+    },
+    "status": "up_to_date",
+    "draw_delta": 0,
+    "message": "Локалният source of truth е актуален.",
     "validation": {
       "requested": true,
-      "passed": false,
+      "passed": true,
       "errors": []
     },
-    "error_type": "RuntimeError"
+    "failure_stage": null,
+    "connectivity": {
+      "index_fetch_succeeded": true,
+      "detail_fetch_succeeded": true
+    },
+    "source_diagnostics": {
+      "html_sha256": "930a630da2846df1b09384bd9e947121b16284e55cdde16d90c4ec226e27fef2",
+      "html_bytes": 85447,
+      "contains_6x49_marker": true,
+      "candidate_count": 20,
+      "selected_parser_strategies": [
+        "6x49_url",
+        "draw_year_text",
+        "draw_date_text"
+      ]
+    }
   },
   "ingestion": {},
   "downstream_refresh": {},

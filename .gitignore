@@ -1,54 +1,44 @@
-﻿# Python
+# Python caches and test output
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.coverage
+htmlcov/
 
-# Environments
+# Local environments
 .venv/
 venv/
+.r-lib/
 
-# OS/editor
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Editors and operating systems
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-.vscode/
-# Runtime/generated clean-up
+
+# Build and temporary output
+build/
+dist/
 *.zip
 *.log
 *.tmp
 *.bak
 *.backup
-*_before_*
-*backup*
-*patch*
-fix_*.py
-fix_*.ps1
-apply_*.ps1
-data/manual_backups/
-reports/manual_update_retrain_log.md
-.ipynb_checkpoints/
 _clean_zip_diagnostics/
-*.sqlite-journal
-*.db-journal
-
-# Raw/unparsed import debug artifacts
-reports/v111_unparsed_bst_page_*.html
-reports/v111_unparsed_bst_page_*.json
-
-# Temporary previews / repair notes
-*_PREVIEW*
-*CLEAN_REPAIR*
-*PATCH_NOTES*
-*NOTEBOOK_PACKAGE*
-_clean_zip_diagnostics/
-
-# Python/cache/runtime temp
-__pycache__/
-*.pyc
-data/*.sqlite-journal
-data/*.db-journal
-
-# Notebook checkpoints
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 
+# Local database journals and manual backups
+*.sqlite-journal
+*.db-journal
+data/manual_backups/
 
+# Raw parser diagnostics generated only on failure
+reports/v111_unparsed_bst_page_*.html
+reports/v111_unparsed_bst_page_*.json

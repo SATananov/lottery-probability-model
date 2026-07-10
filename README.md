@@ -1,113 +1,133 @@
-﻿# Lottery Probability Model 6/49
+# Lottery Probability Model 6/49
 
-Local Python and Streamlit project for analysis of Bulgarian Toto 2 — 6/49 historical draws. The application combines data validation, probability calculations, statistical models, model comparison, ticket-pack construction, journal tracking, and explanatory ML notebooks.
+## За проекта
 
-## Current release state
+Това е **частен локален експеримент**, създаден за лично изучаване на историческите тиражи на Български спортен тотализатор — Тото 2, 6/49.
 
-- Latest dataset row: `2026-07-05`, draw `52`.
-- Latest official numbers in the local dataset: `4, 11, 21, 28, 36, 49`.
-- Main dataset size: `10062` draw-event rows.
-- Normalized datasets are synchronized:
+Проектът не е търговски продукт, публична услуга или система за гарантирано предсказване. Използва статистически анализи, сравнителни модели и локални помощни инструменти. При честен тираж всяка точна комбинация от 6 числа има еднаква теоретична вероятност — `1 към 13 983 816`.
+
+Всички данни, модели, отчети и настройки се използват локално и остават под контрола на собственика на проекта.
+
+## Текущо състояние
+
+- Последен локален тираж: `2026-07-09`, тираж `53`.
+- Последни числа: `12, 17, 23, 30, 38, 41`.
+- Основен dataset: `10063` реда.
+- Синхронизирани слоеве:
   - `data/historical_draws.csv`
   - `data/v40_normalized_draw_events.csv`
   - `data/v41_canonical_draw_events.csv`
-- Current real ticket-pack layer: `3` tickets × `4` lines = `12` combinations.
-- Current ticket-pack price model: `10.80 EUR` total at `0.90 EUR` per line.
-- ML notebooks are included under `notebooks/` for documentation, visualization, and review.
+- Стандартен пакет: `3` фиша × `4` реда = `12` комбинации.
+- Локален journal: SQLite база в `data/user_journal.db`.
+- Production operations модулът е затворен и по подразбиране остава заключен.
 
-## Important note
+## Изисквания
 
-This project does not guarantee winning lottery numbers. A fair 6/49 lottery remains random, and one exact 6-number line has theoretical jackpot odds of:
+- Windows 10/11
+- Python 3.11
+- PowerShell или Command Prompt
+- Интернет е необходим само за инсталиране на зависимости и за официална БСТ синхронизация.
 
-```text
-1 in 13,983,816
-```
+## Инсталиране в чиста среда
 
-The models in this project produce relative statistical scores, comparisons, and structured ticket suggestions. They should be treated as analysis and decision-support tools, not as a promise of prediction.
-
-## Main features
-
-- Streamlit dashboard with Bulgarian user interface.
-- Official historical draw dataset and data-quality checks.
-- Mathematical probability calculator for 6/49.
-- Frequency, cold-number, middle/balance, gap/interval, and combined statistical models.
-- ML extension layer for classification, clustering, feature analysis, and dimensionality reduction.
-- Model comparison, model registry, reliability, and weighting views.
-- Ticket-pack builder with real 4-line ticket structure.
-- System ticket builder and price table.
-- Played-ticket journal using local SQLite storage.
-- Add-draw workflow for controlled post-draw updates.
-- Explanatory notebooks with tables, charts, and model interpretation.
-
-## Installation
-
-From the project root:
+От project root:
 
 ```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+python tools/verify_clean_environment.py
 ```
 
-Optional notebook dependencies:
+Notebook пакетите са по избор:
 
 ```powershell
 python -m pip install -r requirements-notebooks.txt
 ```
 
-## Run the Streamlit app
+R анализите не изискват bundled `.r-lib`. При нужда R пакетите се инсталират локално според използваната R среда.
 
-Recommended command:
+## Стартиране
+
+Препоръчително:
 
 ```powershell
 python -m streamlit run app.py
 ```
 
-Alternative direct entrypoint:
+Алтернативно:
 
 ```powershell
 python -m streamlit run streamlit_app.py
 ```
 
-The app starts locally and opens a browser dashboard, normally at:
+Стандартният локален адрес е:
 
 ```text
 http://localhost:8501
 ```
 
-## Run the notebooks
-
-Open the notebooks in VS Code or start Jupyter:
-
-```powershell
-jupyter notebook
-```
-
-Recommended notebook order:
+Могат да се използват и включените Windows launcher файлове:
 
 ```text
-notebooks/00_project_overview.ipynb
-notebooks/01_data_overview_and_quality.ipynb
-notebooks/02_frequency_model.ipynb
-notebooks/03_gap_model.ipynb
-notebooks/04_pattern_balance_model.ipynb
-notebooks/05_combined_strategy.ipynb
-notebooks/06_ml_extensions.ipynb
-notebooks/07_model_comparison.ipynb
-notebooks/08_ensemble_and_weighting.ipynb
-notebooks/09_ticket_builder_and_portfolio.ipynb
-notebooks/10_backtest_and_performance.ipynb
-notebooks/11_explainability_and_conclusions.ipynb
+START_LOTTERY_CHROME_SIMPLE.bat
+start_lottery_app.bat
+start_lottery_app_stable.bat
 ```
 
-## Useful commands
+## Основна структура
 
-Dataset audit:
+```text
+lottery-probability-model/
+├── app.py                    # Поддържан Streamlit entrypoint
+├── streamlit_app.py          # Основно приложение
+├── requirements.txt          # Runtime зависимости
+├── requirements-notebooks.txt
+├── configs/                  # Настройки на моделите
+├── data/                     # Datasets, raw snapshots и journal
+├── models/                   # Model и runtime artifacts
+├── notebooks/                # Аналитични notebooks
+├── r/                        # R скриптове
+├── reports/                  # Анализи и verification отчети
+├── scripts/                  # Build и verification скриптове
+├── src/                      # Основни Python модули
+├── streamlit_pages/          # Допълнителни UI секции
+└── tools/                    # Операторски и диагностични инструменти
+```
+
+## Основни проверки
 
 ```powershell
 python audit_dataset.py
+python tools/verify_clean_environment.py
+python scripts/verify_step_140.py
+python scripts/verify_step_141.py
 ```
 
-Train core models:
+## Обновяване на официалните данни
+
+Проверка без запис:
+
+```powershell
+python tools/sync_bst_official_latest.py --recent 5
+```
+
+Проверка и запис:
+
+```powershell
+python tools/sync_bst_official_latest.py --recent 5 --write
+```
+
+След официална синхронизация model data слой може да се обнови с:
+
+```powershell
+python tools/refresh_model_data_after_bst_sync.py --write
+```
+
+Автоматично тежко retraining не се изпълнява без изрично операторско действие.
+
+## Обучение и анализ
 
 ```powershell
 python train_model.py
@@ -116,364 +136,53 @@ python train_middle_model.py
 python train_gap_model.py
 python train_combined_model.py
 python train_advanced_model.py
-```
-
-Run ML extensions:
-
-```powershell
 python train_ml_extensions.py
-```
-
-Generate prediction artifacts:
-
-```powershell
 python predict_next_draw.py
 ```
 
-Refresh normalized/canonical datasets:
+Notebooks се намират в `notebooks/` и могат да се отворят с VS Code или Jupyter.
 
-```powershell
-python scripts/v40_create_normalized_draw_events.py
-python scripts/v41_build_canonical_draw_events.py
-```
+## Локална безопасност
 
-Refresh post-draw status and current ticket-pack reports:
+Проектът е предназначен за лично локално ползване. Не се препоръчва Streamlit приложението да бъде публикувано в интернет без отделна защита за достъп.
 
-```powershell
-python scripts/v106_build_post_draw_status_sync.py
-python scripts/v107_build_model_training_policy_refresh_control.py
-python scripts/v108_build_user_menu_live_status_sync.py
-python scripts/v117_build_real_ticket_pack_builder.py
-python scripts/v117_1_build_add_draw_ticket_pack_price_sync.py
-python scripts/v118_build_model_system_ticket_builder.py
-```
-
-## Project structure
+Вградените production операции използват заключване, operator consent и dry-run проверки. След clean checkpoint състоянието трябва да остане:
 
 ```text
-lottery-probability-model/
-├── app.py                         # Streamlit entrypoint wrapper
-├── streamlit_app.py                # Main Streamlit dashboard
-├── requirements.txt                # App dependencies
-├── requirements-notebooks.txt      # Optional notebook dependencies
-├── configs/                        # Model configuration
-├── data/                           # Local datasets and SQLite journal
-├── models/                         # Trained/generated model artifacts
-├── notebooks/                      # ML explanation and visualization notebooks
-├── reports/                        # Model, audit, and ticket-pack reports
-├── scripts/                        # Dataset/model/report build scripts
-├── src/                            # Application modules and page sections
-└── streamlit_pages/                # Additional Streamlit page modules
+production_locked = true
+operator_consent_granted = false
+auto_apply_enabled = false
+auto_refresh_enabled = false
 ```
 
-## Clean package policy
+## Clean checkpoint policy
 
-A clean package should exclude temporary development artifacts such as:
+В clean архива се пазят работещият код, datasets, model artifacts, reports, notebooks, official raw snapshots и локалният journal.
+
+Не се включват:
 
 ```text
 .git/
+.venv/
+.r-lib/
 __pycache__/
 *.pyc
-*.zip
-*_patch_files/
-_clean_zip_diagnostics/
+.pytest_cache/
 .ipynb_checkpoints/
+временни ZIP/backup/log файлове
+стари междинни CLEAN manifests
 ```
 
-The functional project files, datasets, model artifacts, reports, notebooks, and local journal database are preserved.
-
-<!-- FINAL_RELEASE_R_LAYER_START -->
-
-## Финален release polish
-
-Този release включва финално подреждане на проекта за GitHub: Streamlit app, datasets, reports, notebooks, R статистически слой и локална политика за journal файловете.
-
-### Streamlit app
-
-Основният вход към приложението е:
-
-```bash
-python -m streamlit run app.py
-```
-
-`app.py` е кратък wrapper към основния Streamlit app файл. Това позволява проектът да се стартира лесно локално и да остане ясен за GitHub release.
-
-### R статистически слой
-
-Проектът включва независим R статистически слой, който служи за проверка и диагностика на историческите данни.
-
-В Streamlit менюто секцията е достъпна от:
-
-```text
-📊 Исторически анализи
-    R статистически слой
-```
-
-Страницата чете вече генерираните R резултати от:
-
-```text
-reports/r/
-reports/r/plots/
-```
-
-R слойът включва:
-
-- одит на данните;
-- честотна статистика;
-- gap / interval статистика;
-- тестове на разпределението;
-- анализ на двойки и модели;
-- Monte Carlo baseline;
-- PNG графики за визуална проверка.
-
-Важно: R слойът не прави лотарията предвидима. Той е независим статистически контролен слой към Python анализа и моделите.
-
-### R графики
-
-Ключови R графики, включени в release-а:
-
-![Number frequency](reports/r/plots/number_frequency.png)
-
-![Largest current gaps](reports/r/plots/largest_current_gaps.png)
-
-![Monte Carlo frequency baseline](reports/r/plots/monte_carlo_frequency_baseline.png)
-
-Допълнителните графики се намират в:
-
-```text
-reports/r/plots/
-```
-
-### Model training policy
-
-Dataset-ът може да бъде по-нов от част от обучените model artifacts. Това е умишлено разделение между:
-
-```text
-dataset update
-model retraining
-```
-
-Проектът не преобучава всички тежки модели механично след всеки единичен нов тираж, защото един нов lottery draw обикновено не носи достатъчна статистическа стойност за пълно retraining решение.
-
-Това означава:
-
-- dataset-ът може да съдържа последните налични тиражи;
-- част от моделите може да са обучени върху малко по-стар snapshot;
-- пълно retraining решение трябва да се прави осъзнато, а не автоматично след всеки тираж.
-
-### Personal operational journal policy
-
-This repository is maintained as a personal operational lottery analysis app.
-
-The SQLite journal data may be committed intentionally so that the local app state and GitHub state remain synchronized for the owner.
-
-The following files/folders can be part of the real working project state:
-
-```text
-data/user_journal.db
-data/user_journal_exports/
-```
-
-This is intentional for this repository. The app is not only a public template; it is also the owner's real working Streamlit application.
-
-### Reports archive policy
-
-Стари pre-release review/audit отчети могат да бъдат пазени като история, но не трябва да се четат като текуща release истина.
-
-Архивните отчети са отделени концептуално от активните release summaries, например:
-
-```text
-reports/archive/
-```
-
-Активните release summaries трябва да описват текущото състояние на проекта, dataset-а, app-а и R слоя.
-
-### Lottery disclaimer
-
-Този проект е образователен и аналитичен. Той не гарантира печалба и не променя математическата вероятност за конкретна комбинация.
-
-При игра 6 от 49 шансът за конкретна комбинация остава:
-
-```text
-1 in 13,983,816
-```
-
-Моделите, статистиките и R слоят служат за анализ, проверка, визуализация и дисциплинирано планиране, не за гарантирано предсказване.
-
-<!-- FINAL_RELEASE_R_LAYER_END -->
-
-<!-- BST_OFFICIAL_SYNC_LAYER_START -->
-
-## БСТ официална синхронизация
-
-Проектът включва отделен слой за синхронизация с официално публикуваните резултати на БСТ за Тото 2 — 6 от 49.
-
-Streamlit страницата е достъпна от менюто:
-
-```text
-📊 Исторически анализи
-    БСТ официална синхронизация
-```
-
-Целта на тази страница е да държи БСТ/печалбената история актуална, така че страниците за решение за игра, джакпот цикъл, реална стойност на фишовете и статистика на печалбите да не изостават от последния официално публикуван тираж.
-
-Слоят чете официалната БСТ страница:
-
-```text
-https://info.toto.bg/results/6x49
-```
-
-и записва валидираните резултати в:
-
-```text
-data/prize_winner_history.csv
-data/user_journal_exports/prize_winner_history.csv
-```
-
-Запазват се и raw snapshots за проверка:
-
-```text
-data/raw/bst_official_sync/
-```
-
-Допълнителни отчети:
-
-```text
-reports/bst_official_sync_summary.md
-reports/bst_official_sync_checklist.csv
-models/bst_official_sync_status.json
-```
-
-CLI вариант:
-
-```bash
-python tools/sync_bst_official_latest.py --recent 5
-python tools/sync_bst_official_latest.py --recent 5 --write
-```
-
-Синхронизацията не променя математическата вероятност и не предсказва бъдещи тиражи. Тя само поддържа локалните данни в синхрон с официално публикуваните резултати.
-
-<!-- BST_OFFICIAL_SYNC_LAYER_END -->
-
-<!-- STEP120_POST_BST_MODEL_REFRESH_START -->
-
-## Step 120 — Post-BST Sync Model Data Refresh
-
-След БСТ официална синхронизация проектът има отделна стъпка за синхронизиране на моделния dataset слой.
-
-Streamlit страницата е достъпна от менюто:
-
-```text
-📊 Исторически анализи
-    Обновяване на моделни данни
-```
-
-Тази стъпка взима валидираните официални БСТ записи от:
-
-```text
-data/prize_winner_history.csv
-```
-
-и ги синхронизира към:
-
-```text
-data/historical_draws.csv
-data/v40_normalized_draw_events.csv
-data/v41_canonical_draw_events.csv
-```
-
-Така страниците за анализ и моделните dataset-и виждат последните официално публикувани тиражи.
-
-Важно: Step 120 не retrain-ва тежките ML модели автоматично. Той обновява dataset слоя и записва статус дали моделните данни са синхронизирани. Пълното retraining решение остава отделна ръчна стъпка.
-
-CLI вариант:
-
-```bash
-python tools/refresh_model_data_after_bst_sync.py
-python tools/refresh_model_data_after_bst_sync.py --write
-```
-
-Отчети:
-
-```text
-reports/v120_post_bst_model_data_refresh_summary.md
-reports/v120_post_bst_model_data_refresh_checklist.csv
-models/v120_post_bst_model_data_refresh_status.json
-```
-
-<!-- STEP120_POST_BST_MODEL_REFRESH_END -->
-
-<!-- STEP121_R_STATISTICAL_FEATURES_START -->
-
-## Step 121 — R Statistical Features Integration
-
-Step 121 превръща независимите R статистически отчети в Python-readable feature слой.
-
-Streamlit страницата е достъпна от менюто:
-
-```text
-📊 Исторически анализи
-    R feature интеграция
-```
-
-Входни R отчети:
-
-```text
-reports/r/r_frequency_statistics.csv
-reports/r/r_gap_statistics.csv
-reports/r/r_pair_analysis.csv
-reports/r/r_monte_carlo_baseline.csv
-```
-
-Изходни feature artifacts:
-
-```text
-reports/v121_r_statistical_number_features.csv
-reports/v121_r_statistical_pair_features.csv
-reports/v121_r_blended_number_scores.csv
-reports/v121_r_feature_ticket_pack.csv
-reports/v121_r_statistical_features_summary.md
-models/v121_r_statistical_features_status.json
-```
-
-Step 121 не retrain-ва тежките ML модели автоматично. Той добавя активен R scoring/feature слой, който може да подпомага ticket builder логиката и бъдещи retraining решения.
-
-CLI вариант:
-
-```bash
-python tools/integrate_r_statistical_features.py
-python tools/integrate_r_statistical_features.py --features
-python tools/integrate_r_statistical_features.py --tickets
-```
-
-<!-- STEP121_R_STATISTICAL_FEATURES_END -->
-
-
-<!-- STEP140_PRODUCTION_OPERATIONS_MODULE_CLOSURE_START -->
-
-## Step 140 — Production Operations Final QA & Clean Module Closure
-
-Step 140 closes the complete Step 131–140 Production Operations / Incident Evidence / Recovery Governance module.
-
-Final closure command:
-
-```bash
-python tools/run_production_operations_module_closure.py --write
-```
-
-Verification:
-
-```bash
-python scripts/verify_step_140.py
-```
-
-A successful final result is:
-
-```text
-Production Operations / Incident Evidence / Recovery Governance
-MODULE CLOSED
-```
-
-The closure layer is read-only and does not perform activation, ingestion, automatic restore, evidence cleanup, downstream refresh or ML retraining.
-
-<!-- STEP140_PRODUCTION_OPERATIONS_MODULE_CLOSURE_END -->
+## Step 141
+
+Step 141 добавя:
+
+- проверка за чиста Python среда;
+- синхронизиран README и release metadata;
+- директно декларирана `altair` dependency;
+- compatibility bounds за runtime пакетите и фиксиран `scikit-learn==1.8.0` за наличните model artifacts;
+- премахване на локалната `.r-lib` библиотека и излишните checkpoint manifests;
+- проверка за временни файлове и нежелани generator/tool attribution следи;
+- нов clean ZIP manifest с SHA-256 checksums.
+
+Подробности: `reports/STEP_141_CLEAN_ENVIRONMENT_AND_DOCUMENTATION_SYNC.md`.
