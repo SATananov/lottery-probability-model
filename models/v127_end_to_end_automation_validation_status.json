@@ -1,0 +1,313 @@
+{
+  "step": "127",
+  "name": "End-to-End Official Draw Automation Validation",
+  "started_at_utc": "2026-07-10T05:48:27+00:00",
+  "finished_at_utc": "2026-07-10T05:48:28+00:00",
+  "status": "validated",
+  "simulated_draw_key": "2026-54",
+  "simulated_draw": {
+    "draw_year": 2026,
+    "draw_number": 54,
+    "draw_key": "2026-54",
+    "draw_date": "2026-07-12",
+    "source_url": "simulation://step127/official-draw",
+    "n1": 3,
+    "n2": 9,
+    "n3": 16,
+    "n4": 27,
+    "n5": 35,
+    "n6": 48
+  },
+  "production_data_unchanged": true,
+  "heavy_ml_retraining_performed": false,
+  "stages": [
+    {
+      "id": "detect",
+      "name": "Simulated official draw detection",
+      "status": "passed",
+      "ok": true,
+      "message": "Simulated newer official draw 2026-54 detected.",
+      "official_draw": {
+        "draw_year": 2026,
+        "draw_number": 54,
+        "draw_key": "2026-54",
+        "draw_date": "2026-07-12",
+        "source_url": "simulation://step127/official-draw",
+        "n1": 3,
+        "n2": 9,
+        "n3": 16,
+        "n4": 27,
+        "n5": 35,
+        "n6": 48
+      },
+      "local_draw": {
+        "year": 2026,
+        "draw_number": 53,
+        "draw_key": "2026-53",
+        "date": "2026-07-09"
+      }
+    },
+    {
+      "id": "ingest",
+      "name": "Safe ingestion in isolated sandbox",
+      "status": "passed",
+      "ok": true,
+      "message": "Новият официален тираж е приложен безопасно към source of truth и journal mirror.",
+      "result": {
+        "step": "124",
+        "name": "Safe Official Draw Ingestion",
+        "run_id": "20260710T054827_943711Z",
+        "started_at_utc": "2026-07-10T05:48:27+00:00",
+        "status": "inserted",
+        "message": "Новият официален тираж е приложен безопасно към source of truth и journal mirror.",
+        "draw_key": "2026-54",
+        "inserted": true,
+        "duplicate_blocked": false,
+        "backup_created": true,
+        "staging_validated": true,
+        "promoted": true,
+        "rollback_performed": false,
+        "downstream_refresh_started": false,
+        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\prize_winner_history.csv",
+        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\user_journal_exports\\prize_winner_history.csv",
+        "validation_errors": [],
+        "backup_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\backups\\20260710T054827_943711Z",
+        "backup_sha256": {
+          "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+          "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
+        },
+        "staging_validation": {
+          "passed": true,
+          "errors": [],
+          "row_count": 31,
+          "latest_draw_key": "2026-54",
+          "mirror_equal": true
+        },
+        "staging_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\staging\\20260710T054827_943711Z",
+        "final_count": 31,
+        "promoted_sha256": "2df5dc13410ebd8ce0472b0fda52e2d78d0f979fe4e52c027d697d3911fe96de",
+        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+      }
+    },
+    {
+      "id": "dataset_sync",
+      "name": "Historical / normalized / canonical refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "r_statistics",
+      "name": "R statistical layer refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "r_features",
+      "name": "Step 121 R features refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "decision",
+      "name": "Decision Center refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "ticket_pack",
+      "name": "Real ticket pack refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "model_ticket_pack",
+      "name": "Model system ticket pack refresh simulation",
+      "status": "passed",
+      "ok": true,
+      "message": "Sandbox artifact advanced to 2026-54.",
+      "artifact": {
+        "draw_key": "2026-54",
+        "draw_year": 2026,
+        "draw_number": 54,
+        "status": "refreshed_in_test_sandbox"
+      }
+    },
+    {
+      "id": "freshness",
+      "name": "Final freshness validation",
+      "status": "passed",
+      "ok": true,
+      "message": "All simulated operational layers are synchronized.",
+      "primary": {
+        "year": 2026,
+        "draw_number": 54,
+        "draw_key": "2026-54",
+        "date": "2026-07-12"
+      },
+      "export": {
+        "year": 2026,
+        "draw_number": 54,
+        "draw_key": "2026-54",
+        "date": "2026-07-12"
+      },
+      "modules": {
+        "dataset_sync": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        },
+        "r_statistics": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        },
+        "r_features": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        },
+        "decision": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        },
+        "ticket_pack": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        },
+        "model_ticket_pack": {
+          "draw_key": "2026-54",
+          "draw_year": 2026,
+          "draw_number": 54,
+          "status": "refreshed_in_test_sandbox"
+        }
+      }
+    },
+    {
+      "id": "duplicate",
+      "name": "Duplicate protection validation",
+      "status": "passed",
+      "ok": true,
+      "message": "Тиражът вече съществува. Не са направени промени.",
+      "result": {
+        "step": "124",
+        "name": "Safe Official Draw Ingestion",
+        "run_id": "20260710T054828_092935Z",
+        "started_at_utc": "2026-07-10T05:48:28+00:00",
+        "status": "duplicate_blocked",
+        "message": "Тиражът вече съществува. Не са направени промени.",
+        "draw_key": "2026-54",
+        "inserted": false,
+        "duplicate_blocked": true,
+        "backup_created": false,
+        "staging_validated": false,
+        "promoted": false,
+        "rollback_performed": false,
+        "downstream_refresh_started": false,
+        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\prize_winner_history.csv",
+        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\user_journal_exports\\prize_winner_history.csv",
+        "validation_errors": [],
+        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+      }
+    },
+    {
+      "id": "rollback",
+      "name": "Rollback validation",
+      "status": "passed",
+      "ok": true,
+      "message": "Forced failure restored both sandbox source files.",
+      "result": {
+        "step": "124",
+        "name": "Safe Official Draw Ingestion",
+        "run_id": "20260710T054828_136969Z",
+        "started_at_utc": "2026-07-10T05:48:28+00:00",
+        "status": "rolled_back",
+        "message": "Възникна грешка и оригиналните файлове бяха възстановени от backup.",
+        "draw_key": "2026-54",
+        "inserted": false,
+        "duplicate_blocked": false,
+        "backup_created": true,
+        "staging_validated": true,
+        "promoted": false,
+        "rollback_performed": true,
+        "downstream_refresh_started": false,
+        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback\\data\\prize_winner_history.csv",
+        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback\\data\\user_journal_exports\\prize_winner_history.csv",
+        "validation_errors": [],
+        "backup_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback_backups\\20260710T054828_136969Z",
+        "backup_sha256": {
+          "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+          "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
+        },
+        "staging_validation": {
+          "passed": true,
+          "errors": [],
+          "row_count": 31,
+          "latest_draw_key": "2026-54",
+          "mirror_equal": true
+        },
+        "staging_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback_staging\\20260710T054828_136969Z",
+        "error_type": "RuntimeError",
+        "error": "Step 127 forced rollback test",
+        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+      }
+    },
+    {
+      "id": "isolation",
+      "name": "Production data isolation validation",
+      "status": "passed",
+      "ok": true,
+      "message": "Real project draw files were not changed.",
+      "before_sha256": {
+        "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+        "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
+      },
+      "after_sha256": {
+        "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+        "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
+      }
+    }
+  ],
+  "failed_stage_count": 0
+}

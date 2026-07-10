@@ -3,6 +3,6 @@
   "auto_apply_enabled": false,
   "auto_refresh_enabled": false,
   "cache_minutes": 30,
-  "network_timeout_seconds": 30,
+  "network_timeout_seconds": 12,
   "downstream_timeout_seconds": 900
 }
