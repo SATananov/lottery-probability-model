@@ -2,11 +2,11 @@
   "step": "126",
   "name": "Startup Automation and Operator Controls",
   "trigger": "startup",
-  "started_at_utc": "2026-07-10T06:57:27+00:00",
-  "checked_at_utc": "2026-07-10T06:57:27+00:00",
-  "finished_at_utc": "2026-07-10T06:57:28+00:00",
-  "status": "up_to_date",
-  "message": "Локалният официален тираж е актуален.",
+  "started_at_utc": "2026-07-10T07:29:35+00:00",
+  "checked_at_utc": "2026-07-10T07:29:35+00:00",
+  "finished_at_utc": "2026-07-10T07:29:36+00:00",
+  "status": "check_failed",
+  "message": "Официалният източник не е достъпен. Локалните данни не са променени.",
   "config": {
     "auto_check_enabled": true,
     "auto_apply_enabled": false,
@@ -18,7 +18,7 @@
   "detection": {
     "step": "123",
     "name": "BST Official Draw Detection Foundation",
-    "checked_at_utc": "2026-07-10T06:57:27+00:00",
+    "checked_at_utc": "2026-07-10T07:29:35+00:00",
     "official_source_url": "https://info.toto.bg/results/6x49",
     "mode": "read_only_detection",
     "writes_draw_data": false,
@@ -37,29 +37,16 @@
       ],
       "draw_key": "2026-53"
     },
-    "official_latest_draw": {
-      "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "numbers": [
-        12,
-        17,
-        23,
-        30,
-        38,
-        41
-      ],
-      "source_url": "https://info.toto.bg/results/6x49/2026-53",
-      "draw_key": "2026-53"
-    },
-    "status": "up_to_date",
-    "draw_delta": 0,
-    "message": "Локалният source of truth е актуален.",
+    "official_latest_draw": {},
+    "status": "official_unavailable",
+    "draw_delta": null,
+    "message": "Официалната страница не съдържа разпознаваем 6/49 тираж.",
     "validation": {
       "requested": true,
-      "passed": true,
+      "passed": false,
       "errors": []
-    }
+    },
+    "error_type": "RuntimeError"
   },
   "ingestion": {},
   "downstream_refresh": {},

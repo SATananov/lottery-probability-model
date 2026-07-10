@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -96,14 +97,30 @@ def detect_latest_official_draw(
         "draw_delta": None,
         "message": "",
         "validation": {"requested": validate_details, "passed": False, "errors": []},
+        "failure_stage": None,
+        "connectivity": {"index_fetch_succeeded": False, "detail_fetch_succeeded": False},
     }
 
+    stage = "index_fetch"
     try:
         index_html = fetch_index(timeout)
+        report["connectivity"]["index_fetch_succeeded"] = True
+        stage = "index_parse"
+        encoded = index_html.encode("utf-8", errors="replace")
+        report["source_diagnostics"] = {
+            "html_sha256": hashlib.sha256(encoded).hexdigest(),
+            "html_bytes": len(encoded),
+            "contains_6x49_marker": any(marker in index_html.lower() for marker in ("6x49", "6 от 49")),
+        }
         links = extract_draw_links(index_html, limit=20)
+        report["source_diagnostics"]["candidate_count"] = len(links)
         if not links:
-            raise RuntimeError("Официалната страница не съдържа разпознаваем 6/49 тираж.")
+            raise RuntimeError(
+                "Официалната страница не съдържа разпознаваем 6/49 тираж. "
+                f"HTML SHA256: {report['source_diagnostics']['html_sha256']}"
+            )
         candidate = links[0]
+        report["source_diagnostics"]["selected_parser_strategies"] = candidate.get("parser_strategies", [])
         official = {
             "year": int(candidate["draw_year"]),
             "draw_number": int(candidate["draw_number"]),
@@ -113,7 +130,10 @@ def detect_latest_official_draw(
         }
 
         if validate_details:
+            stage = "detail_fetch"
             detail = fetch_detail(official["year"], official["draw_number"], timeout)
+            report["connectivity"]["detail_fetch_succeeded"] = True
+            stage = "detail_validation"
             errors = validate_record(detail)
             report["validation"]["errors"] = errors
             report["validation"]["passed"] = not errors
@@ -129,12 +149,14 @@ def detect_latest_official_draw(
             report["validation"]["passed"] = True
 
         report["official_latest_draw"] = official
+        stage = "classification"
         status, delta, message = _classify(official, local)
         report.update({"status": status, "draw_delta": delta, "message": message})
     except Exception as exc:
         report["status"] = "official_unavailable"
         report["message"] = str(exc)
         report["error_type"] = type(exc).__name__
+        report["failure_stage"] = stage
 
     if write_outputs:
         write_detection_outputs(report)

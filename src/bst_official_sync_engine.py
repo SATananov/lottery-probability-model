@@ -97,37 +97,68 @@ def fetch_latest_index(timeout: int = 30) -> str:
 
 
 def extract_draw_links(index_html: str, limit: int = 10) -> list[dict[str, Any]]:
-    """Return official 6/49 draw URLs from the БСТ selector, newest first."""
+    """Return official 6/49 draw candidates, newest first, across known BST HTML variants."""
+    source = index_html or ""
     found: dict[tuple[int, int], dict[str, Any]] = {}
 
-    href_pattern = re.compile(
-        r"""href=["'](?P<href>[^"']*?/results/6x49/(?P<year>\d{4})-(?P<draw>\d+)[^"']*)["']""",
-        flags=re.IGNORECASE,
-    )
-    for match in href_pattern.finditer(index_html or ""):
-        year = int(match.group("year"))
-        draw_number = int(match.group("draw"))
-        href = html.unescape(match.group("href"))
-        url = urllib.parse.urljoin(OFFICIAL_BASE_URL, href)
-        found[(year, draw_number)] = {
+    def add(year: int, draw_number: int, strategy: str, source_url: str | None = None) -> None:
+        if year < 2000 or draw_number <= 0:
+            return
+        key = (year, draw_number)
+        row = found.setdefault(key, {
             "draw_year": year,
             "draw_number": draw_number,
-            "source_url": url,
-        }
+            "source_url": source_url or f"{OFFICIAL_BASE_URL}/{year}-{draw_number}",
+            "parser_strategies": [],
+        })
+        if source_url:
+            row["source_url"] = source_url
+        if strategy not in row["parser_strategies"]:
+            row["parser_strategies"].append(strategy)
 
-    text = _normalize_text(re.sub(r"<[^>]+>", " ", index_html or ""))
-    text_pattern = re.compile(r"Тираж\s+(\d+)\s*-\s*(\d{4})", flags=re.IGNORECASE)
-    for draw_text, year_text in text_pattern.findall(text):
-        year = int(year_text)
-        draw_number = int(draw_text)
-        found.setdefault(
-            (year, draw_number),
-            {
-                "draw_year": year,
-                "draw_number": draw_number,
-                "source_url": f"{OFFICIAL_BASE_URL}/{year}-{draw_number}",
-            },
-        )
+    # Standard selector links. Also accepts escaped JSON URLs and absolute URLs.
+    url_pattern = re.compile(
+        r"(?:https?:\/\/[^\s\"'<>]+)?/results/6x49/(?P<year>\d{4})-(?P<draw>\d+)",
+        flags=re.IGNORECASE,
+    )
+    normalized_source = html.unescape(source).replace("\\/", "/")
+    for match in url_pattern.finditer(normalized_source):
+        year = int(match.group("year"))
+        draw_number = int(match.group("draw"))
+        url = f"{OFFICIAL_BASE_URL}/{year}-{draw_number}"
+        add(year, draw_number, "6x49_url", url)
+
+    # Visible selector variants: “Тираж 53 - 2026”.
+    visible_text = _normalize_text(re.sub(r"<[^>]+>", " ", normalized_source))
+    for draw_text, year_text in re.findall(
+        r"Тираж\s*(?:№\s*)?(\d{1,3})\s*[-–—/]\s*(20\d{2})",
+        visible_text,
+        flags=re.IGNORECASE,
+    ):
+        add(int(year_text), int(draw_text), "draw_year_text")
+
+    # Main-result variants: “Тираж 53 - 09.07.2026” or “Тираж №53 / 09.07.2026”.
+    for draw_text, day, month, year_text in re.findall(
+        r"Тираж\s*(?:№\s*)?(\d{1,3})\s*[-–—/]\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})",
+        visible_text,
+        flags=re.IGNORECASE,
+    ):
+        add(int(year_text), int(draw_text), "draw_date_text")
+
+    # Structured/script payload fallbacks used by SPA/server-rendered variants.
+    structured_patterns = [
+        r'"(?:drawYear|draw_year|year)"\s*:\s*"?(20\d{2})"?.{0,180}?"(?:drawNumber|draw_number|drawNo|draw)"\s*:\s*"?(\d{1,3})"?',
+        r'"(?:drawNumber|draw_number|drawNo|draw)"\s*:\s*"?(\d{1,3})"?.{0,180}?"(?:drawYear|draw_year|year)"\s*:\s*"?(20\d{2})"?',
+    ]
+    for index, pattern in enumerate(structured_patterns):
+        for match in re.finditer(pattern, normalized_source, flags=re.IGNORECASE | re.DOTALL):
+            if index == 0:
+                year, draw_number = int(match.group(1)), int(match.group(2))
+            else:
+                draw_number, year = int(match.group(1)), int(match.group(2))
+            context = normalized_source[max(0, match.start()-250):match.end()+250].lower()
+            if "6x49" in context or "6 от 49" in context or "/results/6x49" in normalized_source.lower():
+                add(year, draw_number, "structured_payload")
 
     rows = sorted(found.values(), key=lambda row: (row["draw_year"], row["draw_number"]), reverse=True)
     return rows[: max(1, int(limit))]

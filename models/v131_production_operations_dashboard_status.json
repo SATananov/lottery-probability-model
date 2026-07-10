@@ -1,0 +1,400 @@
+{
+  "step": "131",
+  "name": "Production Operations Dashboard & Health Summary",
+  "generated_at_utc": "2026-07-10T07:51:50+00:00",
+  "health": "attention",
+  "live_bst_check": true,
+  "bst": {
+    "available": false,
+    "status": "official_unavailable",
+    "official_draw_key": "—",
+    "local_draw_key": "2026-53",
+    "draw_delta": null,
+    "message": "Официалната страница не съдържа разпознаваем 6/49 тираж. HTML SHA256: bc43c898de5bfe5497d55c06884ffdc16831d73c705bced36f4f6e2fc64b2d67"
+  },
+  "guardrails": {
+    "production_locked": true,
+    "operator_consent_valid": false,
+    "token_exists": false,
+    "token_active": false,
+    "token_target_draw_key": null,
+    "checkpoint_exists": false,
+    "checkpoint_draw_key": null
+  },
+  "freshness": {
+    "overall_status": "out_of_sync",
+    "synced_count": 5,
+    "out_of_sync_count": 0,
+    "unavailable_count": 1,
+    "sources": [
+      {
+        "key": "official",
+        "label": "Официална история",
+        "path": "data\\prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "journal_prize",
+        "label": "Дневник — история на печалбите",
+        "path": "data\\user_journal_exports\\prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "historical",
+        "label": "Исторически тиражи",
+        "path": "data\\historical_draws.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "normalized",
+        "label": "Нормализирани събития",
+        "path": "data\\v40_normalized_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "canonical",
+        "label": "Канонични събития",
+        "path": "data\\v41_canonical_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "r_layer",
+        "label": "R статистически слой",
+        "path": "reports\\r\\r_data_audit.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "step121",
+        "label": "Step 121 R features",
+        "path": "models\\v121_r_statistical_features_status.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "decision",
+        "label": "Решение за игра",
+        "path": "reports\\v115_play_decision_center_report.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 49,
+          "date": "2026-06-25",
+          "numbers": []
+        },
+        "status": "behind",
+        "draw_delta": 4,
+        "message": "Назад с 4 тираж(а)."
+      },
+      {
+        "key": "final_pack",
+        "label": "Готов фиш пакет",
+        "path": "reports\\v117_real_ticket_pack_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "model_system",
+        "label": "Системен фиш от моделите",
+        "path": "reports\\v118_model_system_ticket_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "models",
+        "label": "ML model artifacts",
+        "path": "models/*.json (known training artifacts)",
+        "exists": true,
+        "latest": {
+          "year": null,
+          "draw_number": 47,
+          "date": "",
+          "numbers": [
+            22,
+            26,
+            28,
+            29,
+            40,
+            42
+          ]
+        },
+        "detected_artifacts": [
+          {
+            "path": "models\\lottery_prediction_model.json",
+            "latest": {
+              "year": null,
+              "draw_number": 47,
+              "date": "",
+              "numbers": [
+                22,
+                26,
+                28,
+                29,
+                40,
+                42
+              ]
+            }
+          }
+        ],
+        "status": "unavailable",
+        "draw_delta": null,
+        "message": "Открит е marker за тираж 47, но липсва година за надеждно сравнение."
+      }
+    ]
+  },
+  "activation": {
+    "event_count": 1,
+    "latest_event": {
+      "timestamp_utc": "2026-07-10T06:41:10+00:00",
+      "source": "step129_activation",
+      "mode": "dry_run",
+      "status": "dry_run_blocked",
+      "operator": "local_operator",
+      "target_draw_key": "",
+      "activation_executed": false,
+      "token_consumed": false,
+      "production_data_changed": false,
+      "message": "Dry-run preflight е блокиран; production данните не са променени.",
+      "raw": {
+        "activation_executed": false,
+        "finished_at_utc": "2026-07-10T06:41:10+00:00",
+        "heavy_ml_retraining_performed": false,
+        "message": "Dry-run preflight е блокиран; production данните не са променени.",
+        "mode": "dry_run",
+        "name": "Controlled Production Activation & Dry-Run Console",
+        "preflight": {
+          "checks": {
+            "new_draw_available": false,
+            "not_already_checkpointed": true,
+            "official_draw_validated": false,
+            "official_source_available": false,
+            "operator_consent_valid": false,
+            "production_unlocked": false,
+            "retry_policy_valid": true,
+            "same_draw_protection_enabled": true,
+            "sequential_draw": false
+          },
+          "created_at_utc": "2026-07-10T06:41:10+00:00",
+          "detection": {
+            "checked_at_utc": "2026-07-10T06:41:10+00:00",
+            "draw_delta": null,
+            "error_type": "URLError",
+            "local_latest_draw": {
+              "date": "2026-07-09",
+              "draw_key": "2026-53",
+              "draw_number": 53,
+              "numbers": [
+                12,
+                17,
+                23,
+                30,
+                38,
+                41
+              ],
+              "year": 2026
+            },
+            "message": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+            "mode": "read_only_detection",
+            "name": "BST Official Draw Detection Foundation",
+            "official_latest_draw": {},
+            "official_source_url": "https://info.toto.bg/results/6x49",
+            "starts_downstream_refresh": false,
+            "status": "official_unavailable",
+            "step": "123",
+            "validation": {
+              "errors": [],
+              "passed": false,
+              "requested": true
+            },
+            "writes_draw_data": false
+          },
+          "detection_status": "official_unavailable",
+          "guardrail_readiness": {
+            "checks": {
+              "checkpoint_layer_available": true,
+              "operator_consent_valid": false,
+              "production_unlocked": false,
+              "retry_policy_valid": true,
+              "same_draw_protection_enabled": true
+            },
+            "ready": false
+          },
+          "last_success_checkpoint": {},
+          "local_draw_key": "2026-53",
+          "name": "Controlled Production Activation & Dry-Run Console",
+          "operator_summary": "Target —; local 2026-53; detection official_unavailable; production LOCKED; consent MISSING/EXPIRED.",
+          "ready": false,
+          "step": "129",
+          "target_draw_key": null
+        },
+        "preflight_ready": false,
+        "production_data_changed": false,
+        "started_at_utc": "2026-07-10T06:41:10+00:00",
+        "status": "dry_run_blocked",
+        "step": "129",
+        "target_draw_key": null,
+        "token_consumed": false,
+        "source": "step129_activation",
+        "line_no": 1
+      }
+    }
+  },
+  "recovery": {
+    "backup_count": 0,
+    "ready": false,
+    "primary_mirror_equal": true,
+    "backups": []
+  },
+  "checks": {
+    "bst_connectivity": false,
+    "local_draw_known": true,
+    "production_locked": true,
+    "operator_consent_valid": false,
+    "token_active": false,
+    "checkpoint_exists": false,
+    "primary_mirror_equal": true,
+    "downstream_fresh": true,
+    "recovery_ready": false
+  },
+  "heavy_ml_retraining_performed": false
+}
