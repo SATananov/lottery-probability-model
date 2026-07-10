@@ -1,0 +1,12 @@
+{
+  "step": "135",
+  "name": "Incident Evidence Retention, Archive & Safe Cleanup Policy",
+  "retention_days_active": 30,
+  "archive_cleanup_days": 180,
+  "minimum_active_verified_bundles": 10,
+  "archive_verified_only": true,
+  "protect_invalid_bundles": true,
+  "protect_unverified_bundles": true,
+  "registry_is_append_only": true,
+  "dry_run_default": true
+}

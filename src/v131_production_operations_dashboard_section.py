@@ -7,6 +7,7 @@ from src.v131_production_operations_dashboard_engine import build_operations_sna
 from src.v132_production_incident_evidence_section import render_v132_production_incident_evidence_section
 from src.v133_incident_evidence_integrity_section import render_v133_incident_evidence_integrity_section
 from src.v134_incident_evidence_registry_section import render_v134_incident_evidence_registry_section
+from src.v135_incident_evidence_retention_section import render_v135_incident_evidence_retention_section
 
 
 def _yes_no(value: bool) -> str:
@@ -105,12 +106,14 @@ def render_v131_production_operations_dashboard_section() -> None:
             st.info('Няма Step 124 ingestion backups. Recovery ще стане готов след първото реално ingestion събитие.')
 
     with tab_evidence:
-        evidence_export_tab, evidence_verify_tab, evidence_registry_tab = st.tabs(['Създаване на bundle', 'Проверка на целостта', 'Registry history'])
+        evidence_export_tab, evidence_verify_tab, evidence_registry_tab, evidence_retention_tab = st.tabs(['Създаване на bundle', 'Проверка на целостта', 'Registry history', 'Retention & archive'])
         with evidence_export_tab:
             render_v132_production_incident_evidence_section(timeout_seconds=timeout)
         with evidence_verify_tab:
             render_v133_incident_evidence_integrity_section()
         with evidence_registry_tab:
             render_v134_incident_evidence_registry_section()
+        with evidence_retention_tab:
+            render_v135_incident_evidence_retention_section()
 
     st.info('Dashboard-ът е read-only. Не прилага тираж, не отключва production и не стартира тежко ML retraining.')
