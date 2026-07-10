@@ -1,8 +1,8 @@
 {
-  "refreshed_at_utc": "2026-07-10T03:07:01+00:00",
+  "refreshed_at_utc": "2026-07-10T04:39:23+00:00",
   "status_before": {
-    "checked_at_utc": "2026-07-10T03:06:59+00:00",
-    "status": "MODEL_DATA_OUT_OF_SYNC",
+    "checked_at_utc": "2026-07-10T04:39:23+00:00",
+    "status": "MODEL_DATA_SYNCED",
     "latest_prize_history": {
       "year": 2026,
       "draw_number": 53,
@@ -11,47 +11,32 @@
     },
     "latest_historical_draws": {
       "year": 2026,
-      "draw_number": 52,
-      "date": "2026-07-05",
-      "draw_key": "2026-52"
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "draw_key": "2026-53"
     },
     "latest_v40_normalized": {
       "year": 2026,
-      "draw_number": 52,
-      "date": "2026-07-05",
-      "draw_key": "2026-52"
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "draw_key": "2026-53"
     },
     "latest_v41_canonical": {
       "year": 2026,
-      "draw_number": 52,
-      "date": "2026-07-05",
-      "draw_key": "2026-52"
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "draw_key": "2026-53"
     },
     "counts": {
       "prize_history": 30,
-      "historical_draws": 10062,
-      "v40_normalized": 10062,
-      "v41_canonical": 10062
+      "historical_draws": 10063,
+      "v40_normalized": 10063,
+      "v41_canonical": 10063
     },
     "missing": {
-      "historical_draws": [
-        {
-          "year": 2026,
-          "draw_number": 53
-        }
-      ],
-      "v40_normalized": [
-        {
-          "year": 2026,
-          "draw_number": 53
-        }
-      ],
-      "v41_canonical": [
-        {
-          "year": 2026,
-          "draw_number": 53
-        }
-      ]
+      "historical_draws": [],
+      "v40_normalized": [],
+      "v41_canonical": []
     },
     "policy": {
       "model_retraining": "not_automatic",
@@ -59,7 +44,7 @@
     }
   },
   "status_after": {
-    "checked_at_utc": "2026-07-10T03:07:01+00:00",
+    "checked_at_utc": "2026-07-10T04:39:23+00:00",
     "status": "MODEL_DATA_SYNCED",
     "latest_prize_history": {
       "year": 2026,
@@ -102,86 +87,12 @@
     }
   },
   "inserted": {
-    "historical_draws": [
-      {
-        "draw_id": "10063",
-        "date": "2026-07-09",
-        "n1": "12",
-        "n2": "17",
-        "n3": "23",
-        "n4": "30",
-        "n5": "38",
-        "n6": "41",
-        "year": "2026",
-        "draw_number": "53",
-        "draw_position": "1",
-        "source_url": "https://info.toto.bg/results/6x49/2026-53",
-        "draw_no": "53",
-        "bonus_number": "",
-        "source": "БСТ официална синхронизация"
-      }
-    ],
-    "v40_normalized": [
-      {
-        "draw_event_id": "2026-053-1",
-        "source_draw_id": "10063",
-        "date": "2026-07-09",
-        "year": "2026",
-        "draw_number": "53",
-        "drawing_no": "1",
-        "n1": "12",
-        "n2": "17",
-        "n3": "23",
-        "n4": "30",
-        "n5": "38",
-        "n6": "41",
-        "bonus_number": "",
-        "source_url": "https://info.toto.bg/results/6x49/2026-53",
-        "rules_version": "post_bst_sync_official_6x49",
-        "data_status": "official_bst_sync_bonus_missing"
-      }
-    ],
-    "v41_canonical": [
-      {
-        "draw_event_id": "2026-53-1",
-        "year": "2026",
-        "draw_number": "53",
-        "date": "2026-07-09",
-        "drawing_no": "1",
-        "n1": "12",
-        "n2": "17",
-        "n3": "23",
-        "n4": "30",
-        "n5": "38",
-        "n6": "41",
-        "bonus_number": "",
-        "source": "data/prize_winner_history.csv",
-        "source_url": "https://info.toto.bg/results/6x49/2026-53",
-        "source_draw_id": "10063",
-        "data_status": "official_bst_sync_bonus_missing"
-      }
-    ]
+    "historical_draws": [],
+    "v40_normalized": [],
+    "v41_canonical": []
   },
   "updated": {
-    "historical_draws": [
-      {
-        "draw_id": "10060",
-        "date": "2026-06-28",
-        "n1": "2",
-        "n2": "4",
-        "n3": "17",
-        "n4": "33",
-        "n5": "35",
-        "n6": "38",
-        "year": "2026",
-        "draw_number": "50",
-        "draw_position": "1",
-        "source_url": "https://info.toto.bg/results/6x49/2026-50",
-        "draw_no": "50",
-        "bonus_number": "",
-        "source": "Ръчно въвеждане"
-      }
-    ]
+    "historical_draws": []
   },
   "model_retraining": {
     "performed": false,

@@ -1,0 +1,61 @@
+{
+  "step": "125",
+  "name": "Unified Downstream Refresh Pipeline",
+  "started_at_utc": "2026-07-10T04:39:26+00:00",
+  "finished_at_utc": "2026-07-10T04:39:26+00:00",
+  "status": "planned",
+  "plan_only": true,
+  "heavy_ml_retraining_performed": false,
+  "stages": [
+    {
+      "id": "dataset_sync",
+      "name": "Historical / normalized / canonical",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "r_statistics",
+      "name": "R statistical layer",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "r_features",
+      "name": "Step 121 R features",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "decision",
+      "name": "Decision Center",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "ticket_pack",
+      "name": "Real ticket pack",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "model_ticket_pack",
+      "name": "Model system ticket pack",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    },
+    {
+      "id": "freshness",
+      "name": "Final freshness recheck",
+      "status": "planned",
+      "ok": true,
+      "message": "Ready to run."
+    }
+  ],
+  "failed_stage_count": 0
+}

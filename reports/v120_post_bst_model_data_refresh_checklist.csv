@@ -1,5 +1,1 @@
 dataset,action,draw_year,draw_number,draw_date,numbers_text,message
-historical_draws,inserted,2026,53,2026-07-09,"12, 17, 23, 30, 38, 41",added from data/prize_winner_history.csv
-v40_normalized,inserted,2026,53,2026-07-09,"12, 17, 23, 30, 38, 41",added from data/prize_winner_history.csv
-v41_canonical,inserted,2026,53,2026-07-09,"12, 17, 23, 30, 38, 41",added from data/prize_winner_history.csv
-historical_draws,updated,2026,50,2026-06-28,"2, 4, 17, 33, 35, 38",repaired missing local values
