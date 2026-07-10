@@ -3,6 +3,7 @@ from __future__ import annotations
 import streamlit as st
 
 from src.v132_production_incident_evidence_engine import build_incident_evidence, build_incident_evidence_zip
+from src.v134_incident_evidence_registry_engine import register_bundle_created
 
 
 def render_v132_production_incident_evidence_section(*, timeout_seconds: int = 30) -> None:
@@ -20,7 +21,10 @@ def render_v132_production_incident_evidence_section(*, timeout_seconds: int = 3
             timeout_seconds=timeout_seconds,
             write_outputs=False,
         )
+        archive_bytes = st.session_state.get('v132_incident_evidence_zip') or build_incident_evidence_zip(evidence)
+        register_bundle_created(evidence, archive_bytes)
         st.session_state['v132_incident_evidence'] = evidence
+        st.session_state['v132_incident_evidence_zip'] = archive_bytes
 
     evidence = st.session_state.get('v132_incident_evidence')
     if not evidence:

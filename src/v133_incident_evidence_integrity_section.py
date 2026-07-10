@@ -3,6 +3,7 @@ from __future__ import annotations
 import streamlit as st
 
 from src.v133_incident_evidence_integrity_engine import MAX_ARCHIVE_BYTES, inspect_incident_evidence_zip
+from src.v134_incident_evidence_registry_engine import register_verification_result
 
 
 def render_v133_incident_evidence_integrity_section() -> None:
@@ -21,11 +22,13 @@ def render_v133_incident_evidence_integrity_section() -> None:
 
     archive_bytes = uploaded.getvalue()
     if st.button('Провери целостта на evidence bundle', use_container_width=True, key='v133_verify_evidence'):
-        st.session_state['v133_integrity_result'] = inspect_incident_evidence_zip(
+        result = inspect_incident_evidence_zip(
             archive_bytes,
             source_name=uploaded.name,
             write_outputs=False,
         )
+        register_verification_result(result)
+        st.session_state['v133_integrity_result'] = result
 
     result = st.session_state.get('v133_integrity_result')
     if not result:
