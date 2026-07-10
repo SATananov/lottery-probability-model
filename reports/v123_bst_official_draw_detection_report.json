@@ -1,0 +1,46 @@
+{
+  "step": "123",
+  "name": "BST Official Draw Detection Foundation",
+  "checked_at_utc": "2026-07-10T04:08:05+00:00",
+  "official_source_url": "https://info.toto.bg/results/6x49",
+  "mode": "read_only_detection",
+  "writes_draw_data": false,
+  "starts_downstream_refresh": false,
+  "local_latest_draw": {
+    "year": 2026,
+    "draw_number": 53,
+    "date": "2026-07-09",
+    "numbers": [
+      12,
+      17,
+      23,
+      30,
+      38,
+      41
+    ],
+    "draw_key": "2026-53"
+  },
+  "official_latest_draw": {
+    "year": 2026,
+    "draw_number": 53,
+    "date": "2026-07-09",
+    "numbers": [
+      12,
+      17,
+      23,
+      30,
+      38,
+      41
+    ],
+    "source_url": "https://info.toto.bg/results/6x49/2026-53",
+    "draw_key": "2026-53"
+  },
+  "status": "up_to_date",
+  "draw_delta": 0,
+  "message": "Локалният source of truth е актуален.",
+  "validation": {
+    "requested": true,
+    "passed": true,
+    "errors": []
+  }
+}

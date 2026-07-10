@@ -50,6 +50,7 @@ from src.v87_synthesized_user_menu_section import render_v87_synthesized_user_me
 from src.r_statistical_layer_section import render_r_statistical_layer_section
 from src.r_statistical_features_integration_section import render_r_statistical_features_integration_section
 from src.v122_unified_official_draw_freshness_section import render_v122_unified_official_draw_freshness_section
+from src.v123_bst_official_draw_detection_section import render_v123_bst_official_draw_detection_section
 from src.bst_official_sync_section import render_bst_official_sync_section
 from src.post_bst_model_data_refresh_section import render_post_bst_model_data_refresh_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
@@ -3934,6 +3935,7 @@ def main() -> None:
         "R статистически слой": render_r_statistical_layer_section,
         "R feature интеграция": render_r_statistical_features_integration_section,
         "Свежест на официалния тираж": render_v122_unified_official_draw_freshness_section,
+        "Проверка за нов официален тираж": render_v123_bst_official_draw_detection_section,
         "БСТ официална синхронизация": render_bst_official_sync_section,
         "Обновяване на моделни данни": render_post_bst_model_data_refresh_section,
         "Статистика на печалбите": render_v112_prize_statistics_page,
