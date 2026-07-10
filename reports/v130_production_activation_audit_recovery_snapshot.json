@@ -1,0 +1,119 @@
+{
+  "step": "130",
+  "created_at_utc": "2026-07-10T07:10:58+00:00",
+  "history": [
+    {
+      "timestamp_utc": "2026-07-10T06:41:10+00:00",
+      "source": "step129_activation",
+      "mode": "dry_run",
+      "status": "dry_run_blocked",
+      "operator": "local_operator",
+      "target_draw_key": "",
+      "activation_executed": false,
+      "token_consumed": false,
+      "production_data_changed": false,
+      "message": "Dry-run preflight е блокиран; production данните не са променени.",
+      "raw": {
+        "activation_executed": false,
+        "finished_at_utc": "2026-07-10T06:41:10+00:00",
+        "heavy_ml_retraining_performed": false,
+        "message": "Dry-run preflight е блокиран; production данните не са променени.",
+        "mode": "dry_run",
+        "name": "Controlled Production Activation & Dry-Run Console",
+        "preflight": {
+          "checks": {
+            "new_draw_available": false,
+            "not_already_checkpointed": true,
+            "official_draw_validated": false,
+            "official_source_available": false,
+            "operator_consent_valid": false,
+            "production_unlocked": false,
+            "retry_policy_valid": true,
+            "same_draw_protection_enabled": true,
+            "sequential_draw": false
+          },
+          "created_at_utc": "2026-07-10T06:41:10+00:00",
+          "detection": {
+            "checked_at_utc": "2026-07-10T06:41:10+00:00",
+            "draw_delta": null,
+            "error_type": "URLError",
+            "local_latest_draw": {
+              "date": "2026-07-09",
+              "draw_key": "2026-53",
+              "draw_number": 53,
+              "numbers": [
+                12,
+                17,
+                23,
+                30,
+                38,
+                41
+              ],
+              "year": 2026
+            },
+            "message": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+            "mode": "read_only_detection",
+            "name": "BST Official Draw Detection Foundation",
+            "official_latest_draw": {},
+            "official_source_url": "https://info.toto.bg/results/6x49",
+            "starts_downstream_refresh": false,
+            "status": "official_unavailable",
+            "step": "123",
+            "validation": {
+              "errors": [],
+              "passed": false,
+              "requested": true
+            },
+            "writes_draw_data": false
+          },
+          "detection_status": "official_unavailable",
+          "guardrail_readiness": {
+            "checks": {
+              "checkpoint_layer_available": true,
+              "operator_consent_valid": false,
+              "production_unlocked": false,
+              "retry_policy_valid": true,
+              "same_draw_protection_enabled": true
+            },
+            "ready": false
+          },
+          "last_success_checkpoint": {},
+          "local_draw_key": "2026-53",
+          "name": "Controlled Production Activation & Dry-Run Console",
+          "operator_summary": "Target —; local 2026-53; detection official_unavailable; production LOCKED; consent MISSING/EXPIRED.",
+          "ready": false,
+          "step": "129",
+          "target_draw_key": null
+        },
+        "preflight_ready": false,
+        "production_data_changed": false,
+        "started_at_utc": "2026-07-10T06:41:10+00:00",
+        "status": "dry_run_blocked",
+        "step": "129",
+        "target_draw_key": null,
+        "token_consumed": false,
+        "source": "step129_activation",
+        "line_no": 1
+      }
+    }
+  ],
+  "checkpoint": {
+    "checkpoint_path": "/mnt/data/lottery_step130_work/models/v128_last_success_checkpoint.json",
+    "checkpoint_exists": false,
+    "checkpoint": {},
+    "token_state": {
+      "exists": false,
+      "target_draw_key": null,
+      "issued_at_utc": null,
+      "expires_at_utc": null,
+      "consumed": null,
+      "consumed_at_utc": null
+    },
+    "current_primary_sha256": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+    "current_mirror_sha256": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
+    "current_mirror_equal": true
+  },
+  "backups": [],
+  "history_count": 1,
+  "backup_count": 0
+}

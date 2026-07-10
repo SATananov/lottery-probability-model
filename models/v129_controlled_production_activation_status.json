@@ -2,8 +2,8 @@
   "step": "129",
   "name": "Controlled Production Activation & Dry-Run Console",
   "mode": "dry_run",
-  "started_at_utc": "2026-07-10T06:57:52+00:00",
-  "finished_at_utc": "2026-07-10T06:57:52+00:00",
+  "started_at_utc": "2026-07-10T06:41:10+00:00",
+  "finished_at_utc": "2026-07-10T06:41:10+00:00",
   "status": "dry_run_blocked",
   "message": "Dry-run preflight е блокиран; production данните не са променени.",
   "preflight_ready": false,
@@ -11,7 +11,7 @@
   "preflight": {
     "step": "129",
     "name": "Controlled Production Activation & Dry-Run Console",
-    "created_at_utc": "2026-07-10T06:57:52+00:00",
+    "created_at_utc": "2026-07-10T06:41:10+00:00",
     "ready": false,
     "checks": {
       "official_source_available": false,
@@ -30,7 +30,7 @@
     "detection": {
       "step": "123",
       "name": "BST Official Draw Detection Foundation",
-      "checked_at_utc": "2026-07-10T06:57:50+00:00",
+      "checked_at_utc": "2026-07-10T06:41:10+00:00",
       "official_source_url": "https://info.toto.bg/results/6x49",
       "mode": "read_only_detection",
       "writes_draw_data": false,
@@ -52,13 +52,13 @@
       "official_latest_draw": {},
       "status": "official_unavailable",
       "draw_delta": null,
-      "message": "Официалната страница не съдържа разпознаваем 6/49 тираж.",
+      "message": "<urlopen error [Errno -3] Temporary failure in name resolution>",
       "validation": {
         "requested": true,
         "passed": false,
         "errors": []
       },
-      "error_type": "RuntimeError"
+      "error_type": "URLError"
     },
     "guardrail_readiness": {
       "ready": false,

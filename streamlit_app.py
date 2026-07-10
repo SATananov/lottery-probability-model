@@ -57,6 +57,7 @@ from src.v126_startup_automation_section import initialize_v126_startup_automati
 from src.v127_end_to_end_automation_validation_section import render_v127_end_to_end_automation_validation_section
 from src.v128_production_auto_apply_guardrails_section import render_v128_production_guardrails_section
 from src.v129_controlled_production_activation_section import render_v129_controlled_production_activation_section
+from src.v130_production_activation_audit_recovery_section import render_v130_production_activation_audit_recovery_section
 from src.bst_official_sync_section import render_bst_official_sync_section
 from src.post_bst_model_data_refresh_section import render_post_bst_model_data_refresh_section
 # === LOTTERY BULGARIAN UI FINAL CLEAN V36 START ===
@@ -3949,6 +3950,7 @@ def main() -> None:
         "End-to-End проверка на автоматизацията": render_v127_end_to_end_automation_validation_section,
         "Production Auto-Apply готовност и защити": render_v128_production_guardrails_section,
         "Контролирано production активиране и dry-run": render_v129_controlled_production_activation_section,
+        "Production activation audit и recovery": render_v130_production_activation_audit_recovery_section,
         "БСТ официална синхронизация": render_bst_official_sync_section,
         "Обновяване на моделни данни": render_post_bst_model_data_refresh_section,
         "Статистика на печалбите": render_v112_prize_statistics_page,
