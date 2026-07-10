@@ -1,10 +1,10 @@
 {
   "step": "126",
   "name": "Startup Automation and Operator Controls",
-  "trigger": "manual_check",
-  "started_at_utc": "2026-07-10T05:35:40+00:00",
-  "checked_at_utc": "2026-07-10T05:35:40+00:00",
-  "finished_at_utc": "2026-07-10T05:35:42+00:00",
+  "trigger": "startup",
+  "started_at_utc": "2026-07-10T06:57:27+00:00",
+  "checked_at_utc": "2026-07-10T06:57:27+00:00",
+  "finished_at_utc": "2026-07-10T06:57:28+00:00",
   "status": "up_to_date",
   "message": "Локалният официален тираж е актуален.",
   "config": {
@@ -12,13 +12,13 @@
     "auto_apply_enabled": false,
     "auto_refresh_enabled": false,
     "cache_minutes": 30,
-    "network_timeout_seconds": 30,
+    "network_timeout_seconds": 12,
     "downstream_timeout_seconds": 900
   },
   "detection": {
     "step": "123",
     "name": "BST Official Draw Detection Foundation",
-    "checked_at_utc": "2026-07-10T05:35:40+00:00",
+    "checked_at_utc": "2026-07-10T06:57:27+00:00",
     "official_source_url": "https://info.toto.bg/results/6x49",
     "mode": "read_only_detection",
     "writes_draw_data": false,

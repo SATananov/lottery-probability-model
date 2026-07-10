@@ -1,0 +1,80 @@
+{
+  "step": "129",
+  "name": "Controlled Production Activation & Dry-Run Console",
+  "mode": "dry_run",
+  "started_at_utc": "2026-07-10T06:57:52+00:00",
+  "finished_at_utc": "2026-07-10T06:57:52+00:00",
+  "status": "dry_run_blocked",
+  "message": "Dry-run preflight е блокиран; production данните не са променени.",
+  "preflight_ready": false,
+  "target_draw_key": null,
+  "preflight": {
+    "step": "129",
+    "name": "Controlled Production Activation & Dry-Run Console",
+    "created_at_utc": "2026-07-10T06:57:52+00:00",
+    "ready": false,
+    "checks": {
+      "official_source_available": false,
+      "official_draw_validated": false,
+      "new_draw_available": false,
+      "sequential_draw": false,
+      "production_unlocked": false,
+      "operator_consent_valid": false,
+      "retry_policy_valid": true,
+      "same_draw_protection_enabled": true,
+      "not_already_checkpointed": true
+    },
+    "target_draw_key": null,
+    "local_draw_key": "2026-53",
+    "detection_status": "official_unavailable",
+    "detection": {
+      "step": "123",
+      "name": "BST Official Draw Detection Foundation",
+      "checked_at_utc": "2026-07-10T06:57:50+00:00",
+      "official_source_url": "https://info.toto.bg/results/6x49",
+      "mode": "read_only_detection",
+      "writes_draw_data": false,
+      "starts_downstream_refresh": false,
+      "local_latest_draw": {
+        "year": 2026,
+        "draw_number": 53,
+        "date": "2026-07-09",
+        "numbers": [
+          12,
+          17,
+          23,
+          30,
+          38,
+          41
+        ],
+        "draw_key": "2026-53"
+      },
+      "official_latest_draw": {},
+      "status": "official_unavailable",
+      "draw_delta": null,
+      "message": "Официалната страница не съдържа разпознаваем 6/49 тираж.",
+      "validation": {
+        "requested": true,
+        "passed": false,
+        "errors": []
+      },
+      "error_type": "RuntimeError"
+    },
+    "guardrail_readiness": {
+      "ready": false,
+      "checks": {
+        "production_unlocked": false,
+        "operator_consent_valid": false,
+        "retry_policy_valid": true,
+        "same_draw_protection_enabled": true,
+        "checkpoint_layer_available": true
+      }
+    },
+    "last_success_checkpoint": {},
+    "operator_summary": "Target —; local 2026-53; detection official_unavailable; production LOCKED; consent MISSING/EXPIRED."
+  },
+  "activation_executed": false,
+  "token_consumed": false,
+  "production_data_changed": false,
+  "heavy_ml_retraining_performed": false
+}
