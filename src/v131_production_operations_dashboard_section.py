@@ -10,9 +10,25 @@ def _yes_no(value: bool) -> str:
     return 'Да' if value else 'Не'
 
 
+def _render_bst_guidance(snapshot: dict) -> None:
+    bst = snapshot['bst']
+    state = bst.get('operational_state') or {}
+    label = state.get('label_bg') or 'Неизвестно'
+    title = state.get('title_bg') or label
+    action = state.get('operator_action_bg') or ''
+    severity = state.get('severity') or 'info'
+    renderer = {
+        'success': st.success,
+        'warning': st.warning,
+        'error': st.error,
+        'info': st.info,
+    }.get(severity, st.info)
+    renderer(f"{title}. {action}".strip())
+
+
 def render_v131_production_operations_dashboard_section() -> None:
     st.title('Production Operations Dashboard')
-    st.caption('Step 131 — централен health summary за БСТ, тиражи, guardrails, freshness, activation и recovery.')
+    st.caption('Централен оперативен преглед за БСТ, тиражи, защити, свежест, activation и recovery.')
 
     c1, c2 = st.columns([1, 2])
     with c1:
@@ -27,11 +43,14 @@ def render_v131_production_operations_dashboard_section() -> None:
     banner = {'healthy': st.success, 'attention': st.warning, 'critical': st.error}[health]
     banner(f"Production health: {health.upper()}")
 
+    bst_state = snapshot['bst'].get('operational_state') or {}
     a, b, c, d = st.columns(4)
     a.metric('Локален тираж', snapshot['bst']['local_draw_key'])
     b.metric('Официален тираж', snapshot['bst']['official_draw_key'])
-    c.metric('BST connectivity', 'Online' if snapshot['bst']['available'] else 'Unavailable')
+    c.metric('БСТ състояние', bst_state.get('label_bg') or 'Неизвестно')
     d.metric('Извън синхрон', snapshot['freshness']['out_of_sync_count'])
+
+    _render_bst_guidance(snapshot)
 
     tab_health, tab_freshness, tab_activation, tab_recovery = st.tabs([
         'Health summary', 'Downstream freshness', 'Последен activation', 'Recovery readiness'

@@ -40,6 +40,65 @@ def _draw_key(draw: dict[str, Any] | None) -> str:
     return f'{year}-{number}' if year and number else '—'
 
 
+def _bst_operational_state(*, live_bst_check: bool, detection_status: str, bst_available: bool, failure_stage: str | None) -> dict[str, Any]:
+    if not live_bst_check and detection_status in {'not_checked', ''}:
+        return {
+            'code': 'not_checked',
+            'label_bg': 'Не е проверено',
+            'severity': 'info',
+            'operator_action_bg': 'Натисни „Обнови dashboard с live БСТ проверка“, когато е нужна актуална външна проверка.',
+            'retry_safe': True,
+        }
+    if bst_available:
+        return {
+            'code': 'online',
+            'label_bg': 'Достъпно',
+            'severity': 'success',
+            'operator_action_bg': 'Не е необходимо действие. Прегледай разликата между официалния и локалния тираж.',
+            'retry_safe': True,
+        }
+
+    guidance = {
+        'index_fetch': (
+            'BST_INDEX_UNREACHABLE',
+            'Официалният индекс не е достъпен',
+            'Провери интернет/DNS/TLS достъпа и повтори само read-only live проверката. Не прилагай тираж ръчно само заради мрежова грешка.',
+        ),
+        'index_parse': (
+            'BST_INDEX_PARSE_UNRECOGNIZED',
+            'Индексът е достъпен, но форматът не е разпознат',
+            'Запази диагностичния SHA-256 и parser данните. Провери за промяна в HTML структурата преди промяна на parser-а.',
+        ),
+        'detail_fetch': (
+            'BST_DETAIL_UNREACHABLE',
+            'Страницата на тиража не е достъпна',
+            'Повтори read-only проверката. Ако индексът работи, но detail страницата остава недостъпна, не разрешавай ingestion.',
+        ),
+        'detail_validation': (
+            'BST_DETAIL_VALIDATION_FAILED',
+            'Официалният запис не премина валидацията',
+            'Прегледай извлечените полета и validation причината. Не заобикаляй fail-closed защитата.',
+        ),
+        'classification': (
+            'BST_DRAW_CLASSIFICATION_FAILED',
+            'Тиражът не може да бъде класифициран безопасно',
+            'Сравни ръчно official/local draw metadata и поправи classification логиката преди ingestion.',
+        ),
+    }
+    code, title, action = guidance.get(
+        failure_stage,
+        ('BST_CHECK_FAILED', 'Live БСТ проверката е неуспешна', 'Прегледай error type, message и diagnostics преди повторна проверка.'),
+    )
+    return {
+        'code': code,
+        'label_bg': 'Недостъпно',
+        'severity': 'warning',
+        'title_bg': title,
+        'operator_action_bg': action,
+        'retry_safe': True,
+    }
+
+
 def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: int = 15, write_outputs: bool = True) -> dict[str, Any]:
     freshness = build_freshness_report(write_outputs=False)
     detection = detect_latest_official_draw(timeout=timeout_seconds, write_outputs=False) if live_bst_check else _read_json(ROOT / 'reports' / 'v123_bst_official_draw_detection_report.json')
@@ -61,6 +120,12 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
     diagnostics = detection.get('source_diagnostics') or {}
     connectivity = detection.get('connectivity') or {}
     failure_stage = detection.get('failure_stage')
+    bst_operational_state = _bst_operational_state(
+        live_bst_check=live_bst_check,
+        detection_status=detection_status,
+        bst_available=bst_available,
+        failure_stage=failure_stage,
+    )
 
     sources = freshness.get('sources') or []
     synced_count = sum(1 for row in sources if row.get('status') == 'synced')
@@ -108,6 +173,7 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
             'error_type': detection.get('error_type'),
             'connectivity': connectivity,
             'source_diagnostics': diagnostics,
+            'operational_state': bst_operational_state,
         },
         'guardrails': {
             'production_locked': checks['production_locked'],
