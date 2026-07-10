@@ -5,6 +5,7 @@ import streamlit as st
 
 from src.v131_production_operations_dashboard_engine import build_operations_snapshot
 from src.v132_production_incident_evidence_section import render_v132_production_incident_evidence_section
+from src.v133_incident_evidence_integrity_section import render_v133_incident_evidence_integrity_section
 
 
 def _yes_no(value: bool) -> str:
@@ -103,6 +104,10 @@ def render_v131_production_operations_dashboard_section() -> None:
             st.info('Няма Step 124 ingestion backups. Recovery ще стане готов след първото реално ingestion събитие.')
 
     with tab_evidence:
-        render_v132_production_incident_evidence_section(timeout_seconds=timeout)
+        evidence_export_tab, evidence_verify_tab = st.tabs(['Създаване на bundle', 'Проверка на целостта'])
+        with evidence_export_tab:
+            render_v132_production_incident_evidence_section(timeout_seconds=timeout)
+        with evidence_verify_tab:
+            render_v133_incident_evidence_integrity_section()
 
     st.info('Dashboard-ът е read-only. Не прилага тираж, не отключва production и не стартира тежко ML retraining.')
