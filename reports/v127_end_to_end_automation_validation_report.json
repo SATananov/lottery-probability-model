@@ -1,8 +1,8 @@
 {
   "step": "127",
   "name": "End-to-End Official Draw Automation Validation",
-  "started_at_utc": "2026-07-10T05:48:27+00:00",
-  "finished_at_utc": "2026-07-10T05:48:28+00:00",
+  "started_at_utc": "2026-07-10T05:39:02+00:00",
+  "finished_at_utc": "2026-07-10T05:39:02+00:00",
   "status": "validated",
   "simulated_draw_key": "2026-54",
   "simulated_draw": {
@@ -56,8 +56,8 @@
       "result": {
         "step": "124",
         "name": "Safe Official Draw Ingestion",
-        "run_id": "20260710T054827_943711Z",
-        "started_at_utc": "2026-07-10T05:48:27+00:00",
+        "run_id": "20260710T053902_382927Z",
+        "started_at_utc": "2026-07-10T05:39:02+00:00",
         "status": "inserted",
         "message": "Новият официален тираж е приложен безопасно към source of truth и journal mirror.",
         "draw_key": "2026-54",
@@ -68,10 +68,10 @@
         "promoted": true,
         "rollback_performed": false,
         "downstream_refresh_started": false,
-        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\prize_winner_history.csv",
-        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\user_journal_exports\\prize_winner_history.csv",
+        "data_path": "/tmp/step127_e2e_kd1e4tgy/data/prize_winner_history.csv",
+        "export_path": "/tmp/step127_e2e_kd1e4tgy/data/user_journal_exports/prize_winner_history.csv",
         "validation_errors": [],
-        "backup_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\backups\\20260710T054827_943711Z",
+        "backup_dir": "/tmp/step127_e2e_kd1e4tgy/backups/20260710T053902_382927Z",
         "backup_sha256": {
           "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
           "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
@@ -83,10 +83,10 @@
           "latest_draw_key": "2026-54",
           "mirror_equal": true
         },
-        "staging_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\staging\\20260710T054827_943711Z",
+        "staging_dir": "/tmp/step127_e2e_kd1e4tgy/staging/20260710T053902_382927Z",
         "final_count": 31,
-        "promoted_sha256": "2df5dc13410ebd8ce0472b0fda52e2d78d0f979fe4e52c027d697d3911fe96de",
-        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+        "promoted_sha256": "4a95c46ac71c24b982cac678428d03c4bac296d1858b15dd1b1b34e2f575074b",
+        "finished_at_utc": "2026-07-10T05:39:02+00:00"
       }
     },
     {
@@ -233,8 +233,8 @@
       "result": {
         "step": "124",
         "name": "Safe Official Draw Ingestion",
-        "run_id": "20260710T054828_092935Z",
-        "started_at_utc": "2026-07-10T05:48:28+00:00",
+        "run_id": "20260710T053902_396954Z",
+        "started_at_utc": "2026-07-10T05:39:02+00:00",
         "status": "duplicate_blocked",
         "message": "Тиражът вече съществува. Не са направени промени.",
         "draw_key": "2026-54",
@@ -245,10 +245,10 @@
         "promoted": false,
         "rollback_performed": false,
         "downstream_refresh_started": false,
-        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\prize_winner_history.csv",
-        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\data\\user_journal_exports\\prize_winner_history.csv",
+        "data_path": "/tmp/step127_e2e_kd1e4tgy/data/prize_winner_history.csv",
+        "export_path": "/tmp/step127_e2e_kd1e4tgy/data/user_journal_exports/prize_winner_history.csv",
         "validation_errors": [],
-        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+        "finished_at_utc": "2026-07-10T05:39:02+00:00"
       }
     },
     {
@@ -260,8 +260,8 @@
       "result": {
         "step": "124",
         "name": "Safe Official Draw Ingestion",
-        "run_id": "20260710T054828_136969Z",
-        "started_at_utc": "2026-07-10T05:48:28+00:00",
+        "run_id": "20260710T053902_400470Z",
+        "started_at_utc": "2026-07-10T05:39:02+00:00",
         "status": "rolled_back",
         "message": "Възникна грешка и оригиналните файлове бяха възстановени от backup.",
         "draw_key": "2026-54",
@@ -272,10 +272,10 @@
         "promoted": false,
         "rollback_performed": true,
         "downstream_refresh_started": false,
-        "data_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback\\data\\prize_winner_history.csv",
-        "export_path": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback\\data\\user_journal_exports\\prize_winner_history.csv",
+        "data_path": "/tmp/step127_e2e_kd1e4tgy/rollback/data/prize_winner_history.csv",
+        "export_path": "/tmp/step127_e2e_kd1e4tgy/rollback/data/user_journal_exports/prize_winner_history.csv",
         "validation_errors": [],
-        "backup_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback_backups\\20260710T054828_136969Z",
+        "backup_dir": "/tmp/step127_e2e_kd1e4tgy/rollback_backups/20260710T053902_400470Z",
         "backup_sha256": {
           "primary": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07",
           "export": "c83a5dcd2d10a36fb23184864d4763b672b38b68e42cdc7c41daba67f54e1e07"
@@ -287,10 +287,10 @@
           "latest_draw_key": "2026-54",
           "mirror_equal": true
         },
-        "staging_dir": "C:\\Users\\stana\\AppData\\Local\\Temp\\step127_e2e_eral4q_k\\rollback_staging\\20260710T054828_136969Z",
+        "staging_dir": "/tmp/step127_e2e_kd1e4tgy/rollback_staging/20260710T053902_400470Z",
         "error_type": "RuntimeError",
         "error": "Step 127 forced rollback test",
-        "finished_at_utc": "2026-07-10T05:48:28+00:00"
+        "finished_at_utc": "2026-07-10T05:39:02+00:00"
       }
     },
     {

@@ -1,0 +1,12 @@
+{
+  "production_locked": true,
+  "operator_consent_required": true,
+  "operator_consent_granted": false,
+  "operator_consent_phrase_hash": "",
+  "consent_granted_at_utc": "",
+  "consent_valid_hours": 24,
+  "max_retry_attempts": 3,
+  "retry_backoff_seconds": 5,
+  "retryable_statuses": ["check_failed", "failed"],
+  "block_same_draw_reapply": true
+}
