@@ -1,0 +1,75 @@
+{
+  "step": 144,
+  "status": "completed",
+  "experiment_id": "EXP-144-0e11bccbcb-98bfe5488b",
+  "dataset": {
+    "path": "data/v41_canonical_draw_events.csv",
+    "sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "row_count": 10063,
+    "first_draw": "1958-0",
+    "latest_draw": "2026-53",
+    "latest_draw_date": "2026-07-09"
+  },
+  "configuration": {
+    "holdout_draws": 240,
+    "minimum_training_draws": 500,
+    "package_size": 12,
+    "random_trials": 50,
+    "frequency_pool_size": 18,
+    "seed": 1442026
+  },
+  "split_policy": {
+    "policy": "expanding_window_walk_forward",
+    "training_draws_initial": 9823,
+    "holdout_draws": 240,
+    "holdout_first_draw": "2024-24",
+    "holdout_last_draw": "2026-53",
+    "target_draw_added_after_scoring": true,
+    "data_leakage_guard": "At each holdout point, only strictly earlier draws are available to the frequency baseline."
+  },
+  "frequency_baseline": {
+    "strategy": "frequency_walk_forward",
+    "trial": 0,
+    "draws_tested": 240,
+    "average_best_hits": 1.558333333,
+    "average_total_hits": 8.266666667,
+    "max_best_hits": 3,
+    "at_least_2_percent": 54.166666667,
+    "at_least_3_percent": 12.083333333,
+    "at_least_4_percent": 0.0,
+    "at_least_5_percent": 0.0,
+    "exact_6_count": 0,
+    "distribution": {
+      "0": 25,
+      "1": 85,
+      "2": 101,
+      "3": 29,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "random_summary": {
+    "trials": 50,
+    "average_best_hits_mean": 2.07225,
+    "average_best_hits_std": 0.038994391,
+    "average_best_hits_min": 1.975,
+    "average_best_hits_max": 2.15,
+    "at_least_3_percent_mean": 19.916666667
+  },
+  "comparison": {
+    "frequency_minus_random_mean_average_best_hits": -0.513916667,
+    "frequency_percentile_among_random_trials": 0.0,
+    "interpretation": "The frequency baseline does not exceed the random-trial mean on this historical holdout."
+  },
+  "reproducibility": {
+    "command": "python tools/run_reproducible_baseline_experiment.py --holdout-draws 240 --minimum-training-draws 500 --package-size 12 --random-trials 50 --frequency-pool-size 18 --seed 1442026",
+    "configuration_sha256": "98bfe5488b5bdeb2f939eb5d461dad1fa4f782dad590487a28c9c19ed67990fb",
+    "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "code_sha256": "f8087d2542e894c89ea1ec131e41f1a04e412f6e60ff08ddbb548655a8d6b1a2",
+    "result_signature_sha256": "6dfdb5c332d01bcfc0d5aaf7199f55e60d8909db0a1608f45bcc23bc9d997184",
+    "deterministic_for_same_dataset_code_config": true
+  },
+  "registry_entries": 1,
+  "safe_note_bg": "Лабораторията прави детерминиран walk-forward исторически тест с ясно отделен holdout период. Това е сравнение на baselines, а не доказателство за предвидимост и не е гаранция за печалба."
+}

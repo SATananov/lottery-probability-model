@@ -1,0 +1,15 @@
+{
+  "step": 144,
+  "status": "completed",
+  "experiment_id": "EXP-144-0e11bccbcb-98bfe5488b",
+  "registry_entries": 1,
+  "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+  "configuration_sha256": "98bfe5488b5bdeb2f939eb5d461dad1fa4f782dad590487a28c9c19ed67990fb",
+  "result_signature_sha256": "6dfdb5c332d01bcfc0d5aaf7199f55e60d8909db0a1608f45bcc23bc9d997184",
+  "holdout_draws": 240,
+  "random_trials": 50,
+  "heavy_ml_retraining_performed": false,
+  "personal_journal_used": false,
+  "future_data_leakage_detected": false,
+  "safe_note_bg": "Лабораторията прави детерминиран walk-forward исторически тест с ясно отделен holdout период. Това е сравнение на baselines, а не доказателство за предвидимост и не е гаранция за печалба."
+}

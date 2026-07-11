@@ -249,3 +249,19 @@ python .\scripts\verify_step_143_3.py
 ```
 
 Подробности: `reports/STEP_143_3_FINAL_DOWNSTREAM_FRESHNESS_REPAIR_AND_ZERO_BLOCKER_CLOSURE.md`.
+
+## Step 144
+
+Step 144 добавя регистър на възпроизводимите експерименти и начална baseline лаборатория. Всеки експеримент заключва dataset SHA-256, последен тираж, configuration, random seed, walk-forward split, code hash, среда, резултати, artifacts и заключение.
+
+Първият експеримент сравнява frequency baseline с множество uniform-random baseline опити върху хронологичен holdout. Target тиражът се добавя в историята едва след оценяването му, което защитава от future-data leakage.
+
+Команди:
+
+```powershell
+python .\tools\run_reproducible_baseline_experiment.py
+python .\tools\run_reproducible_baseline_experiment.py --read-only
+python .\scripts\verify_step_144.py
+```
+
+Подробности: `reports/STEP_144_REPRODUCIBLE_EXPERIMENT_REGISTRY_AND_BASELINE_LABORATORY.md`.

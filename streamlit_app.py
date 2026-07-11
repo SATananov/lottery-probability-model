@@ -55,6 +55,7 @@ from src.v124_safe_official_draw_ingestion_section import render_v124_safe_offic
 from src.v125_unified_downstream_refresh_section import render_v125_unified_downstream_refresh_section
 from src.v142_downstream_freshness_repair_section import render_v142_downstream_freshness_repair_section
 from src.v143_3_downstream_zero_blocker_closure_section import render_v143_3_downstream_zero_blocker_closure_section
+from src.v144_reproducible_experiment_registry_section import render_v144_reproducible_experiment_registry_section
 from src.v126_startup_automation_section import initialize_v126_startup_automation, render_v126_startup_automation_section
 from src.v127_end_to_end_automation_validation_section import render_v127_end_to_end_automation_validation_section
 from src.v128_production_auto_apply_guardrails_section import render_v128_production_guardrails_section
@@ -3950,6 +3951,7 @@ def main() -> None:
         "Безопасно прилагане на официален тираж": render_v124_safe_official_draw_ingestion_section,
         "Обновяване на изоставащите слоеве": render_v142_downstream_freshness_repair_section,
         "Финална синхронизация до нулеви блокери": render_v143_3_downstream_zero_blocker_closure_section,
+        "Регистър на възпроизводимите експерименти": render_v144_reproducible_experiment_registry_section,
         "Пълно обновяване по цялата верига": render_v125_unified_downstream_refresh_section,
         "Автоматична проверка и операторски контрол": render_v126_startup_automation_section,
         "End-to-End проверка на автоматизацията": render_v127_end_to_end_automation_validation_section,
