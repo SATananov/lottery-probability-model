@@ -24,7 +24,7 @@ SOURCE_SPECS = [
     ("normalized", "Нормализирани събития", DATA_DIR / "v40_normalized_draw_events.csv", "csv"),
     ("canonical", "Канонични събития", DATA_DIR / "v41_canonical_draw_events.csv", "csv"),
     ("r_layer", "R статистически слой", REPORTS_DIR / "r" / "r_data_audit.csv", "r_audit"),
-    ("step121", "Step 121 R features", MODELS_DIR / "v121_r_statistical_features_status.json", "json"),
+    ("step121", "R статистически характеристики", MODELS_DIR / "v121_r_statistical_features_status.json", "json"),
     ("decision", "Решение за игра", REPORTS_DIR / "v115_play_decision_center_report.json", "json"),
     ("final_pack", "Готов фиш пакет", REPORTS_DIR / "v117_real_ticket_pack_builder_summary.json", "json"),
     ("model_system", "Системен фиш от моделите", REPORTS_DIR / "v118_model_system_ticket_builder_summary.json", "json"),
@@ -168,7 +168,7 @@ def _source_snapshot(key: str, label: str, path: Path, source_type: str) -> dict
     return {
         "key": key,
         "label": label,
-        "path": str(path.relative_to(ROOT)),
+        "path": path.relative_to(ROOT).as_posix(),
         "exists": path.exists(),
         "latest": latest,
     }
@@ -198,25 +198,28 @@ def _compare(snapshot: dict[str, Any], official: dict[str, Any]) -> dict[str, An
 
 
 def _model_freshness(official: dict[str, Any]) -> dict[str, Any]:
+    """Return model inventory as information, not as a per-draw freshness blocker.
+
+    Training artifacts are intentionally not rebuilt after every draw. Treating an old
+    training marker as a stale operational layer produced misleading values such as
+    ``None-47`` in the user interface.
+    """
     detected: list[dict[str, Any]] = []
     for path in MODEL_ARTIFACTS:
         latest = _latest_from_json(path)
         if latest:
-            detected.append({"path": str(path.relative_to(ROOT)), "latest": latest})
-    best = max(
-        detected,
-        key=lambda item: (item["latest"].get("year") or 0, item["latest"].get("draw_number") or 0, item["latest"].get("date") or ""),
-        default=None,
-    )
-    snapshot = {
+            detected.append({"path": path.relative_to(ROOT).as_posix(), "latest": latest})
+    return {
         "key": "models",
-        "label": "ML model artifacts",
-        "path": "models/*.json (known training artifacts)",
+        "label": "Обучени ML модели",
+        "path": "models/",
         "exists": bool(detected),
-        "latest": best["latest"] if best else {},
+        "latest": {},
         "detected_artifacts": detected,
+        "status": "informational",
+        "draw_delta": None,
+        "message": "Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж.",
     }
-    return _compare(snapshot, official)
 
 
 def build_freshness_report(write_outputs: bool = True) -> dict[str, Any]:
@@ -227,7 +230,10 @@ def build_freshness_report(write_outputs: bool = True) -> dict[str, Any]:
 
     sources = [_compare(snapshot, official) for snapshot in raw_snapshots]
     sources.append(_model_freshness(official))
-    blocking = [source for source in sources if source["key"] != "official" and source["status"] != "synced"]
+    blocking = [
+        source for source in sources
+        if source["key"] != "official" and source["status"] not in {"synced", "informational"}
+    ]
     report = {
         "step": "122",
         "name": "Unified Official Draw Freshness Layer",
@@ -276,9 +282,12 @@ def _write_outputs(report: dict[str, Any]) -> None:
     ]
     for source in report["sources"]:
         latest = source.get("latest") or {}
-        draw_year = latest.get("year") or "?"
-        draw_number = latest.get("draw_number") if latest.get("draw_number") is not None else "?"
-        draw_label = f"{draw_year}-{draw_number}"
+        if source.get("status") == "informational":
+            draw_label = "Не се следи по тираж"
+        else:
+            draw_year = latest.get("year") or "?"
+            draw_number = latest.get("draw_number") if latest.get("draw_number") is not None else "?"
+            draw_label = f"{draw_year}-{draw_number}"
         lines.append(f"| {source['label']} | {draw_label} | {latest.get('date', '')} | {source['status']} | {source.get('draw_delta', '')} |")
     lines.extend(["", "Heavy model retraining performed: **No**.", ""])
     SUMMARY_MD.write_text("\n".join(lines), encoding="utf-8")

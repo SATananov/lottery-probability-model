@@ -53,6 +53,7 @@ from src.v122_unified_official_draw_freshness_section import render_v122_unified
 from src.v123_bst_official_draw_detection_section import render_v123_bst_official_draw_detection_section
 from src.v124_safe_official_draw_ingestion_section import render_v124_safe_official_draw_ingestion_section
 from src.v125_unified_downstream_refresh_section import render_v125_unified_downstream_refresh_section
+from src.v142_downstream_freshness_repair_section import render_v142_downstream_freshness_repair_section
 from src.v126_startup_automation_section import initialize_v126_startup_automation, render_v126_startup_automation_section
 from src.v127_end_to_end_automation_validation_section import render_v127_end_to_end_automation_validation_section
 from src.v128_production_auto_apply_guardrails_section import render_v128_production_guardrails_section
@@ -3946,7 +3947,8 @@ def main() -> None:
         "Свежест на официалния тираж": render_v122_unified_official_draw_freshness_section,
         "Проверка за нов официален тираж": render_v123_bst_official_draw_detection_section,
         "Безопасно прилагане на официален тираж": render_v124_safe_official_draw_ingestion_section,
-        "Обновяване по цялата верига": render_v125_unified_downstream_refresh_section,
+        "Обновяване на изоставащите слоеве": render_v142_downstream_freshness_repair_section,
+        "Пълно обновяване по цялата верига": render_v125_unified_downstream_refresh_section,
         "Автоматична проверка и операторски контрол": render_v126_startup_automation_section,
         "End-to-End проверка на автоматизацията": render_v127_end_to_end_automation_validation_section,
         "Production Auto-Apply готовност и защити": render_v128_production_guardrails_section,

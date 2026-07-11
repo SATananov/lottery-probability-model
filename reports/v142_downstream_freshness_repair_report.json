@@ -1,0 +1,668 @@
+{
+  "step": "142",
+  "name": "Downstream Freshness Repair & Bulgarian UI Polish",
+  "generated_at_utc": "2026-07-11T08:20:58+00:00",
+  "status": "completed",
+  "before": {
+    "step": "122",
+    "name": "Unified Official Draw Freshness Layer",
+    "generated_at_utc": "2026-07-11T08:20:58+00:00",
+    "official_source_of_truth": "data/prize_winner_history.csv",
+    "official_latest_draw": {
+      "year": 2026,
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "numbers": [
+        12,
+        17,
+        23,
+        30,
+        38,
+        41
+      ]
+    },
+    "overall_status": "out_of_sync",
+    "blocking_out_of_sync_count": 4,
+    "heavy_model_retraining_performed": false,
+    "policy": "Step 122 diagnoses freshness and source-of-truth drift; it does not retrain heavy models.",
+    "sources": [
+      {
+        "key": "official",
+        "label": "Официална история",
+        "path": "data/prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "journal_prize",
+        "label": "Дневник — история на печалбите",
+        "path": "data/user_journal_exports/prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "historical",
+        "label": "Исторически тиражи",
+        "path": "data/historical_draws.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "normalized",
+        "label": "Нормализирани събития",
+        "path": "data/v40_normalized_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "canonical",
+        "label": "Канонични събития",
+        "path": "data/v41_canonical_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "r_layer",
+        "label": "R статистически слой",
+        "path": "reports/r/r_data_audit.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "step121",
+        "label": "R статистически характеристики",
+        "path": "models/v121_r_statistical_features_status.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "decision",
+        "label": "Решение за игра",
+        "path": "reports/v115_play_decision_center_report.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 49,
+          "date": "2026-06-25",
+          "numbers": []
+        },
+        "status": "behind",
+        "draw_delta": 4,
+        "message": "Назад с 4 тираж(а)."
+      },
+      {
+        "key": "final_pack",
+        "label": "Готов фиш пакет",
+        "path": "reports/v117_real_ticket_pack_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "model_system",
+        "label": "Системен фиш от моделите",
+        "path": "reports/v118_model_system_ticket_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 52,
+          "date": "2026-07-05",
+          "numbers": [
+            4,
+            11,
+            21,
+            28,
+            36,
+            49
+          ]
+        },
+        "status": "behind",
+        "draw_delta": 1,
+        "message": "Назад с 1 тираж(а)."
+      },
+      {
+        "key": "models",
+        "label": "Обучени ML модели",
+        "path": "models/",
+        "exists": true,
+        "latest": {},
+        "detected_artifacts": [
+          {
+            "path": "models/lottery_prediction_model.json",
+            "latest": {
+              "year": null,
+              "draw_number": 47,
+              "date": "",
+              "numbers": [
+                22,
+                26,
+                28,
+                29,
+                40,
+                42
+              ]
+            }
+          }
+        ],
+        "status": "informational",
+        "draw_delta": null,
+        "message": "Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж."
+      }
+    ]
+  },
+  "stage_ids": [
+    "dataset_sync",
+    "r_statistics",
+    "r_features",
+    "decision",
+    "ticket_pack",
+    "model_ticket_pack",
+    "freshness"
+  ],
+  "stages": [
+    {
+      "id": "dataset_sync",
+      "name": "Основни набори от данни",
+      "kind": "internal",
+      "command": []
+    },
+    {
+      "id": "r_statistics",
+      "name": "R статистически слой",
+      "kind": "powershell",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools/run_r_statistics.ps1"
+      ]
+    },
+    {
+      "id": "r_features",
+      "name": "R статистически характеристики",
+      "kind": "python",
+      "command": [
+        "tools/integrate_r_statistical_features.py",
+        "--all"
+      ]
+    },
+    {
+      "id": "decision",
+      "name": "Решение за игра",
+      "kind": "python",
+      "command": [
+        "scripts/v115_build_play_decision_center.py"
+      ]
+    },
+    {
+      "id": "ticket_pack",
+      "name": "Готов фиш пакет",
+      "kind": "python",
+      "command": [
+        "scripts/v117_build_real_ticket_pack_builder.py"
+      ]
+    },
+    {
+      "id": "model_ticket_pack",
+      "name": "Системен фиш от моделите",
+      "kind": "python",
+      "command": [
+        "scripts/v118_build_model_system_ticket_builder.py"
+      ]
+    },
+    {
+      "id": "freshness",
+      "name": "Финална проверка на свежестта",
+      "kind": "python",
+      "command": [
+        "tools/check_official_draw_freshness.py"
+      ]
+    }
+  ],
+  "heavy_model_retraining_performed": false,
+  "finished_at_utc": "2026-07-11T08:21:28+00:00",
+  "results": [
+    {
+      "id": "dataset_sync",
+      "name": "Основни набори от данни",
+      "status": "ok",
+      "ok": true,
+      "message": "MODEL_DATA_SYNCED"
+    },
+    {
+      "id": "r_statistics",
+      "name": "R статистически слой",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "Using Rscript: C:\\Program Files\\R\\R-4.6.0\\bin\\Rscript.exe\nBase R statistical layer: no external packages are required.\nYou can run: Rscript r/run_all_r_reports.R\nProject root: C:\\Users\\stana\\Desktop\\lottery-probability-model \n\nRunning: 01_data_audit.R \nData audit generated.\n\nRunning: 02_frequency_statistics.R \nFrequency statistics generated.\n\nRunning: 03_gap_statistics.R \nGap statistics generated.\n\nRunning: 04_distribution_tests.R \nDistribution tests generated.\n\nRunning: 05_pair_and_pattern_analysis.R \nPair and pattern analysis generated.\n\nRunning: 06_monte_carlo_baseline.R \nMonte Carlo baseline generated.\n\nRunning: 07_r_statistical_summary.R \nR statistical summary generated.\n\nAll base R statistical reports generated."
+    },
+    {
+      "id": "r_features",
+      "name": "R статистически характеристики",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "R statistical feature outputs generated.\n- number_features: reports\\v121_r_statistical_number_features.csv\n- pair_features: reports\\v121_r_statistical_pair_features.csv\n- blended_scores: reports\\v121_r_blended_number_scores.csv\nR feature ticket pack generated.\nTicket count: 12\nTicket pack: reports\\v121_r_feature_ticket_pack.csv"
+    },
+    {
+      "id": "decision",
+      "name": "Решение за игра",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "STEP_115_STATUS PLAY_DECISION_READY\nBLOCKING_FAILURES 0\nPRIZE_HISTORY_ROWS 30\nRECOMMENDED_TICKETS 3\nRECOMMENDATION �������� ����� � ��������\nBAD_COUNT 0"
+    },
+    {
+      "id": "ticket_pack",
+      "name": "Готов фиш пакет",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "STEP_117_STATUS ������� � �����\nBLOCKING_FAILURES 0\nTICKETS 3\nLINES 12\nTOTAL_PRICE_EUR 10.8\nBAD_COUNT 0"
+    },
+    {
+      "id": "model_ticket_pack",
+      "name": "Системен фиш от моделите",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "STEP_118_STATUS MODEL_SYSTEM_TICKET_BUILDER_READY\nBLOCKING_FAILURES 0\nCORE 1 2 4 11 18 21 22 37 38\nCOMBINATIONS 12\nTOTAL_PRICE_EUR 10.8\nBAD_COUNT 0"
+    },
+    {
+      "id": "freshness",
+      "name": "Финална проверка на свежестта",
+      "status": "ok",
+      "ok": true,
+      "message": "Completed.",
+      "output_tail": "��\",\n      \"path\": \"reports/r/r_data_audit.csv\",\n      \"exists\": true,\n      \"latest\": {\n        \"year\": 2026,\n        \"draw_number\": 53,\n        \"date\": \"2026-07-09\",\n        \"numbers\": [\n          12,\n          17,\n          23,\n          30,\n          38,\n          41\n        ]\n      },\n      \"status\": \"synced\",\n      \"draw_delta\": 0,\n      \"message\": \"������������� � ���������� �������� �����.\"\n    },\n    {\n      \"key\": \"step121\",\n      \"label\": \"R ������������� ��������������\",\n      \"path\": \"models/v121_r_statistical_features_status.json\",\n      \"exists\": true,\n      \"latest\": {\n        \"year\": 2026,\n        \"draw_number\": 53,\n        \"date\": \"2026-07-09\",\n        \"numbers\": [\n          12,\n          17,\n          23,\n          30,\n          38,\n          41\n        ]\n      },\n      \"status\": \"synced\",\n      \"draw_delta\": 0,\n      \"message\": \"������������� � ���������� �������� �����.\"\n    },\n    {\n      \"key\": \"decision\",\n      \"label\": \"������� �� ����\",\n      \"path\": \"reports/v115_play_decision_center_report.json\",\n      \"exists\": true,\n      \"latest\": {\n        \"year\": 2026,\n        \"draw_number\": 53,\n        \"date\": \"2026-07-09\",\n        \"numbers\": []\n      },\n      \"status\": \"synced\",\n      \"draw_delta\": 0,\n      \"message\": \"������������� � ���������� �������� �����.\"\n    },\n    {\n      \"key\": \"final_pack\",\n      \"label\": \"����� ��� �����\",\n      \"path\": \"reports/v117_real_ticket_pack_builder_summary.json\",\n      \"exists\": true,\n      \"latest\": {\n        \"year\": 2026,\n        \"draw_number\": 53,\n        \"date\": \"2026-07-09\",\n        \"numbers\": [\n          12,\n          17,\n          23,\n          30,\n          38,\n          41\n        ]\n      },\n      \"status\": \"synced\",\n      \"draw_delta\": 0,\n      \"message\": \"������������� � ���������� �������� �����.\"\n    },\n    {\n      \"key\": \"model_system\",\n      \"label\": \"�������� ��� �� ��������\",\n      \"path\": \"reports/v118_model_system_ticket_builder_summary.json\",\n      \"exists\": true,\n      \"latest\": {\n        \"year\": 2026,\n        \"draw_number\": 53,\n        \"date\": \"2026-07-09\",\n        \"numbers\": [\n          12,\n          17,\n          23,\n          30,\n          38,\n          41\n        ]\n      },\n      \"status\": \"synced\",\n      \"draw_delta\": 0,\n      \"message\": \"������������� � ���������� �������� �����.\"\n    },\n    {\n      \"key\": \"models\",\n      \"label\": \"������� ML ������\",\n      \"path\": \"models/\",\n      \"exists\": true,\n      \"latest\": {},\n      \"detected_artifacts\": [\n        {\n          \"path\": \"models/lottery_prediction_model.json\",\n          \"latest\": {\n            \"year\": null,\n            \"draw_number\": 47,\n            \"date\": \"\",\n            \"numbers\": [\n              22,\n              26,\n              28,\n              29,\n              40,\n              42\n            ]\n          }\n        }\n      ],\n      \"status\": \"informational\",\n      \"draw_delta\": null,\n      \"message\": \"�������� �� ��������� �� ������� �������� � �� �� ���� �� ������������ ���� ����� �����.\"\n    }\n  ]\n}"
+    }
+  ],
+  "after": {
+    "step": "122",
+    "name": "Unified Official Draw Freshness Layer",
+    "generated_at_utc": "2026-07-11T08:21:28+00:00",
+    "official_source_of_truth": "data/prize_winner_history.csv",
+    "official_latest_draw": {
+      "year": 2026,
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "numbers": [
+        12,
+        17,
+        23,
+        30,
+        38,
+        41
+      ]
+    },
+    "overall_status": "synced",
+    "blocking_out_of_sync_count": 0,
+    "heavy_model_retraining_performed": false,
+    "policy": "Step 122 diagnoses freshness and source-of-truth drift; it does not retrain heavy models.",
+    "sources": [
+      {
+        "key": "official",
+        "label": "Официална история",
+        "path": "data/prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "journal_prize",
+        "label": "Дневник — история на печалбите",
+        "path": "data/user_journal_exports/prize_winner_history.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "historical",
+        "label": "Исторически тиражи",
+        "path": "data/historical_draws.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "normalized",
+        "label": "Нормализирани събития",
+        "path": "data/v40_normalized_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "canonical",
+        "label": "Канонични събития",
+        "path": "data/v41_canonical_draw_events.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "r_layer",
+        "label": "R статистически слой",
+        "path": "reports/r/r_data_audit.csv",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "step121",
+        "label": "R статистически характеристики",
+        "path": "models/v121_r_statistical_features_status.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "decision",
+        "label": "Решение за игра",
+        "path": "reports/v115_play_decision_center_report.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": []
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "final_pack",
+        "label": "Готов фиш пакет",
+        "path": "reports/v117_real_ticket_pack_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "model_system",
+        "label": "Системен фиш от моделите",
+        "path": "reports/v118_model_system_ticket_builder_summary.json",
+        "exists": true,
+        "latest": {
+          "year": 2026,
+          "draw_number": 53,
+          "date": "2026-07-09",
+          "numbers": [
+            12,
+            17,
+            23,
+            30,
+            38,
+            41
+          ]
+        },
+        "status": "synced",
+        "draw_delta": 0,
+        "message": "Синхронизиран с официалния последен тираж."
+      },
+      {
+        "key": "models",
+        "label": "Обучени ML модели",
+        "path": "models/",
+        "exists": true,
+        "latest": {},
+        "detected_artifacts": [
+          {
+            "path": "models/lottery_prediction_model.json",
+            "latest": {
+              "year": null,
+              "draw_number": 47,
+              "date": "",
+              "numbers": [
+                22,
+                26,
+                28,
+                29,
+                40,
+                42
+              ]
+            }
+          }
+        ],
+        "status": "informational",
+        "draw_delta": null,
+        "message": "Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж."
+      }
+    ]
+  }
+}
