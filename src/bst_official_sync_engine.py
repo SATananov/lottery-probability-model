@@ -441,7 +441,7 @@ def write_sync_reports(result: dict[str, Any]) -> None:
         f"- Data CSV: `{result.get('data_path', DATA_PATH)}`",
         f"- Export CSV: `{result.get('export_path', EXPORT_PATH)}`",
         "",
-        "This sync layer stores official БСТ 6/49 result pages as raw snapshots before normalized CSV update.",
+        "This synchronization layer stores official BST 6/49 result pages as raw snapshots before updating the normalized CSV dataset.",
     ]
 
     SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")

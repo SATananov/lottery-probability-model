@@ -209,6 +209,6 @@ def render_v70_applied_candidate_portfolio_section():
 4. Създава отделни **v70 applied portfolio** reports/models.
 5. Запазва Step 67 като исторически оригинал.
 
-Това е applied статистическа референция portfolio, не гаранция за печалба.
+Това е приложен статистически референтен портфейл, а не гаранция за печалба.
 """
         )

@@ -468,7 +468,7 @@ def build_weighted_portfolio_optimizer():
             "reports/v68_weighted_portfolio_repeated_triples.csv",
             "models/v68/v68_weighted_portfolio_optimizer_model.json",
         ],
-        "safe_note": "This is a statistical оптимизаторът на пакет от комбинации. It is not a гаранция за печалба or a promise of future lottery results.",
+        "safe_note": "This component statistically optimizes a portfolio of ticket combinations. It does not guarantee a win or future lottery results.",
     }
 
     write_csv(
@@ -551,7 +551,7 @@ def build_weighted_portfolio_optimizer():
         "",
         "This report evaluates the Step 67 ticket set as one statistical portfolio.",
         "",
-        "**Important:** This is a portfolio analysis tool. It is not a prediction and not a гаранция за печалба.",
+        "**Important:** This is a portfolio analysis tool. It is not a prediction and does not guarantee a win.",
         "",
         f"Tickets analyzed: **{summary['tickets_analyzed']}**",
         f"Unique numbers covered: **{summary['unique_numbers_covered']} / 49**",
@@ -608,7 +608,7 @@ def build_weighted_portfolio_optimizer():
         "",
         "## Safety note",
         "",
-        "Lottery draws are random. This step only evaluates structure, coverage and overlap inside a статистическа референция portfolio.",
+        "Lottery draws are random. This step only evaluates structure, coverage and overlap inside a statistical reference portfolio.",
     ])
 
     (REPORTS_DIR / "v68_weighted_portfolio_summary.md").write_text(

@@ -10,7 +10,7 @@ if str(ROOT) not in sys.path:
 from src.v122_unified_official_draw_freshness_engine import build_freshness_report
 
 
-report = build_freshness_report(write_outputs=True)
+report = build_freshness_report(write_outputs=False)
 by_key = {source["key"]: source for source in report["sources"]}
 assert report["official_latest_draw"]["draw_number"] == 53
 assert by_key["canonical"]["status"] == "synced"

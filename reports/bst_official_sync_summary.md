@@ -10,4 +10,4 @@
 - Data CSV: `data\prize_winner_history.csv`
 - Export CSV: `data\user_journal_exports\prize_winner_history.csv`
 
-This sync layer stores official БСТ 6/49 result pages as raw snapshots before normalized CSV update.
+This synchronization layer stores official BST 6/49 result pages as raw snapshots before updating the normalized CSV dataset.

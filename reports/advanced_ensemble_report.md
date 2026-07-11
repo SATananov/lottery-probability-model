@@ -1,7 +1,7 @@
 # Advanced Statistical Комбиниран анализ Report
 
 This report combines time-decay, Bayesian smoothing, fairness checks, pair/triple significance,
-human-pattern avoidance, structure balance and пакет diversification.
+human-pattern avoidance, structural balance, and portfolio diversification.
 
 Important: this is a statistical ranking system, not a guaranteed prediction system.
 The true jackpot odds for every exact combination remain: 1 in 13983816.

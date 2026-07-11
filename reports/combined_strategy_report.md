@@ -1,6 +1,6 @@
 # Final Combined Prediction Strategy Model
 
-This report summarizes the final комбиниран анализ-style model.
+This report summarizes the final combined-strategy model.
 
 Important: this model does not change the real mathematical jackpot probability.
 It ranks generated combinations by statistical profile and model confidence.

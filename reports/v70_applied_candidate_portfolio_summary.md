@@ -1,8 +1,8 @@
 # Step 70 — Apply Candidate Portfolio
 
-This report turns the Step 69 candidate portfolio into a separate applied статистическа референция portfolio.
+This report turns the Step 69 candidate portfolio into a separate applied statistical reference portfolio.
 
-**Important:** This does not overwrite Step 67. It creates a v70 applied portfolio layer. It is not a prediction and not a гаранция за печалба.
+**Important:** This does not overwrite Step 67. It creates a separate v70 applied portfolio layer. It is not a prediction and does not guarantee a win.
 
 Applied portfolio tickets: **8**
 Applied changes: **3**

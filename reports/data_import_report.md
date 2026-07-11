@@ -1,7 +1,7 @@
 # Current Data Import Status
 
 This report was refreshed after the v41 checkpoint cleanup.
-Older import-only counts were replaced to avoid confusion with the current active данни.
+Older import-only counts were replaced to avoid confusion with the current active dataset.
 
 **Important:** This is not a prediction guarantee. Lottery draws are random.
 The data is used for historical analysis, model training, and probability education.

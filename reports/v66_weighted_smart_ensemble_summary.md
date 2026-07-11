@@ -44,7 +44,7 @@ Top претеглена оценка: **100.0%**
 
 ## Reference combinations
 
-These are референтни комбинации built from weighted statistical signals. They are not гаранция за печалбаs.
+These are reference combinations built from weighted statistical signals. They do not guarantee a win.
 
 - Ticket 1: 1, 2, 11, 22, 37, 38
 - Ticket 2: 2, 3, 17, 21, 38, 44

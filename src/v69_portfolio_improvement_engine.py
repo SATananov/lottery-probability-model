@@ -586,7 +586,7 @@ def build_portfolio_improvement_suggestions():
             "reports/v69_candidate_portfolio_tickets.json",
             "models/v69/v69_portfolio_improvement_model.json",
         ],
-        "safe_note": "These are statistical improvement suggestions. They are not гаранция за печалбаs or promises of future lottery results.",
+        "safe_note": "These are statistical improvement suggestions. They do not guarantee a win or future lottery results.",
     }
 
     suggestion_fields = [
@@ -663,7 +663,7 @@ def build_portfolio_improvement_suggestions():
         "",
         "This report proposes concrete statistical improvements for the Step 67 ticket portfolio, using Step 66 scores and Step 68 portfolio analysis.",
         "",
-        "**Important:** These are improvement suggestions only. They are not predictions and not гаранция за печалбаs.",
+        "**Important:** These are improvement suggestions only. They are not predictions or guarantees of a win.",
         "",
         f"Suggestions generated: **{summary['suggestions_generated']}**",
         f"Candidate changes applied: **{summary['candidate_changes_applied']}**",

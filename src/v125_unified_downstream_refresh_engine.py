@@ -71,7 +71,7 @@ def run_unified_downstream_refresh(*, plan_only: bool = False, timeout_seconds: 
         if blocked:
             stages.append({'id':stage['id'],'name':stage['name'],'status':'blocked','ok':False,'message':'Blocked by an earlier failed stage.'})
             continue
-        if stage['kind'] == 'internal':
+        if stage['kind'] == 'internal' and runner is None:
             try:
                 from src.post_bst_model_data_refresh_engine import refresh_model_data_from_prize_history
                 result = refresh_model_data_from_prize_history()
@@ -80,6 +80,10 @@ def run_unified_downstream_refresh(*, plan_only: bool = False, timeout_seconds: 
             except Exception as exc:
                 row = {'id':stage['id'],'name':stage['name'],'status':'failed','ok':False,'message':str(exc)}
         else:
+            # A supplied runner is an explicit simulation/test seam and must own
+            # every stage, including the internal dataset-sync stage. This keeps
+            # verification read-only while preserving the real production path
+            # when no runner is supplied.
             row = run_stage(stage, timeout_seconds)
         stages.append(row)
         if not row.get('ok'):

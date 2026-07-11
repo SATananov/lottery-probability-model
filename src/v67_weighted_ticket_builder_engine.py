@@ -540,7 +540,7 @@ def build_weighted_ticket_builder():
             "reports/v67_weighted_ticket_builder_tickets.json",
             "models/v67/v67_weighted_ticket_builder_model.json",
         ],
-        "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results.",
+        "safe_note": "This is a weighted statistical ticket builder. It does not guarantee a win or future lottery results.",
     }
 
     model_payload = {
@@ -566,7 +566,7 @@ def build_weighted_ticket_builder():
         "",
         "This report turns Step 66 weighted number scores into a small portfolio of статистическа референция tickets.",
         "",
-        "**Important:** These combinations are not predictions and not гаранция за печалбаs.",
+        "**Important:** These combinations are statistical selections, not predictions or guarantees of a win.",
         "",
         f"Генерирани комбинации: **{summary['tickets_generated']}**",
         f"Best average претеглена оценка ticket: **#{summary['top_average_weighted_score_ticket_id']}**",

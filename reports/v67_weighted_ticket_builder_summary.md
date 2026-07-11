@@ -2,7 +2,7 @@
 
 This report turns Step 66 weighted number scores into a small portfolio of статистическа референция tickets.
 
-**Important:** These combinations are not predictions and not гаранция за печалбаs.
+**Important:** These combinations are statistical selections, not predictions or guarantees of a win.
 
 Генерирани комбинации: **8**
 Best average претеглена оценка ticket: **#2**

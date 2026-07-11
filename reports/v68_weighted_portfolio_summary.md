@@ -2,7 +2,7 @@
 
 This report evaluates the Step 67 ticket set as one statistical portfolio.
 
-**Important:** This is a portfolio analysis tool. It is not a prediction and not a гаранция за печалба.
+**Important:** This is a portfolio analysis tool. It is not a prediction and does not guarantee a win.
 
 Tickets analyzed: **8**
 Unique numbers covered: **19 / 49**
@@ -44,4 +44,4 @@ Portfolio status: **приемлив портфейл с нужда от наб�
 
 ## Safety note
 
-Lottery draws are random. This step only evaluates structure, coverage and overlap inside a статистическа референция portfolio.
+Lottery draws are random. This step only evaluates structure, coverage and overlap inside a statistical reference portfolio.

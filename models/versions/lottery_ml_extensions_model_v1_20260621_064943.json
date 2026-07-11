@@ -465,11 +465,11 @@
     "Classification",
     "Unsupervised Learning / Clustering",
     "Dimensionality Reduction",
-    "Testing / Историческа проверкаing",
-    "Machine Learning Tools: конфигурация, карта на модела и версионирани артефакти"
+    "Testing / Historical backtesting",
+    "Machine Learning Tools: configuration, model card, and versioned artifacts"
   ],
   "important_note": "Това е статистическо ранкиране, класификация, клъстеризация и редукция на размерността за анализ. Не променя реалния шанс за джакпот.",
-  "model_name": "Lottery ML Extensions Комбиниран анализ",
+  "model_name": "Lottery ML Extensions Ensemble",
   "model_version": "1.0",
   "projection_points_sample": [
     {

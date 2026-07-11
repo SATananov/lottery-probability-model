@@ -642,7 +642,7 @@ def train_ml_extensions(draws: list[dict[str, Any]] | None = None, config: dict[
             "Unsupervised Learning / Clustering",
             "Dimensionality Reduction",
             "Testing / Backtesting",
-            "Machine Learning Tools: конфигурация, карта на модела и версионирани артефакти",
+            "Machine Learning Tools: configuration, model card, and versioned artifacts",
         ],
         "configuration": config,
         "classifier": classifier,
@@ -715,7 +715,7 @@ def write_reports(model: dict[str, Any]) -> None:
             [
                 "# Отчет за клъстеризация",
                 "",
-                "Метод: k-means from scratch върху standardized engineered features.",
+                "Метод: самостоятелна реализация на k-means върху стандартизирани инженерни характеристики.",
                 "Цел: групиране на комбинации по статистически профил.",
                 "",
                 "## Обобщение на клъстерите",
@@ -733,7 +733,7 @@ def write_reports(model: dict[str, Any]) -> None:
             [
                 "# Отчет за редукция на размерността",
                 "",
-                "Метод: PCA from scratch върху standardized engineered features.",
+                "Метод: самостоятелна реализация на PCA върху стандартизирани инженерни характеристики.",
                 "Цел: 2D карта за визуално сравнение на комбинации.",
                 "",
                 f"Обяснена вариация: {evr}",

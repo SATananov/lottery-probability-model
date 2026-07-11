@@ -52,5 +52,5 @@
     "reports/v68_weighted_portfolio_repeated_triples.csv",
     "models/v68/v68_weighted_portfolio_optimizer_model.json"
   ],
-  "safe_note": "This is a statistical оптимизаторът на пакет от комбинации. It is not a гаранция за печалба or a promise of future lottery results."
+  "safe_note": "This component statistically optimizes a portfolio of ticket combinations. It does not guarantee a win or future lottery results."
 }

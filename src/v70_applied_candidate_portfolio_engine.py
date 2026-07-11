@@ -513,7 +513,7 @@ def build_applied_candidate_portfolio():
             "reports/v70_applied_candidate_portfolio_changes.csv",
             "models/v70/v70_applied_candidate_portfolio_model.json",
         ],
-        "safe_note": "This is an applied статистическа референция portfolio. It is not a гаранция за печалба or a promise of future lottery results.",
+        "safe_note": "This is an applied statistical reference portfolio. It does not guarantee a win or future lottery results.",
     }
 
     write_csv(
@@ -598,9 +598,9 @@ def build_applied_candidate_portfolio():
     md = [
         "# Step 70 — Apply Candidate Portfolio",
         "",
-        "This report turns the Step 69 candidate portfolio into a separate applied статистическа референция portfolio.",
+        "This report turns the Step 69 candidate portfolio into a separate applied statistical reference portfolio.",
         "",
-        "**Important:** This does not overwrite Step 67. It creates a v70 applied portfolio layer. It is not a prediction and not a гаранция за печалба.",
+        "**Important:** This does not overwrite Step 67. It creates a separate v70 applied portfolio layer. It is not a prediction and does not guarantee a win.",
         "",
         f"Applied portfolio tickets: **{summary['applied_portfolio_tickets']}**",
         f"Applied changes: **{summary['applied_changes_count']}**",

@@ -2,7 +2,7 @@
 
 This report proposes concrete statistical improvements for the Step 67 ticket portfolio, using Step 66 scores and Step 68 portfolio analysis.
 
-**Important:** These are improvement suggestions only. They are not predictions and not гаранция за печалбаs.
+**Important:** These are improvement suggestions only. They are not predictions or guarantees of a win.
 
 Suggestions generated: **60**
 Candidate changes applied: **3**

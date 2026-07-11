@@ -25,7 +25,7 @@
       "reports/v67_weighted_ticket_builder_tickets.json",
       "models/v67/v67_weighted_ticket_builder_model.json"
     ],
-    "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results."
+    "safe_note": "This is a weighted statistical ticket builder. It does not guarantee a win or future lottery results."
   },
   "source_top_numbers": [
     {
@@ -561,5 +561,5 @@
     "historical_exact_match_policy": "avoid exact historical draw combinations when historical data can be parsed",
     "portfolio_overlap_policy": "penalize 4+ and strongly penalize 5+ overlaps with previously generated tickets"
   },
-  "safe_note": "This is a weighted statistical ticket builder. It is not a гаранция за печалба or a promise of future lottery results."
+  "safe_note": "This is a weighted statistical ticket builder. It does not guarantee a win or future lottery results."
 }

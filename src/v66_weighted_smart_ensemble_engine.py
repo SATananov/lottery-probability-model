@@ -604,7 +604,7 @@ def build_weighted_smart_ensemble():
             "reports/v66_weighted_smart_ensemble_scores.csv",
             "models/v66/v66_weighted_smart_ensemble_model.json",
         ],
-        "safe_note": "This is a weighted statistical ensemble layer. It is not a гаранция за печалба or a promise of future lottery results.",
+        "safe_note": "This is a weighted statistical ensemble layer. It does not guarantee a win or future lottery results.",
     }
 
     model_payload = {
@@ -677,7 +677,7 @@ def build_weighted_smart_ensemble():
             "",
             "## Reference combinations",
             "",
-            "These are референтни комбинации built from weighted statistical signals. They are not гаранция за печалбаs.",
+            "These are reference combinations built from weighted statistical signals. They do not guarantee a win.",
             "",
         ])
         for ticket in tickets:
