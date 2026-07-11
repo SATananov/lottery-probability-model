@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import re
 from pathlib import Path
@@ -21,7 +21,7 @@ def main() -> int:
     require((ROOT / ".python-version").read_text(encoding="utf-8").strip() == "3.11", "Python version policy missing")
     require((ROOT / "tools" / "verify_clean_environment.py").exists(), "Clean environment verifier missing")
     require(not (ROOT / ".r-lib").exists(), "Bundled .r-lib must not be present")
-    old_manifests = [p for p in ROOT.glob("CLEAN_ZIP_MANIFEST_STEP*.md") if p.name not in {"CLEAN_ZIP_MANIFEST_STEP141.md", "CLEAN_ZIP_MANIFEST_STEP142.md"}]
+    old_manifests = [p for p in ROOT.glob("CLEAN_ZIP_MANIFEST_STEP*.md") if int(re.search(r"STEP(\d+)", p.name).group(1)) < 141]
     require(not old_manifests, "Old root checkpoint manifests remain")
 
     # Text attribution cleanup is validated during release packaging.

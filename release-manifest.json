@@ -1,21 +1,21 @@
 {
-  "checkpoint": "Step 142",
+  "checkpoint": "Step 143",
   "project": "lottery-probability-model",
-  "manifest_scope": "All project files except release-manifest.json and CLEAN_ZIP_MANIFEST_STEP142.md",
-  "file_count": 1338,
+  "manifest_scope": "All project files except release-manifest.json and CLEAN_ZIP_MANIFEST_STEP143.md",
+  "file_count": 1342,
   "files": [
     {
-      "path": "gitignore",
+      "path": ".gitignore",
       "size_bytes": 658,
       "sha256": "26e8d45fd19ad60ae04f07e7f981dfe36d4067006427830bab257a724b746699"
     },
     {
-      "path": "python-version",
+      "path": ".python-version",
       "size_bytes": 5,
       "sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93"
     },
     {
-      "path": "streamlit/config.toml",
+      "path": ".streamlit/config.toml",
       "size_bytes": 204,
       "sha256": "025d85c0c4d4788d5436425d37cfdb7d0957d2258d783ae10a4b51f4679a1846"
     },
@@ -30,9 +30,14 @@
       "sha256": "bd56ca572c18c95311d3f1cdca801cb2d47d623d0e727ae33858fce20e19aa25"
     },
     {
+      "path": "CLEAN_ZIP_MANIFEST_STEP142.md",
+      "size_bytes": 695,
+      "sha256": "001c801f71f3edc4dc097fa4f06f5222d1e9f8f5b21968274ca39bb8a4398758"
+    },
+    {
       "path": "README.md",
-      "size_bytes": 7071,
-      "sha256": "7552af73c50c8e319156c85348f5cd3378e9653c49c875d98ab41b9241d95192"
+      "size_bytes": 7711,
+      "sha256": "6b7ec655a8fff50fe6af60d85160c12808ee4a2faf1ba3bf692cedd09e6653e0"
     },
     {
       "path": "README_UI.md",
@@ -2588,6 +2593,11 @@
       "path": "reports/STEP_142_DOWNSTREAM_FRESHNESS_REPAIR_AND_BULGARIAN_UI_POLISH.md",
       "size_bytes": 1367,
       "sha256": "2bb41aa9196888585a1f937448d9863aef31b6f9e779fa41ef8330e979494d35"
+    },
+    {
+      "path": "reports/STEP_143_AUTOMATIC_LIGHTWEIGHT_DOWNSTREAM_REFRESH_AFTER_OFFICIAL_DRAW.md",
+      "size_bytes": 1161,
+      "sha256": "b1f8ea7c02978f9e0b85788bfab0577136c8a90daef44cd341b378bcaa1f4b38"
     },
     {
       "path": "reports/advanced_backtest_report.md",
@@ -5416,13 +5426,18 @@
     },
     {
       "path": "scripts/verify_step_141.py",
-      "size_bytes": 1372,
-      "sha256": "1aafc6e3bbe9ccfca18bcb9a8d2cba3e15f5dce82b0e6cd2be89d9d3eca4058a"
+      "size_bytes": 1382,
+      "sha256": "9c13809e0d47c2fedbd4314692185033eae5c829aba3fcbd56e4e722e335c5de"
     },
     {
       "path": "scripts/verify_step_142.py",
       "size_bytes": 2244,
       "sha256": "271b8e65e4c06466f5fe58b2b636b584956e0750dc5f5bbdbda2163714522994"
+    },
+    {
+      "path": "scripts/verify_step_143.py",
+      "size_bytes": 2507,
+      "sha256": "4aecb20fef7768deedafb74fc572eb5e3607f60dc6e88c54446d36caca392ccf"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -5836,13 +5851,13 @@
     },
     {
       "path": "src/v124_safe_official_draw_ingestion_engine.py",
-      "size_bytes": 14367,
-      "sha256": "55fbdf4fd1daa8f78f6f75db0aa5529fa910ed62368b879cf7f3c74698559a40"
+      "size_bytes": 15496,
+      "sha256": "92cc5926d922b7796e8a8ad85ac8b4f44563d6955a789e0c981277bf5b0fc18d"
     },
     {
       "path": "src/v124_safe_official_draw_ingestion_section.py",
-      "size_bytes": 5032,
-      "sha256": "4c9eee9867a0bf7bdd4ab0b99f8f199d0a623d54fad0891403f9fe7794446032"
+      "size_bytes": 5521,
+      "sha256": "a726f68965fd524df4a4b58cc950e9bd00fefedc805965d5309bf54a469fa404"
     },
     {
       "path": "src/v125_unified_downstream_refresh_engine.py",
@@ -6013,6 +6028,11 @@
       "path": "src/v142_downstream_freshness_repair_section.py",
       "size_bytes": 2708,
       "sha256": "bf133102672dbf4bb2822d00d99e8d04993f83b8f04005eba35e5573c6c8bd28"
+    },
+    {
+      "path": "src/v143_automatic_lightweight_downstream_refresh_engine.py",
+      "size_bytes": 3484,
+      "sha256": "3955a4924bfbd0da71498acb2e5c552685bc73588487cb26655106f60526af0c"
     },
     {
       "path": "src/v41_rules_aware_analysis_section.py",

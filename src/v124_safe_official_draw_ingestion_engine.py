@@ -311,6 +311,8 @@ def detect_and_ingest_latest_official_draw(
     backup_root: Path = BACKUP_ROOT,
     staging_root: Path = STAGING_ROOT,
     audit_path: Path = AUDIT_JSONL,
+    auto_lightweight_refresh: bool = True,
+    downstream_timeout_seconds: int = 900,
 ) -> dict[str, Any]:
     detection = detect_latest_official_draw(timeout=timeout, validate_details=True, write_outputs=True)
     if detection.get("status") != "update_available":
@@ -347,5 +349,25 @@ def detect_and_ingest_latest_official_draw(
         write_status=True,
     )
     result["detection"] = detection
+    if result.get("status") == "inserted" and auto_lightweight_refresh:
+        from src.v143_automatic_lightweight_downstream_refresh_engine import (
+            run_automatic_lightweight_refresh_after_ingestion,
+        )
+
+        automatic_refresh = run_automatic_lightweight_refresh_after_ingestion(
+            result,
+            timeout_seconds=downstream_timeout_seconds,
+            write_outputs=True,
+        )
+        result["automatic_lightweight_refresh"] = automatic_refresh
+        result["downstream_refresh_started"] = True
+        if automatic_refresh.get("status") == "completed":
+            result["message"] = (
+                "Новият официален тираж е приложен и всички леки downstream слоеве са обновени автоматично."
+            )
+        else:
+            result["message"] = (
+                "Новият официален тираж е приложен, но downstream обновяването изисква проверка."
+            )
     _write_status(result)
     return result

@@ -353,7 +353,7 @@
   "copy_text_path": "reports\\v117_real_ticket_pack_builder_copy.txt",
   "csv_path": "reports\\v117_real_ticket_pack_builder_cards.csv",
   "safe_note_bg": "Готовият фиш пакет подрежда реални комбинации за пускане. Той не обещава печалба и не променя вероятностите.",
-  "generated_at_utc": "2026-07-11T08:21:26+00:00",
+  "generated_at_utc": "2026-07-11T08:38:57+00:00",
   "checks": [
     {
       "check": "cards_created",

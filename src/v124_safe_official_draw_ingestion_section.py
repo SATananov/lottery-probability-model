@@ -18,7 +18,7 @@ def _label(draw: dict) -> str:
 
 def render_v124_safe_official_draw_ingestion_section() -> None:
     st.title("Безопасно прилагане на официален тираж")
-    st.caption("Step 124 — backup, staging, duplicate защита, audit и rollback. Не обновява downstream модулите.")
+    st.caption("Step 124 + Step 143 — безопасно прилагане и автоматично обновяване на леките downstream слоеве.")
 
     local = latest_local_draw()
     c1, c2 = st.columns(2)
@@ -27,7 +27,8 @@ def render_v124_safe_official_draw_ingestion_section() -> None:
 
     st.warning(
         "Тази страница може да запише само строго по-нов, успешно валидиран официален тираж. "
-        "R, Decision Center, ticket packs и моделите остават непроменени до Step 125."
+        "След успешно прилагане R анализите, характеристиките, решението за игра и фиш пакетите се обновяват автоматично. "
+        "Тежко ML retraining не се изпълнява."
     )
     timeout = st.slider("Timeout за БСТ (секунди)", 10, 60, 30, 5, key="v124_timeout")
 
@@ -69,7 +70,11 @@ def render_v124_safe_official_draw_ingestion_section() -> None:
     if result:
         status = result.get("status")
         if status == "inserted":
-            st.success("Официалният тираж е приложен безопасно. Downstream модулите още не са обновени.")
+            automatic = result.get("automatic_lightweight_refresh") or {}
+            if automatic.get("status") == "completed":
+                st.success("Официалният тираж и всички леки downstream слоеве са обновени успешно.")
+            else:
+                st.warning("Официалният тираж е приложен, но downstream обновяването изисква проверка.")
         elif status in {"duplicate_blocked", "nothing_to_ingest"}:
             st.info(result.get("message") or "Не са направени промени.")
         elif status == "rolled_back":

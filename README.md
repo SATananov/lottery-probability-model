@@ -186,3 +186,11 @@ Step 141 добавя:
 - нов clean ZIP manifest с SHA-256 checksums.
 
 Подробности: `reports/STEP_141_CLEAN_ENVIRONMENT_AND_DOCUMENTATION_SYNC.md`.
+
+## Step 143
+
+След успешно прилагане на нов официален тираж проектът автоматично обновява R анализа, статистическите характеристики, решението за игра и двата фиш пакета. Финалната freshness проверка потвърждава синхронизацията.
+
+Тежкото ML retraining не се изпълнява автоматично и остава ръчна операция.
+
+Подробности: `reports/STEP_143_AUTOMATIC_LIGHTWEIGHT_DOWNSTREAM_REFRESH_AFTER_OFFICIAL_DRAW.md`.

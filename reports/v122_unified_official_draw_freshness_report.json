@@ -1,7 +1,7 @@
 {
   "step": "122",
   "name": "Unified Official Draw Freshness Layer",
-  "generated_at_utc": "2026-07-11T08:21:29+00:00",
+  "generated_at_utc": "2026-07-11T08:40:43+00:00",
   "official_source_of_truth": "data/prize_winner_history.csv",
   "official_latest_draw": {
     "year": 2026,
@@ -16,8 +16,8 @@
       41
     ]
   },
-  "overall_status": "synced",
-  "blocking_out_of_sync_count": 0,
+  "overall_status": "out_of_sync",
+  "blocking_out_of_sync_count": 4,
   "heavy_model_retraining_performed": false,
   "policy": "Step 122 diagnoses freshness and source-of-truth drift; it does not retrain heavy models.",
   "sources": [
@@ -138,20 +138,20 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 52,
+        "date": "2026-07-05",
         "numbers": [
-          12,
-          17,
-          23,
-          30,
-          38,
-          41
+          4,
+          11,
+          21,
+          28,
+          36,
+          49
         ]
       },
-      "status": "synced",
-      "draw_delta": 0,
-      "message": "Синхронизиран с официалния последен тираж."
+      "status": "behind",
+      "draw_delta": 1,
+      "message": "Назад с 1 тираж(а)."
     },
     {
       "key": "step121",
@@ -160,20 +160,20 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 52,
+        "date": "2026-07-05",
         "numbers": [
-          12,
-          17,
-          23,
-          30,
-          38,
-          41
+          4,
+          11,
+          21,
+          28,
+          36,
+          49
         ]
       },
-      "status": "synced",
-      "draw_delta": 0,
-      "message": "Синхронизиран с официалния последен тираж."
+      "status": "behind",
+      "draw_delta": 1,
+      "message": "Назад с 1 тираж(а)."
     },
     {
       "key": "decision",
@@ -182,13 +182,13 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 49,
+        "date": "2026-06-25",
         "numbers": []
       },
-      "status": "synced",
-      "draw_delta": 0,
-      "message": "Синхронизиран с официалния последен тираж."
+      "status": "behind",
+      "draw_delta": 4,
+      "message": "Назад с 4 тираж(а)."
     },
     {
       "key": "final_pack",
@@ -219,20 +219,20 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 52,
+        "date": "2026-07-05",
         "numbers": [
-          12,
-          17,
-          23,
-          30,
-          38,
-          41
+          4,
+          11,
+          21,
+          28,
+          36,
+          49
         ]
       },
-      "status": "synced",
-      "draw_delta": 0,
-      "message": "Синхронизиран с официалния последен тираж."
+      "status": "behind",
+      "draw_delta": 1,
+      "message": "Назад с 1 тираж(а)."
     },
     {
       "key": "models",
