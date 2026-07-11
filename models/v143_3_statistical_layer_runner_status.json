@@ -1,0 +1,53 @@
+{
+  "step": "143.3",
+  "name": "Cross-platform Statistical Layer Runner",
+  "started_at_utc": "2026-07-11T10:29:29+00:00",
+  "finished_at_utc": "2026-07-11T10:29:43+00:00",
+  "status": "completed",
+  "requested_mode": "auto",
+  "runner": "rscript",
+  "fallback_reason": "",
+  "execution": {
+    "runner": "rscript",
+    "rscript": "C:\\Program Files\\R\\R-4.6.0\\bin\\x64\\Rscript.exe",
+    "output_tail": "Base R statistical layer: no external packages are required.\nYou can run: Rscript r/run_all_r_reports.R\nProject root: C:\\Users\\stana\\Desktop\\lottery-probability-model \n\nRunning: 01_data_audit.R \nData audit generated.\n\nRunning: 02_frequency_statistics.R \nFrequency statistics generated.\n\nRunning: 03_gap_statistics.R \nGap statistics generated.\n\nRunning: 04_distribution_tests.R \nDistribution tests generated.\n\nRunning: 05_pair_and_pattern_analysis.R \nPair and pattern analysis generated.\n\nRunning: 06_monte_carlo_baseline.R \nMonte Carlo baseline generated.\n\nRunning: 07_r_statistical_summary.R \nR statistical summary generated.\n\nAll base R statistical reports generated."
+  },
+  "validation": {
+    "official_latest_draw": {
+      "year": 2026,
+      "draw_number": 53,
+      "date": "2026-07-09",
+      "numbers": [
+        12,
+        17,
+        23,
+        30,
+        38,
+        41
+      ]
+    },
+    "r_layer": {
+      "key": "r_layer",
+      "label": "R статистически слой",
+      "path": "reports/r/r_data_audit.csv",
+      "exists": true,
+      "latest": {
+        "year": 2026,
+        "draw_number": 53,
+        "date": "2026-07-09",
+        "numbers": [
+          12,
+          17,
+          23,
+          30,
+          38,
+          41
+        ]
+      },
+      "status": "synced",
+      "draw_delta": 0,
+      "message": "Синхронизиран с официалния последен тираж."
+    }
+  },
+  "heavy_ml_retraining_performed": false
+}

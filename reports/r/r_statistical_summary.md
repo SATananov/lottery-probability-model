@@ -1,8 +1,8 @@
 # R Statistical Summary
 
-Dataset rows: 10062
-Latest draw date: 2026-07-05
-Latest numbers: 4, 11, 21, 28, 36, 49
+Dataset rows: 10063
+Latest draw date: 2026-07-09
+Latest numbers: 12, 17, 23, 30, 38, 41
 
 ## Frequency
 
@@ -10,12 +10,12 @@ Top frequent numbers: 44, 34, 21, 4, 37, 11, 49, 6, 48, 17
 
 ## Gap analysis
 
-Largest current gap numbers: 34, 25, 41, 20, 23, 24, 27, 31, 32, 3
+Largest current gap numbers: 34, 25, 20, 24, 27, 31, 32, 3, 45, 39
 
 ## Distribution test
 
-Chi-square statistic: 42.7501
-Chi-square p-value: 0.6872
+Chi-square statistic: 42.6634
+Chi-square p-value: 0.6906
 
 ## Monte Carlo baseline
 

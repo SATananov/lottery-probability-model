@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from src.v142_downstream_freshness_repair_engine import run_targeted_repair
+from src.v143_3_downstream_zero_blocker_closure_engine import run_final_zero_blocker_closure
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_JSON = ROOT / "models" / "v143_automatic_lightweight_downstream_refresh_status.json"
@@ -61,7 +61,7 @@ def run_automatic_lightweight_refresh_after_ingestion(
             _write(report)
         return report
 
-    execute = repair_runner or run_targeted_repair
+    execute = repair_runner or run_final_zero_blocker_closure
     downstream = execute(timeout_seconds=timeout_seconds, write_outputs=write_outputs)
     ok = downstream.get("status") in {"completed", "already_synced"}
     report = {

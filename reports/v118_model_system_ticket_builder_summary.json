@@ -36,21 +36,21 @@
   "at_least_one_hit_percent": 72.551269,
   "historical_exact_matches": 0,
   "latest_dataset_draw": {
-    "date": "2026-07-05",
-    "draw_number": "52",
+    "date": "2026-07-09",
+    "draw_number": "53",
     "drawing_position": "1",
     "numbers": [
-      4,
-      11,
-      21,
-      28,
-      36,
-      49
+      12,
+      17,
+      23,
+      30,
+      38,
+      41
     ]
   },
-  "latest_dataset_draw_date": "2026-07-05",
-  "source_v117_generated_at_utc": "2026-07-08T10:30:17+00:00",
-  "source_v117_latest_dataset_draw_date": "2026-07-05",
+  "latest_dataset_draw_date": "2026-07-09",
+  "source_v117_generated_at_utc": "2026-07-11T10:29:44+00:00",
+  "source_v117_latest_dataset_draw_date": "2026-07-09",
   "next_target_draw_date": "2026-07-12",
   "model_number_ranking": [
     {
@@ -615,7 +615,7 @@
     }
   ],
   "safe_note_bg": "Системният фиш използва числа от моделните оценки и текущия готов пакет. Това е метод за организация на фишове, не гаранция за печалба.",
-  "generated_at_utc": "2026-07-08T10:30:20+00:00",
-  "copy_text_path": "reports/v118_model_system_ticket_pack_copy.txt",
-  "csv_path": "reports/v118_model_system_ticket_pack.csv"
+  "generated_at_utc": "2026-07-11T10:29:45+00:00",
+  "copy_text_path": "reports\\v118_model_system_ticket_pack_copy.txt",
+  "csv_path": "reports\\v118_model_system_ticket_pack.csv"
 }

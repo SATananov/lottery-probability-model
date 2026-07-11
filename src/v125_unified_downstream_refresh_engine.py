@@ -16,7 +16,7 @@ AUDIT_JSONL = ROOT / 'reports' / 'v125_unified_downstream_refresh_audit.jsonl'
 
 PIPELINE = [
     {'id':'dataset_sync','name':'Historical / normalized / canonical','kind':'internal'},
-    {'id':'r_statistics','name':'R statistical layer','kind':'powershell','command':['powershell','-NoProfile','-ExecutionPolicy','Bypass','-File','tools/run_r_statistics.ps1']},
+    {'id':'r_statistics','name':'R statistical layer','kind':'python','command':['tools/run_statistical_layer.py','--mode','auto']},
     {'id':'r_features','name':'Step 121 R features','kind':'python','command':['tools/integrate_r_statistical_features.py','--all']},
     {'id':'decision','name':'Decision Center','kind':'python','command':['scripts/v115_build_play_decision_center.py']},
     {'id':'ticket_pack','name':'Real ticket pack','kind':'python','command':['scripts/v117_build_real_ticket_pack_builder.py']},

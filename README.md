@@ -234,3 +234,18 @@ python tools/check_official_draw_github_sync.py
 ```powershell
 python tools/check_official_draw_github_sync.py --retry-push
 ```
+
+## Step 143.3
+
+Step 143.3 добавя финално downstream обновяване до **нулеви блокери**. Операцията се приема за успешна само когато Step 122 потвърди `overall_status = synced` и `blocking_out_of_sync_count = 0`.
+
+Статистическият слой вече се стартира през cross-platform launcher. При наличен `Rscript` се използват оригиналните R скриптове; при липса се използва ясно обозначен детерминиран Python compatibility runner. Тежките ML модели не се преобучават, а личният SQLite дневник се защитава чрез byte-for-byte snapshot и restore.
+
+Команди:
+
+```powershell
+python .\tools\run_downstream_zero_blocker_closure.py --strict
+python .\scripts\verify_step_143_3.py
+```
+
+Подробности: `reports/STEP_143_3_FINAL_DOWNSTREAM_FRESHNESS_REPAIR_AND_ZERO_BLOCKER_CLOSURE.md`.
