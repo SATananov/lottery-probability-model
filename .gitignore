@@ -42,3 +42,6 @@ data/manual_backups/
 # Raw parser diagnostics generated only on failure
 reports/v111_unparsed_bst_page_*.html
 reports/v111_unparsed_bst_page_*.json
+
+# Local Step 143.2 GitHub synchronization audit evidence
+reports/runtime/v143_2_git_sync/

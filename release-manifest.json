@@ -1,13 +1,13 @@
 {
-  "checkpoint": "Step 143.1",
+  "checkpoint": "Step 143.2",
   "project": "lottery-probability-model",
-  "manifest_scope": "All project files except release-manifest.json and CLEAN_ZIP_MANIFEST_STEP143_1.md",
-  "file_count": 1345,
+  "manifest_scope": "All project files except release-manifest.json, CLEAN_ZIP_MANIFEST_STEP143_2.md and FULL_CLEAN_CHECKPOINT_MANIFEST_STEP143_2.md",
+  "file_count": 1350,
   "files": [
     {
       "path": ".gitignore",
-      "size_bytes": 658,
-      "sha256": "26e8d45fd19ad60ae04f07e7f981dfe36d4067006427830bab257a724b746699"
+      "size_bytes": 749,
+      "sha256": "c2d2184f6c22337d8181cc527a4c8a2079fe04c6837405805a50f4cab7f1712f"
     },
     {
       "path": ".python-version",
@@ -23,6 +23,26 @@
       "path": "ADVANCED_METHODS.md",
       "size_bytes": 2526,
       "sha256": "d6ee938444b83fb1f206b2973e04e595856d186f9d82f94ad096638bb8556412"
+    },
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "size_bytes": 1573,
+      "sha256": "3fd01485c2849a80e28d4c4f0e310cb122a04acb9271dbcfdaa7cd6778e0678b"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 12080,
+      "sha256": "2067ffa7d3ae47292cf6f3894cb61b9a6ec7b78070ce31fdcc2a25a34afa53c7"
+    },
+    {
+      "path": "README_UI.md",
+      "size_bytes": 1248,
+      "sha256": "e2141f9ba55fb954119c8bbbd7ff7cfcfae6b00cdcc25c7fcd4c69ae5870ad8d"
+    },
+    {
+      "path": "START_LOTTERY_CHROME_SIMPLE.bat",
+      "size_bytes": 1417,
+      "sha256": "bef03d216b5cb897b04031feeb5de7e28138cfe6753ac38fef5f7ae912fb0543"
     },
     {
       "path": "app.py",
@@ -1605,6 +1625,11 @@
       "sha256": "360ce3095c4208aa7d2e122a010b677b704eb04e975eab39b0e91f73020a9f24"
     },
     {
+      "path": "data/raw/toto49_2026_statistics/README_BG.md",
+      "size_bytes": 2059,
+      "sha256": "1e8e3fb02fdfdc5a3a0ea0eb9b642fa00eed67ae781d7dc1c3d1072a1f283f9e"
+    },
+    {
       "path": "data/raw/toto49_2026_statistics/cold_numbers_2026.csv",
       "size_bytes": 179,
       "sha256": "341962e41801675c044677fdfbe835ca07eb592461e64b86c7933cedf7ed212f"
@@ -1628,11 +1653,6 @@
       "path": "data/raw/toto49_2026_statistics/pair_frequency_observed_2026.csv",
       "size_bytes": 8053,
       "sha256": "0c94fb025860cede078fb6d31b6145622ae0a210ddae888464e40a24b0903258"
-    },
-    {
-      "path": "data/raw/toto49_2026_statistics/README_BG.md",
-      "size_bytes": 2059,
-      "sha256": "1e8e3fb02fdfdc5a3a0ea0eb9b642fa00eed67ae781d7dc1c3d1072a1f283f9e"
     },
     {
       "path": "data/raw/toto49_2026_statistics/statistics_report_BG.md",
@@ -1723,11 +1743,6 @@
       "path": "data/verified_2026_prize_history_draws_24_49.csv",
       "size_bytes": 10843,
       "sha256": "529cd1350df1f6472cb033cfba5b6b0232b64d750d0fa5943083febc18135ca0"
-    },
-    {
-      "path": "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP143_1.md",
-      "size_bytes": 1795,
-      "sha256": "42c62d8050771337e264da89217738712146838fc94f081c50739e831830d91b"
     },
     {
       "path": "lottery_app_icon.ico",
@@ -2023,6 +2038,11 @@
       "path": "models/v142_downstream_freshness_repair_status.json",
       "size_bytes": 10333,
       "sha256": "b044a6e409295f898fbcde2e06be1996190ea2fe53ba52999584aa4c71d812be"
+    },
+    {
+      "path": "models/v143_2_official_draw_github_sync_policy.json",
+      "size_bytes": 1335,
+      "sha256": "f654aca2a4ef0085616f40c46cdc00de1c0bf22d75512c0aa3f9fcbbdc00e10b"
     },
     {
       "path": "models/v41/v41_frequency_main_numbers_model.json",
@@ -2510,11 +2530,6 @@
       "sha256": "9de2896fd1a8f68cb1b25984570b831957e46256212bc19181d9a262cf08d433"
     },
     {
-      "path": "PROJECT_CONTEXT.md",
-      "size_bytes": 1573,
-      "sha256": "3fd01485c2849a80e28d4c4f0e310cb122a04acb9271dbcfdaa7cd6778e0678b"
-    },
-    {
       "path": "r/01_data_audit.R",
       "size_bytes": 1937,
       "sha256": "43a47410c4486518f1b450601a63482e1a81f3addfc71c70601234b0765f87a7"
@@ -2550,14 +2565,14 @@
       "sha256": "153857fae05ecc3a97a7e396a5e7c6ddc66f61c059b29a474636453f1e003797"
     },
     {
-      "path": "r/install_packages.R",
-      "size_bytes": 122,
-      "sha256": "5cfeba8810d53b51272fb287c75f47101f0f5d34a377203a963562d22f2abc7d"
-    },
-    {
       "path": "r/README.md",
       "size_bytes": 467,
       "sha256": "10278d6428158750a78cc563cab2658e6985fa41955efcb41ed9f82844425ae6"
+    },
+    {
+      "path": "r/install_packages.R",
+      "size_bytes": 122,
+      "sha256": "5cfeba8810d53b51272fb287c75f47101f0f5d34a377203a963562d22f2abc7d"
     },
     {
       "path": "r/run_all_r_reports.R",
@@ -2565,19 +2580,39 @@
       "sha256": "3e67123993e3ef1e89637fb870bd52e5efa875f6faae0b129e6fa16eb438b10c"
     },
     {
-      "path": "README.md",
-      "size_bytes": 10925,
-      "sha256": "ae142ff2394339fb500b29c6fb85595401c03a1b0472ece867350eaf63616dbd"
-    },
-    {
-      "path": "README_UI.md",
-      "size_bytes": 1248,
-      "sha256": "e2141f9ba55fb954119c8bbbd7ff7cfcfae6b00cdcc25c7fcd4c69ae5870ad8d"
-    },
-    {
       "path": "reports/2026_partial_update_report.md",
       "size_bytes": 1101,
       "sha256": "6bdf1749d2a2b9d8782f40c99fce4dbc54418c9b7f5800eebf284f5ee9e24897"
+    },
+    {
+      "path": "reports/RESEARCH_NOTE_NEURAL_DYNAMICAL_SYSTEMS_REFERENCE.md",
+      "size_bytes": 2315,
+      "sha256": "d3bb1d963d811f10b8cc5c9c9b961e69f5f59552e13257320c77241ad9733bd7"
+    },
+    {
+      "path": "reports/STEP_141_CLEAN_ENVIRONMENT_AND_DOCUMENTATION_SYNC.md",
+      "size_bytes": 2219,
+      "sha256": "84b1a4bb4b338b1c00d5ecc8d3b0942d5024f9aa6f62a1b5f7c40918720f0dcc"
+    },
+    {
+      "path": "reports/STEP_142_DOWNSTREAM_FRESHNESS_REPAIR_AND_BULGARIAN_UI_POLISH.md",
+      "size_bytes": 1367,
+      "sha256": "2bb41aa9196888585a1f937448d9863aef31b6f9e779fa41ef8330e979494d35"
+    },
+    {
+      "path": "reports/STEP_143_1_PERSONAL_PROJECT_DOCUMENTATION_LANGUAGE_AND_RELEASE_INTEGRITY.md",
+      "size_bytes": 1897,
+      "sha256": "3a3f0afc3453f28ced90c0d0bb644c3d0841dd6d63c3314c89bedecb9bc25878"
+    },
+    {
+      "path": "reports/STEP_143_2_OFFICIAL_DRAW_GITHUB_SYNC_VALIDATION_AND_AUDIT.md",
+      "size_bytes": 3891,
+      "sha256": "3682617e208a8a8950e110ab2f5aa27bf2c7dba26f76a6fdf1a8aa0e6020b11d"
+    },
+    {
+      "path": "reports/STEP_143_AUTOMATIC_LIGHTWEIGHT_DOWNSTREAM_REFRESH_AFTER_OFFICIAL_DRAW.md",
+      "size_bytes": 1161,
+      "sha256": "b1f8ea7c02978f9e0b85788bfab0577136c8a90daef44cd341b378bcaa1f4b38"
     },
     {
       "path": "reports/advanced_backtest_report.md",
@@ -2813,31 +2848,6 @@
       "path": "reports/r/r_statistical_summary.md",
       "size_bytes": 727,
       "sha256": "cc0f554563abc0a670a1c54a830748cc8328f75bcd5eff3d66e6da2693ac6a1d"
-    },
-    {
-      "path": "reports/RESEARCH_NOTE_NEURAL_DYNAMICAL_SYSTEMS_REFERENCE.md",
-      "size_bytes": 2315,
-      "sha256": "d3bb1d963d811f10b8cc5c9c9b961e69f5f59552e13257320c77241ad9733bd7"
-    },
-    {
-      "path": "reports/STEP_141_CLEAN_ENVIRONMENT_AND_DOCUMENTATION_SYNC.md",
-      "size_bytes": 2219,
-      "sha256": "84b1a4bb4b338b1c00d5ecc8d3b0942d5024f9aa6f62a1b5f7c40918720f0dcc"
-    },
-    {
-      "path": "reports/STEP_142_DOWNSTREAM_FRESHNESS_REPAIR_AND_BULGARIAN_UI_POLISH.md",
-      "size_bytes": 1367,
-      "sha256": "2bb41aa9196888585a1f937448d9863aef31b6f9e779fa41ef8330e979494d35"
-    },
-    {
-      "path": "reports/STEP_143_1_PERSONAL_PROJECT_DOCUMENTATION_LANGUAGE_AND_RELEASE_INTEGRITY.md",
-      "size_bytes": 1897,
-      "sha256": "3a3f0afc3453f28ced90c0d0bb644c3d0841dd6d63c3314c89bedecb9bc25878"
-    },
-    {
-      "path": "reports/STEP_143_AUTOMATIC_LIGHTWEIGHT_DOWNSTREAM_REFRESH_AFTER_OFFICIAL_DRAW.md",
-      "size_bytes": 1161,
-      "sha256": "b1f8ea7c02978f9e0b85788bfab0577136c8a90daef44cd341b378bcaa1f4b38"
     },
     {
       "path": "reports/v100_final_release_lock_checklist.csv",
@@ -5450,6 +5460,11 @@
       "sha256": "d61f649309638644b82ce80b201847827b2bf48352a6f4775910540eef9ee4de"
     },
     {
+      "path": "scripts/verify_step_143_2.py",
+      "size_bytes": 10163,
+      "sha256": "14da7675d367e264078a445349e419e12e7592c06e51964e430616065f70ffbd"
+    },
+    {
       "path": "show_advanced_recommendations.py",
       "size_bytes": 829,
       "sha256": "e4b549a10539b3e509c9b4a08209cca99ac768598ff32b5d80a9165ea8e41739"
@@ -5461,8 +5476,8 @@
     },
     {
       "path": "src/add_draws_section.py",
-      "size_bytes": 40224,
-      "sha256": "61f8c905d31419b21ba200ad78c07b6b35f32a45181650297fe154f931df7c40"
+      "size_bytes": 40508,
+      "sha256": "623bc8528500cd596626709025a49cd4ae775513a44972c78e52aedc316a79bd"
     },
     {
       "path": "src/advanced_methods.py",
@@ -6040,6 +6055,16 @@
       "sha256": "bf133102672dbf4bb2822d00d99e8d04993f83b8f04005eba35e5573c6c8bd28"
     },
     {
+      "path": "src/v143_2_official_draw_github_sync_audit_engine.py",
+      "size_bytes": 23198,
+      "sha256": "fda9fae0c07b04f8002c18eddc4ea851ec4b40691be317edeebe757450eb0789"
+    },
+    {
+      "path": "src/v143_2_official_draw_github_sync_section.py",
+      "size_bytes": 6300,
+      "sha256": "a542e45be4c4d5b2071f534fa6b0a82438d0e23c1c648b205ba707079939e9c0"
+    },
+    {
       "path": "src/v143_automatic_lightweight_downstream_refresh_engine.py",
       "size_bytes": 3484,
       "sha256": "3955a4924bfbd0da71498acb2e5c552685bc73588487cb26655106f60526af0c"
@@ -6540,11 +6565,6 @@
       "sha256": "514b6d08045d7775119a93f4967bfa8797483e1de8c6c1412b3cf8c18f4ea32b"
     },
     {
-      "path": "START_LOTTERY_CHROME_SIMPLE.bat",
-      "size_bytes": 1417,
-      "sha256": "bef03d216b5cb897b04031feeb5de7e28138cfe6753ac38fef5f7ae912fb0543"
-    },
-    {
       "path": "streamlit_app.py",
       "size_bytes": 251284,
       "sha256": "10b4d8caa4f63c73ca009e2b994983f6095f080e5052c3a45248882b9c341ab4"
@@ -6573,6 +6593,11 @@
       "path": "tools/check_official_draw_freshness.py",
       "size_bytes": 801,
       "sha256": "038a77716a237bf1bacfb0a0d05f5f8534ce82298f8e8b33ecee93a6b34d3061"
+    },
+    {
+      "path": "tools/check_official_draw_github_sync.py",
+      "size_bytes": 2518,
+      "sha256": "3a1cbbaa39c90f16c5b0a2550fead27931b9fb3d14d1ca483cbe141d742bf8b6"
     },
     {
       "path": "tools/create_ml_notebooks.py",

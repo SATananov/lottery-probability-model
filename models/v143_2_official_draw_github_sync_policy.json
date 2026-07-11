@@ -1,0 +1,44 @@
+{
+  "step": "143.2",
+  "name": "Official Draw to GitHub Sync Validation and Audit",
+  "purpose": "Validate that official-draw outputs are committed, pushed and confirmed on the configured remote branch without including personal or unrelated local files.",
+  "sync_scope": {
+    "exact_files": [
+      "data/historical_draws.csv",
+      "data/v40_normalized_draw_events.csv",
+      "data/v41_canonical_draw_events.csv"
+    ],
+    "directories": [
+      "models/",
+      "reports/"
+    ]
+  },
+  "excluded_local_paths": [
+    ".env",
+    ".env.*",
+    ".streamlit/secrets.toml",
+    "data/user_journal.db",
+    "data/user_journal_exports/",
+    "data/manual_backups/",
+    "reports/runtime/v143_2_git_sync/"
+  ],
+  "preflight_blocks": [
+    "detached HEAD",
+    "missing origin remote",
+    "pre-existing staged files",
+    "pre-existing changes inside the automatic sync scope"
+  ],
+  "remote_confirmation": "After push, local HEAD must exactly match the SHA returned by git ls-remote for the current branch.",
+  "runtime_audit": {
+    "location": "reports/runtime/v143_2_git_sync/",
+    "tracked_by_git": false,
+    "contains": [
+      "operation status",
+      "included and excluded paths",
+      "local commit SHA",
+      "remote commit SHA",
+      "remote confirmation result"
+    ]
+  },
+  "heavy_ml_retraining_performed": false
+}

@@ -15,6 +15,14 @@ from src.v73_ticket_pack_performance_tracker_engine import evaluate_current_pack
 from src.v95_active_plan_auto_evaluation_engine import evaluate_active_plan_against_pending_draw
 from src.v96_add_draw_controlled_flow_engine import load_add_draw_controlled_flow_summary
 from src.v97_real_draw_lifecycle_engine import load_real_draw_lifecycle_summary
+from src.v143_2_official_draw_github_sync_audit_engine import (
+    capture_git_snapshot,
+    synchronize_official_draw_outputs,
+)
+from src.v143_2_official_draw_github_sync_section import (
+    render_git_sync_preflight,
+    render_git_sync_result,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -484,36 +492,20 @@ def refresh_models(
     return results
 
 
-def sync_to_github(year: int, draw_no: int) -> tuple[bool, str]:
-    paths_to_add = [
-        "data/historical_draws.csv",
-        "data/v40_normalized_draw_events.csv",
-        "data/v41_canonical_draw_events.csv",
-        "models",
-        "reports",
-    ]
+def sync_to_github(
+    year: int,
+    draw_no: int,
+    *,
+    baseline: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Run the Step 143.2 controlled commit, push and remote confirmation."""
 
-    ok, output = run_command(["git", "add", *paths_to_add])
-    if not ok:
-        return False, output
-
-    ok, staged = run_command(["git", "diff", "--cached", "--name-only"])
-    if not ok:
-        return False, staged
-
-    if not staged.strip():
-        return True, "Няма нови промени за синхронизация."
-
-    message = f"Update draw {draw_no} {year} and refresh models"
-    ok, commit_output = run_command(["git", "commit", "-m", message])
-    if not ok:
-        return False, commit_output
-
-    ok, push_output = run_command(["git", "push"])
-    if not ok:
-        return False, push_output
-
-    return True, commit_output + "\n" + push_output
+    return synchronize_official_draw_outputs(
+        year=year,
+        draw_no=draw_no,
+        baseline=baseline,
+        repo_root=ROOT,
+    )
 
 
 def bonus_options() -> list[int | None]:
@@ -656,7 +648,13 @@ def render() -> None:
         "Синхронизирай новите данни и модели в GitHub",
         value=True,
         key="add_draw_sync_github",
+        help=(
+            "Step 143.2 подготвя само разрешените data/models/reports файлове, "
+            "качва Git записа към текущия клон и сравнява локалния запис с GitHub."
+        ),
     )
+    git_sync_baseline = capture_git_snapshot(ROOT)
+    render_git_sync_preflight(git_sync_baseline, enabled=auto_github)
 
     # step96_controlled_flow_marker
     controlled_flow = load_add_draw_controlled_flow_summary()
@@ -808,6 +806,13 @@ def render() -> None:
     )
 
     if st.button("Запази тиража", width="stretch", key="add_draw_save_btn"):
+        if auto_github and not git_sync_baseline.get("can_sync"):
+            st.error(
+                "Step 143.2 блокира автоматичната GitHub синхронизация преди запис. "
+                "Изчисти посочения Git проблем или изключи GitHub отметката, за да запишеш само локално."
+            )
+            return
+
         payloads: list[tuple[int, list[int], int | None]] = [(1, draw1_numbers, draw1_bonus)]
         errors = validate_draw(draw1_numbers, draw1_bonus, "Теглене 1")
 
@@ -926,13 +931,10 @@ def render() -> None:
             st.warning("Тиражът е записан, но автоматичното обновяване е изключено. Пусни обновяване или отвори 'Готов фиш пакет' и натисни 'Обнови пакета'.")
 
         if auto_github:
-            with st.spinner("Синхронизация към GitHub..."):
-                ok, output = sync_to_github(year=year, draw_no=draw_no)
-
-            if ok:
-                st.success("Данните, моделите и отчетите са синхронизирани към GitHub.")
-            else:
-                st.error("GitHub синхронизацията не успя.")
-            if output:
-                with st.expander("Технически изход от GitHub"):
-                    st.code(output)
+            with st.spinner("Git запис, качване и потвърждение в GitHub по Step 143.2..."):
+                sync_result = sync_to_github(
+                    year=year,
+                    draw_no=draw_no,
+                    baseline=git_sync_baseline,
+                )
+            render_git_sync_result(sync_result)
