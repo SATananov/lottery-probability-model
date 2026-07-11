@@ -1,8 +1,8 @@
 {
-  "checkpoint": "Step 144",
+  "checkpoint": "Step 145",
   "project": "lottery-probability-model",
-  "manifest_scope": "All project files except release-manifest.json, CLEAN_ZIP_MANIFEST_STEP144.md and FULL_CLEAN_CHECKPOINT_MANIFEST_STEP144.md",
-  "file_count": 11308,
+  "manifest_scope": "All project files except release-manifest.json, CLEAN_ZIP_MANIFEST_STEP145.md and FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145.md",
+  "file_count": 11321,
   "files": [
     {
       "path": ".gitignore",
@@ -49706,8 +49706,8 @@
     },
     {
       "path": "data/experiment_registry.jsonl",
-      "size_bytes": 22732,
-      "sha256": "936e29eddcbd94e565d26b86e84d0ef7eec9d21ce3062fc8543762c5855a4a79"
+      "size_bytes": 105520,
+      "sha256": "994d65e0dd39e4e1936eecf4915f046eed2ddeb746d90d40e13339167b72670e"
     },
     {
       "path": "data/historical_draws.csv",
@@ -51710,6 +51710,16 @@
       "sha256": "70ab146826b638c142495d3cb3f61b0eb5e9aeb4f34881bf14bde948ae04c6e2"
     },
     {
+      "path": "models/v145_experimental_neural_dynamics_policy.json",
+      "size_bytes": 1741,
+      "sha256": "40aecb61f937e119187eb952e133b86fc720c93d1cbe9aba294948e29ec65923"
+    },
+    {
+      "path": "models/v145_experimental_neural_dynamics_status.json",
+      "size_bytes": 1003,
+      "sha256": "755c498fde082c631c2c5b3d41680c82271a55b0d281a0d86ec35d85a656137b"
+    },
+    {
       "path": "models/v41/v41_frequency_main_numbers_model.json",
       "size_bytes": 1990,
       "sha256": "e69e213c986b87812052b045c88c57f85c3442d3c45a431945fda3884b419b1c"
@@ -52251,8 +52261,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 14152,
-      "sha256": "3727079b28e8071c0edf3125c9f0d942651e1661769ecdc0367b1fb81f4e3d4d"
+      "size_bytes": 15151,
+      "sha256": "0bf1186a9952c6a214c6b4d21555ce0b13440c7163ba07d1dca8708ede77c07e"
     },
     {
       "path": "README_UI.md",
@@ -52328,6 +52338,11 @@
       "path": "reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json",
       "size_bytes": 34000,
       "sha256": "fb9b4cc0be41a15733c1f35b8707328d5c633a21ea4275366d481a65574c4435"
+    },
+    {
+      "path": "reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json",
+      "size_bytes": 118128,
+      "sha256": "5a35eb3d87dd0c3a7d4d323f31b209ff31978dc51cbefd9ce482e2d6ae87b48e"
     },
     {
       "path": "reports/frequency_model_report.md",
@@ -52543,6 +52558,11 @@
       "path": "reports/STEP_144_REPRODUCIBLE_EXPERIMENT_REGISTRY_AND_BASELINE_LABORATORY.md",
       "size_bytes": 2559,
       "sha256": "611c5c2111b4f0ed83e26c851c51998e20bd1f1b94c1ca4d1ee3f5564de7d937"
+    },
+    {
+      "path": "reports/STEP_145_EXPERIMENTAL_NEURAL_DYNAMICS_SANDBOX_AND_BASELINE_COMPARISON.md",
+      "size_bytes": 4152,
+      "sha256": "5c3724ec8bd85bfff9f0acadf6a4c91c7e1a1c34ef2f33a5ced08cb048218694"
     },
     {
       "path": "reports/v100_final_release_lock_checklist.csv",
@@ -53361,8 +53381,28 @@
     },
     {
       "path": "reports/v144_experiment_registry_index.csv",
-      "size_bytes": 436,
-      "sha256": "7320af67b2b1f0a2deb29aa6387700dbca7682338dbf67856352f94f5cd53be5"
+      "size_bytes": 759,
+      "sha256": "913f475fe41311c2287dba2fa82ecb7e3033ed5b0e0dc1ec93bbaafdb7846083"
+    },
+    {
+      "path": "reports/v145_neural_dynamics_draw_comparison.csv",
+      "size_bytes": 8931,
+      "sha256": "66b507ede4829ab1d2f7f1edabc7322cec33d79b773b7741c3f64306386ab848"
+    },
+    {
+      "path": "reports/v145_neural_dynamics_results.csv",
+      "size_bytes": 4528,
+      "sha256": "fb4310c73864c8ba80d82e8c154e11a34874c0f29d4001bd3878a0a425b8caf9"
+    },
+    {
+      "path": "reports/v145_neural_dynamics_summary.json",
+      "size_bytes": 5909,
+      "sha256": "80797996704516abc484ebcdabb58ed8a81e8950fda08c7ba1211dc51069da95"
+    },
+    {
+      "path": "reports/v145_neural_dynamics_summary.md",
+      "size_bytes": 2209,
+      "sha256": "393672aadaec27984cab7ce66422f385eb5533b0608f3a904a4df0393d6139cc"
     },
     {
       "path": "reports/v40_normalized_draw_events_report.json",
@@ -55196,8 +55236,13 @@
     },
     {
       "path": "scripts/verify_step_144.py",
-      "size_bytes": 8716,
-      "sha256": "4b201b66d3d290d7147015bd4ee7baf3783c22fc76f01c77d16c6e562326ae5f"
+      "size_bytes": 8660,
+      "sha256": "2fb2a730bf5cf57f4fdb375b82d387367849dcec5ef53d939ad78669ec3901d5"
+    },
+    {
+      "path": "scripts/verify_step_145.py",
+      "size_bytes": 10677,
+      "sha256": "eb2458d239670b89500765af918cf49fe0b08f3431f67dbed848da4d03b6939e"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -55830,6 +55875,16 @@
       "sha256": "2bc85f33ce1046fcea2d9b3cd46ae305c26cc774e1a4d05392ec72f003fb7afa"
     },
     {
+      "path": "src/v145_experimental_neural_dynamics_engine.py",
+      "size_bytes": 38789,
+      "sha256": "ff2cdb341760cf8852de24ce17002817eee9cd1d916458f4264f2b27367798d8"
+    },
+    {
+      "path": "src/v145_experimental_neural_dynamics_section.py",
+      "size_bytes": 6934,
+      "sha256": "a016b40e787cd5d00252f478a64890d4c66733bc061301a6bff4e7872d627d98"
+    },
+    {
       "path": "src/v41_rules_aware_analysis_section.py",
       "size_bytes": 14207,
       "sha256": "c77ac0bada93291a566dc8057eab43efd3f400d67504c34764b8a4acd54a0f8b"
@@ -56331,8 +56386,8 @@
     },
     {
       "path": "streamlit_app.py",
-      "size_bytes": 251802,
-      "sha256": "a32ad9061ea5d3c61fd25f3cd8e8af4bb87e759812edf3bd23a636c75c6333b4"
+      "size_bytes": 252025,
+      "sha256": "bf5b84e16a049df709c791da8eaaa797d96dd1c83799d659e6fe525a543e39b3"
     },
     {
       "path": "streamlit_pages/__init__.py",
@@ -56385,6 +56440,11 @@
       "sha256": "e5c6cc97d7273b577cd8ede087f98b637a665ed7f7a98b683248abaf8a86df17"
     },
     {
+      "path": "tools/finalize_step_145_release.py",
+      "size_bytes": 7859,
+      "sha256": "1165bff53a671cd497f43ff9bc7ea2cd817751eed90b92ac90b82b015b166c6d"
+    },
+    {
       "path": "tools/ingest_latest_bst_official_draw.py",
       "size_bytes": 1032,
       "sha256": "01e251089c88ec5fe1cb57850e62f22a50275424823ec67505f14112d4ebbff9"
@@ -56413,6 +56473,11 @@
       "path": "tools/run_end_to_end_automation_validation.py",
       "size_bytes": 498,
       "sha256": "600013fa763bfe5064105f9a2c75c1d8f91ade70b49a81a00de3f8548aa46743"
+    },
+    {
+      "path": "tools/run_experimental_neural_dynamics.py",
+      "size_bytes": 3500,
+      "sha256": "e8007bfd2817425684ddbbf2758b7c99ace359c6aa6087f4ca558a2b4ac59cef"
     },
     {
       "path": "tools/run_incident_evidence_integrity.py",

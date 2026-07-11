@@ -265,3 +265,19 @@ python .\scripts\verify_step_144.py
 ```
 
 Подробности: `reports/STEP_144_REPRODUCIBLE_EXPERIMENT_REGISTRY_AND_BASELINE_LABORATORY.md`.
+
+## Step 145
+
+Step 145 добавя изолиран neural dynamics sandbox. Реализацията използва детерминиран leaky reservoir с walk-forward ridge readout и го сравнява срещу frequency, recency-weighted и uniform-random baselines при еднакъв брой комбинации.
+
+Експериментът е research-only. Той не е свързан с production pipeline или с генератора на реални фишове. Първият регистриран резултат не преминава promotion gate и е запазен като отрицателно експериментално доказателство.
+
+Команди:
+
+```powershell
+python .\tools\run_experimental_neural_dynamics.py
+python .\tools\run_experimental_neural_dynamics.py --read-only
+python .\scripts\verify_step_145.py
+```
+
+Подробности: `reports/STEP_145_EXPERIMENTAL_NEURAL_DYNAMICS_SANDBOX_AND_BASELINE_COMPARISON.md`.

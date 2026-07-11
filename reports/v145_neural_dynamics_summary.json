@@ -1,0 +1,167 @@
+{
+  "step": 145,
+  "status": "completed",
+  "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+  "dataset": {
+    "path": "data/v41_canonical_draw_events.csv",
+    "sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "row_count": 10063,
+    "first_draw": "1958-0",
+    "latest_draw": "2026-53",
+    "latest_draw_date": "2026-07-09"
+  },
+  "configuration": {
+    "holdout_draws": 240,
+    "minimum_training_draws": 500,
+    "package_size": 12,
+    "random_trials": 50,
+    "frequency_pool_size": 49,
+    "recency_decay": 0.985,
+    "reservoir_size": 32,
+    "leak_rate": 0.28,
+    "spectral_radius": 0.82,
+    "input_scale": 0.65,
+    "bias_scale": 0.05,
+    "ridge_alpha": 12.0,
+    "score_power": 1.4,
+    "seed": 1452026
+  },
+  "split_policy": {
+    "policy": "expanding_window_walk_forward",
+    "training_draws_initial": 9823,
+    "holdout_draws": 240,
+    "holdout_first_draw": "2024-24",
+    "holdout_last_draw": "2026-53",
+    "target_draw_added_after_scoring": true,
+    "data_leakage_guard": "At each holdout point, the neural readout, frequency scores and recency scores use only strictly earlier draws."
+  },
+  "architecture": {
+    "name": "continuous_time_inspired_leaky_reservoir_with_online_ridge_readout",
+    "state_equation": "h_t=(1-leak)h_(t-1)+leak*tanh(W_in*x_t+W_rec*h_(t-1)+b)",
+    "readout": "walk_forward_ridge_regression",
+    "reservoir_size": 32,
+    "requested_spectral_radius": 0.82,
+    "actual_spectral_radius": 0.82,
+    "hardware_claim": "none",
+    "ode_solver_claim": "none",
+    "production_integration": false
+  },
+  "neural_dynamics": {
+    "strategy": "neural_dynamics_reservoir",
+    "trial": 0,
+    "draws_tested": 240,
+    "average_best_hits": 1.9875,
+    "average_total_hits": 8.608333333,
+    "max_best_hits": 4,
+    "at_least_2_percent": 80.833333333,
+    "at_least_3_percent": 17.083333333,
+    "at_least_4_percent": 0.833333333,
+    "at_least_5_percent": 0.0,
+    "exact_6_count": 0,
+    "distribution": {
+      "0": 0,
+      "1": 46,
+      "2": 153,
+      "3": 39,
+      "4": 2,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "frequency_baseline": {
+    "strategy": "frequency_walk_forward",
+    "trial": 0,
+    "draws_tested": 240,
+    "average_best_hits": 2.075,
+    "average_total_hits": 9.0625,
+    "max_best_hits": 4,
+    "at_least_2_percent": 83.333333333,
+    "at_least_3_percent": 22.916666667,
+    "at_least_4_percent": 1.25,
+    "at_least_5_percent": 0.0,
+    "exact_6_count": 0,
+    "distribution": {
+      "0": 0,
+      "1": 40,
+      "2": 145,
+      "3": 52,
+      "4": 3,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "recency_baseline": {
+    "strategy": "recency_weighted_walk_forward",
+    "trial": 0,
+    "draws_tested": 240,
+    "average_best_hits": 2.054166667,
+    "average_total_hits": 8.983333333,
+    "max_best_hits": 4,
+    "at_least_2_percent": 82.916666667,
+    "at_least_3_percent": 20.833333333,
+    "at_least_4_percent": 1.666666667,
+    "at_least_5_percent": 0.0,
+    "exact_6_count": 0,
+    "distribution": {
+      "0": 0,
+      "1": 41,
+      "2": 149,
+      "3": 46,
+      "4": 4,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "random_summary": {
+    "trials": 50,
+    "average_best_hits_mean": 2.080333333,
+    "average_best_hits_std": 0.032511109,
+    "average_best_hits_min": 2.0125,
+    "average_best_hits_max": 2.1625
+  },
+  "comparison": {
+    "neural_minus_frequency_average_best_hits": -0.0875,
+    "neural_minus_recency_average_best_hits": -0.066666667,
+    "neural_minus_random_mean_average_best_hits": -0.092833333,
+    "neural_percentile_among_random_trials": 0.0,
+    "empirical_one_sided_p_value_vs_random_trials": 1.0,
+    "paired": {
+      "versus_frequency": {
+        "baseline": "frequency_walk_forward",
+        "draws": 240,
+        "mean_best_hits_difference": -0.0875,
+        "wins": 56,
+        "ties": 110,
+        "losses": 74,
+        "two_sided_sign_test_p_value": 0.135655565
+      },
+      "versus_recency": {
+        "baseline": "recency_weighted_walk_forward",
+        "draws": 240,
+        "mean_best_hits_difference": -0.066666667,
+        "wins": 52,
+        "ties": 124,
+        "losses": 64,
+        "two_sided_sign_test_p_value": 0.307089664
+      }
+    },
+    "promotion_gate_passed": false,
+    "interpretation": "The neural-dynamics sandbox did not pass the promotion gate on this historical holdout. It remains research-only and is not connected to ticket generation."
+  },
+  "diagnostics": {
+    "state_norm_mean": 0.607313854,
+    "state_norm_max": 0.876501783,
+    "score_standard_deviation_mean": 0.003807007,
+    "all_states_finite": true
+  },
+  "reproducibility": {
+    "command": "python tools/run_experimental_neural_dynamics.py --holdout-draws 240 --minimum-training-draws 500 --package-size 12 --random-trials 50 --frequency-pool-size 49 --recency-decay 0.985 --reservoir-size 32 --leak-rate 0.28 --spectral-radius 0.82 --input-scale 0.65 --bias-scale 0.05 --ridge-alpha 12.0 --score-power 1.4 --seed 1452026",
+    "configuration_sha256": "f2843280b3384c5130b5bee2dacfcd4340cb1e9c8459959920af897d0eff953d",
+    "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "code_sha256": "7145ba895f27c069591c34db896676fe939234e1b4137b5a7df8edd106bcc1d8",
+    "result_signature_sha256": "efcfc98d7674ddadf81443cb8cd35264b07913075f262ee5821b7ef77c38901f",
+    "deterministic_for_same_dataset_code_config": true
+  },
+  "registry_entries": 2,
+  "safe_note_bg": "Това е изолиран исторически sandbox експеримент. Neural-dynamics моделът не е включен в production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи."
+}

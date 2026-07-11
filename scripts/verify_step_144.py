@@ -24,8 +24,6 @@ REQUIRED = [
     ROOT / "reports" / "v144_baseline_lab_summary.json",
     ROOT / "reports" / "v144_baseline_lab_summary.md",
     ROOT / "reports" / "STEP_144_REPRODUCIBLE_EXPERIMENT_REGISTRY_AND_BASELINE_LABORATORY.md",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP144.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP144.md",
 ]
 
 
@@ -156,8 +154,9 @@ def main() -> int:
 
         release = load_json(ROOT / "release-manifest.json")
         listed = {str(row.get("path")) for row in release.get("files", [])}
-        if release.get("checkpoint") != "Step 144":
-            failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
+        checkpoint = str(release.get("checkpoint", ""))
+        if checkpoint not in {"Step 144", "Step 145"}:
+            failures.append(f"Unexpected release checkpoint: {checkpoint}")
         if "scripts/verify_step_144.py" not in listed or "tools/finalize_step_144_release.py" not in listed:
             failures.append("Step 144 release manifest is incomplete")
 

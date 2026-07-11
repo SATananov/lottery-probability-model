@@ -1,0 +1,46 @@
+{
+  "step": 145,
+  "name": "Experimental Neural Dynamics Sandbox and Baseline Comparison",
+  "project_context": "Personal experimental statistics and software-engineering project",
+  "default_configuration": {
+    "holdout_draws": 240,
+    "minimum_training_draws": 500,
+    "package_size": 12,
+    "random_trials": 50,
+    "frequency_pool_size": 49,
+    "recency_decay": 0.985,
+    "reservoir_size": 32,
+    "leak_rate": 0.28,
+    "spectral_radius": 0.82,
+    "input_scale": 0.65,
+    "bias_scale": 0.05,
+    "ridge_alpha": 12.0,
+    "score_power": 1.4,
+    "seed": 1452026
+  },
+  "architecture_scope": {
+    "implemented": "continuous-time-inspired leaky reservoir with online ridge readout",
+    "not_implemented": [
+      "analogue neural hardware",
+      "in-memory computing hardware",
+      "adaptive ODE solver",
+      "production ticket integration"
+    ]
+  },
+  "promotion_gate": {
+    "must_beat_frequency": true,
+    "must_beat_recency": true,
+    "must_beat_random_mean": true,
+    "maximum_empirical_p_value_vs_random": 0.05,
+    "automatic_promotion": false
+  },
+  "guardrails": {
+    "future_data_leakage": "forbidden",
+    "heavy_ml_retraining": "not_performed",
+    "personal_journal_access": "not_used",
+    "production_pipeline_access": "forbidden",
+    "real_ticket_generation": "forbidden",
+    "results_claim": "historical_experiment_only"
+  },
+  "safe_note_bg": "Това е изолиран исторически sandbox експеримент. Neural-dynamics моделът не е включен в production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи."
+}

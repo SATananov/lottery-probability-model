@@ -1,0 +1,17 @@
+{
+  "step": 145,
+  "status": "completed",
+  "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+  "registry_entries": 2,
+  "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+  "configuration_sha256": "f2843280b3384c5130b5bee2dacfcd4340cb1e9c8459959920af897d0eff953d",
+  "result_signature_sha256": "efcfc98d7674ddadf81443cb8cd35264b07913075f262ee5821b7ef77c38901f",
+  "holdout_draws": 240,
+  "promotion_gate_passed": false,
+  "production_integration_enabled": false,
+  "real_ticket_generation_enabled": false,
+  "heavy_ml_retraining_performed": false,
+  "personal_journal_used": false,
+  "future_data_leakage_detected": false,
+  "safe_note_bg": "Това е изолиран исторически sandbox експеримент. Neural-dynamics моделът не е включен в production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи."
+}
