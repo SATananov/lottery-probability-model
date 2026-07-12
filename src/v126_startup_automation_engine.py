@@ -5,6 +5,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+from src.v145_1_runtime_artifact_integrity import (
+    RUNTIME_ROOT,
+    append_jsonl_if_signature_changed,
+    persist_json_pair,
+    write_text,
+)
+
 from src.v123_bst_official_draw_detection_engine import detect_latest_official_draw
 from src.v124_safe_official_draw_ingestion_engine import ingest_official_draw_record
 from src.v125_unified_downstream_refresh_engine import run_unified_downstream_refresh
@@ -15,6 +22,7 @@ STATUS_JSON = ROOT / "models" / "v126_startup_automation_status.json"
 REPORT_JSON = ROOT / "reports" / "v126_startup_automation_report.json"
 SUMMARY_MD = ROOT / "reports" / "v126_startup_automation_summary.md"
 AUDIT_JSONL = ROOT / "reports" / "v126_startup_automation_audit.jsonl"
+RUNTIME_STATUS_JSON = RUNTIME_ROOT / "v126_startup_automation.json"
 
 DEFAULT_CONFIG: dict[str, Any] = {
     "auto_check_enabled": True,
@@ -79,13 +87,17 @@ def load_config_from_mapping(config: dict[str, Any]) -> dict[str, Any]:
 
 
 def load_status(path: Path = STATUS_JSON) -> dict[str, Any]:
-    if not path.exists():
-        return {}
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return data if isinstance(data, dict) else {}
-    except (OSError, json.JSONDecodeError):
-        return {}
+    candidates = (RUNTIME_STATUS_JSON, path) if path == STATUS_JSON else (path,)
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        try:
+            data = json.loads(candidate.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                return data
+        except (OSError, json.JSONDecodeError):
+            continue
+    return {}
 
 
 def cache_is_fresh(status: dict[str, Any], cache_minutes: int, now: datetime | None = None) -> bool:
@@ -108,31 +120,66 @@ def _official_to_record(official: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _write_outputs(report: dict[str, Any], *, status_path: Path = STATUS_JSON, report_path: Path = REPORT_JSON, summary_path: Path = SUMMARY_MD, audit_path: Path = AUDIT_JSONL) -> None:
-    for path in (status_path, report_path, summary_path, audit_path):
-        path.parent.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    status_path.write_text(payload, encoding="utf-8")
-    report_path.write_text(payload, encoding="utf-8")
-    summary_path.write_text(
-        "\n".join([
-            "# Step 126 — Startup Automation and Operator Controls",
-            "",
-            f"- Status: **{report.get('status', '')}**",
-            f"- Trigger: **{report.get('trigger', '')}**",
-            f"- Checked at UTC: `{report.get('checked_at_utc', '')}`",
-            f"- Detection: **{(report.get('detection') or {}).get('status', '')}**",
-            f"- Auto apply: **{report.get('auto_apply_attempted', False)}**",
-            f"- Auto refresh: **{report.get('auto_refresh_attempted', False)}**",
-            "- Heavy ML retraining: **No**",
-            "",
-            str(report.get("message") or ""),
-            "",
-        ]),
-        encoding="utf-8",
+def _render_startup_summary(report: dict[str, Any]) -> str:
+    return "\n".join([
+        "# Step 126 — Startup Automation and Operator Controls",
+        "",
+        f"- Status: **{report.get('status', '')}**",
+        f"- Trigger: **{report.get('trigger', '')}**",
+        f"- Checked at UTC: `{report.get('checked_at_utc', '')}`",
+        f"- Detection: **{(report.get('detection') or {}).get('status', '')}**",
+        f"- Auto apply: **{report.get('auto_apply_attempted', False)}**",
+        f"- Auto refresh: **{report.get('auto_refresh_attempted', False)}**",
+        "- Heavy ML retraining: **No**",
+        "",
+        str(report.get("message") or ""),
+        "",
+    ])
+
+
+def _write_outputs(
+    report: dict[str, Any],
+    *,
+    status_path: Path = STATUS_JSON,
+    report_path: Path = REPORT_JSON,
+    summary_path: Path = SUMMARY_MD,
+    audit_path: Path = AUDIT_JSONL,
+) -> None:
+    default_paths = (status_path, report_path, summary_path, audit_path) == (
+        STATUS_JSON, REPORT_JSON, SUMMARY_MD, AUDIT_JSONL
     )
-    with audit_path.open("a", encoding="utf-8") as handle:
-        handle.write(json.dumps(report, ensure_ascii=False, sort_keys=True) + "\n")
+    summary = _render_startup_summary(report)
+    if not default_paths:
+        for path in (status_path, report_path, summary_path, audit_path):
+            path.parent.mkdir(parents=True, exist_ok=True)
+        payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+        write_text(status_path, payload)
+        write_text(report_path, payload)
+        write_text(summary_path, summary)
+        with audit_path.open("a", encoding="utf-8", newline="") as handle:
+            handle.write(json.dumps(report, ensure_ascii=False, sort_keys=True) + "\n")
+        return
+
+    volatile = {"source_diagnostics", "trigger", "cache_reused"}
+    canonical_changed = persist_json_pair(
+        component="v126_startup_automation",
+        payload=report,
+        canonical_paths=(STATUS_JSON, REPORT_JSON),
+        volatile_keys=volatile,
+    )
+    runtime_dir = RUNTIME_ROOT / "v126"
+    write_text(runtime_dir / SUMMARY_MD.name, summary)
+    append_jsonl_if_signature_changed(
+        runtime_dir / AUDIT_JSONL.name,
+        report,
+        signature_path=runtime_dir / "last_audit_signature.sha256",
+        volatile_keys=volatile,
+    )
+    if canonical_changed:
+        write_text(SUMMARY_MD, summary)
+        AUDIT_JSONL.parent.mkdir(parents=True, exist_ok=True)
+        with AUDIT_JSONL.open("a", encoding="utf-8", newline="") as handle:
+            handle.write(json.dumps(report, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 def run_startup_automation(
@@ -192,7 +239,7 @@ def run_startup_automation(
     refresh = refresher or run_unified_downstream_refresh
 
     try:
-        detection = detect(timeout=cfg["network_timeout_seconds"], validate_details=True, write_outputs=True)
+        detection = detect(timeout=cfg["network_timeout_seconds"], validate_details=True, write_outputs=write_outputs)
         base["detection"] = detection
         base["checked_at_utc"] = detection.get("checked_at_utc", started)
         detection_status = detection.get("status")

@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+from src.v145_1_runtime_artifact_integrity import RUNTIME_ROOT, persist_json_pair, write_text
+
 from src.bst_official_sync_engine import (
     OFFICIAL_BASE_URL,
     extract_draw_links,
@@ -163,32 +165,39 @@ def detect_latest_official_draw(
     return report
 
 
+def _render_detection_summary(report: dict[str, Any]) -> str:
+    local = report.get("local_latest_draw") or {}
+    official = report.get("official_latest_draw") or {}
+    return "\n".join([
+        "# Step 123 — BST Official Draw Detection Foundation",
+        "",
+        f"- Checked at UTC: `{report.get('checked_at_utc', '')}`",
+        f"- Status: **{report.get('status', '')}**",
+        f"- Local latest: **{local.get('year', '?')}-{local.get('draw_number', '?')}**",
+        f"- Official latest: **{official.get('year', '?')}-{official.get('draw_number', '?')}**",
+        f"- Draw delta: **{report.get('draw_delta')}**",
+        f"- Validation passed: **{report.get('validation', {}).get('passed', False)}**",
+        "- Draw data written: **No**",
+        "- Downstream refresh started: **No**",
+        "",
+        str(report.get("message", "")),
+        "",
+    ])
+
+
 def write_detection_outputs(report: dict[str, Any]) -> None:
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    STATUS_JSON.write_text(text, encoding="utf-8")
-    REPORT_JSON.write_text(text, encoding="utf-8")
-    local = report.get("local_latest_draw") or {}
-    official = report.get("official_latest_draw") or {}
-    SUMMARY_MD.write_text(
-        "\n".join([
-            "# Step 123 — BST Official Draw Detection Foundation",
-            "",
-            f"- Checked at UTC: `{report.get('checked_at_utc', '')}`",
-            f"- Status: **{report.get('status', '')}**",
-            f"- Local latest: **{local.get('year', '?')}-{local.get('draw_number', '?')}**",
-            f"- Official latest: **{official.get('year', '?')}-{official.get('draw_number', '?')}**",
-            f"- Draw delta: **{report.get('draw_delta')}**",
-            f"- Validation passed: **{report.get('validation', {}).get('passed', False)}**",
-            "- Draw data written: **No**",
-            "- Downstream refresh started: **No**",
-            "",
-            report.get("message", ""),
-            "",
-        ]),
-        encoding="utf-8",
+    canonical_changed = persist_json_pair(
+        component="v123_bst_official_draw_detection",
+        payload=report,
+        canonical_paths=(STATUS_JSON, REPORT_JSON),
+        volatile_keys={"source_diagnostics"},
     )
+    summary = _render_detection_summary(report)
+    write_text(RUNTIME_ROOT / "v123" / SUMMARY_MD.name, summary)
+    if canonical_changed:
+        write_text(SUMMARY_MD, summary)
 
 
 if __name__ == "__main__":

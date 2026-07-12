@@ -3,11 +3,21 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.v145_1_release_artifact_integrity import (
+    POLICY_VERSION,
+    collect_release_rows,
+    release_scope_description,
+    validate_release_manifest,
+)
 RELEASE_MANIFEST = ROOT / "release-manifest.json"
 CLEAN_MANIFEST = ROOT / "CLEAN_ZIP_MANIFEST_STEP144.md"
 FULL_MANIFEST = ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP144.md"
@@ -28,16 +38,7 @@ def load_json(path: Path) -> dict:
 
 
 def project_files() -> list[dict]:
-    rows: list[dict] = []
-    for path in sorted(ROOT.rglob("*"), key=lambda item: item.as_posix().lower()):
-        if not path.is_file() or ".git" in path.parts or "__pycache__" in path.parts or path.suffix == ".pyc":
-            continue
-        rel = path.relative_to(ROOT).as_posix()
-        if rel in EXCLUDED:
-            continue
-        data = path.read_bytes()
-        rows.append({"path": rel, "size_bytes": len(data), "sha256": sha256_bytes(data)})
-    return rows
+    return collect_release_rows(root=ROOT, extra_excluded=EXCLUDED)
 
 
 def write_manifests() -> dict:
@@ -45,10 +46,8 @@ def write_manifests() -> dict:
     release = {
         "checkpoint": "Step 144",
         "project": "lottery-probability-model",
-        "manifest_scope": (
-            "All project files except release-manifest.json, CLEAN_ZIP_MANIFEST_STEP144.md "
-            "and FULL_CLEAN_CHECKPOINT_MANIFEST_STEP144.md"
-        ),
+        "release_policy_version": POLICY_VERSION,
+        "manifest_scope": release_scope_description(),
         "file_count": len(rows),
         "files": rows,
     }
@@ -151,20 +150,12 @@ After review, commit and push Step 144 before running a new custom experiment.
 
 def verify_manifests() -> dict:
     release = load_json(RELEASE_MANIFEST)
-    failures: list[str] = []
-    for row in release.get("files", []):
-        path = ROOT / str(row.get("path", ""))
-        if not path.is_file():
-            failures.append(f"missing:{row.get('path')}")
-            continue
-        data = path.read_bytes()
-        if len(data) != row.get("size_bytes") or sha256_bytes(data) != row.get("sha256"):
-            failures.append(f"mismatch:{row.get('path')}")
-    current = {row["path"] for row in project_files()}
-    listed = {str(row.get("path")) for row in release.get("files", [])}
-    failures.extend(f"unlisted:{path}" for path in sorted(current - listed))
-    failures.extend(f"stale:{path}" for path in sorted(listed - current))
-    return {"ok": not failures, "failure_count": len(failures), "failures": failures}
+    return validate_release_manifest(
+        release,
+        root=ROOT,
+        expected_checkpoint="Step 144",
+        extra_excluded=EXCLUDED,
+    )
 
 
 def main() -> int:

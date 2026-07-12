@@ -73,6 +73,7 @@ def main() -> int:
             DATASET_PATH,
             DEFAULT_CONFIG,
             deterministic_signature,
+            dataset_sha256,
             run_reproducible_baseline_experiment,
         )
 
@@ -120,7 +121,7 @@ def main() -> int:
         status = load_json(ROOT / "models" / "v144_reproducible_experiment_registry_status.json")
         if status.get("status") != "completed":
             failures.append(f"Invalid Step 144 status: {status.get('status')}")
-        if status.get("dataset_sha256") != file_hash(DATASET_PATH):
+        if status.get("dataset_sha256") != dataset_sha256(DATASET_PATH):
             failures.append("Status dataset hash does not match canonical dataset")
         if status.get("heavy_ml_retraining_performed") is not False:
             failures.append("Status heavy-ML guardrail is invalid")
@@ -155,7 +156,7 @@ def main() -> int:
         release = load_json(ROOT / "release-manifest.json")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         checkpoint = str(release.get("checkpoint", ""))
-        if checkpoint not in {"Step 144", "Step 145"}:
+        if checkpoint not in {"Step 144", "Step 145", "Step 145.1"}:
             failures.append(f"Unexpected release checkpoint: {checkpoint}")
         if "scripts/verify_step_144.py" not in listed or "tools/finalize_step_144_release.py" not in listed:
             failures.append("Step 144 release manifest is incomplete")

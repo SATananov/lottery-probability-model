@@ -24,8 +24,6 @@ REQUIRED = [
     ROOT / "reports" / "v145_neural_dynamics_summary.md",
     ROOT / "reports" / "STEP_145_EXPERIMENTAL_NEURAL_DYNAMICS_SANDBOX_AND_BASELINE_COMPARISON.md",
     ROOT / "scripts" / "verify_step_145.py",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP145.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145.md",
 ]
 
 
@@ -73,6 +71,13 @@ def main() -> int:
         if not path.exists():
             failures.append(f"Missing: {path.relative_to(ROOT)}")
 
+    metadata_pairs = [
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP145.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145.md"),
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP145_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145_1.md"),
+    ]
+    if not any(all(path.exists() for path in pair) for pair in metadata_pairs):
+        failures.append("Missing Step 145 or Step 145.1 clean checkpoint manifests")
+
     compile_targets = [path for path in REQUIRED if path.suffix == ".py"] + [ROOT / "streamlit_app.py"]
     for path in compile_targets:
         if not path.exists():
@@ -88,6 +93,7 @@ def main() -> int:
             DATASET_PATH,
             DEFAULT_CONFIG,
             deterministic_signature,
+            dataset_sha256,
             run_experimental_neural_dynamics,
         )
 
@@ -125,7 +131,7 @@ def main() -> int:
         status = load_json(ROOT / "models" / "v145_experimental_neural_dynamics_status.json")
         if status.get("status") != "completed":
             failures.append(f"Invalid Step 145 status: {status.get('status')}")
-        if status.get("dataset_sha256") != file_hash(DATASET_PATH):
+        if status.get("dataset_sha256") != dataset_sha256(DATASET_PATH):
             failures.append("Step 145 dataset hash does not match canonical dataset")
         for key in (
             "production_integration_enabled",
@@ -193,7 +199,7 @@ def main() -> int:
             failures.append("Step 145 read-only rerun does not reproduce stored signature")
 
         release = load_json(ROOT / "release-manifest.json")
-        if release.get("checkpoint") != "Step 145":
+        if release.get("checkpoint") not in {"Step 145", "Step 145.1"}:
             failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         for required_path in (

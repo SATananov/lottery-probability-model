@@ -1,0 +1,43 @@
+{
+  "step": "145.1",
+  "name": "Clean Release Metadata & Runtime Artifact Integrity Repair",
+  "release_policy_version": "145.1",
+  "archive_root": "lottery-probability-model",
+  "tracked_snapshots_update_only_on_semantic_change": true,
+  "runtime_root": "reports/runtime/v145_1_artifact_integrity/",
+  "runtime_root_is_git_ignored": true,
+  "release_excludes_runtime_root": true,
+  "forbidden_directory_names": [
+    ".git",
+    ".venv",
+    "venv",
+    ".r-lib",
+    "__pycache__",
+    ".pytest_cache",
+    ".ipynb_checkpoints",
+    ".vscode",
+    ".idea",
+    "_clean_zip_diagnostics",
+    "build",
+    "dist"
+  ],
+  "forbidden_artifact_classes": [
+    "compiled Python files",
+    "temporary ZIP archives",
+    "logs and temporary files",
+    "manual backups",
+    "secret environment files",
+    "runtime check caches"
+  ],
+  "protected_project_areas": [
+    "data/user_journal.db",
+    "data/prize_winner_history.csv",
+    "data/historical_draws.csv",
+    "models/v145_experimental_neural_dynamics_status.json",
+    "reports/v145_neural_dynamics_summary.json"
+  ],
+  "heavy_ml_retraining_performed": false,
+  "production_pipeline_changed": false,
+  "personal_journal_changed": false,
+  "cross_platform_dataset_identity": "normalize CSV newlines to historical CRLF before SHA-256"
+}

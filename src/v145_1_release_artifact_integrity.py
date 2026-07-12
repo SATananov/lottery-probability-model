@@ -1,0 +1,256 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import tempfile
+import zipfile
+from pathlib import Path, PurePosixPath
+from typing import Any, Iterable
+
+ROOT = Path(__file__).resolve().parents[1]
+POLICY_VERSION = "145.1"
+ARCHIVE_ROOT_NAME = "lottery-probability-model"
+
+FORBIDDEN_DIRECTORY_NAMES = {
+    ".git",
+    ".venv",
+    "venv",
+    ".r-lib",
+    "__pycache__",
+    ".pytest_cache",
+    ".ipynb_checkpoints",
+    ".vscode",
+    ".idea",
+    "_clean_zip_diagnostics",
+    "build",
+    "dist",
+}
+FORBIDDEN_FILE_NAMES = {
+    ".coverage",
+    ".DS_Store",
+    "Thumbs.db",
+    ".env",
+    "secrets.toml",
+}
+FORBIDDEN_SUFFIXES = {
+    ".pyc",
+    ".pyo",
+    ".pyd",
+    ".zip",
+    ".log",
+    ".tmp",
+    ".bak",
+    ".backup",
+    ".sqlite-journal",
+    ".db-journal",
+}
+FORBIDDEN_PREFIXES = {
+    "reports/runtime/",
+    "data/manual_backups/",
+}
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _parts(rel_path: str) -> tuple[str, ...]:
+    return tuple(part for part in PurePosixPath(rel_path).parts if part not in {"", "."})
+
+
+def forbidden_release_reason(rel_path: str) -> str | None:
+    normalized = PurePosixPath(rel_path.replace("\\", "/")).as_posix().lstrip("/")
+    parts = _parts(normalized)
+    if not parts or ".." in parts:
+        return "unsafe_path"
+    if any(part in FORBIDDEN_DIRECTORY_NAMES for part in parts[:-1]):
+        return "forbidden_directory"
+    if any(normalized.startswith(prefix) for prefix in FORBIDDEN_PREFIXES):
+        return "runtime_or_backup_path"
+    name = parts[-1]
+    if name in FORBIDDEN_FILE_NAMES:
+        return "forbidden_file"
+    if name.startswith(".env.") and name != ".env.example":
+        return "secret_environment_file"
+    lower_name = name.lower()
+    if any(lower_name.endswith(suffix) for suffix in FORBIDDEN_SUFFIXES):
+        return "forbidden_suffix"
+    if len(parts) == 1 and (
+        (name.startswith("CLEAN_ZIP_MANIFEST_STEP") and name.endswith(".md"))
+        or (name.startswith("FULL_CLEAN_CHECKPOINT_MANIFEST_STEP") and name.endswith(".md"))
+        or name == "release-manifest.json"
+    ):
+        return "release_metadata_managed_separately"
+    return None
+
+
+def is_release_file(path: Path, *, root: Path = ROOT, extra_excluded: Iterable[str] = ()) -> bool:
+    if not path.is_file() or path.is_symlink():
+        return False
+    rel = path.relative_to(root).as_posix()
+    if rel in set(extra_excluded):
+        return False
+    return forbidden_release_reason(rel) is None
+
+
+def collect_release_rows(*, root: Path = ROOT, extra_excluded: Iterable[str] = ()) -> list[dict[str, Any]]:
+    excluded = set(extra_excluded)
+    rows: list[dict[str, Any]] = []
+    for path in sorted(root.rglob("*"), key=lambda item: item.as_posix().lower()):
+        if not is_release_file(path, root=root, extra_excluded=excluded):
+            continue
+        rel = path.relative_to(root).as_posix()
+        data = path.read_bytes()
+        rows.append({"path": rel, "size_bytes": len(data), "sha256": sha256_bytes(data)})
+    return rows
+
+
+def release_scope_description() -> str:
+    return (
+        "All intended project files under release policy 145.1; excludes release metadata files, "
+        ".git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, "
+        "temporary archives, logs and backup artifacts."
+    )
+
+
+def validate_release_manifest(
+    manifest: dict[str, Any],
+    *,
+    root: Path = ROOT,
+    expected_checkpoint: str | None = None,
+    extra_excluded: Iterable[str] = (),
+) -> dict[str, Any]:
+    failures: list[str] = []
+    if expected_checkpoint is not None and manifest.get("checkpoint") != expected_checkpoint:
+        failures.append(f"checkpoint:{manifest.get('checkpoint')}")
+    if manifest.get("release_policy_version") != POLICY_VERSION:
+        failures.append(f"release_policy_version:{manifest.get('release_policy_version')}")
+
+    raw_rows = manifest.get("files", [])
+    if not isinstance(raw_rows, list):
+        raw_rows = []
+        failures.append("files:not_list")
+    listed_paths: list[str] = []
+    for index, row in enumerate(raw_rows):
+        if not isinstance(row, dict):
+            failures.append(f"invalid_row:{index}")
+            continue
+        rel = str(row.get("path", ""))
+        listed_paths.append(rel)
+        reason = forbidden_release_reason(rel)
+        if reason is not None:
+            failures.append(f"forbidden:{reason}:{rel}")
+            continue
+        path = root / rel
+        if not path.is_file() or path.is_symlink():
+            failures.append(f"missing_or_symlink:{rel}")
+            continue
+        data = path.read_bytes()
+        if len(data) != row.get("size_bytes"):
+            failures.append(f"size_mismatch:{rel}")
+        if sha256_bytes(data) != row.get("sha256"):
+            failures.append(f"hash_mismatch:{rel}")
+
+    if len(listed_paths) != len(set(listed_paths)):
+        failures.append("duplicate_paths")
+    if manifest.get("file_count") != len(raw_rows):
+        failures.append(f"file_count:{manifest.get('file_count')}!={len(raw_rows)}")
+
+    current = {row["path"] for row in collect_release_rows(root=root, extra_excluded=extra_excluded)}
+    listed = set(listed_paths)
+    failures.extend(f"unlisted:{path}" for path in sorted(current - listed))
+    failures.extend(f"stale:{path}" for path in sorted(listed - current))
+    return {
+        "ok": not failures,
+        "failure_count": len(failures),
+        "failures": failures,
+        "current_file_count": len(current),
+        "listed_file_count": len(listed),
+    }
+
+
+def _atomic_write_bytes(path: Path, data: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_name, path)
+    finally:
+        try:
+            Path(tmp_name).unlink(missing_ok=True)
+        except OSError:
+            pass
+
+
+def write_json_atomic(path: Path, payload: dict[str, Any]) -> None:
+    _atomic_write_bytes(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+
+
+def build_clean_zip(
+    destination: Path,
+    *,
+    root: Path = ROOT,
+    metadata_files: Iterable[Path] = (),
+    compression: int = zipfile.ZIP_DEFLATED,
+) -> dict[str, Any]:
+    rows = collect_release_rows(root=root)
+    files = [root / row["path"] for row in rows]
+    for path in metadata_files:
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        files.append(path)
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(prefix=f".{destination.name}.", suffix=".tmp", dir=destination.parent)
+    os.close(fd)
+    tmp_path = Path(tmp_name)
+    try:
+        with zipfile.ZipFile(tmp_path, "w", compression=compression, compresslevel=9) as archive:
+            for path in sorted(files, key=lambda item: item.relative_to(root).as_posix().lower()):
+                rel = path.relative_to(root).as_posix()
+                arcname = f"{ARCHIVE_ROOT_NAME}/{rel}"
+                archive.write(path, arcname=arcname)
+        os.replace(tmp_path, destination)
+    finally:
+        tmp_path.unlink(missing_ok=True)
+
+    forbidden_entries: list[str] = []
+    with zipfile.ZipFile(destination, "r") as archive:
+        names = archive.namelist()
+        for name in names:
+            pure = PurePosixPath(name)
+            if not pure.parts or pure.parts[0] != ARCHIVE_ROOT_NAME:
+                forbidden_entries.append(f"outside_root:{name}")
+                continue
+            rel = PurePosixPath(*pure.parts[1:]).as_posix()
+            if rel and forbidden_release_reason(rel) not in {None, "release_metadata_managed_separately"}:
+                forbidden_entries.append(name)
+        bad = archive.testzip()
+        if bad:
+            forbidden_entries.append(f"crc_error:{bad}")
+
+    if forbidden_entries:
+        destination.unlink(missing_ok=True)
+        raise RuntimeError("Clean ZIP validation failed: " + ", ".join(forbidden_entries[:20]))
+
+    return {
+        "archive": str(destination),
+        "archive_sha256": sha256_file(destination),
+        "archive_size_bytes": destination.stat().st_size,
+        "archive_entries": len(files),
+        "release_rows": len(rows),
+        "metadata_entries": len(files) - len(rows),
+        "forbidden_entries": [],
+    }

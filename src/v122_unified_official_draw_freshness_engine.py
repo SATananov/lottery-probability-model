@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
+
+from src.v145_1_runtime_artifact_integrity import RUNTIME_ROOT, persist_json_pair, write_text
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -251,26 +254,23 @@ def build_freshness_report(write_outputs: bool = True) -> dict[str, Any]:
     return report
 
 
-def _write_outputs(report: dict[str, Any]) -> None:
-    MODELS_DIR.mkdir(parents=True, exist_ok=True)
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    encoded = json.dumps(report, ensure_ascii=False, indent=2)
-    STATUS_JSON.write_text(encoded + "\n", encoding="utf-8")
-    REPORT_JSON.write_text(encoded + "\n", encoding="utf-8")
-
+def _render_matrix_csv(report: dict[str, Any]) -> str:
     fields = ["key", "label", "status", "year", "draw_number", "date", "draw_delta", "path", "message"]
-    with REPORT_CSV.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
-        writer.writeheader()
-        for source in report["sources"]:
-            latest = source.get("latest") or {}
-            writer.writerow({
-                "key": source["key"], "label": source["label"], "status": source["status"],
-                "year": latest.get("year", ""), "draw_number": latest.get("draw_number", ""),
-                "date": latest.get("date", ""), "draw_delta": source.get("draw_delta", ""),
-                "path": source["path"], "message": source["message"],
-            })
+    output = io.StringIO(newline="")
+    writer = csv.DictWriter(output, fieldnames=fields)
+    writer.writeheader()
+    for source in report["sources"]:
+        latest = source.get("latest") or {}
+        writer.writerow({
+            "key": source["key"], "label": source["label"], "status": source["status"],
+            "year": latest.get("year", ""), "draw_number": latest.get("draw_number", ""),
+            "date": latest.get("date", ""), "draw_delta": source.get("draw_delta", ""),
+            "path": source["path"], "message": source["message"],
+        })
+    return output.getvalue()
 
+
+def _render_summary(report: dict[str, Any]) -> str:
     official = report["official_latest_draw"]
     lines = [
         "# Step 122 — Unified Official Draw Freshness Layer", "",
@@ -290,7 +290,25 @@ def _write_outputs(report: dict[str, Any]) -> None:
             draw_label = f"{draw_year}-{draw_number}"
         lines.append(f"| {source['label']} | {draw_label} | {latest.get('date', '')} | {source['status']} | {source.get('draw_delta', '')} |")
     lines.extend(["", "Heavy model retraining performed: **No**.", ""])
-    SUMMARY_MD.write_text("\n".join(lines), encoding="utf-8")
+    return "\n".join(lines)
+
+
+def _write_outputs(report: dict[str, Any]) -> None:
+    MODELS_DIR.mkdir(parents=True, exist_ok=True)
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    canonical_changed = persist_json_pair(
+        component="v122_unified_official_draw_freshness",
+        payload=report,
+        canonical_paths=(STATUS_JSON, REPORT_JSON),
+    )
+    matrix_text = _render_matrix_csv(report)
+    summary_text = _render_summary(report)
+    runtime_dir = RUNTIME_ROOT / "v122"
+    write_text(runtime_dir / REPORT_CSV.name, matrix_text)
+    write_text(runtime_dir / SUMMARY_MD.name, summary_text)
+    if canonical_changed:
+        write_text(REPORT_CSV, matrix_text)
+        write_text(SUMMARY_MD, summary_text)
 
 
 if __name__ == "__main__":

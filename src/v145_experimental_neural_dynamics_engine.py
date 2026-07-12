@@ -19,6 +19,7 @@ from src.v144_reproducible_experiment_registry_engine import (
     REGISTRY_PATH,
     canonical_hash,
     dataset_descriptor,
+    dataset_sha256,
     environment_descriptor,
     load_draws,
     sha256_file,

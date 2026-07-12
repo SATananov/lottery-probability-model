@@ -281,3 +281,19 @@ python .\scripts\verify_step_145.py
 ```
 
 Подробности: `reports/STEP_145_EXPERIMENTAL_NEURAL_DYNAMICS_SANDBOX_AND_BASELINE_COMPARISON.md`.
+
+## Step 145.1
+
+Step 145.1 поправя release metadata и volatile runtime артефактите. Всички finalizer-и от Step 143.3 нататък използват единен release policy, който изключва `.git`, локални среди, caches, runtime storage, secrets, ZIP/log/backup файлове и build artifacts. Manifest проверката вече отказва забранени пътища и валидира size, SHA-256, duplicates, stale и unlisted записи.
+
+Step 122, Step 123 и Step 126 пазят текущите timestamps и diagnostics в Git-ignored `reports/runtime/v145_1_artifact_integrity/`. Tracked operational snapshots се обновяват само при реална semantic промяна, а идентична startup проверка вече не добавя нов canonical audit ред. Dataset SHA за Step 144/145 е стабилизиран между Windows CRLF и Linux LF checkout, без промяна на запазените experiment signatures.
+
+Команди:
+
+```powershell
+python .\scripts\verify_step_145_1.py
+python .\tools\finalize_step_145_1_release.py --verify-only
+python .\tools\finalize_step_145_1_release.py --build-zip
+```
+
+Подробности: `reports/STEP_145_1_CLEAN_RELEASE_METADATA_RUNTIME_ARTIFACT_INTEGRITY_REPAIR.md`.

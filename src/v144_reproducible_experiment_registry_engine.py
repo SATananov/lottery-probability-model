@@ -54,6 +54,19 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def dataset_sha256(path: Path = DATASET_PATH) -> str:
+    """Return the historical Windows-compatible dataset identity on every platform.
+
+    Step 144 and Step 145 were registered from a Windows checkout whose CSV files
+    used CRLF line endings. Normalizing text newlines to CRLF preserves those stored
+    experiment signatures while making read-only verification independent of the
+    checkout platform and Git line-ending configuration.
+    """
+    data = path.read_bytes()
+    normalized = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(normalized).hexdigest()
+
+
 def canonical_hash(value: Any) -> str:
     encoded = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
@@ -106,7 +119,7 @@ def _draw_key(draw: dict[str, Any]) -> str:
 def dataset_descriptor(draws: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "path": DATASET_PATH.relative_to(ROOT).as_posix(),
-        "sha256": sha256_file(DATASET_PATH),
+        "sha256": dataset_sha256(DATASET_PATH),
         "row_count": len(draws),
         "first_draw": _draw_key(draws[0]),
         "latest_draw": _draw_key(draws[-1]),

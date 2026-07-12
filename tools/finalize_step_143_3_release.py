@@ -3,11 +3,21 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.v145_1_release_artifact_integrity import (
+    POLICY_VERSION,
+    collect_release_rows,
+    release_scope_description,
+    validate_release_manifest,
+)
 RELEASE_MANIFEST = ROOT / "release-manifest.json"
 CLEAN_MANIFEST = ROOT / "CLEAN_ZIP_MANIFEST_STEP143_3.md"
 FULL_MANIFEST = ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP143_3.md"
@@ -25,16 +35,7 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def project_files() -> list[dict]:
-    rows: list[dict] = []
-    for path in sorted(ROOT.rglob("*"), key=lambda item: item.as_posix().lower()):
-        if not path.is_file() or "__pycache__" in path.parts or path.suffix == ".pyc":
-            continue
-        rel = path.relative_to(ROOT).as_posix()
-        if rel in EXCLUDED:
-            continue
-        data = path.read_bytes()
-        rows.append({"path": rel, "size_bytes": len(data), "sha256": sha256_bytes(data)})
-    return rows
+    return collect_release_rows(root=ROOT, extra_excluded=EXCLUDED)
 
 
 def load_json(path: Path) -> dict:
@@ -48,7 +49,8 @@ def write_manifests() -> dict:
     release = {
         "checkpoint": "Step 143.3",
         "project": "lottery-probability-model",
-        "manifest_scope": "All project files except release-manifest.json, CLEAN_ZIP_MANIFEST_STEP143_3.md and FULL_CLEAN_CHECKPOINT_MANIFEST_STEP143_3.md",
+        "release_policy_version": POLICY_VERSION,
+        "manifest_scope": release_scope_description(),
         "file_count": len(rows),
         "files": rows,
     }
@@ -166,22 +168,12 @@ After review, commit and push Step 143.3 before entering the next official draw.
 
 def verify_manifests() -> dict:
     release = load_json(RELEASE_MANIFEST)
-    failures: list[str] = []
-    for row in release.get("files", []):
-        path = ROOT / row["path"]
-        if not path.is_file():
-            failures.append(f"missing:{row['path']}")
-            continue
-        data = path.read_bytes()
-        if len(data) != row.get("size_bytes") or sha256_bytes(data) != row.get("sha256"):
-            failures.append(f"mismatch:{row['path']}")
-    current = {row["path"] for row in project_files()}
-    listed = {row["path"] for row in release.get("files", [])}
-    for path in sorted(current - listed):
-        failures.append(f"unlisted:{path}")
-    for path in sorted(listed - current):
-        failures.append(f"stale:{path}")
-    return {"ok": not failures, "failure_count": len(failures), "failures": failures}
+    return validate_release_manifest(
+        release,
+        root=ROOT,
+        expected_checkpoint="Step 143.3",
+        extra_excluded=EXCLUDED,
+    )
 
 
 def main() -> int:
