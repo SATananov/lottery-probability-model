@@ -1,21 +1,21 @@
 {
-  "checkpoint": "Step 145.1",
-  "checkpoint_title": "Clean Release Metadata & Runtime Artifact Integrity Repair",
+  "checkpoint": "Step 146",
+  "checkpoint_title": "Controlled Neural Experiment Expansion & Robustness Validation",
   "project": "lottery-probability-model",
   "release_policy_version": "145.1",
   "manifest_scope": "All intended project files under release policy 145.1; excludes release metadata files, .git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, temporary archives, logs and backup artifacts.",
   "runtime_artifact_policy": {
     "runtime_root": "reports/runtime/v145_1_artifact_integrity/",
     "tracked_snapshots_update_only_on_semantic_change": true,
-    "volatile_fields_ignored_for_snapshot_updates": [
-      "generated_at_utc",
-      "checked_at_utc",
-      "started_at_utc",
-      "finished_at_utc",
-      "source_diagnostics",
-      "trigger",
-      "cache_reused"
-    ]
+    "runtime_cache_in_release": false
+  },
+  "experimental_scope": {
+    "step": 146,
+    "research_only": true,
+    "multi_seed": true,
+    "non_overlapping_historical_folds": true,
+    "confidence_intervals": true,
+    "automatic_production_promotion": false
   },
   "forbidden_release_classes": [
     ".git and local environments",
@@ -25,7 +25,7 @@
     "temporary archives, logs and backups",
     "build output and editor metadata"
   ],
-  "file_count": 1395,
+  "file_count": 1410,
   "files": [
     {
       "path": ".gitignore",
@@ -69,8 +69,8 @@
     },
     {
       "path": "data/experiment_registry.jsonl",
-      "size_bytes": 105518,
-      "sha256": "0213ac83cd425228073bfe0242bb714df7db9cfe47e2556e2aaf7a780d36e8e2"
+      "size_bytes": 682038,
+      "sha256": "f249d4ce793f1f89690b56a40fdfada24b980093f8ad5c433aa075bcc6986481"
     },
     {
       "path": "data/historical_draws.csv",
@@ -2088,6 +2088,16 @@
       "sha256": "2cbfc10eb5e0be8b90787f2c0f49c3676f38d3dce4d3472b07d30042d003a0b5"
     },
     {
+      "path": "models/v146_controlled_neural_robustness_policy.json",
+      "size_bytes": 2194,
+      "sha256": "32fae26eca1ff7c51989f8edf29dd8f5e7310558816aae27c540db8e379cbfa1"
+    },
+    {
+      "path": "models/v146_controlled_neural_robustness_status.json",
+      "size_bytes": 1022,
+      "sha256": "5188f90d8aa50c70696ca012395fe032782066876140110424d88020488e7f1e"
+    },
+    {
       "path": "models/v41/v41_frequency_main_numbers_model.json",
       "size_bytes": 1923,
       "sha256": "ce8b012850db76382a084e159e538481522b03c58316b23501c90a408bddd7d9"
@@ -2629,8 +2639,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 16505,
-      "sha256": "129a901bffc22eb50698b940e2f9074914210956ba6133b1fec729e1bb5c57fd"
+      "size_bytes": 17788,
+      "sha256": "253d41ee4d7c1a15805a44fa12e389a80b6889a68debbdbafa7eaaf01563169c"
     },
     {
       "path": "README_UI.md",
@@ -2711,6 +2721,11 @@
       "path": "reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json",
       "size_bytes": 114163,
       "sha256": "66e09cc5e50dc63154c99125c8f7a4815d1d5024460be6269dee936f9e4bf0bb"
+    },
+    {
+      "path": "reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json",
+      "size_bytes": 924296,
+      "sha256": "357359d99f7098281dda1603785471bd1a191dbab08357f03198fa227f6099d8"
     },
     {
       "path": "reports/frequency_model_report.md",
@@ -2936,6 +2951,11 @@
       "path": "reports/STEP_145_EXPERIMENTAL_NEURAL_DYNAMICS_SANDBOX_AND_BASELINE_COMPARISON.md",
       "size_bytes": 4152,
       "sha256": "5c3724ec8bd85bfff9f0acadf6a4c91c7e1a1c34ef2f33a5ced08cb048218694"
+    },
+    {
+      "path": "reports/STEP_146_CONTROLLED_NEURAL_EXPERIMENT_EXPANSION_AND_ROBUSTNESS_VALIDATION.md",
+      "size_bytes": 2938,
+      "sha256": "e25c737576065b3b3b69d247a2ea0d4deceb4685a62bafe65867ac974c67a340"
     },
     {
       "path": "reports/v100_final_release_lock_checklist.csv",
@@ -3754,8 +3774,8 @@
     },
     {
       "path": "reports/v144_experiment_registry_index.csv",
-      "size_bytes": 759,
-      "sha256": "913f475fe41311c2287dba2fa82ecb7e3033ed5b0e0dc1ec93bbaafdb7846083"
+      "size_bytes": 1108,
+      "sha256": "a42956c77a4886a5001d58d373765332fe1cdd37d4b11f527d4d752bbc514bb8"
     },
     {
       "path": "reports/v145_neural_dynamics_draw_comparison.csv",
@@ -3776,6 +3796,36 @@
       "path": "reports/v145_neural_dynamics_summary.md",
       "size_bytes": 2166,
       "sha256": "40cca9e9e7eea77b5716b862481a6922843ff930c8c20cd306703d46dcdaa56e"
+    },
+    {
+      "path": "reports/v146_neural_robustness_draw_comparison.csv",
+      "size_bytes": 80126,
+      "sha256": "a120ef70c1c0e3a1408943d4b0f683cfb27ae468f9ecd683d8a8f64b84526a2b"
+    },
+    {
+      "path": "reports/v146_neural_robustness_fold_stability.csv",
+      "size_bytes": 694,
+      "sha256": "b980707a6bb17c099d26f47c218071cda8b5e6557507db8229cdb894b4beef3a"
+    },
+    {
+      "path": "reports/v146_neural_robustness_run_results.csv",
+      "size_bytes": 2631,
+      "sha256": "fa4585d72dcd3b203b3a7f2bb108ab919b27f86294201cc6876b7fbcda2c4131"
+    },
+    {
+      "path": "reports/v146_neural_robustness_seed_stability.csv",
+      "size_bytes": 993,
+      "sha256": "8378ed53ca458344d6128d0692c6bcbe386c1d334a3df110f59a9ed481448c2e"
+    },
+    {
+      "path": "reports/v146_neural_robustness_summary.json",
+      "size_bytes": 10261,
+      "sha256": "3dc1c3dbca4f699d6045967ac403bc6b1786b1a19cb517e6e796b0e5a1386775"
+    },
+    {
+      "path": "reports/v146_neural_robustness_summary.md",
+      "size_bytes": 2330,
+      "sha256": "599ff97dd41c70849bed392c659ef99d85a3c45cca1c37abef792b344eb696ad"
     },
     {
       "path": "reports/v40_normalized_draw_events_report.json",
@@ -5609,18 +5659,23 @@
     },
     {
       "path": "scripts/verify_step_144.py",
-      "size_bytes": 8707,
-      "sha256": "8ed13145b1d999006ebe53e6b824351c8d8c34a948449c53fd84fd9fd37b1965"
+      "size_bytes": 8719,
+      "sha256": "ac4ea8941c942f5130297f7372982f7ac36102970c30e60caefd68935f22a628"
     },
     {
       "path": "scripts/verify_step_145.py",
-      "size_bytes": 11033,
-      "sha256": "32651a6b06bf05f7eb3de4a8d9bc68da3e96e979bd3904f2588034935e2ecaa3"
+      "size_bytes": 11147,
+      "sha256": "51b0c890e72144e48f5bc4ceaa98d057cc11ca8a15bf47df82a8a8cc5c782dbe"
     },
     {
       "path": "scripts/verify_step_145_1.py",
-      "size_bytes": 8165,
-      "sha256": "69756b412f46ddfe45c4aad20b39a665c622cc7840a0b550a46dbbcd16391836"
+      "size_bytes": 8550,
+      "sha256": "35104cc8cb66bccbfcdc5830ca6b42a06953b3ed230bf84657ba0c9cf0a63dcb"
+    },
+    {
+      "path": "scripts/verify_step_146.py",
+      "size_bytes": 12229,
+      "sha256": "2f672b75ea1e0df49edacd48ee53c7501909ab7ca5231b024ba5f8e85e955545"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -6273,6 +6328,16 @@
       "sha256": "a016b40e787cd5d00252f478a64890d4c66733bc061301a6bff4e7872d627d98"
     },
     {
+      "path": "src/v146_controlled_neural_robustness_engine.py",
+      "size_bytes": 37333,
+      "sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e"
+    },
+    {
+      "path": "src/v146_controlled_neural_robustness_section.py",
+      "size_bytes": 4800,
+      "sha256": "33dff2da7ad9c397d8c0dac713295475721046f9e9520f9c790cf2bb51ea667f"
+    },
+    {
       "path": "src/v41_rules_aware_analysis_section.py",
       "size_bytes": 13791,
       "sha256": "a7986e39ed5c33c5a977f78fb60535243372147e30b71d6a7a85527a318ae188"
@@ -6774,8 +6839,8 @@
     },
     {
       "path": "streamlit_app.py",
-      "size_bytes": 252025,
-      "sha256": "bf5b84e16a049df709c791da8eaaa797d96dd1c83799d659e6fe525a543e39b3"
+      "size_bytes": 252253,
+      "sha256": "bf05fb9bcc4ae34ef4304d425f522278d16e0326e19cd572da6810f4cb7a3a2f"
     },
     {
       "path": "streamlit_pages/__init__.py",
@@ -6838,6 +6903,11 @@
       "sha256": "bd33dbde4c71d3955341db9d1e98c6a905f6bc389979e52eb4e79ee523899be2"
     },
     {
+      "path": "tools/finalize_step_146_release.py",
+      "size_bytes": 8663,
+      "sha256": "d439ff061ad9ea67eb4446ab584616dec8c3d39d6132a9a10650147446321b63"
+    },
+    {
       "path": "tools/ingest_latest_bst_official_draw.py",
       "size_bytes": 1032,
       "sha256": "01e251089c88ec5fe1cb57850e62f22a50275424823ec67505f14112d4ebbff9"
@@ -6851,6 +6921,11 @@
       "path": "tools/refresh_model_data_after_bst_sync.py",
       "size_bytes": 1800,
       "sha256": "b3f5c248bfa22c56deb770f828a3469a89f2bbcc0c2d62479c2ffeee1526fea2"
+    },
+    {
+      "path": "tools/run_controlled_neural_robustness.py",
+      "size_bytes": 2026,
+      "sha256": "043d65cac94ff95111046e3dee8c6895075ff8d9920fe32f6fdb8b80d2df7ffe"
     },
     {
       "path": "tools/run_controlled_production_dry_run.py",

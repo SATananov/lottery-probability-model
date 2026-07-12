@@ -1,0 +1,4 @@
+﻿fold,runs,neural_dynamics_reservoir,frequency_walk_forward,recency_weighted_walk_forward,recent_window_frequency,frequency_recency_blend,uniform_random_mean,neural_minus_frequency_walk_forward,neural_minus_recency_weighted_walk_forward,neural_minus_recent_window_frequency,neural_minus_frequency_recency_blend,neural_minus_uniform_random_mean
+1,5,1.995,2.006666667,2.038333333,2.0,2.058333333,2.066166667,-0.011666667,-0.043333333,-0.005,-0.063333333,-0.071166667
+2,5,2.02,2.026666666,2.045,2.033333333,2.035,2.085166667,-0.006666666,-0.025,-0.013333333,-0.015,-0.065166667
+3,5,2.021666667,1.991666667,2.021666667,2.018333333,2.013333333,2.0695,0.03,0.0,0.003333334,0.008333334,-0.047833333

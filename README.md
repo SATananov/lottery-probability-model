@@ -297,3 +297,20 @@ python .\tools\finalize_step_145_1_release.py --build-zip
 ```
 
 Подробности: `reports/STEP_145_1_CLEAN_RELEASE_METADATA_RUNTIME_ARTIFACT_INTEGRITY_REPAIR.md`.
+
+## Step 146
+
+Step 146 разширява neural dynamics sandbox-а с контролирана robustness проверка: 3 неприпокриващи се исторически walk-forward периода по 120 тиража и 5 random seeds, или общо 15 runs. Добавени са recent-window frequency и frequency–recency blend baselines, 95% bootstrap confidence intervals, exact sign tests и stability проверки по seed и период.
+
+Първият регистриран Step 146 резултат е сравнително стабилен между seed-овете, но не показва устойчиво превъзходство. Neural mean е `2.012222`, а uniform-random mean е `2.073611`; 95% CI на neural-minus-random разликата е изцяло под нулата. Promotion gate остава блокиран и няма production интеграция.
+
+Команди:
+
+```powershell
+python .\tools\run_controlled_neural_robustness.py
+python .\tools\run_controlled_neural_robustness.py --read-only
+python .\scripts\verify_step_146.py
+python .\tools\finalize_step_146_release.py --verify-only
+```
+
+Подробности: `reports/STEP_146_CONTROLLED_NEURAL_EXPERIMENT_EXPANSION_AND_ROBUSTNESS_VALIDATION.md`.

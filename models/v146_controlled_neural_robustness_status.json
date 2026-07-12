@@ -1,0 +1,19 @@
+{
+  "step": 146,
+  "status": "completed",
+  "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+  "registry_entries": 3,
+  "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+  "configuration_sha256": "0e4ec3757b0f25137750b5e213e1a058ca053e43c03f7d146af3f14b6619ab10",
+  "result_signature_sha256": "9bf635c5433766bc2f45a59b3bb18443ea4f42a05075f308d7dd6b36221444d9",
+  "fold_count": 3,
+  "seed_count": 5,
+  "run_count": 15,
+  "promotion_gate_passed": false,
+  "production_integration_enabled": false,
+  "real_ticket_generation_enabled": false,
+  "heavy_ml_retraining_performed": false,
+  "personal_journal_used": false,
+  "future_data_leakage_detected": false,
+  "safe_note_bg": "Step 146 е изолиран robustness експеримент върху исторически тиражи. Той не е свързан с production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи."
+}

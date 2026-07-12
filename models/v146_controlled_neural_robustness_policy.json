@@ -1,0 +1,64 @@
+{
+  "step": 146,
+  "name": "Controlled Neural Experiment Expansion & Robustness Validation",
+  "project_context": "Personal experimental statistics and software-engineering project",
+  "default_configuration": {
+    "fold_size": 120,
+    "fold_count": 3,
+    "minimum_training_draws": 500,
+    "seeds": [
+      1462026,
+      1462027,
+      1462028,
+      1462029,
+      1462030
+    ],
+    "package_size": 12,
+    "random_trials_per_run": 10,
+    "frequency_pool_size": 49,
+    "recency_decay": 0.985,
+    "recent_window_draws": 104,
+    "blend_frequency_weight": 0.5,
+    "reservoir_size": 32,
+    "leak_rate": 0.28,
+    "spectral_radius": 0.82,
+    "input_scale": 0.65,
+    "bias_scale": 0.05,
+    "ridge_alpha": 12.0,
+    "score_power": 1.4,
+    "bootstrap_iterations": 5000,
+    "confidence_level": 0.95,
+    "minimum_seed_positive_rate": 0.8,
+    "minimum_fold_positive_rate": 1.0,
+    "maximum_sign_test_p_value": 0.05,
+    "maximum_neural_seed_spread": 0.2
+  },
+  "robustness_scope": {
+    "multi_seed": true,
+    "non_overlapping_historical_folds": true,
+    "bootstrap_confidence_intervals": true,
+    "paired_sign_tests": true,
+    "additional_simple_baselines": [
+      "recent_window_frequency",
+      "frequency_recency_blend"
+    ]
+  },
+  "promotion_gate": {
+    "all_mean_advantages_positive": true,
+    "all_bootstrap_ci_lower_bounds_above_zero": true,
+    "maximum_sign_test_p_value": 0.05,
+    "minimum_seed_positive_rate": 0.8,
+    "minimum_fold_positive_rate": 1.0,
+    "maximum_neural_seed_spread": 0.2,
+    "automatic_promotion": false
+  },
+  "guardrails": {
+    "future_data_leakage": "forbidden",
+    "heavy_ml_retraining": "not_performed",
+    "personal_journal_access": "not_used",
+    "production_pipeline_access": "forbidden",
+    "real_ticket_generation": "forbidden",
+    "results_claim": "historical_robustness_experiment_only"
+  },
+  "safe_note_bg": "Step 146 е изолиран robustness експеримент върху исторически тиражи. Той не е свързан с production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи."
+}
