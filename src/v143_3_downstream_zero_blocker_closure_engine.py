@@ -165,7 +165,7 @@ def run_final_zero_blocker_closure(
             "after": before,
             "remaining_blockers": [
                 source for source in before.get("sources", [])
-                if source.get("key") != "official" and source.get("status") not in {"synced", "informational"}
+                if source.get("key") != "official" and source.get("status") not in {"synced", "informational", "local_optional"}
             ],
             "heavy_ml_retraining_performed": False,
             "heavy_model_changes": [],
@@ -201,7 +201,7 @@ def run_final_zero_blocker_closure(
     after = build_freshness_report(write_outputs=write_outputs)
     remaining = [
         source for source in after.get("sources", [])
-        if source.get("key") != "official" and source.get("status") not in {"synced", "informational"}
+        if source.get("key") != "official" and source.get("status") not in {"synced", "informational", "local_optional"}
     ]
     zero_blocker = after.get("overall_status") == "synced" and int(after.get("blocking_out_of_sync_count", -1)) == 0 and not remaining
     repair_ok = repair.get("status") in {"completed", "already_synced"}

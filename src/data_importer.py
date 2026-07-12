@@ -6,8 +6,8 @@ This importer keeps the data flow conservative:
 
 1. Back up the current canonical CSV before every import.
 2. Download official archive files when links are discoverable.
-3. Also parse already downloaded raw files from data/raw/bst_649_yearly.
-4. For each year, choose the raw source that yields the strongest valid parse.
+3. Parse canonical downloaded sources from data/raw/bst_649_official and data/raw/bst_649_yearly.
+4. Keep one canonical source per year and choose the strongest valid parse when directories overlap.
 5. Rebuild draw_position deterministically inside each draw.
 6. Never blindly merge duplicate backup datasets over fresh parsed raw data.
 7. Write a validation report with missing years and duplicate-key checks.
@@ -439,27 +439,32 @@ def download_archive_links(raw_dir: Path, links: dict[int, str], warnings: list[
         raw_path.write_bytes(data)
 
 
-def parse_best_raw_sources(raw_dir: Path) -> tuple[list[DrawRecord], dict[int, str], list[str]]:
+def parse_best_raw_sources(raw_dirs: Path | Iterable[Path]) -> tuple[list[DrawRecord], dict[int, str], list[str]]:
     warnings: list[str] = []
     candidates_by_year: dict[int, list[tuple[int, str, list[DrawRecord]]]] = {}
 
-    for path in sorted(raw_dir.glob("*")):
-        if not path.is_file():
+    directories = [raw_dirs] if isinstance(raw_dirs, Path) else list(raw_dirs)
+    for raw_dir in directories:
+        if not raw_dir.exists():
             continue
+        for path in sorted(raw_dir.glob("*")):
+            if not path.is_file():
+                continue
 
-        year = year_from_raw_file(path)
-        if year is None:
-            continue
+            year = year_from_raw_file(path)
+            if year is None:
+                continue
 
-        try:
-            data = path.read_bytes()
-            records = parse_archive_bytes(data, year, f"raw:{path.name}")
-        except Exception as exc:  # noqa: BLE001
-            warnings.append(f"{year}: could not parse raw file {path.name}: {exc}")
-            continue
+            try:
+                data = path.read_bytes()
+                records = parse_archive_bytes(data, year, f"raw:{raw_dir.name}/{path.name}")
+            except Exception as exc:  # noqa: BLE001
+                warnings.append(f"{year}: could not parse raw file {path.name}: {exc}")
+                continue
 
-        if records:
-            candidates_by_year.setdefault(year, []).append((len(records), path.name, records))
+            if records:
+                source_name = f"{raw_dir.name}/{path.name}"
+                candidates_by_year.setdefault(year, []).append((len(records), source_name, records))
 
     best_records: list[DrawRecord] = []
     chosen_sources: dict[int, str] = {}
@@ -655,7 +660,8 @@ def import_bst_history(
     links, warnings = discover_archive_links()
     download_archive_links(raw_dir, links, warnings)
 
-    raw_records, chosen_sources, parse_warnings = parse_best_raw_sources(raw_dir)
+    official_raw_dir = raw_dir.parent / "bst_649_official"
+    raw_records, chosen_sources, parse_warnings = parse_best_raw_sources((official_raw_dir, raw_dir))
     warnings.extend(parse_warnings)
 
     years_from_raw = {record.year for record in raw_records}

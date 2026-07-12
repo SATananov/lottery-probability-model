@@ -15,6 +15,7 @@ from src.frequency_model import (
 from src.generator import generate_random_combination
 from src.middle_number_model import train_middle_number_model
 from src.simulation import count_matches
+from src.v149_repository_hygiene_engine import head_tail_sample
 
 
 DEFAULT_DATA_PATH = Path("data") / "historical_draws.csv"
@@ -572,14 +573,16 @@ def write_gap_backtest_report(
     lines.extend(
         [
             "",
-            "## Tested draws",
+            "## Tested draw sample",
+            "",
+            "Only the first and last three rows are retained in Markdown. Rerun the backtest to reproduce the complete row-level detail.",
             "",
             "| Draw ID | Date | Actual numbers | Gap ticket | Gap matches | Hot ticket | Hot matches | Cold ticket | Cold matches | Middle ticket | Middle matches | Random ticket | Random matches |",
             "|:---|:---|:---|:---|---:|:---|---:|:---|---:|:---|---:|:---|---:|",
         ]
     )
 
-    for item in backtest_result["tested_draws"]:
+    for item in head_tail_sample(backtest_result["tested_draws"]):
         lines.append(
             "| {draw_id} | {date} | {actual} | {gap_ticket} | {gap_matches} | {hot_ticket} | {hot_matches} | {cold_ticket} | {cold_matches} | {middle_ticket} | {middle_matches} | {random_ticket} | {random_matches} |".format(
                 draw_id=item["draw_id"],

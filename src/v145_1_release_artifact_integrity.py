@@ -9,7 +9,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-POLICY_VERSION = "145.1"
+POLICY_VERSION = "149.0"
 ARCHIVE_ROOT_NAME = "lottery-probability-model"
 
 FORBIDDEN_DIRECTORY_NAMES = {
@@ -48,6 +48,10 @@ FORBIDDEN_SUFFIXES = {
 FORBIDDEN_PREFIXES = {
     "reports/runtime/",
     "data/manual_backups/",
+    "data/user_journal_exports/",
+}
+FORBIDDEN_EXACT_PATHS = {
+    "data/user_journal.db",
 }
 
 
@@ -74,8 +78,10 @@ def forbidden_release_reason(rel_path: str) -> str | None:
         return "unsafe_path"
     if any(part in FORBIDDEN_DIRECTORY_NAMES for part in parts[:-1]):
         return "forbidden_directory"
+    if normalized in FORBIDDEN_EXACT_PATHS:
+        return "local_personal_data"
     if any(normalized.startswith(prefix) for prefix in FORBIDDEN_PREFIXES):
-        return "runtime_or_backup_path"
+        return "runtime_backup_or_personal_path"
     name = parts[-1]
     if name in FORBIDDEN_FILE_NAMES:
         return "forbidden_file"
@@ -116,9 +122,9 @@ def collect_release_rows(*, root: Path = ROOT, extra_excluded: Iterable[str] = (
 
 def release_scope_description() -> str:
     return (
-        "All intended project files under release policy 145.1; excludes release metadata files, "
+        "All intended project files under release policy 149.0; excludes release metadata files, "
         ".git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, "
-        "temporary archives, logs and backup artifacts."
+        "temporary archives, logs, backup artifacts and local personal journal data."
     )
 
 

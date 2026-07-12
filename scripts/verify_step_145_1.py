@@ -93,7 +93,7 @@ def main() -> int:
 
     release = load_json(ROOT / "release-manifest.json")
     validation = validate_release_manifest(release, root=ROOT)
-    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147", "Step 148"}:
+    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149"}:
         failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
     failures.extend(validation.get("failures", []))
     if release.get("release_policy_version") != POLICY_VERSION:
@@ -163,6 +163,7 @@ def main() -> int:
         "Step 146": (ROOT / "CLEAN_ZIP_MANIFEST_STEP146.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP146.md"),
         "Step 147": (ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md"),
         "Step 148": (ROOT / "CLEAN_ZIP_MANIFEST_STEP148.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP148.md"),
+        "Step 149": (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md"),
     }
     metadata_pair = checkpoint_metadata.get(
         str(release.get("checkpoint")),
@@ -201,6 +202,9 @@ def main() -> int:
     gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
     if "reports/runtime/v145_1_artifact_integrity/" not in gitignore:
         failures.append("Step 145.1 runtime path is not ignored by Git")
+    for local_path in ("data/user_journal.db", "data/user_journal_exports/"):
+        if local_path not in gitignore:
+            failures.append(f"Local personal journal path is not ignored: {local_path}")
 
     if failures:
         for failure in failures:

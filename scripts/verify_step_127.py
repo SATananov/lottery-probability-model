@@ -11,14 +11,14 @@ if str(ROOT) not in sys.path:
 from src.v127_end_to_end_automation_validation_engine import PRIMARY, EXPORT, run_end_to_end_validation
 
 
-def sha(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def sha_optional(path: Path) -> str | None:
+    return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
 
 
 def main() -> int:
-    before = (sha(PRIMARY), sha(EXPORT))
+    before = (sha_optional(PRIMARY), sha_optional(EXPORT))
     report = run_end_to_end_validation(write_outputs=False)
-    after = (sha(PRIMARY), sha(EXPORT))
+    after = (sha_optional(PRIMARY), sha_optional(EXPORT))
     assert report['status'] == 'validated', report
     assert report['failed_stage_count'] == 0, report
     assert report['production_data_unchanged'] is True, report

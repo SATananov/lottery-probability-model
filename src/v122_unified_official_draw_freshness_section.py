@@ -6,12 +6,12 @@ import streamlit as st
 from src.v122_unified_official_draw_freshness_engine import REPORT_CSV, SUMMARY_MD, build_freshness_report
 from src.v142_downstream_freshness_repair_engine import run_targeted_repair
 
-STATUS_ICON = {"synced": "🟢", "behind": "🔴", "ahead": "🔴", "unavailable": "⚪", "informational": "🔵"}
-STATUS_BG = {"synced": "Синхронизиран", "behind": "Назад", "ahead": "Пред официалния", "unavailable": "Няма данни", "informational": "Информация"}
+STATUS_ICON = {"synced": "🟢", "behind": "🔴", "ahead": "🔴", "unavailable": "⚪", "informational": "🔵", "local_optional": "🟡"}
+STATUS_BG = {"synced": "Синхронизиран", "behind": "Назад", "ahead": "Пред официалния", "unavailable": "Няма данни", "informational": "Информация", "local_optional": "Само локално"}
 
 
 def _draw_label(source: dict) -> str:
-    if source.get("status") == "informational":
+    if source.get("status") in {"informational", "local_optional"}:
         return "Не се следи по тираж"
     latest = source.get("latest") or {}
     year = latest.get("year")
@@ -49,7 +49,7 @@ def render_v122_unified_official_draw_freshness_section() -> None:
         })
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 
-    stale = [source for source in report["sources"] if source["key"] != "official" and source["status"] not in {"synced", "informational"}]
+    stale = [source for source in report["sources"] if source["key"] != "official" and source["status"] not in {"synced", "informational", "local_optional"}]
     if stale:
         st.markdown("### Какво трябва да се обнови")
         for source in stale:

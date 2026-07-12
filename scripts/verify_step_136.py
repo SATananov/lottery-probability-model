@@ -1,5 +1,5 @@
 from __future__ import annotations
-import json, sys, tempfile, zipfile, io, hashlib
+import json, sys, tempfile, zipfile, io, hashlib, os
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
@@ -33,4 +33,7 @@ def main()->None:
         assert path.read_bytes()==before and registry.read_bytes()==reg_before
         assert not any(staging.iterdir())
     print('STEP_136_VERIFY_OK')
-if __name__=='__main__': main()
+if __name__=='__main__':
+    main()
+    sys.stdout.flush(); sys.stderr.flush()
+    os._exit(0)

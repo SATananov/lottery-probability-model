@@ -4,6 +4,8 @@ import json
 import math
 from datetime import datetime
 from pathlib import Path
+
+from src.v149_repository_hygiene_engine import write_semantic_version_snapshot
 from typing import Any
 
 from src.ml_extensions import (
@@ -289,8 +291,11 @@ def train_prediction_engine() -> dict[str, Any]:
     }
 
     PREDICTION_MODEL_PATH.write_text(json.dumps(model, ensure_ascii=False, indent=2), encoding="utf-8")
-    version_path = VERSIONS_DIR / f"lottery_prediction_model_v36_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    version_path.write_text(json.dumps(model, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_semantic_version_snapshot(
+        model,
+        directory=VERSIONS_DIR,
+        filename_prefix="lottery_prediction_model_v36",
+    )
     _write_reports(model)
     return model
 

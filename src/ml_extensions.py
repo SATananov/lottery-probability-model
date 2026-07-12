@@ -8,6 +8,8 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from itertools import combinations
 from pathlib import Path
+
+from src.v149_repository_hygiene_engine import write_semantic_version_snapshot
 from typing import Any
 
 TOTAL_NUMBERS = 49
@@ -657,9 +659,11 @@ def train_ml_extensions(draws: list[dict[str, Any]] | None = None, config: dict[
 def save_model(model: dict[str, Any]) -> None:
     ensure_dirs()
     MODEL_PATH.write_text(json.dumps(model, ensure_ascii=False, indent=2), encoding="utf-8")
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    version_path = MODEL_VERSION_DIR / f"lottery_ml_extensions_model_v1_{stamp}.json"
-    version_path.write_text(json.dumps(model, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_semantic_version_snapshot(
+        model,
+        directory=MODEL_VERSION_DIR,
+        filename_prefix="lottery_ml_extensions_model_v1",
+    )
 
 
 def write_reports(model: dict[str, Any]) -> None:

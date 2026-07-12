@@ -47,6 +47,10 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _sha256_optional(path: Path) -> str | None:
+    return _sha256(path) if path.is_file() else None
+
+
 def _read_rows(path: Path) -> list[dict[str, str]]:
     with path.open('r', encoding='utf-8-sig', newline='') as handle:
         return list(csv.DictReader(handle))
@@ -110,7 +114,7 @@ def _write_outputs(report: dict[str, Any]) -> None:
 
 def run_end_to_end_validation(*, write_outputs: bool = True) -> dict[str, Any]:
     started = utc_now()
-    before_hashes = {'primary': _sha256(PRIMARY), 'export': _sha256(EXPORT)}
+    before_hashes = {'primary': _sha256(PRIMARY), 'export': _sha256_optional(EXPORT)}
     local = _latest(PRIMARY)
     simulated = _next_draw(local)
     stages: list[dict[str, Any]] = []
@@ -121,7 +125,7 @@ def run_end_to_end_validation(*, write_outputs: bool = True) -> dict[str, Any]:
         export_path = sandbox / 'data' / 'user_journal_exports' / 'prize_winner_history.csv'
         export_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(PRIMARY, data_path)
-        shutil.copy2(EXPORT, export_path)
+        shutil.copy2(EXPORT if EXPORT.is_file() else PRIMARY, export_path)
 
         stages.append(_stage('detect', True, f"Simulated newer official draw {simulated['draw_key']} detected.", official_draw=simulated, local_draw=local))
 
@@ -176,7 +180,7 @@ def run_end_to_end_validation(*, write_outputs: bool = True) -> dict[str, Any]:
         rollback_export = sandbox / 'rollback' / 'data' / 'user_journal_exports' / 'prize_winner_history.csv'
         rollback_export.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(PRIMARY, rollback_data)
-        shutil.copy2(EXPORT, rollback_export)
+        shutil.copy2(EXPORT if EXPORT.is_file() else PRIMARY, rollback_export)
         rollback_before = (_sha256(rollback_data), _sha256(rollback_export))
 
         def fail_after_primary(stage_name: str) -> None:
@@ -197,7 +201,7 @@ def run_end_to_end_validation(*, write_outputs: bool = True) -> dict[str, Any]:
         rollback_ok = rollback.get('status') == 'rolled_back' and rollback.get('rollback_performed') and rollback_before == rollback_after
         stages.append(_stage('rollback', rollback_ok, 'Forced failure restored both sandbox source files.' if rollback_ok else 'Rollback validation failed.', result=rollback))
 
-    after_hashes = {'primary': _sha256(PRIMARY), 'export': _sha256(EXPORT)}
+    after_hashes = {'primary': _sha256(PRIMARY), 'export': _sha256_optional(EXPORT)}
     isolation_ok = before_hashes == after_hashes
     stages.append(_stage('isolation', isolation_ok, 'Real project draw files were not changed.' if isolation_ok else 'Production data changed unexpectedly.', before_sha256=before_hashes, after_sha256=after_hashes))
 

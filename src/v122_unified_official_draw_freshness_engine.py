@@ -20,6 +20,8 @@ REPORT_JSON = REPORTS_DIR / "v122_unified_official_draw_freshness_report.json"
 REPORT_CSV = REPORTS_DIR / "v122_unified_official_draw_freshness_matrix.csv"
 SUMMARY_MD = REPORTS_DIR / "v122_unified_official_draw_freshness_summary.md"
 
+OPTIONAL_SOURCE_KEYS = {"journal_prize"}
+
 SOURCE_SPECS = [
     ("official", "Официална история", DATA_DIR / "prize_winner_history.csv", "csv"),
     ("journal_prize", "Дневник — история на печалбите", DATA_DIR / "user_journal_exports" / "prize_winner_history.csv", "csv"),
@@ -232,10 +234,17 @@ def build_freshness_report(write_outputs: bool = True) -> dict[str, Any]:
         raise RuntimeError("Official source-of-truth draw cannot be detected from data/prize_winner_history.csv")
 
     sources = [_compare(snapshot, official) for snapshot in raw_snapshots]
+    for source in sources:
+        if source.get("key") in OPTIONAL_SOURCE_KEYS and not source.get("exists"):
+            source.update(
+                status="local_optional",
+                draw_delta=None,
+                message="Локалният личен journal export не е част от публичния release и не блокира актуалността.",
+            )
     sources.append(_model_freshness(official))
     blocking = [
         source for source in sources
-        if source["key"] != "official" and source["status"] not in {"synced", "informational"}
+        if source["key"] != "official" and source["status"] not in {"synced", "informational", "local_optional"}
     ]
     report = {
         "step": "122",

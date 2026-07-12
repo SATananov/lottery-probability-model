@@ -1,13 +1,12 @@
-# Current Dataset Audit
+# Data Audit Report
 
-This report was refreshed after the v41 rules-aware historical analysis integration.
+Rows: 10063
 
-**Important:** This is not a prediction guarantee. Lottery draws are random.
-The report is used for data quality checks, historical statistics, and probability education.
+Unique full rows: 10063
 
-Rows: 10057
-Years: 1958 to 2026
-Latest available draw date: 2026-06-18
+Duplicate full rows: 0
+
+Duplicate year/draw/position keys: 0
 
 ## Rows by year
 
@@ -79,4 +78,4 @@ Latest available draw date: 2026-06-18
 - 2023: 105
 - 2024: 104
 - 2025: 105
-- 2026: 48
+- 2026: 54

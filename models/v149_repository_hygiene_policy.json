@@ -1,0 +1,43 @@
+{
+  "step": 149,
+  "title": "Repository Hygiene, Privacy & Authorship Transparency",
+  "history_rewrite_performed": false,
+  "current_tree_privacy": {
+    "personal_journal_gitignored": true,
+    "personal_journal_excluded_from_release": true,
+    "public_schema_file": "data/user_journal_schema.sql",
+    "local_restore_after_clean_zip": true
+  },
+  "safe_cleanup": {
+    "raw_source_policy": "official_1958_2016_plus_one_canonical_yearly_source_2017_2025",
+    "timestamp_only_model_snapshots": "deduplicated_and_future_duplicates_suppressed",
+    "row_level_markdown_backtests": "compact_head_tail_summary_only",
+    "duplicate_launcher": "removed",
+    "compatibility_json_mirrors": "retained_until_dependency_migration"
+  },
+  "authorship_transparency": {
+    "document": "AUTHORSHIP_AND_TOOLING.md",
+    "external_generative_ai_runtime_dependency": false,
+    "vendor_specific_ai_sdk_dependency": false,
+    "manual_only_claim_made": false
+  },
+  "history_cleanup_deferred": {
+    "required_step": "149.1",
+    "force_push_required": true,
+    "targets": [
+      ".r-lib/",
+      "data/user_journal.db",
+      "data/user_journal_exports/",
+      "historical backup/before files"
+    ]
+  },
+  "step148_immutable_locks": {
+    "src/v145_experimental_neural_dynamics_engine.py": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+    "src/v146_controlled_neural_robustness_engine.py": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+    "src/v148_prospective_forward_test_engine.py": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+    "models/v148_prospective_forward_test_policy.json": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+    "models/v148_prospective_forward_test_status.json": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+    "data/prospective_forward_test_ledger.jsonl": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+    "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d"
+  }
+}

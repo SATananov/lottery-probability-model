@@ -16,6 +16,7 @@ from src.frequency_model import (
 )
 from src.generator import generate_random_combination
 from src.simulation import count_matches
+from src.v149_repository_hygiene_engine import head_tail_sample
 
 
 DEFAULT_DATA_PATH = Path("data") / "historical_draws.csv"
@@ -518,14 +519,16 @@ def write_middle_backtest_report(
     lines.extend(
         [
             "",
-            "## Tested draws",
+            "## Tested draw sample",
+            "",
+            "Only the first and last three rows are retained in Markdown. Rerun the backtest to reproduce the complete row-level detail.",
             "",
             "| Draw ID | Date | Actual numbers | Middle ticket | Middle matches | Hot ticket | Hot matches | Cold ticket | Cold matches | Random ticket | Random matches |",
             "|:---|:---|:---|:---|---:|:---|---:|:---|---:|:---|---:|",
         ]
     )
 
-    for item in backtest_result["tested_draws"]:
+    for item in head_tail_sample(backtest_result["tested_draws"]):
         lines.append(
             "| {draw_id} | {date} | {actual} | {middle_ticket} | {middle_matches} | {hot_ticket} | {hot_matches} | {cold_ticket} | {cold_matches} | {random_ticket} | {random_matches} |".format(
                 draw_id=item["draw_id"],

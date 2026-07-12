@@ -1,6 +1,6 @@
 # Step 122 — Unified Official Draw Freshness Layer
 
-Generated: 2026-07-11T10:29:46+00:00
+Generated: 2026-07-12T06:59:15+00:00
 Official source of truth: `data/prize_winner_history.csv`
 Official latest draw: **2026-53** (2026-07-09)
 Overall status: **synced**
@@ -8,7 +8,7 @@ Overall status: **synced**
 | Module | Latest draw | Date | Status | Delta |
 |---|---:|---|---|---:|
 | Официална история | 2026-53 | 2026-07-09 | synced | 0 |
-| Дневник — история на печалбите | 2026-53 | 2026-07-09 | synced | 0 |
+| Дневник — история на печалбите | ?-? |  | local_optional | None |
 | Исторически тиражи | 2026-53 | 2026-07-09 | synced | 0 |
 | Нормализирани събития | 2026-53 | 2026-07-09 | synced | 0 |
 | Канонични събития | 2026-53 | 2026-07-09 | synced | 0 |

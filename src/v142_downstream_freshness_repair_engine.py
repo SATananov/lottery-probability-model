@@ -53,7 +53,7 @@ def utc_now() -> str:
 def _required_stage_ids(report: dict[str, Any]) -> list[str]:
     requested: set[str] = set()
     for source in report.get("sources", []):
-        if source.get("status") in {"synced", "informational"}:
+        if source.get("status") in {"synced", "informational", "local_optional"}:
             continue
         stage_id = SOURCE_TO_STAGE.get(str(source.get("key")))
         if stage_id:
@@ -169,7 +169,7 @@ def run_targeted_repair(
         blocked = not bool(row.get("ok"))
 
     after = build_freshness_report(write_outputs=True)
-    actionable = [s for s in after.get("sources", []) if s.get("key") != "official" and s.get("status") not in {"synced", "informational"}]
+    actionable = [s for s in after.get("sources", []) if s.get("key") != "official" and s.get("status") not in {"synced", "informational", "local_optional"}]
     status = "completed" if not blocked and not actionable else "check_required"
     report = {**plan, "finished_at_utc": utc_now(), "status": status, "results": results, "after": after}
     if write_outputs:

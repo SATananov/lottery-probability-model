@@ -19,7 +19,7 @@ assert by_key["models"]["status"] == "informational"
 assert by_key["models"]["draw_delta"] is None
 blocking = [
     source for source in report["sources"]
-    if source["key"] != "official" and source["status"] not in {"synced", "informational"}
+    if source["key"] != "official" and source["status"] not in {"synced", "informational", "local_optional"}
 ]
 assert report["blocking_out_of_sync_count"] == len(blocking)
 assert report["overall_status"] == ("synced" if not blocking else "out_of_sync")

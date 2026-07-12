@@ -1,0 +1,82 @@
+{
+  "step": 149,
+  "status": "completed",
+  "history_rewrite_performed": false,
+  "post_cleanup": {
+    "file_count": 1188,
+    "size_bytes": 18269446,
+    "python_file_count": 429,
+    "duplicate_group_count": 35,
+    "duplicate_file_count": 72,
+    "duplicate_redundant_bytes": 302415
+  },
+  "removed_file_count": 265,
+  "removed_size_bytes": 1758264,
+  "removed_by_reason": {
+    "raw_source_alias_removed": 238,
+    "personal_local_journal_removed_from_public_tree": 7,
+    "timestamp_only_model_snapshot_removed": 19,
+    "exact_duplicate_launcher": 1
+  },
+  "raw_source_counts": {
+    "official": 59,
+    "yearly_canonical": 9
+  },
+  "retained_model_version_files": [
+    "lottery_ml_extensions_model_v1_20260620_205905.json",
+    "lottery_prediction_model_v36_20260620_205906.json"
+  ],
+  "semantic_model_state_count": 3,
+  "compact_backtest_reports": {
+    "backtest_report.md": {
+      "size_bytes": 1832,
+      "line_count": 44
+    },
+    "cold_backtest_report.md": {
+      "size_bytes": 2160,
+      "line_count": 45
+    },
+    "middle_backtest_report.md": {
+      "size_bytes": 2442,
+      "line_count": 46
+    },
+    "gap_backtest_report.md": {
+      "size_bytes": 2731,
+      "line_count": 46
+    }
+  },
+  "personal_journal_in_release": false,
+  "personal_journal_gitignored": true,
+  "authorship_transparency_documented": true,
+  "explicit_vendor_marker_hits": [],
+  "external_generative_ai_runtime_dependency": false,
+  "step148_immutable_locks_ok": true,
+  "step148_immutable_lock_checks": {
+    "src/v145_experimental_neural_dynamics_engine.py": true,
+    "src/v146_controlled_neural_robustness_engine.py": true,
+    "src/v148_prospective_forward_test_engine.py": true,
+    "models/v148_prospective_forward_test_policy.json": true,
+    "models/v148_prospective_forward_test_status.json": true,
+    "data/prospective_forward_test_ledger.jsonl": true,
+    "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json": true
+  },
+  "active_forward_test_lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
+  "history_privacy_purge_completed": false,
+  "history_privacy_purge_deferred_to": "Step 149.1",
+  "result_signature_sha256": "87bef1b13f2b1e066e9090df98f0e4f0fc78310a662cb43910cf9059c9fa2abe",
+  "initial_audit": {
+    "file_count": 1443,
+    "size_bytes": 25983104,
+    "duplicate_group_count": 107,
+    "duplicate_file_count": 386,
+    "duplicate_redundant_bytes": 1247078
+  },
+  "comparable_release_scope_before": {
+    "file_count": 1433,
+    "size_bytes": 25623080,
+    "python_file_count": 425,
+    "duplicate_group_count": 106,
+    "duplicate_file_count": 384,
+    "duplicate_redundant_bytes": 1234232
+  }
+}

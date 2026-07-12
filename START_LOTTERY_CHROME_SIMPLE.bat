@@ -11,8 +11,8 @@ if exist "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" set CHROME=%
 if exist "%LocalAppData%\Google\Chrome\Application\chrome.exe" set CHROME=%LocalAppData%\Google\Chrome\Application\chrome.exe
 
 if "%CHROME%"=="" (
-  echo Google Chrome ne e nameren.
-  echo Prati mi ekrana s tova syobshtenie.
+  echo Google Chrome was not found.
+  echo Install Chrome or start the app with: python -m streamlit run app.py
   pause
   exit /b 1
 )

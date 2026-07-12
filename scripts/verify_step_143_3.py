@@ -75,7 +75,7 @@ def main() -> int:
             failures.append(f"Expected zero blockers, got {freshness.get('blocking_out_of_sync_count')}")
         remaining = [
             source for source in freshness.get("sources", [])
-            if source.get("key") != "official" and source.get("status") not in {"synced", "informational"}
+            if source.get("key") != "official" and source.get("status") not in {"synced", "informational", "local_optional"}
         ]
         if remaining:
             failures.append("Freshness contains remaining blockers: " + ", ".join(str(row.get("key")) for row in remaining))
