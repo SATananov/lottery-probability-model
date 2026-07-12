@@ -1,0 +1,24 @@
+{
+  "step": "150.2",
+  "title": "Plain Bulgarian User Language and Complete Technical Separation",
+  "display_only": true,
+  "production_scoring_changed": false,
+  "personal_journal_used": false,
+  "requirements": {
+    "all_active_ui_literals_plain_bulgarian": true,
+    "all_dynamic_keys_and_table_headers_localized": true,
+    "mixed_bulgarian_english_blocked_in_user_mode": true,
+    "unknown_dynamic_prose_replaced_by_plain_guidance": true,
+    "research_tables_use_user_summary_columns": true,
+    "full_statistics_moved_to_technical_expanders": true,
+    "utf8_cyrillic_required": true,
+    "step148_protected_files_unchanged": true
+  },
+  "normal_user_mode": {
+    "raw_paths_hidden": true,
+    "hashes_hidden": true,
+    "identifiers_hidden": true,
+    "statistical_raw_columns_hidden": true,
+    "technical_details_available": true
+  }
+}

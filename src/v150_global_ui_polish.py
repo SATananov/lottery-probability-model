@@ -1380,6 +1380,106 @@ FIELD_LABELS_BG.update({
     "missing_inputs": "Липсващи входни данни",
 })
 
+
+
+# Step 150.2: plain-language Bulgarian labels for dynamic research and audit values.
+BG_EXACT.update({
+    "No comparison in the Step 144–146 evidence chain demonstrates robust positive superiority. The current neural configuration is therefore paused and archived; production promotion remains blocked.":
+        "Нито едно сравнение в етапи 144–146 не показва устойчиво положително превъзходство. Затова текущият невронен модел е спрян и архивиран, а включването му в работния режим остава блокирано.",
+    "The neural robustness experiment passed every exploratory stability gate. Automatic production promotion remains disabled; independent confirmation would still be required.":
+        "Проверката за устойчивост изпълни всички изследователски условия. Автоматично включване в работния режим не се извършва; необходима е независима потвърждаваща проверка.",
+    "The neural robustness experiment did not pass every multi-seed, multi-period confidence and stability gate. The model remains research-only and isolated from ticket generation.":
+        "Проверката за устойчивост не изпълни всички условия при различните начални стойности и исторически периоди. Моделът остава само за изследване и е отделен от създаването на комбинации.",
+    "The neural-dynamics sandbox did not pass the promotion gate on this historical holdout. It remains research-only and is not connected to ticket generation.":
+        "Невронният модел не изпълни условията в този независим исторически период. Той остава само за изследване и не участва в създаването на комбинации.",
+    "The neural-dynamics sandbox passed the exploratory comparison gate on this historical holdout. It remains research-only and requires independent confirmation before any production consideration.":
+        "Невронният модел показа положителен резултат в този независим исторически период. Той остава само за изследване и изисква независима потвърждаваща проверка преди работна употреба.",
+})
+
+VALUE_LABELS_BG.update({
+    "evidence_chain_complete": "Всички необходими експерименти са включени в оценката",
+    "source_statuses_complete": "Всички използвани експерименти са завършени",
+    "source_signatures_match": "Контролните подписи на резултатите съвпадат",
+    "dataset_identity_consistent": "Всички сравнения използват един и същ набор от данни",
+    "future_data_leakage_absent": "Не са използвани бъдещи данни",
+    "production_integration_absent": "Няма връзка с работната верига",
+    "robust_superiority_demonstrated": "Доказано е устойчиво превъзходство",
+    "all_neural_promotion_gates_passed": "Всички условия за допускане на невронния модел са изпълнени",
+    "all_mean_advantages_positive": "Средният резултат е по-добър при всяко сравнение",
+    "all_confidence_intervals_above_zero": "Всички доверителни интервали потвърждават положително предимство",
+    "all_sign_tests_significant": "Всички статистически проверки потвърждават значимо предимство",
+    "all_seed_positive_rates_sufficient": "Резултатът е положителен при достатъчно начални стойности",
+    "all_fold_positive_rates_sufficient": "Резултатът е положителен при достатъчно исторически периоди",
+    "neural_seed_spread_within_limit": "Разликите между началните стойности са в допустими граници",
+    "minimum_design_size_met": "Използвани са достатъчно изпълнения и исторически периоди",
+    "materially_new_hypothesis": "Съществено нова изследователска хипотеза",
+    "preregistered_primary_metric_and_gate": "Предварително определени основен показател и условия за успех",
+    "untouched_or_future_validation_period": "Нов неизползван исторически или бъдещ период",
+    "untouched_or_future_non_overlapping_period": "Нов и неприпокриващ се исторически или бъдещ период",
+    "baseline_first_comparison": "Първо сравнение с простите базови модели",
+    "baseline_model_first_comparison": "Първо сравнение с простите базови модели",
+    "score_before_learn_chronology": "Оценяване преди добавяне към следващото обучение",
+    "no_personal_journal_access": "Без достъп до личния дневник",
+    "no_production_pipeline_access": "Без достъп до работната верига",
+    "no_real_ticket_generation": "Без създаване на комбинации за реална игра",
+    "single_holdout_baseline": "Единична независима проверка на базов модел",
+    "single_holdout_neural": "Единична независима проверка на невронния модел",
+    "multi_seed_multi_period_neural": "Проверка с няколко начални стойности и исторически периода",
+    "positive_but_not_robust": "Положително, но неустойчиво предимство",
+    "robust_negative": "Устойчиво по-слаб резултат",
+    "robust_positive": "Устойчиво по-добър резултат",
+    "pause_and_archive": "Спрян и архивиран",
+    "blocked_without_robust_superiority": "Блокиран без доказано устойчиво превъзходство",
+    "materially_new_preregistered_hypothesis": "Нова предварително определена изследователска хипотеза",
+})
+
+FIELD_LABELS_BG.update({
+    "evidence_chain_complete": "Всички необходими експерименти са включени в оценката",
+    "source_statuses_complete": "Всички използвани експерименти са завършени",
+    "source_signatures_match": "Контролните подписи на резултатите съвпадат",
+    "dataset_identity_consistent": "Всички сравнения използват един и същ набор от данни",
+    "future_data_leakage_absent": "Не са използвани бъдещи данни",
+    "production_integration_absent": "Няма връзка с работната верига",
+    "robust_superiority_demonstrated": "Доказано устойчиво превъзходство",
+    "all_neural_promotion_gates_passed": "Всички условия за допускане са изпълнени",
+    "evidence_scope": "Какво е проверено",
+    "candidate": "Изследван модел",
+    "comparator": "Сравнителен модел",
+    "mean_advantage": "Средна разлика",
+    "ci_lower": "Долна граница на доверителния интервал",
+    "ci_upper": "Горна граница на доверителния интервал",
+    "positive_seed_rate": "Положителен дял по начални стойности",
+    "positive_fold_rate": "Положителен дял по исторически периоди",
+    "source_promotion_gate_passed": "Условията в източниковия експеримент са изпълнени",
+    "evidence_outcome": "Извод от доказателствата",
+    "production_eligible": "Допустим за работна употреба",
+    "source_summary": "Източников отчет",
+    "promotion_requirements": "Условия за допускане",
+    "next_experiment_requirements": "Условия за следващ експеримент",
+    "materially_new_hypothesis": "Съществено нова изследователска хипотеза",
+    "preregistered_primary_metric_and_gate": "Предварително определени основен показател и условия за успех",
+    "untouched_or_future_validation_period": "Нов неизползван исторически или бъдещ период",
+    "untouched_or_future_non_overlapping_period": "Нов и неприпокриващ се исторически или бъдещ период",
+    "baseline_first_comparison": "Първо сравнение с простите базови модели",
+    "baseline_model_first_comparison": "Първо сравнение с простите базови модели",
+    "score_before_learn_chronology": "Оценяване преди добавяне към следващото обучение",
+    "no_personal_journal_access": "Без достъп до личния дневник",
+    "no_production_pipeline_access": "Без достъп до работната верига",
+    "no_real_ticket_generation": "Без създаване на комбинации за реална игра",
+})
+
+FIELD_WORDS_BG.update({
+    "complete": "завършено", "consistent": "съгласувано", "absent": "няма",
+    "signatures": "контролни подписи", "statuses": "състояния", "future": "бъдещи",
+    "leakage": "използване на бъдещи данни", "integration": "връзка", "gates": "условия",
+    "materially": "съществено", "hypothesis": "хипотеза", "preregistered": "предварително определен",
+    "primary": "основен", "metric": "показател", "gate": "условие", "untouched": "неизползван",
+    "non": "не", "overlapping": "припокриващ се", "period": "период", "first": "първо",
+    "comparison": "сравнение", "validation": "проверка", "learn": "обучение", "chronology": "последователност",
+    "access": "достъп", "real": "реална", "ticket": "фиш", "generation": "създаване",
+    "demonstrated": "доказано", "superiority": "превъзходство", "all": "всички",
+})
+
 TECHNICAL_COLUMN_MARKERS: tuple[str, ...] = (
     "sha256", "_hash", "hash_", "signature", "previous_event", "configuration_",
     "dataset_", "code_", "artifact_path", "source_summary", "created_at_utc",
@@ -1387,6 +1487,9 @@ TECHNICAL_COLUMN_MARKERS: tuple[str, ...] = (
     "settled_at_utc", "event_id", "experiment_id", "decision_id", "protocol_id", "lock_id",
     "seed_advantages", "fold_advantages", "best_hits_distribution", "target_sequence_index",
     "source_dataset_rows", "forecast_signature", "artifact_",
+    "p_value", "sign_test", "ci_lower", "ci_upper", "confidence_level",
+    "positive_seed_rate", "positive_fold_rate", "source_promotion_gate",
+    "source_summary", "raw_", "command", "code_file", "policy_sha",
 )
 
 FORBIDDEN_BG_UI_TOKENS: tuple[str, ...] = (
@@ -1403,6 +1506,72 @@ FORBIDDEN_BG_UI_TOKENS: tuple[str, ...] = (
     "append-only", "end-to-end", "auto-apply",
 )
 
+
+
+USER_ASCII_ALLOWLIST: frozenset[str] = frozenset({
+    "api", "bst", "captcha", "csv", "eur", "bgn", "git", "github", "html", "id",
+    "json", "jsonl", "jupyter", "markdown", "ml", "numpy", "ok", "pca", "png",
+    "python", "qa", "r", "readme", "sgd", "sha", "sha-256", "sha256", "sql",
+    "sqlite", "streamlit", "txt", "ui", "url", "utc", "ux", "zip", "p", "z",
+})
+
+
+def unexpected_user_ascii_words(text: Any) -> list[str]:
+    """Return untranslated Latin words that should not appear in Bulgarian user mode."""
+    visible = re.sub(r"<[^>]+>", " ", str(text))
+    visible = re.sub(r"`[^`]*`", " ", visible)
+    visible = re.sub(r"https?://\S+", " ", visible, flags=re.IGNORECASE)
+    visible = re.sub(r"(?:(?:[A-Za-z]:)?[\\/])?[A-Za-z0-9_.-]+(?:[\\/][A-Za-z0-9_.-]+)+", " ", visible)
+    result: set[str] = set()
+    for raw in re.findall(r"\b[A-Za-z][A-Za-z0-9+.-]{1,}\b", visible):
+        word = raw.strip(".-")
+        lowered = word.lower()
+        if not word or lowered in USER_ASCII_ALLOWLIST:
+            continue
+        if re.fullmatch(r"(?:v|V|n|N)\d+(?:_\d+)*", word):
+            continue
+        if re.fullmatch(r"[A-Fa-f0-9]{8,}", word):
+            continue
+        result.add(word)
+    return sorted(result, key=str.lower)
+
+
+def _generic_bg_field_label(raw: str) -> str:
+    normalized = re.sub(r"[\s./-]+", "_", raw.lower()).strip("_")
+    tokens = set(token for token in normalized.split("_") if token)
+    if tokens & {"reason", "message", "description", "details", "note", "interpretation", "warning"}:
+        return "Обяснение"
+    if tokens & {"status", "state", "health", "verdict", "outcome", "result"}:
+        return "Състояние"
+    if tokens & {"date", "time", "year", "month", "day", "utc", "timestamp"}:
+        return "Дата и час"
+    if tokens & {"count", "rows", "units", "draws", "runs", "entries", "total"}:
+        return "Брой"
+    if tokens & {"model", "strategy", "candidate", "comparator", "baseline", "method"}:
+        return "Модел или метод"
+    if tokens & {"score", "rate", "ratio", "share", "percent", "probability", "mean", "average", "difference"}:
+        return "Оценка"
+    if tokens & {"check", "gate", "passed", "complete", "consistent", "match", "absent", "requirement"}:
+        return "Условие за проверка"
+    if tokens & {"path", "file", "hash", "sha256", "signature", "command", "code", "id", "key"}:
+        return "Техническа информация"
+    return "Показател"
+
+
+def _safe_bg_dynamic_text(translated: str, raw: str, field_name: Any | None = None) -> str:
+    if not unexpected_user_ascii_words(translated):
+        return translated
+    if re.fullmatch(r"[A-Za-z][A-Za-z0-9_./-]{1,160}", raw) and not re.search(r"[/\\]", raw):
+        return _generic_bg_field_label(str(field_name or raw))
+    if field_name is not None:
+        label = _generic_bg_field_label(str(field_name))
+        if label == "Обяснение":
+            return "Подробното техническо описание е достъпно в раздел „Технически подробности“."
+        if label == "Състояние":
+            return "Необходима е техническа проверка"
+    if len(raw) >= 48 or " " in raw:
+        return "Подробното техническо описание е достъпно в раздел „Технически подробности“."
+    return "Техническа стойност"
 
 def current_language(st_module: Any | None = None) -> str:
     try:
@@ -1591,14 +1760,14 @@ def is_technical_value(value: Any) -> bool:
 
 
 def translate_value(
-    value: Any, *, language: str | None = None, show_technical: bool | None = None
+    value: Any, *, language: str | None = None, show_technical: bool | None = None, field_name: Any | None = None
 ) -> Any:
     language = language or current_language()
     show_technical = technical_details_enabled() if show_technical is None else show_technical
     # Recursive localization is required for st.json and nested table cells.
     if isinstance(value, Mapping):
         return {
-            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical, field_name=k)
             for k, v in value.items()
             if show_technical or not is_technical_column(k)
         }
@@ -1642,7 +1811,10 @@ def translate_value(
             candidate = humanize_field_name(raw, language=language)
             if candidate != raw:
                 return candidate
-    return translate_text(value, language=language, show_technical=show_technical)
+    translated = str(translate_text(value, language=language, show_technical=show_technical))
+    if language == "bg" and not show_technical:
+        return _safe_bg_dynamic_text(translated, raw, field_name)
+    return translated
 
 
 def humanize_field_name(name: Any, *, language: str | None = None) -> str:
@@ -1666,6 +1838,8 @@ def humanize_field_name(name: Any, *, language: str | None = None) -> str:
                 words.append(str(translated).strip())
         result = " ".join(words).strip() or raw
         result = re.sub(r"\s{2,}", " ", result)
+        if unexpected_user_ascii_words(result):
+            result = _generic_bg_field_label(raw)
         return result[:1].upper() + result[1:] if result else raw
     if raw in FIELD_LABELS_EN:
         return FIELD_LABELS_EN[raw]
@@ -1709,7 +1883,7 @@ def localize_table(data: Any, *, language: str | None = None, show_technical: bo
         for source_col, display_col in rename_map.items():
             try:
                 result[display_col] = result[display_col].map(
-                    lambda item, field=str(source_col): translate_value(_format_timestamp(item, field), language=language, show_technical=show_technical)
+                    lambda item, field=str(source_col): translate_value(_format_timestamp(item, field), language=language, show_technical=show_technical, field_name=field)
                 )
             except Exception:
                 pass
@@ -1728,7 +1902,7 @@ def localize_table(data: Any, *, language: str | None = None, show_technical: bo
         for item in data:
             if isinstance(item, Mapping):
                 output.append({
-                    humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+                    humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical, field_name=k)
                     for k, v in item.items() if show_technical or not is_technical_column(k)
                 })
             else:
@@ -1736,7 +1910,7 @@ def localize_table(data: Any, *, language: str | None = None, show_technical: bo
         return output
     if isinstance(data, Mapping):
         return {
-            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical, field_name=k)
             for k, v in data.items() if show_technical or not is_technical_column(k)
         }
     return translate_value(data, language=language, show_technical=show_technical)
@@ -1757,6 +1931,9 @@ def inject_global_css(st_module: Any) -> None:
     [data-testid="stToolbarActions"],
     [data-testid="stHeaderActionElements"],
     .stDeployButton,
+    header button[aria-label="Deploy"],
+    header button[title="Deploy"],
+    header a[href*="share.streamlit.io"],
     #MainMenu,
     footer { display: none !important; }
     [data-testid="stMetricLabel"] { line-height: 1.25; white-space: normal !important; }

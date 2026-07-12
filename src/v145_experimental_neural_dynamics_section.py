@@ -14,7 +14,8 @@ from src.v145_experimental_neural_dynamics_engine import (
     SUMMARY_JSON_PATH,
     run_experimental_neural_dynamics,
 )
-from src.v150_global_ui_polish import translate_value, ui_text
+from src.v150_2_plain_language import paired_user_rows
+from src.v150_global_ui_polish import current_language, ui_text
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -39,17 +40,18 @@ def _t(bg: str, en: str) -> str:
 
 
 def render_v145_experimental_neural_dynamics_section() -> None:
+    language = current_language(st)
     st.title(_t("Лаборатория за невронна динамика", "Neural Dynamics Laboratory"))
     st.caption(
         _t(
-            "Изолиран последователен исторически експеримент с невронен резервоар и сравнение с честотен, скорошен и случаен базов модел.",
-            "Isolated walk-forward experiment with a neural reservoir compared with frequency, recency and uniform-random baselines.",
+            "Сравнява невронен модел с по-прости базови модели чрез последователна историческа проверка.",
+            "Compares a neural model with simpler baselines through a walk-forward historical evaluation.",
         )
     )
     st.warning(
         _t(
-            "Моделът е само за исторически изследвания. Не е включен в работната верига, не генерира реални фишове и не гарантира печалба.",
-            "The model is for historical research only. It is not part of the production pipeline, does not generate real tickets and does not guarantee a win.",
+            "Моделът е само за исторически изследвания. Не участва в работната верига, не създава реални фишове и не гарантира печалба.",
+            "The model is for historical research only. It is not part of production, does not create real tickets and does not guarantee a win.",
         )
     )
 
@@ -68,10 +70,19 @@ def render_v145_experimental_neural_dynamics_section() -> None:
 
     gate_passed = bool(comparison.get("promotion_gate_passed"))
     if gate_passed:
-        st.success(_t("Решение: условията за допускане са изпълнени.", "Decision: promotion criteria passed."))
+        st.success(
+            _t(
+                "Проверката показва положителен резултат, но е необходима независима проверка преди каквато и да е работна употреба.",
+                "The evaluation is positive, but independent confirmation is required before any production use.",
+            )
+        )
     else:
-        st.warning(_t("Решение: моделът не е допуснат до работния режим.", "Decision: the model is not promoted to production mode."))
-    st.info(translate_value(comparison.get("interpretation") or _t("Все още няма изпълнен експеримент.", "No experiment has been run.")))
+        st.info(
+            _t(
+                "Невронният модел не показва устойчиво предимство спрямо базовите модели. Той остава само за изследване.",
+                "The neural model does not show a robust advantage over the baselines. It remains research-only.",
+            )
+        )
 
     with st.expander(_t("Нова експериментална проверка", "New experimental evaluation"), expanded=False):
         row1 = st.columns(4)
@@ -93,20 +104,38 @@ def render_v145_experimental_neural_dynamics_section() -> None:
         seed = row3[3].number_input(_t("Начална стойност за повторяемост", "Random seed"), 0, 2_147_483_647, int(DEFAULT_CONFIG["seed"]), 1)
 
         if st.button(_t("Изпълни и регистрирай експеримента", "Run and register experiment"), type="primary", use_container_width=True):
-            with st.spinner(_t("Изпълнява се историческата проверка на невронната динамика...", "Running the neural dynamics walk-forward evaluation...")):
-                report = run_experimental_neural_dynamics(
+            with st.spinner(_t("Изпълнява се историческата проверка на невронния модел...", "Running the neural model historical evaluation...")):
+                run_experimental_neural_dynamics(
                     holdout_draws=int(holdout), minimum_training_draws=int(training), package_size=int(package_size),
                     random_trials=int(trials), frequency_pool_size=int(pool), recency_decay=float(decay),
                     reservoir_size=int(reservoir), leak_rate=float(leak), spectral_radius=float(radius),
                     ridge_alpha=float(ridge), score_power=float(power), seed=int(seed), write_outputs=True, register=True,
                 )
-            st.session_state["v145_experiment"] = report
-            st.success(_t(f"Експериментът е регистриран: {report['experiment']['experiment_id']}", f"Experiment registered: {report['experiment']['experiment_id']}"))
+            st.success(_t("Експериментът е завършен и регистриран.", "The experiment was completed and registered."))
             summary = _load_json(SUMMARY_JSON_PATH)
 
-    with st.expander(_t("Архитектура и технически параметри", "Architecture and technical parameters"), expanded=False):
+    st.markdown(_t("### Сравнение с базовите модели", "### Comparison with baseline models"))
+    st.caption(
+        _t(
+            "Отрицателна средна разлика означава, че невронният модел е постигнал по-слаб среден резултат от съответния базов модел.",
+            "A negative mean difference means the neural model performed worse on average than the corresponding baseline.",
+        )
+    )
+    paired = comparison.get("paired", {}) or {}
+    friendly_rows = paired_user_rows(paired, language=language)
+    if friendly_rows:
+        st.dataframe(pd.DataFrame(friendly_rows), use_container_width=True, hide_index=True)
+    else:
+        st.info(_t("Все още няма резултати за сравнение.", "No comparison results are available yet."))
+
+    with st.expander(_t("Статистически и технически подробности", "Statistical and technical details"), expanded=False):
         architecture = summary.get("architecture", {}) or {}
-        st.caption(_t("Този раздел е за технически одит и възпроизводимост.", "This section is for technical audit and reproducibility."))
+        st.caption(
+            _t(
+                "Този раздел съдържа параметрите на модела, статистическите проверки и резултатите по отделни тиражи.",
+                "This section contains model parameters, statistical tests and per-draw results.",
+            )
+        )
         st.code("\n".join([
             f"model = {architecture.get('name', '—')}",
             f"state_equation = {architecture.get('state_equation', '—')}",
@@ -114,19 +143,13 @@ def render_v145_experimental_neural_dynamics_section() -> None:
             f"actual_spectral_radius = {architecture.get('actual_spectral_radius', '—')}",
             "production_integration = false",
         ]))
-
-    st.markdown(_t("### Сравнение по двойки", "### Paired comparison"))
-    paired = comparison.get("paired", {}) or {}
-    paired_rows = [value for value in paired.values() if isinstance(value, dict)]
-    if paired_rows:
-        st.dataframe(pd.DataFrame(paired_rows), use_container_width=True, hide_index=True)
-
-    st.markdown(_t("### Резултати по тиражи за независима проверка", "### Per-draw independent evaluation results"))
-    rows = _load_csv(DRAW_COMPARISON_CSV_PATH)
-    if rows:
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-    else:
-        st.info(_t("Все още няма резултати по отделни тиражи.", "No per-draw results are available yet."))
+        paired_rows = [value for value in paired.values() if isinstance(value, dict)]
+        if paired_rows:
+            st.dataframe(pd.DataFrame(paired_rows), use_container_width=True, hide_index=True)
+        draw_rows = _load_csv(DRAW_COMPARISON_CSV_PATH)
+        if draw_rows:
+            st.markdown(_t("#### Резултати по отделни тиражи", "#### Per-draw results"))
+            st.dataframe(pd.DataFrame(draw_rows), use_container_width=True, hide_index=True)
 
     st.markdown(_t("### Защити", "### Safeguards"))
     st.markdown(_t(

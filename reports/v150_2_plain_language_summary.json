@@ -1,0 +1,85 @@
+{
+  "step": "150.2",
+  "status": "completed",
+  "scope": "plain_bulgarian_user_language_complete_dynamic_key_localization_and_technical_separation",
+  "generated_at_utc": "2026-07-12T10:13:41+00:00",
+  "broad_static_literal_rows": 2060,
+  "active_ui_literal_rows": 1892,
+  "active_ui_literal_failures": 0,
+  "unique_dynamic_keys_and_headers": 2936,
+  "dynamic_key_failures": 0,
+  "screenshot_regression_cases": 15,
+  "screenshot_regression_failures": 0,
+  "utf8_files_checked": 112,
+  "utf8_failures": 0,
+  "runtime_source_guards": {
+    "v145_plain_summary_table": true,
+    "v146_plain_summary_table": true,
+    "v147_plain_gate_labels": true,
+    "v147_plain_requirements": true,
+    "technical_details_separated": true,
+    "generic_dynamic_guard": true,
+    "deploy_button_guard": true
+  },
+  "protected_step148_files": {
+    "all_ok": true,
+    "files": [
+      {
+        "path": "src/v145_experimental_neural_dynamics_engine.py",
+        "expected_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "actual_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "ok": true
+      },
+      {
+        "path": "src/v146_controlled_neural_robustness_engine.py",
+        "expected_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "actual_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "ok": true
+      },
+      {
+        "path": "src/v148_prospective_forward_test_engine.py",
+        "expected_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "actual_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_policy.json",
+        "expected_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "actual_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_status.json",
+        "expected_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "actual_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "ok": true
+      },
+      {
+        "path": "data/prospective_forward_test_ledger.jsonl",
+        "expected_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "actual_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "ok": true
+      },
+      {
+        "path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json",
+        "expected_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "actual_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "ok": true
+      }
+    ]
+  },
+  "normal_user_mode": {
+    "mixed_bulgarian_english_blocked": true,
+    "unknown_dynamic_prose_replaced_by_plain_guidance": true,
+    "technical_columns_hidden_by_default": true,
+    "research_tables_reduced_to_user_summary": true,
+    "full_statistics_available_in_technical_expanders": true,
+    "utf8_cyrillic_required": true
+  },
+  "personal_journal_used": false,
+  "production_scoring_changed": false,
+  "failures": [],
+  "ok": true,
+  "result_signature_sha256": "39affe9517cff61e7e693dfa9a62137db6eaca2e249c5c254e99c21a7de1835b",
+  "artifact_role": "report_summary"
+}
