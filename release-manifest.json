@@ -1,6 +1,6 @@
 {
-  "checkpoint": "Step 147",
-  "checkpoint_title": "Experimental Evidence Synthesis & Research Decision Gate",
+  "checkpoint": "Step 148",
+  "checkpoint_title": "Prospective Forward-Test Lock & Untouched Future Draw Ledger",
   "project": "lottery-probability-model",
   "release_policy_version": "145.1",
   "manifest_scope": "All intended project files under release policy 145.1; excludes release metadata files, .git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, temporary archives, logs and backup artifacts.",
@@ -9,16 +9,15 @@
     "tracked_snapshots_update_only_on_semantic_change": true,
     "runtime_cache_in_release": false
   },
-  "research_decision_scope": {
-    "source_steps": [
-      144,
-      145,
-      146
-    ],
-    "evidence_synthesis": true,
-    "decision_registry": true,
-    "same_holdout_retuning_forbidden": true,
-    "current_neural_configuration": "pause_and_archive",
+  "prospective_forward_test_scope": {
+    "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
+    "target_settled_draws": 30,
+    "eligible_settled_draws": 0,
+    "active_expected_draw_key": "2026-54",
+    "append_only_sha256_ledger": true,
+    "score_before_learn": true,
+    "historical_backfill": false,
+    "frozen_step146_configuration": true,
     "production_promotion": "blocked",
     "automatic_production_promotion": false
   },
@@ -30,7 +29,7 @@
     "temporary archives, logs and backups",
     "build output and editor metadata"
   ],
-  "file_count": 1424,
+  "file_count": 1440,
   "files": [
     {
       "path": ".gitignore",
@@ -86,6 +85,11 @@
       "path": "data/prize_winner_history.csv",
       "size_bytes": 12218,
       "sha256": "de7c4bbb9186a9fce83a43fa0ba7a58db86d67506ecc946109438f27d32c37c0"
+    },
+    {
+      "path": "data/prospective_forward_test_ledger.jsonl",
+      "size_bytes": 2408,
+      "sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887"
     },
     {
       "path": "data/raw/bst_649_official/649_1958.txt",
@@ -2118,6 +2122,16 @@
       "sha256": "e71edc220d70bdd38f8c5af0c166402bf6bffd4e7109751bf0e1be0978752838"
     },
     {
+      "path": "models/v148_prospective_forward_test_policy.json",
+      "size_bytes": 3382,
+      "sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c"
+    },
+    {
+      "path": "models/v148_prospective_forward_test_status.json",
+      "size_bytes": 1052,
+      "sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba"
+    },
+    {
       "path": "models/v41/v41_frequency_main_numbers_model.json",
       "size_bytes": 1923,
       "sha256": "ce8b012850db76382a084e159e538481522b03c58316b23501c90a408bddd7d9"
@@ -2659,8 +2673,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 18818,
-      "sha256": "7e571222d1cc83fdf4d8bc1aeb011808e7b183b79b4c15baf80061c4802d486b"
+      "size_bytes": 20164,
+      "sha256": "6479a1730d97f6b7a9188c265f4a36a8100709e53b05bcd67625c436d99fd5cf"
     },
     {
       "path": "README_UI.md",
@@ -2751,6 +2765,11 @@
       "path": "reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json",
       "size_bytes": 924296,
       "sha256": "357359d99f7098281dda1603785471bd1a191dbab08357f03198fa227f6099d8"
+    },
+    {
+      "path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json",
+      "size_bytes": 90718,
+      "sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d"
     },
     {
       "path": "reports/frequency_model_report.md",
@@ -2986,6 +3005,11 @@
       "path": "reports/STEP_147_EXPERIMENTAL_EVIDENCE_SYNTHESIS_AND_RESEARCH_DECISION_GATE.md",
       "size_bytes": 1862,
       "sha256": "b8025541468009d581389ae22aa43f397d14133c3277d463cabc96c8101e6b3a"
+    },
+    {
+      "path": "reports/STEP_148_PROSPECTIVE_FORWARD_TEST_LOCK_AND_UNTOUCHED_FUTURE_DRAW_LEDGER.md",
+      "size_bytes": 2262,
+      "sha256": "bc273f9ea70b2a200b9879b72b46bb6696063baa92529d2e652f6a50633631eb"
     },
     {
       "path": "reports/v100_final_release_lock_checklist.csv",
@@ -3876,6 +3900,31 @@
       "path": "reports/v147_research_decision_summary.md",
       "size_bytes": 2440,
       "sha256": "be82a0a251539a57eefe892ce051eed0328820c21403d564758aa64bee79344a"
+    },
+    {
+      "path": "reports/v148_active_locked_evaluation_packages.csv",
+      "size_bytes": 5333,
+      "sha256": "0ad1451a479761350b2403c206e09db9b57220bb8ee8f49c7fbbad36952086ee"
+    },
+    {
+      "path": "reports/v148_forward_test_ledger_index.csv",
+      "size_bytes": 556,
+      "sha256": "ee88d45bea2052ec01427dd3e8b67d5cdc37bab3ba2fec227e8c85803cf71b52"
+    },
+    {
+      "path": "reports/v148_forward_test_settlements.csv",
+      "size_bytes": 496,
+      "sha256": "3943d7be00144368cd56db9be99e35db9dada2c0db09f9c3c507c0144ac33446"
+    },
+    {
+      "path": "reports/v148_forward_test_summary.json",
+      "size_bytes": 4437,
+      "sha256": "a6445258a108d133cd1ae6e9cdb2fe65a26b0a5991d6ff4eed76673faaa80892"
+    },
+    {
+      "path": "reports/v148_forward_test_summary.md",
+      "size_bytes": 1635,
+      "sha256": "7ee43af253b20c9981a423f0d74e98ec97a5027c8b28681bec140307c71a79d2"
     },
     {
       "path": "reports/v40_normalized_draw_events_report.json",
@@ -5709,28 +5758,33 @@
     },
     {
       "path": "scripts/verify_step_144.py",
-      "size_bytes": 8731,
-      "sha256": "314433e1a2f24808e9b1354b860ae15fa87de39de54966c26101db7f839e0816"
+      "size_bytes": 8743,
+      "sha256": "203fbc31962f25be88e3749b6020a102b2fce86ec7c9bff79c6fa0387f9096e2"
     },
     {
       "path": "scripts/verify_step_145.py",
-      "size_bytes": 11261,
-      "sha256": "5edc110a8ce328a22c6bf6b4cd4dc52a1a0608abe68c6a7d6e65058426f1bb8a"
+      "size_bytes": 11375,
+      "sha256": "2a6032624b744c089184cdac7e3a097ac78883b981812eedf80109f97a51b4c8"
     },
     {
       "path": "scripts/verify_step_145_1.py",
-      "size_bytes": 8751,
-      "sha256": "7e414180dc614ae9e4ed46e35ed63b3d4eeaeac1adf3f0e5983d55e1b4490fc3"
+      "size_bytes": 8914,
+      "sha256": "ee3ddcbd8488e456d2eb6d6405b91bf19c889767537c3180eb930f80d22101cc"
     },
     {
       "path": "scripts/verify_step_146.py",
-      "size_bytes": 12349,
-      "sha256": "20fe2a54bb90952aeaf67257c0f5844a8e14746c7677f1733a3a3ed5c33721e8"
+      "size_bytes": 12463,
+      "sha256": "2c348cd955b179bb4fdd1376929dff9b659ca7051303ad8129e2887cb69dc2d4"
     },
     {
       "path": "scripts/verify_step_147.py",
-      "size_bytes": 9797,
-      "sha256": "4b0b51d4cda73e7628f7031c80f80bf9bcd9018560ccccb64d852c6cd7741e56"
+      "size_bytes": 9954,
+      "sha256": "e69aea2e7835ad9c8af2133314e2fc7a993a5149781ee88dbf71ce91a49ec8c3"
+    },
+    {
+      "path": "scripts/verify_step_148.py",
+      "size_bytes": 13859,
+      "sha256": "400694203fdb6bf8ec0e2bfce6b8caf7c739f1027a8dd114522292c0c3fdd41a"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -6403,6 +6457,16 @@
       "sha256": "7d0ef1a2bb8284dd38e673610bcf9593ed512198f9f44dc6e76cbd5bc0b65d62"
     },
     {
+      "path": "src/v148_prospective_forward_test_engine.py",
+      "size_bytes": 37945,
+      "sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14"
+    },
+    {
+      "path": "src/v148_prospective_forward_test_section.py",
+      "size_bytes": 6089,
+      "sha256": "79524bfc9901b33b475f7157a476243793b7f73de0628b13c105675a6e7e49af"
+    },
+    {
       "path": "src/v41_rules_aware_analysis_section.py",
       "size_bytes": 13791,
       "sha256": "a7986e39ed5c33c5a977f78fb60535243372147e30b71d6a7a85527a318ae188"
@@ -6904,8 +6968,8 @@
     },
     {
       "path": "streamlit_app.py",
-      "size_bytes": 252450,
-      "sha256": "e0601ed4706eabb4b39350f81fe241143df36248ee1dc92f169413081e04c870"
+      "size_bytes": 252644,
+      "sha256": "178d6105bc665fae30bec73d2b8bd1ca11d67823cca2b8d91f4b38f1ddb73519"
     },
     {
       "path": "streamlit_pages/__init__.py",
@@ -6983,6 +7047,11 @@
       "sha256": "13c8f097316f273b1a19a0f816c9cf27238753ec2b8329a1df5b79565da7de2f"
     },
     {
+      "path": "tools/finalize_step_148_release.py",
+      "size_bytes": 9718,
+      "sha256": "1b2865f3bdbe60d5d7bbb504fb5adb5a42b33f9896c2fe62c5b2aefec9d6efde"
+    },
+    {
       "path": "tools/ingest_latest_bst_official_draw.py",
       "size_bytes": 1032,
       "sha256": "01e251089c88ec5fe1cb57850e62f22a50275424823ec67505f14112d4ebbff9"
@@ -6991,6 +7060,11 @@
       "path": "tools/integrate_r_statistical_features.py",
       "size_bytes": 1410,
       "sha256": "b4a7674305fd68dc0bf663cdf4b543e68e5895950d09af9d6c309688b3b377be"
+    },
+    {
+      "path": "tools/lock_next_draw_forecast.py",
+      "size_bytes": 604,
+      "sha256": "5251c1aee1e7aad7ef674ab62d1af3cc175437872a6f0385d1450e90fa49af44"
     },
     {
       "path": "tools/refresh_model_data_after_bst_sync.py",
@@ -7106,6 +7180,11 @@
       "path": "tools/run_unified_downstream_refresh.py",
       "size_bytes": 787,
       "sha256": "6fbaec0f166c4985a0f2404eb60cab18f73fc732d46176aacb3c602b8c3e5d72"
+    },
+    {
+      "path": "tools/settle_locked_draw_forecast.py",
+      "size_bytes": 822,
+      "sha256": "24fed17b7adfe440011882dad3b4a174c8c4f2c9d025a1431d42a22b85fa9805"
     },
     {
       "path": "tools/sync_bst_official_latest.py",

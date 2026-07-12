@@ -1,0 +1,3 @@
+event_index,event_type,event_sha256,previous_event_sha256,protocol_id,lock_id,event_time_utc,expected_draw_key,actual_draw_key,target_sequence_index
+1,protocol_initialized,c1f9e6b19040cae9eacf0c437bad7fcde1a274b161fd950b73a1ec2ea7165468,GENESIS,PFT-148-9873e2dabbe3ec8e287f,,2026-07-12T06:07:01+00:00,,,
+2,forecast_locked,683ca9cac3bb0eca759a21a0f45f49ff29548524912dde48245ce02839bcfd7b,c1f9e6b19040cae9eacf0c437bad7fcde1a274b161fd950b73a1ec2ea7165468,PFT-148-9873e2dabbe3ec8e287f,LOCK-148-c299f383382d1f4a3ec7355f,2026-07-12T06:07:03+00:00,2026-54,,10064

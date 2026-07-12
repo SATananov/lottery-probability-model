@@ -78,12 +78,12 @@ def main() -> int:
     for path in REQUIRED:
         if not path.is_file():
             failures.append(f"Missing: {path.relative_to(ROOT)}")
-    metadata = (
-        ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md",
-        ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md",
-    )
-    if not all(path.is_file() for path in metadata):
-        failures.append("Missing Step 147 clean checkpoint manifests")
+    metadata_pairs = [
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md"),
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP148.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP148.md"),
+    ]
+    if not any(all(path.is_file() for path in pair) for pair in metadata_pairs):
+        failures.append("Missing Step 147 or later clean checkpoint manifests")
 
     for path in [item for item in REQUIRED if item.suffix == ".py"] + [ROOT / "streamlit_app.py"]:
         if not path.exists():
@@ -180,7 +180,7 @@ def main() -> int:
             failures.append("Step 147 read-only synthesis does not reproduce stored signature")
 
         release = load_json(ROOT / "release-manifest.json")
-        if release.get("checkpoint") != "Step 147":
+        if release.get("checkpoint") not in {"Step 147", "Step 148"}:
             failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         for required_path in (

@@ -1,0 +1,134 @@
+{
+  "step": 148,
+  "status": "active",
+  "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
+  "policy_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+  "ledger_path": "data/prospective_forward_test_ledger.jsonl",
+  "ledger_event_count": 2,
+  "ledger_last_event_sha256": "683ca9cac3bb0eca759a21a0f45f49ff29548524912dde48245ce02839bcfd7b",
+  "ledger_integrity_ok": true,
+  "target_settled_draws": 30,
+  "eligible_settled_draws": 0,
+  "remaining_draws": 30,
+  "milestones": [
+    10,
+    20,
+    30
+  ],
+  "next_milestone": 10,
+  "active_lock": {
+    "lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
+    "locked_at_utc": "2026-07-12T06:07:03+00:00",
+    "expected_draw_key": "2026-54",
+    "target_sequence_index": 10064,
+    "source_dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "source_dataset_rows": 10063,
+    "forecast_signature_sha256": "2edce2867e5c68ca6650cc54170707f2aba7dd10ab202c44346a87d9d2f75f93",
+    "artifact_path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json"
+  },
+  "aggregate_results": {
+    "neural_dynamics_frozen_ensemble": {
+      "eligible_draws": 0,
+      "average_best_hits": null,
+      "best_hits_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "frequency_walk_forward": {
+      "eligible_draws": 0,
+      "average_best_hits": null,
+      "best_hits_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "recency_weighted_walk_forward": {
+      "eligible_draws": 0,
+      "average_best_hits": null,
+      "best_hits_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "recent_window_frequency": {
+      "eligible_draws": 0,
+      "average_best_hits": null,
+      "best_hits_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "frequency_recency_blend": {
+      "eligible_draws": 0,
+      "average_best_hits": null,
+      "best_hits_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "uniform_random_mean": {
+      "eligible_draws": 0,
+      "average_best_hits": null
+    }
+  },
+  "frozen_source_locks": {
+    "step146_experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+    "step146_configuration_sha256": "0e4ec3757b0f25137750b5e213e1a058ca053e43c03f7d146af3f14b6619ab10",
+    "step146_result_signature_sha256": "9bf635c5433766bc2f45a59b3bb18443ea4f42a05075f308d7dd6b36221444d9",
+    "step147_decision_id": "DEC-147-0e11bccbcb-46770765b8",
+    "step147_result_signature_sha256": "566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35",
+    "forward_scoring_code_sha256": "f8a09b85aee17c4c96f2964ce933566eb8219c9c632489ae0f535ec02a4e59cc"
+  },
+  "last_protocol_event_at_utc": "2026-07-12T06:07:03+00:00",
+  "decision": {
+    "production_promotion": "blocked",
+    "automatic_promotion": false,
+    "final_research_decision_required_after_draws": 30,
+    "current_neural_configuration": "frozen_evaluation_only"
+  },
+  "guardrails": {
+    "historical_backfill": "forbidden",
+    "forecast_lock_after_target_publication": "invalid",
+    "same_configuration_retuning": "forbidden",
+    "parameter_changes_during_protocol": "forbidden",
+    "score_before_learn": "required",
+    "missing_predraw_lock": "draw_excluded",
+    "ledger_mutation": "detected_by_sha256_chain",
+    "personal_journal_access": "forbidden",
+    "production_pipeline_access": "forbidden",
+    "real_ticket_generation": "forbidden",
+    "final_promotion": "requires_new_research_decision_after_30_eligible_draws"
+  },
+  "production_integration_enabled": false,
+  "real_ticket_generation_enabled": false,
+  "personal_journal_used": false,
+  "historical_backfill_performed": false,
+  "safe_note_bg": "Step 148 е prospective research protocol. Заключените evaluation packages не са production препоръки или реални фишове. Протоколът не доказва предвидимост и не гарантира печалба.",
+  "result_signature_sha256": "4bf12ab575917b14597d4971426831007b8420498e7fbe5902569e03fad3776c"
+}

@@ -59,6 +59,7 @@ from src.v144_reproducible_experiment_registry_section import render_v144_reprod
 from src.v145_experimental_neural_dynamics_section import render_v145_experimental_neural_dynamics_section
 from src.v146_controlled_neural_robustness_section import render_v146_controlled_neural_robustness_section
 from src.v147_experimental_evidence_decision_section import render_v147_experimental_evidence_decision_section
+from src.v148_prospective_forward_test_section import render_v148_prospective_forward_test_section
 from src.v126_startup_automation_section import initialize_v126_startup_automation, render_v126_startup_automation_section
 from src.v127_end_to_end_automation_validation_section import render_v127_end_to_end_automation_validation_section
 from src.v128_production_auto_apply_guardrails_section import render_v128_production_guardrails_section
@@ -3958,6 +3959,7 @@ def main() -> None:
         "Експериментален neural dynamics sandbox": render_v145_experimental_neural_dynamics_section,
         "Контролирана neural robustness проверка": render_v146_controlled_neural_robustness_section,
         "Research decision gate": render_v147_experimental_evidence_decision_section,
+        "Проспективен forward test": render_v148_prospective_forward_test_section,
         "Пълно обновяване по цялата верига": render_v125_unified_downstream_refresh_section,
         "Автоматична проверка и операторски контрол": render_v126_startup_automation_section,
         "End-to-End проверка на автоматизацията": render_v127_end_to_end_automation_validation_section,

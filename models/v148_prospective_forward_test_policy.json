@@ -1,0 +1,86 @@
+{
+  "step": 148,
+  "name": "Prospective Forward-Test Lock & Untouched Future Draw Ledger",
+  "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
+  "protocol": {
+    "target_settled_draws": 30,
+    "milestones": [
+      10,
+      20,
+      30
+    ],
+    "one_active_lock_at_a_time": true,
+    "score_before_learn": true,
+    "learn_after_score_with_frozen_algorithm": true,
+    "draws_without_predraw_lock_are_excluded": true,
+    "automatic_production_promotion": false,
+    "evaluation_package_size": 12,
+    "uniform_random_trials": 50,
+    "methods": [
+      "neural_dynamics_frozen_ensemble",
+      "frequency_walk_forward",
+      "recency_weighted_walk_forward",
+      "recent_window_frequency",
+      "frequency_recency_blend",
+      "uniform_random_mean"
+    ]
+  },
+  "frozen_configuration": {
+    "fold_size": 120,
+    "fold_count": 3,
+    "minimum_training_draws": 500,
+    "seeds": [
+      1462026,
+      1462027,
+      1462028,
+      1462029,
+      1462030
+    ],
+    "package_size": 12,
+    "random_trials_per_run": 10,
+    "frequency_pool_size": 49,
+    "recency_decay": 0.985,
+    "recent_window_draws": 104,
+    "blend_frequency_weight": 0.5,
+    "reservoir_size": 32,
+    "leak_rate": 0.28,
+    "spectral_radius": 0.82,
+    "input_scale": 0.65,
+    "bias_scale": 0.05,
+    "ridge_alpha": 12.0,
+    "score_power": 1.4,
+    "bootstrap_iterations": 5000,
+    "confidence_level": 0.95,
+    "minimum_seed_positive_rate": 0.8,
+    "minimum_fold_positive_rate": 1.0,
+    "maximum_sign_test_p_value": 0.05,
+    "maximum_neural_seed_spread": 0.2
+  },
+  "frozen_source_locks": {
+    "step146_experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+    "step146_configuration_sha256": "0e4ec3757b0f25137750b5e213e1a058ca053e43c03f7d146af3f14b6619ab10",
+    "step146_result_signature_sha256": "9bf635c5433766bc2f45a59b3bb18443ea4f42a05075f308d7dd6b36221444d9",
+    "step147_decision_id": "DEC-147-0e11bccbcb-46770765b8",
+    "step147_result_signature_sha256": "566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35",
+    "forward_scoring_code_sha256": "f8a09b85aee17c4c96f2964ce933566eb8219c9c632489ae0f535ec02a4e59cc"
+  },
+  "frozen_code_locks": {
+    "src/v145_experimental_neural_dynamics_engine.py": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+    "src/v146_controlled_neural_robustness_engine.py": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+    "src/v148_prospective_forward_test_engine.py": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14"
+  },
+  "guardrails": {
+    "historical_backfill": "forbidden",
+    "forecast_lock_after_target_publication": "invalid",
+    "same_configuration_retuning": "forbidden",
+    "parameter_changes_during_protocol": "forbidden",
+    "score_before_learn": "required",
+    "missing_predraw_lock": "draw_excluded",
+    "ledger_mutation": "detected_by_sha256_chain",
+    "personal_journal_access": "forbidden",
+    "production_pipeline_access": "forbidden",
+    "real_ticket_generation": "forbidden",
+    "final_promotion": "requires_new_research_decision_after_30_eligible_draws"
+  },
+  "safe_note_bg": "Step 148 е prospective research protocol. Заключените evaluation packages не са production препоръки или реални фишове. Протоколът не доказва предвидимост и не гарантира печалба."
+}

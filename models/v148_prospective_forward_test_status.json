@@ -1,0 +1,21 @@
+{
+  "step": 148,
+  "status": "active",
+  "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
+  "policy_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+  "result_signature_sha256": "4bf12ab575917b14597d4971426831007b8420498e7fbe5902569e03fad3776c",
+  "ledger_event_count": 2,
+  "ledger_integrity_ok": true,
+  "eligible_settled_draws": 0,
+  "target_settled_draws": 30,
+  "remaining_draws": 30,
+  "active_lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
+  "active_expected_draw_key": "2026-54",
+  "production_promotion_approved": false,
+  "automatic_production_promotion": false,
+  "production_integration_enabled": false,
+  "real_ticket_generation_enabled": false,
+  "personal_journal_used": false,
+  "historical_backfill_performed": false,
+  "safe_note_bg": "Step 148 е prospective research protocol. Заключените evaluation packages не са production препоръки или реални фишове. Протоколът не доказва предвидимост и не гарантира печалба."
+}

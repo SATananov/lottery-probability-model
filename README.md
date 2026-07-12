@@ -321,3 +321,20 @@ python .\tools\finalize_step_146_release.py --verify-only
 Step 147 обединява експерименталните доказателства от Step 144–146 в отделен research decision registry и machine-readable evidence matrix. Слоят проверява source signatures, dataset identity, leakage guardrails и promotion gates, без да преизпълнява тежко обучение и без да използва production pipeline или личния дневник.
 
 Официалното решение е: production promotion остава `BLOCKED`, текущата neural конфигурация е `PAUSE_AND_ARCHIVE`, а повторно настройване върху вече видените holdout периоди е забранено. Следващ експеримент е допустим само при материално нова предварително регистрирана хипотеза, ясна primary metric/gate рамка и нов или недокоснат validation период.
+
+## Step 148
+
+Step 148 започва истински prospective forward-test прозорец върху бъдещи официални тиражи. Step 146 алгоритъмът, random seeds и параметрите са замразени, а Step 147 production block остава активен. Преди следващият тираж да влезе в canonical dataset се записва pre-draw lock с dataset SHA-256, target sequence, evaluation packages и immutable forecast signature.
+
+Ledger-ът е append-only по operating policy и всеки event е свързан с предишния чрез SHA-256. Тиражи без валиден предварителен lock се изключват и никога не се backfill-ват. Протоколът цели 30 допустими бъдещи тиража с междинни milestone отчети след 10 и 20 и финален research decision след 30. Няма автоматично production promotion.
+
+Команди:
+
+```powershell
+python .\tools\lock_next_draw_forecast.py
+python .\tools\settle_locked_draw_forecast.py
+python .\scripts\verify_step_148.py
+python .\tools\finalize_step_148_release.py --verify-only
+```
+
+Подробности: `reports/STEP_148_PROSPECTIVE_FORWARD_TEST_LOCK_AND_UNTOUCHED_FUTURE_DRAW_LEDGER.md`.

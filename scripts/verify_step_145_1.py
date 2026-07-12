@@ -93,7 +93,7 @@ def main() -> int:
 
     release = load_json(ROOT / "release-manifest.json")
     validation = validate_release_manifest(release, root=ROOT)
-    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147"}:
+    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147", "Step 148"}:
         failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
     failures.extend(validation.get("failures", []))
     if release.get("release_policy_version") != POLICY_VERSION:
@@ -158,14 +158,15 @@ def main() -> int:
     if not runtime_status:
         failures.append("Step 126 does not load current ignored runtime state")
 
-    metadata_pair = (
-        (ROOT / "CLEAN_ZIP_MANIFEST_STEP146.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP146.md")
-        if release.get("checkpoint") == "Step 146"
-        else (
-            (ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md")
-            if release.get("checkpoint") == "Step 147"
-            else (ROOT / "CLEAN_ZIP_MANIFEST_STEP145_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145_1.md")
-        )
+    checkpoint_metadata = {
+        "Step 145.1": (ROOT / "CLEAN_ZIP_MANIFEST_STEP145_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP145_1.md"),
+        "Step 146": (ROOT / "CLEAN_ZIP_MANIFEST_STEP146.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP146.md"),
+        "Step 147": (ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md"),
+        "Step 148": (ROOT / "CLEAN_ZIP_MANIFEST_STEP148.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP148.md"),
+    }
+    metadata_pair = checkpoint_metadata.get(
+        str(release.get("checkpoint")),
+        checkpoint_metadata["Step 145.1"],
     )
     if not all(path.is_file() for path in metadata_pair):
         failures.append("Current clean checkpoint metadata files are missing")
