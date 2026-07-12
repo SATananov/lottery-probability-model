@@ -146,7 +146,10 @@ def main() -> int:
     if deterministic_status_signature(status) != status.get("result_signature_sha256"):
         failures.append("Step 149 status signature mismatch")
 
-    release_validation = validate_release_manifest(release, root=ROOT, expected_checkpoint="Step 149")
+    checkpoint = str(release.get("checkpoint", ""))
+    if checkpoint not in {"Step 149", "Step 150"}:
+        failures.append(f"Unexpected release checkpoint: {checkpoint}")
+    release_validation = validate_release_manifest(release, root=ROOT, expected_checkpoint=checkpoint)
     failures.extend(release_validation.get("failures", []))
     listed = {str(row.get("path")) for row in release.get("files", [])}
     for personal_path in ("data/user_journal.db", "data/user_journal_exports/"):
@@ -253,9 +256,16 @@ def main() -> int:
 
     inventory = repository_inventory(ROOT)
     expected_inventory = status.get("post_cleanup") or {}
-    for key in ("file_count", "duplicate_group_count", "duplicate_file_count", "duplicate_redundant_bytes"):
-        if int(inventory.get(key, -1)) != int(expected_inventory.get(key, -2)):
-            failures.append(f"Repository inventory mismatch: {key} {inventory.get(key)} != {expected_inventory.get(key)}")
+    if checkpoint == "Step 149":
+        for key in ("file_count", "duplicate_group_count", "duplicate_file_count", "duplicate_redundant_bytes"):
+            if int(inventory.get(key, -1)) != int(expected_inventory.get(key, -2)):
+                failures.append(f"Repository inventory mismatch: {key} {inventory.get(key)} != {expected_inventory.get(key)}")
+    else:
+        if int(inventory.get("file_count", -1)) < int(expected_inventory.get("file_count", 0)):
+            failures.append("Later checkpoint unexpectedly removed files below the Step 149 baseline")
+        for key in ("duplicate_group_count", "duplicate_file_count"):
+            if int(inventory.get(key, 10**12)) > int(expected_inventory.get(key, -1)):
+                failures.append(f"Repository hygiene regression: {key} {inventory.get(key)} > {expected_inventory.get(key)}")
     duplicate_groups = exact_duplicate_groups(ROOT)
     if any(any(path.startswith("data/raw/") for path in group["paths"]) for group in duplicate_groups):
         failures.append("Raw source duplicate group remains")
@@ -291,7 +301,11 @@ def main() -> int:
     if step148_status.get("active_lock_id") != status.get("active_forward_test_lock_id"):
         failures.append("Active Step 148 lock identity changed")
 
-    metadata = (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md")
+    checkpoint_metadata = {
+        "Step 149": (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md"),
+        "Step 150": (ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md"),
+    }
+    metadata = checkpoint_metadata.get(checkpoint, checkpoint_metadata["Step 149"])
     if not all(path.is_file() for path in metadata):
         failures.append("Step 149 clean checkpoint metadata is missing")
     if not failures:

@@ -1,0 +1,62 @@
+{
+  "step": 150,
+  "title": "Global Bulgarian UI, Table Localization & Technical Detail Separation",
+  "scope": [
+    "all Streamlit menus and navigation groups",
+    "all page and module widgets",
+    "all dataframe, table and data-editor displays",
+    "dynamic status and method values",
+    "research pages 144-148",
+    "UTF-8 and Cyrillic integrity",
+    "technical detail visibility",
+    "Streamlit user chrome"
+  ],
+  "default_language": "bg",
+  "bulgarian_mode": {
+    "mixed_english_user_labels_allowed": false,
+    "technical_acronyms_allowed": [
+      "SHA-256",
+      "CSV",
+      "JSON",
+      "SQL",
+      "SQLite",
+      "Git",
+      "GitHub",
+      "Python",
+      "Streamlit",
+      "R",
+      "ML",
+      "EUR",
+      "URL",
+      "UTC",
+      "ZIP"
+    ],
+    "step_numbers_visible_in_normal_descriptions": false
+  },
+  "english_mode": {
+    "main_navigation_and_research_pages_bilingual": true,
+    "original_data_and_code_values_mutated": false
+  },
+  "technical_details": {
+    "default_visible": false,
+    "user_toggle_key": "v150_show_technical_details",
+    "hidden_by_default": [
+      "internal IDs",
+      "SHA-256 hashes and result signatures",
+      "UTC timestamp columns",
+      "internal artifact paths",
+      "configuration and code identities"
+    ],
+    "still_available_when_enabled": true
+  },
+  "display_only": true,
+  "source_data_mutation": false,
+  "model_training_changed": false,
+  "production_scoring_changed": false,
+  "personal_journal_used": false,
+  "protected_forward_test": {
+    "active_lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
+    "expected_draw_key": "2026-54",
+    "frozen_scoring_code_must_remain_unchanged": true
+  }
+}

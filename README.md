@@ -346,3 +346,21 @@ python .\tools\finalize_step_148_release.py --verify-only
 Step 149 почиства текущото repository дърво без пренаписване на Git историята. Личният journal е изключен от tracking и release пакетите; raw source aliases и timestamp-only model snapshots са консолидирани; големите row-level Markdown backtest таблици са заменени с компактни възпроизводими summaries; добавена е ясна декларация за авторство и инструментална прозрачност.
 
 Историческите `.r-lib`, journal и backup blobs остават предмет на отделна, изрично одобрена Step 149.1 операция за history rewrite.
+
+## Step 150
+
+Step 150 прилага глобално потребителско почистване върху целия Streamlit интерфейс. Единният display-only слой обхваща страничното меню, всички страници и модули, стандартните widgets, колоните/контейнерите и таблиците. Българският режим показва човешки наименования без смесени английски developer термини, а status/method стойностите и snake_case колоните се превеждат само за визуализация.
+
+Вътрешните ID, SHA-256 подписи, UTC полета, configuration/code identities и artifact paths са скрити по подразбиране и могат да бъдат върнати чрез превключвателя **„Технически подробности“**. Изследователските страници 144–148 са преместени в отделна група **„Изследователски проверки“** и техническите им блокове са прибрани в затворени секции. `Deploy` и служебният Streamlit chrome са скрити от нормалния потребителски изглед.
+
+Стъпката не променя данните, моделното обучение, production scoring или активния Step 148 lock за `2026-54`.
+
+Команди:
+
+```powershell
+python .\tools\audit_ui_language_integrity.py
+python .\scripts\verify_step_150.py
+python .\tools\finalize_step_150_release.py --verify-only
+```
+
+Подробности: `reports/STEP_150_GLOBAL_BULGARIAN_UI_TABLE_LOCALIZATION_AND_TECHNICAL_DETAIL_SEPARATION.md`.

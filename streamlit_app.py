@@ -13,8 +13,10 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 import pandas as pd
 import streamlit as st
-from src.bg_ui_helpers import install_streamlit_bg_table_patch
-install_streamlit_bg_table_patch(st)
+from src.v150_global_ui_polish import install_global_ui_polish, ui_text
+# Prevent legacy partial patches from wrapping the Step 150 global layer.
+st._lottery_bulgarian_final_clean_v36 = True
+st._bg_table_patch_installed = True
 from src.v53_ticket_coverage_section import render_v53_ticket_coverage_section
 from src.v54_pattern_balance_section import render_v54_pattern_balance_section
 from src.v55_number_profile_section import render_v55_number_profile_section
@@ -60,6 +62,7 @@ from src.v145_experimental_neural_dynamics_section import render_v145_experiment
 from src.v146_controlled_neural_robustness_section import render_v146_controlled_neural_robustness_section
 from src.v147_experimental_evidence_decision_section import render_v147_experimental_evidence_decision_section
 from src.v148_prospective_forward_test_section import render_v148_prospective_forward_test_section
+from src.v150_ui_language_integrity_section import render_v150_ui_language_integrity_section
 from src.v126_startup_automation_section import initialize_v126_startup_automation, render_v126_startup_automation_section
 from src.v127_end_to_end_automation_validation_section import render_v127_end_to_end_automation_validation_section
 from src.v128_production_auto_apply_guardrails_section import render_v128_production_guardrails_section
@@ -788,10 +791,10 @@ TRANSLATIONS = {
         "ml_lab": "ML Laboratory",
         "ml_extensions": "ML extensions: classification, clusters and 2D map",
         "prediction": "Prediction",
-        "ticket_analyzer": "Анализ на комбинация",
+        "ticket_analyzer": "Ticket Analyzer",
         "history": "Historical Statistics",
         "v41_history_analysis": "Historical Draw Analysis",
-        "probability_lab": "Вероятностна лаборатория",
+        "probability_lab": "Probability Laboratory",
         "reports": "Reports",
         "update_draws": "Update Draws",
         "draws": "Draws",
@@ -809,46 +812,47 @@ TRANSLATIONS = {
         "middle_model": "Middle / balanced model",
         "gap_model": "Gap / interval model",
         "combined_model": "Final combined model",
-        "advanced_model": "Разширен обединен модел",
-        "train_advanced": "Train разширен обединен модел",
-        "run_backtest": "Пусни историческа проверка",
+        "advanced_model": "Advanced Ensemble Model",
+        "train_advanced": "Train Advanced Ensemble",
+        "run_backtest": "Run Historical Evaluation",
         "no_model": "Model not available yet. Run the training script.",
         "numbers": "Numbers",
         "confidence": "Score",
-        "rank": "Ранг",
-        "details": "Детайли",
-        "refresh": "Обнови данните",
-        "select_numbers": "Избери 6 числа",
-        "analyze_ticket": "Анализирай комбинацията",
-        "ticket_warning": "Избери точно 6 различни числа от 1 до 49.",
-        "save_draw": "Запиши нов тираж",
-        "auto_retrain": "Автоматично обнови моделите след запис",
-        "year": "Година",
-        "draw_number": "Тираж №",
-        "draw_position": "Позиция / теглене",
-        "draw_date": "Дата",
-        "source": "Източник / бележка",
-        "upload_draw": "Качи тираж от файл",
-        "upload_button": "Прочети качения файл",
-        "delete_draw": "Изтрий избрания тираж",
-        "undo": "Отмени последната ръчна промяна",
-        "retrain_log": "Лог от обновяването",
-        "portfolio": "Диверсифициран портфейл",
-        "fairness": "Проверка за равномерност / chi-square",
-        "backtest": "Историческа проверка",
-        "status_hot": "Горещи",
-        "status_cold": "Студени",
-        "status_middle": "Балансирани",
-        "status_overdue": "Отдавна не е излизало",
-        "term_help": "Речник",
+        "rank": "Rank",
+        "details": "Details",
+        "refresh": "Refresh Data",
+        "select_numbers": "Select 6 Numbers",
+        "analyze_ticket": "Analyze Combination",
+        "ticket_warning": "Select exactly 6 distinct numbers from 1 to 49.",
+        "save_draw": "Save New Draw",
+        "auto_retrain": "Automatically Refresh Models After Save",
+        "year": "Year",
+        "draw_number": "Draw Number",
+        "draw_position": "Draw Position",
+        "draw_date": "Date",
+        "source": "Source / Note",
+        "upload_draw": "Upload Draw from File",
+        "upload_button": "Read Uploaded File",
+        "delete_draw": "Delete Selected Draw",
+        "undo": "Undo Last Manual Change",
+        "retrain_log": "Model Refresh Log",
+        "portfolio": "Diversified Portfolio",
+        "fairness": "Fairness / Chi-Square Check",
+        "backtest": "Historical Evaluation",
+        "status_hot": "Hot",
+        "status_cold": "Cold",
+        "status_middle": "Balanced",
+        "status_overdue": "Overdue",
+        "term_help": "Glossary",
     },
 }
 st.set_page_config(
-    page_title="Lottery 6/49 Lab",
+    page_title="Лотарийна статистическа лаборатория 6/49",
     page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+install_global_ui_polish(st)
 # V15_HIDE_NATIVE_STREAMLIT_NAV_START
 try:
     st.markdown(
@@ -1017,6 +1021,16 @@ def language() -> str:
         key="language",
     )
 LANG = language()
+st.sidebar.toggle(
+    ui_text("Технически подробности", "Technical details", st),
+    value=False,
+    key="v150_show_technical_details",
+    help=ui_text(
+        "Показвай вътрешни идентификатори, подписи и UTC полета",
+        "Show internal identifiers, signatures and UTC fields",
+        st,
+    ),
+)
 T = TRANSLATIONS[LANG]
 def tr(key: str) -> str:
     return T.get(key, key)
@@ -3956,10 +3970,11 @@ def main() -> None:
         "Обновяване на изоставащите слоеве": render_v142_downstream_freshness_repair_section,
         "Финална синхронизация до нулеви блокери": render_v143_3_downstream_zero_blocker_closure_section,
         "Регистър на възпроизводимите експерименти": render_v144_reproducible_experiment_registry_section,
-        "Експериментален neural dynamics sandbox": render_v145_experimental_neural_dynamics_section,
-        "Контролирана neural robustness проверка": render_v146_controlled_neural_robustness_section,
-        "Research decision gate": render_v147_experimental_evidence_decision_section,
-        "Проспективен forward test": render_v148_prospective_forward_test_section,
+        "Лаборатория за невронна динамика": render_v145_experimental_neural_dynamics_section,
+        "Проверка за устойчивост на невронния модел": render_v146_controlled_neural_robustness_section,
+        "Решение за изследователските модели": render_v147_experimental_evidence_decision_section,
+        "Проспективна проверка": render_v148_prospective_forward_test_section,
+        "Контрол на езика и интерфейса": render_v150_ui_language_integrity_section,
         "Пълно обновяване по цялата верига": render_v125_unified_downstream_refresh_section,
         "Автоматична проверка и операторски контрол": render_v126_startup_automation_section,
         "End-to-End проверка на автоматизацията": render_v127_end_to_end_automation_validation_section,
@@ -4130,12 +4145,20 @@ def main() -> None:
 
             'Експорт и изпълнение',
         ],
+        '🔬 Изследователски проверки': [
+            'Регистър на възпроизводимите експерименти',
+            'Лаборатория за невронна динамика',
+            'Проверка за устойчивост на невронния модел',
+            'Решение за изследователските модели',
+            'Проспективна проверка',
+        ],
         '🛡️ Система и контрол': [
             'Обновяване на анализите',
             'Финален системен одит',
             'Финален UX контрол',
             'Финален пакет за предаване',
         'Ръководство за апа',
+        'Контрол на езика и интерфейса',
 'Сравнение на модели',
 'Регистър на модели',
 

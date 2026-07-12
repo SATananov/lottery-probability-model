@@ -104,31 +104,31 @@
       "script": "scripts/v97_build_real_draw_lifecycle.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_97_STATUS READY\nDATASET_ROWS 10060\nACTIVE_PLAN ������ 11 9.90"
+      "output_tail": "STEP_97_STATUS READY\nDATASET_ROWS 10060\nLEGACY_OUTPUT_NOTE Старият повреден текст е премахнат при UTF-8 почистването."
     },
     {
       "script": "scripts/v98_build_active_plan_result_history.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_98_STATUS HAS_HISTORY\nACTIVE_PLAN ������ 11 9.90\nHISTORY_ROWS 2"
+      "output_tail": "STEP_98_STATUS HAS_HISTORY\nHISTORY_ROWS 2\nLEGACY_OUTPUT_NOTE Старият повреден текст е премахнат при UTF-8 почистването."
     },
     {
       "script": "scripts/v99_build_final_user_dashboard.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_99_STATUS READY_WAITING_NEXT_DRAW\nACTIVE_PLAN ������ 11 9.90\nSTEP_95 EVALUATED\nNEXT_ACTION ��������� ��������� � ���� ���� �� ������� �����"
+      "output_tail": "STEP_99_STATUS READY_WAITING_NEXT_DRAW\nSTEP_95 EVALUATED\nLEGACY_OUTPUT_NOTE Старият повреден текст е премахнат при UTF-8 почистването."
     },
     {
       "script": "scripts/v100_build_final_release_lock.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_100_STATUS CHECK_REQUIRED\nACTIVE_PLAN ������ 11 9.90 EUR\nDATASET_ROWS 10060\nBLOCKING_FAILURES 1\nNEXT_ACTION ��������� ����������� ��������"
+      "output_tail": "STEP_100_STATUS CHECK_REQUIRED\nDATASET_ROWS 10060\nBLOCKING_FAILURES 1\nLEGACY_OUTPUT_NOTE Старият повреден текст е премахнат при UTF-8 почистването."
     },
     {
       "script": "scripts/v101_build_real_use_protocol.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_101_STATUS CHECK_REQUIRED\nSTEP_100_STATUS CHECK_REQUIRED\nACTIVE_PLAN ������ 11 9.90 EUR\nDATASET_ROWS 10060\nBLOCKING_FAILURES 2\nNEXT_ACTION ��������� ����������� �������� ����� ������ ��������."
+      "output_tail": "STEP_101_STATUS CHECK_REQUIRED\nSTEP_100_STATUS CHECK_REQUIRED\nDATASET_ROWS 10060\nBLOCKING_FAILURES 2\nLEGACY_OUTPUT_NOTE Старият повреден текст е премахнат при UTF-8 почистването."
     },
     {
       "script": "internal:v106_build_post_draw_status_sync_no_dependencies",

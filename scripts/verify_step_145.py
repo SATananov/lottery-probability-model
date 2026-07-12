@@ -79,6 +79,7 @@ def main() -> int:
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP147.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP147.md"),
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP148.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP148.md"),
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md"),
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md"),
     ]
     if not any(all(path.exists() for path in pair) for pair in metadata_pairs):
         failures.append("Missing Step 145 or Step 145.1 clean checkpoint manifests")
@@ -204,7 +205,7 @@ def main() -> int:
             failures.append("Step 145 read-only rerun does not reproduce stored signature")
 
         release = load_json(ROOT / "release-manifest.json")
-        if release.get("checkpoint") not in {"Step 145", "Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149"}:
+        if release.get("checkpoint") not in {"Step 145", "Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149", "Step 150"}:
             failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         for required_path in (
@@ -218,7 +219,7 @@ def main() -> int:
         streamlit_text = (ROOT / "streamlit_app.py").read_text(encoding="utf-8")
         if "render_v145_experimental_neural_dynamics_section" not in streamlit_text:
             failures.append("Step 145 UI import is missing")
-        if '"Експериментален neural dynamics sandbox"' not in streamlit_text:
+        if '"Лаборатория за невронна динамика"' not in streamlit_text:
             failures.append("Step 145 menu entry is missing")
 
     after = snapshot()
