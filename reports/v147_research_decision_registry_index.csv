@@ -1,0 +1,2 @@
+﻿decision_id,status,title,created_at_utc,last_evaluated_at_utc,dataset_sha256,source_experiments,evidence_rows,production_promotion,current_neural_configuration,result_signature_sha256
+DEC-147-0e11bccbcb-46770765b8,completed,Experimental Evidence Synthesis & Research Decision Gate,2026-07-12T05:32:02+00:00,2026-07-12T05:39:05+00:00,0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579,3,9,blocked,pause_and_archive,566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35

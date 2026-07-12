@@ -1,0 +1,287 @@
+{
+  "decision_id": "DEC-147-0e11bccbcb-46770765b8",
+  "step": 147,
+  "title": "Experimental Evidence Synthesis & Research Decision Gate",
+  "status": "completed",
+  "policy": {
+    "required_source_steps": [
+      144,
+      145,
+      146
+    ],
+    "require_same_dataset_sha256": true,
+    "require_completed_source_status": true,
+    "robust_superiority_requirements": {
+      "mean_advantage_positive": true,
+      "confidence_interval_lower_bound_above_zero": true,
+      "maximum_p_value": 0.05,
+      "minimum_positive_seed_rate": 0.8,
+      "minimum_positive_fold_rate": 1.0
+    },
+    "current_configuration_action": "pause_and_archive",
+    "repeat_same_configuration_on_seen_holdouts": "forbidden",
+    "production_promotion": "blocked_without_robust_superiority",
+    "next_experiment_requirements": [
+      "materially_new_hypothesis",
+      "preregistered_primary_metric_and_gate",
+      "untouched_or_future_validation_period",
+      "baseline_first_comparison",
+      "score_before_learn_chronology",
+      "no_personal_journal_access",
+      "no_production_pipeline_access",
+      "no_real_ticket_generation"
+    ]
+  },
+  "source": {
+    "steps": [
+      {
+        "step": 144,
+        "experiment_id": "EXP-144-0e11bccbcb-98bfe5488b",
+        "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+        "result_signature_sha256": "6dfdb5c332d01bcfc0d5aaf7199f55e60d8909db0a1608f45bcc23bc9d997184",
+        "status_result_signature_sha256": "6dfdb5c332d01bcfc0d5aaf7199f55e60d8909db0a1608f45bcc23bc9d997184",
+        "summary_sha256": "194a20ce00509f28e2ce9e1cd838a7270ebcdc455059ae1228024dfaef5a8563",
+        "status_sha256": "847b25b31cee3ada6d8232a35397fc8385f18d102796047765a775f009a261fa"
+      },
+      {
+        "step": 145,
+        "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+        "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+        "result_signature_sha256": "efcfc98d7674ddadf81443cb8cd35264b07913075f262ee5821b7ef77c38901f",
+        "status_result_signature_sha256": "efcfc98d7674ddadf81443cb8cd35264b07913075f262ee5821b7ef77c38901f",
+        "summary_sha256": "97df3550d16fd88a8b72cd203b3c0af53f9ba458d888d295de54445050ee15cd",
+        "status_sha256": "2cbfc10eb5e0be8b90787f2c0f49c3676f38d3dce4d3472b07d30042d003a0b5"
+      },
+      {
+        "step": 146,
+        "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+        "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+        "result_signature_sha256": "9bf635c5433766bc2f45a59b3bb18443ea4f42a05075f308d7dd6b36221444d9",
+        "status_result_signature_sha256": "9bf635c5433766bc2f45a59b3bb18443ea4f42a05075f308d7dd6b36221444d9",
+        "summary_sha256": "3dc1c3dbca4f699d6045967ac403bc6b1786b1a19cb517e6e796b0e5a1386775",
+        "status_sha256": "5188f90d8aa50c70696ca012395fe032782066876140110424d88020488e7f1e"
+      }
+    ],
+    "combined_sha256": "28139c5dfa595f492045b188041422f95c2f8b9e9bf82f1392e5d6d402593ae2"
+  },
+  "code": {
+    "files": [
+      {
+        "path": "src/v147_experimental_evidence_decision_engine.py",
+        "sha256": "73d447b8a46779bc427a03fc15349020b2a37e5fdebedfb2fe0fd8a09f3d7d07"
+      },
+      {
+        "path": "tools/build_experimental_evidence_decision.py",
+        "sha256": "6ba394a58bf9c27ca2011351dab7014c9cb7f2b59a9835e2b5787e1e51e32272"
+      }
+    ],
+    "combined_sha256": "fc5688d7daa6749a23d596b5a73589ff0500db1549e2e29487a6f8e51a98931e"
+  },
+  "evidence_matrix": [
+    {
+      "step": 144,
+      "experiment_id": "EXP-144-0e11bccbcb-98bfe5488b",
+      "evidence_scope": "single_holdout_baseline",
+      "candidate": "frequency_walk_forward",
+      "comparator": "uniform_random_mean",
+      "mean_advantage": -0.513916667,
+      "ci_lower": null,
+      "ci_upper": null,
+      "p_value": null,
+      "positive_seed_rate": null,
+      "positive_fold_rate": null,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v144_baseline_lab_summary.json"
+    },
+    {
+      "step": 145,
+      "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+      "evidence_scope": "single_holdout_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "frequency_walk_forward",
+      "mean_advantage": -0.0875,
+      "ci_lower": null,
+      "ci_upper": null,
+      "p_value": 0.135655565,
+      "positive_seed_rate": null,
+      "positive_fold_rate": null,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v145_neural_dynamics_summary.json"
+    },
+    {
+      "step": 145,
+      "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+      "evidence_scope": "single_holdout_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "recency_weighted_walk_forward",
+      "mean_advantage": -0.066666667,
+      "ci_lower": null,
+      "ci_upper": null,
+      "p_value": 0.307089664,
+      "positive_seed_rate": null,
+      "positive_fold_rate": null,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v145_neural_dynamics_summary.json"
+    },
+    {
+      "step": 145,
+      "experiment_id": "EXP-145-0e11bccbcb-f2843280b3",
+      "evidence_scope": "single_holdout_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "uniform_random_mean",
+      "mean_advantage": -0.092833333,
+      "ci_lower": null,
+      "ci_upper": null,
+      "p_value": 1.0,
+      "positive_seed_rate": null,
+      "positive_fold_rate": null,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v145_neural_dynamics_summary.json"
+    },
+    {
+      "step": 146,
+      "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+      "evidence_scope": "multi_seed_multi_period_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "frequency_recency_blend",
+      "mean_advantage": -0.023333333,
+      "ci_lower": -0.061111111,
+      "ci_upper": 0.018888889,
+      "p_value": 0.301757812,
+      "positive_seed_rate": 0.4,
+      "positive_fold_rate": 0.333333333,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v146_neural_robustness_summary.json"
+    },
+    {
+      "step": 146,
+      "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+      "evidence_scope": "multi_seed_multi_period_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "frequency_walk_forward",
+      "mean_advantage": 0.003888889,
+      "ci_lower": -0.041666667,
+      "ci_upper": 0.052222222,
+      "p_value": 1.0,
+      "positive_seed_rate": 0.4,
+      "positive_fold_rate": 0.333333333,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "positive_but_not_robust",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v146_neural_robustness_summary.json"
+    },
+    {
+      "step": 146,
+      "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+      "evidence_scope": "multi_seed_multi_period_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "recency_weighted_walk_forward",
+      "mean_advantage": -0.022777778,
+      "ci_lower": -0.057777778,
+      "ci_upper": 0.01,
+      "p_value": 0.790527344,
+      "positive_seed_rate": 0.2,
+      "positive_fold_rate": 0.333333333,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v146_neural_robustness_summary.json"
+    },
+    {
+      "step": 146,
+      "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+      "evidence_scope": "multi_seed_multi_period_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "recent_window_frequency",
+      "mean_advantage": -0.005,
+      "ci_lower": -0.035,
+      "ci_upper": 0.025555556,
+      "p_value": 0.60723877,
+      "positive_seed_rate": 0.4,
+      "positive_fold_rate": 0.333333333,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v146_neural_robustness_summary.json"
+    },
+    {
+      "step": 146,
+      "experiment_id": "EXP-146-0e11bccbcb-0e4ec3757b",
+      "evidence_scope": "multi_seed_multi_period_neural",
+      "candidate": "neural_dynamics_reservoir",
+      "comparator": "uniform_random_mean",
+      "mean_advantage": -0.061388889,
+      "ci_lower": -0.085944444,
+      "ci_upper": -0.033055556,
+      "p_value": 0.000976562,
+      "positive_seed_rate": 0.0,
+      "positive_fold_rate": 0.0,
+      "source_promotion_gate_passed": false,
+      "evidence_outcome": "robust_negative",
+      "robust_superiority_demonstrated": false,
+      "production_eligible": false,
+      "source_summary": "reports/v146_neural_robustness_summary.json"
+    }
+  ],
+  "synthesis": {
+    "evidence_rows": 9,
+    "robust_positive_rows": 0,
+    "positive_but_not_robust_rows": 1,
+    "robust_negative_rows": 1,
+    "source_experiments": 3,
+    "same_dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+    "latest_draw": "2026-53"
+  },
+  "decision_gate": {
+    "evidence_chain_complete": true,
+    "source_statuses_complete": true,
+    "source_signatures_match": true,
+    "dataset_identity_consistent": true,
+    "future_data_leakage_absent": true,
+    "production_integration_absent": true,
+    "robust_superiority_demonstrated": false,
+    "all_neural_promotion_gates_passed": false
+  },
+  "decision": {
+    "production_promotion": "blocked",
+    "current_neural_configuration": "pause_and_archive",
+    "repeat_same_configuration_on_seen_holdouts": "forbidden",
+    "next_research_mode": "materially_new_preregistered_hypothesis",
+    "reason": "No comparison in the Step 144–146 evidence chain demonstrates robust positive superiority. The current neural configuration is therefore paused and archived; production promotion remains blocked."
+  },
+  "reproducibility": {
+    "command": "python tools/build_experimental_evidence_decision.py",
+    "policy_sha256": "e64f22d403bb73d7d2708952c818ff396283ff841c0fa77dfaa0f76a2c1812cb",
+    "evidence_sha256": "46770765b82cb8c40170759329b2f84c6e39e0b1ef449739d0cc03b9cc111631",
+    "result_signature_sha256": "566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35",
+    "deterministic_for_same_source_artifacts_and_policy": true
+  },
+  "guardrails": {
+    "production_pipeline_used": false,
+    "real_ticket_generation_performed": false,
+    "personal_journal_used": false,
+    "heavy_ml_retraining_performed": false,
+    "source_experiments_modified": false
+  },
+  "safe_note_bg": "Step 147 е research governance слой. Той обобщава исторически експерименти, не прогнозира бъдещи тиражи, не генерира реални фишове и не включва experimental модел в production pipeline.",
+  "created_at_utc": "2026-07-12T05:32:02+00:00",
+  "last_evaluated_at_utc": "2026-07-12T05:39:05+00:00"
+}

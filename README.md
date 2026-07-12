@@ -314,3 +314,10 @@ python .\tools\finalize_step_146_release.py --verify-only
 ```
 
 Подробности: `reports/STEP_146_CONTROLLED_NEURAL_EXPERIMENT_EXPANSION_AND_ROBUSTNESS_VALIDATION.md`.
+
+
+## Step 147
+
+Step 147 обединява експерименталните доказателства от Step 144–146 в отделен research decision registry и machine-readable evidence matrix. Слоят проверява source signatures, dataset identity, leakage guardrails и promotion gates, без да преизпълнява тежко обучение и без да използва production pipeline или личния дневник.
+
+Официалното решение е: production promotion остава `BLOCKED`, текущата neural конфигурация е `PAUSE_AND_ARCHIVE`, а повторно настройване върху вече видените holdout периоди е забранено. Следващ експеримент е допустим само при материално нова предварително регистрирана хипотеза, ясна primary metric/gate рамка и нов или недокоснат validation период.

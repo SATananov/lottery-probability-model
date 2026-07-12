@@ -1,0 +1,29 @@
+{
+  "required_source_steps": [
+    144,
+    145,
+    146
+  ],
+  "require_same_dataset_sha256": true,
+  "require_completed_source_status": true,
+  "robust_superiority_requirements": {
+    "mean_advantage_positive": true,
+    "confidence_interval_lower_bound_above_zero": true,
+    "maximum_p_value": 0.05,
+    "minimum_positive_seed_rate": 0.8,
+    "minimum_positive_fold_rate": 1.0
+  },
+  "current_configuration_action": "pause_and_archive",
+  "repeat_same_configuration_on_seen_holdouts": "forbidden",
+  "production_promotion": "blocked_without_robust_superiority",
+  "next_experiment_requirements": [
+    "materially_new_hypothesis",
+    "preregistered_primary_metric_and_gate",
+    "untouched_or_future_validation_period",
+    "baseline_first_comparison",
+    "score_before_learn_chronology",
+    "no_personal_journal_access",
+    "no_production_pipeline_access",
+    "no_real_ticket_generation"
+  ]
+}

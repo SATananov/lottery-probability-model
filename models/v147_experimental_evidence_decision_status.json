@@ -1,0 +1,21 @@
+{
+  "step": 147,
+  "status": "completed",
+  "decision_id": "DEC-147-0e11bccbcb-46770765b8",
+  "decision_registry_entries": 1,
+  "dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
+  "source_experiment_count": 3,
+  "evidence_row_count": 9,
+  "robust_positive_rows": 0,
+  "production_promotion_approved": false,
+  "current_neural_configuration_action": "pause_and_archive",
+  "policy_sha256": "e64f22d403bb73d7d2708952c818ff396283ff841c0fa77dfaa0f76a2c1812cb",
+  "evidence_sha256": "46770765b82cb8c40170759329b2f84c6e39e0b1ef449739d0cc03b9cc111631",
+  "result_signature_sha256": "566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35",
+  "production_integration_enabled": false,
+  "real_ticket_generation_enabled": false,
+  "heavy_ml_retraining_performed": false,
+  "personal_journal_used": false,
+  "future_data_leakage_detected": false,
+  "safe_note_bg": "Step 147 е research governance слой. Той обобщава исторически експерименти, не прогнозира бъдещи тиражи, не генерира реални фишове и не включва experimental модел в production pipeline."
+}

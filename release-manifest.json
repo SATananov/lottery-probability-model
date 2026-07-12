@@ -1,6 +1,6 @@
 {
-  "checkpoint": "Step 146",
-  "checkpoint_title": "Controlled Neural Experiment Expansion & Robustness Validation",
+  "checkpoint": "Step 147",
+  "checkpoint_title": "Experimental Evidence Synthesis & Research Decision Gate",
   "project": "lottery-probability-model",
   "release_policy_version": "145.1",
   "manifest_scope": "All intended project files under release policy 145.1; excludes release metadata files, .git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, temporary archives, logs and backup artifacts.",
@@ -9,12 +9,17 @@
     "tracked_snapshots_update_only_on_semantic_change": true,
     "runtime_cache_in_release": false
   },
-  "experimental_scope": {
-    "step": 146,
-    "research_only": true,
-    "multi_seed": true,
-    "non_overlapping_historical_folds": true,
-    "confidence_intervals": true,
+  "research_decision_scope": {
+    "source_steps": [
+      144,
+      145,
+      146
+    ],
+    "evidence_synthesis": true,
+    "decision_registry": true,
+    "same_holdout_retuning_forbidden": true,
+    "current_neural_configuration": "pause_and_archive",
+    "production_promotion": "blocked",
     "automatic_production_promotion": false
   },
   "forbidden_release_classes": [
@@ -25,7 +30,7 @@
     "temporary archives, logs and backups",
     "build output and editor metadata"
   ],
-  "file_count": 1410,
+  "file_count": 1424,
   "files": [
     {
       "path": ".gitignore",
@@ -1683,6 +1688,11 @@
       "sha256": "d970815be58b28bcc094a5dc79c0e3a2bc53f46f2166f8b1793228b10abcffea"
     },
     {
+      "path": "data/research_decision_registry.jsonl",
+      "size_bytes": 10121,
+      "sha256": "277d96467669a282991933d96cac618cc073cf7edd4ca3a4cca4af73e153f5a5"
+    },
+    {
       "path": "data/user_journal.db",
       "size_bytes": 73728,
       "sha256": "cde371e51c685e3083ba90452e2d0dfa718bce22692257f6e4bf455319fad759"
@@ -2096,6 +2106,16 @@
       "path": "models/v146_controlled_neural_robustness_status.json",
       "size_bytes": 1022,
       "sha256": "5188f90d8aa50c70696ca012395fe032782066876140110424d88020488e7f1e"
+    },
+    {
+      "path": "models/v147_experimental_evidence_decision_policy.json",
+      "size_bytes": 905,
+      "sha256": "b305cbea4111dfe4ee4400c9c41a3b9a7f0ec9c227f1855ebbe74f07850a31c6"
+    },
+    {
+      "path": "models/v147_experimental_evidence_decision_status.json",
+      "size_bytes": 1191,
+      "sha256": "e71edc220d70bdd38f8c5af0c166402bf6bffd4e7109751bf0e1be0978752838"
     },
     {
       "path": "models/v41/v41_frequency_main_numbers_model.json",
@@ -2639,8 +2659,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 17788,
-      "sha256": "253d41ee4d7c1a15805a44fa12e389a80b6889a68debbdbafa7eaaf01563169c"
+      "size_bytes": 18818,
+      "sha256": "7e571222d1cc83fdf4d8bc1aeb011808e7b183b79b4c15baf80061c4802d486b"
     },
     {
       "path": "README_UI.md",
@@ -2711,6 +2731,11 @@
       "path": "reports/data_import_report.md",
       "size_bytes": 1840,
       "sha256": "db19f6b4835d8a6b1cf79e81d09ba36e0caa99fe0d7c6e6d4ed436554a05a085"
+    },
+    {
+      "path": "reports/decisions/v147/DEC-147-0e11bccbcb-46770765b8.json",
+      "size_bytes": 11709,
+      "sha256": "c96d233981b64b44cd5dbf1bb01092ea7f348ea29633035abf9275266c18161e"
     },
     {
       "path": "reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json",
@@ -2956,6 +2981,11 @@
       "path": "reports/STEP_146_CONTROLLED_NEURAL_EXPERIMENT_EXPANSION_AND_ROBUSTNESS_VALIDATION.md",
       "size_bytes": 2938,
       "sha256": "e25c737576065b3b3b69d247a2ea0d4deceb4685a62bafe65867ac974c67a340"
+    },
+    {
+      "path": "reports/STEP_147_EXPERIMENTAL_EVIDENCE_SYNTHESIS_AND_RESEARCH_DECISION_GATE.md",
+      "size_bytes": 1862,
+      "sha256": "b8025541468009d581389ae22aa43f397d14133c3277d463cabc96c8101e6b3a"
     },
     {
       "path": "reports/v100_final_release_lock_checklist.csv",
@@ -3826,6 +3856,26 @@
       "path": "reports/v146_neural_robustness_summary.md",
       "size_bytes": 2330,
       "sha256": "599ff97dd41c70849bed392c659ef99d85a3c45cca1c37abef792b344eb696ad"
+    },
+    {
+      "path": "reports/v147_experimental_evidence_matrix.csv",
+      "size_bytes": 2292,
+      "sha256": "df06232dc8f2c456d3bc1fddb65b0b6cbc447b864d44183422e84718c708f215"
+    },
+    {
+      "path": "reports/v147_research_decision_registry_index.csv",
+      "size_bytes": 498,
+      "sha256": "d0cf8dfd690b080dab76aa67c55cfe56d9055be6d2a9b14c61717c8a710b03b6"
+    },
+    {
+      "path": "reports/v147_research_decision_summary.json",
+      "size_bytes": 11638,
+      "sha256": "b8fca170395844e98535ac04f09f72f1225097d48092cff9f25b09639c0256b6"
+    },
+    {
+      "path": "reports/v147_research_decision_summary.md",
+      "size_bytes": 2440,
+      "sha256": "be82a0a251539a57eefe892ce051eed0328820c21403d564758aa64bee79344a"
     },
     {
       "path": "reports/v40_normalized_draw_events_report.json",
@@ -5659,23 +5709,28 @@
     },
     {
       "path": "scripts/verify_step_144.py",
-      "size_bytes": 8719,
-      "sha256": "ac4ea8941c942f5130297f7372982f7ac36102970c30e60caefd68935f22a628"
+      "size_bytes": 8731,
+      "sha256": "314433e1a2f24808e9b1354b860ae15fa87de39de54966c26101db7f839e0816"
     },
     {
       "path": "scripts/verify_step_145.py",
-      "size_bytes": 11147,
-      "sha256": "51b0c890e72144e48f5bc4ceaa98d057cc11ca8a15bf47df82a8a8cc5c782dbe"
+      "size_bytes": 11261,
+      "sha256": "5edc110a8ce328a22c6bf6b4cd4dc52a1a0608abe68c6a7d6e65058426f1bb8a"
     },
     {
       "path": "scripts/verify_step_145_1.py",
-      "size_bytes": 8550,
-      "sha256": "35104cc8cb66bccbfcdc5830ca6b42a06953b3ed230bf84657ba0c9cf0a63dcb"
+      "size_bytes": 8751,
+      "sha256": "7e414180dc614ae9e4ed46e35ed63b3d4eeaeac1adf3f0e5983d55e1b4490fc3"
     },
     {
       "path": "scripts/verify_step_146.py",
-      "size_bytes": 12229,
-      "sha256": "2f672b75ea1e0df49edacd48ee53c7501909ab7ca5231b024ba5f8e85e955545"
+      "size_bytes": 12349,
+      "sha256": "20fe2a54bb90952aeaf67257c0f5844a8e14746c7677f1733a3a3ed5c33721e8"
+    },
+    {
+      "path": "scripts/verify_step_147.py",
+      "size_bytes": 9797,
+      "sha256": "4b0b51d4cda73e7628f7031c80f80bf9bcd9018560ccccb64d852c6cd7741e56"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -6338,6 +6393,16 @@
       "sha256": "33dff2da7ad9c397d8c0dac713295475721046f9e9520f9c790cf2bb51ea667f"
     },
     {
+      "path": "src/v147_experimental_evidence_decision_engine.py",
+      "size_bytes": 24302,
+      "sha256": "73d447b8a46779bc427a03fc15349020b2a37e5fdebedfb2fe0fd8a09f3d7d07"
+    },
+    {
+      "path": "src/v147_experimental_evidence_decision_section.py",
+      "size_bytes": 3862,
+      "sha256": "7d0ef1a2bb8284dd38e673610bcf9593ed512198f9f44dc6e76cbd5bc0b65d62"
+    },
+    {
       "path": "src/v41_rules_aware_analysis_section.py",
       "size_bytes": 13791,
       "sha256": "a7986e39ed5c33c5a977f78fb60535243372147e30b71d6a7a85527a318ae188"
@@ -6839,8 +6904,8 @@
     },
     {
       "path": "streamlit_app.py",
-      "size_bytes": 252253,
-      "sha256": "bf05fb9bcc4ae34ef4304d425f522278d16e0326e19cd572da6810f4cb7a3a2f"
+      "size_bytes": 252450,
+      "sha256": "e0601ed4706eabb4b39350f81fe241143df36248ee1dc92f169413081e04c870"
     },
     {
       "path": "streamlit_pages/__init__.py",
@@ -6861,6 +6926,11 @@
       "path": "tools/apply_step_r1_r_statistics_layer.ps1",
       "size_bytes": 640,
       "sha256": "e5a6e9cf6b168e3b06ef5b4672e5c86a2337fd5aaa73515560774d095e90bbdc"
+    },
+    {
+      "path": "tools/build_experimental_evidence_decision.py",
+      "size_bytes": 1111,
+      "sha256": "6ba394a58bf9c27ca2011351dab7014c9cb7f2b59a9835e2b5787e1e51e32272"
     },
     {
       "path": "tools/check_official_draw_freshness.py",
@@ -6906,6 +6976,11 @@
       "path": "tools/finalize_step_146_release.py",
       "size_bytes": 8663,
       "sha256": "d439ff061ad9ea67eb4446ab584616dec8c3d39d6132a9a10650147446321b63"
+    },
+    {
+      "path": "tools/finalize_step_147_release.py",
+      "size_bytes": 8963,
+      "sha256": "13c8f097316f273b1a19a0f816c9cf27238753ec2b8329a1df5b79565da7de2f"
     },
     {
       "path": "tools/ingest_latest_bst_official_draw.py",
