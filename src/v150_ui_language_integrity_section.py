@@ -9,10 +9,12 @@ import pandas as pd
 import streamlit as st
 
 from src.v150_global_ui_polish import ui_text
-from src.v150_ui_language_integrity_engine import (
-    REPORT_CSV_PATH,
+from src.v150_ui_language_integrity_engine import REPORT_CSV_PATH
+from src.v150_1_deep_ui_integrity_engine import (
+    DYNAMIC_AUDIT_PATH,
+    HEADER_AUDIT_PATH,
     STATUS_JSON_PATH,
-    run_ui_language_integrity_audit,
+    run_deep_ui_integrity_audit,
 )
 
 
@@ -41,7 +43,7 @@ def render_v150_ui_language_integrity_section() -> None:
     st.title(_t("Контрол на езика и интерфейса", "Language and Interface Control"))
     st.caption(
         _t(
-            "Глобална проверка на менюта, страници, бутони, таблици, статуси, кирилица и технически подробности.",
+            "Задълбочена проверка на всички менюта, страници, динамични съобщения, таблици, статуси, кирилица и технически подробности.",
             "Global validation of menus, pages, buttons, tables, statuses, Cyrillic text and technical details.",
         )
     )
@@ -54,14 +56,14 @@ def render_v150_ui_language_integrity_section() -> None:
 
     status = _load_json(STATUS_JSON_PATH)
     columns = st.columns(6)
-    columns[0].metric(_t("Проверени UI редове", "UI rows checked"), int(status.get("ui_literal_rows", 0)))
-    columns[1].metric(_t("Уникални текстове", "Unique texts"), int(status.get("unique_ui_literals", 0)))
+    columns[0].metric(_t("Проверени UI редове", "UI rows checked"), int(status.get("static_ui_literal_rows", 0)))
+    columns[1].metric(_t("Проверени заглавия на колони", "Table headers checked"), int(status.get("unique_csv_headers", 0)))
     columns[2].metric(
-        _t("Английски остатъци в BG режим", "English residues in BG mode"),
-        int(status.get("forbidden_bulgarian_residual_rows", 0)),
+        _t("Непреведени заглавия", "Untranslated headers"),
+        int(status.get("table_header_failures", 0)),
     )
-    columns[3].metric(_t("Смесен видим език", "Mixed visible language"), int(status.get("mixed_language_rows", 0)))
-    columns[4].metric(_t("Проблеми с кирилицата", "Cyrillic issues"), int(status.get("mojibake_findings", 0)))
+    columns[3].metric(_t("Непреведени динамични текстове", "Untranslated dynamic texts"), int(status.get("user_facing_dynamic_failures", 0)))
+    columns[4].metric(_t("Регресии от визуалната проверка", "Visual regression failures"), int(status.get("screenshot_regression_failures", 0)))
     columns[5].metric(
         _t("Защитеното заключване", "Protected forward lock"),
         _t("НЕПРОМЕНЕНО", "UNCHANGED") if (status.get("protected_step148_files") or {}).get("all_ok") else _t("ПРОБЛЕМ", "ISSUE"),
@@ -73,7 +75,7 @@ def render_v150_ui_language_integrity_section() -> None:
         st.error(_t("Има елементи за преглед в глобалната проверка на интерфейса.", "The global interface validation found items requiring review."))
 
     if st.button(_t("Обнови проверката на интерфейса", "Refresh interface validation"), type="primary", use_container_width=True):
-        result = run_ui_language_integrity_audit(write_outputs=True)
+        result = run_deep_ui_integrity_audit(write_outputs=True)
         st.success(_t("Проверката е обновена.", "Validation refreshed.")) if result.get("ok") else st.warning(
             _t("Проверката е обновена, но има елементи за преглед.", "Validation refreshed, but some items require review.")
         )
@@ -83,19 +85,19 @@ def render_v150_ui_language_integrity_section() -> None:
     coverage_rows = [
         {
             "area": _t("Меню и групи", "Menu and groups"),
-            "status": bool(status.get("research_navigation_group_present")),
+            "status": bool((status.get("runtime_display_guards") or {}).get("json_runtime_wrapper")),
         },
         {
             "area": _t("Страници и модули", "Pages and modules"),
-            "status": bool(status.get("research_page_labels_present")),
+            "status": int(status.get("user_facing_dynamic_failures", 1)) == 0,
         },
         {
             "area": _t("Таблици и статуси", "Tables and statuses"),
-            "status": bool(status.get("technical_table_columns_hidden_by_default")),
+            "status": int(status.get("table_header_failures", 1)) == 0,
         },
         {
             "area": _t("Кирилица и UTF-8", "Cyrillic and UTF-8"),
-            "status": int(status.get("mojibake_findings", 1)) == 0,
+            "status": int(status.get("screenshot_regression_failures", 1)) == 0,
         },
         {
             "area": _t("Активна проспективна проверка", "Active prospective evaluation"),
@@ -105,13 +107,13 @@ def render_v150_ui_language_integrity_section() -> None:
     st.dataframe(pd.DataFrame(coverage_rows), use_container_width=True, hide_index=True)
 
     with st.expander(_t("Подробен одит на видимите текстове", "Detailed visible-text audit"), expanded=False):
-        rows = _load_csv(REPORT_CSV_PATH)
+        rows = _load_csv(DYNAMIC_AUDIT_PATH)
         if rows:
             display = pd.DataFrame(rows)
-            if "bg_pass" in display.columns:
-                display = display[display["bg_pass"].astype(str).str.lower().isin({"false", "0", "no"})]
+            if "user_mode_pass" in display.columns:
+                display = display[display["user_mode_pass"].astype(str).str.lower().isin({"false", "0", "no"})]
             if display.empty:
-                st.success(_t("Няма остатъчни забранени термини в българския режим.", "No forbidden residual terms remain in Bulgarian mode."))
+                st.success(_t("Няма непреведени динамични потребителски текстове в българския режим.", "No forbidden residual terms remain in Bulgarian mode."))
             else:
                 st.dataframe(display, use_container_width=True, hide_index=True)
         else:

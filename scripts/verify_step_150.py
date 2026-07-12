@@ -39,8 +39,8 @@ REQUIRED = [
     ROOT / "tools/audit_ui_language_integrity.py",
     ROOT / "tools/finalize_step_150_release.py",
     ROOT / "scripts/verify_step_150.py",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md",
+    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_1.md",
+    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_1.md",
     ROOT / "release-manifest.json",
 ]
 
@@ -199,7 +199,7 @@ def main() -> int:
             failures.append(f"protected_hash:{rel}")
 
     release = load_json(ROOT / "release-manifest.json")
-    validation = validate_release_manifest(release, root=ROOT, expected_checkpoint="Step 150")
+    validation = validate_release_manifest(release, root=ROOT, expected_checkpoint=str(release.get("checkpoint")))
     failures.extend(f"manifest:{failure}" for failure in validation.get("failures", []))
     listed = {str(row.get("path")) for row in release.get("files", [])}
     if "data/user_journal.db" in listed or any(path.startswith("data/user_journal_exports/") for path in listed):
@@ -212,8 +212,8 @@ def main() -> int:
             root=ROOT,
             metadata_files=(
                 ROOT / "release-manifest.json",
-                ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md",
-                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md",
+                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_1.md",
+                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_1.md",
             ),
         )
         if result.get("forbidden_entries") or not archive.is_file():

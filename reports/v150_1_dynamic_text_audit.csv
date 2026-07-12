@@ -1,0 +1,629 @@
+﻿source_file,field,source_value,bulgarian_display,technical_only,unexpected_ascii_words,forbidden_tokens,user_mode_pass
+models/bst_official_sync_status.json,note,BST official sync,BST официален синхронизация,False,,,True
+models/lottery_advanced_ensemble_model.json,interpretation,No strong evidence against fair-looking number frequencies.,Не са открити убедителни доказателства срещу привидно равномерното разпределение на честотите на числата.,False,,,True
+models/lottery_cold_model.json,method,"Ranks numbers that are historically below expected frequency, have larger recency gaps, and are cold in the recent window.","Класира числа, които исторически са под очакваната честота, имат по-големи интервали от последната поява и са неактивни в скорошния прозорец.",False,,,True
+models/lottery_cold_model.json,warning,"This is a training baseline, not a guarantee. Lottery draws should still be treated as random unless historical backtesting demonstrates a stable signal.","Това е базов модел за обучение, а не гаранция. Лотарийните тиражи трябва да се приемат за случайни, освен ако историческата проверка не покаже устойчив сигнал.",False,,,True
+models/lottery_frequency_model.json,status,NORMAL,Нормално,False,,,True
+models/lottery_gap_model.json,method,"Ranks numbers by recurrence intervals. For each number, the model compares the current gap since its last appearance with its average historical interval, estimates an interval hazard probability, and combines it with the fair 6/49 baseline and empirical frequency.",Подрежда числата според интервалите между появяванията им. За всяко число моделът сравнява текущия интервал със средния исторически интервал и комбинира резултата с базовата вероятност за 6/49 и наблюдаваната честота.,False,,,True
+models/lottery_gap_model.json,warning,"The fair mathematical chance for any single number to appear in the next 6/49 draw is still 6/49. This model is a statistical training estimate based on historical intervals, not a guarantee.","Математическата вероятност отделно число да се появи в следващ тираж 6/49 остава 6/49. Моделът дава статистическа оценка според историческите интервали, а не гаранция.",False,,,True
+models/lottery_middle_model.json,method,"Ranks numbers whose historical frequency, recent frequency, and recency gap are closest to the expected fair 6/49 behavior.","Подрежда числата, чиито историческа честота, скорошна честота и интервал от последната поява са най-близо до очакваното поведение при 6/49.",False,,,True
+models/lottery_middle_model.json,warning,"This is a statistical training baseline. It identifies numbers near the historical middle, but it does not guarantee future lottery results.","Това е статистически базов модел за обучение. Той определя числа близо до историческата среда, но не гарантира бъдещи лотарийни резултати.",False,,,True
+models/lottery_ml_extensions_model.json,type,nearest_centroid_classifier,Класификатор по най-близък центроид,False,,,True
+models/lottery_ml_extensions_model.json,label,смесени статистически комбинации,смесени статистически комбинации,False,,,True
+models/lottery_ml_extensions_model.json,label,балансирани комбинации,балансирани комбинации,False,,,True
+models/lottery_ml_extensions_model.json,label,честотни комбинации,честотни комбинации,False,,,True
+models/lottery_ml_extensions_model.json,type,kmeans_from_scratch,K-means реализация от основата,False,,,True
+models/lottery_ml_extensions_model.json,type,pca_from_scratch,PCA реализация от основата,False,,,True
+models/model_registry.json,description,Dataset вход,данните вход,False,,,True
+models/model_registry.json,type,dataset,Данни,False,,,True
+models/model_registry.json,description,Изходът помага на следващ слой,Изходът помага на следващ слой,False,,,True
+models/model_registry.json,type,feeds,Източници,False,,,True
+models/model_registry.json,description,Входен model/report artifact,Входен модел/отчет артефакт,False,,,True
+models/model_registry.json,type,artifact,Артефакт,False,,,True
+models/model_registry.json,category,Базов модел,Базов модел,False,,,True
+models/model_registry.json,label,Правилово-съзнати модели,Правилово-съзнати модели,False,,,True
+models/model_registry.json,role,Дава правила-свързани прогнозни сигнали върху основните числа.,Дава правила-свързани прогнозни сигнали върху основните числа.,False,,,True
+models/model_registry.json,category,Комбиниран анализ,Комбиниран анализ,False,,,True
+models/model_registry.json,label,Комбиниран позитивен/негативен анализ,Комбиниран позитивен/негативен анализ,False,,,True
+models/model_registry.json,role,Комбинира позитивни и негативни статистически сигнали.,Комбинира позитивни и негативни статистически сигнали.,False,,,True
+models/model_registry.json,category,Интервален анализ,Интервален анализ,False,,,True
+models/model_registry.json,label,Интервален ритъм,Интервален ритъм,False,,,True
+models/model_registry.json,role,"Следи ритъм на поява, интервали и закъснели числа.","Следи ритъм на поява, интервали и закъснели числа.",False,,,True
+models/model_registry.json,category,Ансамбъл,Ансамбъл,False,,,True
+models/model_registry.json,label,Финална ансамблова основа за фиш,Финална ансамблова основа за фиш,False,,,True
+models/model_registry.json,role,Обединява по-ранни сигнали във финален ансамблов фиш.,Обединява по-ранни сигнали във финален ансамблов фиш.,False,,,True
+models/model_registry.json,category,ML модел,ML модел,False,,,True
+models/model_registry.json,label,Прогнозно табло Pro,Прогнозно табло Pro,False,,,True
+models/model_registry.json,role,Тренира прогнозен модел с признаци и историческа проверка.,Тренира прогнозен модел с признаци и историческа проверка.,False,,,True
+models/model_registry.json,category,Групова статистика,Групова статистика,False,,,True
+models/model_registry.json,label,Анализ на двойки и групи,Анализ на двойки и групи,False,,,True
+models/model_registry.json,role,"Анализира двойки, групи и съвместни появи.","Анализира двойки, групи и съвместни появи.",False,,,True
+models/model_registry.json,category,Портфолио,Портфолио,False,,,True
+models/model_registry.json,label,Интелигентна оценка на портфейл от фишове,Интелигентна оценка на портфейл от фишове,False,,,True
+models/model_registry.json,role,Оценява фишове и портфолио чрез покритие и групова логика.,Оценява фишове и портфолио чрез покритие и групова логика.,False,,,True
+models/model_registry.json,category,Профилиране,Профилиране,False,,,True
+models/model_registry.json,label,Профил на число,Профил на число,False,,,True
+models/model_registry.json,role,"Профилира всяко число по честота, интервали, двойки и стабилност.","Профилира всяко число по честота, интервали, двойки и стабилност.",False,,,True
+models/model_registry.json,category,Сходства,Сходства,False,,,True
+models/model_registry.json,label,Подобни исторически тиражи,Подобни исторически тиражи,False,,,True
+models/model_registry.json,role,Търси сходни исторически тиражи и модели на близост.,Търси сходни исторически тиражи и модели на близост.,False,,,True
+models/model_registry.json,category,Горещи/студени числа,Горещи/студени числа,False,,,True
+models/model_registry.json,label,"Горещи, студени и стабилни числа","Горещи, студени и стабилни числа",False,,,True
+models/model_registry.json,role,"Открива горещи, студени и стабилни числа.","Открива горещи, студени и стабилни числа.",False,,,True
+models/model_registry.json,category,Умен ансамбъл,Умен ансамбъл,False,,,True
+models/model_registry.json,label,Умна обединена оценка 2,Умна обединена оценка 2,False,,,True
+models/model_registry.json,role,Обединява активни сигнали в интелигентна оценка.,Обединява активни сигнали в интелигентна оценка.,False,,,True
+models/model_registry.json,category,Генератор,Генератор,False,,,True
+models/model_registry.json,label,Умен генератор на фишове 2,Умен генератор на фишове 2,False,,,True
+models/model_registry.json,role,Генерира кандидат комбинации по различни стратегии.,Генерира кандидат комбинации по различни стратегии.,False,,,True
+models/model_registry.json,category,Проверка след тираж,Проверка след тираж,False,,,True
+models/model_registry.json,label,Анализ на нов тираж,Анализ на нов тираж,False,,,True
+models/model_registry.json,role,Проверява сигналите срещу последния реален тираж.,Проверява сигналите срещу последния реален тираж.,False,,,True
+models/model_registry.json,category,История на представянето,История на представянето,False,,,True
+models/model_registry.json,label,История на моделите,История на моделите,False,,,True
+models/model_registry.json,role,Събира история на представянето на моделите.,Събира история на представянето на моделите.,False,,,True
+models/model_registry.json,category,Надеждност,Надеждност,False,,,True
+models/model_registry.json,label,Надеждност на моделите,Надеждност на моделите,False,,,True
+models/model_registry.json,role,Изчислява оценка за надеждност на следените модели.,Изчислява оценка за надеждност на следените модели.,False,,,True
+models/model_registry.json,category,Адаптивно тегло,Адаптивно тегло,False,,,True
+models/model_registry.json,label,Умно тегло на моделите,Умно тегло на моделите,False,,,True
+models/model_registry.json,role,Превръща надеждността в адаптивни тегла.,Превръща надеждността в адаптивни тегла.,False,,,True
+models/model_registry.json,category,Претеглен ансамбъл,Претеглен ансамбъл,False,,,True
+models/model_registry.json,label,Претеглен ансамблов анализ,Претеглен ансамблов анализ,False,,,True
+models/model_registry.json,role,Обединява активните сигнали според адаптивните тегла.,Обединява активните сигнали според адаптивните тегла.,False,,,True
+models/model_registry.json,category,Генератор с тегла,Генератор с тегла,False,,,True
+models/model_registry.json,label,Умен генератор с тегла,Умен генератор с тегла,False,,,True
+models/model_registry.json,role,Строи фишове върху претеглените оценки от Step 66.,Строи фишове върху претеглените оценки от Етап 66.,False,,,True
+models/model_registry.json,category,Оптимизатор на портфейл,Оптимизатор на портфейл,False,,,True
+models/model_registry.json,label,Умен оптимизатор на портфейл,Умен оптимизатор на портфейл,False,,,True
+models/model_registry.json,role,"Оценява портфейл, покритие, повторения и концентрация.","Оценява портфейл, покритие, повторения и концентрация.",False,,,True
+models/model_registry.json,category,Предложения за подобрение,Предложения за подобрение,False,,,True
+models/model_registry.json,label,Подобряване на портфолио,Подобряване на портфолио,False,,,True
+models/model_registry.json,role,Предлага подобрения без да презаписва основния пакет.,Предлага подобрения без да презаписва основния пакет.,False,,,True
+models/model_registry.json,category,Приложен портфейл,Приложен портфейл,False,,,True
+models/model_registry.json,label,Приложен подобрен портфейл,Приложен подобрен портфейл,False,,,True
+models/model_registry.json,role,Фиксира подобрения пакет като отделна статистическа референция.,Фиксира подобрения пакет като отделна статистическа референция.,False,,,True
+models/model_registry.json,category,Пакет за игра,Пакет за игра,False,,,True
+models/model_registry.json,label,Пакет за игра,Пакет за игра,False,,,True
+models/model_registry.json,role,Подготвя пакет за печат и експорт за игра с физически фишове.,Подготвя пакет за печат и експорт за игра с физически фишове.,False,,,True
+models/model_registry.json,category,Представяне след тираж,Представяне след тираж,False,,,True
+models/model_registry.json,label,Представяне на пакета,Представяне на пакета,False,,,True
+models/model_registry.json,role,Проверява активния пакет срещу реални тиражи преди обновяване на данните.,Проверява активния пакет срещу реални тиражи преди обновяване на данните.,False,,,True
+models/model_registry.json,category,Невронен мета-обучител,Невронен мета-обучител,False,,,True
+models/model_registry.json,label,Невронен мета-обучител,Невронен мета-обучител,False,,,True
+models/model_registry.json,role,Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.,Тренира лек невронен мета-обучител върху исторически признаци и изгражда статистически кандидат фишове.,False,,,True
+models/model_registry.json,category,Обяснимост и валидация,Обяснимост и валидация,False,,,True
+models/model_registry.json,label,Обяснимост и валидация,Обяснимост и валидация,False,,,True
+models/model_registry.json,role,Обяснява Neural Meta Learner сигналите и валидира структурата на кандидат комбинациите преди финалния контрол на синхрона.,Обяснява невронния мета модел сигналите и валидира структурата на кандидат комбинациите преди финалния контрол на синхрона.,False,,,True
+models/model_registry.json,category,Решение и препоръка,Решение и препоръка,False,,,True
+models/model_registry.json,label,Решение и препоръка,Решение и препоръка,False,,,True
+models/model_registry.json,role,Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат комбинациите.,Обединява обяснимостта и валидацията в практическа статистическа препоръка за кандидат комбинациите.,False,,,True
+models/model_registry.json,category,Финален план,Финален план,False,,,True
+models/model_registry.json,label,Финален план,Финален план,False,,,True
+models/model_registry.json,role,"Превръща decision препоръките във финален дисциплиниран план за основни комбинации, резерви и действия.","Превръща решение препоръките във финален дисциплиниран план за основни комбинации, резерви и действия.",False,,,True
+models/model_registry.json,category,Експорт и изпълнение,Експорт и изпълнение,False,,,True
+models/model_registry.json,label,Експорт и изпълнение,Експорт и изпълнение,False,,,True
+models/model_registry.json,role,"Подготвя финалния пакет за копиране, печат, checklist и дисциплинирано изпълнение.","Подготвя финалния пакет за копиране, печат, контролен списък и дисциплинирано изпълнение.",False,,,True
+models/model_registry.json,category,Финален системен одит,Финален системен одит,False,,,True
+models/model_registry.json,label,Финален системен одит,Финален системен одит,False,,,True
+models/model_registry.json,role,"Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.","Проверява синхронизацията на данните, артефактите от етапи 76–79, плановете за синхронизация, компилацията, прочитането на JSON/CSV и кирилицата преди финалната проверка.",False,,,True
+models/model_registry.json,category,Финален UX контрол,Финален UX контрол,False,,,True
+models/model_registry.json,label,Финален UX контрол,Финален UX контрол,False,,,True
+models/model_registry.json,role,"Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX labels.","Проверява финалната навигационна структура, групите, повторенията и видимостта на финалните UX етикети.",False,,,True
+models/model_registry.json,category,Финален пакет за предаване,Финален пакет за предаване,False,,,True
+models/model_registry.json,label,Финален пакет за предаване,Финален пакет за предаване,False,,,True
+models/model_registry.json,role,Финален пакет за предаване readiness и clean ZIP контролен слой след Step 81.,Финален контролен слой за готовността на пакета за предаване и чистия ZIP архив след етап 81.,False,,,True
+models/model_registry.json,category,Помощ и ръководство,Помощ и ръководство,False,,,True
+models/model_registry.json,label,Ръководство за апа,Ръководство за апа,False,,,True
+models/model_registry.json,role,"Финално потребителско ръководство, безопасен работен процес и център с ръководство върху пакета за предаване.","Финално потребителско ръководство, безопасен работен процес и център с ръководство върху пакета за предаване.",False,,,True
+models/model_registry.json,status,Има нужда от преглед,Има нужда от преглед,False,,,True
+models/v100/v100_final_release_lock_model.json,status,V1_LOCKED_WAITING_NEXT_DRAW,Версия 1 е заключена и очаква следващия тираж,False,,,True
+models/v100/v100_final_release_lock_model.json,status,OK,Изрядно,False,,,True
+models/v101/v101_real_use_protocol_model.json,status,WAITING_NEXT_REAL_DRAW,Очаква следващия реален тираж,False,,,True
+models/v102/v102_runtime_hardening_model.json,status,RUNTIME_HARDENED,Работната среда е защитена,False,,,True
+models/v102/v102_runtime_hardening_model.json,check,fast_refresh_mode,Режим за бързо обновяване,False,,,True
+models/v102/v102_runtime_hardening_model.json,check,timeout_guard,Време за изчакване защита,False,,,True
+models/v102/v102_runtime_hardening_model.json,check,heavy_scripts_excluded_from_default,Тежките скриптове са изключени от стандартния режим,False,,,True
+models/v102/v102_runtime_hardening_model.json,check,user_facing_shortcut_label,Потребителско наименование за бърз достъп,False,,,True
+models/v102/v102_runtime_hardening_model.json,check,step102_page_wired,Страницата за етап 102 е свързана,False,,,True
+models/v103/v103_clean_release_checkpoint_model.json,status,WAITING_FOR_CLEAN_GIT_STATUS,Очаква чисто Git състояние,False,,,True
+models/v103/v103_clean_release_checkpoint_model.json,check,git_available,Git е наличен,False,,,True
+models/v103/v103_clean_release_checkpoint_model.json,check,working_tree_clean_before_zip,Работното дърво е чисто преди ZIP архива,False,,,True
+models/v103/v103_clean_release_checkpoint_model.json,check,forbidden_tracked_files,Забранени проследявани файлове,False,,,True
+models/v103/v103_clean_release_checkpoint_model.json,check,tracked_zip_strategy,Проследени zip стратегия,False,,,True
+models/v103_1/v103_1_clean_zip_metadata_finalizer_model.json,status,METADATA_FINALIZED,Метаданните са финализирани,False,,,True
+models/v103_1/v103_1_clean_zip_metadata_finalizer_model.json,check,zip_metadata_injected_inside_archive,Метаданните са добавени в ZIP архива,False,,,True
+models/v103_1/v103_1_clean_zip_metadata_finalizer_model.json,check,clean_zip_status_created,Чист zip статус създадено,False,,,True
+models/v103_1/v103_1_clean_zip_metadata_finalizer_model.json,check,ui_no_disk_write_on_render,Интерфейсът не записва на диска при визуализиране,False,,,True
+models/v103_1/v103_1_clean_zip_metadata_finalizer_model.json,check,create_script_reports_clean_tree_state,Скриптът за създаване отчита чисто работно дърво,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,FINAL_AUDIT_REFRESHED,Финалната проверка е обновена,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,EVALUATED,Оценено,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,READY,Готово,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,HAS_HISTORY,Има история,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,READY_WAITING_NEXT_DRAW,Готово — очаква следващия тираж,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,CHECK_REQUIRED,Необходима е проверка,False,,,True
+models/v104/v104_final_audit_refresh_model.json,status,POST_DRAW_DATASETS_SYNCED,Данните след тиража са синхронизирани,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,dataset_present,Данни наличен,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,dataset_rows_synced,Редовете в данните са синхронизирани,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,dataset_numbers_valid,Данни числа валиден,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,runtime_hardening_active,Защитата на работната среда е активна,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,final_audit_current,Краен проверка текущ,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,post_draw_status_sync_active,Синхронизацията на състоянията след тиража е активна,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,active_text_encoding,Активно текстово кодиране,False,,,True
+models/v104/v104_final_audit_refresh_model.json,check,old_audit_superseded,Старата проверка е заменена,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,status,NAVIGATION_PERSISTENT,Навигацията се запазва,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,sidebar shortcut stores pending navigation group,Бързият достъп в страничното меню запазва предстоящата навигационна група.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,Shortcut does not render the page directly after sidebar widgets are already created.,"Бързият достъп не визуализира страницата директно, след като елементите в страничното меню вече са създадени.",False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,sidebar shortcut stores pending add-draw page,Бързият достъп в страничното меню запазва предстоящото отваряне на страницата за добавяне на тираж.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,Next rerun opens the add-draw page through normal navigation state.,При следващото обновяване страницата за добавяне на тираж се отваря чрез нормалното състояние на навигацията.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,navigation group selectbox has stable key,Полето за избор на навигационна група има постоянен ключ.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,The selected main section persists across Streamlit reruns.,Избраният главен раздел се запазва при повторно изпълнение на приложението.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,page radio has stable key,Изборът на страница използва постоянен вътрешен ключ,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,The selected page persists while the user types in draw input fields.,"Избраната страница се запазва, докато потребителят въвежда данни за тиража.",False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,choice is mirrored in session state,Изборът се запазва в текущата потребителска сесия,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,Other app layers can still read the current selected page.,Останалите слоеве на приложението могат да прочетат текущо избраната страница.,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,check,Step 105 marker present,Маркерът за етап 105 е наличен,False,,,True
+models/v105/v105_add_draw_navigation_fix_model.json,details,Patch is auditable in streamlit_app.py.,Промяната може да бъде проверена в основния файл на приложението.,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,status,POST_DRAW_SYNCED,Синхронизирано след тиража,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,datasets_synced_after_draw,Данните са синхронизирани след тиража,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,lifecycle_ready,Жизнен цикъл готов,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,history_available,Историята е налична,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,dashboard_ready,Табло готов,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,release_lock_ready,Издание заключване готов,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,real_use_protocol_ready,Реален употреба протокол готов,False,,,True
+models/v106/v106_post_draw_status_sync_model.json,check,explainability_refreshed,Обяснимостта е обновена,False,,,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,check,derived_datasets_match_historical,Производните данни съвпадат с историческите,False,,,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,check,latest_draw_propagated,Последният тираж е разпространен,False,,,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,check,v76_refreshed_to_current_dataset,v76 е обновен към текущите данни,False,,,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,check,v106_post_draw_synced,v106 е синхронизиран след тиража,False,,,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,check,final_controls_ready,Краен контроли готов,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,status,TRAINING_POLICY_READY,Обучаващи правило готов,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,datasets_synced,Наборите от данни са синхронизирани,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,latest_draw_valid,Последен тираж валиден,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,post_draw_sync_active,Синхронизацията след тиража е активна,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,heavy_labs_not_default,Тежките лаборатории не са в стандартния режим,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,step107_page_wired,Страницата за етап 107 е свързана,False,,,True
+models/v107/v107_model_training_policy_refresh_control_model.json,check,step107_refresh_chain_wired,Веригата за обновяване на етап 107 е свързана,False,,,True
+models/v108/v108_user_menu_live_status_sync_model.json,status,USER_MENU_LIVE_STATUS_SYNCED,Актуалното състояние в потребителското меню е синхронизирано,False,,,True
+models/v109/v109_sqlite_played_tickets_journal_model.json,status,SQLITE_JOURNAL_READY,SQLITE дневник готов,False,,,True
+models/v109/v109_sqlite_played_tickets_journal_model.json,note,Автоматичен sync от последния dataset тираж.,Автоматичен синхронизация от последния данните тираж.,False,,,True
+models/v109_1/v109_1_journal_ui_bulgarian_polish_model.json,status,JOURNAL_UI_POLISHED,Интерфейсът на дневника е подобрен,False,,,True
+models/v109_2/v109_2_ticket_pack_4line_journal_model.json,status,TICKET_PACK_READY,Фиш пакет готов,False,,,True
+models/v109_3/v109_3_ticket_pack_source_clarity_model.json,status,TICKET_SOURCE_CLARIFIED,Източникът на фиша е изяснен,False,,,True
+models/v109_3/v109_3_ticket_pack_source_clarity_model.json,check,dataset_context_available,Контекстът на данните е наличен,False,,,True
+models/v109_3/v109_3_ticket_pack_source_clarity_model.json,check,latest_draw_available,Последният тираж е наличен,False,,,True
+models/v109_3/v109_3_ticket_pack_source_clarity_model.json,check,step107_policy_available,Правилото за етап 107 е налично,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,status,TICKET_PACK_SOURCES_ALIGNED,Източниците на пакета с фишове са съгласувани,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,final_plan_only_has_two_tickets,Финалният план съдържа само два фиша,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,final_plan_tickets_have_four_lines,Фишовете във финалния план съдържат по четири комбинации,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,extended_has_three_tickets,Разширеният план съдържа три фиша,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,extended_tickets_have_four_lines,Фишовете в разширения план съдържат по четири комбинации,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,third_ticket_is_marked_supplementary,Третият фиш е отбелязан като допълнителен,False,,,True
+models/v109_4/v109_4_ticket_pack_source_alignment_model.json,check,extended_lines_are_unique,Комбинациите в разширения план са уникални,False,,,True
+models/v110/v110_user_friendly_ui_polish_model.json,status,USER_FRIENDLY_UI_POLISHED,Потребителският интерфейс е подобрен,False,,,True
+models/v111/v111_prize_winner_history_model.json,status,PRIZE_WINNER_IMPORT_READY,Импортът на печалби и печеливши е готов,False,,,True
+models/v111_10/full_historical_draws_view_status.json,status,FULL_HISTORICAL_DRAWS_VIEW_READY,Пълният изглед на историческите тиражи е готов,False,,,True
+models/v111_11/data_reality_center_status.json,status,DATA_REALITY_CENTER_READY,Центърът за реалното състояние на данните е готов,False,,,True
+models/v111_8/v111_8_verified_2026_prize_history_model.json,status,VERIFIED_2026_PRIZE_HISTORY_IMPORTED,ПОТВЪРДЕНО 2026 печалба история импортирано,False,,,True
+models/v111_8/v111_8_verified_2026_prize_history_model.json,note,Проверен ръчен импорт от официална визуална таблица за 2026. Джакпотът е спечелен. Източник: официален екран/скрийншот. Проверка по числа: да.,Проверен ръчен импорт от официална визуална таблица за 2026. Джакпотът е спечелен. Източник: официален екран/скрийншот. Проверка по числа: да.,False,,,True
+models/v111_8/v111_8_verified_2026_prize_history_model.json,note,Проверен ръчен импорт от официална визуална таблица за 2026. Източник: официален екран/скрийншот. Проверка по числа: да.,Проверен ръчен импорт от официална визуална таблица за 2026. Източник: официален екран/скрийншот. Проверка по числа: да.,False,,,True
+models/v111_9/status.json,status,OFFICIAL_ONLY_PRIZE_SOURCE_READY,Официалният източник на печалби е готов,False,,,True
+models/v111_9/status.json,label,main_prize_winner_history,Основна история на печалбите и печелившите,False,,,True
+models/v111_9/status.json,label,export_prize_winner_history,Изнесена история на печалбите и печелившите,False,,,True
+models/v112/prize_statistics_model.json,status,PRIZE_STATISTICS_READY,Статистиката на печалбите е готова,False,,,True
+models/v113/jackpot_cycle_model.json,status,JACKPOT_CYCLE_READY,Анализът на цикъла на джакпота е готов,False,,,True
+models/v114/ticket_value_model.json,status,TICKET_VALUE_READY,Фиш стойност готов,False,,,True
+models/v116_1/real_ticket_pack_ui_polish_status.json,status,REAL_TICKET_PACK_UI_POLISH_READY,Интерфейсът на реалния пакет с фишове е готов,False,,,True
+models/v117/real_ticket_pack_builder_status.json,status,Пакетът е готов,Пакетът е готов,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v117_total_lines_is_12,V117 общо комбинации е 12,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v117 total_lines=12,v117 total_lines=12,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v117_total_price_is_10_80,V117 общо цена е 10 80,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v117 total_price_eur=10.8,v117 total_price_eur=10.8,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v96_add_draw_snapshot_uses_12_lines,Моментното състояние на v96 използва 12 комбинации,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v96 active_plan_combinations=12,v96 active_plan_combinations=12,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v96_add_draw_snapshot_uses_10_80,Моментното състояние на v96 използва диапазона 10–80,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v96 active_plan_cost_eur=10.8,v96 active_plan_cost_eur=10.8,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v97_lifecycle_plan_uses_12_lines,Планът на жизнения цикъл v97 използва 12 комбинации,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v97 combination_count=12,v97 combination_count=12,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,v97_lifecycle_plan_uses_10_80,Планът на жизнения цикъл v97 използва диапазона 10–80,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,v97 cost_eur=10.8,v97 cost_eur=10.8,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,check,add_draw_info_label_is_generic_pack_label,Информационното наименование при добавяне на тираж е общо за пакета,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,details,Add Draw reads active_plan_label_bg instead of hard-coded budget-plan text.,Страницата за добавяне на тираж използва динамичното българско наименование на активния план вместо вграден текст.,False,,,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,status,ADD_DRAW_TICKET_PACK_PRICE_SYNC_READY,Добави тираж фиш пакет цена синхронизация готов,False,,,True
+models/v118/model_system_ticket_builder_status.json,status,MODEL_SYSTEM_TICKET_BUILDER_READY,Системният модул за моделни фишове е готов,False,,,True
+models/v120_post_bst_model_data_refresh_status.json,status,MODEL_DATA_SYNCED,Моделните данни са синхронизирани,False,,,True
+models/v120_post_bst_model_data_refresh_status.json,reason,"A new official draw updates the model dataset layer, but heavy ML retraining remains a deliberate manual step.","Нов официален тираж обновява слоя с моделни данни, но тежкото преобучение на моделите остава съзнателна ръчна стъпка.",False,,,True
+models/v120_post_bst_model_data_refresh_status.json,message,Step 120 refreshes model datasets after БСТ sync. Heavy ML retraining remains manual.,Етап 120 обновява моделните данни след синхронизация с БСТ. Тежкото преобучение на моделите остава ръчно.,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Официална история,Официална история,False,,,True
+models/v122_unified_official_draw_freshness_status.json,status,synced,Синхронизирано,False,,,True
+models/v122_unified_official_draw_freshness_status.json,message,Синхронизиран с официалния последен тираж.,Синхронизиран с официалния последен тираж.,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Дневник — история на печалбите,Дневник — история на печалбите,False,,,True
+models/v122_unified_official_draw_freshness_status.json,status,local_optional,Само локално — по избор,False,,,True
+models/v122_unified_official_draw_freshness_status.json,message,Локалният личен journal export не е част от публичния release и не блокира актуалността.,Локалният личен дневник износ не е част от публичния издание и не блокира актуалността.,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Исторически тиражи,Исторически тиражи,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Нормализирани събития,Нормализирани събития,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Канонични събития,Канонични събития,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,R статистически слой,R статистически слой,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,R статистически характеристики,R статистически характеристики,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Решение за игра,Решение за игра,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Готов фиш пакет,Готов фиш пакет,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Системен фиш от моделите,Системен фиш от моделите,False,,,True
+models/v122_unified_official_draw_freshness_status.json,label,Обучени ML модели,Обучени ML модели,False,,,True
+models/v122_unified_official_draw_freshness_status.json,status,informational,Информационно,False,,,True
+models/v122_unified_official_draw_freshness_status.json,message,Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж.,Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж.,False,,,True
+models/v123_bst_official_draw_detection_status.json,mode,read_only_detection,Проверка само за четене,False,,,True
+models/v123_bst_official_draw_detection_status.json,status,up_to_date,Актуално,False,,,True
+models/v123_bst_official_draw_detection_status.json,message,Локалният source of truth е актуален.,Локалният основен източник на данни е актуален.,False,,,True
+models/v125_unified_downstream_refresh_status.json,status,planned,Планирано,False,,,True
+models/v125_unified_downstream_refresh_status.json,message,Ready to run.,Готово за изпълнение.,False,,,True
+models/v126_startup_automation_status.json,message,Локалният официален тираж е актуален.,Локалният официален тираж е актуален.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,validated,Потвърдено,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,passed,Преминато,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Simulated newer official draw 2026-54 detected.,Открит е симулиран по-нов официален тираж 2026-54.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Новият официален тираж е приложен безопасно към source of truth и journal mirror.,Новият официален тираж е приложен безопасно към основен източник на данни и огледално копие на дневника.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,inserted,Добавено,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Sandbox artifact advanced to 2026-54.,Тестовият артефакт е преместен към тираж 2026-54.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,refreshed_in_test_sandbox,Обновено в изолирана тестова среда,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,All simulated operational layers are synchronized.,Всички симулирани оперативни слоеве са синхронизирани.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Тиражът вече съществува. Не са направени промени.,Тиражът вече съществува. Не са направени промени.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,duplicate_blocked,Дубликат Блокирано,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Forced failure restored both sandbox source files.,Принудителната грешка възстанови и двата изходни файла в изолираната тестова среда.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,status,rolled_back,Върнато назад,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Възникна грешка и оригиналните файлове бяха възстановени от backup.,Възникна грешка и оригиналните файлове бяха възстановени от резервно копие.,False,,,True
+models/v127_end_to_end_automation_validation_status.json,message,Real project draw files were not changed.,Реалните файлове с тиражи в проекта не са променени.,False,,,True
+models/v129_controlled_production_activation_status.json,mode,dry_run,Пробно изпълнение,False,,,True
+models/v129_controlled_production_activation_status.json,status,dry_run_blocked,Пробното изпълнение е блокирано,False,,,True
+models/v129_controlled_production_activation_status.json,message,Dry-run preflight е блокиран; production данните не са променени.,пробно изпълнение предварителната проверка е блокирана; работните данни не са променени.,False,,,True
+models/v129_controlled_production_activation_status.json,status,official_unavailable,Официалният източник не е достъпен,False,,,True
+models/v129_controlled_production_activation_status.json,message,<urlopen error [Errno -3] Temporary failure in name resolution>,Временен проблем при свързването с външния източник.,True,,,True
+models/v131_production_operations_dashboard_status.json,health,attention,Внимание,False,,,True
+models/v131_production_operations_dashboard_status.json,message,Официалната страница не съдържа разпознаваем 6/49 тираж. HTML SHA256: bc43c898de5bfe5497d55c06884ffdc16831d73c705bced36f4f6e2fc64b2d67,Официалната страница не съдържа разпознаваем 6/49 тираж. HTML SHA256: bc43c898de5bfe5497d55c06884ffdc16831d73c705bced36f4f6e2fc64b2d67,False,,,True
+models/v131_production_operations_dashboard_status.json,status,behind,Изостава,False,,,True
+models/v131_production_operations_dashboard_status.json,message,Назад с 1 тираж(а).,Назад с 1 тираж(а).,False,,,True
+models/v131_production_operations_dashboard_status.json,label,Step 121 R features,Етап 121 R характеристики,False,,,True
+models/v131_production_operations_dashboard_status.json,message,Назад с 4 тираж(а).,Назад с 4 тираж(а).,False,,,True
+models/v131_production_operations_dashboard_status.json,label,ML model artifacts,ML модел артефакти,False,,,True
+models/v131_production_operations_dashboard_status.json,status,unavailable,Не е налично,False,,,True
+models/v131_production_operations_dashboard_status.json,message,"Открит е marker за тираж 47, но липсва година за надеждно сравнение.","Открит е маркер за тираж 47, но липсва година за надеждно сравнение.",False,,,True
+models/v142_downstream_freshness_repair_status.json,status,already_synced,Вече е синхронизирано,False,,,True
+models/v143_3_downstream_zero_blocker_status.json,status,completed,Завършен,False,,,True
+models/v148_prospective_forward_test_status.json,status,active,Активен,False,,,True
+models/v149_repository_hygiene_policy.json,title,"Repository Hygiene, Privacy & Authorship Transparency","Хигиена на хранилището, поверителност и прозрачност на авторството",False,,,True
+models/v150_1_deep_ui_integrity_policy.json,title,Задълбочена локализация на динамичния интерфейс и потребителските таблици,Задълбочена локализация на динамичния интерфейс и потребителските таблици,False,,,True
+models/v150_global_ui_polish_policy.json,title,"Global Bulgarian UI, Table Localization & Technical Detail Separation","Глобален български интерфейс, локализация на таблиците и отделяне на техническите подробности",False,,,True
+models/v150_global_ui_polish_status.json,scope,global_streamlit_ui_menus_pages_widgets_tables_statuses_and_research_technical_detail_separation,"Глобално езиково покритие на менюта, страници, елементи, таблици, статуси и технически подробности",False,,,True
+models/v41/v41_frequency_main_numbers_model.json,warning,"Lottery draws are random. Scores are historical rankings, not guaranteed predictions.","Лотарийните тиражи са случайни. Оценките са исторически класирания, а не гарантирани прогнози.",False,,,True
+models/v41/v41_latest_predictions.json,status,v41_predictions_generated_from_canonical_draw_events,Прогнозите v41 са генерирани от каноничните тиражи,False,,,True
+models/v41/v41_latest_predictions.json,warning,"Lottery draws are random. These are ranking-based model outputs, not guaranteed winning numbers.","Лотарийните тиражи са случайни. Това са моделни резултати за класиране, а не гарантирани печеливши числа.",False,,,True
+models/v41/v41_recency_main_numbers_model.json,warning,"Lottery draws are random. Scores are recency rankings, not guaranteed predictions.","Лотарийните тиражи са случайни. Оценките са класирания по скорошна активност, а не гарантирани прогнози.",False,,,True
+models/v41/v41_sgd_number_model_metadata.json,model,sgd_number_classifier,SGD класификатор на числа,False,,,True
+models/v41/v41_sgd_number_model_metadata.json,warning,"Lottery draws are random. This model provides ranking scores, not guaranteed predictions.","Лотарийните тиражи са случайни. Моделът предоставя оценки за класиране, а не гарантирани прогнози.",False,,,True
+models/v42/v42_combined_prediction.json,method,combined_positive_negative_foundation,Основа с комбинирани положителни и отрицателни сигнали,False,,,True
+models/v44_1/v44_1_final_ensemble_ticket_prediction.json,label,final_consensus,Краен съгласие,False,,,True
+models/v44_1/v44_1_final_ensemble_ticket_prediction.json,label,interval_rhythm_next_window,Интервал ритъм следващ прозорец,False,,,True
+models/v44_1/v44_1_final_ensemble_ticket_prediction.json,label,combined_positive_negative,Комбиниран Положително Отрицателно,False,,,True
+models/v44_1/v44_1_final_ensemble_ticket_prediction.json,label,coverage_diversified,Покритието е разнообразено,False,,,True
+models/v45/v45_final_prediction_tickets.json,status,v45_prediction_engine_pro_tickets_ready,Фишовете от разширения прогнозен модул v45 са готови,False,,,True
+models/v45/v45_final_prediction_tickets.json,label,primary_rule_aware_ml_ensemble,"Основен ML ансамбъл, съобразен с правилата",False,,,True
+models/v45/v45_final_prediction_tickets.json,label,coverage_low_overlap,Покритие ниски припокриване,False,,,True
+models/v45/v45_final_prediction_tickets.json,label,rhythm_weighted_alternative,"Алтернатива, претеглена по ритъм",False,,,True
+models/v45/v45_final_prediction_tickets.json,label,historical_signal_alternative,Алтернативен исторически сигнал,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,frequency_baseline,Честотен базов модел,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,recency_250_baseline,Скорошна активност 250 базов модел,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,gap_rhythm_statistical,Статистически модел на интервали и ритъм,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,random_baseline,Случаен базов модел,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,sgd_logistic_probability,Логистична вероятност със SGD,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,gaussian_naive_bayes,Гаусов наивен Байес,False,,,True
+models/v45/v45_final_prediction_tickets.json,model,v45_pro_ensemble,Разширен ансамбъл — v45,False,,,True
+models/v45/v45_final_prediction_tickets.json,warning,Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers.,Лотарийните тиражи са случайни. Моделът подрежда исторически и статистически сигнали; той не е гаранция и не доказва кои числа ще бъдат изтеглени в бъдеще.,False,,,True
+models/v45/v45_latest_number_scores.json,status,v45_prediction_engine_pro_scores_ready,Оценките от разширения прогнозен модул v45 са готови,False,,,True
+models/v50/v50_pair_group_intelligence.json,type,pair_group_intelligence,Анализ на двойки и групи,False,,,True
+models/v50/v50_pair_group_intelligence.json,warning,Statistical analysis only. Lottery draws remain random and there is no winning guarantee.,Само статистически анализ. Лотарийните тиражи остават случайни и няма гаранция за печалба.,False,,,True
+models/v51/v51_ticket_portfolio_intelligence.json,type,ticket_portfolio_intelligence,Анализ на портфейла от фишове,False,,,True
+models/v59/v59_smart_ticket_builder_2_manifest.json,strategy,Балансиран,Балансиран,False,,,True
+models/v62/v62_model_performance_tracker_model.json,status,ok,Изрядно,False,,,True
+models/v62/v62_model_performance_tracker_model.json,status,no_candidate_signal,Номер кандидат сигнал,False,,,True
+models/v63/v63_model_reliability_dashboard_model.json,status,силна историческа надеждност,силна историческа надеждност,False,,,True
+models/v63/v63_model_reliability_dashboard_model.json,status,средна историческа надеждност,средна историческа надеждност,False,,,True
+models/v63/v63_model_reliability_dashboard_model.json,status,много ниска историческа надеждност,много ниска историческа надеждност,False,,,True
+models/v65/v65_model_weighting_center_model.json,status,силен адаптивен сигнал,силен адаптивен сигнал,False,,,True
+models/v65/v65_model_weighting_center_model.json,status,балансиран сигнал,балансиран сигнал,False,,,True
+models/v65/v65_model_weighting_center_model.json,status,слаб сигнал за наблюдение,слаб сигнал за наблюдение,False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,reason,no parseable score source files found,"Не са намерени източници с оценки, които могат да бъдат прочетени.",False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,reason,"post-draw analyzer; used for reliability context, not direct score source","анализатор след тиража; използва се за контекст на надеждността, а не като директен източник на оценки",False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,status,водещ претеглен сигнал,водещ претеглен сигнал,False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,status,силен потвърден сигнал,силен потвърден сигнал,False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,status,сигнал за наблюдение,сигнал за наблюдение,False,,,True
+models/v66/v66_weighted_smart_ensemble_model.json,note,"статистическа референтна комбинация, не гаранция","статистическа референтна комбинация, не гаранция",False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,balanced_weighted,Балансиран претеглен,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,high_confidence,Високи доверие,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,diversified_weighted,Разнообразен претеглен вариант,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,odd_even_balanced,Нечетни четни балансиран,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,low_high_balanced,Ниски високи балансиран,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,spread_balanced,Разпределение балансиран,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,conservative_core,Консервативен основни,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,strategy,exploratory_weighted,Изследователски претеглен вариант,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Балансирана претеглена комбинация,Балансирана претеглена комбинация,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,"Търси силен среден score, но с контрол върху odd/even, low/high, range и десетилетия.","Търси силна средна оценка, като контролира баланса между четни и нечетни, ниски и високи числа, общия диапазон и десетилетията.",False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Комбинация с висока претеглена оценка,Комбинация с висока претеглена оценка,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,"Предпочита най-силните числа от Step 66, с минимален структурен контрол.","Предпочита най-силните числа от Етап 66, с минимален структурен контрол.",False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Диверсифицирана претеглена комбинация,Диверсифицирана претеглена комбинация,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,Намалява припокриването с предишните комбинации и пази по-широко покритие.,Намалява припокриването с предишните комбинации и пази по-широко покритие.,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Балансирана комбинация по нечетни/четни числа,Балансирана комбинация по нечетни/четни числа,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,Търси 3/3 или 2/4 баланс между четни и нечетни числа.,Търси 3/3 или 2/4 баланс между четни и нечетни числа.,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Балансирана комбинация по ниски/високи числа,Балансирана комбинация по ниски/високи числа,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,Търси баланс между ниски числа 1–24 и високи числа 25–49.,Търси баланс между ниски числа 1–24 и високи числа 25–49.,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Разпределена диапазонна комбинация,Разпределена диапазонна комбинация,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,Предпочита по-широк диапазон и поне няколко различни десетични групи.,Предпочита по-широк диапазон и поне няколко различни десетични групи.,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Консервативно ядро,Консервативно ядро,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,"Държи се близо до top weighted числата, но избягва прекалено концентриран фиш.","Следва водещите претеглени числа, но избягва прекалено концентриран фиш.",False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,label,Разширена статистическа комбинация,Разширена статистическа комбинация,False,,,True
+models/v67/v67_weighted_ticket_builder_model.json,description,"Позволява малко по-широк пул, за да не се повтарят само най-очевидните числа.","Позволява малко по-широк пул, за да не се повтарят само най-очевидните числа.",False,,,True
+models/v69/v69_portfolio_improvement_model.json,reason,покрива непокрит top20 сигнал 16; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието,покрива непокрит водещите 20 сигнал 16; намалява повторените двойки; увеличава уникалното покритие; увеличава водещите 20 покритието,False,,,True
+models/v69/v69_portfolio_improvement_model.json,reason,покрива непокрит top20 сигнал 43; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието,покрива непокрит водещите 20 сигнал 43; намалява повторените двойки; увеличава уникалното покритие; увеличава водещите 20 покритието,False,,,True
+models/v69/v69_portfolio_improvement_model.json,reason,покрива непокрит top20 сигнал 48; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието,покрива непокрит водещите 20 сигнал 48; намалява повторените двойки; увеличава уникалното покритие; увеличава водещите 20 покритието,False,,,True
+models/v69/v69_portfolio_improvement_model.json,reason,покрива непокрит top20 сигнал 16; заменя по-слаб rank 19 с по-силен rank 15; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието,покрива непокрит сигнал 16 от водещите 20; заменя по-слабото число на позиция 19 с по-силното на позиция 15; намалява повторените двойки; увеличава уникалното покритие и покритието на водещите 20 числа,False,,,True
+models/v69/v69_portfolio_improvement_model.json,reason,покрива непокрит top20 сигнал 43; заменя по-слаб rank 19 с по-силен rank 18; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието,покрива непокрит сигнал 43 от водещите 20; заменя по-слабото число на позиция 19 с по-силното на позиция 18; намалява повторените двойки; увеличава уникалното покритие и покритието на водещите 20 числа,False,,,True
+models/v70/v70_applied_candidate_portfolio_model.json,decision,candidate portfolio accepted as improved статистическа референция,кандидат-портфейлът е приет като подобрена статистическа референция,False,,,True
+models/v72/v72_pipeline_refresh_model.json,mode,audit,Проверка,False,,,True
+models/v73/v73_ticket_pack_performance_tracker_model.json,status,Готово за следваща проверка,Готово за следваща проверка,False,,,True
+models/v75/v75_neural_meta_learner_model.json,status,Готово,Готово,False,,,True
+models/v76/v76_explainability_validation_model.json,status,слаб сигнал,слаб сигнал,False,,,True
+models/v76/v76_explainability_validation_model.json,type,number,Число,False,,,True
+models/v76/v76_explainability_validation_model.json,warning,ниска позиция в невронната подредба,ниска позиция в невронната подредба,False,,,True
+models/v76/v76_explainability_validation_model.json,warning,слаб последен прозорец; ниска позиция в невронната подредба,слаб последен прозорец; ниска позиция в невронната подредба,False,,,True
+models/v76/v76_explainability_validation_model.json,warning,скоро появявало се число; ниска позиция в невронната подредба,скоро появявало се число; ниска позиция в невронната подредба,False,,,True
+models/v78/v78_final_play_plan_model.json,action,Използвай само основните комбинации като финален пакет,Използвай само основните комбинации като финален пакет,False,,,True
+models/v78/v78_final_play_plan_model.json,details,Основни комбинации: 3,Основни комбинации: 3,False,,,True
+models/v78/v78_final_play_plan_model.json,action,Не увеличавай броя комбинации само заради модела,Не увеличавай броя комбинации само заради модела,False,,,True
+models/v78/v78_final_play_plan_model.json,details,"Step 78 е дисциплина и организация, не обещание за резултат.","Етап 78 е дисциплина и организация, не обещание за резултат.",False,,,True
+models/v78/v78_final_play_plan_model.json,action,След нов тираж оцени пакета преди обновяване на данните,След нов тираж оцени пакета преди обновяване на данните,False,,,True
+models/v78/v78_final_play_plan_model.json,details,"Използвай предварителната проверка преди записа на новия тираж, после обнови веригата.","Използвай предварителната проверка преди записа на новия тираж, после обнови веригата.",False,,,True
+models/v78/v78_final_play_plan_model.json,warning,не е приоритетен за финален пакет,не е приоритетен за финален пакет,False,,,True
+models/v79/v79_ticket_pack_export_model.json,details,Не смесвай стари отчети с нов финален план.,Не смесвай стари отчети с нов финален план.,False,,,True
+models/v79/v79_ticket_pack_export_model.json,status,задължително,задължително,False,,,True
+models/v79/v79_ticket_pack_export_model.json,details,Основни комбинации в пакета: 3.,Основни комбинации в пакета: 3.,False,,,True
+models/v79/v79_ticket_pack_export_model.json,details,"Резервите са за сравнение или замяна, не за хаотично разширяване.","Резервите са за сравнение или замяна, не за хаотично разширяване.",False,,,True
+models/v79/v79_ticket_pack_export_model.json,status,контрол,контрол,False,,,True
+models/v79/v79_ticket_pack_export_model.json,details,"Преди записа на новия тираж използвай проверка на резултата, после обнови данните.","Преди записа на новия тираж използвай проверка на резултата, после обнови данните.",False,,,True
+models/v79/v79_ticket_pack_export_model.json,status,след тираж,след тираж,False,,,True
+models/v79/v79_ticket_pack_export_model.json,details,"Това е статистически работен процес, а не предсказване на печеливш тираж.","Това е статистически работен процес, а не предсказване на печеливш тираж.",False,,,True
+models/v79/v79_ticket_pack_export_model.json,status,важно,важно,False,,,True
+models/v80/v80_final_system_audit_model.json,message,OK,Изрядно,True,,,True
+models/v80/v80_final_system_audit_model.json,status,Провери,Провери,True,,,True
+models/v80/v80_final_system_audit_model.json,message,scripts/v111_6_build_prize_import_captcha_safe_manual_import.py: ????; scripts/v111_9_remove_unofficial_archive_source.py: ????; scripts/v114_build_ticket_value.py: ????; scripts/v116_1_fix_backtesting_duplicate_columns.py: ????; step114_ticket_value_patch_files/scripts/v114_build_ticket_value.py: ????; step111_9_remove_unofficial_archive_source_patch_files/scripts/v111_9_remove_unofficial_archive_source.py: ????,scripts/v111_6_build_prize_import_captcha_safe_manual_import.py: ????; scripts/v111_9_remove_unofficial_archive_source.py: ????; scripts/v114_build_ticket_value.py: ????; scripts/v116_1_fix_backtesting_duplicate_columns.py: ????; step114_ticket_value_patch_files/scripts/v114_build_ticket_value.py: ????; step111_9_remove_unofficial_archive_source_patch_files/scripts/v111_9_remove_unofficial_archive_source.py: ????,True,,archive,True
+models/v80/v80_final_system_audit_model.json,message,count=2,Брой: 2,True,,,True
+models/v80/v80_final_system_audit_model.json,message,count=4,Брой: 4,True,,,True
+models/v81/v81_final_ux_navigation_model.json,label,Контрол на синхрона,Контрол на синхрона,False,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: streamlit_app.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,details,Наличен,Наличен,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: README.md,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: requirements.txt,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: .gitignore,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: data/historical_draws.csv,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: data/v40_normalized_draw_events.csv,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: data/v41_canonical_draw_events.csv,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: models/model_registry.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: models/v79/v79_ticket_pack_export_model.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: models/v80/v80_final_system_audit_model.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: models/v81/v81_final_ux_navigation_model.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: reports/v79_ticket_pack_export_summary.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: reports/v80_final_system_audit_summary.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: reports/v81_final_ux_navigation_summary.json,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: scripts/v79_build_ticket_pack_export_center.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: scripts/v80_build_final_system_audit_center.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: scripts/v81_build_final_ux_navigation_center.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: scripts/v82_build_final_release_package_center.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: src/v79_ticket_pack_export_engine.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: src/v80_final_system_audit_engine.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: src/v81_final_ux_navigation_engine.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Required file: src/v82_final_release_package_engine.py,Проверка за задължителен проектен файл,True,,,True
+models/v82/v82_final_release_package_model.json,check,Dataset expectation: data/historical_draws.csv,Проверка на очаквания файл с данни,True,,,True
+models/v82/v82_final_release_package_model.json,details,"rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38","rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",True,actual | expected | rows,,True
+models/v82/v82_final_release_package_model.json,check,Dataset expectation: data/v40_normalized_draw_events.csv,Проверка на очаквания файл с данни,True,,,True
+models/v82/v82_final_release_package_model.json,check,Dataset expectation: data/v41_canonical_draw_events.csv,Проверка на очаквания файл с данни,True,,,True
+models/v82/v82_final_release_package_model.json,check,Upstream audit OK: reports/v80_final_system_audit_summary.json,Предходната проверка е успешна,True,,,True
+models/v82/v82_final_release_package_model.json,details,status=Има нужда от преглед; issues_found=4,статус=Има нужда от преглед; issues_found=4,True,,,True
+models/v82/v82_final_release_package_model.json,check,Upstream audit OK: reports/v81_final_ux_navigation_summary.json,Предходната проверка е успешна,True,,,True
+models/v82/v82_final_release_package_model.json,details,status=Има нужда от преглед; issues_found=1,статус=Има нужда от преглед; issues_found=1,True,,,True
+models/v82/v82_final_release_package_model.json,check,Streamlit label: Финален системен одит,Наименование в приложението: Финален системен одит,True,,,True
+models/v82/v82_final_release_package_model.json,details,count=2,Брой: 2,True,,,True
+models/v82/v82_final_release_package_model.json,check,Streamlit label: Финален UX контрол,Наименование в приложението: Финален UX контрол,True,,,True
+models/v82/v82_final_release_package_model.json,check,Streamlit label: Финален пакет за предаване,Наименование в приложението: Финален пакет за предаване,True,,,True
+models/v82/v82_final_release_package_model.json,check,Streamlit label: Контрол на синхрона,Наименование в приложението: Контрол на синхрона,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Git history не се включва в чист ZIP.,Git история не се включва в чист ZIP.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Python cache артефакт.,Python кеш артефакт.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Test cache артефакт.,Артефакт от тестовия кеш.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Jupyter cache артефакт.,Jupyter кеш артефакт.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Не допускаме nested ZIP вътре в чист ZIP.,Не допускаме вложени ZIP вътре в чист ZIP.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Временни файлове.,Временни файлове.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Backup файлове.,резервно копие файлове.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Еднократните помощни файлове се чистят преди commit/предаване.,Еднократните помощни файлове се чистят преди запис в Git/предаване.,True,,,True
+models/v82/v82_final_release_package_model.json,reason,Еднократни помощни скриптове не са част от продукта.,Еднократни помощни скриптове не са част от продукта.,True,,,True
+models/v83/v83_final_user_manual_model.json,title,Final User Manual / App Guide Center,Ръководство за потребителя и работа с приложението,False,,,True
+models/v84/v84_model_comparison_forward_test_model.json,title,Сравнение на модели / реална проверка във времето,Сравнение на модели / реална проверка във времето,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,Защитен фиш с широко покритие,Защитен фиш с широко покритие,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,mode,reference,Референтен,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,Пълна система от 7 моделни числа,Пълна система от 7 моделни числа,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,mode,full,Пълен,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,Пълна система от 8 моделни числа,Пълна система от 8 моделни числа,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,Пълна система от 9 моделни числа,Пълна система от 9 моделни числа,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации","Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 4 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,mode,reduced,Ограничен режим,False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации","Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 8 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации","Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 12 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации","Редуцирана система: Защитно ядро от финалния фиш, 9 числа, 16 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации","Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 4 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации","Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 8 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации","Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 12 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации","Редуцирана система: Моделно ядро от претеглените сигнали, 9 числа, 16 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации","Редуцирана система: Хибридно ядро, 9 числа, 4 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации","Редуцирана система: Хибридно ядро, 9 числа, 8 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации","Редуцирана система: Хибридно ядро, 9 числа, 12 комбинации",False,,,True
+models/v91/v91_budget_aware_system_builder_model.json,label,"Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации","Редуцирана система: Хибридно ядро, 9 числа, 16 комбинации",False,,,True
+models/v94/v94_active_budget_plan_tracker_model.json,status,ACTIVE,Активен,False,,,True
+models/v99/v99_final_user_dashboard_model.json,status,готово,готово,False,,,True
+models/v99/v99_final_user_dashboard_model.json,status,проверено,проверено,False,,,True
+reports/decisions/v147/DEC-147-0e11bccbcb-46770765b8.json,title,Experimental Evidence Synthesis & Research Decision Gate,Обобщаване на експерименталните доказателства и решение за изследователските модели,False,,,True
+reports/decisions/v147/DEC-147-0e11bccbcb-46770765b8.json,reason,No comparison in the Step 144–146 evidence chain demonstrates robust positive superiority. The current neural configuration is therefore paused and archived; production promotion remains blocked.,"Нито едно сравнение във веригата от доказателства за етапи 144–146 не показва устойчиво положително превъзходство. Затова текущата невронна конфигурация е спряна и архивирана, а допускането до работния режим остава блокирано.",False,,,True
+reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json,title,Walk-forward frequency baseline versus uniform-random baseline,Последователна историческа проверка на честотния спрямо случайния базов модел,False,,,True
+reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json,strategy,frequency_walk_forward,Честотен модел,False,,,True
+reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json,strategy,uniform_random,Равномерно случаен,False,,,True
+reports/experiments/v144/EXP-144-0e11bccbcb-98bfe5488b.json,interpretation,The frequency baseline does not exceed the random-trial mean on this historical holdout.,Честотният базов модел не превъзхожда средния резултат на случайния модел върху този исторически период за независима проверка.,False,,,True
+reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json,title,"Neural dynamics sandbox versus frequency, recency and uniform-random baselines","Лаборатория за невронна динамика спрямо честотен, скорошен и случаен базов модел",False,,,True
+reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json,strategy,neural_dynamics_reservoir,Невронна динамика,False,,,True
+reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json,strategy,recency_weighted_walk_forward,Модел на скорошната активност,False,,,True
+reports/experiments/v145/EXP-145-0e11bccbcb-f2843280b3.json,interpretation,The neural-dynamics sandbox did not pass the promotion gate on this historical holdout. It remains research-only and is not connected to ticket generation.,Лабораторията за невронна динамика не изпълни условията за допускане в този исторически период за независима проверка. Моделът остава само за изследване и не участва в генерирането на комбинации.,False,,,True
+reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json,title,"Controlled multi-seed, multi-period neural robustness validation",Контролирана проверка на устойчивостта на невронния модел с няколко начални стойности и исторически периода,False,,,True
+reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json,strategy,recent_window_frequency,Честотен модел в скорошен прозорец,False,,,True
+reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json,strategy,frequency_recency_blend,Смесен честотен и скорошен модел,False,,,True
+reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json,strategy,uniform_random_mean,Среден резултат — случаен модел,False,,,True
+reports/experiments/v146/EXP-146-0e11bccbcb-0e4ec3757b.json,interpretation,"The neural robustness experiment did not pass every multi-seed, multi-period confidence and stability gate. The model remains research-only and isolated from ticket generation.",Проверката за устойчивост на невронния модел не изпълни всички изисквания за доверителност и стабилност при различните начални стойности и исторически периоди. Моделът остава само за изследване и е отделен от генерирането на комбинации.,False,,,True
+reports/v106_2_post_draw_historical_schema_sync_summary.json,check,dataset_files_exist,Файловете с данни са налични,False,,,True
+reports/v106_2_post_draw_historical_schema_sync_summary.json,check,post_draw_row_counts_synced,Броят на редовете след тиража е синхронизиран,False,,,True
+reports/v106_2_post_draw_historical_schema_sync_summary.json,check,latest_draw_has_six_numbers,Последният тираж съдържа шест числа,False,,,True
+reports/v106_2_post_draw_historical_schema_sync_summary.json,check,latest_draw_numbers_valid,Последен тираж числа валиден,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,user_menu_uses_live_status_loader,Потребителското меню използва актуално зареждане на състоянието,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,user_menu_not_bound_to_v86_dataset_metrics,Потребителското меню не зависи от показателите на v86,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,live_dataset_rows_current,В реално време данни комбинации текущ,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,live_latest_draw_current,В реално време последен тираж текущ,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,post_draw_sync_green,Синхронизацията след тиража е успешна,False,,,True
+reports/v108_user_menu_live_status_sync_summary.json,check,training_policy_green,Обучаващи правило ЗЕЛЕНО,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,section_exists,Раздел наличен,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,friendly_refresh_button,Разбираем бутон за обновяване,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,friendly_ticket_mode,Разбираем режим за фишове,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,friendly_status_label,Разбираемо наименование на състоянието,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,visual_number_balls,Визуални топки с числа,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,technical_paths_softened,Техническите пътища са представени разбираемо,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,translated_table_headers,Заглавията на таблиците са преведени,False,,,True
+reports/v109_1_journal_ui_bulgarian_polish_summary.json,check,no_broken_cyrillic,Няма повредена кирилица,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,title,Фиш 1 — Основен модел,Фиш 1 — Основен модел,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,strategy,основен модел,основен модел,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,role,основна комбинация,основна комбинация,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,note,включен във финалния пакет,включен във финалния пакет,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,role,резервна комбинация,резервна комбинация,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,note,пази като резервен вариант,пази като резервен вариант,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,title,Фиш 2 — Резервен модел,Фиш 2 — Резервен модел,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,strategy,резервен модел,резервен модел,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,role,само наблюдение,само наблюдение,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,note,не влиза в основния пакет,не влиза в основния пакет,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,title,Фиш 3 — Разширено покритие,Фиш 3 — Разширено покритие,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,strategy,разширено покритие,разширено покритие,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,role,активен план,активен план,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,note,Ред от active plan v94.,Ред от активния план v94.,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,check,cards_created,Картите са създадени,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,check,three_ticket_suggestion_available,Налично е предложение с три фиша,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,check,each_ticket_has_four_lines,Всеки фиш съдържа четири комбинации,False,,,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,check,all_suggested_lines_valid,Всички предложени комбинации валиден,False,,,True
+reports/v109_sqlite_played_tickets_journal_summary.json,reason,disabled,Изключено,False,,,True
+reports/v109_sqlite_played_tickets_journal_summary.json,check,sqlite_db_exists,Локалната SQLite база е налична,False,,,True
+reports/v109_sqlite_played_tickets_journal_summary.json,check,draw_entries_table_ready,Таблицата с въведени тиражи е готова,False,,,True
+reports/v109_sqlite_played_tickets_journal_summary.json,check,latest_dataset_draw_valid,Последен данни тираж валиден,False,,,True
+reports/v109_sqlite_played_tickets_journal_summary.json,check,csv_exports_written,CSV файловете за износ са записани,False,,,True
+reports/v110_user_friendly_ui_polish_summary.json,check,target_files_present,Целевите файлове са налични,False,,,True
+reports/v110_user_friendly_ui_polish_summary.json,check,no_broken_cyrillic_markers,Няма маркери за повредена кирилица,False,,,True
+reports/v110_user_friendly_ui_polish_summary.json,check,visible_developer_terms_reduced,Видимите технически термини са намалени,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,status,PRIZE_IMPORT_PARSER_FIXED,Прочитането на данните за печалбите е поправено,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,note,Импортирано от официалната страница на Български спортен тотализатор.,Импортирано от официалната страница на Български спортен тотализатор.,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,check,sample_draw_parsed,Примерният тираж е прочетен,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,check,sample_numbers_parsed,Примерните числа са прочетени,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,check,sample_winners_parsed,Примерните печеливши са прочетени,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,check,sample_jackpot_parsed,Примерният джакпот е прочетен,False,,,True
+reports/v111_1_prize_import_parser_fix_summary.json,check,cyrillic_safe,Кирилицата е защитена,False,,,True
+reports/v111_2_prize_import_live_fallback_summary.json,status,PRIZE_IMPORT_LIVE_FALLBACK_READY,Резервното импортиране на печалби в реално време е готово,False,,,True
+reports/v111_2_prize_import_live_fallback_summary.json,check,title_page_parsed,Основната страница е прочетена,False,,,True
+reports/v111_2_prize_import_live_fallback_summary.json,check,fallback_page_parsed,Резервната страница е прочетена,False,,,True
+reports/v111_2_prize_import_live_fallback_summary.json,check,fallback_numbers,Числа от резервния източник,False,,,True
+reports/v111_2_prize_import_live_fallback_summary.json,check,fallback_winners,Печеливши от резервния източник,False,,,True
+reports/v111_5_prize_import_table_parser_fix.json,status,PRIZE_IMPORT_TABLE_PARSER_FIXED,Прочитането на таблицата с печалби е поправено,False,,,True
+reports/v111_6_prize_import_captcha_safe_manual_import.json,status,PRIZE_IMPORT_CAPTCHA_SAFE_MANUAL_READY,Ръчното импортиране при CAPTCHA е готово,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,row_count,Ред брой,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,draw_range,Тираж диапазон,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,year,Година,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,numbers_valid,Числа валиден,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,winner_rows,Редове с печеливши,False,,,True
+reports/v111_8_verified_2026_prize_history_import_report.json,check,has_six_event,Има събитие с шест числа,False,,,True
+reports/v111_prize_winner_history_summary.json,mode,verified_2026_manual_screenshots,Потвърдено чрез ръчно прегледани изображения за 2026 г.,False,,,True
+reports/v111_prize_winner_history_summary.json,check,sqlite_table_ready,Sqlite таблица готов,False,,,True
+reports/v111_prize_winner_history_summary.json,check,csv_export_ready,Csv износ готов,False,,,True
+reports/v111_prize_winner_history_summary.json,check,importer_ready,Импортирането е готово,False,,,True
+reports/v111_prize_winner_history_summary.json,check,has_imported_rows,Има импортирано комбинации,False,,,True
+reports/v115_play_decision_center_report.json,status,PLAY_DECISION_READY,Решението за игра е готово,False,,,True
+reports/v115_play_decision_center_report.json,title,Основен фиш,Основен фиш,False,,,True
+reports/v115_play_decision_center_report.json,status,безопасен вариант,безопасен вариант,False,,,True
+reports/v115_play_decision_center_report.json,title,Балансиран пакет,Балансиран пакет,False,,,True
+reports/v115_play_decision_center_report.json,status,по избор,по избор,False,,,True
+reports/v115_play_decision_center_report.json,title,Разширен пакет,Разширен пакет,False,,,True
+reports/v115_play_decision_center_report.json,status,препоръчан,препоръчан,False,,,True
+reports/v116_played_pack_lock_report.json,status,PLAYED_PACK_LOCK_READY,Заключването на изиграния пакет е готово,False,,,True
+reports/v116_played_pack_lock_report.json,status,Проверен,Проверен,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,title,Фиш 1 — Финален план · основни редове,Фиш 1 — Финален план · основни редове,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,strategy,финален план,финален план,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,title,Фиш 2 — Финален план · резервни редове,Фиш 2 — Финален план · резервни редове,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,title,Фиш 3 — Допълващ модел извън финалната таблица,Фиш 3 — Допълващ модел извън финалната таблица,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,strategy,допълващ модел,допълващ модел,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,role,допълващ модел,допълващ модел,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,check,requested_ticket_count,Заявен брой фишове,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,check,all_lines_have_valid_numbers,Всички комбинации съдържат валидни числа,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,check,no_duplicate_combinations_inside_pack,В пакета няма дублирани комбинации,False,,,True
+reports/v117_real_ticket_pack_builder_summary.json,check,copy_text_available,Текстът за копиране е наличен,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,title,Системен фиш 1,Системен фиш 1,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,strategy,системен модел,системен модел,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,role,ядро + моделна сила,ядро + моделна сила,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,role,различно покритие,различно покритие,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,role,баланс ниски/средни/високи,баланс ниски/средни/високи,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,role,покритие на двойки,покритие на двойки,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,title,Системен фиш 2,Системен фиш 2,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,title,Системен фиш 3,Системен фиш 3,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,model_numbers_available,Моделните числа са налични,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,core_has_requested_size,Основният набор е с желания размер,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,combinations_created,Комбинации създадено,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,all_combinations_valid,Всички комбинации валиден,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,no_duplicate_combinations,Номер дубликат комбинации,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,default_real_pack_shape,Стандартна структура на реалния пакет,False,,,True
+reports/v118_model_system_ticket_builder_summary.json,check,current_pack_link_available,Връзката към текущия пакет е налична,False,,,True
+reports/v40_normalized_draw_events_report.json,status,PASS,ПРЕМИНАТО,False,,,True
+reports/v41_bst_official_archive_audit.json,status,audit_only_no_model_retrain,Само проверка — без преобучение на моделите,False,,,True
+reports/v41_bst_official_archive_audit.json,reason,no_valid_rows,Номер валиден комбинации,False,,,True
+reports/v41_bst_official_archive_audit.json,reason,download_failed,Изтеглянето е неуспешно,False,,,True
+reports/v41_canonical_draw_events_audit.json,status,canonical_dataset_built_no_model_retrain,Каноничните данни са изградени без преобучение на моделите,False,,,True
+reports/v41_model_retraining_summary.json,status,v41_model_retraining_completed,V41 модел преобучение Завършен,False,,,True
+reports/v41_training_readiness_audit.json,status,training_ready_review_required_no_retrain,Готово за обучение; необходим е преглед; без автоматично преобучение,False,,,True
+reports/v41_training_readiness_audit.json,reason,Canonical данни has valid main draw events and no duplicate keys. Bonus numbers are unavailable and must not be invented.,Каноничните данни съдържат валидни основни тегления без дублирани ключове. Допълнителните числа не са налични и не трябва да се измислят.,False,,,True
+reports/v45_training_summary.json,status,v45_training_pipeline_completed,V45 обучаващи верига Завършен,False,,,True
+reports/v50_pair_group_summary.json,status,v50_pair_group_intelligence_completed,Анализът на двойки и групи v50 е завършен,False,,,True
+reports/v51_ticket_portfolio_summary.json,status,v51_ticket_portfolio_intelligence_completed,Анализът на портфейла от фишове v51 е завършен,False,,,True
+reports/v55_number_profile_summary.json,status,Активно напоследък,Активно напоследък,False,,,True
+reports/v55_number_profile_summary.json,status,Силно закъсняло,Силно закъсняло,False,,,True
+reports/v55_number_profile_summary.json,status,Нормален ритъм,Нормален ритъм,False,,,True
+reports/v55_number_profile_summary.json,status,Закъсняло,Закъсняло,False,,,True
+reports/v56_draw_similarity_summary.json,status,Валидна,Валидна,False,,,True
+reports/v74_1_latest_selective_sync_result.json,role,"Проверява данни синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.","Проверява синхронизацията на данните, артефактите от етапи 76–79, плановете за синхронизация, компилацията, прочитането на JSON/CSV и кирилицата преди финалната проверка.",False,,,True
+reports/v74_1_latest_selective_sync_result.json,role,Финален готовност за предаване и чист ZIP контролен слой след Step 81.,Финален готовност за предаване и чист ZIP контролен слой след Етап 81.,False,,,True
+reports/v74_1_latest_selective_sync_result.json,category,Контрол на синхрона,Контрол на синхрона,False,,,True
+reports/v74_1_latest_selective_sync_result.json,role,"Финален контролен слой за проверка на model artifacts, dependency map и sync status.","Финален контролен слой за проверка на моделните артефакти, картата на зависимостите и състоянието на синхронизацията.",False,,,True
+data/v84_model_forward_test_snapshots.csv,status,чака реален тираж,чака реален тираж,False,,,True
+reports/r/r_distribution_tests.csv,note,Chi-square test against uniform number frequency.,Хи-квадрат тест спрямо равномерна честота на числата.,False,,,True
+reports/r/r_distribution_tests.csv,note,Average sum of six numbers.,Средна сума на шестте числа.,False,,,True
+reports/r/r_distribution_tests.csv,note,Standard deviation of draw sums.,Стандартно отклонение на сумите в тиражите.,False,,,True
+reports/r/r_distribution_tests.csv,note,Average odd count.,Среден брой нечетни числа.,False,,,True
+reports/r/r_distribution_tests.csv,note,Average low count where low <= 24.,"Среден брой ниски числа, където ниско число е до 24 включително.",False,,,True
+reports/r/r_distribution_tests.csv,note,Average spread between max and min number.,Среден диапазон между най-голямото и най-малкото число.,False,,,True
+reports/v111_8_quarantined_invalid_prize_rows.csv,note,Импортирано от неофициален исторически архив VirtBG. Паричните суми са в BGN в източника и са конвертирани към EUR по фиксиран курс 1 EUR = 1.95583 BGN. Проверка по числа: не.,Импортирано от неофициален исторически архив VirtBG. Паричните суми са в BGN в източника и са конвертирани към EUR по фиксиран курс 1 EUR = 1.95583 BGN. Проверка по числа: не.,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,check,real_ticket_pack_cards,Карти на реалния пакет с фишове,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,note,UI can render physical ticket cards.,Интерфейсът може да показва карти на хартиените фишове.,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,check,four_lines_per_ticket_rule,Правило за четири комбинации във фиш,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,note,Each saved real ticket should have 4 combinations.,Всеки запазен реален фиш трябва да съдържа 4 комбинации.,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,check,technical_fields_softened,Техническите полета са представени разбираемо,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,note,Main UI uses Bulgarian labels and hides raw ids from card titles.,Основният интерфейс използва български наименования и скрива вътрешните идентификатори от заглавията на картите.,False,,,True
+reports/v116_1_real_ticket_pack_ui_polish_checklist.csv,note,Played package can be copied as plain text.,Изиграният пакет може да бъде копиран като обикновен текст.,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,neural_dynamics_frozen_ensemble,Замразен ансамбъл с невронна динамика,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,frequency_walk_forward,Честотен модел,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,recency_weighted_walk_forward,Модел на скорошната активност,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,recent_window_frequency,Честотен модел в скорошен прозорец,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,frequency_recency_blend,Смесен честотен и скорошен модел,False,,,True
+reports/v149_removed_current_tree_files.csv,reason,raw_source_alias_removed,Дублиращото име на суровия източник е премахнато,False,,,True
+reports/v149_removed_current_tree_files.csv,reason,personal_local_journal_removed_from_public_tree,Личният локален дневник е премахнат от публичното дърво,False,,,True
+reports/v149_removed_current_tree_files.csv,reason,timestamp_only_model_snapshot_removed,"Премахнато е моделно копие, различаващо се само по времевия печат",False,,,True
+reports/v149_removed_current_tree_files.csv,reason,exact_duplicate_launcher,Премахнат е идентичен стартиращ файл,False,,,True
+reports/v82_release_file_manifest.csv,note,Included in списък на файловете,Включено в списъка на файловете,True,,,True

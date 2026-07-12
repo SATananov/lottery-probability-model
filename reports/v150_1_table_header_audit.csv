@@ -1,0 +1,792 @@
+﻿source_file,source_header,bulgarian_header,technical_hidden_by_default,unexpected_ascii_words,forbidden_tokens,pass
+data/historical_draws.csv,draw_id,Тираж идентификатор,False,,,True
+data/historical_draws.csv,date,Дата,False,,,True
+data/historical_draws.csv,n1,Число 1,False,,,True
+data/historical_draws.csv,n2,Число 2,False,,,True
+data/historical_draws.csv,n3,Число 3,False,,,True
+data/historical_draws.csv,n4,Число 4,False,,,True
+data/historical_draws.csv,n5,Число 5,False,,,True
+data/historical_draws.csv,n6,Число 6,False,,,True
+data/historical_draws.csv,year,Година,False,,,True
+data/historical_draws.csv,draw_number,Номер на тиража,False,,,True
+data/historical_draws.csv,draw_position,Позиция на тегленето,False,,,True
+data/historical_draws.csv,source_url,Адрес на източника,False,,,True
+data/historical_draws.csv,draw_no,Номер на тиража,False,,,True
+data/historical_draws.csv,bonus_number,Допълнително число,False,,,True
+data/historical_draws.csv,source,Източник,False,,,True
+data/prize_winner_history.csv,draw_key,Тираж,False,,,True
+data/prize_winner_history.csv,draw_year,Година на тиража,False,,,True
+data/prize_winner_history.csv,draw_date,Дата на тиража,False,,,True
+data/prize_winner_history.csv,numbers_text,Изтеглени числа,False,,,True
+data/prize_winner_history.csv,jackpot_eur,Джакпот (EUR),False,,,True
+data/prize_winner_history.csv,winners_6,Печеливши с 6 числа,False,,,True
+data/prize_winner_history.csv,prize_6_eur,Печалба за 6 числа (EUR),False,,,True
+data/prize_winner_history.csv,total_6_eur,Общо за 6 числа (EUR),False,,,True
+data/prize_winner_history.csv,winners_5,Печеливши с 5 числа,False,,,True
+data/prize_winner_history.csv,prize_5_eur,Печалба за 5 числа (EUR),False,,,True
+data/prize_winner_history.csv,total_5_eur,Общо за 5 числа (EUR),False,,,True
+data/prize_winner_history.csv,winners_4,Печеливши с 4 числа,False,,,True
+data/prize_winner_history.csv,prize_4_eur,Печалба за 4 числа (EUR),False,,,True
+data/prize_winner_history.csv,total_4_eur,Общо за 4 числа (EUR),False,,,True
+data/prize_winner_history.csv,winners_3,Печеливши с 3 числа,False,,,True
+data/prize_winner_history.csv,prize_3_eur,Печалба за 3 числа (EUR),False,,,True
+data/prize_winner_history.csv,total_3_eur,Общо за 3 числа (EUR),False,,,True
+data/prize_winner_history.csv,imported_at_utc,Импортирано на,False,,,True
+data/prize_winner_history.csv,note,Бележка,False,,,True
+data/prize_winner_history.csv,validation_errors,Грешки при проверката,False,,,True
+data/raw/toto49_2026_statistics/cold_numbers_2026.csv,number,Число,False,,,True
+data/raw/toto49_2026_statistics/cold_numbers_2026.csv,draw_count,Тираж брой,False,,,True
+data/raw/toto49_2026_statistics/cold_numbers_2026.csv,share_of_all_drawn_numbers,Дял от всички изтеглени числа,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Тираж,Тираж,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Дата,Дата,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 1,Число 1,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 2,Число 2,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 3,Число 3,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 4,Число 4,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 5,Число 5,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Число 6,Число 6,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Сума,Сума,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Четни,Четни,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Нечетни,Нечетни,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Ниски 1-24,Ниски 1 24,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Високи 25-49,Високи 25 49,False,,,True
+data/raw/toto49_2026_statistics/draws_2026.csv,Повт. от предходен,Повт от предходен,False,,,True
+data/raw/toto49_2026_statistics/jackpot_summary_2026.csv,metric,Показател,False,,,True
+data/raw/toto49_2026_statistics/jackpot_summary_2026.csv,value,Стойност,False,,,True
+data/raw/toto49_2026_statistics/pair_frequency_observed_2026.csv,Двойка,Двойка,False,,,True
+data/raw/toto49_2026_statistics/pair_frequency_observed_2026.csv,Число A,Число A,False,,,True
+data/raw/toto49_2026_statistics/pair_frequency_observed_2026.csv,Число B,Число B,False,,,True
+data/raw/toto49_2026_statistics/pair_frequency_observed_2026.csv,Появявания,Появявания,False,,,True
+data/raw/toto49_2026_statistics/sum_statistics_2026.csv,Категория,Категория,False,,,True
+data/v40_normalized_draw_events.csv,draw_event_id,Тираж събитие идентификатор,True,,,True
+data/v40_normalized_draw_events.csv,source_draw_id,Източник тираж идентификатор,False,,,True
+data/v40_normalized_draw_events.csv,drawing_no,Номер на тегленето,False,,,True
+data/v40_normalized_draw_events.csv,rules_version,Версия на правилата,False,,,True
+data/v40_normalized_draw_events.csv,data_status,Състояние на данните,False,,,True
+data/v40_sample_draw_event_result.csv,source_label,Наименование на източника,False,,,True
+data/v40_sample_ticket_tables.csv,ticket_id,Идентификатор на фиша,False,,,True
+data/v40_sample_ticket_tables.csv,ticket_table_no,Номер на таблицата на фиша,False,,,True
+data/v41_bst_official_normalized_draw_events_candidate.csv,source_file,Източник файл,False,,,True
+data/v41_bst_official_normalized_draw_events_candidate.csv,parser_format,Формат на прочитане,False,,,True
+data/v84_model_forward_test_snapshots.csv,snapshot_id,Моментно състояние идентификатор,False,,,True
+data/v84_model_forward_test_snapshots.csv,snapshot_name,Моментно състояние наименование,False,,,True
+data/v84_model_forward_test_snapshots.csv,snapshot_created_at,Моментно състояние създадено на,False,,,True
+data/v84_model_forward_test_snapshots.csv,dataset_draw_index_at_snapshot,Данни тираж номер на моментно състояние,True,,,True
+data/v84_model_forward_test_snapshots.csv,dataset_latest_draw_date_at_snapshot,Данни последен тираж дата на моментно състояние,True,,,True
+data/v84_model_forward_test_snapshots.csv,model_key,Ключ на модела,False,,,True
+data/v84_model_forward_test_snapshots.csv,model_label,Наименование на модела,False,,,True
+data/v84_model_forward_test_snapshots.csv,ticket_label,Наименование на фиша,False,,,True
+data/v84_model_forward_test_snapshots.csv,numbers,Числа,False,,,True
+data/v84_model_forward_test_snapshots.csv,status,Статус,False,,,True
+data/v84_model_forward_test_snapshots.csv,safe_note,Бележка за безопасност,False,,,True
+reports/bst_official_sync_checklist.csv,message,Съобщение,False,,,True
+reports/r/r_cold_numbers.csv,frequency,Честотен,False,,,True
+reports/r/r_cold_numbers.csv,frequency_share,Дял на честотата,False,,,True
+reports/r/r_cold_numbers.csv,expected_uniform_count,Очакван брой при равномерно разпределение,False,,,True
+reports/r/r_cold_numbers.csv,diff_from_expected,Разлика спрямо очакваното,False,,,True
+reports/r/r_cold_numbers.csv,rank_desc,Класиране,False,,,True
+reports/r/r_distribution_tests.csv,test,Тест,False,,,True
+reports/r/r_distribution_tests.csv,statistic,Статистика,False,,,True
+reports/r/r_distribution_tests.csv,p_value,p-стойност,False,,,True
+reports/r/r_draw_sum_history.csv,draw_sum,Тираж сума,False,,,True
+reports/r/r_gap_statistics.csv,appearances,Появявания,False,,,True
+reports/r/r_gap_statistics.csv,current_gap,Текущ интервал,False,,,True
+reports/r/r_gap_statistics.csv,average_gap,Среден интервал,False,,,True
+reports/r/r_gap_statistics.csv,max_gap,Най-висок интервал,False,,,True
+reports/r/r_gap_statistics.csv,gap_ratio,Коефициент на интервала,False,,,True
+reports/r/r_monte_carlo_baseline.csv,real_frequency,Реален честотен,False,,,True
+reports/r/r_monte_carlo_baseline.csv,simulated_mean,Симулиран средно,False,,,True
+reports/r/r_monte_carlo_baseline.csv,simulated_p05,Симулиран 5-и персентил,False,,,True
+reports/r/r_monte_carlo_baseline.csv,simulated_p95,Симулиран 95-и персентил,False,,,True
+reports/r/r_monte_carlo_baseline.csv,above_p95,Над 95-и персентил,False,,,True
+reports/r/r_monte_carlo_baseline.csv,below_p05,Под 5-и персентил,False,,,True
+reports/r/r_pair_analysis.csv,pair_a,Двойка А,False,,,True
+reports/r/r_pair_analysis.csv,pair_b,Двойка Б,False,,,True
+reports/r/r_pair_analysis.csv,pair,Двойка,False,,,True
+reports/r/r_pattern_analysis.csv,odd_count,Нечетни числа,False,,,True
+reports/r/r_pattern_analysis.csv,even_count,Четни числа,False,,,True
+reports/r/r_pattern_analysis.csv,low_count,Ниски числа,False,,,True
+reports/r/r_pattern_analysis.csv,high_count,Високи числа,False,,,True
+reports/r/r_pattern_analysis.csv,spread,Разпределение,False,,,True
+reports/v100_final_release_lock_checklist.csv,area_bg,Област,False,,,True
+reports/v100_final_release_lock_checklist.csv,check_bg,Проверка,False,,,True
+reports/v100_final_release_lock_checklist.csv,blocking,Блокиращо,False,,,True
+reports/v100_final_release_lock_checklist.csv,details_bg,Подробности,False,,,True
+reports/v100_final_release_lock_manifest.csv,artifact_type,Артефакт тип,True,,,True
+reports/v100_final_release_lock_manifest.csv,path,Път,False,,,True
+reports/v100_final_release_lock_manifest.csv,note_bg,Бележка,False,,,True
+reports/v101_real_use_protocol_steps.csv,order,Ред,False,,,True
+reports/v101_real_use_protocol_steps.csv,phase_bg,Етап,False,,,True
+reports/v101_real_use_protocol_steps.csv,action_bg,Действие,False,,,True
+reports/v101_real_use_protocol_steps.csv,why_bg,Причина,False,,,True
+reports/v101_real_use_protocol_steps.csv,expected_result_bg,Очакван резултат,False,,,True
+reports/v102_runtime_hardening_checklist.csv,check,Проверка,False,,,True
+reports/v102_runtime_hardening_checklist.csv,passed,Преминато,False,,,True
+reports/v103_clean_release_checkpoint_manifest.csv,relative_path,Относителен път,False,,,True
+reports/v103_clean_release_checkpoint_manifest.csv,included_in_clean_zip,Включен в чист zip,False,,,True
+reports/v103_clean_release_checkpoint_manifest.csv,metadata_source,Метаданни източник,False,,,True
+reports/v104_final_step_statuses.csv,step,Етап,False,,,True
+reports/v104_final_step_statuses.csv,report,Отчет,False,,,True
+reports/v104_final_step_statuses.csv,exists,Наличен,False,,,True
+reports/v105_add_draw_navigation_fix_checklist.csv,details,Подробности,False,,,True
+reports/v107_model_training_policy_refresh_control_table.csv,group_bg,Група,False,,,True
+reports/v107_model_training_policy_refresh_control_table.csv,cadence_bg,Периодичност,False,,,True
+reports/v107_model_training_policy_refresh_control_table.csv,scripts_bg,Скриптове,False,,,True
+reports/v107_model_training_policy_refresh_control_table.csv,decision_bg,Решение,False,,,True
+reports/v107_model_training_policy_refresh_control_table.csv,reason_bg,Причина,False,,,True
+reports/v114_ticket_line_value.csv,Фиш,Фиш,False,,,True
+reports/v114_ticket_line_value.csv,Ред,Ред,False,,,True
+reports/v114_ticket_line_value.csv,Комбинация,Комбинация,False,,,True
+reports/v114_ticket_line_value.csv,Печеливши числа,Печеливши числа,False,,,True
+reports/v114_ticket_line_value.csv,Попадения,Попадения,False,,,True
+reports/v114_ticket_line_value.csv,Съвпаднали числа,Съвпаднали числа,False,,,True
+reports/v114_ticket_line_value.csv,Печалба от реда,Печалба от реда,False,,,True
+reports/v114_ticket_line_value.csv,Статус,Статус,False,,,True
+reports/v114_ticket_line_value.csv,Произход,Произход,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,ticket_no,Фиш номер,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,ticket_title_bg,Фиш наименование,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,line_no,Номер на комбинацията,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,role_bg,Роля,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,strategy_bg,Стратегия,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,source_note_bg,Източник бележка,False,,,True
+reports/v117_real_ticket_pack_builder_cards.csv,price_eur,Цена eur,False,,,True
+reports/v118_full_system_price_table.csv,system_numbers,Система числа,False,,,True
+reports/v118_full_system_price_table.csv,combinations,Комбинации,False,,,True
+reports/v118_full_system_price_table.csv,tickets_4_lines,Фишове 4 комбинации,False,,,True
+reports/v118_full_system_price_table.csv,price_per_line_eur,Цена за комбинация eur,False,,,True
+reports/v118_full_system_price_table.csv,total_price_eur,Общо цена eur,False,,,True
+reports/v118_full_system_price_table.csv,total_price_label,Общо цена наименование,False,,,True
+reports/v118_model_system_ticket_pack.csv,global_line_no,Общ комбинация номер,False,,,True
+reports/v120_post_bst_model_data_refresh_checklist.csv,dataset,Данни,False,,,True
+reports/v120_post_bst_model_data_refresh_checklist.csv,action,Действие,False,,,True
+reports/v121_r_blended_number_scores.csv,r_blended_score,"Оценка, комбинирана с R",False,,,True
+reports/v121_r_blended_number_scores.csv,r_frequency_score,R честотен оценка,False,,,True
+reports/v121_r_blended_number_scores.csv,r_gap_score,R интервал оценка,False,,,True
+reports/v121_r_blended_number_scores.csv,r_monte_carlo_score,Оценка от Монте Карло в R,False,,,True
+reports/v121_r_blended_number_scores.csv,latest_draw_repeat_flag,Повторение от последния тираж,False,,,True
+reports/v121_r_blended_number_scores.csv,latest_draw_neighbor_flag,Съседно число спрямо последния тираж,False,,,True
+reports/v121_r_blended_number_scores.csv,r_frequency_count,R честотен брой,False,,,True
+reports/v121_r_blended_number_scores.csv,r_current_gap,Текущ интервал според R,False,,,True
+reports/v121_r_blended_number_scores.csv,r_monte_carlo_observed,Наблюдавана стойност от Монте Карло,False,,,True
+reports/v121_r_blended_number_scores.csv,r_monte_carlo_expected,Очаквана стойност от Монте Карло,False,,,True
+reports/v121_r_blended_number_scores.csv,r_monte_carlo_deviation,Отклонение от Монте Карло,False,,,True
+reports/v121_r_blended_number_scores.csv,feature_source,Характеристика източник,False,,,True
+reports/v121_r_feature_ticket_pack.csv,pack_no,Пакет номер,False,,,True
+reports/v121_r_feature_ticket_pack.csv,r_ticket_score,R фиш оценка,False,,,True
+reports/v121_r_feature_ticket_pack.csv,sum,Сума,False,,,True
+reports/v121_r_statistical_pair_features.csv,number_a,Число А,False,,,True
+reports/v121_r_statistical_pair_features.csv,number_b,Число Б,False,,,True
+reports/v121_r_statistical_pair_features.csv,r_pair_count,R двойка брой,False,,,True
+reports/v121_r_statistical_pair_features.csv,r_pair_score,R двойка оценка,False,,,True
+reports/v122_unified_official_draw_freshness_matrix.csv,key,Ключ,False,,,True
+reports/v122_unified_official_draw_freshness_matrix.csv,label,Наименование,False,,,True
+reports/v122_unified_official_draw_freshness_matrix.csv,draw_delta,Тираж промяна,False,,,True
+reports/v144_baseline_lab_results.csv,strategy,Стратегия,False,,,True
+reports/v144_baseline_lab_results.csv,trial,Опит,False,,,True
+reports/v144_baseline_lab_results.csv,draws_tested,Проверени тиражи,False,,,True
+reports/v144_baseline_lab_results.csv,average_best_hits,Среден най-добър резултат,False,,,True
+reports/v144_baseline_lab_results.csv,average_total_hits,Средно общо познати числа,False,,,True
+reports/v144_baseline_lab_results.csv,max_best_hits,Най-висок резултат,False,,,True
+reports/v144_baseline_lab_results.csv,at_least_2_percent,Поне 2 попадения (%),False,,,True
+reports/v144_baseline_lab_results.csv,at_least_3_percent,Поне 3 попадения (%),False,,,True
+reports/v144_baseline_lab_results.csv,at_least_4_percent,Поне 4 попадения (%),False,,,True
+reports/v144_baseline_lab_results.csv,at_least_5_percent,Поне 5 попадения (%),False,,,True
+reports/v144_baseline_lab_results.csv,exact_6_count,Точни 6 попадения,False,,,True
+reports/v144_experiment_registry_index.csv,experiment_id,Идентификатор,True,,,True
+reports/v144_experiment_registry_index.csv,title,Наименование,False,,,True
+reports/v144_experiment_registry_index.csv,created_at_utc,Създадено на,True,,,True
+reports/v144_experiment_registry_index.csv,last_run_at_utc,Последен изпълнение на UTC,False,,,True
+reports/v144_experiment_registry_index.csv,dataset_sha256,Подпис на данните,True,,,True
+reports/v144_experiment_registry_index.csv,latest_draw,Последен тираж,False,,,True
+reports/v144_experiment_registry_index.csv,seed,Начална стойност,False,,,True
+reports/v144_experiment_registry_index.csv,holdout_draws,Независима проверка тиражи,False,,,True
+reports/v144_experiment_registry_index.csv,result_signature_sha256,Подпис на резултата,True,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,neural_best_hits,Невронен най-добър познати числа,False,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,frequency_best_hits,Честотен най-добър познати числа,False,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,recency_best_hits,Скорошна активност най-добър познати числа,False,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,uniform_random_mean_best_hits,Среден резултат на случайния модел,False,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,neural_minus_frequency,Невронен минус честотен,False,,,True
+reports/v145_neural_dynamics_draw_comparison.csv,neural_minus_recency,Невронен минус скорошна активност,False,,,True
+reports/v146_neural_robustness_draw_comparison.csv,fold,Исторически период,False,,,True
+reports/v146_neural_robustness_draw_comparison.csv,recent_window_best_hits,Последни прозорец най-добър познати числа,False,,,True
+reports/v146_neural_robustness_draw_comparison.csv,blend_best_hits,Смесен най-добър познати числа,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,runs,Изпълнения,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_dynamics_reservoir,Невронен модел,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,frequency_walk_forward,Честотен модел,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,recency_weighted_walk_forward,Модел на скорошната активност,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,recent_window_frequency,Честотен модел в скорошен прозорец,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,frequency_recency_blend,Смесен честотен и скорошен модел,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,uniform_random_mean,Среден резултат — случаен модел,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_minus_frequency_walk_forward,Невронен минус честотен последователна историческа проверка,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_minus_recency_weighted_walk_forward,Невронен минус скорошна активност претеглен последователна историческа проверка,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_minus_recent_window_frequency,Невронен минус последни прозорец честотен,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_minus_frequency_recency_blend,Невронен минус честотен скорошна активност смесен,False,,,True
+reports/v146_neural_robustness_fold_stability.csv,neural_minus_uniform_random_mean,Невронен минус равномерно случаен средно,False,,,True
+reports/v146_neural_robustness_run_results.csv,training_draws_initial,Обучаващи тиражи начални,False,,,True
+reports/v146_neural_robustness_run_results.csv,holdout_first_draw,Независима проверка първи тираж,False,,,True
+reports/v146_neural_robustness_run_results.csv,holdout_last_draw,Независима проверка последен тираж,False,,,True
+reports/v147_experimental_evidence_matrix.csv,evidence_scope,Доказателства обхват,False,,,True
+reports/v147_experimental_evidence_matrix.csv,candidate,Изследван метод,False,,,True
+reports/v147_experimental_evidence_matrix.csv,comparator,Сравнителен метод,False,,,True
+reports/v147_experimental_evidence_matrix.csv,mean_advantage,Средна разлика,False,,,True
+reports/v147_experimental_evidence_matrix.csv,ci_lower,Долна граница на 95% интервал,False,,,True
+reports/v147_experimental_evidence_matrix.csv,ci_upper,Горна граница на 95% интервал,False,,,True
+reports/v147_experimental_evidence_matrix.csv,positive_seed_rate,Положителен дял по начални стойности,False,,,True
+reports/v147_experimental_evidence_matrix.csv,positive_fold_rate,Положителен дял по периоди,False,,,True
+reports/v147_experimental_evidence_matrix.csv,source_promotion_gate_passed,Изходното условие е преминато,False,,,True
+reports/v147_experimental_evidence_matrix.csv,evidence_outcome,Извод от доказателствата,False,,,True
+reports/v147_experimental_evidence_matrix.csv,robust_superiority_demonstrated,Показано устойчиво превъзходство,False,,,True
+reports/v147_experimental_evidence_matrix.csv,production_eligible,Допустимо за работния режим,False,,,True
+reports/v147_experimental_evidence_matrix.csv,source_summary,Източник на обобщението,True,,,True
+reports/v147_research_decision_registry_index.csv,decision_id,Идентификатор на решението,True,,,True
+reports/v147_research_decision_registry_index.csv,last_evaluated_at_utc,Последно оценено на,True,,,True
+reports/v147_research_decision_registry_index.csv,source_experiments,Изходни експерименти,False,,,True
+reports/v147_research_decision_registry_index.csv,evidence_rows,Сравнения с доказателства,False,,,True
+reports/v147_research_decision_registry_index.csv,production_promotion,Допускане до работния режим,False,,,True
+reports/v147_research_decision_registry_index.csv,current_neural_configuration,Текуща невронна конфигурация,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,lock_id,Идентификатор на заключването,True,,,True
+reports/v148_active_locked_evaluation_packages.csv,expected_draw_key,Очакван тираж,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,method,Метод,False,,,True
+reports/v148_active_locked_evaluation_packages.csv,evaluation_line,Оценяване комбинация,False,,,True
+reports/v148_forward_test_ledger_index.csv,event_index,Пореден номер,False,,,True
+reports/v148_forward_test_ledger_index.csv,event_type,Тип събитие,False,,,True
+reports/v148_forward_test_ledger_index.csv,event_sha256,SHA-256 подпис на събитието,True,,,True
+reports/v148_forward_test_ledger_index.csv,previous_event_sha256,Подпис на предишното събитие,True,,,True
+reports/v148_forward_test_ledger_index.csv,protocol_id,Идентификатор на протокола,True,,,True
+reports/v148_forward_test_ledger_index.csv,event_time_utc,Събитие време UTC,False,,,True
+reports/v148_forward_test_ledger_index.csv,actual_draw_key,Действителни тираж ключ,False,,,True
+reports/v148_forward_test_ledger_index.csv,target_sequence_index,Целеви последователност номер,True,,,True
+reports/v148_forward_test_settlements.csv,eligible_draw_number,Допустим тираж число,False,,,True
+reports/v148_forward_test_settlements.csv,actual_numbers,Действително изтеглени числа,False,,,True
+reports/v148_forward_test_settlements.csv,unlocked_draws_after_target_excluded,Незаключени тиражи след целеви Изключено,False,,,True
+reports/v148_forward_test_settlements.csv,neural_dynamics_frozen_ensemble_best_hits,Невронен динамика замразен ансамбъл най-добър познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,neural_dynamics_frozen_ensemble_total_hits,Невронен динамика замразен ансамбъл общо познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,frequency_walk_forward_best_hits,Честотен последователна историческа проверка най-добър познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,frequency_walk_forward_total_hits,Честотен последователна историческа проверка общо познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,recency_weighted_walk_forward_best_hits,Скорошна активност претеглен последователна историческа проверка най-добър познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,recency_weighted_walk_forward_total_hits,Скорошна активност претеглен последователна историческа проверка общо познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,recent_window_frequency_best_hits,Последни прозорец честотен най-добър познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,recent_window_frequency_total_hits,Последни прозорец честотен общо познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,frequency_recency_blend_best_hits,Честотен скорошна активност смесен най-добър познати числа,False,,,True
+reports/v148_forward_test_settlements.csv,frequency_recency_blend_total_hits,Честотен скорошна активност смесен общо познати числа,False,,,True
+reports/v149_remaining_exact_duplicate_groups.csv,sha256,SHA-256,True,,,True
+reports/v149_remaining_exact_duplicate_groups.csv,file_size_bytes,Файл размер байтове,False,,,True
+reports/v149_remaining_exact_duplicate_groups.csv,copies,Копия,False,,,True
+reports/v149_remaining_exact_duplicate_groups.csv,redundant_bytes,Излишни байтове,False,,,True
+reports/v149_remaining_exact_duplicate_groups.csv,paths,Пътища,False,,,True
+reports/v149_removed_current_tree_files.csv,reason,Причина,False,,,True
+reports/v149_removed_current_tree_files.csv,size_bytes,Размер (байтове),False,,,True
+reports/v150_ui_literal_audit.csv,file,Файл,False,,,True
+reports/v150_ui_literal_audit.csv,line,Комбинация,False,,,True
+reports/v150_ui_literal_audit.csv,widget,Елемент,False,,,True
+reports/v150_ui_literal_audit.csv,source_text,Източник текст,False,,,True
+reports/v150_ui_literal_audit.csv,bulgarian_display,Български показване,False,,,True
+reports/v150_ui_literal_audit.csv,english_display,Английски показване,False,,,True
+reports/v150_ui_literal_audit.csv,forbidden_bg_tokens,Забранени термини,False,,,True
+reports/v150_ui_literal_audit.csv,unexpected_ascii_words,Неочаквани латиница думи,False,,,True
+reports/v150_ui_literal_audit.csv,bg_pass,Преминато,False,,,True
+reports/v40_ticket_checker_sample.csv,chosen_numbers,Избрани числа,False,,,True
+reports/v40_ticket_checker_sample.csv,drawn_numbers,Изтеглени числа,False,,,True
+reports/v40_ticket_checker_sample.csv,matched_numbers,Познати числа,False,,,True
+reports/v40_ticket_checker_sample.csv,match_count,Брой съвпадения,False,,,True
+reports/v40_ticket_checker_sample.csv,bonus_match,Допълнително съвпадение,False,,,True
+reports/v40_ticket_checker_sample.csv,bonus_match_bg,Допълнително съвпадение,False,,,True
+reports/v40_ticket_checker_sample.csv,result_label_bg,Резултат наименование,False,,,True
+reports/v41_bst_official_archive_urls.csv,url,Url,False,,,True
+reports/v41_model_backtest_events.csv,model,Модел,False,,,True
+reports/v41_model_backtest_events.csv,predicted_top6,Прогнозирани водещи 6 числа,False,,,True
+reports/v41_model_backtest_events.csv,hit_count,Брой попадения,False,,,True
+reports/v42_combined_positive_negative_scores.csv,total_hits,Общо познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,expected_hits,Очакван познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,difference_from_expected,Разлика спрямо очакван,False,,,True
+reports/v42_combined_positive_negative_scores.csv,frequency_ratio,Коефициент на честотата,False,,,True
+reports/v42_combined_positive_negative_scores.csv,current_absence_gap,Текущ отсъствие интервал,False,,,True
+reports/v42_combined_positive_negative_scores.csv,max_absence_gap,Най-висок отсъствие интервал,False,,,True
+reports/v42_combined_positive_negative_scores.csv,last_25_hits,Последен 25 познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,last_50_hits,Последен 50 познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,last_100_hits,Последен 100 познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,last_250_hits,Последен 250 познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,last_500_hits,Последен 500 познати числа,False,,,True
+reports/v42_combined_positive_negative_scores.csv,v41_vote_count,V41 глас брой,False,,,True
+reports/v42_combined_positive_negative_scores.csv,positive_signal_score,Положително сигнал оценка,False,,,True
+reports/v42_combined_positive_negative_scores.csv,absence_risk_score,Отсъствие риск оценка,False,,,True
+reports/v42_combined_positive_negative_scores.csv,combined_score,Комбинирана оценка,False,,,True
+reports/v42_combined_positive_negative_scores.csv,absence_risk_level,Отсъствие риск ниво,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,last_seen_draw,Последен поява тираж,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,average_interval,Среден интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,median_interval,Медианен интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,mode_interval,Режим интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,std_interval,Стандартно отклонение интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,coefficient_of_variation,Коефициент от вариация,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,min_interval,Минимален интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,max_interval,Най-висок интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,p25_interval,25-и персентил интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,p75_interval,75-и персентил интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,p90_interval,90-и персентил интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,expected_remaining_mean,Очакван оставащ средно,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,expected_remaining_median,Очакван оставащ медианен,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,probability_next_1_draw,Вероятност следващ 1 тираж,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,probability_next_3_draws,Вероятност следващ 3 тиражи,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,probability_next_5_draws,Вероятност следващ 5 тиражи,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,probability_next_10_draws,Вероятност следващ 10 тиражи,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,survived_intervals_for_next_5,Преминали интервали за следващ 5,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,hits_in_next_5_window,Познати числа в следващ 5 прозорец,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,z_score_vs_average_interval,Z-оценка спрямо средния интервал,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,above_median_ratio,Над медианен коефициент,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,due_score,Дължимост оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,closeness_to_median_score,Близост до медианен оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,regularity_score,Регулярност оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,reliability_score,Оценка за надеждност,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,frequency_support_score,Честотен подкрепа оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,balanced_rhythm_score,Балансиран ритъм оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,next_window_score,Следващ прозорец оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,overdue_score,Оценка за просрочване,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,final_rhythm_score,Краен ритъм оценка,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,rhythm_status,Ритъм статус,False,,,True
+reports/v43_1_interval_rhythm_refined_scores.csv,beyond_historical_gap,Извън исторически интервал,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,final_ensemble_score,Краен ансамбъл оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,v42_combined_score,V42 комбиниран оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,v42_positive_signal,V42 Положително сигнал,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,v42_absence_risk,V42 отсъствие риск,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,v42_absence_safety,V42 отсъствие безопасност,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,rhythm_final_score,Ритъм краен оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,rhythm_next_window_score,Ритъм следващ прозорец оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,rhythm_overdue_score,Ритъм просрочване оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,rhythm_balanced_score,Ритъм балансиран оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,rules_score,Правила оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,v41_vote_score,V41 глас оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,consensus_hits,Съгласие познати числа,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,consensus_score,Съгласие оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,model_agreement_score,Модел съгласие оценка,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,hits_last_100,Познати числа последен 100,False,,,True
+reports/v44_1_final_ensemble_number_scores.csv,hits_last_250,Познати числа последен 250,False,,,True
+reports/v45_backtest_by_model.csv,test_events,Тест Събития,False,,,True
+reports/v45_backtest_by_model.csv,average_hits_top6,Средно познати числа водещи 6,False,,,True
+reports/v45_backtest_by_model.csv,median_hits_top6,Медианен познати числа водещи 6,False,,,True
+reports/v45_backtest_by_model.csv,max_hits_top6,Най-висок познати числа водещи 6,False,,,True
+reports/v45_backtest_by_model.csv,hit_distribution,Попадение разпределение,False,,,True
+reports/v45_backtest_by_model.csv,events_with_3plus_hits,Тиражи с поне 3 попадения,False,,,True
+reports/v45_backtest_by_model.csv,events_with_4plus_hits,Тиражи с поне 4 попадения,False,,,True
+reports/v45_backtest_by_model.csv,events_with_5plus_hits,Тиражи с поне 5 попадения,False,,,True
+reports/v45_backtest_by_model.csv,events_with_6_hits,Събития с 6 познати числа,False,,,True
+reports/v45_feature_importance.csv,feature,Характеристика,False,,,True
+reports/v45_feature_importance.csv,importance,Важност,False,,,True
+reports/v45_feature_importance.csv,signed_value,Със знак стойност,False,,,True
+reports/v50_group_scores.csv,group,Група,False,,,True
+reports/v50_group_scores.csv,count,Брой,False,,,True
+reports/v50_group_scores.csv,recent_count,Последни брой,False,,,True
+reports/v50_group_scores.csv,last_seen_index,Последна поява,False,,,True
+reports/v50_group_scores.csv,gap,Интервал,False,,,True
+reports/v50_group_scores.csv,frequency_score,Честотен оценка,False,,,True
+reports/v50_group_scores.csv,recency_score,Скорошна активност оценка,False,,,True
+reports/v50_group_scores.csv,group_score,Група оценка,False,,,True
+reports/v50_pair_scores.csv,pair_score,Двойка оценка,False,,,True
+reports/v50_pair_scores.csv,watch_score,Наблюдение оценка,False,,,True
+reports/v51_current_pro_ticket_score.csv,combination,Комбинация,False,,,True
+reports/v51_current_pro_ticket_score.csv,combo_score,Комбинация оценка,False,,,True
+reports/v51_current_pro_ticket_score.csv,pair_average,Двойка средно,False,,,True
+reports/v51_current_pro_ticket_score.csv,strong_pairs,Силни двойки,False,,,True
+reports/v51_current_pro_ticket_score.csv,group_average,Група средно,False,,,True
+reports/v51_current_pro_ticket_score.csv,strong_groups,Силни групи,False,,,True
+reports/v51_current_pro_ticket_score.csv,range_span,Диапазон обхват,False,,,True
+reports/v51_current_pro_ticket_score.csv,consecutive_pairs,Последователни двойки,False,,,True
+reports/v55_number_profiles.csv,profile_score,Оценка на профила,False,,,True
+reports/v55_number_profiles.csv,band,Диапазон,False,,,True
+reports/v55_number_profiles.csv,expected_appearances,Очакван появявания,False,,,True
+reports/v55_number_profiles.csv,appearance_vs_expected_ratio,Съотношение между наблюдавано и очаквано,False,,,True
+reports/v55_number_profiles.csv,draw_frequency_pct,Тираж честотен %,False,,,True
+reports/v55_number_profiles.csv,draws_since_last_seen,Тиражи от последната поява,False,,,True
+reports/v55_number_profiles.csv,recent_50,Появявания в последните 50 тиража,False,,,True
+reports/v55_number_profiles.csv,recent_100,Появявания в последните 100 тиража,False,,,True
+reports/v55_number_profiles.csv,recent_250,Последни 250,False,,,True
+reports/v55_number_profiles.csv,recent_500,Последни 500,False,,,True
+reports/v55_number_profiles.csv,interval_stability_score,Оценка за устойчивост на интервала,False,,,True
+reports/v55_number_profiles.csv,top_pairs,Водещ двойки,False,,,True
+reports/v55_number_profiles.csv,top_triples,Водещ тройки,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,main_group,Основна група,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,categories,Категории,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,historical_strength_score,Исторически сила оценка,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,recent_activity_score,Последни активност оценка,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,stability_score,Устойчивост оценка,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,recent_50_ratio,Последни 50 коефициент,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,recent_100_ratio,Последни 100 коефициент,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,recent_250_ratio,Последни 250 коефициент,False,,,True
+reports/v57_hot_cold_stable_numbers.csv,current_gap_ratio,Коефициент на текущия интервал,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,query_index,Заявка номер,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,is_valid,Е валиден,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,final_score,Крайна оценка,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,pattern_score,Оценка на шаблона,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,coverage_score,Оценка на покритието,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,number_profile_score,Оценка на профила на числата,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,hot_cold_balance_score,Оценка на баланса между активни и неактивни числа,False,,,True
+reports/v58_smart_ensemble_scores_sample.csv,similarity_context_score,Оценка на сходството,False,,,True
+reports/v59_smart_ticket_builder_2_sample.csv,ticket_index,Фиш номер,False,,,True
+reports/v61_latest_draw_closest_previous_draws.csv,draw_numbers_text,Тираж числа текст,False,,,True
+reports/v61_latest_draw_closest_previous_draws.csv,matching_numbers_text,Съвпадащи числа,False,,,True
+reports/v61_latest_draw_closest_previous_draws.csv,different_query_numbers_text,Различни заявка числа текст,False,,,True
+reports/v61_model_signal_hits.csv,source_bg,Източник,False,,,True
+reports/v61_model_signal_hits.csv,candidate_label,Кандидат наименование,False,,,True
+reports/v61_model_signal_hits.csv,candidate_text,Кандидат текст,False,,,True
+reports/v61_model_signal_hits.csv,missing_numbers_text,Липсващи числа текст,False,,,True
+reports/v62_latest_model_performance.csv,model_name,Модел,False,,,True
+reports/v62_latest_model_performance.csv,source_exists,Източник наличен,False,,,True
+reports/v62_latest_model_performance.csv,candidate_count,Кандидат брой,False,,,True
+reports/v62_latest_model_performance.csv,best_hits,Най-добър резултат,False,,,True
+reports/v62_latest_model_performance.csv,coverage_percent,Покритие (%),False,,,True
+reports/v62_latest_model_performance.csv,best_candidate,Най-добър кандидат,False,,,True
+reports/v62_latest_model_performance.csv,hit_numbers,Попадение числа,False,,,True
+reports/v62_model_performance_history.csv,draw_numbers,Тираж числа,False,,,True
+reports/v62_model_performance_history.csv,updated_at,Обновено на,False,,,True
+reports/v63_model_reliability_scores.csv,rank,Класиране,False,,,True
+reports/v63_model_reliability_scores.csv,tracked_draws,Проследени тиражи,False,,,True
+reports/v63_model_reliability_scores.csv,average_hits,Средно познати числа,False,,,True
+reports/v63_model_reliability_scores.csv,max_hits,Най-висок познати числа,False,,,True
+reports/v63_model_reliability_scores.csv,min_hits,Минимален познати числа,False,,,True
+reports/v63_model_reliability_scores.csv,std_hits,Стандартно отклонение познати числа,False,,,True
+reports/v63_model_reliability_scores.csv,hit_rate_1_plus,Попадение дял 1 или повече,False,,,True
+reports/v63_model_reliability_scores.csv,hit_rate_2_plus,Дял с поне 2 попадения,False,,,True
+reports/v63_model_reliability_scores.csv,hit_rate_3_plus,Дял с поне 3 попадения,False,,,True
+reports/v63_model_reliability_scores.csv,hit_rate_4_plus,Попадение дял 4 или повече,False,,,True
+reports/v63_model_reliability_scores.csv,consistency_score,Оценка за последователност,False,,,True
+reports/v65_model_weights.csv,confidence_factor,Доверие коефициент,False,,,True
+reports/v65_model_weights.csv,base_score,Базова оценка,False,,,True
+reports/v65_model_weights.csv,adjusted_score,Коригирана оценка,False,,,True
+reports/v65_model_weights.csv,adaptive_weight,Адаптивен тегло,False,,,True
+reports/v65_model_weights.csv,adaptive_weight_percent,Адаптивен тегло %,False,,,True
+reports/v65_model_weights.csv,source_status,Източник статус,False,,,True
+reports/v66_weighted_smart_ensemble_scores.csv,weighted_score,Претеглен оценка,False,,,True
+reports/v66_weighted_smart_ensemble_scores.csv,weighted_score_percent,Претеглен оценка %,False,,,True
+reports/v66_weighted_smart_ensemble_scores.csv,source_count,Източник брой,False,,,True
+reports/v66_weighted_smart_ensemble_scores.csv,top_sources,Водещ източници,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,strategy_label,Наименование на стратегията,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,average_weighted_score,Средно претеглен оценка,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,total_weighted_score,Общо претеглен оценка,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,min_number,Минимален число,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,max_number,Най-висок число,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,number_range,Диапазон на числата,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,sum_numbers,Сума числа,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,decade_count,Десетилетие брой,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,max_overlap_with_previous,Най-висок припокриване с предишен,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,historical_exact_match,Точно историческо съвпадение,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,balance_status,Състояние на баланса,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,risk_note,Риск бележка,False,,,True
+reports/v67_weighted_ticket_builder_tickets.csv,strategy_description,Стратегия описание,False,,,True
+reports/v68_weighted_portfolio_coverage.csv,step66_rank,Етап 66 класиране,False,,,True
+reports/v68_weighted_portfolio_coverage.csv,covered_count,Покрити брой,False,,,True
+reports/v68_weighted_portfolio_coverage.csv,number_group,Число група,False,,,True
+reports/v68_weighted_portfolio_coverage.csv,coverage_status,Покритие статус,False,,,True
+reports/v68_weighted_portfolio_coverage.csv,step66_status,Етап 66 статус,False,,,True
+reports/v68_weighted_portfolio_overlaps.csv,ticket_a,Фиш А,False,,,True
+reports/v68_weighted_portfolio_overlaps.csv,ticket_b,Фиш Б,False,,,True
+reports/v68_weighted_portfolio_overlaps.csv,overlap,Припокриване,False,,,True
+reports/v68_weighted_portfolio_overlaps.csv,shared_numbers,Общи числа,False,,,True
+reports/v68_weighted_portfolio_repeated_triples.csv,triple,Тройка,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,average_step66_score,Средно етап 66 оценка,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,average_step67_score,Средно етап 67 оценка,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,unique_help_count,Уникални помощ брой,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,top20_numbers_count,Водещите 20 числа брой,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,max_overlap_with_other_ticket,Най-висок припокриване с други фиш,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,average_overlap_with_other_tickets,Средно припокриване с други фишове,False,,,True
+reports/v68_weighted_portfolio_tickets.csv,portfolio_contribution_score,Портфейл принос оценка,False,,,True
+reports/v69_candidate_portfolio_tickets.csv,changed,Променено,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,current_numbers,Текущ числа,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,suggested_numbers,Предложени числа,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,remove_number,Премахни число,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,add_number,Добави число,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,remove_step66_rank,Премахни етап 66 класиране,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,add_step66_rank,Добави етап 66 класиране,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,remove_step66_score,Премахни етап 66 оценка,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,add_step66_score,Добави етап 66 оценка,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,portfolio_score_before,Портфейл оценка преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,portfolio_score_after,Портфейл оценка след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,portfolio_score_delta,Портфейл оценка промяна,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,unique_coverage_before,Уникални покритие преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,unique_coverage_after,Уникални покритие след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,top20_coverage_before,Водещите 20 покритие преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,top20_coverage_after,Водещите 20 покритие след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,repeated_pairs_before,Повтарящи се двойки преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,repeated_pairs_after,Повтарящи се двойки след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,repeated_triples_before,Повтарящи се тройки преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,repeated_triples_after,Повтарящи се тройки след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,max_overlap_before,Най-висок припокриване преди,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,max_overlap_after,Най-висок припокриване след,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,expected_gain_score,Очакван подобрение оценка,False,,,True
+reports/v69_portfolio_improvement_suggestions.csv,recommendation_strength,Препоръка сила,False,,,True
+reports/v70_applied_candidate_portfolio_changes.csv,removed_numbers,Премахнати числа,False,,,True
+reports/v70_applied_candidate_portfolio_changes.csv,added_numbers,Добавени числа,False,,,True
+reports/v70_applied_candidate_portfolio_changes.csv,original_numbers,Първоначални числа,False,,,True
+reports/v70_applied_candidate_portfolio_changes.csv,applied_numbers,Приложен числа,False,,,True
+reports/v70_applied_candidate_portfolio_changes.csv,average_score_delta,Средна промяна на оценката,False,,,True
+reports/v70_original_vs_candidate_portfolio.csv,candidate_numbers,Кандидат числа,False,,,True
+reports/v70_original_vs_candidate_portfolio.csv,original_average_step66_score,Първоначални средно етап 66 оценка,False,,,True
+reports/v70_original_vs_candidate_portfolio.csv,candidate_average_step66_score,Кандидат средно етап 66 оценка,False,,,True
+reports/v71_ticket_pack.csv,combination_id,Комбинация идентификатор,False,,,True
+reports/v71_ticket_pack.csv,physical_ticket_id,Хартиен фиш идентификатор,False,,,True
+reports/v71_ticket_pack.csv,combination_in_ticket,Комбинация във фиша,False,,,True
+reports/v71_ticket_pack.csv,combination_label,Комбинация наименование,False,,,True
+reports/v71_ticket_pack.csv,numbers_display,Числа,False,,,True
+reports/v72_pipeline_refresh_plan.csv,name,Наименование,False,,,True
+reports/v72_pipeline_refresh_plan.csv,script,Скрипт,False,,,True
+reports/v72_pipeline_refresh_plan.csv,script_exists,Скрипт наличен,False,,,True
+reports/v72_pipeline_refresh_plan.csv,outputs,Изходи,False,,,True
+reports/v72_pipeline_refresh_plan.csv,outputs_ok,Изходи изрядно,False,,,True
+reports/v72_pipeline_refresh_plan.csv,latest_output_mtime,Последна промяна на изхода,False,,,True
+reports/v72_pipeline_refresh_plan.csv,run_status,Изпълнение статус,False,,,True
+reports/v72_pipeline_refresh_plan.csv,run_ok,Изпълнение изрядно,False,,,True
+reports/v72_pipeline_refresh_plan.csv,run_output_tail,Изпълнение изход опашка,False,,,True
+reports/v73_latest_ticket_pack_result.csv,ticket_numbers,Фиш числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,evaluated_at,Оценено на,False,,,True
+reports/v73_ticket_pack_performance_history.csv,pack_snapshot_id,Пакет моментно състояние идентификатор,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_evaluated,Фишове оценено,False,,,True
+reports/v73_ticket_pack_performance_history.csv,physical_tickets_evaluated,Хартиен фишове оценено,False,,,True
+reports/v73_ticket_pack_performance_history.csv,combinations_per_physical_ticket,Комбинации за хартиен фиш,False,,,True
+reports/v73_ticket_pack_performance_history.csv,best_ticket_id,Най-добър фиш идентификатор,False,,,True
+reports/v73_ticket_pack_performance_history.csv,best_combination_label,Най-добър комбинация наименование,False,,,True
+reports/v73_ticket_pack_performance_history.csv,best_hit_count,Най-добър попадение брой,False,,,True
+reports/v73_ticket_pack_performance_history.csv,package_unique_hits,Пакет уникални познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,package_unique_hit_numbers,Пакет уникални попадение числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_0_hits,Фишове с 0 познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_1_hit,Фишове с 1 попадение,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_2_hits,Фишове с 2 познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_3_hits,Фишове с 3 познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_4_hits,Фишове с 4 познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_5_hits,Фишове с 5 познати числа,False,,,True
+reports/v73_ticket_pack_performance_history.csv,tickets_with_6_hits,Фишове с 6 познати числа,False,,,True
+reports/v74_1_latest_selective_sync_plan.csv,category,Категория,False,,,True
+reports/v74_1_latest_selective_sync_plan.csv,role,Роля,False,,,True
+reports/v74_model_dependency_map.csv,from,Спрямо,False,,,True
+reports/v74_model_dependency_map.csv,to,До,False,,,True
+reports/v74_model_dependency_map.csv,type,Тип,False,,,True
+reports/v74_model_dependency_map.csv,description,Описание,False,,,True
+reports/v74_model_sync_status.csv,datasets,Набори от данни,False,,,True
+reports/v74_model_sync_status.csv,inputs,Входове,False,,,True
+reports/v74_model_sync_status.csv,outputs_present,Изходи наличен,False,,,True
+reports/v74_model_sync_status.csv,dependencies_present,Зависимости наличен,False,,,True
+reports/v74_model_sync_status.csv,missing_inputs,Липсващи входни данни,False,,,True
+reports/v74_model_sync_status.csv,missing_outputs,Липсващи изходи,False,,,True
+reports/v74_model_sync_status.csv,latest_input_mtime,Последен вход време на промяна,False,,,True
+reports/v74_model_sync_status.csv,sync_status,Синхронизация статус,False,,,True
+reports/v74_model_sync_status.csv,feeds,Източници,False,,,True
+reports/v74_model_sync_status.csv,ensemble_source,Ансамбъл източник,False,,,True
+reports/v75_neural_candidate_tickets.csv,neural_ticket_score,Невронен фиш оценка,False,,,True
+reports/v75_neural_meta_number_scores.csv,neural_score,Невронен оценка,False,,,True
+reports/v75_neural_meta_number_scores.csv,номер,Номер,False,,,True
+reports/v75_neural_meta_number_scores.csv,четност,Четност,False,,,True
+reports/v75_neural_meta_number_scores.csv,ниско_високо,Ниско високо,False,,,True
+reports/v75_neural_meta_number_scores.csv,десетица,Десетица,False,,,True
+reports/v75_neural_meta_number_scores.csv,разстояние_от_край,Разстояние от край,False,,,True
+reports/v75_neural_meta_number_scores.csv,историческа_честота,Историческа честота,False,,,True
+reports/v75_neural_meta_number_scores.csv,отклонение_от_очакваното,Отклонение от очакваното,False,,,True
+reports/v75_neural_meta_number_scores.csv,честота_последни_25,Честота последни 25,False,,,True
+reports/v75_neural_meta_number_scores.csv,честота_последни_50,Честота последни 50,False,,,True
+reports/v75_neural_meta_number_scores.csv,честота_последни_100,Честота последни 100,False,,,True
+reports/v75_neural_meta_number_scores.csv,gap_от_последна_поява,Интервал от последна поява,False,,,True
+reports/v75_neural_meta_number_scores.csv,overdue_сигнал,Просрочване сигнал,False,,,True
+reports/v75_neural_meta_number_scores.csv,кратък_тренд,Кратък тренд,False,,,True
+reports/v76_number_explanations.csv,percentile,Персентил,False,,,True
+reports/v76_number_explanations.csv,signal_level,Сигнал ниво,False,,,True
+reports/v76_number_explanations.csv,score_band,Оценка диапазон,False,,,True
+reports/v76_number_explanations.csv,historical_frequency,Исторически честотен,False,,,True
+reports/v76_number_explanations.csv,recent_25,Появявания в последните 25 тиража,False,,,True
+reports/v76_number_explanations.csv,gap_from_last_seen,Интервал спрямо последен поява,False,,,True
+reports/v76_number_explanations.csv,overdue_signal,Просрочване сигнал,False,,,True
+reports/v76_number_explanations.csv,short_trend,Кратък тенденция,False,,,True
+reports/v76_number_explanations.csv,main_reasons,Основни причини,False,,,True
+reports/v76_number_explanations.csv,caution_notes,Бележки за внимание,False,,,True
+reports/v76_ticket_validation.csv,explainability_score,Оценка за обяснимост,False,,,True
+reports/v76_ticket_validation.csv,adjacent_pairs,Съседни двойки,False,,,True
+reports/v76_ticket_validation.csv,decade_groups,Десетилетие групи,False,,,True
+reports/v76_ticket_validation.csv,top10_overlap,Припокриване с водещите 10,False,,,True
+reports/v76_ticket_validation.csv,validation_status,Проверка статус,False,,,True
+reports/v76_ticket_validation.csv,warnings,Предупреждения,False,,,True
+reports/v76_validation_warnings.csv,item,Елемент,False,,,True
+reports/v76_validation_warnings.csv,warning,Предупреждение,False,,,True
+reports/v77_decision_warnings.csv,recommendation_level,Ниво на препоръката,False,,,True
+reports/v77_decision_warnings.csv,decision_score,Решение оценка,False,,,True
+reports/v77_ticket_recommendations.csv,decision_action,Решение действие,False,,,True
+reports/v77_ticket_recommendations.csv,structure_score,Оценка на структурата,False,,,True
+reports/v78_play_plan_warnings.csv,plan_role,План роля,False,,,True
+reports/v78_play_plan_warnings.csv,risk_level,Риск ниво,False,,,True
+reports/v78_selected_ticket_plan.csv,plan_rank,План класиране,False,,,True
+reports/v78_selected_ticket_plan.csv,plan_action,План действие,False,,,True
+reports/v78_selected_ticket_plan.csv,discipline_note,Дисциплина бележка,False,,,True
+reports/v79_execution_checklist.csv,check_item,Елемент за проверка,False,,,True
+reports/v79_export_ticket_pack.csv,export_order,Износ ред,False,,,True
+reports/v79_export_ticket_pack.csv,numbers_compact,Числа компактен,False,,,True
+reports/v79_export_ticket_pack.csv,export_status,Износ статус,False,,,True
+reports/v79_export_ticket_pack.csv,execution_note,Изпълнение бележка,False,,,True
+reports/v80_artifact_audit.csv,artifact,Артефакт,False,,,True
+reports/v80_artifact_audit.csv,kind,Вид,False,,,True
+reports/v80_artifact_audit.csv,parse_ok,Прочитане изрядно,False,,,True
+reports/v80_dataset_audit.csv,rows,Комбинации,False,,,True
+reports/v80_dataset_audit.csv,rows_2026,Комбинации 2026,False,,,True
+reports/v80_dataset_audit.csv,latest_date,Последен дата,False,,,True
+reports/v80_dataset_audit.csv,latest_numbers,Последен числа,False,,,True
+reports/v80_dataset_audit.csv,invalid_rows,НЕВАЛИДНО комбинации,False,,,True
+reports/v80_dataset_audit.csv,duplicate_keys,Дубликат ключове,False,,,True
+reports/v80_file_quality_audit.csv,check_type,Проверка тип,False,,,True
+reports/v80_sync_plan_audit.csv,plan_name,План наименование,False,,,True
+reports/v80_sync_plan_audit.csv,expected_steps,Очакван етапи,False,,,True
+reports/v80_sync_plan_audit.csv,actual_steps,Действителни етапи,False,,,True
+reports/v81_navigation_groups.csv,group_order,Група ред,False,,,True
+reports/v81_navigation_groups.csv,group_name,Име на групата,False,,,True
+reports/v81_navigation_groups.csv,pages_count,Страници брой,False,,,True
+reports/v81_navigation_groups.csv,expected_group,Очакван група,False,,,True
+reports/v81_navigation_page_audit.csv,page_order,Страница ред,False,,,True
+reports/v81_navigation_page_audit.csv,page_label,Страница наименование,False,,,True
+reports/v81_navigation_page_audit.csv,literal_page_key_found,Текст страница ключ намерен,False,,,True
+reports/v81_navigation_page_audit.csv,duplicate_groups,Дубликат групи,False,,,True
+reports/v81_streamlit_label_audit.csv,count_in_streamlit_app,Брой в приложението,False,,,True
+reports/v82_clean_zip_exclusion_plan.csv,pattern,Шаблон,False,,,True
+reports/v82_release_file_manifest.csv,release_relevant,Издание относим,False,,,True
+reports/v83_app_guide_sections.csv,section_order,Раздел ред,False,,,True
+reports/v83_app_guide_sections.csv,section,Раздел,False,,,True
+reports/v83_app_guide_sections.csv,purpose,Предназначение,False,,,True
+reports/v83_app_guide_sections.csv,user_action,Потребител действие,False,,,True
+reports/v83_recommended_workflow.csv,step_order,Етап ред,False,,,True
+reports/v83_recommended_workflow.csv,page,Страница,False,,,True
+reports/v83_recommended_workflow.csv,when_to_use,Кога до употреба,False,,,True
+reports/v83_recommended_workflow.csv,expected_result,Очакван резултат,False,,,True
+reports/v83_recommended_workflow.csv,caution,Внимание,False,,,True
+reports/v83_safe_usage_checklist.csv,check_order,Проверка ред,False,,,True
+reports/v83_safe_usage_checklist.csv,recommended_behavior,Препоръчано поведение,False,,,True
+reports/v83_safe_usage_checklist.csv,risk_if_ignored,Риск ако игнориран,False,,,True
+reports/v84_model_comparison_results.csv,target_draw_index,Целеви тираж номер,False,,,True
+reports/v84_model_comparison_results.csv,target_draw_date,Целеви тираж дата,False,,,True
+reports/v84_model_comparison_results.csv,target_numbers,Изтеглени числа,False,,,True
+reports/v84_model_comparison_results.csv,hits_count,Познати числа брой,False,,,True
+reports/v84_model_comparison_results.csv,result_bucket,Резултат група,False,,,True
+reports/v84_model_source_candidates.csv,source_priority,Източник приоритет,False,,,True
+reports/v85_neural_epoch_comparison.csv,epochs,Епохи,False,,,True
+reports/v85_neural_epoch_comparison.csv,train_loss,Обучение загуба,False,,,True
+reports/v85_neural_epoch_comparison.csv,loss_start,Загуба начало,False,,,True
+reports/v85_neural_epoch_comparison.csv,loss_delta,Загуба промяна,False,,,True
+reports/v85_neural_epoch_comparison.csv,train_avg_hits_top6,Обучение средно познати числа водещи 6,False,,,True
+reports/v85_neural_epoch_comparison.csv,train_max_hits_top6,Обучение най-висок познати числа водещи 6,False,,,True
+reports/v85_neural_epoch_comparison.csv,test_avg_hits_top6,Тест средно познати числа водещи 6,False,,,True
+reports/v85_neural_epoch_comparison.csv,test_max_hits_top6,Тест най-висок познати числа водещи 6,False,,,True
+reports/v85_neural_epoch_comparison.csv,test_events_evaluated,Тест Събития оценено,False,,,True
+reports/v85_neural_epoch_comparison.csv,latest_top6_numbers,Последен водещи 6 числа,False,,,True
+reports/v86_model_registry_models.csv,code,Код,False,,,True
+reports/v86_model_registry_models.csv,model_name_bg,Модел наименование,False,,,True
+reports/v86_model_registry_models.csv,model_name_en,Модел наименование английски,False,,,True
+reports/v86_model_registry_models.csv,category_bg,Категория,False,,,True
+reports/v86_model_registry_models.csv,mode_bg,Режим,False,,,True
+reports/v86_model_registry_models.csv,lifecycle_bg,Жизнен цикъл,False,,,True
+reports/v86_model_registry_models.csv,health_status_bg,Състояние статус,False,,,True
+reports/v86_model_registry_models.csv,draw_reference,Тираж референтен,False,,,True
+reports/v86_model_registry_models.csv,dataset_rows,Данни комбинации,True,,,True
+reports/v86_model_registry_models.csv,artifacts_present,Артефакти наличен,False,,,True
+reports/v86_model_registry_models.csv,artifacts_expected,Артефакти очакван,False,,,True
+reports/v86_model_registry_models.csv,primary_artifact,Основен артефакт,False,,,True
+reports/v86_model_registry_models.csv,missing_artifacts,Липсващи артефакти,False,,,True
+reports/v86_model_registry_models.csv,status_note_bg,Статус бележка,False,,,True
+reports/v86_model_registry_models.csv,status_type,Статус тип,False,,,True
+reports/v88_anti_zero_coverage_analysis.csv,Пакет,Пакет,False,,,True
+reports/v88_anti_zero_coverage_analysis.csv,Числа,Числа,False,,,True
+reports/v88_anti_zero_coverage_analysis.csv,Риск от празен пакет %,Риск от празен пакет %,False,,,True
+reports/v88_anti_zero_coverage_analysis.csv,Шанс за поне 1 съвпадение %,Шанс за поне 1 съвпадение %,False,,,True
+reports/v88_anti_zero_coverage_analysis.csv,Покрити различни числа,Покрити различни числа,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,package_label,Пакет наименование,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,total_combinations,Общо комбинации,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,unique_covered_numbers,Уникално покрити числа,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,empty_risk_percent,Риск от нулев резултат (%),False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,at_least_one_hit_percent,Поне едно попадение (%),False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,model_strength_score,Оценка на силата на модела,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,combination_quality_score,Комбинация качество оценка,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,anti_zero_score,Защита от нулев оценка,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,historical_safety_score,Исторически безопасност оценка,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,balanced_score,Балансиран оценка,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,conservative_score,Консервативен оценка,False,,,True
+reports/v89_final_statistical_portfolio_selector_analysis.csv,aggressive_score,Агресивен оценка,False,,,True
+reports/v90_expanded_selector_candidates.csv,package_id,Пакет идентификатор,False,,,True
+reports/v90_expanded_selector_candidates.csv,source_group,Група на източника,False,,,True
+reports/v90_expanded_selector_candidates.csv,source_kind,Източник вид,False,,,True
+reports/v90_expanded_selector_candidates.csv,source_path,Източник път,False,,,True
+reports/v90_expanded_selector_candidates.csv,preferred_key,Предпочитан ключ,False,,,True
+reports/v91_budget_aware_system_options.csv,mode_label,Наименование на режима,False,,,True
+reports/v91_budget_aware_system_options.csv,core_size,Основни размер,False,,,True
+reports/v91_budget_aware_system_options.csv,core_numbers,Основни числа,False,,,True
+reports/v91_budget_aware_system_options.csv,selected_combinations,Избран комбинации,False,,,True
+reports/v91_budget_aware_system_options.csv,possible_full_combinations,Възможен пълен комбинации,False,,,True
+reports/v91_budget_aware_system_options.csv,pool_coverage_percent,Набор покритие %,False,,,True
+reports/v91_budget_aware_system_options.csv,cost_eur_at_080,Цена eur на 080,False,,,True
+reports/v91_budget_aware_system_options.csv,cost_eur_at_090,Цена eur на 090,False,,,True
+reports/v91_budget_aware_system_options.csv,exact_combination_probability_percent,Точни комбинация вероятност %,False,,,True
+reports/v91_budget_aware_system_options.csv,pair_coverage_percent,Двойка покритие %,False,,,True
+reports/v91_budget_aware_system_options.csv,triple_coverage_percent,Тройка покритие %,False,,,True
+reports/v91_budget_aware_system_options.csv,balance_score,Баланс оценка,False,,,True
+reports/v91_budget_aware_system_options.csv,historical_exact_matches,Исторически точни съвпадения,False,,,True
+reports/v91_budget_aware_system_options.csv,system_score,Система оценка,False,,,True
+reports/v91_recommended_system_combinations.csv,combination_index,Номер на комбинацията,False,,,True
+reports/v92_random_baseline_summary.csv,combination_count,Брой комбинации,False,,,True
+reports/v92_random_baseline_summary.csv,trials,Опити,False,,,True
+reports/v92_random_baseline_summary.csv,random_average_best_hits,Случаен средно най-добър познати числа,False,,,True
+reports/v92_random_baseline_summary.csv,random_empty_rate_percent,Случаен нулев резултат дял %,False,,,True
+reports/v92_random_baseline_summary.csv,random_at_least_3_percent,Случаен на поне 3 %,False,,,True
+reports/v92_random_baseline_summary.csv,random_at_least_4_percent,Случаен на поне 4 %,False,,,True
+reports/v92_random_baseline_summary.csv,random_max_best_hits_avg,Случаен най-висок най-добър познати числа средно,False,,,True
+reports/v92_strategy_backtest_results.csv,option_id,Вариант идентификатор,False,,,True
+reports/v92_strategy_backtest_results.csv,strategy_type,Тип стратегия,False,,,True
+reports/v92_strategy_backtest_results.csv,system_score_step91,Система оценка етап 91,False,,,True
+reports/v92_strategy_backtest_results.csv,average_total_row_hits,Средно общо ред познати числа,False,,,True
+reports/v92_strategy_backtest_results.csv,empty_rate_percent,Нулев резултат дял %,False,,,True
+reports/v92_strategy_backtest_results.csv,at_least_1_percent,На поне 1 %,False,,,True
+reports/v92_strategy_backtest_results.csv,exact_6_percent,Точни 6 %,False,,,True
+reports/v92_strategy_backtest_results.csv,historical_score,Исторически оценка,False,,,True
+reports/v92_strategy_backtest_results.csv,budget_efficiency_score,Бюджет ефективност оценка,False,,,True
+reports/v92_strategy_backtest_results.csv,average_hits_vs_random,Средно познати числа спрямо случаен,False,,,True
+reports/v92_strategy_backtest_results.csv,empty_rate_vs_random,Нулев резултат дял спрямо случаен,False,,,True
+reports/v92_strategy_match_distribution.csv,best_hit_bucket,Най-добър попадение група,False,,,True
+reports/v92_strategy_match_distribution.csv,draw_percent,Тираж %,False,,,True
+reports/v93_budget_advisor_scenarios.csv,budget_eur,Бюджет eur,False,,,True
+reports/v93_budget_advisor_scenarios.csv,price_per_combination_eur,Цена на комбинация (EUR),False,,,True
+reports/v93_budget_advisor_scenarios.csv,max_budget_combinations,Най-висок бюджет комбинации,False,,,True
+reports/v93_budget_advisor_scenarios.csv,cost_eur,Цена eur,False,,,True
+reports/v93_budget_advisor_scenarios.csv,remaining_budget_eur,Оставащ бюджет eur,False,,,True
+reports/v93_budget_advisor_scenarios.csv,historical_average_best_hits,Исторически средно най-добър познати числа,False,,,True
+reports/v93_budget_advisor_scenarios.csv,historical_empty_rate_percent,Исторически нулев резултат дял %,False,,,True
+reports/v93_budget_advisor_scenarios.csv,historical_at_least_3_percent,Исторически на поне 3 %,False,,,True
+reports/v93_budget_advisor_scenarios.csv,advisor_score,Оценка на съветника,False,,,True
+reports/v94_active_budget_plan_history.csv,plan_id,План идентификатор,False,,,True
+reports/v94_active_budget_plan_history.csv,saved_after_draw_year,Запазен след тираж година,False,,,True
+reports/v94_active_budget_plan_history.csv,saved_after_draw_number,Запазен след тираж число,False,,,True
+reports/v94_active_budget_plan_history.csv,saved_after_draw_date,Запазено след тиража от,False,,,True
+reports/v94_latest_plan_result.csv,matching_numbers,Съвпадащи числа,False,,,True
+reports/v94_latest_plan_result.csv,missing_numbers,Липсващи числа,False,,,True
+reports/v94_latest_plan_result.csv,is_empty,Без попадения,False,,,True
+reports/v94_latest_plan_result.csv,has_3_plus,Има поне 3 попадения,False,,,True
+reports/v94_latest_plan_result.csv,has_4_plus,Има поне 4 попадения,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,evaluated_at_utc,Оценено на,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,evaluated_draw_key,Оценено тираж ключ,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,best_combination_indexes,Номера на най-добрите комбинации,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,best_matching_numbers,Най-добре съвпадащи числа,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,total_hits_across_rows,Общо попадения във всички комбинации,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,rows_with_hits,Комбинации с попадения,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,rows_with_3_plus,Комбинации с поне 3 попадения,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,rows_with_4_plus,Комбинации с поне 4 попадения,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,verdict_bg,Заключение,False,,,True
+reports/v95_active_plan_auto_evaluation_history.csv,safe_note_bg,Безопасност бележка,False,,,True
+reports/v96_add_draw_controlled_flow_checklist.csv,title_bg,Наименование,False,,,True
+reports/v96_add_draw_controlled_flow_checklist.csv,when_bg,Кога,False,,,True
+reports/v96_add_draw_controlled_flow_checklist.csv,description_bg,Описание,False,,,True
+reports/v96_add_draw_controlled_flow_checklist.csv,guard_bg,Защита,False,,,True
+reports/v97_real_draw_lifecycle_artifacts.csv,artifact_group,Артефакт група,True,,,True
+reports/v97_real_draw_lifecycle_artifacts.csv,purpose_bg,Предназначение,False,,,True
+reports/v97_real_draw_lifecycle_artifacts.csv,owner_step,Собственик Етап,False,,,True
+reports/v97_real_draw_lifecycle_checklist.csv,page_bg,Страница,False,,,True
+reports/v97_real_draw_lifecycle_checklist.csv,expected_artifact_bg,Очакван артефакт,True,,,True
+reports/v97_real_draw_lifecycle_checklist.csv,status_rule_bg,Статус правило,False,,,True
+reports/v98_active_plan_result_history.csv,performance_bucket_bg,Представяне група,False,,,True
+reports/v98_active_plan_summary.csv,cost_text,Цена текст,False,,,True
+reports/v98_active_plan_summary.csv,saved_after_draw_numbers,Запазен след тираж числа,False,,,True
+reports/v98_active_plan_summary.csv,v95_status,V95 статус,False,,,True
+reports/v98_active_plan_summary.csv,real_result_rows,Реален резултат комбинации,False,,,True
+reports/v98_active_plan_summary.csv,best_hit_count_max,Най-добър попадение брой най-висок,False,,,True
+reports/v98_active_plan_summary.csv,best_hit_count_average,Най-добър попадение брой средно,False,,,True
+reports/v98_active_plan_summary.csv,rows_with_3_plus_rate_percent,Комбинации с 3 или повече дял %,False,,,True
+reports/v98_active_plan_summary.csv,rows_with_4_plus_rate_percent,Комбинации с 4 или повече дял %,False,,,True
+reports/v98_active_plan_summary.csv,latest_result_date,Последен резултат дата,False,,,True
+reports/v98_active_plan_summary.csv,latest_verdict_bg,Последен заключение,False,,,True
+reports/v98_active_plan_summary.csv,next_status_bg,Следващ статус,False,,,True
+reports/v99_final_user_dashboard_actions.csv,is_ready,Е готов,False,,,True

@@ -60,17 +60,18 @@ def render_v145_experimental_neural_dynamics_section() -> None:
     random_summary = summary.get("random_summary", {}) or {}
     comparison = summary.get("comparison", {}) or {}
 
-    metrics = st.columns(5)
+    metrics = st.columns(4)
     metrics[0].metric(_t("Невронен модел", "Neural model"), f"{float(neural.get('average_best_hits', 0)):.4f}")
     metrics[1].metric(_t("Честотен модел", "Frequency model"), f"{float(frequency.get('average_best_hits', 0)):.4f}")
     metrics[2].metric(_t("Модел на скорошната активност", "Recency model"), f"{float(recency.get('average_best_hits', 0)):.4f}")
     metrics[3].metric(_t("Случаен модел", "Random model"), f"{float(random_summary.get('average_best_hits_mean', 0)):.4f}")
-    metrics[4].metric(
-        _t("Условия за допускане", "Promotion criteria"),
-        _t("ПРЕМИНАТО", "PASS") if comparison.get("promotion_gate_passed") else _t("БЛОКИРАНО", "BLOCKED"),
-    )
 
-    st.info(translate_value(str(comparison.get("interpretation", _t("Няма изпълнен експеримент.", "No experiment has been run.")))))
+    gate_passed = bool(comparison.get("promotion_gate_passed"))
+    if gate_passed:
+        st.success(_t("Решение: условията за допускане са изпълнени.", "Decision: promotion criteria passed."))
+    else:
+        st.warning(_t("Решение: моделът не е допуснат до работния режим.", "Decision: the model is not promoted to production mode."))
+    st.info(translate_value(comparison.get("interpretation") or _t("Все още няма изпълнен експеримент.", "No experiment has been run.")))
 
     with st.expander(_t("Нова експериментална проверка", "New experimental evaluation"), expanded=False):
         row1 = st.columns(4)

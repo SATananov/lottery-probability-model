@@ -730,11 +730,663 @@ VALUE_LABELS_BG: dict[str, str] = {
     "multi_seed_multi_period_neural": "Невронна проверка с няколко начални стойности и периода",
 }
 
+
+# Step 150.1 extends the display dictionary to dynamic report values and the
+# complete table-header inventory.  The source files remain unchanged; only
+# values passed to Streamlit are localized.
+BG_EXACT.update({
+    "The neural-dynamics sandbox did not pass the promotion gate on this historical holdout. It remains research-only and is not connected to ticket generation.":
+        "Лабораторията за невронна динамика не изпълни условията за допускане в този исторически период за независима проверка. Моделът остава само за изследване и не участва в генерирането на комбинации.",
+    "The neural robustness experiment did not pass every multi-seed, multi-period confidence and stability gate. The model remains research-only and isolated from ticket generation.":
+        "Проверката за устойчивост на невронния модел не изпълни всички изисквания за доверителност и стабилност при различните начални стойности и исторически периоди. Моделът остава само за изследване и е отделен от генерирането на комбинации.",
+    "No experiment has been run.": "Все още няма изпълнен експеримент.",
+    "No data": "Няма данни",
+    "None": "Няма данни",
+    "nan": "Няма данни",
+    "Active": "Активен",
+    "ACTIVE": "АКТИВЕН",
+    "Passed": "Преминато",
+    "Failed": "Непреминато",
+    "Pending": "Очаква обработка",
+    "Settled": "Оценено",
+    "Unsettled": "Неоценено",
+})
+
+BG_EXACT.update({
+    'Държи се близо до top weighted числата, но избягва прекалено концентриран фиш.': 'Следва водещите претеглени числа, но избягва прекалено концентриран фиш.',
+    'покрива непокрит top20 сигнал 16; заменя по-слаб rank 19 с по-силен rank 15; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието': 'покрива непокрит сигнал 16 от водещите 20; заменя по-слабото число на позиция 19 с по-силното на позиция 15; намалява повторените двойки; увеличава уникалното покритие и покритието на водещите 20 числа',
+    'покрива непокрит top20 сигнал 43; заменя по-слаб rank 19 с по-силен rank 18; намалява повторените двойки; увеличава уникалното покритие; увеличава top20 покритието': 'покрива непокрит сигнал 43 от водещите 20; заменя по-слабото число на позиция 19 с по-силното на позиция 18; намалява повторените двойки; увеличава уникалното покритие и покритието на водещите 20 числа',
+    'Next rerun opens the add-draw page through normal navigation state.': 'При следващото обновяване страницата за добавяне на тираж се отваря чрез нормалното състояние на навигацията.',
+    'Other app layers can still read the current selected page.': 'Останалите слоеве на приложението могат да прочетат текущо избраната страница.',
+    'Shortcut does not render the page directly after sidebar widgets are already created.': 'Бързият достъп не визуализира страницата директно, след като елементите в страничното меню вече са създадени.',
+    'The selected main section persists across Streamlit reruns.': 'Избраният главен раздел се запазва при повторно изпълнение на Streamlit.',
+    'The selected page persists while the user types in draw input fields.': 'Избраната страница се запазва, докато потребителят въвежда данни за тиража.',
+    'navigation group selectbox has stable key': 'Полето за избор на навигационна група има постоянен ключ.',
+    'sidebar shortcut stores pending add-draw page': 'Бързият достъп в страничното меню запазва предстоящото отваряне на страницата за добавяне на тираж.',
+    'sidebar shortcut stores pending navigation group': 'Бързият достъп в страничното меню запазва предстоящата навигационна група.',
+    'Финален контролен слой за проверка на model artifacts, dependency map и sync status.': 'Финален контролен слой за проверка на моделните артефакти, картата на зависимостите и състоянието на синхронизацията.',
+    'Финален пакет за предаване readiness и clean ZIP контролен слой след Step 81.': 'Финален контролен слой за готовността на пакета за предаване и чистия ZIP архив след етап 81.',
+    '48 реда, 1 snapshot, 6 групи x 8 комбинации.': '48 реда, 1 моментно състояние и 6 групи по 8 комбинации.',
+    'A new official draw updates the model dataset layer, but heavy ML retraining remains a deliberate manual step.': 'Нов официален тираж обновява слоя с моделни данни, но тежкото преобучение на моделите остава съзнателна ръчна стъпка.',
+    'Adaptive weighting is a statistical signal-management layer. It does not guarantee a win or future lottery results.': 'Адаптивното претегляне е статистически слой за управление на сигналите. То не гарантира печалба или бъдещи лотарийни резултати.',
+    'At each holdout point, the neural readout, frequency scores and recency scores use only strictly earlier draws.': 'Във всяка точка на независимата проверка невронният модел, честотните оценки и оценките за скорошна активност използват само по-ранни тиражи.',
+    'Dataset row count се увеличава само след успешен запис или replace на съществуващо теглене.': 'Броят на редовете в данните се увеличава само след успешен запис или замяна на съществуващо теглене.',
+    'Each target draw is scored before it is added to the expanding training state.': 'Всеки целеви тираж се оценява, преди да бъде добавен към разширяващото се обучаващо състояние.',
+    'Git tracked file list is available for clean ZIP creation.': 'Списъкът с проследяваните от Git файлове е наличен за създаване на чист ZIP архив.',
+    'GitHub sync и dependency контролът потвърждават, че app, reports и models са в синхрон.': 'Синхронизацията с GitHub и контролът на зависимостите потвърждават, че приложението, отчетите и моделите са синхронизирани.',
+    'Historical model reliability dashboard only. This is not a prediction guarantee.': 'Таблото показва само историческата надеждност на моделите. То не е гаранция за бъдеща прогноза.',
+    'Historical post-draw model performance tracking only. This is not a prediction guarantee.': 'Проследяването показва само историческото представяне на моделите след тиража. То не е гаранция за бъдеща прогноза.',
+    'Sidebar shortcut вече описва реалното действие по-точно.': 'Бързият достъп в страничното меню вече описва реалното действие по-точно.',
+    'Step 102 runtime защита е активна в Add Draw refresh flow.': 'Защитата на работната среда от етап 102 е активна в процеса за обновяване след добавяне на тираж.',
+    'Step 107 се обновява след бъдещ Add Draw fast refresh.': 'Етап 107 се обновява след бъдещо бързо обновяване при добавяне на тираж.',
+    'Streamlit label: Финален пакет за предаване': 'Наименование в Streamlit: Финален пакет за предаване',
+    'These are statistical improvement suggestions. They do not guarantee a win or future lottery results.': 'Това са статистически предложения за подобрение. Те не гарантират печалба или бъдещи лотарийни резултати.',
+    'This component statistically optimizes a portfolio of ticket combinations. It does not guarantee a win or future lottery results.': 'Този компонент оптимизира статистически портфейл от комбинации. Той не гарантира печалба или бъдещи лотарийни резултати.',
+    'This is a statistical analysis artifact, not a winning guarantee. Lottery draws are random.': 'Това е артефакт от статистически анализ, а не гаранция за печалба. Лотарийните тиражи са случайни.',
+    'This is a weighted statistical ensemble layer. It does not guarantee a win or future lottery results.': 'Това е претеглен статистически ансамблов слой. Той не гарантира печалба или бъдещи лотарийни резултати.',
+    'This is a weighted statistical ticket builder. It does not guarantee a win or future lottery results.': 'Това е претеглен статистически модул за изграждане на фишове. Той не гарантира печалба или бъдещи лотарийни резултати.',
+    'This is an applied statistical reference portfolio. It does not guarantee a win or future lottery results.': 'Това е приложен статистически референтен портфейл. Той не гарантира печалба или бъдещи лотарийни резултати.',
+    'Tracked files do not include .git, cache, helper patch files, nested ZIPs, or temp artifacts.': 'Проследяваните файлове не включват `.git`, кешове, помощни поправки, вложени ZIP архиви или временни артефакти.',
+    'ZIP creation uses tracked project files only, so .git and cache folders are excluded by design.': 'ZIP архивът се създава само от проследяваните проектни файлове, затова `.git` и кеш папките са изключени по замисъл.',
+    'candidate portfolio accepted as improved статистическа референция': 'кандидат-портфейлът е приет като подобрена статистическа референция',
+    'post-draw analyzer; used for reliability context, not direct score source': 'анализатор след тиража; използва се за контекст на надеждността, а не като директен източник на оценки',
+    'v67 и v75 остават налични, но не са default fast refresh блокер.': 'v67 и v75 остават налични, но не блокират стандартното бързо обновяване.',
+    'Валидни 6 различни числа между 1 и 49; bonus не се смесва с основните числа.': 'Валидни са 6 различни числа между 1 и 49; допълнителното число не се смесва с основните числа.',
+    'Всички важни build scripts трябва да минават без грешка.': 'Всички важни скриптове за изграждане трябва да завършват без грешка.',
+    'Запиши тиража и пусни refresh chain-а след save.': 'Запиши тиража и стартирай веригата за обновяване след записа.',
+    'Най-добър резултат: 90 epochs. 500 не е активен.': 'Най-добър резултат: 90 епохи. Вариантът с 500 епохи не е активен.',
+    'Няма основни остатъчни developer маркери в проверените user-facing файлове.': 'Няма основни остатъчни технически маркери във файловете, видими за потребителя.',
+    'Няма счупена кирилица в проверените user-facing файлове.': 'Няма повредена кирилица във файловете, видими за потребителя.',
+    'Сравнява 90, 150, 300 и 500 epochs. Не сменя активния модел.': 'Сравнява 90, 150, 300 и 500 епохи. Не сменя активния модел.',
+    'Създава се clean ZIP от committed Git state и се проверява строго.': 'Създава се чист ZIP архив от записаното в Git състояние и се проверява строго.',
+    'Add Draw reads active_plan_label_bg instead of hard-coded budget-plan text.': 'Страницата за добавяне на тираж използва динамичното българско наименование на активния план вместо вграден текст.',
+    'All simulated operational layers are synchronized.': 'Всички симулирани оперативни слоеве са синхронизирани.',
+    'At each holdout point, only strictly earlier draws are available to the frequency baseline.': 'Във всяка точка на независимата проверка честотният базов модел използва само по-ранни тиражи.',
+    'Average spread between max and min number.': 'Среден диапазон между най-голямото и най-малкото число.',
+    'Canonical данни has valid main draw events and no duplicate keys. Bonus numbers are unavailable and must not be invented.': 'Каноничните данни съдържат валидни основни тегления без дублирани ключове. Допълнителните числа не са налични и не трябва да се измислят.',
+    'Chi-square test against uniform number frequency.': 'Хи-квадрат тест спрямо равномерна честота на числата.',
+    'Controlled multi-seed, multi-period neural robustness validation': 'Контролирана проверка на устойчивостта на невронния модел с няколко начални стойности и исторически периода',
+    'Each saved real ticket should have 4 combinations.': 'Всеки запазен реален фиш трябва да съдържа 4 комбинации.',
+    'Experimental Evidence Synthesis & Research Decision Gate': 'Обобщаване на експерименталните доказателства и решение за изследователските модели',
+    'Fallback режимът разчита печалбите по категории.': 'Резервният режим разчита печалбите по категории.',
+    'Forced failure restored both sandbox source files.': 'Принудителната грешка възстанови и двата изходни файла в изолираната тестова среда.',
+    'Four combinations are generated for a full ticket with 4 x 6 numbers. Repetition is limited and combinations are diversified. They are statistical suggestions, not predictions with a guarantee.': 'За пълен фиш се генерират 4 комбинации по 6 числа. Повторенията са ограничени, а комбинациите са разнообразени. Това са статистически предложения, а не гарантирани прогнози.',
+    'Global Bulgarian UI, Table Localization & Technical Detail Separation': 'Глобален български интерфейс, локализация на таблиците и отделяне на техническите подробности',
+    'Hotfix слой: синхронизира визуалния Add Draw статус с реалния готов фиш пакет. Не променя числата и не обещава печалба.': 'Поправката синхронизира видимото състояние при добавяне на тираж с действително готовия пакет с фишове. Не променя числата и не обещава печалба.',
+    'Lottery draws are random. Backtest metrics are evaluation diagnostics, not a guarantee of future outcomes.': 'Лотарийните тиражи са случайни. Показателите от историческата проверка са диагностични оценки, а не гаранция за бъдещи резултати.',
+    'Lottery draws are random. Scores are historical rankings, not guaranteed predictions.': 'Лотарийните тиражи са случайни. Оценките са исторически класирания, а не гарантирани прогнози.',
+    'Lottery draws are random. Scores are recency rankings, not guaranteed predictions.': 'Лотарийните тиражи са случайни. Оценките са класирания по скорошна активност, а не гарантирани прогнози.',
+    'Lottery draws are random. These are ranking-based model outputs, not guaranteed winning numbers.': 'Лотарийните тиражи са случайни. Това са моделни резултати за класиране, а не гарантирани печеливши числа.',
+    'Lottery draws are random. This model provides ranking scores, not guaranteed predictions.': 'Лотарийните тиражи са случайни. Моделът предоставя оценки за класиране, а не гарантирани прогнози.',
+    'Main UI uses Bulgarian labels and hides raw ids from card titles.': 'Основният интерфейс използва български наименования и скрива вътрешните идентификатори от заглавията на картите.',
+    'No comparison in the Step 144–146 evidence chain demonstrates robust positive superiority. The current neural configuration is therefore paused and archived; production promotion remains blocked.': 'Нито едно сравнение във веригата от доказателства за етапи 144–146 не показва устойчиво положително превъзходство. Затова текущата невронна конфигурация е спряна и архивирана, а допускането до работния режим остава блокирано.',
+    'No strong evidence against fair-looking number frequencies.': 'Не са открити убедителни доказателства срещу привидно равномерното разпределение на честотите на числата.',
+    'Opening the Step 103 Streamlit page builds a live summary without dirtying tracked report files.': 'Отварянето на страницата за етап 103 в Streamlit създава актуално обобщение, без да променя проследяваните отчетни файлове.',
+    'Played package can be copied as plain text.': 'Изиграният пакет може да бъде копиран като обикновен текст.',
+    'Ranks numbers that are historically below expected frequency, have larger recency gaps, and are cold in the recent window.': 'Класира числа, които исторически са под очакваната честота, имат по-големи интервали от последната поява и са неактивни в скорошния прозорец.',
+    'Real project draw files were not changed.': 'Реалните файлове с тиражи в проекта не са променени.',
+    'Repository Hygiene, Privacy & Authorship Transparency': 'Хигиена на хранилището, поверителност и прозрачност на авторството',
+    'Simulated newer official draw 2026-54 detected.': 'Открит е симулиран по-нов официален тираж 2026-54.',
+    'Statistical analysis only. Lottery draws remain random and there is no winning guarantee.': 'Само статистически анализ. Лотарийните тиражи остават случайни и няма гаранция за печалба.',
+    'Statistical audit only. Lottery outcomes are random and no winning result is guaranteed.': 'Само статистическа проверка. Лотарийните резултати са случайни и не се гарантира печеливш резултат.',
+    'Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058.': 'Етап 106 е слой за синхронизация след тиража. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели състояния като „За преглед“ или стар брой редове.',
+    'Step 120 refreshes model datasets after БСТ sync. Heavy ML retraining remains manual.': 'Етап 120 обновява моделните данни след синхронизация с БСТ. Тежкото преобучение на моделите остава ръчно.',
+    'Step 147 е research governance слой. Той обобщава исторически експерименти, не прогнозира бъдещи тиражи, не генерира реални фишове и не включва experimental модел в production pipeline.': 'Етап 147 е слой за управление на изследванията. Той обобщава исторически експерименти, не прогнозира бъдещи тиражи, не генерира реални фишове и не включва експериментален модел в работната верига.',
+    'The report inside the ZIP can show CLEAN_ZIP_CREATED for the exact current commit.': 'Отчетът в ZIP архива може да покаже „Чистият ZIP е създаден“ за точния текущ запис в Git.',
+    'The terminal create script reports whether metadata was written inside the ZIP and the working tree stayed clean.': 'Скриптът за създаване в терминала отчита дали метаданните са записани в ZIP архива и дали работното дърво е останало чисто.',
+    'This is a statistical training audit, not a prediction guarantee.': 'Това е статистическа проверка на обучението, а не гаранция за прогноза.',
+    'This is a statistical training baseline. It identifies numbers near the historical middle, but it does not guarantee future lottery results.': 'Това е статистически базов модел за обучение. Той определя числа близо до историческата среда, но не гарантира бъдещи лотарийни резултати.',
+    'This is a training baseline, not a guarantee. Lottery draws should still be treated as random unless historical backtesting demonstrates a stable signal.': 'Това е базов модел за обучение, а не гаранция. Лотарийните тиражи трябва да се приемат за случайни, освен ако историческата проверка не покаже устойчив сигнал.',
+    'This is a transparent statistical training model. It ranks numbers using historical frequency, recent frequency, and recency gaps. It does not prove or guarantee future outcomes.': 'Това е прозрачен статистически модел за обучение. Той класира числата според историческата честота, скорошната честота и интервалите от последната поява. Не доказва и не гарантира бъдещи резултати.',
+    'This model does not change the real lottery jackpot probability. It gives a relative statistical confidence score among generated candidates.': 'Този модел не променя реалната вероятност за джакпот. Той дава относителна статистическа оценка на увереността между генерираните кандидати.',
+    'Открит е marker за тираж 47, но липсва година за надеждно сравнение.': 'Открит е маркер за тираж 47, но липсва година за надеждно сравнение.',
+    'Статистически neural meta-layer. Не е гаранция за печалба и не отменя случайността на лотарията.': 'Статистически невронен мета слой. Не е гаранция за печалба и не отменя случайността на лотарията.',
+    'Страница без подробно заглавие се разчита чрез fallback режим.': 'Страница без подробно заглавие се разчита чрез резервен режим.',
+    'Това е изолиран исторически sandbox експеримент. Neural-dynamics моделът не е включен в production pipeline, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи.': 'Това е изолиран исторически експеримент. Моделът с невронна динамика не е включен в работната верига, не създава реални фишове и не доказва предвидимост на бъдещи случайни тиражи.',
+})
+
+FIELD_LABELS_BG.update({
+    # Universal user-facing fields
+    "date": "Дата", "year": "Година", "draw_no": "Номер на тиража",
+    "drawing_no": "Номер на тегленето", "draw_number": "Номер на тиража",
+    "draw_position": "Позиция на тегленето", "bonus_number": "Допълнително число",
+    "source": "Източник", "source_label": "Наименование на източника",
+    "source_url": "Адрес на източника", "data_status": "Състояние на данните",
+    "note": "Бележка", "note_bg": "Бележка", "safe_note": "Бележка за безопасност",
+    "details": "Подробности", "details_bg": "Подробности", "check": "Проверка",
+    "blocking": "Блокиращо", "area": "Област", "phase": "Етап",
+    "action": "Действие", "order": "Ред", "step": "Етап", "exists": "Наличен",
+    "label": "Наименование", "name": "Наименование", "model_name": "Модел",
+    "model_label": "Наименование на модела", "model_key": "Ключ на модела",
+    "strategy_label": "Наименование на стратегията", "strategy_type": "Тип стратегия",
+    "ticket_id": "Идентификатор на фиша", "ticket_label": "Наименование на фиша",
+    "line_no": "Номер на комбинацията", "role_bg": "Роля", "role": "Роля",
+    "text": "Текст", "numbers_text": "Изтеглени числа", "file": "Файл",
+    "path": "Път", "version": "Версия", "format": "Формат", "message": "Съобщение",
+    "page": "Страница", "section": "Раздел", "purpose": "Предназначение",
+    "output": "Изход", "outputs": "Изходи", "input": "Вход", "inputs": "Входове",
+    "artifact": "Артефакт", "artifacts": "Артефакти", "validation": "Проверка",
+    "verdict": "Заключение", "category": "Категория", "type": "Тип",
+    "mode": "Режим", "flag": "Маркер", "present": "Наличен", "ok": "Изрядно",
+    # Draw and prize fields
+    "draw_date": "Дата на тиража", "draw_year": "Година на тиража",
+    "jackpot_eur": "Джакпот (EUR)", "imported_at_utc": "Импортирано на",
+    "winners_6": "Печеливши с 6 числа", "winners_5": "Печеливши с 5 числа",
+    "winners_4": "Печеливши с 4 числа", "winners_3": "Печеливши с 3 числа",
+    "prize_6_eur": "Печалба за 6 числа (EUR)", "prize_5_eur": "Печалба за 5 числа (EUR)",
+    "prize_4_eur": "Печалба за 4 числа (EUR)", "prize_3_eur": "Печалба за 3 числа (EUR)",
+    "total_6_eur": "Общо за 6 числа (EUR)", "total_5_eur": "Общо за 5 числа (EUR)",
+    "total_4_eur": "Общо за 4 числа (EUR)", "total_3_eur": "Общо за 3 числа (EUR)",
+    # Common statistics and ticket structure
+    "rank": "Класиране", "sum": "Сума", "odd_count": "Нечетни числа",
+    "even_count": "Четни числа", "low_count": "Ниски числа", "high_count": "Високи числа",
+    "hit_count": "Брой попадения", "match_count": "Брой съвпадения",
+    "combination": "Комбинация", "combination_count": "Брой комбинации",
+    "combination_index": "Номер на комбинацията", "unique_covered_numbers": "Уникално покрити числа",
+    "coverage_percent": "Покритие (%)", "empty_risk_percent": "Риск от нулев резултат (%)",
+    "average_interval": "Среден интервал", "current_gap": "Текущ интервал",
+    "average_gap": "Среден интервал", "gap_ratio": "Коефициент на интервала",
+    "overdue_score": "Оценка за просрочване", "appearances": "Появявания",
+    "recent_25": "Появявания в последните 25 тиража",
+    "recent_50": "Появявания в последните 50 тиража",
+    "recent_100": "Появявания в последните 100 тиража",
+    "probability": "Вероятност", "probability_percent": "Вероятност (%)",
+    "weight": "Тегло", "strength": "Сила", "stability": "Устойчивост",
+    "cost": "Цена", "price": "Цена", "budget": "Бюджет",
+    # Historical evaluation fields
+    "draws": "Тиражи", "draws_tested": "Проверени тиражи", "units": "Изпълнения",
+    "mean_best_hits_difference": "Средна разлика в най-добрия резултат",
+    "difference": "Разлика", "mean_difference": "Средна разлика",
+    "wins": "Победи", "ties": "Равенства", "losses": "Загуби",
+    "two_sided_sign_test_p_value": "p-стойност от двустранен знаков тест",
+    "confidence_level": "Ниво на доверие",
+    "bootstrap_ci_lower": "Долна граница на доверителния интервал",
+    "bootstrap_ci_upper": "Горна граница на доверителния интервал",
+    "max_best_hits": "Най-висок резултат", "median_best_hits": "Медианен резултат",
+    "at_least_2_percent": "Поне 2 попадения (%)", "at_least_3_percent": "Поне 3 попадения (%)",
+    "at_least_4_percent": "Поне 4 попадения (%)", "at_least_5_percent": "Поне 5 попадения (%)",
+    "exact_6_count": "Точни 6 попадения", "uniform_random_mean_best_hits": "Среден резултат на случайния модел",
+    "seed_advantages": "Разлики по начални стойности", "fold_advantages": "Разлики по исторически периоди",
+    "best_hits_distribution": "Разпределение на резултатите",
+    # Model output columns
+    "neural_dynamics_reservoir": "Невронен модел",
+    "neural_dynamics_frozen_ensemble": "Замразен ансамбъл с невронна динамика",
+    "frequency_walk_forward": "Честотен модел",
+    "recency_weighted_walk_forward": "Модел на скорошната активност",
+    "recent_window_frequency": "Честотен модел в скорошен прозорец",
+    "frequency_recency_blend": "Смесен честотен и скорошен модел",
+    "uniform_random_mean": "Среден резултат — случаен модел",
+})
+
+FIELD_WORDS_BG.update({
+    "safe": "безопасност", "note": "бележка", "check": "проверка",
+    "ticket": "фиш", "tickets": "фишове", "details": "подробности", "bg": "",
+    "blocking": "блокиращо", "date": "дата", "year": "година", "label": "наименование",
+    "low": "ниски", "high": "високи", "odd": "нечетни", "even": "четни",
+    "combination": "комбинация", "combinations": "комбинации", "drawing": "теглене",
+    "no": "номер", "position": "позиция", "bonus": "допълнително", "rank": "класиране",
+    "unique": "уникални", "covered": "покрити", "text": "текст", "role": "роля",
+    "order": "ред", "sum": "сума", "interval": "интервал", "overdue": "просрочване",
+    "appearances": "появявания", "recent": "последни", "window": "прозорец",
+    "walk": "последователна", "forward": "историческа проверка", "weighted": "претеглен",
+    "blend": "смесен", "minus": "минус", "uniform": "равномерно", "dynamics": "динамика",
+    "reservoir": "резервоар", "units": "изпълнения", "confidence": "доверие",
+    "level": "ниво", "bootstrap": "статистически", "ci": "доверителен интервал",
+    "wins": "победи", "ties": "равенства", "losses": "загуби",
+    "two": "двустранен", "sided": "", "sign": "знаков", "test": "тест",
+    "p": "p", "value": "стойност", "none": "няма данни", "active": "активен",
+    "winners": "печеливши", "prize": "печалба", "total": "общо", "jackpot": "джакпот",
+    "imported": "импортирано", "data": "данни", "key": "ключ", "name": "наименование",
+    "exists": "наличен", "role": "роля", "tested": "проверени", "max": "най-висок",
+    "least": "поне", "exact": "точни", "percent": "%", "risk": "риск",
+    "empty": "нулев резултат", "plan": "план", "saved": "запазен", "physical": "хартиен",
+    "price": "цена", "budget": "бюджет", "cost": "цена", "strategy": "стратегия",
+    "description": "описание", "purpose": "предназначение", "section": "раздел",
+    "page": "страница", "format": "формат", "message": "съобщение", "action": "действие",
+    "blocking": "блокиращо", "reason": "причина", "passed": "преминато",
+})
+
+FIELD_LABELS_BG.update({
+    "band": "Диапазон", "actual_numbers": "Действително изтеглени числа",
+    "combined_score": "Комбинирана оценка", "reliability_score": "Оценка за надеждност",
+    "last_seen_index": "Последна поява", "pair": "Двойка", "profile_score": "Оценка на профила",
+    "draws_since_last_seen": "Тиражи от последната поява",
+    "interval_stability_score": "Оценка за устойчивост на интервала",
+    "final_score": "Крайна оценка", "pattern_score": "Оценка на шаблона",
+    "coverage_score": "Оценка на покритието", "number_profile_score": "Оценка на профила на числата",
+    "hot_cold_balance_score": "Оценка на баланса между активни и неактивни числа",
+    "similarity_context_score": "Оценка на сходството", "number_range": "Диапазон на числата",
+    "historical_exact_match": "Точно историческо съвпадение",
+    "explainability_score": "Оценка за обяснимост", "spread": "Разпределение",
+    "warning": "Предупреждение", "recommendation_level": "Ниво на препоръката",
+    "size_bytes": "Размер (байтове)", "metric": "Показател", "frequency_share": "Дял на честотата",
+    "expected_uniform_count": "Очакван брой при равномерно разпределение",
+    "diff_from_expected": "Разлика спрямо очакваното", "rank_desc": "Класиране",
+    "share_of_all_drawn_numbers": "Дял от всички изтеглени числа",
+    "ticket_table_no": "Номер на таблицата на фиша", "area_bg": "Област", "phase_bg": "Етап",
+    "r_blended_score": "Оценка, комбинирана с R",
+    "latest_draw_repeat_flag": "Повторение от последния тираж",
+    "latest_draw_neighbor_flag": "Съседно число спрямо последния тираж",
+    "r_current_gap": "Текущ интервал според R",
+    "r_monte_carlo_observed": "Наблюдавана стойност от Монте Карло",
+    "r_monte_carlo_expected": "Очаквана стойност от Монте Карло",
+    "r_monte_carlo_deviation": "Отклонение от Монте Карло",
+    "trial": "Опит", "runs": "Изпълнения", "predicted_top6": "Прогнозирани водещи 6 числа",
+    "frequency_ratio": "Коефициент на честотата", "median_interval": "Медианен интервал",
+    "consecutive_pairs": "Последователни двойки",
+    "appearance_vs_expected_ratio": "Съотношение между наблюдавано и очаквано",
+    "main_group": "Основна група", "categories": "Категории",
+    "current_gap_ratio": "Коефициент на текущия интервал",
+    "matching_numbers_text": "Съвпадащи числа", "matching_numbers": "Съвпадащи числа",
+    "tracked_draws": "Проследени тиражи", "hit_rate_2_plus": "Дял с поне 2 попадения",
+    "hit_rate_3_plus": "Дял с поне 3 попадения", "consistency_score": "Оценка за последователност",
+    "balance_status": "Състояние на баланса", "changed": "Променено",
+    "removed_numbers": "Премахнати числа", "added_numbers": "Добавени числа",
+    "original_numbers": "Първоначални числа", "average_score_delta": "Средна промяна на оценката",
+    "combination_in_ticket": "Комбинация във фиша", "numbers_display": "Числа",
+    "latest_output_mtime": "Последна промяна на изхода", "main_reasons": "Основни причини",
+    "caution_notes": "Бележки за внимание", "top10_overlap": "Припокриване с водещите 10",
+    "structure_score": "Оценка на структурата", "check_item": "Елемент за проверка",
+    "kind": "Вид", "group_name": "Име на групата",
+    "at_least_one_hit_percent": "Поне едно попадение (%)",
+    "model_strength_score": "Оценка на силата на модела", "source_group": "Група на източника",
+    "preferred_key": "Предпочитан ключ", "mode_label": "Наименование на режима",
+    "price_per_combination_eur": "Цена на комбинация (EUR)", "advisor_score": "Оценка на съветника",
+    "saved_after_draw_date": "Запазено след тиража от", "missing_numbers": "Липсващи числа",
+    "is_empty": "Без попадения", "has_3_plus": "Има поне 3 попадения",
+    "has_4_plus": "Има поне 4 попадения", "evaluated_at_utc": "Оценено на",
+    "best_combination_indexes": "Номера на най-добрите комбинации",
+    "best_matching_numbers": "Най-добре съвпадащи числа",
+    "total_hits_across_rows": "Общо попадения във всички комбинации",
+    "rows_with_hits": "Комбинации с попадения", "rows_with_3_plus": "Комбинации с поне 3 попадения",
+    "rows_with_4_plus": "Комбинации с поне 4 попадения", "verdict_bg": "Заключение",
+    "guard_bg": "Защита", "validation_errors": "Грешки при проверката",
+    "rules_version": "Версия на правилата", "parser_format": "Формат на прочитане",
+    "why_bg": "Причина", "expected_result_bg": "Очакван резултат", "relative_path": "Относителен път",
+})
+
+FIELD_WORDS_BG.update({
+    "band": "диапазон", "actual": "действителни", "combined": "комбиниран",
+    "reliability": "надеждност", "last": "последен", "seen": "поява", "pair": "двойка",
+    "profile": "профил", "since": "от", "stability": "устойчивост", "final": "краен",
+    "pattern": "шаблон", "coverage": "покритие", "hot": "активни", "cold": "неактивни",
+    "balance": "баланс", "similarity": "сходство", "context": "контекст", "range": "диапазон",
+    "match": "съвпадение", "matching": "съвпадащи", "explainability": "обяснимост",
+    "spread": "разпределение", "warning": "предупреждение", "recommendation": "препоръка",
+    "size": "размер", "bytes": "байтове", "metric": "показател", "share": "дял",
+    "expected": "очакван", "diff": "разлика", "from": "спрямо", "desc": "низходящо",
+    "all": "всички", "drawn": "изтеглени", "table": "таблица", "area": "област",
+    "phase": "етап", "blended": "комбиниран", "repeat": "повторение", "neighbor": "съседно",
+    "current": "текущ", "observed": "наблюдаван", "deviation": "отклонение",
+    "trial": "опит", "runs": "изпълнения", "predicted": "прогнозирани", "median": "медианен",
+    "consecutive": "последователни", "appearance": "поява", "main": "основни",
+    "categories": "категории", "tracked": "проследени", "plus": "или повече",
+    "consistency": "последователност", "changed": "променено", "removed": "премахнати",
+    "added": "добавени", "original": "първоначални", "delta": "промяна", "in": "в",
+    "display": "показване", "mtime": "време на промяна", "reasons": "причини",
+    "caution": "внимание", "notes": "бележки", "structure": "структура", "item": "елемент",
+    "kind": "вид", "group": "група", "one": "едно", "preferred": "предпочитан",
+    "mode": "режим", "per": "за", "advisor": "съветник", "after": "след",
+    "missing": "липсващи", "is": "е", "has": "има", "evaluated": "оценено",
+    "indexes": "номера", "across": "във всички", "rows": "комбинации", "verdict": "заключение",
+    "guard": "защита", "errors": "грешки", "rules": "правила", "parser": "прочитане",
+    "why": "причина", "relative": "относителен", "of": "от", "to": "до",
+    "before": "преди", "after": "след", "with": "с", "above": "над",
+})
+
+FIELD_WORDS_BG.update({
+    "next": "следващ", "top6": "водещи 6", "rhythm": "ритъм", "absence": "отсъствие",
+    "probability": "вероятност", "ensemble": "ансамбъл", "signal": "сигнал", "ratio": "коефициент",
+    "system": "система", "min": "минимален", "remaining": "оставащ", "balanced": "балансиран",
+    "groups": "групи", "remove": "премахни", "add": "добави", "outputs": "изходи",
+    "ok": "изрядно", "present": "наличен", "bucket": "група", "train": "обучение",
+    "loss": "загуба", "avg": "средно", "simulated": "симулиран", "pack": "пакет",
+    "frozen": "замразен", "vote": "глас", "std": "стандартно отклонение", "safety": "безопасност",
+    "consensus": "съгласие", "strong": "силни", "strength": "сила", "query": "заявка",
+    "adaptive": "адаптивен", "weight": "тегло", "decade": "десетилетие", "triple": "тройка",
+    "other": "други", "duplicate": "дубликат", "steps": "етапи", "when": "кога",
+    "real": "реален", "p05": "5-и персентил", "p95": "95-и персентил",
+    "included": "включен", "cadence": "периодичност", "scripts": "скриптове", "lines": "комбинации",
+    "global": "общ", "training": "обучаващи", "initial": "начални", "first": "първи",
+    "scope": "обхват", "time": "време", "sequence": "последователност", "unlocked": "незаключени",
+    "chosen": "избрани", "difference": "разлика", "coefficient": "коефициент", "variation": "вариация",
+    "p25": "25-и персентил", "p75": "75-и персентил", "p90": "90-и персентил",
+    "survived": "преминали", "intervals": "интервали", "for": "за", "due": "дължимост",
+    "closeness": "близост", "regularity": "регулярност", "support": "подкрепа", "beyond": "извън",
+    "agreement": "съгласие", "distribution": "разпределение", "importance": "важност",
+    "signed": "със знак", "watch": "наблюдение", "combo": "комбинация", "span": "обхват",
+    "pct": "%", "activity": "активност", "valid": "валиден", "different": "различни",
+    "factor": "коефициент", "base": "базова", "adjusted": "коригирана", "sources": "източници",
+    "shared": "общи", "help": "помощ", "contribution": "принос", "suggested": "предложени",
+    "gain": "подобрение", "tail": "опашка", "datasets": "набори от данни",
+    "dependencies": "зависимости", "inputs": "входове", "feeds": "източници", "percentile": "персентил",
+    "short": "кратък", "trend": "тенденция", "adjacent": "съседни", "warnings": "предупреждения",
+    "discipline": "дисциплина", "compact": "компактен", "execution": "изпълнение",
+    "parse": "прочитане", "keys": "ключове", "pages": "страници", "literal": "текст",
+    "found": "намерен", "relevant": "относим", "user": "потребител", "use": "употреба",
+    "recommended": "препоръчано", "behavior": "поведение", "if": "ако", "ignored": "игнориран",
+    "priority": "приоритет", "epochs": "епохи", "start": "начало", "en": "английски",
+    "reference": "референтен", "primary": "основен", "quality": "качество", "anti": "защита от",
+    "zero": "нулев", "conservative": "консервативен", "aggressive": "агресивен",
+    "selected": "избран", "possible": "възможен", "full": "пълен", "pool": "набор",
+    "matches": "съвпадения", "trials": "опити", "option": "вариант", "row": "ред",
+    "efficiency": "ефективност", "owner": "собственик", "rule": "правило",
+    "performance": "представяне", "ready": "готов", "copies": "копия", "redundant": "излишни",
+    "paths": "пътища", "widget": "елемент", "bulgarian": "български", "english": "английски",
+    "forbidden": "забранени", "tokens": "термини", "unexpected": "неочаквани",
+    "ascii": "латиница", "words": "думи", "pass": "преминато", "statistic": "статистика",
+    "below": "под", "option": "вариант", "category": "категория",
+})
+
+VALUE_LABELS_BG.update({
+    "neural_dynamics_frozen_ensemble": "Замразен ансамбъл с невронна динамика",
+    "active": "Активен", "inactive": "Неактивен", "passed": "Преминато",
+    "failed": "Непреминато", "pending": "Очаква обработка", "settled": "Оценено",
+    "unsettled": "Неоценено", "ready": "Готово", "not_ready": "Не е готово",
+    "none": "Няма данни", "nan": "Няма данни", "null": "Няма данни",
+})
+
+VALUE_LABELS_BG.update({
+    'normal': 'Нормално',
+    'middle': 'Средна група',
+    'planned': 'Планирано',
+    'watch_zone': 'Зона за наблюдение',
+    'late': 'Закъсняло',
+    'under_expected': 'Под очакваното',
+    'over_expected': 'Над очакваното',
+    'python_compile': 'Компилация на Python',
+    'early': 'Ранно',
+    'normal_interval': 'Нормален интервал',
+    'refreshed_in_test_sandbox': 'Обновено в изолирана тестова среда',
+    'strongly_overdue': 'Силно просрочено',
+    'above_middle': 'Над средната група',
+    'below_middle': 'Под средната група',
+    'download_failed': 'Изтеглянето е неуспешно',
+    'ml_laboratory': 'Лаборатория за машинно обучение',
+    'portfolio_optimizer': 'Оптимизатор на портфейла',
+    'final_play_plan': 'Финален план за игра',
+    'official_unavailable': 'Официалният източник не е достъпен',
+    'v1_locked_waiting_next_draw': 'Версия 1 е заключена и очаква следващия тираж',
+    'v50_pair_group_intelligence': 'Анализ на двойки и групи — v50',
+    'dry_run_blocked': 'Пробното изпълнение е блокирано',
+    'behind': 'Изостава',
+    'ready_waiting_next_draw': 'Готово — очаква следващия тираж',
+    'sgd_number_classifier': 'SGD класификатор на числа',
+    'v41_latest_predictions': 'Последни прогнози — v41',
+    'v42_combined_prediction': 'Комбинирана прогноза — v42',
+    'v45_final_prediction_tickets': 'Финални прогнозни фишове — v45',
+    'v51_ticket_portfolio_intelligence': 'Анализ на портфейла от фишове — v51',
+    'v57_hot_cold_stable': 'Активни, неактивни и устойчиви числа — v57',
+    'v58_smart_ensemble': 'Интелигентен ансамбъл — v58',
+    'v59_smart_ticket_builder_2': 'Интелигентен модул за фишове — v59',
+    'local_optional': 'Само локално — по избор',
+    'informational': 'Информационно',
+    'check_required': 'Необходима е проверка',
+    'diversified_weighted': 'Разнообразен претеглен вариант',
+    'exploratory_weighted': 'Изследователски претеглен вариант',
+    'urlerror': 'Грешка при достъп до адрес',
+    'runtimeerror': 'Грешка при изпълнение',
+    'runtime_hardening_active': 'Защитата на работната среда е активна',
+    'datasets_synced': 'Наборите от данни са синхронизирани',
+    'prize_winner_import_ready': 'Импортът на печалби и печеливши е готов',
+    'coverage_diversified': 'Покритието е разнообразено',
+    'v45_pro_ensemble': 'Разширен ансамбъл — v45',
+    'historical_signal_alternative': 'Алтернативен исторически сигнал',
+    'primary_rule_aware_ml_ensemble': 'Основен ML ансамбъл, съобразен с правилата',
+    'rhythm_weighted_alternative': 'Алтернатива, претеглена по ритъм',
+    'add_draw_pre_save_real_result': 'Реален резултат преди запис при добавяне на тираж',
+    'control': 'Контрол',
+    'model_data_synced': 'Моделните данни са синхронизирани',
+    'not_automatic': 'Не е автоматично',
+    'up_to_date': 'Актуално',
+    'inserted': 'Добавено',
+    'already_synced': 'Вече е синхронизирано',
+    'waiting_next_real_draw': 'Очаква следващия реален тираж',
+    'runtime_hardened': 'Работната среда е защитена',
+    'fast_refresh_mode': 'Режим за бързо обновяване',
+    'heavy_scripts_excluded_from_default': 'Тежките скриптове са изключени от стандартния режим',
+    'user_facing_shortcut_label': 'Потребителско наименование за бърз достъп',
+    'step102_page_wired': 'Страницата за етап 102 е свързана',
+    'waiting_for_clean_git_status': 'Очаква чисто Git състояние',
+    'git_available': 'Git е наличен',
+    'working_tree_clean_before_zip': 'Работното дърво е чисто преди ZIP архива',
+    'forbidden_tracked_files': 'Забранени проследявани файлове',
+    'post_draw_datasets_synced': 'Данните след тиража са синхронизирани',
+    'dataset_rows_synced': 'Редовете в данните са синхронизирани',
+    'post_draw_status_sync_active': 'Синхронизацията на състоянията след тиража е активна',
+    'active_text_encoding': 'Активно текстово кодиране',
+    'old_audit_superseded': 'Старата проверка е заменена',
+    'navigation_persistent': 'Навигацията се запазва',
+    'derived_datasets_match_historical': 'Производните данни съвпадат с историческите',
+    'latest_draw_propagated': 'Последният тираж е разпространен',
+    'v76_refreshed_to_current_dataset': 'v76 е обновен към текущите данни',
+    'v106_post_draw_synced': 'v106 е синхронизиран след тиража',
+    'dataset_files_exist': 'Файловете с данни са налични',
+    'post_draw_row_counts_synced': 'Броят на редовете след тиража е синхронизиран',
+    'latest_draw_has_six_numbers': 'Последният тираж съдържа шест числа',
+    'datasets_synced_after_draw': 'Данните са синхронизирани след тиража',
+    'history_available': 'Историята е налична',
+    'explainability_refreshed': 'Обяснимостта е обновена',
+    'post_draw_sync_active': 'Синхронизацията след тиража е активна',
+    'heavy_labs_not_default': 'Тежките лаборатории не са в стандартния режим',
+    'step107_page_wired': 'Страницата за етап 107 е свързана',
+    'step107_refresh_chain_wired': 'Веригата за обновяване на етап 107 е свързана',
+    'user_menu_uses_live_status_loader': 'Потребителското меню използва актуално зареждане на състоянието',
+    'user_menu_not_bound_to_v86_dataset_metrics': 'Потребителското меню не зависи от показателите на v86',
+    'post_draw_sync_green': 'Синхронизацията след тиража е успешна',
+    'friendly_refresh_button': 'Разбираем бутон за обновяване',
+    'friendly_ticket_mode': 'Разбираем режим за фишове',
+    'friendly_status_label': 'Разбираемо наименование на състоянието',
+    'visual_number_balls': 'Визуални топки с числа',
+    'technical_paths_softened': 'Техническите пътища са представени разбираемо',
+    'translated_table_headers': 'Заглавията на таблиците са преведени',
+    'no_broken_cyrillic': 'Няма повредена кирилица',
+    'cards_created': 'Картите са създадени',
+    'three_ticket_suggestion_available': 'Налично е предложение с три фиша',
+    'each_ticket_has_four_lines': 'Всеки фиш съдържа четири комбинации',
+    'dataset_context_available': 'Контекстът на данните е наличен',
+    'latest_draw_available': 'Последният тираж е наличен',
+    'step107_policy_available': 'Правилото за етап 107 е налично',
+    'final_plan_only_has_two_tickets': 'Финалният план съдържа само два фиша',
+    'final_plan_tickets_have_four_lines': 'Фишовете във финалния план съдържат по четири комбинации',
+    'extended_has_three_tickets': 'Разширеният план съдържа три фиша',
+    'extended_tickets_have_four_lines': 'Фишовете в разширения план съдържат по четири комбинации',
+    'third_ticket_is_marked_supplementary': 'Третият фиш е отбелязан като допълнителен',
+    'third_scope=supplementary': 'Обхват на третия фиш: допълнителен',
+    'extended_lines_are_unique': 'Комбинациите в разширения план са уникални',
+    'draw_entries_table_ready': 'Таблицата с въведени тиражи е готова',
+    'csv_exports_written': 'CSV файловете за износ са записани',
+    'target_files_present': 'Целевите файлове са налични',
+    'no_broken_cyrillic_markers': 'Няма маркери за повредена кирилица',
+    'visible_developer_terms_reduced': 'Видимите технически термини са намалени',
+    'importer_ready': 'Импортирането е готово',
+    'play_decision_ready': 'Решението за игра е готово',
+    'played_pack_lock_ready': 'Заключването на изиграния пакет е готово',
+    'requested_ticket_count': 'Заявен брой фишове',
+    'all_lines_have_valid_numbers': 'Всички комбинации съдържат валидни числа',
+    'no_duplicate_combinations_inside_pack': 'В пакета няма дублирани комбинации',
+    'copy_text_available': 'Текстът за копиране е наличен',
+    'model_numbers_available': 'Моделните числа са налични',
+    'core_has_requested_size': 'Основният набор е с желания размер',
+    'default_real_pack_shape': 'Стандартна структура на реалния пакет',
+    'current_pack_link_available': 'Връзката към текущия пакет е налична',
+    'combined_positive_negative_foundation': 'Основа с комбинирани положителни и отрицателни сигнали',
+    'gap_rhythm_statistical': 'Статистически модел на интервали и ритъм',
+    'sgd_logistic_probability': 'Логистична вероятност със SGD',
+    'gaussian_naive_bayes': 'Гаусов наивен Байес',
+    'overdue_watchlist_numbers': 'Числа за наблюдение поради просрочване',
+    'final_refined_rhythm_numbers': 'Финални числа с прецизиран ритъм',
+    'cyrillic_mojibake_scan': 'Проверка за повредена кирилица',
+    'nearest_centroid_classifier': 'Класификатор по най-близък центроид',
+    'kmeans_from_scratch': 'K-means реализация от основата',
+    'pca_from_scratch': 'PCA реализация от основата',
+    'validated': 'Потвърдено',
+    'rolled_back': 'Върнато назад',
+    'out_of_sync': 'Не е синхронизирано',
+    'unavailable': 'Не е налично',
+    'manual_only': 'Само ръчно',
+    'deduplicated_and_future_duplicates_suppressed': 'Дубликатите са премахнати и бъдещите дубликати са ограничени',
+    'metadata_finalized': 'Метаданните са финализирани',
+    'zip_metadata_injected_inside_archive': 'Метаданните са добавени в ZIP архива',
+    'ui_no_disk_write_on_render': 'Интерфейсът не записва на диска при визуализиране',
+    'create_script_reports_clean_tree_state': 'Скриптът за създаване отчита чисто работно дърво',
+    'final_audit_refreshed': 'Финалната проверка е обновена',
+    'post_draw_synced': 'Синхронизирано след тиража',
+    'user_menu_live_status_synced': 'Актуалното състояние в потребителското меню е синхронизирано',
+    'journal_ui_polished': 'Интерфейсът на дневника е подобрен',
+    'ticket_source_clarified': 'Източникът на фиша е изяснен',
+    'ticket_pack_sources_aligned': 'Източниците на пакета с фишове са съгласувани',
+    'disabled': 'Изключено',
+    'user_friendly_ui_polished': 'Потребителският интерфейс е подобрен',
+    'full_historical_draws_view_ready': 'Пълният изглед на историческите тиражи е готов',
+    'data_reality_center_ready': 'Центърът за реалното състояние на данните е готов',
+    'prize_import_parser_fixed': 'Прочитането на данните за печалбите е поправено',
+    'sample_draw_parsed': 'Примерният тираж е прочетен',
+    'sample_numbers_parsed': 'Примерните числа са прочетени',
+    'sample_winners_parsed': 'Примерните печеливши са прочетени',
+    'sample_jackpot_parsed': 'Примерният джакпот е прочетен',
+    'cyrillic_safe': 'Кирилицата е защитена',
+    'prize_import_live_fallback_ready': 'Резервното импортиране на печалби в реално време е готово',
+    'title_page_parsed': 'Основната страница е прочетена',
+    'fallback_page_parsed': 'Резервната страница е прочетена',
+    'fallback_numbers': 'Числа от резервния източник',
+    'fallback_winners': 'Печеливши от резервния източник',
+    'prize_import_table_parser_fixed': 'Прочитането на таблицата с печалби е поправено',
+    'prize_import_captcha_safe_manual_ready': 'Ръчното импортиране при CAPTCHA е готово',
+    'winner_rows': 'Редове с печеливши',
+    'has_six_event': 'Има събитие с шест числа',
+    'official_only_prize_source_ready': 'Официалният източник на печалби е готов',
+    'main_prize_winner_history': 'Основна история на печалбите и печелившите',
+    'export_prize_winner_history': 'Изнесена история на печалбите и печелившите',
+    'prize_statistics_ready': 'Статистиката на печалбите е готова',
+    'jackpot_cycle_ready': 'Анализът на цикъла на джакпота е готов',
+    'real_ticket_pack_ui_polish_ready': 'Интерфейсът на реалния пакет с фишове е готов',
+    'v96_add_draw_snapshot_uses_12_lines': 'Моментното състояние на v96 използва 12 комбинации',
+    'v96_add_draw_snapshot_uses_10_80': 'Моментното състояние на v96 използва диапазона 10–80',
+    'v97_lifecycle_plan_uses_12_lines': 'Планът на жизнения цикъл v97 използва 12 комбинации',
+    'v97_lifecycle_plan_uses_10_80': 'Планът на жизнения цикъл v97 използва диапазона 10–80',
+    'add_draw_info_label_is_generic_pack_label': 'Информационното наименование при добавяне на тираж е общо за пакета',
+    'model_system_ticket_builder_ready': 'Системният модул за моделни фишове е готов',
+    'audit_only_no_model_retrain': 'Само проверка — без преобучение на моделите',
+    'canonical_dataset_built_no_model_retrain': 'Каноничните данни са изградени без преобучение на моделите',
+    'trained': 'Обучено',
+    'training_ready_review_required_no_retrain': 'Готово за обучение; необходим е преглед; без автоматично преобучение',
+    'interval_rhythm_refined_foundation': 'Прецизирана основа за интервали и ритъм',
+    'final_ensemble_ticket_foundation': 'Основа за финален ансамблов фиш',
+    'v50_pair_group_intelligence_completed': 'Анализът на двойки и групи v50 е завършен',
+    'v51_ticket_portfolio_intelligence_completed': 'Анализът на портфейла от фишове v51 е завършен',
+    'step150_ui_language_integrity_summary': 'Обобщение на езиковата цялост на интерфейса — етап 150',
+    'prospective_locked_evaluation_forecast': 'Заключена проспективна прогноза за оценяване',
+    'reproducible_baseline': 'Възпроизводим базов модел',
+    'research_only_neural_dynamics_sandbox': 'Изследователска лаборатория за невронна динамика',
+    'research_only_neural_robustness_validation': 'Изследователска проверка на устойчивостта на невронния модел',
+    'v41_predictions_generated_from_canonical_draw_events': 'Прогнозите v41 са генерирани от каноничните тиражи',
+    'rolling_250_event_frequency': 'Плъзгаща честота за 250 тиража',
+    'per_number_binary_classifier': 'Двоичен класификатор за всяко число',
+    'v45_prediction_engine_pro_tickets_ready': 'Фишовете от разширения прогнозен модул v45 са готови',
+    'v45_prediction_engine_pro_scores_ready': 'Оценките от разширения прогнозен модул v45 са готови',
+    'v45_prediction_engine_pro': 'Разширен прогнозен модул v45',
+    'per_number_binary_models_plus_rule_aware_selector': 'Двоични модели за всяко число и селектор, съобразен с правилата',
+    'pair_group_intelligence': 'Анализ на двойки и групи',
+    'ticket_portfolio_intelligence': 'Анализ на портфейла от фишове',
+    'neural_epoch_comparison_audit': 'Проверка на невронния модел по епохи',
+    'known_from_v39_dataset_bonus_missing': 'Известно от данните v39; допълнителното число липсва',
+    'sample_not_official': 'Пример — не е официален',
+    'available_without_bonus': 'Налично без допълнително число',
+    'real_ticket_pack_cards': 'Карти на реалния пакет с фишове',
+    'four_lines_per_ticket_rule': 'Правило за четири комбинации във фиш',
+    'technical_fields_softened': 'Техническите полета са представени разбираемо',
+    'raw_source_alias_removed': 'Дублиращото име на суровия източник е премахнато',
+})
+
+
+
+# Step 150.1 deep dynamic localization: runtime values from JSON/CSV and
+# historical modules can bypass literal-only translation. These exact mappings
+# keep normal-user mode natural while raw technical data remains available from
+# the technical-details switch.
+BG_EXACT.update({
+    "Ranks numbers by recurrence intervals. For each number, the model compares the current gap since its last appearance with its average historical interval, estimates an interval hazard probability, and combines it with the fair 6/49 baseline and empirical frequency.":
+        "Подрежда числата според интервалите между появяванията им. За всяко число моделът сравнява текущия интервал със средния исторически интервал и комбинира резултата с базовата вероятност за 6/49 и наблюдаваната честота.",
+    "The fair mathematical chance for any single number to appear in the next 6/49 draw is still 6/49. This model is a statistical training estimate based on historical intervals, not a guarantee.":
+        "Математическата вероятност отделно число да се появи в следващ тираж 6/49 остава 6/49. Моделът дава статистическа оценка според историческите интервали, а не гаранция.",
+    "Ranks numbers whose historical frequency, recent frequency, and recency gap are closest to the expected fair 6/49 behavior.":
+        "Подрежда числата, чиито историческа честота, скорошна честота и интервал от последната поява са най-близо до очакваното поведение при 6/49.",
+    "Проверява dataset синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.":
+        "Проверява синхронизацията на данните, артефактите от етапи 76–79, плановете за синхронизация, компилацията, прочитането на JSON/CSV и кирилицата преди финалната проверка.",
+    "Проверява данни синхрон, Step 76–79 артефакти, sync планове, compile, JSON/CSV parse и кирилица преди финалния sync контрол.":
+        "Проверява синхронизацията на данните, артефактите от етапи 76–79, плановете за синхронизация, компилацията, прочитането на JSON/CSV и кирилицата преди финалната проверка.",
+    "Ready to run.": "Готово за изпълнение.",
+    "Sandbox artifact advanced to 2026-54.": "Тестовият артефакт е преместен към тираж 2026-54.",
+    "The selected main section persists across Streamlit reruns.": "Избраният главен раздел се запазва при повторно изпълнение на приложението.",
+    "page radio has stable key": "Изборът на страница използва постоянен вътрешен ключ",
+    "choice is mirrored in session state": "Изборът се запазва в текущата потребителска сесия",
+    "Step 105 marker present": "Маркерът за етап 105 е наличен",
+    "Patch is auditable in streamlit_app.py.": "Промяната може да бъде проверена в основния файл на приложението.",
+    "Ред от active plan v94.": "Ред от активния план v94.",
+    "Lottery draws are random. This model ranks historical/statistical signals; it is not a guarantee and does not prove future winning numbers.":
+        "Лотарийните тиражи са случайни. Моделът подрежда исторически и статистически сигнали; той не е гаранция и не доказва кои числа ще бъдат изтеглени в бъдеще.",
+    "no parseable score source files found": "Не са намерени източници с оценки, които могат да бъдат прочетени.",
+    "Final User Manual / App Guide Center": "Ръководство за потребителя и работа с приложението",
+    "Търси силен среден score, но с контрол върху odd/even, low/high, range и десетилетия.":
+        "Търси силна средна оценка, като контролира баланса между четни и нечетни, ниски и високи числа, общия диапазон и десетилетията.",
+    "UI can render physical ticket cards.": "Интерфейсът може да показва карти на хартиените фишове.",
+    "Included in списък на файловете": "Включено в списъка на файловете",
+    "Average sum of six numbers.": "Средна сума на шестте числа.",
+    "Standard deviation of draw sums.": "Стандартно отклонение на сумите в тиражите.",
+    "Average odd count.": "Среден брой нечетни числа.",
+    "Average low count where low <= 24.": "Среден брой ниски числа, където ниско число е до 24 включително.",
+    "<urlopen error [Errno -3] Temporary failure in name resolution>": "Временен проблем при свързването с външния източник.",
+    "Dataset expectation:": "Очакван файл с данни:",
+    "Upstream audit OK:": "Предходната проверка е успешна:",
+    "Streamlit label:": "Наименование в приложението:",
+    "Required file:": "Задължителен файл:",
+    "Test cache артефакт.": "Артефакт от тестовия кеш.",
+})
+
+VALUE_LABELS_BG.update({
+    "synced": "Синхронизирано",
+    "read_only_detection": "Проверка само за четене",
+    "dry_run": "Пробно изпълнение",
+    "reduced": "Ограничен режим",
+    "verified_2026_manual_screenshots": "Потвърдено чрез ръчно прегледани изображения за 2026 г.",
+    "sqlite_db_exists": "Локалната SQLite база е налична",
+    "global_streamlit_ui_menus_pages_widgets_tables_statuses_and_research_technical_detail_separation":
+        "Глобално езиково покритие на менюта, страници, елементи, таблици, статуси и технически подробности",
+    "personal_local_journal_removed_from_public_tree": "Личният локален дневник е премахнат от публичното дърво",
+    "timestamp_only_model_snapshot_removed": "Премахнато е моделно копие, различаващо се само по времевия печат",
+    "exact_duplicate_launcher": "Премахнат е идентичен стартиращ файл",
+})
+
+FIELD_LABELS_BG.update({
+    "difference": "Разлика",
+    "units": "Изпълнения",
+    "confidence level": "Ниво на доверие",
+    "bootstrap ci lower": "Долна граница на 95% доверителния интервал",
+    "bootstrap ci upper": "Горна граница на 95% доверителния интервал",
+    "wins": "Победи", "ties": "Равенства", "losses": "Загуби",
+    "event_sha256": "SHA-256 подпис на събитието",
+    "events_with_3plus_hits": "Тиражи с поне 3 попадения",
+    "events_with_4plus_hits": "Тиражи с поне 4 попадения",
+    "events_with_5plus_hits": "Тиражи с поне 5 попадения",
+    "count_in_streamlit_app": "Брой в приложението",
+    "r_monte_carlo_score": "Оценка от Монте Карло в R",
+    "z_score_vs_average_interval": "Z-оценка спрямо средния интервал",
+    "number_a": "Число А", "number_b": "Число Б",
+    "pair_a": "Двойка А", "pair_b": "Двойка Б",
+    "ticket_a": "Фиш А", "ticket_b": "Фиш Б",
+    "n1": "Число 1", "n2": "Число 2", "n3": "Число 3",
+    "n4": "Число 4", "n5": "Число 5", "n6": "Число 6",
+    "missing_inputs": "Липсващи входни данни",
+})
+
 TECHNICAL_COLUMN_MARKERS: tuple[str, ...] = (
     "sha256", "_hash", "hash_", "signature", "previous_event", "configuration_",
     "dataset_", "code_", "artifact_path", "source_summary", "created_at_utc",
     "updated_at_utc", "generated_at_utc", "last_evaluated_at_utc", "locked_at_utc",
     "settled_at_utc", "event_id", "experiment_id", "decision_id", "protocol_id", "lock_id",
+    "seed_advantages", "fold_advantages", "best_hits_distribution", "target_sequence_index",
+    "source_dataset_rows", "forecast_signature", "artifact_",
 )
 
 FORBIDDEN_BG_UI_TOKENS: tuple[str, ...] = (
@@ -884,6 +1536,29 @@ def translate_text(value: Any, *, language: str | None = None, show_technical: b
     if "<style" in value.lower() or "</style>" in value.lower():
         return value
 
+    stripped = value.strip()
+    # Never corrupt file paths, commands, hashes or machine identifiers. They are
+    # hidden from normal tables by default and remain available in technical mode.
+    if re.fullmatch(r"(?:[A-Za-z]:[\\/]|/)?[A-Za-z0-9_.-]+(?:[\\/][A-Za-z0-9_.-]+)+(?:[.:][A-Za-z0-9_.-]+)?", stripped):
+        return value
+    if re.fullmatch(r"[A-Fa-f0-9]{32,}", stripped):
+        return value
+
+    # Natural prefix localization while preserving the referenced path/value.
+    if language == "bg":
+        prefix_map = {
+            "Required file:": "Задължителен файл:",
+            "Dataset expectation:": "Очакван файл с данни:",
+            "Upstream audit OK:": "Предходната проверка е успешна:",
+            "Streamlit label:": "Наименование в приложението:",
+        }
+        for source_prefix, target_prefix in prefix_map.items():
+            if stripped.startswith(source_prefix):
+                return target_prefix + stripped[len(source_prefix):]
+        count_match = re.fullmatch(r"count=(\d+)", stripped, flags=re.IGNORECASE)
+        if count_match:
+            return f"Брой: {count_match.group(1)}"
+
     # Keep HTML tags and inline code/path fragments untouched while translating visible text.
     html_parts = re.split(r"(<[^>]+>)", value)
     translated_html: list[str] = []
@@ -900,28 +1575,97 @@ def translate_text(value: Any, *, language: str | None = None, show_technical: b
     return "".join(translated_html)
 
 
-def translate_value(value: Any, *, language: str | None = None) -> Any:
+def is_technical_value(value: Any) -> bool:
+    if not isinstance(value, str):
+        return False
+    raw = value.strip()
+    if not raw:
+        return False
+    if re.fullmatch(r"[A-Fa-f0-9]{32,}", raw):
+        return True
+    if re.fullmatch(r"(?:[A-Za-z]:[\\/]|/)?[A-Za-z0-9_.-]+(?:[\\/][A-Za-z0-9_.-]+)+", raw):
+        return True
+    if re.fullmatch(r"(?:EXP|DEC|LOCK|PFT)-[A-Za-z0-9-]+", raw):
+        return True
+    return False
+
+
+def translate_value(
+    value: Any, *, language: str | None = None, show_technical: bool | None = None
+) -> Any:
+    language = language or current_language()
+    show_technical = technical_details_enabled() if show_technical is None else show_technical
+    # Recursive localization is required for st.json and nested table cells.
+    if isinstance(value, Mapping):
+        return {
+            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+            for k, v in value.items()
+            if show_technical or not is_technical_column(k)
+        }
+    if isinstance(value, (list, tuple)):
+        return [translate_value(item, language=language, show_technical=show_technical) for item in value]
+    if value is None:
+        return "Няма данни" if language == "bg" else "No data"
+    if isinstance(value, bool):
+        return ("Да" if value else "Не") if language == "bg" else ("Yes" if value else "No")
+    try:
+        import math
+        if isinstance(value, float) and math.isnan(value):
+            return "Няма данни" if language == "bg" else "No data"
+    except Exception:
+        pass
     if not isinstance(value, str):
         return value
-    language = language or current_language()
     raw = value.strip()
     if not raw:
         return value
+    if not show_technical and is_technical_value(raw):
+        return "Техническа стойност" if language == "bg" else "Technical value"
     if language == "bg":
         mapped = VALUE_LABELS_BG.get(raw.lower())
         if mapped is not None:
             return mapped
-    return translate_text(value, language=language)
+        if raw.startswith("<urlopen error"):
+            return "Временен проблем при свързването с външния източник."
+        # Hide raw paths from normal-user checks while preserving their meaning.
+        technical_prefixes = {
+            "Required file:": "Проверка за задължителен проектен файл",
+            "Dataset expectation:": "Проверка на очаквания файл с данни",
+            "Upstream audit OK:": "Предходната проверка е успешна",
+        }
+        if not show_technical:
+            for prefix, friendly in technical_prefixes.items():
+                if raw.startswith(prefix):
+                    return friendly
+        # Internal enum-like values are labels, not prose.
+        if re.fullmatch(r"[A-Za-z][A-Za-z0-9_./-]{1,120}", raw) and not re.search(r"[/\\]", raw):
+            candidate = humanize_field_name(raw, language=language)
+            if candidate != raw:
+                return candidate
+    return translate_text(value, language=language, show_technical=show_technical)
 
 
 def humanize_field_name(name: Any, *, language: str | None = None) -> str:
     language = language or current_language()
-    raw = str(name)
+    raw = str(name).strip()
     if language == "bg":
-        if raw in FIELD_LABELS_BG:
-            return FIELD_LABELS_BG[raw]
-        words = [FIELD_WORDS_BG.get(token.lower(), token) for token in re.split(r"[_\s]+", raw) if token]
-        result = " ".join(words).strip()
+        normalized = re.sub(r"[\s./-]+", "_", raw.lower()).strip("_")
+        for key in (raw, raw.lower(), normalized):
+            if key in FIELD_LABELS_BG:
+                return FIELD_LABELS_BG[key]
+        tokens = [token for token in re.split(r"[_\s./-]+", raw) if token]
+        words: list[str] = []
+        for token in tokens:
+            if token.lower() in FIELD_WORDS_BG:
+                translated = FIELD_WORDS_BG[token.lower()]
+            elif re.fullmatch(r"(?:v|V|step)\d+(?:_\d+)*", token):
+                translated = token.replace("step", "етап ").replace("Step", "Етап ")
+            else:
+                translated = translate_text(token, language="bg", show_technical=False)
+            if str(translated).strip():
+                words.append(str(translated).strip())
+        result = " ".join(words).strip() or raw
+        result = re.sub(r"\s{2,}", " ", result)
         return result[:1].upper() + result[1:] if result else raw
     if raw in FIELD_LABELS_EN:
         return FIELD_LABELS_EN[raw]
@@ -965,7 +1709,7 @@ def localize_table(data: Any, *, language: str | None = None, show_technical: bo
         for source_col, display_col in rename_map.items():
             try:
                 result[display_col] = result[display_col].map(
-                    lambda item, field=str(source_col): translate_value(_format_timestamp(item, field), language=language)
+                    lambda item, field=str(source_col): translate_value(_format_timestamp(item, field), language=language, show_technical=show_technical)
                 )
             except Exception:
                 pass
@@ -983,13 +1727,19 @@ def localize_table(data: Any, *, language: str | None = None, show_technical: bo
         output = []
         for item in data:
             if isinstance(item, Mapping):
-                output.append({humanize_field_name(k, language=language): translate_value(v, language=language) for k, v in item.items() if show_technical or not is_technical_column(k)})
+                output.append({
+                    humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+                    for k, v in item.items() if show_technical or not is_technical_column(k)
+                })
             else:
-                output.append(translate_value(item, language=language))
+                output.append(translate_value(item, language=language, show_technical=show_technical))
         return output
     if isinstance(data, Mapping):
-        return {humanize_field_name(k, language=language): translate_value(v, language=language) for k, v in data.items() if show_technical or not is_technical_column(k)}
-    return data
+        return {
+            humanize_field_name(k, language=language): translate_value(v, language=language, show_technical=show_technical)
+            for k, v in data.items() if show_technical or not is_technical_column(k)
+        }
+    return translate_value(data, language=language, show_technical=show_technical)
 
 
 def residual_bg_tokens(text: str) -> list[str]:
@@ -1003,10 +1753,21 @@ def inject_global_css(st_module: Any) -> None:
     css = """
     <style>
     [data-testid="stAppDeployButton"],
+    [data-testid="stToolbar"],
     [data-testid="stToolbarActions"],
+    [data-testid="stHeaderActionElements"],
+    .stDeployButton,
     #MainMenu,
     footer { display: none !important; }
-    [data-testid="stMetricLabel"] { line-height: 1.25; }
+    [data-testid="stMetricLabel"] { line-height: 1.25; white-space: normal !important; }
+    [data-testid="stMetricValue"] { overflow: visible !important; }
+    [data-testid="stMetricValue"] > div {
+        font-size: clamp(1.55rem, 2.6vw, 2.65rem) !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
     [data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
     .v150-tech-note {
         border-left: 3px solid rgba(212,175,55,.75);
@@ -1093,6 +1854,34 @@ def _data_factory(st_module: Any) -> Callable[[Callable[..., Any]], Callable[...
         return wrapped
     return factory
 
+
+
+def _json_factory(st_module: Any) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
+    def factory(original: Callable[..., Any]) -> Callable[..., Any]:
+        @wraps(original)
+        def wrapped(body: Any = None, *args: Any, **kwargs: Any) -> Any:
+            language = current_language(st_module)
+            show_technical = technical_details_enabled(st_module)
+            if show_technical:
+                return original(body, *args, **kwargs)
+            localized = localize_table(body, language=language, show_technical=False)
+            return original(localized, *args, **kwargs)
+        return wrapped
+    return factory
+
+
+def _dg_json_factory(st_module: Any) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
+    def factory(original: Callable[..., Any]) -> Callable[..., Any]:
+        @wraps(original)
+        def wrapped(self: Any, body: Any = None, *args: Any, **kwargs: Any) -> Any:
+            language = current_language(st_module)
+            show_technical = technical_details_enabled(st_module)
+            if show_technical:
+                return original(self, body, *args, **kwargs)
+            localized = localize_table(body, language=language, show_technical=False)
+            return original(self, localized, *args, **kwargs)
+        return wrapped
+    return factory
 
 
 def _dg_text_factory(st_module: Any) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
@@ -1213,6 +2002,7 @@ def install_global_ui_polish(st_module: Any | None = None) -> None:
 
     for name in ("dataframe", "table", "data_editor"):
         _wrap_module_method(st_module, name, _data_factory(st_module))
+    _wrap_module_method(st_module, "json", _json_factory(st_module))
 
     # Special widgets with more than one visible text argument.
     original_metric = getattr(st_module, "metric", None)
@@ -1222,8 +2012,8 @@ def install_global_ui_polish(st_module: Any | None = None) -> None:
             language = current_language(st_module)
             return original_metric(
                 translate_text(label, language=language),
-                translate_value(value, language=language),
-                translate_value(delta, language=language),
+                translate_value(value, language=language, show_technical=technical_details_enabled(st_module)),
+                translate_value(delta, language=language, show_technical=technical_details_enabled(st_module)),
                 *args,
                 **kwargs,
             )
@@ -1276,6 +2066,11 @@ def install_global_ui_polish(st_module: Any | None = None) -> None:
             wrapped = _dg_data_factory(st_module)(original)
             setattr(wrapped, "_v150_wrapped", True)
             setattr(DeltaGenerator, name, wrapped)
+        original_dg_json = getattr(DeltaGenerator, "json", None)
+        if original_dg_json is not None and not getattr(original_dg_json, "_v150_wrapped", False):
+            wrapped = _dg_json_factory(st_module)(original_dg_json)
+            setattr(wrapped, "_v150_wrapped", True)
+            setattr(DeltaGenerator, "json", wrapped)
 
         original_dg_metric = getattr(DeltaGenerator, "metric", None)
         if original_dg_metric is not None and not getattr(original_dg_metric, "_v150_wrapped", False):
@@ -1285,8 +2080,8 @@ def install_global_ui_polish(st_module: Any | None = None) -> None:
                 return original_dg_metric(
                     self,
                     translate_text(label, language=language),
-                    translate_value(value, language=language),
-                    translate_value(delta, language=language),
+                    translate_value(value, language=language, show_technical=technical_details_enabled(st_module)),
+                    translate_value(delta, language=language, show_technical=technical_details_enabled(st_module)),
                     *args,
                     **kwargs,
                 )

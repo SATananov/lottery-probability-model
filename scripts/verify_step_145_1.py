@@ -93,7 +93,7 @@ def main() -> int:
 
     release = load_json(ROOT / "release-manifest.json")
     validation = validate_release_manifest(release, root=ROOT)
-    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149", "Step 150"}:
+    if release.get("checkpoint") not in {"Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149", "Step 150", "Step 150.1"}:
         failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
     failures.extend(validation.get("failures", []))
     if release.get("release_policy_version") != POLICY_VERSION:
@@ -165,6 +165,7 @@ def main() -> int:
         "Step 148": (ROOT / "CLEAN_ZIP_MANIFEST_STEP148.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP148.md"),
         "Step 149": (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md"),
         "Step 150": (ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md"),
+        "Step 150.1": (ROOT / "CLEAN_ZIP_MANIFEST_STEP150_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_1.md"),
     }
     metadata_pair = checkpoint_metadata.get(
         str(release.get("checkpoint")),

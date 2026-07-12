@@ -1,6 +1,6 @@
 {
-  "checkpoint": "Step 150",
-  "checkpoint_title": "Global Bulgarian UI, Table Localization & Technical Detail Separation",
+  "checkpoint": "Step 150.1",
+  "checkpoint_title": "Deep Dynamic UI Localization & User-Friendly Table Repair",
   "project": "lottery-probability-model",
   "release_policy_version": "149.0",
   "manifest_scope": "All intended project files under release policy 149.0; excludes release metadata files, .git, local environments, runtime caches, secrets, build output, Python/Jupyter caches, temporary archives, logs, backup artifacts and local personal journal data.",
@@ -18,16 +18,19 @@
   },
   "ui_language_integrity": {
     "global_display_layer": "src/v150_global_ui_polish.py",
-    "ui_literal_rows": 2060,
-    "unique_ui_literals": 1721,
-    "forbidden_bulgarian_residual_rows": 0,
-    "mixed_language_rows": 0,
-    "mojibake_findings": 0,
+    "deep_dynamic_audit": "src/v150_1_deep_ui_integrity_engine.py",
+    "static_ui_literal_rows": 2060,
+    "static_ui_literal_failures": 0,
+    "unique_csv_headers": 791,
+    "table_header_failures": 0,
+    "unique_dynamic_values": 628,
+    "user_facing_dynamic_failures": 0,
+    "screenshot_regression_failures": 0,
     "technical_columns_hidden_by_default": true,
     "technical_details_toggle": "v150_show_technical_details",
     "research_navigation_group": "🔬 Изследователски проверки",
-    "deploy_button_hidden": true,
-    "result_signature_sha256": "49f0834ed8fc1c00abeb3735fdaf02b4c216e5158ce9615780344102ebcc618d"
+    "deploy_button_hidden": null,
+    "result_signature_sha256": "f1147a2e61bb16f4ec07a9be31657d79b33af77fd837290392d083e15203cf9c"
   },
   "prospective_forward_test_preservation": {
     "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
@@ -49,7 +52,7 @@
     "build output and editor metadata",
     "personal user journal database and exports"
   ],
-  "file_count": 1200,
+  "file_count": 1211,
   "files": [
     {
       "path": ".gitignore",
@@ -952,6 +955,16 @@
       "sha256": "d1ab7342192ae139f8443d6413ace8124e76723a4fd2eb4a9e46c2497b6a4918"
     },
     {
+      "path": "models/v150_1_deep_ui_integrity_policy.json",
+      "size_bytes": 1343,
+      "sha256": "4fbaf3c977353c7884e535f42b29e0480ff2fd2f91f74a8b0531822b88b6af5d"
+    },
+    {
+      "path": "models/v150_1_deep_ui_integrity_status.json",
+      "size_bytes": 3608,
+      "sha256": "676c7931265d3da96113ea5bf4b12571fd89ecbe8aadd9a860ed3a9ee372e405"
+    },
+    {
       "path": "models/v150_global_ui_polish_policy.json",
       "size_bytes": 1686,
       "sha256": "5e67e2872e718b24cb4230e0991d6f7d2a26631e9bf2e84f2c40ba8446256d24"
@@ -1408,8 +1421,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 23212,
-      "sha256": "a0c7fb2f0f44dd888ca516501073c1be81d50b499eab7f2add4fcab9133cb3aa"
+      "size_bytes": 24230,
+      "sha256": "3010b72b8f0a7a949804c90e2d14b30a8a33eecd7e17a420f4fc89966dbe4a9d"
     },
     {
       "path": "README_UI.md",
@@ -1750,6 +1763,11 @@
       "path": "reports/STEP_149_REPOSITORY_HYGIENE_PRIVACY_AND_AUTHORSHIP_TRANSPARENCY.md",
       "size_bytes": 2953,
       "sha256": "a7bde59c4e6a4b85f9b07ce1f42c5f41a3e15a3f57c880af8a0615b9053b8901"
+    },
+    {
+      "path": "reports/STEP_150_1_DEEP_DYNAMIC_UI_LOCALIZATION_AND_USER_FRIENDLY_TABLE_REPAIR.md",
+      "size_bytes": 1841,
+      "sha256": "86d2920471821d657b8f5c30add4934d575a748c6071ebfb8bcd9c341c7a98df"
     },
     {
       "path": "reports/STEP_150_GLOBAL_BULGARIAN_UI_TABLE_LOCALIZATION_AND_TECHNICAL_DETAIL_SEPARATION.md",
@@ -2685,6 +2703,26 @@
       "path": "reports/v149_repository_hygiene_summary.md",
       "size_bytes": 922,
       "sha256": "75bae070317a27994b19df8ae10f6c2149e37adc6e95226b6639275b5092264b"
+    },
+    {
+      "path": "reports/v150_1_deep_ui_integrity_summary.json",
+      "size_bytes": 3616,
+      "sha256": "e9cbca26d17afcd441a582ab19bf32cfd203490e576fe47a3b5b2f31ebf876cc"
+    },
+    {
+      "path": "reports/v150_1_deep_ui_integrity_summary.md",
+      "size_bytes": 383,
+      "sha256": "b79b3b1c4d1234d96eb29da5fb28700d31d2910b33a62d4a9399c8940e05026a"
+    },
+    {
+      "path": "reports/v150_1_dynamic_text_audit.csv",
+      "size_bytes": 122739,
+      "sha256": "71718b09e038aafabfadcad005acc18dc1ce3485d5efad43fda19a3aba9d9da9"
+    },
+    {
+      "path": "reports/v150_1_table_header_audit.csv",
+      "size_bytes": 85428,
+      "sha256": "038583122f613fbd40767d2a2df31dc1d51419db57d43b0230e27e27983a1a32"
     },
     {
       "path": "reports/v150_ui_language_integrity_summary.json",
@@ -4533,43 +4571,48 @@
     },
     {
       "path": "scripts/verify_step_144.py",
-      "size_bytes": 8767,
-      "sha256": "12c2fcf85be1a008c254995358ade239574b70c32ceb2cba9f813fbb105091a9"
+      "size_bytes": 8781,
+      "sha256": "8dc3a2ed06dba2b57a5a651d93bbfc7cf9e41e98bf4a4e4feda885daa8bb2660"
     },
     {
       "path": "scripts/verify_step_145.py",
-      "size_bytes": 11684,
-      "sha256": "5c3a26c130e599f93ce273f74c61a53d7c179dc3881beec99926d44d0b816c6d"
+      "size_bytes": 11804,
+      "sha256": "d8916393f882dc4635e41346ca43e6c44ac6e35c72112bf6a290f7d6e6386c08"
     },
     {
       "path": "scripts/verify_step_145_1.py",
-      "size_bytes": 9373,
-      "sha256": "e179d2a8955be76ec904d4eedfb564622efc3544482295b2a8db3b6e98ed9110"
+      "size_bytes": 9507,
+      "sha256": "0233f7ab78fcbddd8116cc04592a816ee3c650b1c7a5e2abc71f1623087eb399"
     },
     {
       "path": "scripts/verify_step_146.py",
-      "size_bytes": 12785,
-      "sha256": "146f0aff35ce12965b4ad151f3aaa361cd45acee43b36da43cddb3c568cc10f3"
+      "size_bytes": 12905,
+      "sha256": "1db26268eb2f27ac674d0625503492d33f7ed048f8e5203c07b8d8fb34d0b703"
     },
     {
       "path": "scripts/verify_step_147.py",
-      "size_bytes": 10301,
-      "sha256": "04cdb0964c02c7d5a28a7aa5e0723746ed320342943761f7e1813615169597b9"
+      "size_bytes": 10421,
+      "sha256": "a23fb1952a7207927d78a18bf818b7596ca36ecbd4863693de3a8a8e39daab42"
     },
     {
       "path": "scripts/verify_step_148.py",
-      "size_bytes": 14231,
-      "sha256": "4d4d1de99fa8511f2e284561708c5e82a3d46b2339e8c392730096eb28104efa"
+      "size_bytes": 14351,
+      "sha256": "b436e4b0e906502645593e85bd1b70ac63488ffd1a057e9a6452f67adc51038d"
     },
     {
       "path": "scripts/verify_step_149.py",
-      "size_bytes": 16591,
-      "sha256": "7e58e6ccdd5209a4d4ff1d227677c47721c87b7fcde0920b6b060a7e02ea6c11"
+      "size_bytes": 16725,
+      "sha256": "d2b2b55136fee8bb76acd67961316118b4ce0ca7726d5febe2fccad57c6d959e"
     },
     {
       "path": "scripts/verify_step_150.py",
-      "size_bytes": 11588,
-      "sha256": "7c5eefe49668aaf15b05e5852bec1493ac67b9ea9889ae3d0998fc28d750e9bb"
+      "size_bytes": 11616,
+      "sha256": "98f4264c7a69bbe8f12c4a63a6eee627c382201ac87fd7f6020658ae92a29a16"
+    },
+    {
+      "path": "scripts/verify_step_150_1.py",
+      "size_bytes": 7554,
+      "sha256": "49cdf0212d1b583da018fa13c36a65adacdc3fb15255e9ee4e68da1103c3aa94"
     },
     {
       "path": "show_advanced_recommendations.py",
@@ -5218,8 +5261,8 @@
     },
     {
       "path": "src/v145_experimental_neural_dynamics_section.py",
-      "size_bytes": 9333,
-      "sha256": "fa84a6278a442fb5a3ccd4f6c66efd2f961de6b9888699cf813e9d83b42a53c5"
+      "size_bytes": 9532,
+      "sha256": "9b3b18bb03a5485db03aa0ccea1242c91f834329a0ec1b64b71f4c75aa63df44"
     },
     {
       "path": "src/v146_controlled_neural_robustness_engine.py",
@@ -5228,8 +5271,8 @@
     },
     {
       "path": "src/v146_controlled_neural_robustness_section.py",
-      "size_bytes": 7272,
-      "sha256": "9521234c6cc10d27ddfde95c4407752c12045a0715d66dfe56334f779d292911"
+      "size_bytes": 7492,
+      "sha256": "21ce615612b7e7f2451f3f18b91bc802257c1e426168503cc6c826d627d5d52e"
     },
     {
       "path": "src/v147_experimental_evidence_decision_engine.py",
@@ -5248,8 +5291,8 @@
     },
     {
       "path": "src/v148_prospective_forward_test_section.py",
-      "size_bytes": 8677,
-      "sha256": "bc4a85b8be2420001f27733345af8c2bda02f96afbbbc1c07d816b4dd1bd5fe4"
+      "size_bytes": 9190,
+      "sha256": "96d6cb57bd77a7a282c94783a4a5cb9ebb346fd116d1ede686dedb70bf776ef6"
     },
     {
       "path": "src/v149_repository_hygiene_engine.py",
@@ -5257,9 +5300,14 @@
       "sha256": "412b1eb16ee6ec29130e16467d1d77d9377633b219291020f0382aef68feff6c"
     },
     {
+      "path": "src/v150_1_deep_ui_integrity_engine.py",
+      "size_bytes": 16369,
+      "sha256": "d8e4c4b23814a83515b80fa8aa50cb94cb1c3b2d1159a46b9440f122fbdb3960"
+    },
+    {
       "path": "src/v150_global_ui_polish.py",
-      "size_bytes": 78867,
-      "sha256": "84016949e63b744d3c898c91ca6c8caa1182aa214c08a1d269f9f9fac78c27a9"
+      "size_bytes": 168639,
+      "sha256": "0860c5b221ee7418cd839613a330ca02274d9040ab908a95c2cd955d8323fb06"
     },
     {
       "path": "src/v150_ui_language_integrity_engine.py",
@@ -5268,8 +5316,8 @@
     },
     {
       "path": "src/v150_ui_language_integrity_section.py",
-      "size_bytes": 7551,
-      "sha256": "5779453ea5ef905ea46b2394671dba6a3133e971f116905b1d60357199e217fc"
+      "size_bytes": 7845,
+      "sha256": "da4a3f3cd45031a1112b39e4ee9575e6d99f2f3d2033358b6f0821fabec302c3"
     },
     {
       "path": "src/v41_rules_aware_analysis_section.py",
@@ -5792,6 +5840,11 @@
       "sha256": "e5a6e9cf6b168e3b06ef5b4672e5c86a2337fd5aaa73515560774d095e90bbdc"
     },
     {
+      "path": "tools/audit_deep_ui_integrity.py",
+      "size_bytes": 465,
+      "sha256": "80384a06960a779a036b494ca2bebb5a33960a83e1d8822f3bb83590f6e7f73f"
+    },
+    {
       "path": "tools/audit_repository_hygiene.py",
       "size_bytes": 555,
       "sha256": "88f90a42539a28dc627a697838c9d5670068a9d047cc9c612daaac857dd5c4b4"
@@ -5865,6 +5918,11 @@
       "path": "tools/finalize_step_149_release.py",
       "size_bytes": 10735,
       "sha256": "7998d20624e7ad8648f2b9a49fcd28b72620b9203d2f9cc510448a04d42e1684"
+    },
+    {
+      "path": "tools/finalize_step_150_1_release.py",
+      "size_bytes": 11431,
+      "sha256": "6bafbedb95201c63698227913963445dc7f7e9407deb0092cf94d3b46ac5d615"
     },
     {
       "path": "tools/finalize_step_150_release.py",

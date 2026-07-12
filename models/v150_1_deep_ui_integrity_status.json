@@ -1,0 +1,94 @@
+{
+  "step": "150.1",
+  "status": "completed",
+  "scope": "deep_dynamic_user_friendly_localization_all_modules_tables_json_values_metrics_and_explanatory_text",
+  "generated_at_utc": "2026-07-12T09:36:06+00:00",
+  "static_ui_literal_rows": 2060,
+  "static_ui_literal_failures": 0,
+  "unique_csv_headers": 791,
+  "table_header_failures": 0,
+  "unique_dynamic_values": 628,
+  "technical_dynamic_values_classified": 52,
+  "user_facing_dynamic_failures": 0,
+  "screenshot_regression_cases": 12,
+  "screenshot_regression_failures": 0,
+  "runtime_display_guards": {
+    "json_runtime_wrapper": true,
+    "deploy_toolbar_hidden": true,
+    "metric_values_wrap": true,
+    "technical_value_guard": true,
+    "recursive_dynamic_localization": true
+  },
+  "protected_step148_files": {
+    "all_ok": true,
+    "files": [
+      {
+        "path": "src/v145_experimental_neural_dynamics_engine.py",
+        "expected_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "actual_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "ok": true
+      },
+      {
+        "path": "src/v146_controlled_neural_robustness_engine.py",
+        "expected_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "actual_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "ok": true
+      },
+      {
+        "path": "src/v148_prospective_forward_test_engine.py",
+        "expected_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "actual_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_policy.json",
+        "expected_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "actual_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_status.json",
+        "expected_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "actual_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "ok": true
+      },
+      {
+        "path": "data/prospective_forward_test_ledger.jsonl",
+        "expected_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "actual_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "ok": true
+      },
+      {
+        "path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json",
+        "expected_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "actual_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "ok": true
+      }
+    ]
+  },
+  "normal_user_mode": {
+    "technical_ids_paths_hashes_hidden": true,
+    "none_nan_localized": true,
+    "internal_method_names_humanized": true,
+    "json_and_nested_values_localized": true,
+    "metric_values_not_ellipsized": true,
+    "streamlit_deploy_toolbar_hidden": true
+  },
+  "personal_journal_used": false,
+  "local_private_artifacts_excluded_from_audit": {
+    "paths": [
+      "data/user_journal.db"
+    ],
+    "prefixes": [
+      "data/user_journal_exports/"
+    ],
+    "runtime_prefixes": [
+      "reports/runtime/"
+    ]
+  },
+  "production_scoring_changed": false,
+  "failures": [],
+  "ok": true,
+  "result_signature_sha256": "f1147a2e61bb16f4ec07a9be31657d79b33af77fd837290392d083e15203cf9c",
+  "artifact_role": "status"
+}

@@ -1,10 +1,10 @@
-# Full CLEAN Checkpoint Manifest — Step 150
+# Full CLEAN Checkpoint Manifest — Step 150.1
 
 ## Project
 
 - Project: `lottery-probability-model`
-- Checkpoint: `Step 150 — Global Bulgarian UI, Table Localization & Technical Detail Separation`
-- Generated (Europe/Sofia): `2026-07-12T11:26:27+03:00`
+- Checkpoint: `Step 150.1 — Deep Dynamic UI Localization & User-Friendly Table Repair`
+- Generated (Europe/Sofia): `2026-07-12T12:36:42+03:00`
 - Base Git commit: `a1dc3e5`
 - New Git commit: **not asserted** (`.git` is intentionally absent from the clean archive)
 - Release policy version: `149.0`
@@ -18,14 +18,16 @@
 - Preserves personal journal privacy and Step 149 repository hygiene.
 - Does not change model training, production scoring or Step 148 forward-test state.
 
-## UI verification
+## Deep UI verification
 
-- UI literal rows: `2060`
-- Unique UI literals: `1721`
-- Forbidden Bulgarian residual rows: `0`
-- Mixed visible-language rows: `0`
-- Mojibake findings: `0`
-- Technical fields hidden by default: `True`
+- Static visible-text rows: `2060`
+- Static visible-text failures: `0`
+- Unique table headers: `791`
+- Table-header failures: `0`
+- Unique dynamic values: `628`
+- User-facing dynamic failures: `0`
+- Screenshot regression failures: `0`
+- Technical fields hidden by default: `None`
 - Protected Step 148 files: `True`
 - Active lock: `LOCK-148-c299f383382d1f4a3ec7355f`
 - Expected draw: `2026-54`
@@ -33,12 +35,12 @@
 ## Local checks
 
 ```powershell
-python .\tools\audit_ui_language_integrity.py
+python .\tools\audit_deep_ui_integrity.py
 python .\scripts\verify_step_148.py
 python .\scripts\verify_step_149.py
-python .\scripts\verify_step_150.py
-python .\tools\finalize_step_150_release.py --verify-only
-python .\tools\finalize_step_150_release.py --build-zip
+python .\scripts\verify_step_150_1.py
+python .\tools\finalize_step_150_1_release.py --verify-only
+python .\tools\finalize_step_150_1_release.py --build-zip
 
 git status -sb
 ```

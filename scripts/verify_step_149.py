@@ -147,7 +147,7 @@ def main() -> int:
         failures.append("Step 149 status signature mismatch")
 
     checkpoint = str(release.get("checkpoint", ""))
-    if checkpoint not in {"Step 149", "Step 150"}:
+    if checkpoint not in {"Step 149", "Step 150", "Step 150.1"}:
         failures.append(f"Unexpected release checkpoint: {checkpoint}")
     release_validation = validate_release_manifest(release, root=ROOT, expected_checkpoint=checkpoint)
     failures.extend(release_validation.get("failures", []))
@@ -304,6 +304,7 @@ def main() -> int:
     checkpoint_metadata = {
         "Step 149": (ROOT / "CLEAN_ZIP_MANIFEST_STEP149.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP149.md"),
         "Step 150": (ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md"),
+        "Step 150.1": (ROOT / "CLEAN_ZIP_MANIFEST_STEP150_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_1.md"),
     }
     metadata = checkpoint_metadata.get(checkpoint, checkpoint_metadata["Step 149"])
     if not all(path.is_file() for path in metadata):

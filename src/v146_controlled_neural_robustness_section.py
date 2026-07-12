@@ -62,18 +62,20 @@ def render_v146_controlled_neural_robustness_section() -> None:
     frequency = strategy.get("frequency_walk_forward", {}) or {}
     recency = strategy.get("recency_weighted_walk_forward", {}) or {}
     random_mean = strategy.get("uniform_random_mean", {}) or {}
-    metrics = st.columns(6)
+    metrics = st.columns(4)
     metrics[0].metric(_t("Невронен модел", "Neural model"), f"{float(neural.get('average_best_hits_mean', 0)):.4f}")
     metrics[1].metric(_t("Честотен модел", "Frequency model"), f"{float(frequency.get('average_best_hits_mean', 0)):.4f}")
     metrics[2].metric(_t("Модел на скорошната активност", "Recency model"), f"{float(recency.get('average_best_hits_mean', 0)):.4f}")
-    metrics[3].metric(_t("Среден резултат — случаен модел", "Average result — random model"), f"{float(random_mean.get('average_best_hits_mean', 0)):.4f}")
-    metrics[4].metric(_t("Изпълнения", "Runs"), int(split.get("run_count", 0)))
-    metrics[5].metric(
-        _t("Условия за допускане", "Promotion criteria"),
-        _t("ПРЕМИНАТО", "PASS") if comparison.get("promotion_gate_passed") else _t("БЛОКИРАНО", "BLOCKED"),
+    metrics[3].metric(_t("Случаен модел", "Random model"), f"{float(random_mean.get('average_best_hits_mean', 0)):.4f}")
+    secondary = st.columns(2)
+    secondary[0].metric(_t("Независими изпълнения", "Independent runs"), int(split.get("run_count", 0)))
+    gate_passed = bool(comparison.get("promotion_gate_passed"))
+    secondary[1].metric(
+        _t("Решение", "Decision"),
+        _t("Допуснат", "Promoted") if gate_passed else _t("Не е допуснат", "Not promoted"),
     )
 
-    st.info(translate_value(str(comparison.get("interpretation", _t("Все още няма записан резултат.", "No result is available yet.")))))
+    st.info(translate_value(comparison.get("interpretation") or _t("Все още няма записан резултат.", "No result is available yet.")))
 
     if st.button(_t("Повтори официалната проверка за устойчивост", "Repeat the official robustness evaluation"), type="primary", use_container_width=True):
         with st.spinner(_t("Изпълняват се 15 контролирани исторически проверки...", "Running 15 controlled walk-forward evaluations...")):
@@ -84,7 +86,14 @@ def render_v146_controlled_neural_robustness_section() -> None:
         comparison = summary.get("comparison", {}) or {}
 
     st.markdown(_t("### Сравнение с базовите модели и 95% доверителни интервали", "### Baseline comparison and 95% confidence intervals"))
-    baseline_rows = [value for value in (comparison.get("baselines", {}) or {}).values() if isinstance(value, dict)]
+    baseline_rows = []
+    for value in (comparison.get("baselines", {}) or {}).values():
+        if not isinstance(value, dict):
+            continue
+        baseline_rows.append({
+            key: item for key, item in value.items()
+            if key not in {"seed_advantages", "fold_advantages"}
+        })
     if baseline_rows:
         st.dataframe(pd.DataFrame(baseline_rows), use_container_width=True, hide_index=True)
     else:

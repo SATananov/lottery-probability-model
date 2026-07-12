@@ -16,7 +16,7 @@ from src.v148_prospective_forward_test_engine import (
     lock_next_draw_forecast,
     settle_available_locked_forecast,
 )
-from src.v150_global_ui_polish import translate_value, ui_text
+from src.v150_global_ui_polish import technical_details_enabled, translate_value, ui_text
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -57,19 +57,26 @@ def render_v148_prospective_forward_test_section() -> None:
 
     summary = _load_json(SUMMARY_JSON_PATH)
     active = summary.get("active_lock") or {}
-    metrics = st.columns(6)
-    metrics[0].metric(_t("Статус", "Status"), translate_value(str(summary.get("status", "unknown"))).upper())
-    metrics[1].metric(_t("Оценени тиражи", "Evaluated draws"), f"{int(summary.get('eligible_settled_draws', 0))} / {int(summary.get('target_settled_draws', 30))}")
-    metrics[2].metric(_t("Остават", "Remaining"), int(summary.get("remaining_draws", 30)))
-    metrics[3].metric(_t("Следваща контролна точка", "Next milestone"), summary.get("next_milestone") or _t("Завършен", "Completed"))
-    metrics[4].metric(_t("Събития в защитения дневник", "Ledger events"), int(summary.get("ledger_event_count", 0)))
-    metrics[5].metric(_t("Цялост", "Integrity"), _t("ПРЕМИНАТО", "PASS") if summary.get("ledger_integrity_ok") else _t("НЕПРЕМИНАТО", "FAIL"))
+    primary = st.columns(3)
+    primary[0].metric(_t("Статус", "Status"), translate_value(summary.get("status", "unknown")))
+    primary[1].metric(_t("Оценени тиражи", "Evaluated draws"), f"{int(summary.get('eligible_settled_draws', 0))} / {int(summary.get('target_settled_draws', 30))}")
+    primary[2].metric(_t("Оставащи тиражи", "Remaining draws"), int(summary.get("remaining_draws", 30)))
+    secondary = st.columns(3)
+    secondary[0].metric(_t("Следваща контролна точка", "Next milestone"), summary.get("next_milestone") or _t("Завършено", "Completed"))
+    secondary[1].metric(_t("Събития в защитения дневник", "Ledger events"), int(summary.get("ledger_event_count", 0)))
+    secondary[2].metric(_t("Цялост на дневника", "Ledger integrity"), _t("Потвърдена", "Passed") if summary.get("ledger_integrity_ok") else _t("Нарушена", "Failed"))
 
     if active:
-        st.success(_t(
-            f"Активно заключване преди тиража: {active.get('lock_id')} · очакван тираж {active.get('expected_draw_key')}",
-            f"Active pre-draw lock: {active.get('lock_id')} · expected draw {active.get('expected_draw_key')}",
-        ))
+        if technical_details_enabled(st):
+            st.success(_t(
+                f"Има активно заключване преди тиража: {active.get('lock_id')} · очакван тираж {active.get('expected_draw_key')}",
+                f"An active pre-draw lock exists: {active.get('lock_id')} · expected draw {active.get('expected_draw_key')}",
+            ))
+        else:
+            st.success(_t(
+                f"Има активно заключване преди тиража. Очакван официален тираж: {active.get('expected_draw_key')}.",
+                f"An active pre-draw lock exists. Expected official draw: {active.get('expected_draw_key')}.",
+            ))
     else:
         st.info(_t("В момента няма активно заключване преди тиража.", "There is no active pre-draw lock."))
 

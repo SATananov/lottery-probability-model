@@ -1,0 +1,33 @@
+{
+  "step": "150.1",
+  "title": "Задълбочена локализация на динамичния интерфейс и потребителските таблици",
+  "status": "completed",
+  "scope": [
+    "all Streamlit modules and pages",
+    "all CSV/DataFrame table headers",
+    "dynamic JSON and CSV status/message values",
+    "nested JSON rendered in the user interface",
+    "metric wrapping and long status presentation",
+    "technical identifiers, paths and signatures hidden by default",
+    "UTF-8 Bulgarian Cyrillic integrity"
+  ],
+  "normal_user_mode_rules": {
+    "mixed_bulgarian_english_prose_allowed": false,
+    "raw_none_or_nan_allowed": false,
+    "raw_internal_method_names_allowed": false,
+    "raw_hashes_ids_paths_visible_by_default": false,
+    "technical_details_toggle_preserved": true
+  },
+  "display_only": true,
+  "production_scoring_changed": false,
+  "personal_journal_used": false,
+  "history_rewrite_performed": false,
+  "protected_step148_forward_lock": true,
+  "audit_scope_rules": {
+    "public_release_artifacts_only": true,
+    "local_user_journal_database_excluded": true,
+    "local_user_journal_exports_excluded": true,
+    "runtime_artifacts_excluded": true,
+    "determinism_note": "Local ignored data must not change deterministic UI audit counts or fail release verification."
+  }
+}
