@@ -51,3 +51,13 @@ reports/runtime/v145_1_artifact_integrity/
 # Personal lottery journal and exports (local-only)
 data/user_journal.db
 data/user_journal_exports/
+
+# Local volatile recovery-operation snapshots (Steps 137-140)
+models/v137_recovery_drill_reconciliation_status.json
+models/v138_recovery_exception_sla_status.json
+models/v139_recovery_exception_management_summary_status.json
+models/v140_production_operations_module_closure_status.json
+reports/v137_recovery_drill_reconciliation_summary.md
+reports/v138_recovery_exception_sla_summary.md
+reports/v139_recovery_exception_management_summary.md
+reports/v140_production_operations_module_closure_summary.md

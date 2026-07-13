@@ -174,13 +174,25 @@ def main() -> int:
 
         if not chain.get("ok"):
             failures.extend(f"Ledger integrity: {item}" for item in chain.get("failures", []))
-        if chain.get("event_count") != 2:
-            failures.append(f"Initial Step 148 checkpoint must contain 2 ledger events, got {chain.get('event_count')}")
-        if chain.get("settled_count") != 0:
-            failures.append("Initial Step 148 checkpoint must have zero settlements")
+
+        event_count = int(chain.get("event_count", -1))
+        settled_count = int(chain.get("settled_count", -1))
+        target_settled_draws = int(protocol.get("target_settled_draws", 0))
+        remaining_draws = max(target_settled_draws - settled_count, 0)
+
+        if event_count < 2:
+            failures.append(f"Step 148 ledger must contain at least 2 events, got {event_count}")
+        if not 0 <= settled_count <= target_settled_draws:
+            failures.append(
+                f"Step 148 settlement count is outside the protocol range: "
+                f"{settled_count}/{target_settled_draws}"
+            )
         if lock is None:
-            failures.append("Initial Step 148 active lock is missing")
+            if remaining_draws > 0:
+                failures.append("Step 148 active lock is missing while the protocol is incomplete")
         else:
+            if remaining_draws == 0:
+                failures.append("Step 148 still has an active lock after the protocol target was reached")
             if int(lock.get("source_dataset_rows", -1)) != len(draws):
                 failures.append("Active lock dataset row count mismatch")
             if lock.get("source_dataset_sha256") != dataset.get("sha256"):
@@ -220,8 +232,14 @@ def main() -> int:
             failures.append("Step 148 status protocol ID mismatch")
         if status.get("ledger_integrity_ok") is not True:
             failures.append("Step 148 status ledger integrity is not true")
-        if int(status.get("eligible_settled_draws", -1)) != 0 or int(status.get("remaining_draws", -1)) != 30:
-            failures.append("Step 148 initial progress mismatch")
+        if int(status.get("eligible_settled_draws", -1)) != settled_count:
+            failures.append("Step 148 status settled-draw count does not match the ledger")
+        if int(status.get("remaining_draws", -1)) != remaining_draws:
+            failures.append("Step 148 status remaining-draw count does not match the protocol")
+        if int(summary.get("eligible_settled_draws", -1)) != settled_count:
+            failures.append("Step 148 summary settled-draw count does not match the ledger")
+        if int(summary.get("remaining_draws", -1)) != remaining_draws:
+            failures.append("Step 148 summary remaining-draw count does not match the protocol")
         for key in (
             "production_promotion_approved", "automatic_production_promotion", "production_integration_enabled",
             "real_ticket_generation_enabled", "personal_journal_used", "historical_backfill_performed",
@@ -233,9 +251,19 @@ def main() -> int:
         if (summary.get("decision") or {}).get("production_promotion") != "blocked":
             failures.append("Step 148 production decision is not blocked")
 
-        if len(read_csv(ROOT / "reports/v148_forward_test_settlements.csv")) != 0:
-            failures.append("Initial settlement table must be empty")
-        if len(read_csv(ROOT / "reports/v148_active_locked_evaluation_packages.csv")) != len(METHOD_KEYS) * int(protocol["evaluation_package_size"]):
+        settlement_rows = read_csv(ROOT / "reports/v148_forward_test_settlements.csv")
+        if len(settlement_rows) != settled_count:
+            failures.append(
+                f"Settlement table row count does not match the ledger: "
+                f"{len(settlement_rows)} != {settled_count}"
+            )
+        active_package_rows = read_csv(ROOT / "reports/v148_active_locked_evaluation_packages.csv")
+        expected_active_package_rows = (
+            len(METHOD_KEYS) * int(protocol["evaluation_package_size"])
+            if lock is not None
+            else 0
+        )
+        if len(active_package_rows) != expected_active_package_rows:
             failures.append("Active evaluation package audit row count mismatch")
 
         release = load_json(ROOT / "release-manifest.json")
