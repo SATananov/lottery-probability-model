@@ -32,7 +32,7 @@ from src.v149_repository_hygiene_engine import (
 )
 
 REQUIRED = [
-    ROOT / "AUTHORSHIP_AND_TOOLING.md",
+    ROOT / "docs/AUTHORSHIP_AND_TOOLING.md",
     ROOT / "data/LOCAL_JOURNAL_README.md",
     ROOT / "data/user_journal_schema.sql",
     ROOT / "models/v149_repository_hygiene_policy.json",
@@ -185,7 +185,7 @@ def main() -> int:
         failures.append("README still references duplicate launcher")
     if "нежелани нежелани" in readme:
         failures.append("README repeated-word defect remains")
-    for required_text in ("игнорирана от Git", "AUTHORSHIP_AND_TOOLING.md", "Step 149"):
+    for required_text in ("игнорирана от Git", "docs/AUTHORSHIP_AND_TOOLING.md", "Step 149"):
         if required_text not in readme:
             failures.append(f"README Step 149 wording missing: {required_text}")
     launcher_text = (ROOT / "START_LOTTERY_CHROME_SIMPLE.bat").read_text(encoding="utf-8", errors="ignore")

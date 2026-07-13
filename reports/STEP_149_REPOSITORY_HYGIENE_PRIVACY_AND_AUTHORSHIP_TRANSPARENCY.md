@@ -37,7 +37,7 @@ The remaining exact JSON mirrors are retained temporarily because old UI/report 
 
 ## Authorship and tooling
 
-No vendor-specific generative-AI SDK or external AI runtime dependency is present. The project includes `AUTHORSHIP_AND_TOOLING.md`, which identifies the personal author and explains that ordinary editing/review tools may assist without claiming autonomous authorship or unsupported fully-manual provenance.
+No vendor-specific generative-AI SDK or external AI runtime dependency is present. The project includes `docs/AUTHORSHIP_AND_TOOLING.md`, which identifies the personal author and explains that ordinary editing/review tools may assist without claiming autonomous authorship or unsupported fully-manual provenance.
 
 Explicit branded vendor-marker hits found by this current-tree scan: **0**.
 

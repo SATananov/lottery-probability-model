@@ -69,7 +69,7 @@ def write_manifests() -> dict:
             "duplicate_launcher_removed": True,
         },
         "authorship_and_tooling": {
-            "transparency_document": "AUTHORSHIP_AND_TOOLING.md",
+            "transparency_document": "docs/AUTHORSHIP_AND_TOOLING.md",
             "external_generative_ai_runtime_dependency": False,
             "vendor_specific_ai_sdk_dependency": False,
             "manual_only_claim": False,

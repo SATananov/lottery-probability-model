@@ -6,7 +6,7 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 
 required = [
-    ROOT / "PROJECT_CONTEXT.md",
+    ROOT / "docs/PROJECT_CONTEXT.md",
     ROOT / "reports" / "RESEARCH_NOTE_NEURAL_DYNAMICAL_SYSTEMS_REFERENCE.md",
     ROOT / "reports" / "STEP_143_1_PERSONAL_PROJECT_DOCUMENTATION_LANGUAGE_AND_RELEASE_INTEGRITY.md",
 ]

@@ -16,7 +16,7 @@
     "compatibility_json_mirrors": "retained_until_dependency_migration"
   },
   "authorship_transparency": {
-    "document": "AUTHORSHIP_AND_TOOLING.md",
+    "document": "docs/AUTHORSHIP_AND_TOOLING.md",
     "external_generative_ai_runtime_dependency": false,
     "vendor_specific_ai_sdk_dependency": false,
     "manual_only_claim_made": false

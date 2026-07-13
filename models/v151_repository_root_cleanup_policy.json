@@ -1,0 +1,28 @@
+{
+  "step": "151",
+  "name": "Repository Root Cleanup & Post-Draw Documentation Sync",
+  "root_document_moves": {
+    "ADVANCED_METHODS.md": "docs/ADVANCED_METHODS.md",
+    "AUTHORSHIP_AND_TOOLING.md": "docs/AUTHORSHIP_AND_TOOLING.md",
+    "PROJECT_CONTEXT.md": "docs/PROJECT_CONTEXT.md",
+    "README_UI.md": "docs/README_UI.md"
+  },
+  "documentation_index": "docs/README.md",
+  "step_history": "docs/STEP_HISTORY.md",
+  "legacy_root_release_metadata_policy": "remove_from_current_tree_preserve_in_git_history",
+  "post_draw_checkpoint": {
+    "draw_key": "2026-54",
+    "date": "2026-07-12",
+    "numbers": [16, 29, 35, 37, 44, 47],
+    "dataset_rows": 10064,
+    "step148_settled_draws": 1,
+    "step148_expected_draw": "2026-55"
+  },
+  "guardrails": {
+    "historical_data_change": false,
+    "model_algorithm_change": false,
+    "production_scoring_change": false,
+    "step148_ledger_change": false,
+    "personal_journal_use": false
+  }
+}
