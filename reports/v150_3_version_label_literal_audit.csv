@@ -1,0 +1,150 @@
+﻿path,line,original,normal_mode_text,version_label_remaining,technical_mode_preserves_original
+src/post_bst_model_data_refresh_engine.py,449,- Latest v40 normalized draw: **,- Latest normalized draw: **,False,True
+src/post_bst_model_data_refresh_engine.py,450,- Latest v41 canonical draw: **,- Latest canonical draw: **,False,True
+src/prediction_engine.py,171,"Build the v36 statistical prediction layer.      The output is a prediction-style ranking, not a claim that lottery draws are predictable.     ","Build the statistical prediction layer. The output is a prediction-style ranking, not a claim that lottery draws are predictable.",False,True
+src/prediction_engine.py,266,Прогнозен статистически модул v36,Прогнозен статистически модул,False,True
+src/v100_final_release_lock_engine.py,31,"Step 100 е финално заключване на v1 workflow. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.","Step 100 е финално заключване на работният процес. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.",False,True
+src/v100_final_release_lock_engine.py,281,"v97, v98, v99, v100",",,,",False,True
+src/v101_real_use_protocol_section.py,115,v101-pill-ok,-pill-ok,False,True
+src/v101_real_use_protocol_section.py,115,v101-pill-warn,-pill-warn,False,True
+src/v103_clean_release_checkpoint_engine.py,356,v103.1,Вътрешна версия,False,True
+src/v103_clean_release_checkpoint_engine.py,354,v103.1,Вътрешна версия,False,True
+src/v106_1_post_draw_dataset_sync_engine.py,44,"Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, v40 normalized и v41 canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.","Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, normalized и canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.",False,True
+src/v106_1_post_draw_dataset_sync_engine.py,214,v106=,=,False,True
+src/v106_1_post_draw_dataset_sync_engine.py,220,v99=,=,False,True
+src/v106_1_post_draw_dataset_sync_engine.py,220,", v100=",", =",False,True
+src/v106_1_post_draw_dataset_sync_engine.py,220,", v101=",", =",False,True
+src/v106_post_draw_status_sync_engine.py,189,v97=,=,False,True
+src/v106_post_draw_status_sync_engine.py,194,v98=,=,False,True
+src/v106_post_draw_status_sync_engine.py,199,v99=,=,False,True
+src/v106_post_draw_status_sync_engine.py,204,v100=,=,False,True
+src/v106_post_draw_status_sync_engine.py,209,v101=,=,False,True
+src/v107_model_training_policy_engine.py,210,"v77, v78, v94, v95, v98, v99, v100, v101",",,,,,,,",False,True
+src/v108_user_menu_live_status_sync_engine.py,159,"Потребителското меню вече зарежда live dataset status, а не само стария v86 model registry.","Потребителското меню вече зарежда live dataset status, а не само стария model registry.",False,True
+src/v108_user_menu_live_status_sync_engine.py,164,Редовете и последният тираж не трябва да идват директно от v86 summary.,Редовете и последният тираж не трябва да идват директно от summary.,False,True
+src/v108_user_menu_live_status_sync_engine.py,214,"Step 108 поправя потребителското меню да показва текущия post-draw dataset status, вместо остарял v86 registry snapshot.","Step 108 поправя потребителското меню да показва текущия post-draw dataset status, вместо остарял registry snapshot.",False,True
+src/v109_sqlite_journal_engine.py,331,Ред от active plan v94.,Ред от active plan.,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,76,v117 total_lines=,total_lines=,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,81,v117 total_price_eur=,total_price_eur=,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,86,v96 active_plan_combinations=,active_plan_combinations=,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,91,v96 active_plan_cost_eur=,active_plan_cost_eur=,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,96,v97 combination_count=,combination_count=,False,True
+src/v117_1_add_draw_ticket_pack_price_sync_engine.py,101,v97 cost_eur=,cost_eur=,False,True
+src/v150_3_user_version_cleanup.py,11,V1 workflow е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+src/v150_3_user_version_cleanup.py,13,V1 работен процес е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+src/v150_3_user_version_cleanup.py,15,Финално заключване v1,Финално заключване,False,True
+src/v150_3_user_version_cleanup.py,16,Финално заключване V1,Финално заключване,False,True
+src/v150_3_user_version_cleanup.py,17,V1 lock е активен,Финалното заключване е активно,False,True
+src/v150_3_user_version_cleanup.py,18,V1 lock,Финално заключване,False,True
+src/v150_3_user_version_cleanup.py,19,V1 checkpoint,заключена контролна точка,False,True
+src/v150_3_user_version_cleanup.py,23,Пълен refresh v41 → v71,Пълно обновяване на моделите,False,True
+src/v150_3_user_version_cleanup.py,24,Пълен refresh v41 → v51,Обновяване на оценката на фиша,False,True
+src/v150_3_user_version_cleanup.py,25,Прогнозен статистически модул v36,Прогнозен статистически модул,False,True
+src/v150_3_user_version_cleanup.py,26,Версия на анализа: V41,Текущ анализ по действащите правила,False,True
+src/v150_3_user_version_cleanup.py,27,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси.",Бързият режим пропуска тежките лабораторни процеси.,False,True
+src/v150_3_user_version_cleanup.py,29,Тежките процеси v67 и v75 не блокират стандартния поток след запис на тираж.,Тежките лабораторни процеси не блокират стандартния поток след запис на тираж.,False,True
+src/v150_3_user_version_cleanup.py,34,V1 workflow is locked and ready for the next real draw.,работният процес is locked and ready for the next real draw.,False,True
+src/v150_3_user_version_cleanup.py,36,V1 lock,Финално заключване,False,True
+src/v150_3_user_version_cleanup.py,37,V1 checkpoint,заключена контролна точка,False,True
+src/v150_3_version_label_integrity_engine.py,32,V1 работен процес е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+src/v150_3_version_label_integrity_engine.py,36,V1 workflow е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+src/v150_3_version_label_integrity_engine.py,39,V94 активен 20260623T163844Z,Активният план е наличен,False,True
+src/v150_3_version_label_integrity_engine.py,40,Последни прогнози — v41,Последни прогнози,False,True
+src/v150_3_version_label_integrity_engine.py,41,Комбинирана прогноза — v42,Комбинирана прогноза,False,True
+src/v150_3_version_label_integrity_engine.py,42,Финални прогнозни фишове — v45,Финални прогнозни фишове,False,True
+src/v150_3_version_label_integrity_engine.py,43,Пълен refresh v41 → v71,Пълно обновяване на моделите,False,True
+src/v150_3_version_label_integrity_engine.py,45,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси.",Бързият режим пропуска тежките лабораторни процеси.,False,True
+src/v150_3_version_label_integrity_engine.py,48,Прогнозен статистически модул v36,Прогнозен статистически модул,False,True
+src/v150_3_version_label_integrity_engine.py,49,Версия на анализа: V41,Текущ анализ по действащите правила,False,True
+src/v150_global_ui_polish.py,138,"Тази опция пуска core scripts v41–v60 плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска core scripts плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+src/v150_global_ui_polish.py,138,"Тази опция пуска основните скриптове v41–v60 и претеглената верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска основните скриптове и претеглената верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+src/v150_global_ui_polish.py,795,"v67 и v75 остават налични, но не са default fast refresh блокер.","и остават налични, но не са default fast refresh блокер.",False,True
+src/v150_global_ui_polish.py,795,"v67 и v75 остават налични, но не блокират стандартното бързо обновяване.","и остават налични, но не блокират стандартното бързо обновяване.",False,True
+src/v150_global_ui_polish.py,1112,Анализ на двойки и групи — v50,Анализ на двойки и групи,False,True
+src/v150_global_ui_polish.py,1117,Последни прогнози — v41,Последни прогнози,False,True
+src/v150_global_ui_polish.py,1118,Комбинирана прогноза — v42,Комбинирана прогноза,False,True
+src/v150_global_ui_polish.py,1119,Финални прогнозни фишове — v45,Финални прогнозни фишове,False,True
+src/v150_global_ui_polish.py,1120,Анализ на портфейла от фишове — v51,Анализ на портфейла от фишове,False,True
+src/v150_global_ui_polish.py,1121,"Активни, неактивни и устойчиви числа — v57","Активни, неактивни и устойчиви числа",False,True
+src/v150_global_ui_polish.py,1122,Интелигентен ансамбъл — v58,Интелигентен ансамбъл,False,True
+src/v150_global_ui_polish.py,1123,Интелигентен модул за фишове — v59,Интелигентен модул за фишове,False,True
+src/v150_global_ui_polish.py,1135,Разширен ансамбъл — v45,Разширен ансамбъл,False,True
+src/v150_global_ui_polish.py,1164,v76 е обновен към текущите данни,е обновен към текущите данни,False,True
+src/v150_global_ui_polish.py,1165,v106 е синхронизиран след тиража,е синхронизиран след тиража,False,True
+src/v150_global_ui_polish.py,1177,Потребителското меню не зависи от показателите на v86,Потребителското меню не зависи от показателите на,False,True
+src/v150_global_ui_polish.py,1266,Моментното състояние на v96 използва 12 комбинации,Моментното състояние на използва 12 комбинации,False,True
+src/v150_global_ui_polish.py,1267,Моментното състояние на v96 използва диапазона 10–80,Моментното състояние на използва диапазона 10–80,False,True
+src/v150_global_ui_polish.py,1268,Планът на жизнения цикъл v97 използва 12 комбинации,Планът на жизнения цикъл използва 12 комбинации,False,True
+src/v150_global_ui_polish.py,1269,Планът на жизнения цикъл v97 използва диапазона 10–80,Планът на жизнения цикъл използва диапазона 10–80,False,True
+src/v150_global_ui_polish.py,1278,Анализът на двойки и групи v50 е завършен,Анализът на двойки и групи е завършен,False,True
+src/v150_global_ui_polish.py,1279,Анализът на портфейла от фишове v51 е завършен,Анализът на портфейла от фишове е завършен,False,True
+src/v150_global_ui_polish.py,1285,Прогнозите v41 са генерирани от каноничните тиражи,Прогнозите са генерирани от каноничните тиражи,False,True
+src/v150_global_ui_polish.py,1288,Фишовете от разширения прогнозен модул v45 са готови,Фишовете от разширения прогнозен модул са готови,False,True
+src/v150_global_ui_polish.py,1289,Оценките от разширения прогнозен модул v45 са готови,Оценките от разширения прогнозен модул са готови,False,True
+src/v150_global_ui_polish.py,1290,Разширен прогнозен модул v45,Разширен прогнозен модул,False,True
+src/v150_global_ui_polish.py,1295,Известно от данните v39; допълнителното число липсва,Известно от данните; допълнителното число липсва,False,True
+src/v150_global_ui_polish.py,1328,Ред от active plan v94.,Ред от active plan.,False,True
+src/v150_global_ui_polish.py,1328,Ред от активния план v94.,Ред от активния план.,False,True
+src/v61_draw_result_analyzer_engine.py,134,v41 честотен baseline,честотен baseline,False,True
+src/v61_draw_result_analyzer_engine.py,135,v41 recent 250 baseline,recent 250 baseline,False,True
+src/v61_draw_result_analyzer_engine.py,136,v41 SGD класификатор,SGD класификатор,False,True
+src/v61_draw_result_analyzer_engine.py,157,Обединен номерен сигнал от v42.,Обединен номерен сигнал от.,False,True
+src/v61_draw_result_analyzer_engine.py,195,v45 Prediction Engine Pro — primary,Prediction Engine Pro — primary,False,True
+src/v61_draw_result_analyzer_engine.py,199,Primary statistical candidate от v45.,Primary statistical candidate от.,False,True
+src/v61_draw_result_analyzer_engine.py,215,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+src/v61_draw_result_analyzer_engine.py,216,v60 export sample,export sample,False,True
+src/v61_draw_result_analyzer_engine.py,184,v44.1 финален ансамбъл,финален ансамбъл,False,True
+src/v61_draw_result_analyzer_engine.py,207,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+src/v61_draw_result_analyzer_engine.py,211,Ticket candidate от v45.,Ticket candidate от.,False,True
+src/v61_draw_result_analyzer_engine.py,146,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+src/v61_draw_result_analyzer_engine.py,170,v43.1 интервален ритъм — ,интервален ритъм —,False,True
+src/v61_draw_result_analyzer_section.py,30,Липсва build script за v61.,Липсва build script за.,False,True
+src/v61_draw_result_analyzer_section.py,119,Обнови v61 анализа,Обнови анализа,False,True
+src/v61_draw_result_analyzer_section.py,123,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+src/v61_draw_result_analyzer_section.py,125,Грешка при обновяване на v61 анализа.,Грешка при обновяване на анализа.,False,True
+src/v62_model_performance_tracker_section.py,21,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+src/v62_model_performance_tracker_section.py,23,v44.1 — финален ensemble фиш,— финален ensemble фиш,False,True
+src/v62_model_performance_tracker_section.py,24,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+src/v62_model_performance_tracker_section.py,25,v50 — двойки и групи,— двойки и групи,False,True
+src/v62_model_performance_tracker_section.py,26,v51 — портфолио от фишове,— портфолио от фишове,False,True
+src/v62_model_performance_tracker_section.py,27,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+src/v62_model_performance_tracker_section.py,28,v58 — обединена оценка,— обединена оценка,False,True
+src/v62_model_performance_tracker_section.py,29,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+src/v62_model_performance_tracker_section.py,30,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+src/v63_model_reliability_dashboard_engine.py,16,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+src/v63_model_reliability_dashboard_engine.py,18,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+src/v63_model_reliability_dashboard_engine.py,19,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+src/v63_model_reliability_dashboard_engine.py,20,v50 — двойки и групи,— двойки и групи,False,True
+src/v63_model_reliability_dashboard_engine.py,21,v51 — пакет от комбинации,— пакет от комбинации,False,True
+src/v63_model_reliability_dashboard_engine.py,22,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+src/v63_model_reliability_dashboard_engine.py,23,v58 — обединена оценка,— обединена оценка,False,True
+src/v63_model_reliability_dashboard_engine.py,24,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+src/v63_model_reliability_dashboard_engine.py,25,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+src/v65_model_weighting_engine.py,14,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+src/v65_model_weighting_engine.py,16,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+src/v65_model_weighting_engine.py,17,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+src/v65_model_weighting_engine.py,18,v50 — двойки и групи,— двойки и групи,False,True
+src/v65_model_weighting_engine.py,19,v51 — пакет от комбинации,— пакет от комбинации,False,True
+src/v65_model_weighting_engine.py,20,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+src/v65_model_weighting_engine.py,21,v58 — обединена оценка,— обединена оценка,False,True
+src/v65_model_weighting_engine.py,22,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+src/v65_model_weighting_engine.py,23,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+src/v66_weighted_smart_ensemble_engine.py,26,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+src/v66_weighted_smart_ensemble_engine.py,28,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+src/v66_weighted_smart_ensemble_engine.py,29,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+src/v66_weighted_smart_ensemble_engine.py,30,v50 — двойки и групи,— двойки и групи,False,True
+src/v66_weighted_smart_ensemble_engine.py,31,v51 — пакет от комбинации,— пакет от комбинации,False,True
+src/v66_weighted_smart_ensemble_engine.py,32,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+src/v66_weighted_smart_ensemble_engine.py,33,v58 — обединена оценка,— обединена оценка,False,True
+src/v66_weighted_smart_ensemble_engine.py,34,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+src/v70_applied_candidate_portfolio_engine.py,603,**Important:** This does not overwrite Step 67. It creates a separate v70 applied portfolio layer. It is not a prediction and does not guarantee a win.,**Important:** This does not overwrite Step 67. It creates a separate applied portfolio layer. It is not a prediction and does not guarantee a win.,False,True
+src/v70_applied_candidate_portfolio_section.py,143,Превръща Step 69 candidate portfolio в отделен v70 приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,Превръща Step 69 candidate portfolio в отделен приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,False,True
+src/v70_applied_candidate_portfolio_section.py,197,Приложен v70 портфейл,Приложен портфейл,False,True
+src/v72_pipeline_refresh_section.py,64,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки v41–v60.,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки.,False,True
+src/v72_pipeline_refresh_section.py,116,"Тази опция пуска core scripts v41–v60 плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска core scripts плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+src/v72_pipeline_refresh_section.py,120,Пълно обновяване v41–v74,Пълно обновяване,False,True
+src/v72_pipeline_refresh_section.py,182," - **Проверка без обновяване** само проверява дали скриптовете и артефактите съществуват. - **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–74. - **Пълно обновяване v41–v74** пуска основните модели и после статистическата верига. - Автоматичното обновяване след „Добавяне на тираж“ вече е подравнено да обновява цялата верига след запис. - Центърът за обучение вече показва Step 65–74 като част от процеса за обновяване.  Това е технически контролен слой за обновяване, не предсказател н","- **Проверка без обновяване** само проверява дали скриптовете и артефактите съществуват. - **Статистическо обновяване** пуска Step 61, 62, 63 и Step 65–74. - **Пълно обновяване ** пуска основните модели и после статистическата верига. - Автоматичното обновяване след „Добавяне на тираж“ вече е подравнено да обновява цялата верига след запис. - Центърът за обучение вече показва Step 65–74 като част от процеса за обновяване. Това е технически контролен слой за обновяване, не предсказател на бъдещ т",False,True
+src/v72_pipeline_refresh_section.py,121,Пускам пълно обновяване v41–v74...,Пускам пълно обновяване...,False,True
+src/v84_1_final_plan_snapshot_slips.py,75,v841-cell v841-selected,-cell -selected,False,True
+src/v84_1_final_plan_snapshot_slips.py,75,v841-cell,-cell,False,True
+src/v84_model_comparison_forward_test_engine.py,443,v84-,-,False,True

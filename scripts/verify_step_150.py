@@ -39,8 +39,8 @@ REQUIRED = [
     ROOT / "tools/audit_ui_language_integrity.py",
     ROOT / "tools/finalize_step_150_release.py",
     ROOT / "scripts/verify_step_150.py",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
     ROOT / "release-manifest.json",
 ]
 
@@ -212,8 +212,8 @@ def main() -> int:
             root=ROOT,
             metadata_files=(
                 ROOT / "release-manifest.json",
-                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
             ),
         )
         if result.get("forbidden_entries") or not archive.is_file():

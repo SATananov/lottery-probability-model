@@ -42,7 +42,7 @@ def build_runtime_hardening_summary() -> dict[str, Any]:
         {
             "check": "heavy_scripts_excluded_from_default",
             "passed": all(name in add_draws for name in HEAVY_SCRIPTS),
-            "details_bg": "v67 и v75 остават налични, но не са default fast refresh блокер.",
+            "details_bg": "Тежките лабораторни процеси остават налични, но не блокират бързото стандартно обновяване.",
         },
         {
             "check": "user_facing_shortcut_label",
@@ -69,7 +69,7 @@ def build_runtime_hardening_summary() -> dict[str, Any]:
         "heavy_scripts_kept_manual": HEAVY_SCRIPTS,
         "what_changed_bg": [
             "Автоматичното обновяване след нов тираж вече използва бърз режим по подразбиране.",
-            "Тежките процеси v67 и v75 не блокират стандартния поток след запис на тираж.",
+            "Тежките лабораторни процеси не блокират стандартния поток след запис на тираж.",
             "Всеки скрипт в refresh chain-а има timeout защита.",
             "Пълният refresh остава наличен като ръчен режим.",
             "Бутонът в sidebar е преименуван на по-точно действие: Добави нов тираж.",

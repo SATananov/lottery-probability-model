@@ -134,11 +134,11 @@ def render_v100_final_release_lock_section() -> None:
     status_cols[3].metric("Табло", friendly_status(statuses.get("step99_status")))
 
     if failures:
-        st.error("Има блокиращи проверки. Прегледай checklist-а преди финален release.")
+        st.error("Има блокиращи проверки. Прегледай контролния списък преди финалното заключване.")
         for failure in failures:
             st.write(f"- {failure.get('area_bg', '')}: {failure.get('check_bg', '')} — {failure.get('details_bg', '')}")
     else:
-        st.success("V1 workflow е заключен като готов за следващ реален тираж.")
+        st.success("Работният процес е заключен и е готов за следващия реален тираж.")
 
     st.info(f"Следващо действие: {payload.get('next_action_bg', '-')}")
 
@@ -149,13 +149,13 @@ def render_v100_final_release_lock_section() -> None:
         if checklist_rows:
             st.dataframe(_rename_rows(checklist_rows, CHECKLIST_LABELS), width="stretch", hide_index=True)
             st.download_button(
-                "Свали checklist CSV",
+                "Свали контролния списък",
                 data=_csv_bytes(checklist_rows),
                 file_name="v100_final_release_lock_checklist.csv",
                 mime="text/csv",
             )
         else:
-            st.info("Няма checklist данни.")
+            st.info("Няма данни за контролния списък.")
 
     with tabs[1]:
         st.write(f"historical_draws.csv: **{dataset.get('historical_rows', 0)}** реда")
@@ -174,7 +174,7 @@ def render_v100_final_release_lock_section() -> None:
                 mime="text/csv",
             )
         else:
-            st.info("Няма manifest данни.")
+            st.info("Няма данни за описа на файловете.")
 
     with tabs[3]:
         for warning in warnings:

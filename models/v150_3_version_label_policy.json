@@ -1,0 +1,18 @@
+{
+  "step": "150.3",
+  "title": "User-Friendly Internal Version Label Cleanup",
+  "scope": "all active Streamlit modules, dynamic tables, status cards and explanatory text",
+  "normal_user_mode": {
+    "internal_v_labels_visible": false,
+    "plain_bulgarian_required": true,
+    "versioned_file_paths_visible": false,
+    "machine_status_codes_visible": false
+  },
+  "technical_details_mode": {
+    "exact_internal_versions_preserved": true,
+    "exact_paths_and_identifiers_available": true
+  },
+  "display_only": true,
+  "production_scoring_changed": false,
+  "personal_journal_used": false
+}

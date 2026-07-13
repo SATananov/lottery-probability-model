@@ -247,9 +247,9 @@ def _protocol_steps() -> list[dict[str, Any]]:
         {
             "order": 1,
             "phase_bg": "Преди следващия тираж",
-            "action_bg": "Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.",
+            "action_bg": "Запази финалното заключване и не променяй модели, тегла или генератори преди реалната проверка.",
             "why_bg": "Така първият реален цикъл ще измери заключената система, а не нова смесена версия.",
-            "expected_result_bg": "Проектът остава във V1_LOCKED_WAITING_NEXT_DRAW.",
+            "expected_result_bg": "Проектът остава заключен и очаква следващия реален тираж.",
         },
         {
             "order": 2,
@@ -313,7 +313,7 @@ def build_real_use_protocol() -> dict[str, Any]:
     step100_failures = v100.get("blocking_failures", []) if isinstance(v100.get("blocking_failures"), list) else []
 
     checklist = [
-        _check("Step 100", "V1 lock е активен", statuses.get("step100_status") == "V1_LOCKED_WAITING_NEXT_DRAW", statuses.get("step100_status", "UNKNOWN")),
+        _check("Step 100", "Финалното заключване е активно", statuses.get("step100_status") == "V1_LOCKED_WAITING_NEXT_DRAW", statuses.get("step100_status", "UNKNOWN")),
         _check("Step 100", "Няма Step 100 blocking failures", len(step100_failures) == 0, f"blocking_failures={len(step100_failures)}"),
         _check("Данни", "Dataset-ите са синхронизирани", bool(dataset.get("datasets_synced")), f"historical={dataset.get('historical_rows')}, normalized={dataset.get('normalized_rows')}, canonical={dataset.get('canonical_rows')}"),
         _check("Данни", "Последният тираж е валиден и актуален", bool(dataset.get("latest_draw_date")) and len(dataset.get("latest_numbers") or []) == 6 and int(dataset.get("historical_rows") or 0) >= 10058, f"{dataset.get('latest_draw_date')} — {dataset.get('latest_numbers_text')}"),

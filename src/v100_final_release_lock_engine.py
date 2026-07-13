@@ -291,7 +291,7 @@ def build_final_release_lock() -> dict[str, Any]:
     payload = {
         "step": 100,
         "status": status,
-        "title_bg": "Финално заключване v1",
+        "title_bg": "Финално заключване",
         "generated_at_utc": _now_iso(),
         "active_plan": active_plan,
         "dataset": dataset,
@@ -317,7 +317,7 @@ def _write_markdown(payload: dict[str, Any]) -> None:
     failures = payload.get("blocking_failures", []) or []
     warnings = payload.get("warnings", []) or []
     lines = [
-        "# Step 100 — Финално заключване v1",
+        "# Step 100 — Финално заключване",
         "",
         f"Статус: **{payload.get('status', 'UNKNOWN')}**",
         "",

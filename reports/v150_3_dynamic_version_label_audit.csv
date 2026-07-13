@@ -1,0 +1,340 @@
+﻿path,pointer,original,normal_mode_text,version_label_remaining,technical_mode_preserves_original
+models/lottery_prediction_model.json,$.model_name,Прогнозен статистически модул v36,Прогнозен статистически модул,False,True
+models/v100/v100_final_release_lock_model.json,$.title_bg,Финално заключване v1,Финално заключване,False,True
+models/v100/v100_final_release_lock_model.json,$.checklist[15].details_bg,"v97, v98, v99, v100",",,,",False,True
+models/v100/v100_final_release_lock_model.json,$.safe_note_bg,"Step 100 е финално заключване на v1 workflow. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.","Step 100 е финално заключване на работният процес. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.",False,True
+models/v101/v101_real_use_protocol_model.json,$.protocol_steps[0].action_bg,"Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.","Запази Step 100 като заключен заключената контролна точка и не променяй модели, тегла или генератори преди реалната проверка.",False,True
+models/v101/v101_real_use_protocol_model.json,$.checklist[0].check_bg,V1 lock е активен,Финалното заключване е активно,False,True
+models/v102/v102_runtime_hardening_model.json,$.what_changed_bg[1],Тежките процеси v67 и v75 не блокират стандартния поток след запис на тираж.,Тежките лабораторни процеси не блокират стандартния поток след запис на тираж.,False,True
+models/v102/v102_runtime_hardening_model.json,$.checks[2].details_bg,"v67 и v75 остават налични, но не са default fast refresh блокер.","и остават налични, но не са default fast refresh блокер.",False,True
+models/v106/v106_post_draw_status_sync_model.json,$.checklist[1].details_bg,v97=READY,=READY,False,True
+models/v106/v106_post_draw_status_sync_model.json,$.checklist[2].details_bg,v98=HAS_HISTORY,=HAS_HISTORY,False,True
+models/v106/v106_post_draw_status_sync_model.json,$.checklist[3].details_bg,v99=READY_WAITING_NEXT_DRAW,=READY_WAITING_NEXT_DRAW,False,True
+models/v106/v106_post_draw_status_sync_model.json,$.checklist[4].details_bg,v100=V1_LOCKED_WAITING_NEXT_DRAW,=V1_LOCKED_WAITING_NEXT_DRAW,False,True
+models/v106/v106_post_draw_status_sync_model.json,$.checklist[5].details_bg,v101=WAITING_NEXT_REAL_DRAW,=WAITING_NEXT_REAL_DRAW,False,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,$.safe_note_bg,"Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, v40 normalized и v41 canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.","Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, normalized и canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.",False,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,$.checklist[3].details_bg,"v106=CHECK_REQUIRED, blocking=2","=CHECK_REQUIRED, blocking=2",False,True
+models/v106_1/v106_1_post_draw_dataset_sync_model.json,$.checklist[4].details_bg,"v99=READY_WAITING_NEXT_DRAW, v100=CHECK_REQUIRED, v101=CHECK_REQUIRED","=READY_WAITING_NEXT_DRAW, =CHECK_REQUIRED, =CHECK_REQUIRED",False,True
+models/v107/v107_model_training_policy_refresh_control_model.json,$.policy_table[3].scripts_bg,"v77, v78, v94, v95, v98, v99, v100, v101",",,,,,,,",False,True
+models/v116_1/real_ticket_pack_ui_polish_status.json,$.version,v116.1,Вътрешна версия,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[0].details,v117 total_lines=12,total_lines=12,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[1].details,v117 total_price_eur=10.8,total_price_eur=10.8,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[2].details,v96 active_plan_combinations=12,active_plan_combinations=12,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[3].details,v96 active_plan_cost_eur=10.8,active_plan_cost_eur=10.8,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[4].details,v97 combination_count=12,combination_count=12,False,True
+models/v117_1/add_draw_ticket_pack_price_sync_status.json,$.checks[5].details,v97 cost_eur=10.8,cost_eur=10.8,False,True
+models/v42/v42_positive_negative_number_scores.json,$.score_explanation.positive_signal_score,"Frequency, recency, recent-window activity, and v41 vote support.","Frequency, recency, recent-window activity, and vote support.",False,True
+models/v43_1/v43_1_interval_rhythm_refined_prediction.json,$.internal_version,v43.1,Вътрешна версия,False,True
+models/v43_1/v43_1_interval_rhythm_refined_scores.json,$.internal_version,v43.1,Вътрешна версия,False,True
+models/v44_1/v44_1_final_ensemble_number_scores.json,$.internal_version,v44.1,Вътрешна версия,False,True
+models/v44_1/v44_1_final_ensemble_ticket_prediction.json,$.internal_version,v44.1,Вътрешна версия,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.summary.best_model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[0].model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[1].model_label,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[3].model_label,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[4].model_label,v50 — двойки и групи,— двойки и групи,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[5].model_label,v51 — пакет от комбинации,— пакет от комбинации,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[6].model_label,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[7].model_label,v58 — обединена оценка,— обединена оценка,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[8].model_label,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+models/v63/v63_model_reliability_dashboard_model.json,$.ranked_models[9].model_label,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+models/v65/v65_model_weighting_center_model.json,$.summary.top_model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[0].model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[1].model_label,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[3].model_label,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[4].model_label,v50 — двойки и групи,— двойки и групи,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[5].model_label,v51 — пакет от комбинации,— пакет от комбинации,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[6].model_label,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[7].model_label,v58 — обединена оценка,— обединена оценка,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[8].model_label,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+models/v65/v65_model_weighting_center_model.json,$.weights[9].model_label,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[0].model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[1].model_label,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[3].model_label,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[4].model_label,v51 — пакет от комбинации,— пакет от комбинации,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[5].model_label,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[6].model_label,v58 — обединена оценка,— обединена оценка,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.source_models[7].model_label,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.scores[11].top_sources,v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v59 — интелигентен генератор 2,— финална обединена комбинация | — последни прогнозни сигнали | — интелигентен генератор 2,False,True
+models/v66/v66_weighted_smart_ensemble_model.json,$.scores[47].top_sources,"v44.1 — финална обединена комбинация | v57 — горещи, студени и стабилни | v41 — последни прогнозни сигнали","— финална обединена комбинация | — горещи, студени и стабилни | — последни прогнозни сигнали",False,True
+models/v67/v67_weighted_ticket_builder_model.json,$.source_top_numbers[5].top_sources,v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v51 — пакет от комбинации,— финална обединена комбинация | — последни прогнозни сигнали | — пакет от комбинации,False,True
+models/v99/v99_final_user_dashboard_model.json,$.warnings[0],Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние.,Има реален тираж след базовия заключената контролна точка; това е нормално post-draw състояние.,False,True
+models/versions/lottery_prediction_model_v36_20260620_205906.json,$.model_name,Прогнозен статистически модул v36,Прогнозен статистически модул,False,True
+reports/v100_final_release_lock_checklist.csv,row[17].details_bg,"v97, v98, v99, v100",",,,",False,True
+reports/v100_final_release_lock_summary.json,$.title_bg,Финално заключване v1,Финално заключване,False,True
+reports/v100_final_release_lock_summary.json,$.checklist[15].details_bg,"v97, v98, v99, v100",",,,",False,True
+reports/v100_final_release_lock_summary.json,$.safe_note_bg,"Step 100 е финално заключване на v1 workflow. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.","Step 100 е финално заключване на работният процес. Той проверява готовността на проекта, реалния цикъл на тиража, активния план, историята и потребителските действия. Не добавя прогноза, не променя математиката и не гарантира печалба.",False,True
+reports/v101_real_use_protocol_checklist.csv,row[2].check_bg,V1 lock е активен,Финалното заключване е активно,False,True
+reports/v101_real_use_protocol_steps.csv,row[2].action_bg,"Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.","Запази Step 100 като заключен заключената контролна точка и не променяй модели, тегла или генератори преди реалната проверка.",False,True
+reports/v101_real_use_protocol_summary.json,$.protocol_steps[0].action_bg,"Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.","Запази Step 100 като заключен заключената контролна точка и не променяй модели, тегла или генератори преди реалната проверка.",False,True
+reports/v101_real_use_protocol_summary.json,$.checklist[0].check_bg,V1 lock е активен,Финалното заключване е активно,False,True
+reports/v102_runtime_hardening_checklist.csv,row[4].details_bg,"v67 и v75 остават налични, но не са default fast refresh блокер.","и остават налични, но не са default fast refresh блокер.",False,True
+reports/v102_runtime_hardening_summary.json,$.what_changed_bg[1],Тежките процеси v67 и v75 не блокират стандартния поток след запис на тираж.,Тежките лабораторни процеси не блокират стандартния поток след запис на тираж.,False,True
+reports/v102_runtime_hardening_summary.json,$.checks[2].details_bg,"v67 и v75 остават налични, но не са default fast refresh блокер.","и остават налични, но не са default fast refresh блокер.",False,True
+reports/v106_1_post_draw_dataset_sync_checklist.csv,row[5].details_bg,"v106=CHECK_REQUIRED, blocking=2","=CHECK_REQUIRED, blocking=2",False,True
+reports/v106_1_post_draw_dataset_sync_checklist.csv,row[6].details_bg,"v99=READY_WAITING_NEXT_DRAW, v100=CHECK_REQUIRED, v101=CHECK_REQUIRED","=READY_WAITING_NEXT_DRAW, =CHECK_REQUIRED, =CHECK_REQUIRED",False,True
+reports/v106_1_post_draw_dataset_sync_summary.json,$.safe_note_bg,"Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, v40 normalized и v41 canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.","Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, normalized и canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.",False,True
+reports/v106_1_post_draw_dataset_sync_summary.json,$.checklist[3].details_bg,"v106=CHECK_REQUIRED, blocking=2","=CHECK_REQUIRED, blocking=2",False,True
+reports/v106_1_post_draw_dataset_sync_summary.json,$.checklist[4].details_bg,"v99=READY_WAITING_NEXT_DRAW, v100=CHECK_REQUIRED, v101=CHECK_REQUIRED","=READY_WAITING_NEXT_DRAW, =CHECK_REQUIRED, =CHECK_REQUIRED",False,True
+reports/v106_post_draw_status_sync_checklist.csv,row[3].details_bg,v97=READY,=READY,False,True
+reports/v106_post_draw_status_sync_checklist.csv,row[4].details_bg,v98=HAS_HISTORY,=HAS_HISTORY,False,True
+reports/v106_post_draw_status_sync_checklist.csv,row[5].details_bg,v99=READY_WAITING_NEXT_DRAW,=READY_WAITING_NEXT_DRAW,False,True
+reports/v106_post_draw_status_sync_checklist.csv,row[6].details_bg,v100=V1_LOCKED_WAITING_NEXT_DRAW,=V1_LOCKED_WAITING_NEXT_DRAW,False,True
+reports/v106_post_draw_status_sync_checklist.csv,row[7].details_bg,v101=WAITING_NEXT_REAL_DRAW,=WAITING_NEXT_REAL_DRAW,False,True
+reports/v106_post_draw_status_sync_summary.json,$.checklist[1].details_bg,v97=READY,=READY,False,True
+reports/v106_post_draw_status_sync_summary.json,$.checklist[2].details_bg,v98=HAS_HISTORY,=HAS_HISTORY,False,True
+reports/v106_post_draw_status_sync_summary.json,$.checklist[3].details_bg,v99=READY_WAITING_NEXT_DRAW,=READY_WAITING_NEXT_DRAW,False,True
+reports/v106_post_draw_status_sync_summary.json,$.checklist[4].details_bg,v100=V1_LOCKED_WAITING_NEXT_DRAW,=V1_LOCKED_WAITING_NEXT_DRAW,False,True
+reports/v106_post_draw_status_sync_summary.json,$.checklist[5].details_bg,v101=WAITING_NEXT_REAL_DRAW,=WAITING_NEXT_REAL_DRAW,False,True
+reports/v107_model_training_policy_refresh_control_summary.json,$.policy_table[3].scripts_bg,"v77, v78, v94, v95, v98, v99, v100, v101",",,,,,,,",False,True
+reports/v107_model_training_policy_refresh_control_table.csv,row[5].scripts_bg,"v77, v78, v94, v95, v98, v99, v100, v101",",,,,,,,",False,True
+reports/v108_user_menu_live_status_sync_checklist.csv,row[2].details_bg,"Потребителското меню вече зарежда live dataset status, а не само стария v86 model registry.","Потребителското меню вече зарежда live dataset status, а не само стария model registry.",False,True
+reports/v108_user_menu_live_status_sync_checklist.csv,row[3].details_bg,Редовете и последният тираж не трябва да идват директно от v86 summary.,Редовете и последният тираж не трябва да идват директно от summary.,False,True
+reports/v108_user_menu_live_status_sync_checklist.csv,row[4].details_bg,"rows=10062, expected=10062, source=v107","rows=10062, expected=10062, source=",False,True
+reports/v108_user_menu_live_status_sync_summary.json,$.checklist[0].details_bg,"Потребителското меню вече зарежда live dataset status, а не само стария v86 model registry.","Потребителското меню вече зарежда live dataset status, а не само стария model registry.",False,True
+reports/v108_user_menu_live_status_sync_summary.json,$.checklist[1].details_bg,Редовете и последният тираж не трябва да идват директно от v86 summary.,Редовете и последният тираж не трябва да идват директно от summary.,False,True
+reports/v108_user_menu_live_status_sync_summary.json,$.checklist[2].details_bg,"rows=10062, expected=10062, source=v107","rows=10062, expected=10062, source=",False,True
+reports/v108_user_menu_live_status_sync_summary.json,$.safe_note_bg,"Step 108 поправя потребителското меню да показва текущия post-draw dataset status, вместо остарял v86 registry snapshot.","Step 108 поправя потребителското меню да показва текущия post-draw dataset status, вместо остарял registry snapshot.",False,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,$.suggested_cards[2].lines[0].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,$.suggested_cards[2].lines[1].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,$.suggested_cards[2].lines[2].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v109_2_ticket_pack_4line_journal_summary.json,$.suggested_cards[2].lines[3].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[0].details,v117 total_lines=12,total_lines=12,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[1].details,v117 total_price_eur=10.8,total_price_eur=10.8,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[2].details,v96 active_plan_combinations=12,active_plan_combinations=12,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[3].details,v96 active_plan_cost_eur=10.8,active_plan_cost_eur=10.8,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[4].details,v97 combination_count=12,combination_count=12,False,True
+reports/v117_1_add_draw_ticket_pack_price_sync_report.json,$.checks[5].details,v97 cost_eur=10.8,cost_eur=10.8,False,True
+reports/v117_real_ticket_pack_builder_summary.json,$.cards[2].lines[0].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v117_real_ticket_pack_builder_summary.json,$.cards[2].lines[1].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v117_real_ticket_pack_builder_summary.json,$.cards[2].lines[2].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v117_real_ticket_pack_builder_summary.json,$.cards[2].lines[3].note,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v150_1_dynamic_text_audit.csv,row[177].bulgarian_display,v76 е обновен към текущите данни,е обновен към текущите данни,False,True
+reports/v150_1_dynamic_text_audit.csv,row[178].bulgarian_display,v106 е синхронизиран след тиража,е синхронизиран след тиража,False,True
+reports/v150_1_dynamic_text_audit.csv,row[218].bulgarian_display,V117 общо комбинации е 12,общо комбинации е 12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[219].source_value,v117 total_lines=12,total_lines=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[219].bulgarian_display,v117 total_lines=12,total_lines=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[220].bulgarian_display,V117 общо цена е 10 80,общо цена е 10 80,False,True
+reports/v150_1_dynamic_text_audit.csv,row[221].source_value,v117 total_price_eur=10.8,total_price_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[221].bulgarian_display,v117 total_price_eur=10.8,total_price_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[222].bulgarian_display,Моментното състояние на v96 използва 12 комбинации,Моментното състояние на използва 12 комбинации,False,True
+reports/v150_1_dynamic_text_audit.csv,row[223].source_value,v96 active_plan_combinations=12,active_plan_combinations=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[223].bulgarian_display,v96 active_plan_combinations=12,active_plan_combinations=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[224].bulgarian_display,Моментното състояние на v96 използва диапазона 10–80,Моментното състояние на използва диапазона 10–80,False,True
+reports/v150_1_dynamic_text_audit.csv,row[225].source_value,v96 active_plan_cost_eur=10.8,active_plan_cost_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[225].bulgarian_display,v96 active_plan_cost_eur=10.8,active_plan_cost_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[226].bulgarian_display,Планът на жизнения цикъл v97 използва 12 комбинации,Планът на жизнения цикъл използва 12 комбинации,False,True
+reports/v150_1_dynamic_text_audit.csv,row[227].source_value,v97 combination_count=12,combination_count=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[227].bulgarian_display,v97 combination_count=12,combination_count=12,False,True
+reports/v150_1_dynamic_text_audit.csv,row[228].bulgarian_display,Планът на жизнения цикъл v97 използва диапазона 10–80,Планът на жизнения цикъл използва диапазона 10–80,False,True
+reports/v150_1_dynamic_text_audit.csv,row[229].source_value,v97 cost_eur=10.8,cost_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[229].bulgarian_display,v97 cost_eur=10.8,cost_eur=10.8,False,True
+reports/v150_1_dynamic_text_audit.csv,row[296].bulgarian_display,Прогнозите v41 са генерирани от каноничните тиражи,Прогнозите са генерирани от каноничните тиражи,False,True
+reports/v150_1_dynamic_text_audit.csv,row[306].bulgarian_display,Фишовете от разширения прогнозен модул v45 са готови,Фишовете от разширения прогнозен модул са готови,False,True
+reports/v150_1_dynamic_text_audit.csv,row[317].bulgarian_display,Разширен ансамбъл — v45,Разширен ансамбъл,False,True
+reports/v150_1_dynamic_text_audit.csv,row[319].bulgarian_display,Оценките от разширения прогнозен модул v45 са готови,Оценките от разширения прогнозен модул са готови,False,True
+reports/v150_1_dynamic_text_audit.csv,row[487].bulgarian_display,Потребителското меню не зависи от показателите на v86,Потребителското меню не зависи от показателите на,False,True
+reports/v150_1_dynamic_text_audit.csv,row[513].source_value,Ред от active plan v94.,Ред от active plan.,False,True
+reports/v150_1_dynamic_text_audit.csv,row[513].bulgarian_display,Ред от активния план v94.,Ред от активния план.,False,True
+reports/v150_1_dynamic_text_audit.csv,row[590].bulgarian_display,V41 модел преобучение Завършен,модел преобучение Завършен,False,True
+reports/v150_1_dynamic_text_audit.csv,row[593].bulgarian_display,V45 обучаващи верига Завършен,обучаващи верига Завършен,False,True
+reports/v150_1_dynamic_text_audit.csv,row[594].bulgarian_display,Анализът на двойки и групи v50 е завършен,Анализът на двойки и групи е завършен,False,True
+reports/v150_1_dynamic_text_audit.csv,row[595].bulgarian_display,Анализът на портфейла от фишове v51 е завършен,Анализът на портфейла от фишове е завършен,False,True
+reports/v150_1_table_header_audit.csv,row[310].bulgarian_header,V41 глас брой,глас брой,False,True
+reports/v150_1_table_header_audit.csv,row[348].bulgarian_header,V42 комбиниран оценка,комбиниран оценка,False,True
+reports/v150_1_table_header_audit.csv,row[349].bulgarian_header,V42 Положително сигнал,Положително сигнал,False,True
+reports/v150_1_table_header_audit.csv,row[350].bulgarian_header,V42 отсъствие риск,отсъствие риск,False,True
+reports/v150_1_table_header_audit.csv,row[351].bulgarian_header,V42 отсъствие безопасност,отсъствие безопасност,False,True
+reports/v150_1_table_header_audit.csv,row[357].bulgarian_header,V41 глас оценка,глас оценка,False,True
+reports/v150_1_table_header_audit.csv,row[783].bulgarian_header,V95 статус,статус,False,True
+reports/v150_2_dynamic_key_audit.csv,row[504].bulgarian_label,V40 нормализиран тираж Събития csv,нормализиран тираж Събития csv,False,True
+reports/v150_2_dynamic_key_audit.csv,row[505].bulgarian_label,V41 каноничен тираж Събития csv,каноничен тираж Събития csv,False,True
+reports/v150_2_dynamic_key_audit.csv,row[656].bulgarian_label,V117 общо комбинации,общо комбинации,False,True
+reports/v150_2_dynamic_key_audit.csv,row[657].bulgarian_label,V117 общо цена eur,общо цена eur,False,True
+reports/v150_2_dynamic_key_audit.csv,row[658].bulgarian_label,V96 активен план комбинации,активен план комбинации,False,True
+reports/v150_2_dynamic_key_audit.csv,row[659].bulgarian_label,V96 активен план цена eur,активен план цена eur,False,True
+reports/v150_2_dynamic_key_audit.csv,row[660].bulgarian_label,V97 активен план комбинации,активен план комбинации,False,True
+reports/v150_2_dynamic_key_audit.csv,row[661].bulgarian_label,V97 активен план цена eur,активен план цена eur,False,True
+reports/v150_2_dynamic_key_audit.csv,row[668].bulgarian_label,Последен v40 нормализиран,Последен нормализиран,False,True
+reports/v150_2_dynamic_key_audit.csv,row[669].bulgarian_label,Последен v41 каноничен,Последен каноничен,False,True
+reports/v150_2_dynamic_key_audit.csv,row[672].bulgarian_label,V40 нормализиран,нормализиран,False,True
+reports/v150_2_dynamic_key_audit.csv,row[673].bulgarian_label,V41 каноничен,каноничен,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1223].bulgarian_label,V41 глас брой,глас брой,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1269].bulgarian_label,V42 комбиниран Положително Отрицателно намерен,комбиниран Положително Отрицателно намерен,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1270].bulgarian_label,V43 1 интервал ритъм намерен,1 интервал ритъм намерен,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1272].bulgarian_label,V42 комбиниран оценка,комбиниран оценка,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1273].bulgarian_label,V42 Положително сигнал,Положително сигнал,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1274].bulgarian_label,V42 отсъствие риск,отсъствие риск,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1275].bulgarian_label,V42 отсъствие безопасност,отсъствие безопасност,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1281].bulgarian_label,V41 глас оценка,глас оценка,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1693].bulgarian_label,Източник v76 обобщение,Източник обобщение,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1715].bulgarian_label,Източник v77 обобщение,Източник обобщение,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1736].bulgarian_label,Източник v78 обобщение,Източник обобщение,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1788].bulgarian_label,Данни v40 нормализиран тираж Събития csv,Данни нормализиран тираж Събития csv,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1789].bulgarian_label,Данни v41 каноничен тираж Събития csv,Данни каноничен тираж Събития csv,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1811].bulgarian_label,V81 ux статус,ux статус,False,True
+reports/v150_2_dynamic_key_audit.csv,row[1812].bulgarian_label,V82 издание статус,издание статус,False,True
+reports/v150_2_dynamic_key_audit.csv,row[2028].bulgarian_label,V95 статус,статус,False,True
+reports/v150_2_dynamic_key_audit.csv,row[2044].bulgarian_label,V97 обновяване скрипт наличен,обновяване скрипт наличен,False,True
+reports/v150_2_dynamic_key_audit.csv,row[2390].bulgarian_label,Източник v117 генерирано на UTC,Източник генерирано на UTC,False,True
+reports/v150_2_dynamic_key_audit.csv,row[2391].bulgarian_label,Източник v117 последен данни тираж дата,Източник последен данни тираж дата,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[47].source_text,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.","Бързият режим пропуска тежките лабораторни процеси, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.",False,True
+reports/v150_2_plain_language_literal_audit.csv,row[47].bulgarian_display,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.","Бързият режим пропуска тежките лабораторни процеси, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.",False,True
+reports/v150_2_plain_language_literal_audit.csv,row[151].source_text,V1 workflow е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[151].bulgarian_display,V1 работен процес е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1008].source_text,Версия на анализа: V41,Текущ анализ по действащите правила,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1008].bulgarian_display,Версия на анализа: V41,Текущ анализ по действащите правила,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1265].source_text,Обнови v61 анализа,Обнови анализа,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1265].bulgarian_display,Обнови v61 анализа,Обнови анализа,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1273].source_text,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1273].bulgarian_display,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1274].source_text,Грешка при обновяване на v61 анализа.,Грешка при обновяване на анализа.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1274].bulgarian_display,Грешка при обновяване на v61 анализа.,Грешка при обновяване на анализа.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1387].source_text,Превръща Step 69 candidate portfolio в отделен v70 приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,Превръща Step 69 candidate portfolio в отделен приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1387].bulgarian_display,Превръща Етап 69 кандидат портфейл в отделен v70 приложен статистически портфейл. Етап 67 остава запазен. Това не е гаранция за печалба.,Превръща Етап 69 кандидат портфейл в отделен приложен статистически портфейл. Етап 67 остава запазен. Това не е гаранция за печалба.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1398].source_text,Приложен v70 портфейл,Приложен портфейл,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1398].bulgarian_display,Приложен v70 портфейл,Приложен портфейл,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1431].source_text,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки v41–v60.,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1431].bulgarian_display,Център за обновяване на статистическите анализи: 63 и 74. При нужда може да включи и основните стъпки v41–v60.,Център за обновяване на статистическите анализи: 63 и 74. При нужда може да включи и основните стъпки.,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1448].source_text,"Тази опция пуска core scripts v41–v60 плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска core scripts плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1448].bulgarian_display,"Тази опция пуска основните скриптове v41–v60 плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска основните скриптове плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1449].source_text,Пълно обновяване v41–v74,Пълно обновяване,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1449].bulgarian_display,Пълно обновяване v41–v74,Пълно обновяване,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1461].source_text,Пускам пълно обновяване v41–v74...,Пускам пълно обновяване...,False,True
+reports/v150_2_plain_language_literal_audit.csv,row[1461].bulgarian_display,Пускам пълно обновяване v41–v74...,Пускам пълно обновяване...,False,True
+reports/v150_ui_literal_audit.csv,row[78].source_text,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.","Бързият режим пропуска тежките лабораторни процеси, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.",False,True
+reports/v150_ui_literal_audit.csv,row[78].bulgarian_display,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.","Бързият режим пропуска тежките лабораторни процеси, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.",False,True
+reports/v150_ui_literal_audit.csv,row[78].english_display,"Бързият режим пропуска v67 и v75, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.","Бързият режим пропуска тежките лабораторни процеси, защото са тежки лабораторни процеси. Те остават налични за ръчно пускане от съответните контролни страници.",False,True
+reports/v150_ui_literal_audit.csv,row[223].source_text,V1 workflow е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+reports/v150_ui_literal_audit.csv,row[223].bulgarian_display,V1 работен процес е заключен като готов за следващ реален тираж.,Работният процес е заключен и е готов за следващия реален тираж.,False,True
+reports/v150_ui_literal_audit.csv,row[223].english_display,V1 workflow е заключен като готов за следващ реален draw.,работният процес е заключен като готов за следващ реален draw.,False,True
+reports/v150_ui_literal_audit.csv,row[1339].source_text,Обнови v61 анализа,Обнови анализа,False,True
+reports/v150_ui_literal_audit.csv,row[1339].bulgarian_display,Обнови v61 анализа,Обнови анализа,False,True
+reports/v150_ui_literal_audit.csv,row[1339].english_display,Обнови v61 анализа,Обнови анализа,False,True
+reports/v150_ui_literal_audit.csv,row[1348].source_text,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+reports/v150_ui_literal_audit.csv,row[1348].bulgarian_display,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+reports/v150_ui_literal_audit.csv,row[1348].english_display,v61 анализът е обновен успешно.,анализът е обновен успешно.,False,True
+reports/v150_ui_literal_audit.csv,row[1349].source_text,Грешка при обновяване на v61 анализа.,Грешка при обновяване на анализа.,False,True
+reports/v150_ui_literal_audit.csv,row[1349].bulgarian_display,Грешка при обновяване на v61 анализа.,Грешка при обновяване на анализа.,False,True
+reports/v150_ui_literal_audit.csv,row[1349].english_display,Грешка при refresh на v61 анализа.,Грешка при refresh на анализа.,False,True
+reports/v150_ui_literal_audit.csv,row[1472].source_text,Превръща Step 69 candidate portfolio в отделен v70 приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,Превръща Step 69 candidate portfolio в отделен приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,False,True
+reports/v150_ui_literal_audit.csv,row[1472].bulgarian_display,Превръща Етап 69 кандидат портфейл в отделен v70 приложен статистически портфейл. Етап 67 остава запазен. Това не е гаранция за печалба.,Превръща Етап 69 кандидат портфейл в отделен приложен статистически портфейл. Етап 67 остава запазен. Това не е гаранция за печалба.,False,True
+reports/v150_ui_literal_audit.csv,row[1472].english_display,Превръща Step 69 candidate portfolio в отделен v70 приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,Превръща Step 69 candidate portfolio в отделен приложен статистически портфейл. Step 67 остава запазен. Това не е гаранция за печалба.,False,True
+reports/v150_ui_literal_audit.csv,row[1484].source_text,Приложен v70 портфейл,Приложен портфейл,False,True
+reports/v150_ui_literal_audit.csv,row[1484].bulgarian_display,Приложен v70 портфейл,Приложен портфейл,False,True
+reports/v150_ui_literal_audit.csv,row[1484].english_display,Приложен v70 портфейл,Приложен портфейл,False,True
+reports/v150_ui_literal_audit.csv,row[1519].source_text,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки v41–v60.,Център за обновяване на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки.,False,True
+reports/v150_ui_literal_audit.csv,row[1519].bulgarian_display,Център за обновяване на статистическите анализи: 63 и 74. При нужда може да включи и основните стъпки v41–v60.,Център за обновяване на статистическите анализи: 63 и 74. При нужда може да включи и основните стъпки.,False,True
+reports/v150_ui_literal_audit.csv,row[1519].english_display,Център за refresh на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки v41–v60.,Център за refresh на статистическите анализи: Step 61–63 и Step 65–74. При нужда може да включи и основните стъпки.,False,True
+reports/v150_ui_literal_audit.csv,row[1536].source_text,"Тази опция пуска core scripts v41–v60 плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска core scripts плюс претеглена верига Step 61–74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+reports/v150_ui_literal_audit.csv,row[1536].bulgarian_display,"Тази опция пуска основните скриптове v41–v60 плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.","Тази опция пуска основните скриптове плюс претеглена верига 74. Използвай я след добавяне на нов тираж, когато искаш пълно обновяване.",False,True
+reports/v150_ui_literal_audit.csv,row[1536].english_display,"Тази опция пуска core scripts v41–v60 плюс претеглена pipeline Step 61–74. Използвай я след добавяне на нов draw, когато искаш пълно refresh.","Тази опция пуска core scripts плюс претеглена pipeline Step 61–74. Използвай я след добавяне на нов draw, когато искаш пълно refresh.",False,True
+reports/v150_ui_literal_audit.csv,row[1537].source_text,Пълно обновяване v41–v74,Пълно обновяване,False,True
+reports/v150_ui_literal_audit.csv,row[1537].bulgarian_display,Пълно обновяване v41–v74,Пълно обновяване,False,True
+reports/v150_ui_literal_audit.csv,row[1537].english_display,Пълно refresh v41–v74,Пълно refresh,False,True
+reports/v150_ui_literal_audit.csv,row[1549].source_text,Пускам пълно обновяване v41–v74...,Пускам пълно обновяване...,False,True
+reports/v150_ui_literal_audit.csv,row[1549].bulgarian_display,Пускам пълно обновяване v41–v74...,Пускам пълно обновяване...,False,True
+reports/v150_ui_literal_audit.csv,row[1549].english_display,Пускам пълно refresh v41–v74...,Пускам пълно refresh...,False,True
+reports/v40_rules_aware_draw_audit.json,$.warnings[2],"Dataset uses draw_position, but not the clearer v40 name drawing_no yet.","Dataset uses draw_position, but not the clearer name drawing_no yet.",False,True
+reports/v40_rules_aware_draw_audit.json,$.recommendation[0],Keep the existing v39 dataset as the stable baseline.,Keep the existing dataset as the stable baseline.,False,True
+reports/v40_rules_aware_draw_audit.json,$.recommendation[2],"For v40, create a normalized draw-event данни with drawing_no and bonus_number instead of overwriting historical_draws.csv directly.","For, create a normalized draw-event данни with drawing_no and bonus_number instead of overwriting historical_draws.csv directly.",False,True
+reports/v40_ticket_checker_sample.json,$.version,v40.1.1_ticket_checker_bulgarian_polish,.1_ticket_checker_bulgarian_polish,False,True
+reports/v43_1_interval_rhythm_refined_summary.json,$.internal_version,v43.1,Вътрешна версия,False,True
+reports/v44_1_final_ensemble_ticket_summary.json,$.internal_version,v44.1,Вътрешна версия,False,True
+reports/v61_draw_result_analyzer_summary.json,$.model_signal_summary.best_signals[0].source_bg,v41 честотен baseline,честотен baseline,False,True
+reports/v61_draw_result_analyzer_summary.json,$.model_signal_summary.best_signals[0].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_summary.best_signals[0].source_bg,v41 честотен baseline,честотен baseline,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_summary.best_signals[0].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[0].source_bg,v41 честотен baseline,честотен baseline,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[0].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[1].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[2].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[2].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[3].source_bg,v60 export sample,export sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[4].note_bg,Обединен номерен сигнал от v42.,Обединен номерен сигнал от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[5].source_bg,v43.1 интервален ритъм — балансиран ритъм,интервален ритъм — балансиран ритъм,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[6].source_bg,v43.1 интервален ритъм — закъснели числа,интервален ритъм — закъснели числа,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[7].source_bg,v43.1 интервален ритъм — следващ прозорец,интервален ритъм — следващ прозорец,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[8].source_bg,v43.1 интервален ритъм — финален ритъм,интервален ритъм — финален ритъм,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[9].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[10].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[11].source_bg,v45 Prediction Engine Pro — primary,Prediction Engine Pro — primary,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[11].note_bg,Primary statistical candidate от v45.,Primary statistical candidate от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[12].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[12].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[13].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[13].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[14].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[15].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[16].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[17].source_bg,v60 export sample,export sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[18].source_bg,v60 export sample,export sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[19].source_bg,v60 export sample,export sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[20].source_bg,v41 SGD класификатор,SGD класификатор,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[20].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[21].source_bg,v41 recent 250 baseline,recent 250 baseline,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[21].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[22].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[23].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[23].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[24].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[25].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_latest_draw_analysis.json,$.model_signal_hits[26].source_bg,v60 export sample,export sample,False,True
+reports/v61_model_signal_hits.csv,row[2].source_bg,v41 честотен baseline,честотен baseline,False,True
+reports/v61_model_signal_hits.csv,row[2].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_model_signal_hits.csv,row[3].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_model_signal_hits.csv,row[4].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_model_signal_hits.csv,row[4].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_model_signal_hits.csv,row[5].source_bg,v60 export sample,export sample,False,True
+reports/v61_model_signal_hits.csv,row[6].note_bg,Обединен номерен сигнал от v42.,Обединен номерен сигнал от.,False,True
+reports/v61_model_signal_hits.csv,row[7].source_bg,v43.1 интервален ритъм — балансиран ритъм,интервален ритъм — балансиран ритъм,False,True
+reports/v61_model_signal_hits.csv,row[8].source_bg,v43.1 интервален ритъм — закъснели числа,интервален ритъм — закъснели числа,False,True
+reports/v61_model_signal_hits.csv,row[9].source_bg,v43.1 интервален ритъм — следващ прозорец,интервален ритъм — следващ прозорец,False,True
+reports/v61_model_signal_hits.csv,row[10].source_bg,v43.1 интервален ритъм — финален ритъм,интервален ритъм — финален ритъм,False,True
+reports/v61_model_signal_hits.csv,row[11].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_model_signal_hits.csv,row[12].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_model_signal_hits.csv,row[13].source_bg,v45 Prediction Engine Pro — primary,Prediction Engine Pro — primary,False,True
+reports/v61_model_signal_hits.csv,row[13].note_bg,Primary statistical candidate от v45.,Primary statistical candidate от.,False,True
+reports/v61_model_signal_hits.csv,row[14].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_model_signal_hits.csv,row[14].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_model_signal_hits.csv,row[15].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_model_signal_hits.csv,row[15].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_model_signal_hits.csv,row[16].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_model_signal_hits.csv,row[17].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_model_signal_hits.csv,row[18].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_model_signal_hits.csv,row[19].source_bg,v60 export sample,export sample,False,True
+reports/v61_model_signal_hits.csv,row[20].source_bg,v60 export sample,export sample,False,True
+reports/v61_model_signal_hits.csv,row[21].source_bg,v60 export sample,export sample,False,True
+reports/v61_model_signal_hits.csv,row[22].source_bg,v41 SGD класификатор,SGD класификатор,False,True
+reports/v61_model_signal_hits.csv,row[22].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_model_signal_hits.csv,row[23].source_bg,v41 recent 250 baseline,recent 250 baseline,False,True
+reports/v61_model_signal_hits.csv,row[23].note_bg,Сравнение с текущия v41 statistical output.,Сравнение с текущия statistical output.,False,True
+reports/v61_model_signal_hits.csv,row[24].source_bg,v44.1 финален ансамбъл,финален ансамбъл,False,True
+reports/v61_model_signal_hits.csv,row[25].source_bg,v45 Prediction Engine Pro — ticket,Prediction Engine Pro — ticket,False,True
+reports/v61_model_signal_hits.csv,row[25].note_bg,Ticket candidate от v45.,Ticket candidate от.,False,True
+reports/v61_model_signal_hits.csv,row[26].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_model_signal_hits.csv,row[27].source_bg,v59 Интелигентен генератор 2 sample,Интелигентен генератор 2 sample,False,True
+reports/v61_model_signal_hits.csv,row[28].source_bg,v60 export sample,export sample,False,True
+reports/v63_model_reliability_scores.csv,row[2].model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+reports/v63_model_reliability_scores.csv,row[3].model_label,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+reports/v63_model_reliability_scores.csv,row[5].model_label,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+reports/v63_model_reliability_scores.csv,row[6].model_label,v50 — двойки и групи,— двойки и групи,False,True
+reports/v63_model_reliability_scores.csv,row[7].model_label,v51 — пакет от комбинации,— пакет от комбинации,False,True
+reports/v63_model_reliability_scores.csv,row[8].model_label,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+reports/v63_model_reliability_scores.csv,row[9].model_label,v58 — обединена оценка,— обединена оценка,False,True
+reports/v63_model_reliability_scores.csv,row[10].model_label,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+reports/v63_model_reliability_scores.csv,row[11].model_label,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+reports/v63_model_reliability_summary.json,$.best_model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+reports/v65_model_weighting_summary.json,$.top_model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+reports/v65_model_weights.csv,row[2].model_label,v44.1 — финална обединена комбинация,— финална обединена комбинация,False,True
+reports/v65_model_weights.csv,row[3].model_label,v41 — последни прогнозни сигнали,— последни прогнозни сигнали,False,True
+reports/v65_model_weights.csv,row[5].model_label,v45 — Prediction Dashboard Pro,— Prediction Dashboard Pro,False,True
+reports/v65_model_weights.csv,row[6].model_label,v50 — двойки и групи,— двойки и групи,False,True
+reports/v65_model_weights.csv,row[7].model_label,v51 — пакет от комбинации,— пакет от комбинации,False,True
+reports/v65_model_weights.csv,row[8].model_label,"v57 — горещи, студени и стабилни","— горещи, студени и стабилни",False,True
+reports/v65_model_weights.csv,row[9].model_label,v58 — обединена оценка,— обединена оценка,False,True
+reports/v65_model_weights.csv,row[10].model_label,v59 — интелигентен генератор 2,— интелигентен генератор 2,False,True
+reports/v65_model_weights.csv,row[11].model_label,v61 — сигнали към последния тираж,— сигнали към последния тираж,False,True
+reports/v66_weighted_smart_ensemble_scores.csv,row[13].top_sources,v44.1 — финална обединена комбинация | v41 — последни прогнозни сигнали | v59 — интелигентен генератор 2,— финална обединена комбинация | — последни прогнозни сигнали | — интелигентен генератор 2,False,True
+reports/v66_weighted_smart_ensemble_scores.csv,row[49].top_sources,"v44.1 — финална обединена комбинация | v57 — горещи, студени и стабилни | v41 — последни прогнозни сигнали","— финална обединена комбинация | — горещи, студени и стабилни | — последни прогнозни сигнали",False,True
+reports/v99_final_user_dashboard_summary.json,$.warnings[0],Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние.,Има реален тираж след базовия заключената контролна точка; това е нормално post-draw състояние.,False,True

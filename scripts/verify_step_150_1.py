@@ -27,8 +27,8 @@ REQUIRED = [
     ROOT / "src/v150_1_deep_ui_integrity_engine.py",
     ROOT / "tools/audit_deep_ui_integrity.py",
     ROOT / "tools/finalize_step_150_1_release.py",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
     ROOT / "release-manifest.json",
 ]
 
@@ -80,7 +80,7 @@ def main() -> int:
 
     fresh = run_deep_ui_integrity_audit(write_outputs=False)
     fresh_failures = [str(item) for item in fresh.get("failures", [])]
-    if current_checkpoint == "Step 150.2":
+    if current_checkpoint in {"Step 150.2", "Step 150.3"}:
         # Step 150.2 deliberately replaces two Step 150.1 screenshot phrases with
         # clearer full Bulgarian sentences. The older audit remains useful for all
         # other regressions, but its exact wording/count baseline is superseded.
@@ -153,8 +153,8 @@ def main() -> int:
             archive, root=ROOT,
             metadata_files=(
                 ROOT / "release-manifest.json",
-                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
             ),
         )
         if result.get("forbidden_entries") or not archive.is_file():

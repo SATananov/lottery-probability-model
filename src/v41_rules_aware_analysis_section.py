@@ -411,6 +411,6 @@ def render_v41_rules_aware_analysis() -> None:
         )
 
         with st.expander("Техническа информация"):
-            st.write("Версия на анализа: V41")
+            st.write("Текущ анализ по действащите правила")
             st.write("Източник на комбинациите: models/v41/v41_latest_predictions.json")
             st.write("Източник на проверката: reports/v41_model_retraining_summary.json")

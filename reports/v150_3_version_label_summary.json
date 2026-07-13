@@ -1,0 +1,67 @@
+{
+  "step": "150.3",
+  "status": "USER_VERSION_LABELS_CLEAN",
+  "scope": "global_user_visible_internal_version_label_cleanup",
+  "generated_at_utc": "2026-07-12T10:51:28+00:00",
+  "python_literals_with_internal_versions": 149,
+  "literal_version_label_failures": 0,
+  "dynamic_values_with_internal_versions": 339,
+  "dynamic_version_label_failures": 0,
+  "screenshot_regression_cases": 10,
+  "screenshot_regression_failures": 0,
+  "technical_mode_preserves_internal_versions": true,
+  "normal_mode_hides_internal_versions": true,
+  "protected_step148_files": {
+    "all_ok": true,
+    "files": [
+      {
+        "path": "src/v145_experimental_neural_dynamics_engine.py",
+        "expected_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "actual_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+        "ok": true
+      },
+      {
+        "path": "src/v146_controlled_neural_robustness_engine.py",
+        "expected_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "actual_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+        "ok": true
+      },
+      {
+        "path": "src/v148_prospective_forward_test_engine.py",
+        "expected_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "actual_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_policy.json",
+        "expected_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "actual_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
+        "ok": true
+      },
+      {
+        "path": "models/v148_prospective_forward_test_status.json",
+        "expected_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "actual_sha256": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
+        "ok": true
+      },
+      {
+        "path": "data/prospective_forward_test_ledger.jsonl",
+        "expected_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "actual_sha256": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
+        "ok": true
+      },
+      {
+        "path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json",
+        "expected_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "actual_sha256": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
+        "ok": true
+      }
+    ]
+  },
+  "personal_journal_used": false,
+  "production_scoring_changed": false,
+  "failures": [],
+  "ok": true,
+  "result_signature_sha256": "a8ce38e862aef8f0007aff01fd6412824f450b52725b7a84bc7f85447314b6b2",
+  "artifact_role": "audit_summary"
+}

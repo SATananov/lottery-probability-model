@@ -330,7 +330,7 @@ def build_final_user_dashboard() -> dict[str, Any]:
     if canonical_rows and canonical_rows != dataset_rows:
         issues.append(f"Canonical dataset не е синхронизиран: canonical={canonical_rows}, historical={dataset_rows}")
     if dataset_rows > 10058:
-        warnings.append("Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние.")
+        warnings.append("Има реален тираж след заключената контролна точка; това е нормално състояние след тираж.")
 
     dashboard_status = "READY_WAITING_NEXT_DRAW" if not issues else "CHECK_REQUIRED"
 

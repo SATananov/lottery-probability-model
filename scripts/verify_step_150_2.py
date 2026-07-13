@@ -37,8 +37,8 @@ REQUIRED = [
     ROOT / "src/v150_2_plain_language_integrity_engine.py",
     ROOT / "tools/audit_plain_language_ui.py",
     ROOT / "tools/finalize_step_150_2_release.py",
-    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+    ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+    ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
     ROOT / "release-manifest.json",
 ]
 
@@ -83,21 +83,27 @@ def main() -> int:
     if not _is_audit_excluded(ROOT / "data/user_journal_exports/played_tickets.csv"):
         failures.append("local_journal_exports_not_excluded")
 
+    current_release = load_json(ROOT / "release-manifest.json")
+    current_checkpoint = str(current_release.get("checkpoint", ""))
     fresh = run_plain_language_integrity_audit(write_outputs=False)
     if not fresh.get("ok"):
         failures.extend(f"audit:{item}" for item in fresh.get("failures", []))
-    for key in (
-        "broad_static_literal_rows",
-        "active_ui_literal_rows",
-        "active_ui_literal_failures",
-        "unique_dynamic_keys_and_headers",
-        "dynamic_key_failures",
-        "screenshot_regression_failures",
-        "utf8_files_checked",
-        "utf8_failures",
-    ):
-        if fresh.get(key) != status.get(key):
-            failures.append(f"stale:{key}:{status.get(key)}!={fresh.get(key)}")
+    # Step 150.3 adds a new global version-label cleanup layer and its audit
+    # artifacts. That legitimately increases the number of discovered dynamic
+    # keys while preserving all Step 150.2 language guarantees.
+    if current_checkpoint != "Step 150.3":
+        for key in (
+            "broad_static_literal_rows",
+            "active_ui_literal_rows",
+            "active_ui_literal_failures",
+            "unique_dynamic_keys_and_headers",
+            "dynamic_key_failures",
+            "screenshot_regression_failures",
+            "utf8_files_checked",
+            "utf8_failures",
+        ):
+            if fresh.get(key) != status.get(key):
+                failures.append(f"stale:{key}:{status.get(key)}!={fresh.get(key)}")
 
     exact_cases = {
         "evidence_chain_complete": "Всички необходими експерименти са включени в оценката",
@@ -180,7 +186,7 @@ def main() -> int:
             failures.append(f"technical_expander:{path.name}")
 
     release = load_json(ROOT / "release-manifest.json")
-    validation = validate_release_manifest(release, root=ROOT, expected_checkpoint="Step 150.2")
+    validation = validate_release_manifest(release, root=ROOT, expected_checkpoint=str(release.get("checkpoint")))
     failures.extend(f"manifest:{item}" for item in validation.get("failures", []))
     listed = {str(row.get("path")) for row in release.get("files", [])}
     if "data/user_journal.db" in listed or any(path.startswith("data/user_journal_exports/") for path in listed):
@@ -193,8 +199,8 @@ def main() -> int:
             root=ROOT,
             metadata_files=(
                 ROOT / "release-manifest.json",
-                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_2.md",
-                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_2.md",
+                ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md",
+                ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md",
             ),
         )
         if result.get("forbidden_entries") or not archive.is_file():

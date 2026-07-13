@@ -55,7 +55,7 @@ def render_post_bst_model_data_refresh_section() -> None:
 
     st.markdown("### Действие")
     if st.button("Обнови моделните данни от БСТ prize history", type="primary"):
-        with st.spinner("Синхронизирам historical/v40/v41 dataset слоя..."):
+        with st.spinner("Синхронизирам историческите и подготвените набори от данни..."):
             try:
                 result = refresh_model_data_from_prize_history()
                 after = result.get("status_after", {})

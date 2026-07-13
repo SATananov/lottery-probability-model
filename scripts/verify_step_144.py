@@ -156,7 +156,7 @@ def main() -> int:
         release = load_json(ROOT / "release-manifest.json")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         checkpoint = str(release.get("checkpoint", ""))
-        if checkpoint not in {"Step 144", "Step 145", "Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149", "Step 150", "Step 150.1", "Step 150.2"}:
+        if checkpoint not in {"Step 144", "Step 145", "Step 145.1", "Step 146", "Step 147", "Step 148", "Step 149", "Step 150", "Step 150.1", "Step 150.2", "Step 150.3"}:
             failures.append(f"Unexpected release checkpoint: {checkpoint}")
         if "scripts/verify_step_144.py" not in listed or "tools/finalize_step_144_release.py" not in listed:
             failures.append("Step 144 release manifest is incomplete")

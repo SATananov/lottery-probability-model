@@ -5,6 +5,8 @@ from datetime import datetime
 from functools import wraps
 from typing import Any, Callable, Iterable, Mapping
 
+from src.v150_3_user_version_cleanup import clean_user_version_labels
+
 
 # Step 150 is intentionally a display-only layer. It must never mutate source
 # data, model files, experiment registries or the prospective forward-test ledger.
@@ -1596,6 +1598,7 @@ def technical_details_enabled(st_module: Any | None = None) -> bool:
 
 
 def _translate_plain_segment(text: str, language: str, show_technical: bool) -> str:
+    text = clean_user_version_labels(text, language=language, show_technical=show_technical)
     if language == "en":
         if text in EN_EXACT:
             return EN_EXACT[text]
@@ -1692,6 +1695,7 @@ def _translate_plain_segment(text: str, language: str, show_technical: bool) -> 
     out = re.sub(r"\s+&\s+", " и ", out)
     out = re.sub(r"\b(модел|режим|проверка|оценяване|данните)\s+\1\b", r"\1", out, flags=re.IGNORECASE)
     out = re.sub(r"[ \t]{2,}", " ", out)
+    out = clean_user_version_labels(out, language=language, show_technical=show_technical)
     return out
 
 
@@ -1793,7 +1797,7 @@ def translate_value(
     if language == "bg":
         mapped = VALUE_LABELS_BG.get(raw.lower())
         if mapped is not None:
-            return mapped
+            return clean_user_version_labels(mapped, language=language, show_technical=show_technical)
         if raw.startswith("<urlopen error"):
             return "Временен проблем при свързването с външния източник."
         # Hide raw paths from normal-user checks while preserving their meaning.
