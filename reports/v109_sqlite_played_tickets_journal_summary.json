@@ -6,65 +6,66 @@
   "database_path": "data\\user_journal.db",
   "exports_dir": "data\\user_journal_exports",
   "counts": {
-    "draw_entries": 2,
+    "draw_entries": 3,
     "played_tickets": 3,
     "played_ticket_lines": 12,
     "played_ticket_results": 3
   },
   "latest_dataset_draw": {
-    "date": "2026-06-28",
-    "draw_number": "50",
+    "date": "2026-07-12",
+    "draw_number": "54",
     "drawing_position": "1",
     "numbers": [
-      2,
-      4,
-      17,
-      33,
+      16,
+      29,
       35,
-      38
+      37,
+      44,
+      47
     ]
   },
   "latest_journal_draw": {
-    "id": 29,
-    "draw_key": "2026-06-28|50|1|2,4,17,33,35,38",
-    "draw_date": "2026-06-28",
-    "draw_number": "50",
+    "id": 37,
+    "draw_key": "2026-07-12|54|1|16,29,35,37,44,47",
+    "draw_date": "2026-07-12",
+    "draw_number": "54",
     "drawing_position": "1",
-    "n1": 2,
-    "n2": 4,
-    "n3": 17,
-    "n4": 33,
-    "n5": 35,
-    "n6": 38,
-    "numbers_text": "2, 4, 17, 33, 35, 38",
-    "entered_at_utc": "2026-06-28T16:45:31+00:00",
+    "n1": 16,
+    "n2": 29,
+    "n3": 35,
+    "n4": 37,
+    "n5": 44,
+    "n6": 47,
+    "numbers_text": "16, 29, 35, 37, 44, 47",
+    "entered_at_utc": "2026-07-13T03:10:10+00:00",
     "source": "dataset_latest_draw",
     "note": "Автоматичен sync от последния dataset тираж."
   },
   "sync_result": {
-    "inserted": false,
-    "draw_entry_id": 29,
+    "inserted": true,
+    "draw_entry_id": 37,
     "latest_draw": {
-      "date": "2026-06-28",
-      "draw_number": "50",
+      "date": "2026-07-12",
+      "draw_number": "54",
       "drawing_position": "1",
       "numbers": [
-        2,
-        4,
-        17,
-        33,
+        16,
+        29,
         35,
-        38
+        37,
+        44,
+        47
       ]
     }
   },
   "evaluation_result": {
     "evaluated": 0,
-    "reason": "disabled"
+    "latest_draw_entry_id": 37,
+    "latest_draw_date": "2026-07-12"
   },
   "default_ticket_mode_bg": "основни комбинации от Step 79",
   "safe_note_bg": "Step 109 пази локален SQLite дневник на реално въведени тиражи и изиграни фишове. Това е отчетност и проследимост, не гаранция за печалба.",
-  "generated_at_utc": "2026-07-01T08:54:27+00:00",
+  "generated_at_utc": "2026-07-13T03:10:10+00:00",
   "checks": [
     {
       "check": "sqlite_db_exists",
@@ -76,13 +77,13 @@
       "check": "draw_entries_table_ready",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "draw_entries=2"
+      "details_bg": "draw_entries=3"
     },
     {
       "check": "latest_dataset_draw_valid",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "{\"date\": \"2026-06-28\", \"draw_number\": \"50\", \"drawing_position\": \"1\", \"numbers\": [2, 4, 17, 33, 35, 38]}"
+      "details_bg": "{\"date\": \"2026-07-12\", \"draw_number\": \"54\", \"drawing_position\": \"1\", \"numbers\": [16, 29, 35, 37, 44, 47]}"
     },
     {
       "check": "csv_exports_written",

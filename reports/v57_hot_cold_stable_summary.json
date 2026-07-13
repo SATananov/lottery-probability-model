@@ -2,31 +2,30 @@
   "status": "completed",
   "module": "Hot / Cold / Stable Number Center",
   "version": "v57",
-  "total_draws": 10060,
+  "total_draws": 10064,
   "numbers_profiled": 49,
   "group_summary": [
     {
       "group": "Горещи напоследък",
-      "count": 10,
+      "count": 11,
       "numbers": [
-        18,
-        24,
-        36,
-        49,
-        37,
-        30,
         42,
         13,
         2,
-        38
+        49,
+        18,
+        28,
+        36,
+        37,
+        12,
+        38,
+        23
       ]
     },
     {
       "group": "Студени напоследък",
-      "count": 1,
-      "numbers": [
-        32
-      ]
+      "count": 0,
+      "numbers": []
     },
     {
       "group": "Закъснели",
@@ -34,13 +33,13 @@
       "numbers": [
         34,
         25,
-        12,
-        21,
-        41,
         20,
+        24,
         27,
-        23,
-        31
+        31,
+        32,
+        3,
+        45
       ]
     },
     {
@@ -64,34 +63,34 @@
       "group": "Неутрални",
       "count": 28,
       "numbers": [
-        3,
         22,
         1,
-        28,
-        9,
-        11,
-        8,
         26,
         48,
-        17,
         43,
-        16,
-        39,
-        45,
+        11,
+        8,
+        17,
         4,
-        46,
+        39,
         33,
-        44,
-        10,
-        15,
-        29,
         6,
+        15,
+        46,
         19,
-        14,
+        9,
         7,
+        14,
+        30,
+        44,
+        16,
         5,
+        29,
+        10,
         35,
-        47
+        21,
+        47,
+        41
       ]
     }
   ],
@@ -106,6 +105,14 @@
     },
     {
       "number": 3,
+      "score": 100.0
+    },
+    {
+      "number": 4,
+      "score": 100.0
+    },
+    {
+      "number": 8,
       "score": 100.0
     },
     {
@@ -127,14 +134,6 @@
     {
       "number": 17,
       "score": 100.0
-    },
-    {
-      "number": 18,
-      "score": 100.0
-    },
-    {
-      "number": 20,
-      "score": 100.0
     }
   ],
   "top_cold": [
@@ -147,19 +146,15 @@
       "recent_100_ratio": 0.5717
     },
     {
-      "number": 41,
-      "recent_100_ratio": 0.5717
-    },
-    {
       "number": 45,
       "recent_100_ratio": 0.5717
     },
     {
-      "number": 35,
+      "number": 41,
       "recent_100_ratio": 0.6533
     },
     {
-      "number": 44,
+      "number": 5,
       "recent_100_ratio": 0.735
     },
     {
@@ -167,58 +162,62 @@
       "recent_100_ratio": 0.735
     },
     {
-      "number": 8,
-      "recent_100_ratio": 0.735
-    },
-    {
       "number": 31,
       "recent_100_ratio": 0.735
     },
     {
-      "number": 25,
-      "recent_100_ratio": 0.8167
+      "number": 39,
+      "recent_100_ratio": 0.735
+    },
+    {
+      "number": 15,
+      "recent_100_ratio": 0.735
+    },
+    {
+      "number": 35,
+      "recent_100_ratio": 0.735
     }
   ],
   "top_overdue": [
     {
       "number": 34,
-      "draws_since_last_seen": 31
+      "draws_since_last_seen": 35
     },
     {
       "number": 25,
-      "draws_since_last_seen": 26
-    },
-    {
-      "number": 12,
-      "draws_since_last_seen": 24
-    },
-    {
-      "number": 21,
-      "draws_since_last_seen": 21
-    },
-    {
-      "number": 41,
-      "draws_since_last_seen": 20
-    },
-    {
-      "number": 18,
-      "draws_since_last_seen": 17
+      "draws_since_last_seen": 30
     },
     {
       "number": 20,
-      "draws_since_last_seen": 15
-    },
-    {
-      "number": 23,
-      "draws_since_last_seen": 14
+      "draws_since_last_seen": 19
     },
     {
       "number": 24,
-      "draws_since_last_seen": 14
+      "draws_since_last_seen": 18
     },
     {
       "number": 27,
+      "draws_since_last_seen": 18
+    },
+    {
+      "number": 31,
+      "draws_since_last_seen": 17
+    },
+    {
+      "number": 32,
+      "draws_since_last_seen": 16
+    },
+    {
+      "number": 3,
+      "draws_since_last_seen": 15
+    },
+    {
+      "number": 45,
       "draws_since_last_seen": 14
+    },
+    {
+      "number": 39,
+      "draws_since_last_seen": 10
     }
   ],
   "safety_bg": "Това е историческа статистическа класификация, не предсказание. Групите показват минало поведение и текущ ритъм, но не гарантират бъдещо теглене."

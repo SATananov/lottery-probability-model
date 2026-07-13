@@ -1,4 +1,4 @@
-# Step 100 — Финално заключване v1
+# Step 100 — Финално заключване
 
 Статус: **V1_LOCKED_WAITING_NEXT_DRAW**
 
@@ -8,10 +8,10 @@
 - Цена: 10.80 EUR
 
 ## Dataset
-- historical_draws.csv: 10062 реда
-- v40_normalized_draw_events.csv: 10062 реда
-- v41_canonical_draw_events.csv: 10062 реда
-- Последен тираж: 2026-07-05 — 4, 11, 21, 28, 36, 49
+- historical_draws.csv: 10064 реда
+- v40_normalized_draw_events.csv: 10064 реда
+- v41_canonical_draw_events.csv: 10064 реда
+- Последен тираж: 2026-07-12 — 16, 29, 35, 37, 44, 47
 
 ## Статуси
 - Step 95: EVALUATED

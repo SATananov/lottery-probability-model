@@ -1,58 +1,58 @@
 {
   "step": 106,
   "status": "POST_DRAW_SYNCED",
-  "generated_at_utc": "2026-07-08T10:32:02+00:00",
+  "generated_at_utc": "2026-07-13T03:10:09+00:00",
   "blocking_failures": 0,
   "safe_note_bg": "Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058.",
   "dataset": {
     "files": {
       "historical_draws.csv": {
-        "rows": 10062,
-        "latest_date": "2026-07-05",
+        "rows": 10064,
+        "latest_date": "2026-07-12",
         "latest_numbers": [
-          4,
-          11,
-          21,
-          28,
-          36,
-          49
+          16,
+          29,
+          35,
+          37,
+          44,
+          47
         ]
       },
       "v40_normalized_draw_events.csv": {
-        "rows": 10062,
-        "latest_date": "2026-07-05",
+        "rows": 10064,
+        "latest_date": "2026-07-12",
         "latest_numbers": [
-          4,
-          11,
-          21,
-          28,
-          36,
-          49
+          16,
+          29,
+          35,
+          37,
+          44,
+          47
         ]
       },
       "v41_canonical_draw_events.csv": {
-        "rows": 10062,
-        "latest_date": "2026-07-05",
+        "rows": 10064,
+        "latest_date": "2026-07-12",
         "latest_numbers": [
-          4,
-          11,
-          21,
-          28,
-          36,
-          49
+          16,
+          29,
+          35,
+          37,
+          44,
+          47
         ]
       }
     },
-    "rows": 10062,
+    "rows": 10064,
     "datasets_synced": true,
-    "latest_date": "2026-07-05",
+    "latest_date": "2026-07-12",
     "latest_numbers": [
-      4,
-      11,
-      21,
-      28,
-      36,
-      49
+      16,
+      29,
+      35,
+      37,
+      44,
+      47
     ]
   },
   "statuses": {
@@ -68,7 +68,7 @@
     {
       "check": "datasets_synced_after_draw",
       "passed": true,
-      "details_bg": "rows=10062, latest=2026-07-05 [4, 11, 21, 28, 36, 49]"
+      "details_bg": "rows=10064, latest=2026-07-12 [16, 29, 35, 37, 44, 47]"
     },
     {
       "check": "lifecycle_ready",
@@ -98,7 +98,7 @@
     {
       "check": "explainability_refreshed",
       "passed": true,
-      "details_bg": "v76_valid_draws=10062, dataset_rows=10062"
+      "details_bg": "v76_valid_draws=10064, dataset_rows=10064"
     }
   ],
   "next_action_bg": "Commit/push промените и направи clean ZIP checkpoint."

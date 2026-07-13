@@ -3,36 +3,36 @@
   "name_bg": "Политика за обучение и refresh control",
   "status": "TRAINING_POLICY_READY",
   "blocking_failures": 0,
-  "generated_at_utc": "2026-07-08T10:32:03.801084+00:00",
+  "generated_at_utc": "2026-07-13T03:10:09.877624+00:00",
   "dataset": {
     "row_counts": {
-      "historical": 10062,
-      "normalized": 10062,
-      "canonical": 10062
+      "historical": 10064,
+      "normalized": 10064,
+      "canonical": 10064
     },
-    "dataset_rows": 10062,
+    "dataset_rows": 10064,
     "datasets_synced": true,
     "latest_draw": {
-      "date": "2026-07-05",
-      "draw_no": "52",
+      "date": "2026-07-12",
+      "draw_no": "54",
       "draw_position": "1",
       "numbers": [
-        4,
-        11,
-        21,
-        28,
-        36,
-        49
+        16,
+        29,
+        35,
+        37,
+        44,
+        47
       ]
     }
   },
-  "real_result_rows_since_active_plan": 2,
+  "real_result_rows_since_active_plan": 3,
   "policy_decision": {
     "level": "NO_RETRAIN_NOW",
     "label_bg": "Не обучавай тежки модели сега",
     "message_bg": "Има твърде малко нови реални резултати. След всеки тираж правим само бърз синхрон, оценка и dashboard refresh.",
     "recommended_action_bg": "Изчакай поне 5 реални резултата преди лек статистически refresh.",
-    "next_threshold_bg": "Остават 3 реални резултата до първа препоръка за лек refresh."
+    "next_threshold_bg": "Остават 2 реални резултата до първа препоръка за лек refresh."
   },
   "thresholds": {
     "auto_every_draw_bg": "dataset sync + active plan result + lifecycle/dashboard refresh",
@@ -75,13 +75,13 @@
       "check": "datasets_synced",
       "passed": true,
       "blocking": "yes",
-      "details_bg": "historical=10062, normalized=10062, canonical=10062"
+      "details_bg": "historical=10064, normalized=10064, canonical=10064"
     },
     {
       "check": "latest_draw_valid",
       "passed": true,
       "blocking": "yes",
-      "details_bg": "latest=2026-07-05 [4, 11, 21, 28, 36, 49]"
+      "details_bg": "latest=2026-07-12 [16, 29, 35, 37, 44, 47]"
     },
     {
       "check": "runtime_hardening_active",

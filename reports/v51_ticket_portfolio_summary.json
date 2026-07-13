@@ -1,6 +1,6 @@
 {
   "status": "v51_ticket_portfolio_intelligence_completed",
-  "created_at": "2026-06-28T19:43:50",
+  "created_at": "2026-07-13T06:08:26",
   "source_tickets": "models\\v45\\v45_final_prediction_tickets.json",
   "pair_source": "reports\\v50_pair_scores.csv",
   "group_source": "reports\\v50_group_scores.csv",
@@ -12,77 +12,79 @@
     "max_sum": 264.0
   },
   "portfolio": {
-    "overall_score": 62.63,
+    "overall_score": 61.14,
     "rating": "medium",
-    "warning_codes": [],
+    "warning_codes": [
+      "too_much_repetition"
+    ],
     "strength_codes": [
       "good_diversity",
       "solid_combo_structure"
     ],
     "metrics": {
       "combination_count": 4,
-      "average_combo_score": 72.99,
-      "unique_numbers": 13,
-      "max_repeat": 3,
+      "average_combo_score": 73.34,
+      "unique_numbers": 15,
+      "max_repeat": 4,
       "average_overlap": 2.0,
       "max_overlap": 2,
-      "coverage_score": 0.54167,
+      "coverage_score": 0.625,
       "overlap_score": 0.33333,
-      "repeat_score": 0.33333
+      "repeat_score": 0.0
     }
   },
   "combination_scores": [
     {
-      "combination": "11 17 22 43 44 48",
-      "combo_score": 78.76,
-      "pair_average": 0.69,
-      "strong_pairs": 10,
-      "group_average": 0.4085,
+      "combination": "2 11 37 42 48 49",
+      "combo_score": 72.96,
+      "pair_average": 0.68462,
+      "strong_pairs": 11,
+      "group_average": 0.38422,
       "strong_groups": 0,
-      "sum": 185,
+      "sum": 189,
       "even_count": 3,
-      "low_count": 3,
-      "range_span": 37,
-      "consecutive_pairs": 1
-    },
-    {
-      "combination": "6 17 29 37 48 49",
-      "combo_score": 68.57,
-      "pair_average": 0.694,
-      "strong_pairs": 10,
-      "group_average": 0.42292,
-      "strong_groups": 2,
-      "sum": 186,
-      "even_count": 2,
       "low_count": 2,
-      "range_span": 43,
+      "range_span": 47,
       "consecutive_pairs": 1
     },
     {
-      "combination": "6 22 29 42 43 46",
-      "combo_score": 68.47,
-      "pair_average": 0.69968,
-      "strong_pairs": 10,
-      "group_average": 0.41357,
+      "combination": "13 17 30 37 44 48",
+      "combo_score": 75.48,
+      "pair_average": 0.68754,
+      "strong_pairs": 9,
+      "group_average": 0.43159,
       "strong_groups": 1,
-      "sum": 188,
+      "sum": 189,
+      "even_count": 3,
+      "low_count": 2,
+      "range_span": 35,
+      "consecutive_pairs": 0
+    },
+    {
+      "combination": "11 17 28 33 46 48",
+      "combo_score": 76.24,
+      "pair_average": 0.68383,
+      "strong_pairs": 11,
+      "group_average": 0.42319,
+      "strong_groups": 0,
+      "sum": 183,
+      "even_count": 3,
+      "low_count": 2,
+      "range_span": 37,
+      "consecutive_pairs": 0
+    },
+    {
+      "combination": "4 12 33 44 48 49",
+      "combo_score": 68.69,
+      "pair_average": 0.69083,
+      "strong_pairs": 12,
+      "group_average": 0.46439,
+      "strong_groups": 0,
+      "sum": 190,
       "even_count": 4,
       "low_count": 2,
-      "range_span": 40,
+      "range_span": 45,
       "consecutive_pairs": 1
-    },
-    {
-      "combination": "6 11 35 42 44 49",
-      "combo_score": 76.17,
-      "pair_average": 0.67491,
-      "strong_pairs": 10,
-      "group_average": 0.44038,
-      "strong_groups": 1,
-      "sum": 187,
-      "even_count": 3,
-      "low_count": 2,
-      "range_span": 43,
-      "consecutive_pairs": 0
     }
   ],
   "warning": "Statistical analysis only. Lottery draws remain random and there is no winning guarantee."

@@ -12,10 +12,10 @@
     4,
     11,
     18,
-    21,
     22,
     37,
-    38
+    38,
+    44
   ],
   "mode": "reduced",
   "mode_label": "Редуцирана система",
@@ -26,9 +26,9 @@
   "total_price_label": "10.80 EUR",
   "ticket_count": 3,
   "lines_per_ticket": 4,
-  "system_score": 88.451,
-  "model_strength_score": 76.235,
-  "balance_score": 88.553,
+  "system_score": 87.562,
+  "model_strength_score": 74.891,
+  "balance_score": 86.831,
   "pair_coverage_percent": 100.0,
   "triple_coverage_percent": 100.0,
   "pool_coverage_percent": 14.285714,
@@ -36,22 +36,22 @@
   "at_least_one_hit_percent": 72.551269,
   "historical_exact_matches": 0,
   "latest_dataset_draw": {
-    "date": "2026-07-09",
-    "draw_number": "53",
+    "date": "2026-07-12",
+    "draw_number": "54",
     "drawing_position": "1",
     "numbers": [
-      12,
-      17,
-      23,
-      30,
-      38,
-      41
+      16,
+      29,
+      35,
+      37,
+      44,
+      47
     ]
   },
-  "latest_dataset_draw_date": "2026-07-09",
-  "source_v117_generated_at_utc": "2026-07-11T10:29:44+00:00",
-  "source_v117_latest_dataset_draw_date": "2026-07-09",
-  "next_target_draw_date": "2026-07-12",
+  "latest_dataset_draw_date": "2026-07-12",
+  "source_v117_generated_at_utc": "2026-07-13T03:10:10+00:00",
+  "source_v117_latest_dataset_draw_date": "2026-07-12",
+  "next_target_draw_date": "2026-07-19",
   "model_number_ranking": [
     {
       "rank": 1,
@@ -61,87 +61,87 @@
     {
       "rank": 2,
       "number": 2,
-      "model_score": 95.276
+      "model_score": 88.69
     },
     {
       "rank": 3,
       "number": 37,
-      "model_score": 83.973
+      "model_score": 83.274
     },
     {
       "rank": 4,
-      "number": 11,
-      "model_score": 74.296
+      "number": 4,
+      "model_score": 76.08
     },
     {
       "rank": 5,
-      "number": 38,
-      "model_score": 70.071
+      "number": 11,
+      "model_score": 73.581
     },
     {
       "rank": 6,
-      "number": 22,
-      "model_score": 65.057
+      "number": 38,
+      "model_score": 65.77
     },
     {
       "rank": 7,
-      "number": 4,
-      "model_score": 64.97
+      "number": 44,
+      "model_score": 62.284
     },
     {
       "rank": 8,
-      "number": 21,
-      "model_score": 64.858
+      "number": 22,
+      "model_score": 59.159
     },
     {
       "rank": 9,
       "number": 18,
-      "model_score": 62.189
+      "model_score": 57.692
     },
     {
       "rank": 10,
-      "number": 23,
-      "model_score": 60.892
+      "number": 34,
+      "model_score": 55.824
     },
     {
       "rank": 11,
-      "number": 44,
-      "model_score": 59.235
+      "number": 23,
+      "model_score": 55.345
     },
     {
       "rank": 12,
-      "number": 34,
-      "model_score": 55.217
+      "number": 21,
+      "model_score": 54.725
     },
     {
       "rank": 13,
-      "number": 42,
-      "model_score": 49.187
+      "number": 48,
+      "model_score": 40.861
     },
     {
       "rank": 14,
-      "number": 17,
-      "model_score": 44.23
+      "number": 12,
+      "model_score": 39.588
     },
     {
       "rank": 15,
-      "number": 16,
-      "model_score": 41.594
+      "number": 3,
+      "model_score": 37.449
     },
     {
       "rank": 16,
-      "number": 24,
-      "model_score": 40.847
+      "number": 42,
+      "model_score": 35.099
     },
     {
       "rank": 17,
-      "number": 3,
-      "model_score": 39.385
+      "number": 17,
+      "model_score": 32.873
     },
     {
       "rank": 18,
-      "number": 43,
-      "model_score": 35.003
+      "number": 49,
+      "model_score": 32.07
     }
   ],
   "current_pack_numbers": [
@@ -241,77 +241,77 @@
           "role": "ядро + моделна сила",
           "numbers": [
             1,
-            2,
-            21,
+            11,
+            18,
             22,
             37,
-            38
+            44
           ],
-          "numbers_text": "1, 2, 21, 22, 37, 38",
+          "numbers_text": "1, 11, 18, 22, 37, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 2,
           "global_line_no": 2,
           "role": "различно покритие",
           "numbers": [
+            1,
+            2,
             4,
-            11,
-            18,
-            21,
+            22,
             37,
             38
           ],
-          "numbers_text": "4, 11, 18, 21, 37, 38",
+          "numbers_text": "1, 2, 4, 22, 37, 38",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 3,
           "global_line_no": 3,
           "role": "баланс ниски/средни/високи",
           "numbers": [
-            1,
             2,
             4,
             11,
             18,
-            22
+            38,
+            44
           ],
-          "numbers_text": "1, 2, 4, 11, 18, 22",
+          "numbers_text": "2, 4, 11, 18, 38, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 4,
@@ -319,25 +319,25 @@
           "role": "покритие на двойки",
           "numbers": [
             1,
+            2,
             11,
-            18,
-            22,
             37,
-            38
+            38,
+            44
           ],
-          "numbers_text": "1, 11, 18, 22, 37, 38",
+          "numbers_text": "1, 2, 11, 37, 38, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         }
       ]
     },
@@ -355,25 +355,25 @@
           "role": "ядро + моделна сила",
           "numbers": [
             1,
-            2,
             4,
-            21,
+            18,
+            22,
             37,
-            38
+            44
           ],
-          "numbers_text": "1, 2, 4, 21, 37, 38",
+          "numbers_text": "1, 4, 18, 22, 37, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 2,
@@ -383,23 +383,23 @@
             2,
             11,
             18,
-            21,
+            22,
             37,
             38
           ],
-          "numbers_text": "2, 11, 18, 21, 37, 38",
+          "numbers_text": "2, 11, 18, 22, 37, 38",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 3,
@@ -408,24 +408,24 @@
           "numbers": [
             1,
             4,
-            21,
+            11,
             22,
             37,
-            38
+            44
           ],
-          "numbers_text": "1, 4, 21, 22, 37, 38",
+          "numbers_text": "1, 4, 11, 22, 37, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 4,
@@ -433,25 +433,25 @@
           "role": "покритие на двойки",
           "numbers": [
             1,
-            11,
+            2,
             18,
-            21,
             22,
-            38
+            38,
+            44
           ],
-          "numbers_text": "1, 11, 18, 21, 22, 38",
+          "numbers_text": "1, 2, 18, 22, 38, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         }
       ]
     },
@@ -468,26 +468,26 @@
           "global_line_no": 9,
           "role": "ядро + моделна сила",
           "numbers": [
-            2,
+            1,
+            4,
             11,
-            21,
-            22,
+            18,
             37,
             38
           ],
-          "numbers_text": "2, 11, 21, 22, 37, 38",
+          "numbers_text": "1, 4, 11, 18, 37, 38",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 2,
@@ -496,24 +496,24 @@
           "numbers": [
             1,
             2,
-            18,
-            21,
+            11,
+            22,
             37,
-            38
+            44
           ],
-          "numbers_text": "1, 2, 18, 21, 37, 38",
+          "numbers_text": "1, 2, 11, 22, 37, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 3,
@@ -521,25 +521,25 @@
           "role": "баланс ниски/средни/високи",
           "numbers": [
             1,
-            2,
             11,
             18,
             22,
-            37
+            37,
+            38
           ],
-          "numbers_text": "1, 2, 11, 18, 22, 37",
+          "numbers_text": "1, 11, 18, 22, 37, 38",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         },
         {
           "line_no": 4,
@@ -547,25 +547,25 @@
           "role": "покритие на двойки",
           "numbers": [
             1,
+            2,
             4,
             18,
-            21,
             37,
-            38
+            44
           ],
-          "numbers_text": "1, 4, 18, 21, 37, 38",
+          "numbers_text": "1, 2, 4, 18, 37, 44",
           "system_core": [
             1,
             2,
             4,
             11,
             18,
-            21,
             22,
             37,
-            38
+            38,
+            44
           ],
-          "model_strength_score": 76.235
+          "model_strength_score": 74.891
         }
       ]
     }
@@ -581,7 +581,7 @@
       "check": "core_has_requested_size",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "ядро=1, 2, 4, 11, 18, 21, 22, 37, 38"
+      "details_bg": "ядро=1, 2, 4, 11, 18, 22, 37, 38, 44"
     },
     {
       "check": "combinations_created",
@@ -615,7 +615,7 @@
     }
   ],
   "safe_note_bg": "Системният фиш използва числа от моделните оценки и текущия готов пакет. Това е метод за организация на фишове, не гаранция за печалба.",
-  "generated_at_utc": "2026-07-11T10:29:45+00:00",
+  "generated_at_utc": "2026-07-13T03:10:10+00:00",
   "copy_text_path": "reports\\v118_model_system_ticket_pack_copy.txt",
   "csv_path": "reports\\v118_model_system_ticket_pack.csv"
 }

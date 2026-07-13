@@ -168,9 +168,9 @@
     "best_recommendation_level": "резервен кандидат",
     "best_ticket_id": "5",
     "decision_warnings": 0,
-    "latest_date": "2026-06-28",
+    "latest_date": "2026-07-12",
     "latest_draw_no": "1",
-    "latest_numbers": "2,4,17,33,35,38",
+    "latest_numbers": "16,29,35,37,44,47",
     "leading_count": 0,
     "name": "Решение и препоръка",
     "next_step": "74",
@@ -178,7 +178,7 @@
     "reserve_count": 8,
     "safe_note": "Step 77 подрежда и препоръчва кандидат комбинации според статистически сигнали, обяснимост и структурна валидация. Това не е гаранция за печалба.",
     "source_step": "76",
-    "state_hash": "9586a349eaf987bf",
+    "state_hash": "7b642ee1ce0f2315",
     "status": "OK",
     "step": 77,
     "strong_count": 0,
@@ -195,7 +195,7 @@
     "unsuitable_count": 0,
     "v76_numbers_explained": 49,
     "v76_warning_items": 10,
-    "valid_draws": 10060,
+    "valid_draws": 10064,
     "watch_count": 0
   }
 }

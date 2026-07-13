@@ -2,10 +2,10 @@
   "status": "completed",
   "module": "Ticket Builder 2 Polish & Export",
   "version": "v60",
-  "total_draws": 10060,
+  "total_draws": 10064,
   "selected_count": 5,
-  "average_final_score": 81.49,
-  "coverage_score": 94.0,
-  "selected_tickets_text": "13, 18, 20, 28, 34, 43\n11, 18, 22, 31, 40, 49\n1, 14, 17, 24, 36, 43\n5, 22, 24, 30, 37, 46\n8, 9, 21, 26, 37, 45",
+  "average_final_score": 81.22,
+  "coverage_score": 92.8,
+  "selected_tickets_text": "12, 17, 20, 28, 34, 43\n5, 11, 20, 26, 48, 49\n4, 15, 24, 31, 36, 45\n3, 11, 17, 24, 38, 42\n1, 16, 29, 34, 39, 48",
   "safety_bg": "Умен генератор на комбинации 2 генерира статистически балансирани предложения. Той не предсказва печеливши числа и не гарантира печалба."
 }

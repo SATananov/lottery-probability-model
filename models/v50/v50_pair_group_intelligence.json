@@ -11,12 +11,12 @@
       "count": 137,
       "recent_count": 10,
       "last_seen_index": 10053,
-      "gap": 7,
+      "gap": 11,
       "frequency_score": 0.830303,
-      "recency_score": 1.0,
-      "overdue_score": 0.000696,
-      "pair_score": 0.915047,
-      "watch_score": 0.49846
+      "recency_score": 0.909091,
+      "overdue_score": 0.001093,
+      "pair_score": 0.883169,
+      "watch_score": 0.498619
     },
     {
       "pair": "24-38",
@@ -25,12 +25,26 @@
       "count": 146,
       "recent_count": 9,
       "last_seen_index": 10046,
-      "gap": 14,
+      "gap": 18,
       "frequency_score": 0.884848,
-      "recency_score": 0.9,
-      "overdue_score": 0.001392,
-      "pair_score": 0.907215,
-      "watch_score": 0.531466
+      "recency_score": 0.818182,
+      "overdue_score": 0.001789,
+      "pair_score": 0.87852,
+      "watch_score": 0.531625
+    },
+    {
+      "pair": "23-38",
+      "n1": 23,
+      "n2": 38,
+      "count": 123,
+      "recent_count": 11,
+      "last_seen_index": 10063,
+      "gap": 1,
+      "frequency_score": 0.745455,
+      "recency_score": 1.0,
+      "overdue_score": 9.9e-05,
+      "pair_score": 0.872712,
+      "watch_score": 0.447312
     },
     {
       "pair": "22-48",
@@ -39,12 +53,12 @@
       "count": 144,
       "recent_count": 9,
       "last_seen_index": 10028,
-      "gap": 32,
+      "gap": 36,
       "frequency_score": 0.872727,
-      "recency_score": 0.9,
-      "overdue_score": 0.003181,
-      "pair_score": 0.900886,
-      "watch_score": 0.524909
+      "recency_score": 0.818182,
+      "overdue_score": 0.003577,
+      "pair_score": 0.872191,
+      "watch_score": 0.525067
     },
     {
       "pair": "13-23",
@@ -53,12 +67,12 @@
       "count": 135,
       "recent_count": 9,
       "last_seen_index": 10044,
-      "gap": 16,
+      "gap": 20,
       "frequency_score": 0.818182,
-      "recency_score": 0.9,
-      "overdue_score": 0.00159,
-      "pair_score": 0.873852,
-      "watch_score": 0.491545
+      "recency_score": 0.818182,
+      "overdue_score": 0.001987,
+      "pair_score": 0.845156,
+      "watch_score": 0.491704
     },
     {
       "pair": "23-34",
@@ -67,26 +81,12 @@
       "count": 135,
       "recent_count": 9,
       "last_seen_index": 9987,
-      "gap": 73,
+      "gap": 77,
       "frequency_score": 0.818182,
-      "recency_score": 0.9,
-      "overdue_score": 0.007256,
-      "pair_score": 0.873002,
-      "watch_score": 0.493812
-    },
-    {
-      "pair": "23-38",
-      "n1": 23,
-      "n2": 38,
-      "count": 122,
-      "recent_count": 10,
-      "last_seen_index": 10046,
-      "gap": 14,
-      "frequency_score": 0.739394,
-      "recency_score": 1.0,
-      "overdue_score": 0.001392,
-      "pair_score": 0.869488,
-      "watch_score": 0.444193
+      "recency_score": 0.818182,
+      "overdue_score": 0.007651,
+      "pair_score": 0.844307,
+      "watch_score": 0.49397
     },
     {
       "pair": "22-29",
@@ -95,12 +95,12 @@
       "count": 144,
       "recent_count": 8,
       "last_seen_index": 10057,
-      "gap": 3,
+      "gap": 7,
       "frequency_score": 0.872727,
-      "recency_score": 0.8,
-      "overdue_score": 0.000298,
-      "pair_score": 0.866319,
-      "watch_score": 0.523756
+      "recency_score": 0.727273,
+      "overdue_score": 0.000696,
+      "pair_score": 0.840805,
+      "watch_score": 0.523915
     },
     {
       "pair": "16-34",
@@ -109,12 +109,12 @@
       "count": 142,
       "recent_count": 8,
       "last_seen_index": 10022,
-      "gap": 38,
+      "gap": 42,
       "frequency_score": 0.860606,
-      "recency_score": 0.8,
-      "overdue_score": 0.003777,
-      "pair_score": 0.859736,
-      "watch_score": 0.517875
+      "recency_score": 0.727273,
+      "overdue_score": 0.004173,
+      "pair_score": 0.834222,
+      "watch_score": 0.518033
     },
     {
       "pair": "11-38",
@@ -123,12 +123,12 @@
       "count": 141,
       "recent_count": 8,
       "last_seen_index": 10042,
-      "gap": 18,
+      "gap": 22,
       "frequency_score": 0.854545,
-      "recency_score": 0.8,
-      "overdue_score": 0.001789,
-      "pair_score": 0.857004,
-      "watch_score": 0.513443
+      "recency_score": 0.727273,
+      "overdue_score": 0.002186,
+      "pair_score": 0.83149,
+      "watch_score": 0.513602
     },
     {
       "pair": "18-23",
@@ -137,26 +137,12 @@
       "count": 141,
       "recent_count": 8,
       "last_seen_index": 10035,
-      "gap": 25,
+      "gap": 29,
       "frequency_score": 0.854545,
-      "recency_score": 0.8,
-      "overdue_score": 0.002485,
-      "pair_score": 0.8569,
-      "watch_score": 0.513721
-    },
-    {
-      "pair": "16-23",
-      "n1": 16,
-      "n2": 23,
-      "count": 117,
-      "recent_count": 10,
-      "last_seen_index": 10041,
-      "gap": 19,
-      "frequency_score": 0.709091,
-      "recency_score": 1.0,
-      "overdue_score": 0.001889,
-      "pair_score": 0.854262,
-      "watch_score": 0.42621
+      "recency_score": 0.727273,
+      "overdue_score": 0.002882,
+      "pair_score": 0.831386,
+      "watch_score": 0.51388
     },
     {
       "pair": "15-35",
@@ -165,12 +151,12 @@
       "count": 140,
       "recent_count": 8,
       "last_seen_index": 10051,
-      "gap": 9,
+      "gap": 13,
       "frequency_score": 0.848485,
-      "recency_score": 0.8,
-      "overdue_score": 0.000895,
-      "pair_score": 0.854108,
-      "watch_score": 0.509449
+      "recency_score": 0.727273,
+      "overdue_score": 0.001292,
+      "pair_score": 0.828594,
+      "watch_score": 0.509608
     },
     {
       "pair": "12-22",
@@ -179,12 +165,54 @@
       "count": 140,
       "recent_count": 8,
       "last_seen_index": 10032,
-      "gap": 28,
+      "gap": 32,
       "frequency_score": 0.848485,
-      "recency_score": 0.8,
-      "overdue_score": 0.002783,
-      "pair_score": 0.853825,
-      "watch_score": 0.510204
+      "recency_score": 0.727273,
+      "overdue_score": 0.00318,
+      "pair_score": 0.828311,
+      "watch_score": 0.510363
+    },
+    {
+      "pair": "12-30",
+      "n1": 12,
+      "n2": 30,
+      "count": 138,
+      "recent_count": 8,
+      "last_seen_index": 10063,
+      "gap": 1,
+      "frequency_score": 0.836364,
+      "recency_score": 0.727273,
+      "overdue_score": 9.9e-05,
+      "pair_score": 0.822712,
+      "watch_score": 0.501858
+    },
+    {
+      "pair": "16-23",
+      "n1": 16,
+      "n2": 23,
+      "count": 117,
+      "recent_count": 10,
+      "last_seen_index": 10041,
+      "gap": 23,
+      "frequency_score": 0.709091,
+      "recency_score": 0.909091,
+      "overdue_score": 0.002285,
+      "pair_score": 0.822384,
+      "watch_score": 0.426369
+    },
+    {
+      "pair": "8-38",
+      "n1": 8,
+      "n2": 38,
+      "count": 137,
+      "recent_count": 8,
+      "last_seen_index": 10061,
+      "gap": 3,
+      "frequency_score": 0.830303,
+      "recency_score": 0.727273,
+      "overdue_score": 0.000298,
+      "pair_score": 0.819652,
+      "watch_score": 0.498301
     },
     {
       "pair": "18-22",
@@ -193,26 +221,12 @@
       "count": 157,
       "recent_count": 6,
       "last_seen_index": 10017,
-      "gap": 43,
+      "gap": 47,
       "frequency_score": 0.951515,
-      "recency_score": 0.6,
-      "overdue_score": 0.004274,
-      "pair_score": 0.835116,
-      "watch_score": 0.572619
-    },
-    {
-      "pair": "2-18",
-      "n1": 2,
-      "n2": 18,
-      "count": 122,
-      "recent_count": 9,
-      "last_seen_index": 10043,
-      "gap": 17,
-      "frequency_score": 0.739394,
-      "recency_score": 0.9,
-      "overdue_score": 0.00169,
-      "pair_score": 0.834443,
-      "watch_score": 0.444312
+      "recency_score": 0.545455,
+      "overdue_score": 0.00467,
+      "pair_score": 0.815966,
+      "watch_score": 0.572777
     },
     {
       "pair": "28-43",
@@ -221,12 +235,12 @@
       "count": 145,
       "recent_count": 7,
       "last_seen_index": 10038,
-      "gap": 22,
+      "gap": 26,
       "frequency_score": 0.878788,
-      "recency_score": 0.7,
-      "overdue_score": 0.002187,
-      "pair_score": 0.834066,
-      "watch_score": 0.528147
+      "recency_score": 0.636364,
+      "overdue_score": 0.002583,
+      "pair_score": 0.811734,
+      "watch_score": 0.528306
     },
     {
       "pair": "22-24",
@@ -235,26 +249,12 @@
       "count": 145,
       "recent_count": 7,
       "last_seen_index": 10010,
-      "gap": 50,
+      "gap": 54,
       "frequency_score": 0.878788,
-      "recency_score": 0.7,
-      "overdue_score": 0.00497,
-      "pair_score": 0.833648,
-      "watch_score": 0.529261
-    },
-    {
-      "pair": "13-35",
-      "n1": 13,
-      "n2": 35,
-      "count": 132,
-      "recent_count": 8,
-      "last_seen_index": 10053,
-      "gap": 7,
-      "frequency_score": 0.8,
-      "recency_score": 0.8,
-      "overdue_score": 0.000696,
-      "pair_score": 0.829896,
-      "watch_score": 0.480278
+      "recency_score": 0.636364,
+      "overdue_score": 0.005366,
+      "pair_score": 0.811316,
+      "watch_score": 0.529419
     },
     {
       "pair": "38-42",
@@ -263,26 +263,26 @@
       "count": 143,
       "recent_count": 7,
       "last_seen_index": 10047,
-      "gap": 13,
+      "gap": 17,
       "frequency_score": 0.866667,
-      "recency_score": 0.7,
-      "overdue_score": 0.001292,
-      "pair_score": 0.828139,
-      "watch_score": 0.520517
+      "recency_score": 0.636364,
+      "overdue_score": 0.001689,
+      "pair_score": 0.805807,
+      "watch_score": 0.520676
     },
     {
-      "pair": "34-38",
-      "n1": 34,
-      "n2": 38,
-      "count": 152,
-      "recent_count": 6,
-      "last_seen_index": 9987,
-      "gap": 73,
-      "frequency_score": 0.921212,
-      "recency_score": 0.6,
-      "overdue_score": 0.007256,
-      "pair_score": 0.819518,
-      "watch_score": 0.55563
+      "pair": "2-18",
+      "n1": 2,
+      "n2": 18,
+      "count": 122,
+      "recent_count": 9,
+      "last_seen_index": 10043,
+      "gap": 21,
+      "frequency_score": 0.739394,
+      "recency_score": 0.818182,
+      "overdue_score": 0.002087,
+      "pair_score": 0.805748,
+      "watch_score": 0.444471
     }
   ],
   "watch_pairs": [
@@ -293,12 +293,12 @@
       "count": 165,
       "recent_count": 2,
       "last_seen_index": 9976,
-      "gap": 84,
+      "gap": 88,
       "frequency_score": 1.0,
-      "recency_score": 0.2,
-      "overdue_score": 0.00835,
-      "pair_score": 0.718748,
-      "watch_score": 0.60334
+      "recency_score": 0.181818,
+      "overdue_score": 0.008744,
+      "pair_score": 0.712325,
+      "watch_score": 0.603498
     },
     {
       "pair": "6-30",
@@ -307,26 +307,26 @@
       "count": 163,
       "recent_count": 1,
       "last_seen_index": 9943,
-      "gap": 117,
+      "gap": 121,
       "frequency_score": 0.987879,
-      "recency_score": 0.1,
-      "overdue_score": 0.01163,
-      "pair_score": 0.677195,
-      "watch_score": 0.597379
+      "recency_score": 0.090909,
+      "overdue_score": 0.012023,
+      "pair_score": 0.673954,
+      "watch_score": 0.597536
     },
     {
       "pair": "4-11",
       "n1": 4,
       "n2": 11,
-      "count": 162,
-      "recent_count": 2,
-      "last_seen_index": 9965,
-      "gap": 95,
-      "frequency_score": 0.981818,
-      "recency_score": 0.2,
-      "overdue_score": 0.009443,
-      "pair_score": 0.709493,
-      "watch_score": 0.592868
+      "count": 163,
+      "recent_count": 3,
+      "last_seen_index": 10062,
+      "gap": 2,
+      "frequency_score": 0.987879,
+      "recency_score": 0.272727,
+      "overdue_score": 0.000199,
+      "pair_score": 0.739364,
+      "watch_score": 0.592807
     },
     {
       "pair": "26-29",
@@ -335,12 +335,12 @@
       "count": 162,
       "recent_count": 5,
       "last_seen_index": 10057,
-      "gap": 3,
+      "gap": 7,
       "frequency_score": 0.981818,
-      "recency_score": 0.5,
-      "overdue_score": 0.000298,
-      "pair_score": 0.815864,
-      "watch_score": 0.58921
+      "recency_score": 0.454545,
+      "overdue_score": 0.000696,
+      "pair_score": 0.799896,
+      "watch_score": 0.589369
     },
     {
       "pair": "4-6",
@@ -349,12 +349,12 @@
       "count": 161,
       "recent_count": 2,
       "last_seen_index": 9993,
-      "gap": 67,
+      "gap": 71,
       "frequency_score": 0.975758,
-      "recency_score": 0.2,
-      "overdue_score": 0.00666,
-      "pair_score": 0.70688,
-      "watch_score": 0.588119
+      "recency_score": 0.181818,
+      "overdue_score": 0.007055,
+      "pair_score": 0.700457,
+      "watch_score": 0.588276
     },
     {
       "pair": "44-49",
@@ -363,12 +363,12 @@
       "count": 159,
       "recent_count": 2,
       "last_seen_index": 10030,
-      "gap": 30,
+      "gap": 34,
       "frequency_score": 0.963636,
-      "recency_score": 0.2,
-      "overdue_score": 0.002982,
-      "pair_score": 0.701371,
-      "watch_score": 0.579375
+      "recency_score": 0.181818,
+      "overdue_score": 0.003378,
+      "pair_score": 0.694948,
+      "watch_score": 0.579533
     },
     {
       "pair": "6-22",
@@ -377,12 +377,12 @@
       "count": 158,
       "recent_count": 3,
       "last_seen_index": 10037,
-      "gap": 23,
+      "gap": 27,
       "frequency_score": 0.957576,
-      "recency_score": 0.3,
-      "overdue_score": 0.002286,
-      "pair_score": 0.733445,
-      "watch_score": 0.57546
+      "recency_score": 0.272727,
+      "overdue_score": 0.002683,
+      "pair_score": 0.72384,
+      "watch_score": 0.575619
     },
     {
       "pair": "18-22",
@@ -391,12 +391,12 @@
       "count": 157,
       "recent_count": 6,
       "last_seen_index": 10017,
-      "gap": 43,
+      "gap": 47,
       "frequency_score": 0.951515,
-      "recency_score": 0.6,
-      "overdue_score": 0.004274,
-      "pair_score": 0.835116,
-      "watch_score": 0.572619
+      "recency_score": 0.545455,
+      "overdue_score": 0.00467,
+      "pair_score": 0.815966,
+      "watch_score": 0.572777
     },
     {
       "pair": "4-44",
@@ -405,12 +405,12 @@
       "count": 157,
       "recent_count": 5,
       "last_seen_index": 10018,
-      "gap": 42,
+      "gap": 46,
       "frequency_score": 0.951515,
-      "recency_score": 0.5,
-      "overdue_score": 0.004175,
-      "pair_score": 0.800131,
-      "watch_score": 0.572579
+      "recency_score": 0.454545,
+      "overdue_score": 0.004571,
+      "pair_score": 0.784163,
+      "watch_score": 0.572737
     },
     {
       "pair": "11-32",
@@ -419,12 +419,12 @@
       "count": 156,
       "recent_count": 4,
       "last_seen_index": 9972,
-      "gap": 88,
+      "gap": 92,
       "frequency_score": 0.945455,
-      "recency_score": 0.4,
-      "overdue_score": 0.008748,
-      "pair_score": 0.761415,
-      "watch_score": 0.570772
+      "recency_score": 0.363636,
+      "overdue_score": 0.009141,
+      "pair_score": 0.748629,
+      "watch_score": 0.570929
     },
     {
       "pair": "4-47",
@@ -433,12 +433,12 @@
       "count": 156,
       "recent_count": 4,
       "last_seen_index": 10018,
-      "gap": 42,
+      "gap": 46,
       "frequency_score": 0.945455,
-      "recency_score": 0.4,
-      "overdue_score": 0.004175,
-      "pair_score": 0.762101,
-      "watch_score": 0.568943
+      "recency_score": 0.363636,
+      "overdue_score": 0.004571,
+      "pair_score": 0.749314,
+      "watch_score": 0.569101
     },
     {
       "pair": "4-24",
@@ -447,12 +447,12 @@
       "count": 156,
       "recent_count": 3,
       "last_seen_index": 10029,
-      "gap": 31,
+      "gap": 35,
       "frequency_score": 0.945455,
-      "recency_score": 0.3,
-      "overdue_score": 0.003082,
-      "pair_score": 0.727265,
-      "watch_score": 0.568505
+      "recency_score": 0.272727,
+      "overdue_score": 0.003478,
+      "pair_score": 0.71766,
+      "watch_score": 0.568664
     },
     {
       "pair": "41-49",
@@ -461,12 +461,12 @@
       "count": 155,
       "recent_count": 3,
       "last_seen_index": 10020,
-      "gap": 40,
+      "gap": 44,
       "frequency_score": 0.939394,
-      "recency_score": 0.3,
-      "overdue_score": 0.003976,
-      "pair_score": 0.724101,
-      "watch_score": 0.565227
+      "recency_score": 0.272727,
+      "overdue_score": 0.004372,
+      "pair_score": 0.714496,
+      "watch_score": 0.565385
     },
     {
       "pair": "21-46",
@@ -475,12 +475,12 @@
       "count": 154,
       "recent_count": 5,
       "last_seen_index": 10009,
-      "gap": 51,
+      "gap": 55,
       "frequency_score": 0.933333,
-      "recency_score": 0.5,
-      "overdue_score": 0.00507,
-      "pair_score": 0.790906,
-      "watch_score": 0.562028
+      "recency_score": 0.454545,
+      "overdue_score": 0.005465,
+      "pair_score": 0.774938,
+      "watch_score": 0.562186
     },
     {
       "pair": "30-34",
@@ -489,12 +489,12 @@
       "count": 154,
       "recent_count": 4,
       "last_seen_index": 10029,
-      "gap": 31,
+      "gap": 35,
       "frequency_score": 0.933333,
-      "recency_score": 0.4,
-      "overdue_score": 0.003082,
-      "pair_score": 0.756204,
-      "watch_score": 0.561233
+      "recency_score": 0.363636,
+      "overdue_score": 0.003478,
+      "pair_score": 0.743418,
+      "watch_score": 0.561391
     },
     {
       "pair": "11-35",
@@ -503,12 +503,12 @@
       "count": 152,
       "recent_count": 3,
       "last_seen_index": 9922,
-      "gap": 138,
+      "gap": 142,
       "frequency_score": 0.921212,
-      "recency_score": 0.3,
-      "overdue_score": 0.013718,
-      "pair_score": 0.713548,
-      "watch_score": 0.558214
+      "recency_score": 0.272727,
+      "overdue_score": 0.01411,
+      "pair_score": 0.703944,
+      "watch_score": 0.558371
     },
     {
       "pair": "36-37",
@@ -517,12 +517,12 @@
       "count": 153,
       "recent_count": 4,
       "last_seen_index": 10027,
-      "gap": 33,
+      "gap": 37,
       "frequency_score": 0.927273,
-      "recency_score": 0.4,
-      "overdue_score": 0.00328,
-      "pair_score": 0.753144,
-      "watch_score": 0.557676
+      "recency_score": 0.363636,
+      "overdue_score": 0.003676,
+      "pair_score": 0.740358,
+      "watch_score": 0.557834
     },
     {
       "pair": "1-5",
@@ -531,12 +531,12 @@
       "count": 153,
       "recent_count": 2,
       "last_seen_index": 10048,
-      "gap": 12,
+      "gap": 16,
       "frequency_score": 0.927273,
-      "recency_score": 0.2,
-      "overdue_score": 0.001193,
-      "pair_score": 0.683457,
-      "watch_score": 0.556841
+      "recency_score": 0.181818,
+      "overdue_score": 0.00159,
+      "pair_score": 0.677034,
+      "watch_score": 0.557
     },
     {
       "pair": "37-49",
@@ -545,12 +545,12 @@
       "count": 153,
       "recent_count": 3,
       "last_seen_index": 10053,
-      "gap": 7,
+      "gap": 11,
       "frequency_score": 0.927273,
-      "recency_score": 0.3,
-      "overdue_score": 0.000696,
-      "pair_score": 0.718532,
-      "watch_score": 0.556642
+      "recency_score": 0.272727,
+      "overdue_score": 0.001093,
+      "pair_score": 0.708927,
+      "watch_score": 0.556801
     },
     {
       "pair": "6-48",
@@ -559,12 +559,12 @@
       "count": 152,
       "recent_count": 1,
       "last_seen_index": 9968,
-      "gap": 92,
+      "gap": 96,
       "frequency_score": 0.921212,
-      "recency_score": 0.1,
-      "overdue_score": 0.009145,
-      "pair_score": 0.644234,
-      "watch_score": 0.556385
+      "recency_score": 0.090909,
+      "overdue_score": 0.009539,
+      "pair_score": 0.640993,
+      "watch_score": 0.556543
     }
   ],
   "top_groups": [
@@ -576,11 +576,11 @@
       "count": 23,
       "recent_count": 3,
       "last_seen_index": 9987,
-      "gap": 73,
+      "gap": 77,
       "frequency_score": 0.92,
       "recency_score": 0.75,
-      "overdue_score": 0.007256,
-      "group_score": 0.879912
+      "overdue_score": 0.007651,
+      "group_score": 0.879852
     },
     {
       "group": "20-22-49",
@@ -590,11 +590,11 @@
       "count": 25,
       "recent_count": 2,
       "last_seen_index": 10008,
-      "gap": 52,
+      "gap": 56,
       "frequency_score": 1.0,
       "recency_score": 0.5,
-      "overdue_score": 0.005169,
-      "group_score": 0.849225
+      "overdue_score": 0.005564,
+      "group_score": 0.849165
     },
     {
       "group": "11-34-36",
@@ -604,11 +604,11 @@
       "count": 24,
       "recent_count": 2,
       "last_seen_index": 10022,
-      "gap": 38,
+      "gap": 42,
       "frequency_score": 0.96,
       "recency_score": 0.5,
-      "overdue_score": 0.003777,
-      "group_score": 0.827433
+      "overdue_score": 0.004173,
+      "group_score": 0.827374
     },
     {
       "group": "17-28-49",
@@ -618,11 +618,11 @@
       "count": 20,
       "recent_count": 3,
       "last_seen_index": 10053,
-      "gap": 7,
+      "gap": 11,
       "frequency_score": 0.8,
       "recency_score": 0.75,
-      "overdue_score": 0.000696,
-      "group_score": 0.814896
+      "overdue_score": 0.001093,
+      "group_score": 0.814836
     },
     {
       "group": "33-39-46",
@@ -632,11 +632,11 @@
       "count": 20,
       "recent_count": 3,
       "last_seen_index": 9963,
-      "gap": 97,
+      "gap": 101,
       "frequency_score": 0.8,
       "recency_score": 0.75,
-      "overdue_score": 0.009642,
-      "group_score": 0.813554
+      "overdue_score": 0.010036,
+      "group_score": 0.813495
     },
     {
       "group": "2-17-37",
@@ -646,11 +646,11 @@
       "count": 23,
       "recent_count": 2,
       "last_seen_index": 9971,
-      "gap": 89,
+      "gap": 93,
       "frequency_score": 0.92,
       "recency_score": 0.5,
-      "overdue_score": 0.008847,
-      "group_score": 0.804673
+      "overdue_score": 0.009241,
+      "group_score": 0.804614
     },
     {
       "group": "4-28-43",
@@ -660,11 +660,11 @@
       "count": 19,
       "recent_count": 3,
       "last_seen_index": 10038,
-      "gap": 22,
+      "gap": 26,
       "frequency_score": 0.76,
       "recency_score": 0.75,
-      "overdue_score": 0.002187,
-      "group_score": 0.792672
+      "overdue_score": 0.002583,
+      "group_score": 0.792612
     },
     {
       "group": "12-22-34",
@@ -674,11 +674,11 @@
       "count": 22,
       "recent_count": 2,
       "last_seen_index": 9917,
-      "gap": 143,
+      "gap": 147,
       "frequency_score": 0.88,
       "recency_score": 0.5,
-      "overdue_score": 0.014215,
-      "group_score": 0.781868
+      "overdue_score": 0.014607,
+      "group_score": 0.781809
     },
     {
       "group": "12-20-22",
@@ -688,11 +688,11 @@
       "count": 22,
       "recent_count": 2,
       "last_seen_index": 9916,
-      "gap": 144,
+      "gap": 148,
       "frequency_score": 0.88,
       "recency_score": 0.5,
-      "overdue_score": 0.014314,
-      "group_score": 0.781853
+      "overdue_score": 0.014706,
+      "group_score": 0.781794
     },
     {
       "group": "2-18-42",
@@ -702,11 +702,11 @@
       "count": 15,
       "recent_count": 4,
       "last_seen_index": 10043,
-      "gap": 17,
+      "gap": 21,
       "frequency_score": 0.6,
       "recency_score": 1.0,
-      "overdue_score": 0.00169,
-      "group_score": 0.779747
+      "overdue_score": 0.002087,
+      "group_score": 0.779687
     },
     {
       "group": "17-24-49",
@@ -716,11 +716,11 @@
       "count": 21,
       "recent_count": 2,
       "last_seen_index": 9982,
-      "gap": 78,
+      "gap": 82,
       "frequency_score": 0.84,
       "recency_score": 0.5,
-      "overdue_score": 0.007753,
-      "group_score": 0.760837
+      "overdue_score": 0.008148,
+      "group_score": 0.760778
     },
     {
       "group": "7-10-39",
@@ -730,11 +730,11 @@
       "count": 21,
       "recent_count": 2,
       "last_seen_index": 9924,
-      "gap": 136,
+      "gap": 140,
       "frequency_score": 0.84,
       "recency_score": 0.5,
-      "overdue_score": 0.013519,
-      "group_score": 0.759972
+      "overdue_score": 0.013911,
+      "group_score": 0.759913
     },
     {
       "group": "22-37-42",
@@ -744,11 +744,11 @@
       "count": 21,
       "recent_count": 2,
       "last_seen_index": 9917,
-      "gap": 143,
+      "gap": 147,
       "frequency_score": 0.84,
       "recency_score": 0.5,
-      "overdue_score": 0.014215,
-      "group_score": 0.759868
+      "overdue_score": 0.014607,
+      "group_score": 0.759809
     },
     {
       "group": "23-24-38",
@@ -758,11 +758,11 @@
       "count": 14,
       "recent_count": 4,
       "last_seen_index": 10046,
-      "gap": 14,
+      "gap": 18,
       "frequency_score": 0.56,
       "recency_score": 1.0,
-      "overdue_score": 0.001392,
-      "group_score": 0.757791
+      "overdue_score": 0.001789,
+      "group_score": 0.757732
     },
     {
       "group": "10-24-36",
@@ -772,11 +772,11 @@
       "count": 14,
       "recent_count": 4,
       "last_seen_index": 10025,
-      "gap": 35,
+      "gap": 39,
       "frequency_score": 0.56,
       "recency_score": 1.0,
-      "overdue_score": 0.003479,
-      "group_score": 0.757478
+      "overdue_score": 0.003875,
+      "group_score": 0.757419
     },
     {
       "group": "3-14-34",
@@ -786,11 +786,11 @@
       "count": 24,
       "recent_count": 1,
       "last_seen_index": 9956,
-      "gap": 104,
+      "gap": 108,
       "frequency_score": 0.96,
       "recency_score": 0.25,
-      "overdue_score": 0.010338,
-      "group_score": 0.751449
+      "overdue_score": 0.010731,
+      "group_score": 0.75139
     },
     {
       "group": "1-21-34",
@@ -800,11 +800,11 @@
       "count": 24,
       "recent_count": 1,
       "last_seen_index": 9938,
-      "gap": 122,
+      "gap": 126,
       "frequency_score": 0.96,
       "recency_score": 0.25,
-      "overdue_score": 0.012127,
-      "group_score": 0.751181
+      "overdue_score": 0.01252,
+      "group_score": 0.751122
     },
     {
       "group": "1-8-29",
@@ -814,11 +814,11 @@
       "count": 17,
       "recent_count": 3,
       "last_seen_index": 10056,
-      "gap": 4,
+      "gap": 8,
       "frequency_score": 0.68,
       "recency_score": 0.75,
-      "overdue_score": 0.000398,
-      "group_score": 0.74894
+      "overdue_score": 0.000795,
+      "group_score": 0.748881
     },
     {
       "group": "13-23-27",
@@ -828,11 +828,11 @@
       "count": 17,
       "recent_count": 3,
       "last_seen_index": 10044,
-      "gap": 16,
+      "gap": 20,
       "frequency_score": 0.68,
       "recency_score": 0.75,
-      "overdue_score": 0.00159,
-      "group_score": 0.748761
+      "overdue_score": 0.001987,
+      "group_score": 0.748702
     },
     {
       "group": "30-36-38",
@@ -842,11 +842,11 @@
       "count": 17,
       "recent_count": 3,
       "last_seen_index": 10042,
-      "gap": 18,
+      "gap": 22,
       "frequency_score": 0.68,
       "recency_score": 0.75,
-      "overdue_score": 0.001789,
-      "group_score": 0.748732
+      "overdue_score": 0.002186,
+      "group_score": 0.748672
     }
   ],
   "warning": "Statistical analysis only. Lottery draws remain random and there is no winning guarantee."

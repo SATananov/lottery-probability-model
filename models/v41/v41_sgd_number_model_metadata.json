@@ -1,7 +1,7 @@
 {
   "model_name": "sgd_number_classifier",
   "model_type": "per_number_binary_classifier",
-  "canonical_dataset": "data/v41_canonical_draw_events.csv",
+  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
   "feature_columns": [
     "number_scaled",
     "drawing_no_scaled",
@@ -15,23 +15,23 @@
   ],
   "uses_bonus_number": false,
   "uses_drawing_no": true,
-  "train_events": 8049,
+  "train_events": 8051,
   "test_events": 2013,
   "metrics": {
     "model": "sgd_number_classifier",
     "test_events": 2013,
-    "average_hits_top6": 0.7436661698956781,
+    "average_hits_top6": 0.7779433681073026,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 861,
-      "1": 840,
-      "2": 281,
-      "3": 29,
-      "4": 2
+      "0": 854,
+      "1": 809,
+      "2": 299,
+      "3": 45,
+      "4": 6
     },
-    "events_with_3plus_hits": 31,
-    "events_with_4plus_hits": 2,
+    "events_with_3plus_hits": 51,
+    "events_with_4plus_hits": 6,
     "events_with_5plus_hits": 0,
     "events_with_6_hits": 0
   },

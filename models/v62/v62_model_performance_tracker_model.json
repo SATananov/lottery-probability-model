@@ -2,19 +2,19 @@
   "summary": {
     "step": "62",
     "name": "Model Performance Tracker",
-    "total_draws": 10060,
+    "total_draws": 10064,
     "latest_draw": {
-      "date": "2026-06-28",
+      "date": "2026-07-12",
       "year": "2026",
-      "draw_number": "50",
+      "draw_number": "54",
       "draw_position": "1",
       "numbers": [
-        2,
-        4,
-        17,
-        33,
+        16,
+        29,
         35,
-        38
+        37,
+        44,
+        47
       ]
     },
     "models_evaluated": 10,
@@ -23,8 +23,8 @@
     "best_models": [
       "v41_latest_predictions"
     ],
-    "average_best_hits": 4,
-    "history_rows": 30,
+    "average_best_hits": 2.75,
+    "history_rows": 40,
     "generated_reports": [
       "reports/v62_model_performance_summary.json",
       "reports/v62_model_performance_summary.md",
@@ -40,8 +40,8 @@
       "source_exists": true,
       "candidate_count": 4,
       "best_hits": 6,
-      "best_candidate": "2 4 17 33 35 38",
-      "hit_numbers": "2 4 17 33 35 38",
+      "best_candidate": "16 29 35 37 44 47",
+      "hit_numbers": "16 29 35 37 44 47",
       "coverage_percent": 100.0,
       "status": "ok"
     },
@@ -50,21 +50,10 @@
       "source_file": "models\\v44_1\\v44_1_final_ensemble_ticket_prediction.json",
       "source_exists": true,
       "candidate_count": 4,
-      "best_hits": 5,
-      "best_candidate": "2 4 17 33 38 42",
-      "hit_numbers": "2 4 17 33 38",
-      "coverage_percent": 83.33,
-      "status": "ok"
-    },
-    {
-      "model_name": "v42_combined_prediction",
-      "source_file": "models\\v42\\v42_combined_prediction.json",
-      "source_exists": true,
-      "candidate_count": 1,
-      "best_hits": 4,
-      "best_candidate": "2 4 17 37 38 42",
-      "hit_numbers": "2 4 17 38",
-      "coverage_percent": 66.67,
+      "best_hits": 2,
+      "best_candidate": "11 16 36 38 44 49",
+      "hit_numbers": "16 44",
+      "coverage_percent": 33.33,
       "status": "ok"
     },
     {
@@ -72,9 +61,20 @@
       "source_file": "models\\v45\\v45_final_prediction_tickets.json",
       "source_exists": true,
       "candidate_count": 4,
+      "best_hits": 2,
+      "best_candidate": "13 17 30 37 44 48",
+      "hit_numbers": "37 44",
+      "coverage_percent": 33.33,
+      "status": "ok"
+    },
+    {
+      "model_name": "v42_combined_prediction",
+      "source_file": "models\\v42\\v42_combined_prediction.json",
+      "source_exists": true,
+      "candidate_count": 1,
       "best_hits": 1,
-      "best_candidate": "11 17 22 43 44 48",
-      "hit_numbers": "17",
+      "best_candidate": "2 11 37 38 48 49",
+      "hit_numbers": "37",
       "coverage_percent": 16.67,
       "status": "ok"
     },

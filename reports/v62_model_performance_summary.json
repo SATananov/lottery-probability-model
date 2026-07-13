@@ -1,19 +1,19 @@
 {
   "step": "62",
   "name": "Model Performance Tracker",
-  "total_draws": 10060,
+  "total_draws": 10064,
   "latest_draw": {
-    "date": "2026-06-28",
+    "date": "2026-07-12",
     "year": "2026",
-    "draw_number": "50",
+    "draw_number": "54",
     "draw_position": "1",
     "numbers": [
-      2,
-      4,
-      17,
-      33,
+      16,
+      29,
       35,
-      38
+      37,
+      44,
+      47
     ]
   },
   "models_evaluated": 10,
@@ -22,8 +22,8 @@
   "best_models": [
     "v41_latest_predictions"
   ],
-  "average_best_hits": 4,
-  "history_rows": 30,
+  "average_best_hits": 2.75,
+  "history_rows": 40,
   "generated_reports": [
     "reports/v62_model_performance_summary.json",
     "reports/v62_model_performance_summary.md",

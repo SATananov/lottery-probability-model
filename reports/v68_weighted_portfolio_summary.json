@@ -8,7 +8,7 @@
   "coverage_percent": 38.78,
   "covered_top10_numbers": 10,
   "covered_top20_numbers": 17,
-  "average_ticket_step66_score": 76.089,
+  "average_ticket_step66_score": 73.186,
   "average_ticket_overlap": 1.821,
   "max_ticket_overlap": 2,
   "repeated_pairs_count": 23,
@@ -17,31 +17,31 @@
   "top20_coverage_score": 85.0,
   "diversity_score": 67.214,
   "repetition_score": 42.5,
-  "portfolio_score": 64.298,
+  "portfolio_score": 63.572,
   "portfolio_status": "приемлив портфейл с нужда от наблюдение",
   "undercovered_top20_numbers": [
     {
-      "number": 16,
-      "step66_rank": 15,
-      "weighted_score_percent": 58.754
-    },
-    {
-      "number": 43,
-      "step66_rank": 18,
-      "weighted_score_percent": 54.099
-    },
-    {
       "number": 48,
+      "step66_rank": 13,
+      "weighted_score_percent": 57.041
+    },
+    {
+      "number": 16,
+      "step66_rank": 19,
+      "weighted_score_percent": 49.188
+    },
+    {
+      "number": 9,
       "step66_rank": 20,
-      "weighted_score_percent": 52.077
+      "weighted_score_percent": 47.45
     }
   ],
   "recommendations": [
     "Портфолиото покрива сравнително малко уникални числа. Следваща оптимизация може да увеличи diversity.",
-    "Има силни Step 66 числа, които не са покрити в портфолиото: 16, 43, 48.",
+    "Има силни Step 66 числа, които не са покрити в портфолиото: 48, 16, 9.",
     "Има повторени двойки. Това не е грешка, но оптимизаторът на пакет от комбинации може да намали повторенията."
   ],
-  "generated_at": "2026-06-28T16:45:24+00:00",
+  "generated_at": "2026-07-13T03:10:00+00:00",
   "generated_reports": [
     "reports/v68_weighted_portfolio_summary.json",
     "reports/v68_weighted_portfolio_summary.md",

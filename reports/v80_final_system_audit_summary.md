@@ -13,9 +13,9 @@
 
 | Dataset | Редове | 2026 | Последна дата | Последни числа | Статус |
 |---|---:|---:|---|---|---|
-| `data/historical_draws.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
-| `data/v40_normalized_draw_events.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
-| `data/v41_canonical_draw_events.csv` | 10060 | 51 | 2026-06-28 | 2,4,17,33,35,38 | Провери |
+| `data/historical_draws.csv` | 10064 | 55 | 2026-07-12 | 16,29,35,37,44,47 | Провери |
+| `data/v40_normalized_draw_events.csv` | 10064 | 55 | 2026-07-12 | 16,29,35,37,44,47 | Провери |
+| `data/v41_canonical_draw_events.csv` | 10064 | 55 | 2026-07-12 | 16,29,35,37,44,47 | Провери |
 
 ## Sync планове
 
@@ -27,7 +27,7 @@
 
 ## Нужда от преглед
 
-- `data/historical_draws.csv` — Провери — 
-- `data/v40_normalized_draw_events.csv` — Провери — 
-- `data/v41_canonical_draw_events.csv` — Провери — 
-- `active_text_files` — Провери — scripts/v111_6_build_prize_import_captcha_safe_manual_import.py: ????; scripts/v111_9_remove_unofficial_archive_source.py: ????; scripts/v114_build_ticket_value.py: ????; scripts/v116_1_fix_backtesting_duplicate_columns.py: ????; step114_ticket_value_patch_files/scripts/v114_build_ticket_value.py: ????; step111_9_remove_unofficial_archive_source_patch_files/scripts/v111_9_remove_unofficial_archive_source.py: ????
+- `data/historical_draws.csv` — Провери —
+- `data/v40_normalized_draw_events.csv` — Провери —
+- `data/v41_canonical_draw_events.csv` — Провери —
+- `active_text_files` — Провери — reports/v150_1_dynamic_text_audit.csv: ????; scripts/v111_6_build_prize_import_captcha_safe_manual_import.py: ????; scripts/v111_9_remove_unofficial_archive_source.py: ????; scripts/v114_build_ticket_value.py: ????; scripts/v116_1_fix_backtesting_duplicate_columns.py: ????; src/v150_ui_language_integrity_engine.py: �

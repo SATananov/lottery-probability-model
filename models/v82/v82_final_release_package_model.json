@@ -134,19 +134,19 @@
     },
     {
       "check": "Dataset expectation: data/historical_draws.csv",
-      "details": "rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
+      "details": "rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
       "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "Провери"
     },
     {
       "check": "Dataset expectation: data/v40_normalized_draw_events.csv",
-      "details": "rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
+      "details": "rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
       "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "Провери"
     },
     {
       "check": "Dataset expectation: data/v41_canonical_draw_events.csv",
-      "details": "rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
+      "details": "rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
       "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",
       "status": "Провери"
     },
@@ -242,27 +242,27 @@
   "dataset_results": {
     "data/historical_draws.csv": {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-12",
+      "latest_numbers": "16,29,35,37,44,47",
       "parse_ok": true,
-      "rows": 10060,
-      "rows_2026": 51
+      "rows": 10064,
+      "rows_2026": 55
     },
     "data/v40_normalized_draw_events.csv": {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-12",
+      "latest_numbers": "16,29,35,37,44,47",
       "parse_ok": true,
-      "rows": 10060,
-      "rows_2026": 51
+      "rows": 10064,
+      "rows_2026": 55
     },
     "data/v41_canonical_draw_events.csv": {
       "exists": true,
-      "latest_date": "2026-06-28",
-      "latest_numbers": "2,4,17,33,35,38",
+      "latest_date": "2026-07-12",
+      "latest_numbers": "16,29,35,37,44,47",
       "parse_ok": true,
-      "rows": 10060,
-      "rows_2026": 51
+      "rows": 10064,
+      "rows_2026": 55
     }
   },
   "summary": {
@@ -270,31 +270,31 @@
     "dataset_results": {
       "data/historical_draws.csv": {
         "exists": true,
-        "latest_date": "2026-06-28",
-        "latest_numbers": "2,4,17,33,35,38",
+        "latest_date": "2026-07-12",
+        "latest_numbers": "16,29,35,37,44,47",
         "parse_ok": true,
-        "rows": 10060,
-        "rows_2026": 51
+        "rows": 10064,
+        "rows_2026": 55
       },
       "data/v40_normalized_draw_events.csv": {
         "exists": true,
-        "latest_date": "2026-06-28",
-        "latest_numbers": "2,4,17,33,35,38",
+        "latest_date": "2026-07-12",
+        "latest_numbers": "16,29,35,37,44,47",
         "parse_ok": true,
-        "rows": 10060,
-        "rows_2026": 51
+        "rows": 10064,
+        "rows_2026": 55
       },
       "data/v41_canonical_draw_events.csv": {
         "exists": true,
-        "latest_date": "2026-06-28",
-        "latest_numbers": "2,4,17,33,35,38",
+        "latest_date": "2026-07-12",
+        "latest_numbers": "16,29,35,37,44,47",
         "parse_ok": true,
-        "rows": 10060,
-        "rows_2026": 51
+        "rows": 10064,
+        "rows_2026": 55
       }
     },
     "datasets_checked": 3,
-    "generated_at": "2026-06-28T16:45:27+00:00",
+    "generated_at": "2026-07-13T03:10:05+00:00",
     "generated_reports": [
       "reports/v82_final_release_summary.json",
       "reports/v82_final_release_summary.md",
@@ -305,14 +305,14 @@
     ],
     "issues_found": 5,
     "issues_preview": [
-      "Dataset expectation failed: data/historical_draws.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
-      "Dataset expectation failed: data/v40_normalized_draw_events.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
-      "Dataset expectation failed: data/v41_canonical_draw_events.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38",
+      "Dataset expectation failed: data/historical_draws.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
+      "Dataset expectation failed: data/v40_normalized_draw_events.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
+      "Dataset expectation failed: data/v41_canonical_draw_events.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47",
       "Upstream audit not OK: reports/v80_final_system_audit_summary.json",
       "Upstream audit not OK: reports/v81_final_ux_navigation_summary.json"
     ],
-    "manifest_files_count": 1156,
-    "manifest_size_bytes": 22417727,
+    "manifest_files_count": 1161,
+    "manifest_size_bytes": 20298955,
     "name": "Финален пакет за предаване",
     "required_files_checked": 22,
     "safe_note": "Step 82 е финален контролен слой за готовност и чист ZIP. Той подготвя приложението за стабилен ZIP checkpoint и не е прогноза или гаранция за печалба.",

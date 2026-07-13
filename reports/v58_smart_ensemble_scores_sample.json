@@ -1,11 +1,11 @@
 {
-  "total_draws": 10060,
+  "total_draws": 10064,
   "query_count": 3,
   "valid_count": 3,
   "invalid_count": 0,
-  "average_final_score": 75.04,
-  "best_score": 79.86,
-  "weakest_score": 72.37,
+  "average_final_score": 75.25,
+  "best_score": 81.7,
+  "weakest_score": 70.61,
   "portfolio_coverage": {
     "ticket_count": 3,
     "invalid_count": 0,
@@ -122,12 +122,12 @@
       "combination_text": "6, 13, 16, 19, 42, 44",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 72.88,
+      "final_score": 73.44,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 90.0,
         "coverage_score": 96.0,
-        "number_profile_score": 45.5,
+        "number_profile_score": 47.83,
         "hot_cold_balance_score": 80.0,
         "similarity_context_score": 60.0
       },
@@ -205,7 +205,7 @@
         "query_text": "6, 13, 16, 19, 42, 44",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10060,
+        "total_draws": 10064,
         "historical_similarity_score": 100.0,
         "band": "Има точно историческо съвпадение",
         "max_match_count": 6,
@@ -218,9 +218,9 @@
           "5": 0,
           "4": 10,
           "3": 187,
-          "2": 1327,
+          "2": 1328,
           "1": 4147,
-          "0": 4388
+          "0": 4391
         },
         "closest_draws": [
           {
@@ -559,9 +559,9 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 45.5,
-        "min_profile_score": 25.83,
-        "max_profile_score": 60.73,
+        "average_profile_score": 47.83,
+        "min_profile_score": 31.15,
+        "max_profile_score": 65.0,
         "statuses": [
           "Нормален ритъм",
           "Активно напоследък",
@@ -571,7 +571,7 @@
           "Нормален ритъм"
         ],
         "bands": [
-          "Нормален профил",
+          "Силен профил",
           "Нормален профил",
           "Нормален профил",
           "По-слаб профил",
@@ -586,9 +586,9 @@
         "overdue_count": 0,
         "historically_strong_count": 0,
         "historically_weak_count": 0,
-        "average_recent_activity": 95.33,
-        "average_stability": 57.11,
-        "average_overdue": 9.45
+        "average_recent_activity": 95.52,
+        "average_stability": 57.12,
+        "average_overdue": 20.51
       },
       "warnings": [
         "Комбинацията има точно историческо съвпадение."
@@ -611,13 +611,13 @@
       "combination_text": "4, 12, 21, 25, 34, 48",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 79.86,
+      "final_score": 81.7,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 97.0,
         "coverage_score": 96.0,
-        "number_profile_score": 58.18,
-        "hot_cold_balance_score": 74.0,
+        "number_profile_score": 56.68,
+        "hot_cold_balance_score": 85.0,
         "similarity_context_score": 80.0
       },
       "pattern": {
@@ -694,7 +694,7 @@
         "query_text": "4, 12, 21, 25, 34, 48",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10060,
+        "total_draws": 10064,
         "historical_similarity_score": 61.67,
         "band": "Има близки исторически тиражи",
         "max_match_count": 4,
@@ -707,9 +707,9 @@
           "5": 0,
           "4": 12,
           "3": 196,
-          "2": 1418,
-          "1": 4144,
-          "0": 4290
+          "2": 1419,
+          "1": 4146,
+          "0": 4291
         },
         "closest_draws": [
           {
@@ -1052,13 +1052,13 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 58.18,
+        "average_profile_score": 56.68,
         "min_profile_score": 47.81,
-        "max_profile_score": 69.69,
+        "max_profile_score": 69.17,
         "statuses": [
           "Нормален ритъм",
-          "Закъсняло",
-          "Закъсняло",
+          "Активно напоследък",
+          "Нормален ритъм",
           "Силно закъсняло",
           "Силно закъсняло",
           "Нормален ритъм"
@@ -1069,19 +1069,19 @@
           "Нормален профил",
           "Нормален профил",
           "Силен профил",
-          "Нормален профил"
+          "Силен профил"
         ]
       },
       "hot_cold_details": {
-        "hot_count": 0,
+        "hot_count": 1,
         "cold_count": 0,
         "stable_count": 0,
-        "overdue_count": 4,
+        "overdue_count": 2,
         "historically_strong_count": 0,
         "historically_weak_count": 0,
-        "average_recent_activity": 80.02,
+        "average_recent_activity": 81.71,
         "average_stability": 56.85,
-        "average_overdue": 67.58
+        "average_overdue": 42.15
       },
       "warnings": [
         "Не са открити сериозни проблеми в обединената оценка."
@@ -1104,13 +1104,13 @@
       "combination_text": "22, 28, 37, 38, 42, 49",
       "is_valid": true,
       "status": "Валидна",
-      "final_score": 72.37,
+      "final_score": 70.61,
       "band": "Добра статистическа структура",
       "components": {
         "pattern_score": 60.0,
         "coverage_score": 96.0,
-        "number_profile_score": 60.88,
-        "hot_cold_balance_score": 74.0,
+        "number_profile_score": 60.21,
+        "hot_cold_balance_score": 66.0,
         "similarity_context_score": 80.0
       },
       "pattern": {
@@ -1189,7 +1189,7 @@
         "query_text": "22, 28, 37, 38, 42, 49",
         "is_valid": true,
         "status": "Валидна",
-        "total_draws": 10060,
+        "total_draws": 10064,
         "historical_similarity_score": 61.67,
         "band": "Има близки исторически тиражи",
         "max_match_count": 4,
@@ -1202,8 +1202,8 @@
           "5": 0,
           "4": 16,
           "3": 194,
-          "2": 1344,
-          "1": 4185,
+          "2": 1345,
+          "1": 4188,
           "0": 4321
         },
         "closest_draws": [
@@ -1547,9 +1547,9 @@
         ]
       },
       "number_profile_details": {
-        "average_profile_score": 60.88,
-        "min_profile_score": 46.46,
-        "max_profile_score": 78.65,
+        "average_profile_score": 60.21,
+        "min_profile_score": 49.48,
+        "max_profile_score": 71.98,
         "statuses": [
           "Нормален ритъм",
           "Нормален ритъм",
@@ -1564,11 +1564,11 @@
           "Силен профил",
           "Нормален профил",
           "Нормален профил",
-          "Силен профил"
+          "Нормален профил"
         ]
       },
       "hot_cold_details": {
-        "hot_count": 4,
+        "hot_count": 5,
         "cold_count": 0,
         "stable_count": 0,
         "overdue_count": 0,
@@ -1576,13 +1576,13 @@
         "historically_weak_count": 0,
         "average_recent_activity": 99.94,
         "average_stability": 57.52,
-        "average_overdue": 17.57
+        "average_overdue": 15.61
       },
       "warnings": [
-        "Не са открити сериозни проблеми в обединената оценка."
+        "Комбинацията е силно натоварена с горещи напоследък числа."
       ],
       "recommendations": [
-        "Комбинацията изглежда балансирана като статистическа структура. Провери я и в отделните модули.",
+        "Избягвай прекалено едностранен избор само по скорошна активност.",
         "Това не е предсказание и не е гаранция за печалба. Използвай резултата само като помощ за статистически контрол."
       ]
     }

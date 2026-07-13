@@ -3,18 +3,18 @@
     "step": "73",
     "name": "Представяне на пакета",
     "active_pack_source": "reports/v71_ticket_pack.csv",
-    "active_pack_snapshot_id": "c8e2d530f2e3b3b2",
+    "active_pack_snapshot_id": "7f2098f53fabdf8e",
     "active_pack_tickets": 8,
     "active_pack_combinations": 8,
     "active_pack_physical_tickets": 2,
     "combinations_per_physical_ticket": 4,
-    "history_rows": 2,
+    "history_rows": 3,
     "latest_best_hit_count": "2",
-    "latest_best_combination_label": "Фиш 1 / Комбинация 2",
-    "latest_package_unique_hits": "4",
-    "latest_draw_numbers": "2,4,17,33,35,38",
+    "latest_best_combination_label": "Фиш 1 / Комбинация 3",
+    "latest_package_unique_hits": "3",
+    "latest_draw_numbers": "16,29,35,37,44,47",
     "status": "Готово за следваща проверка",
-    "generated_at": "2026-06-28T16:45:24+00:00",
+    "generated_at": "2026-07-13T03:10:00+00:00",
     "generated_reports": [
       "reports/v73_ticket_pack_performance_summary.json",
       "reports/v73_ticket_pack_performance_summary.md",
@@ -35,13 +35,13 @@
       "numbers": [
         1,
         4,
-        16,
         18,
         22,
-        37
+        37,
+        48
       ],
-      "numbers_display": "01 04 16 18 22 37",
-      "average_step66_score": 78.553
+      "numbers_display": "01 04 18 22 37 48",
+      "average_step66_score": 77.853
     },
     {
       "ticket_id": 2,
@@ -59,7 +59,7 @@
         49
       ],
       "numbers_display": "01 02 04 21 38 49",
-      "average_step66_score": 79.721
+      "average_step66_score": 77.885
     },
     {
       "ticket_id": 3,
@@ -77,7 +77,7 @@
         44
       ],
       "numbers_display": "01 02 11 23 37 44",
-      "average_step66_score": 85.131
+      "average_step66_score": 83.435
     },
     {
       "ticket_id": 4,
@@ -88,14 +88,14 @@
       "strategy_label": "Балансирана комбинация по нечетни/четни числа",
       "numbers": [
         2,
+        16,
         17,
         21,
         37,
-        42,
-        43
+        42
       ],
-      "numbers_display": "02 17 21 37 42 43",
-      "average_step66_score": 73.227
+      "numbers_display": "02 16 17 21 37 42",
+      "average_step66_score": 66.671
     },
     {
       "ticket_id": 5,
@@ -107,13 +107,13 @@
       "numbers": [
         1,
         3,
+        9,
         17,
         38,
-        44,
-        48
+        44
       ],
-      "numbers_display": "01 03 17 38 44 48",
-      "average_step66_score": 69.994
+      "numbers_display": "01 03 09 17 38 44",
+      "average_step66_score": 66.831
     },
     {
       "ticket_id": 6,
@@ -131,7 +131,7 @@
         38
       ],
       "numbers_display": "02 13 18 23 34 38",
-      "average_step66_score": 73.558
+      "average_step66_score": 69.802
     },
     {
       "ticket_id": 7,
@@ -149,7 +149,7 @@
         49
       ],
       "numbers_display": "02 12 18 24 37 49",
-      "average_step66_score": 69.453
+      "average_step66_score": 67.021
     },
     {
       "ticket_id": 8,
@@ -167,7 +167,7 @@
         49
       ],
       "numbers_display": "01 11 17 22 42 49",
-      "average_step66_score": 72.376
+      "average_step66_score": 67.648
     }
   ],
   "history": [
@@ -213,6 +213,30 @@
       "tickets_with_0_hits": "0",
       "tickets_with_1_hit": "4",
       "tickets_with_2_hits": "4",
+      "tickets_with_3_hits": "0",
+      "tickets_with_4_hits": "0",
+      "tickets_with_5_hits": "0",
+      "tickets_with_6_hits": "0",
+      "safe_note": "Step 73 проверява вече съществуващия пакет срещу реален тираж. Това не е прогноза и не е гаранция за печалба."
+    },
+    {
+      "evaluated_at": "2026-07-13T03:07:11+00:00",
+      "source": "add_draw_pre_save",
+      "pack_snapshot_id": "c8e2d530f2e3b3b2",
+      "draw_date": "2026-07-12",
+      "draw_number": "54-1",
+      "draw_numbers": "16,29,35,37,44,47",
+      "tickets_evaluated": "8",
+      "physical_tickets_evaluated": "2",
+      "combinations_per_physical_ticket": "4",
+      "best_ticket_id": "3",
+      "best_combination_label": "Фиш 1 / Комбинация 3",
+      "best_hit_count": "2",
+      "package_unique_hits": "3",
+      "package_unique_hit_numbers": "16,37,44",
+      "tickets_with_0_hits": "3",
+      "tickets_with_1_hit": "3",
+      "tickets_with_2_hits": "2",
       "tickets_with_3_hits": "0",
       "tickets_with_4_hits": "0",
       "tickets_with_5_hits": "0",

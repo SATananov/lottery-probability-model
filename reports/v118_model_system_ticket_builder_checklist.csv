@@ -1,6 +1,6 @@
 ﻿check,status,blocking,details_bg
 model_numbers_available,OK,yes,моделно класирани числа=18
-core_has_requested_size,OK,yes,"ядро=1, 2, 4, 11, 18, 21, 22, 37, 38"
+core_has_requested_size,OK,yes,"ядро=1, 2, 4, 11, 18, 22, 37, 38, 44"
 combinations_created,OK,yes,комбинации=12
 all_combinations_valid,OK,yes,всяка комбинация има 6 уникални числа между 1 и 49
 no_duplicate_combinations,OK,yes,"редове=12, уникални=12"

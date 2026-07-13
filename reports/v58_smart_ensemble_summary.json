@@ -2,11 +2,11 @@
   "status": "completed",
   "module": "Обединена оценка 2",
   "version": "v58",
-  "total_draws": 10060,
+  "total_draws": 10064,
   "sample_query_count": 3,
-  "average_final_score": 75.04,
-  "best_score": 79.86,
-  "weakest_score": 72.37,
+  "average_final_score": 75.25,
+  "best_score": 81.7,
+  "weakest_score": 70.61,
   "portfolio_coverage_score": 96.0,
   "safety_bg": "Обединената оценка е статистически контролен слой. Тя не предсказва печеливши числа и не увеличава математическата гаранция за печалба."
 }

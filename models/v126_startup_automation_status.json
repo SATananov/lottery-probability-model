@@ -2,11 +2,11 @@
   "step": "126",
   "name": "Startup Automation and Operator Controls",
   "trigger": "startup",
-  "started_at_utc": "2026-07-10T14:47:05+00:00",
-  "checked_at_utc": "2026-07-10T14:47:05+00:00",
-  "finished_at_utc": "2026-07-10T14:47:06+00:00",
-  "status": "up_to_date",
-  "message": "Локалният официален тираж е актуален.",
+  "started_at_utc": "2026-07-13T02:46:18+00:00",
+  "checked_at_utc": "2026-07-13T02:46:18+00:00",
+  "finished_at_utc": "2026-07-13T02:46:18+00:00",
+  "status": "update_available",
+  "message": "Открит е нов официален тираж.",
   "config": {
     "auto_check_enabled": true,
     "auto_apply_enabled": false,
@@ -18,7 +18,7 @@
   "detection": {
     "step": "123",
     "name": "BST Official Draw Detection Foundation",
-    "checked_at_utc": "2026-07-10T14:47:05+00:00",
+    "checked_at_utc": "2026-07-13T02:46:18+00:00",
     "official_source_url": "https://info.toto.bg/results/6x49",
     "mode": "read_only_detection",
     "writes_draw_data": false,
@@ -39,22 +39,22 @@
     },
     "official_latest_draw": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
+      "draw_number": 54,
+      "date": "2026-07-12",
       "numbers": [
-        12,
-        17,
-        23,
-        30,
-        38,
-        41
+        16,
+        29,
+        35,
+        37,
+        44,
+        47
       ],
-      "source_url": "https://info.toto.bg/results/6x49/2026-53",
-      "draw_key": "2026-53"
+      "source_url": "https://info.toto.bg/results/6x49/2026-54",
+      "draw_key": "2026-54"
     },
-    "status": "up_to_date",
-    "draw_delta": 0,
-    "message": "Локалният source of truth е актуален.",
+    "status": "update_available",
+    "draw_delta": 1,
+    "message": "Открит е по-нов официален тираж.",
     "validation": {
       "requested": true,
       "passed": true,
@@ -66,8 +66,8 @@
       "detail_fetch_succeeded": true
     },
     "source_diagnostics": {
-      "html_sha256": "930a630da2846df1b09384bd9e947121b16284e55cdde16d90c4ec226e27fef2",
-      "html_bytes": 85447,
+      "html_sha256": "3e802a91387456ca3ced1f46813c8302b17e976c7f6f14b98878ca36b23d2e09",
+      "html_bytes": 85303,
       "contains_6x49_marker": true,
       "candidate_count": 20,
       "selected_parser_strategies": [

@@ -4,12 +4,12 @@
   "protocol_id": "PFT-148-9873e2dabbe3ec8e287f",
   "policy_sha256": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
   "ledger_path": "data/prospective_forward_test_ledger.jsonl",
-  "ledger_event_count": 2,
-  "ledger_last_event_sha256": "683ca9cac3bb0eca759a21a0f45f49ff29548524912dde48245ce02839bcfd7b",
+  "ledger_event_count": 4,
+  "ledger_last_event_sha256": "9f1870df4d6bfecf410660efb5dbfc0f7dc9a43b6c32d68dee104b73e37c8538",
   "ledger_integrity_ok": true,
   "target_settled_draws": 30,
-  "eligible_settled_draws": 0,
-  "remaining_draws": 30,
+  "eligible_settled_draws": 1,
+  "remaining_draws": 29,
   "milestones": [
     10,
     20,
@@ -17,23 +17,23 @@
   ],
   "next_milestone": 10,
   "active_lock": {
-    "lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
-    "locked_at_utc": "2026-07-12T06:07:03+00:00",
-    "expected_draw_key": "2026-54",
-    "target_sequence_index": 10064,
-    "source_dataset_sha256": "0e11bccbcb47ae6d34f32c5e791ca76cf199aca2ebefe77798c16ab4b4fbc579",
-    "source_dataset_rows": 10063,
-    "forecast_signature_sha256": "2edce2867e5c68ca6650cc54170707f2aba7dd10ab202c44346a87d9d2f75f93",
-    "artifact_path": "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json"
+    "lock_id": "LOCK-148-29ad1f2b8b69a3bc45e7de02",
+    "locked_at_utc": "2026-07-13T03:25:50+00:00",
+    "expected_draw_key": "2026-55",
+    "target_sequence_index": 10065,
+    "source_dataset_sha256": "5bd872b95d0914797d8da32b4016a246b50bdb58b6c3f9072f4818f5f6b2dbad",
+    "source_dataset_rows": 10064,
+    "forecast_signature_sha256": "9da6becb0a69911bd7dfba1081306dbbac6a56080788c53b7a0a05c616c38fa9",
+    "artifact_path": "reports/forward_tests/v148/LOCK-148-29ad1f2b8b69a3bc45e7de02.json"
   },
   "aggregate_results": {
     "neural_dynamics_frozen_ensemble": {
-      "eligible_draws": 0,
-      "average_best_hits": null,
+      "eligible_draws": 1,
+      "average_best_hits": 2.0,
       "best_hits_distribution": {
         "0": 0,
         "1": 0,
-        "2": 0,
+        "2": 1,
         "3": 0,
         "4": 0,
         "5": 0,
@@ -41,11 +41,11 @@
       }
     },
     "frequency_walk_forward": {
-      "eligible_draws": 0,
-      "average_best_hits": null,
+      "eligible_draws": 1,
+      "average_best_hits": 1.0,
       "best_hits_distribution": {
         "0": 0,
-        "1": 0,
+        "1": 1,
         "2": 0,
         "3": 0,
         "4": 0,
@@ -54,11 +54,11 @@
       }
     },
     "recency_weighted_walk_forward": {
-      "eligible_draws": 0,
-      "average_best_hits": null,
+      "eligible_draws": 1,
+      "average_best_hits": 1.0,
       "best_hits_distribution": {
         "0": 0,
-        "1": 0,
+        "1": 1,
         "2": 0,
         "3": 0,
         "4": 0,
@@ -67,12 +67,12 @@
       }
     },
     "recent_window_frequency": {
-      "eligible_draws": 0,
-      "average_best_hits": null,
+      "eligible_draws": 1,
+      "average_best_hits": 2.0,
       "best_hits_distribution": {
         "0": 0,
         "1": 0,
-        "2": 0,
+        "2": 1,
         "3": 0,
         "4": 0,
         "5": 0,
@@ -80,21 +80,21 @@
       }
     },
     "frequency_recency_blend": {
-      "eligible_draws": 0,
-      "average_best_hits": null,
+      "eligible_draws": 1,
+      "average_best_hits": 3.0,
       "best_hits_distribution": {
         "0": 0,
         "1": 0,
         "2": 0,
-        "3": 0,
+        "3": 1,
         "4": 0,
         "5": 0,
         "6": 0
       }
     },
     "uniform_random_mean": {
-      "eligible_draws": 0,
-      "average_best_hits": null
+      "eligible_draws": 1,
+      "average_best_hits": 2.06
     }
   },
   "frozen_source_locks": {
@@ -105,7 +105,7 @@
     "step147_result_signature_sha256": "566007511ed0c63bbca667780291c20a13a7eb2405003e35ba703b05da4d9f35",
     "forward_scoring_code_sha256": "f8a09b85aee17c4c96f2964ce933566eb8219c9c632489ae0f535ec02a4e59cc"
   },
-  "last_protocol_event_at_utc": "2026-07-12T06:07:03+00:00",
+  "last_protocol_event_at_utc": "2026-07-13T03:25:50+00:00",
   "decision": {
     "production_promotion": "blocked",
     "automatic_promotion": false,
@@ -130,5 +130,5 @@
   "personal_journal_used": false,
   "historical_backfill_performed": false,
   "safe_note_bg": "Step 148 е prospective research protocol. Заключените evaluation packages не са production препоръки или реални фишове. Протоколът не доказва предвидимост и не гарантира печалба.",
-  "result_signature_sha256": "4bf12ab575917b14597d4971426831007b8420498e7fbe5902569e03fad3776c"
+  "result_signature_sha256": "5bfe8894d90a3de8e7bc9cd1a15f2fc28afb791a17620054e742b907642f6c20"
 }

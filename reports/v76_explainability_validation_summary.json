@@ -1,14 +1,14 @@
 {
   "invalid_tickets": 0,
-  "latest_date": "2026-07-05",
+  "latest_date": "2026-07-12",
   "latest_draw_no": "1",
-  "latest_numbers": "4,11,21,28,36,49",
+  "latest_numbers": "16,29,35,37,44,47",
   "name": "Обяснимост и валидация",
   "next_step": "74",
   "numbers_explained": 49,
   "safe_note": "Step 76 обяснява и валидира статистическите сигнали от Step 75. Той не е гаранция за печалба и не отменя случайността на лотарията.",
   "source_step": "75",
-  "state_hash": "96c0af479b4ff3f5",
+  "state_hash": "f52b99648167f877",
   "status": "OK",
   "step": 76,
   "tickets_validated": 8,
@@ -24,7 +24,7 @@
     38,
     30
   ],
-  "valid_draws": 10062,
+  "valid_draws": 10064,
   "valid_tickets": 8,
   "warning_items": 10,
   "warning_tickets": 0

@@ -1,6 +1,6 @@
 key,label,status,year,draw_number,date,draw_delta,path,message
 official,Официална история,synced,2026,53,2026-07-09,0,data/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
-journal_prize,Дневник — история на печалбите,local_optional,,,,,data/user_journal_exports/prize_winner_history.csv,Локалният личен journal export не е част от публичния release и не блокира актуалността.
+journal_prize,Дневник — история на печалбите,synced,2026,53,2026-07-09,0,data/user_journal_exports/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
 historical,Исторически тиражи,synced,2026,53,2026-07-09,0,data/historical_draws.csv,Синхронизиран с официалния последен тираж.
 normalized,Нормализирани събития,synced,2026,53,2026-07-09,0,data/v40_normalized_draw_events.csv,Синхронизиран с официалния последен тираж.
 canonical,Канонични събития,synced,2026,53,2026-07-09,0,data/v41_canonical_draw_events.csv,Синхронизиран с официалния последен тираж.

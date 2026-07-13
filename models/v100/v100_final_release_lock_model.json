@@ -1,8 +1,8 @@
 {
   "step": 100,
   "status": "V1_LOCKED_WAITING_NEXT_DRAW",
-  "title_bg": "Финално заключване v1",
-  "generated_at_utc": "2026-07-08T10:31:27+00:00",
+  "title_bg": "Финално заключване",
+  "generated_at_utc": "2026-07-13T03:10:09+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "strategy_type": "Хибрид",
@@ -13,22 +13,22 @@
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44"
   },
   "dataset": {
-    "historical_rows": 10062,
-    "normalized_rows": 10062,
-    "canonical_rows": 10062,
-    "latest_draw_date": "2026-07-05",
+    "historical_rows": 10064,
+    "normalized_rows": 10064,
+    "canonical_rows": 10064,
+    "latest_draw_date": "2026-07-12",
     "latest_draw_year": "2026",
-    "latest_draw_no": "52",
+    "latest_draw_no": "54",
     "latest_draw_position": "1",
     "latest_numbers": [
-      4,
-      11,
-      21,
-      28,
-      36,
-      49
+      16,
+      29,
+      35,
+      37,
+      44,
+      47
     ],
-    "latest_numbers_text": "4, 11, 21, 28, 36, 49",
+    "latest_numbers_text": "16, 29, 35, 37, 44, 47",
     "datasets_synced": true
   },
   "statuses": {
@@ -56,14 +56,14 @@
       "check_bg": "Dataset-ите са синхронизирани",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "historical=10062, normalized=10062, canonical=10062"
+      "details_bg": "historical=10064, normalized=10064, canonical=10064"
     },
     {
       "area_bg": "Данни",
       "check_bg": "Последният тираж е валиден и актуален",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "2026-07-05 — 4, 11, 21, 28, 36, 49"
+      "details_bg": "2026-07-12 — 16, 29, 35, 37, 44, 47"
     },
     {
       "area_bg": "Активен план",

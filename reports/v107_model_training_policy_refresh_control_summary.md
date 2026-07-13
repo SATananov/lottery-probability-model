@@ -2,8 +2,8 @@
 
 Статус: **TRAINING_POLICY_READY**
 Blocking failures: **0**
-Dataset rows: **10062**
-Real result rows since active plan: **2**
+Dataset rows: **10064**
+Real result rows since active plan: **3**
 
 ## Текуща препоръка
 
@@ -29,8 +29,8 @@ Real result rows since active plan: **2**
 
 ## Проверки
 
-- OK: `datasets_synced` — historical=10062, normalized=10062, canonical=10062
-- OK: `latest_draw_valid` — latest=2026-07-05 [4, 11, 21, 28, 36, 49]
+- OK: `datasets_synced` — historical=10064, normalized=10064, canonical=10064
+- OK: `latest_draw_valid` — latest=2026-07-12 [16, 29, 35, 37, 44, 47]
 - OK: `runtime_hardening_active` — Step102=RUNTIME_HARDENED
 - OK: `post_draw_sync_active` — Step106=POST_DRAW_SYNCED
 - OK: `heavy_labs_not_default` — v67/v75 са отделени от fast refresh режима.

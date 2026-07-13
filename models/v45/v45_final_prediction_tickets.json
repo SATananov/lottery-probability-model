@@ -1,144 +1,145 @@
 {
   "status": "v45_prediction_engine_pro_tickets_ready",
-  "created_at_utc": "2026-06-28T16:43:47.161126+00:00",
-  "valid_draws": 10060,
+  "created_at_utc": "2026-07-13T03:08:23.252139+00:00",
+  "valid_draws": 10064,
   "uses_bonus_number": false,
   "primary_numbers": [
+    2,
     11,
-    17,
-    22,
-    43,
-    44,
-    48
+    37,
+    42,
+    48,
+    49
   ],
   "ticket_combinations": [
     {
       "ticket_index": 1,
       "label": "primary_rule_aware_ml_ensemble",
       "numbers": [
+        2,
         11,
-        17,
-        22,
-        43,
-        44,
-        48
+        37,
+        42,
+        48,
+        49
       ],
-      "average_score": 0.7087755102040817,
+      "average_score": 0.7068707482993197,
       "structure": {
         "odd_count": 3,
         "even_count": 3,
-        "low_count": 3,
-        "high_count": 3,
-        "sum": 185,
+        "low_count": 2,
+        "high_count": 4,
+        "sum": 189,
         "consecutive_pairs": 1,
         "max_zone_count": 3,
         "zones": {
-          "1": 2,
-          "2": 1,
+          "0": 1,
+          "1": 1,
+          "3": 1,
           "4": 3
         }
       },
       "number_details": [
         {
-          "number": 11,
-          "pro_ensemble_score": 0.6702040816326531,
-          "prior_frequency": 0.12664015904572565,
-          "rolling_250_frequency": 0.128,
-          "gap_rhythm_score": 0.12671300776513428,
-          "sgd_log_probability": 0.5034967988783641,
-          "gaussian_nb_probability": 0.16166744432217697,
-          "current_gap": 2,
-          "average_gap": 7.8931657501963866,
+          "number": 2,
+          "pro_ensemble_score": 0.6208163265306124,
+          "prior_frequency": 0.12152225755166932,
+          "rolling_250_frequency": 0.148,
+          "gap_rhythm_score": 0.13289829637731598,
+          "sgd_log_probability": 0.510187977761184,
+          "gaussian_nb_probability": 0.1591457092819114,
+          "current_gap": 5,
+          "average_gap": 8.229950900163667,
           "median_gap": 6.0,
-          "total_hits": 1274,
+          "total_hits": 1223,
           "reasons": [
             "strong_ensemble_rank",
             "above_expected_recent_frequency"
           ]
         },
         {
-          "number": 17,
-          "pro_ensemble_score": 0.686530612244898,
-          "prior_frequency": 0.12604373757455267,
+          "number": 11,
+          "pro_ensemble_score": 0.6987755102040816,
+          "prior_frequency": 0.1266891891891892,
           "rolling_250_frequency": 0.132,
-          "gap_rhythm_score": 0.10658141330743828,
-          "sgd_log_probability": 0.508232871185505,
-          "gaussian_nb_probability": 0.16333585113271512,
-          "current_gap": 1,
-          "average_gap": 7.927387529597475,
+          "gap_rhythm_score": 0.1395551623505046,
+          "sgd_log_probability": 0.5140334580098208,
+          "gaussian_nb_probability": 0.16176267726918667,
+          "current_gap": 3,
+          "average_gap": 7.889324960753532,
           "median_gap": 6.0,
-          "total_hits": 1268,
+          "total_hits": 1275,
           "reasons": [
             "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
+            "above_expected_recent_frequency"
           ]
         },
         {
-          "number": 22,
-          "pro_ensemble_score": 0.6840816326530612,
-          "prior_frequency": 0.1242544731610338,
-          "rolling_250_frequency": 0.152,
-          "gap_rhythm_score": 0.12058045549319167,
-          "sgd_log_probability": 0.5043933126304013,
-          "gaussian_nb_probability": 0.15973430991602833,
-          "current_gap": 4,
-          "average_gap": 8.048038430744596,
-          "median_gap": 6.0,
-          "total_hits": 1250,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 43,
-          "pro_ensemble_score": 0.7220408163265307,
-          "prior_frequency": 0.12147117296222663,
-          "rolling_250_frequency": 0.144,
-          "gap_rhythm_score": 0.13803512830740594,
-          "sgd_log_probability": 0.5108703280634979,
-          "gaussian_nb_probability": 0.16204471736573517,
-          "current_gap": 7,
-          "average_gap": 8.212940212940213,
-          "median_gap": 6.0,
-          "total_hits": 1222,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 44,
+          "number": 37,
           "pro_ensemble_score": 0.7273469387755103,
-          "prior_frequency": 0.12842942345924455,
-          "rolling_250_frequency": 0.104,
-          "gap_rhythm_score": 0.11979987199128876,
-          "sgd_log_probability": 0.519791429525917,
-          "gaussian_nb_probability": 0.19698302158023023,
-          "current_gap": 2,
-          "average_gap": 7.785437645236251,
-          "median_gap": 5.0,
-          "total_hits": 1292,
+          "prior_frequency": 0.1268879173290938,
+          "rolling_250_frequency": 0.168,
+          "gap_rhythm_score": 0.13763923335714404,
+          "sgd_log_probability": 0.5595216647322435,
+          "gaussian_nb_probability": 0.14345772198316326,
+          "current_gap": 1,
+          "average_gap": 7.881661442006269,
+          "median_gap": 6.0,
+          "total_hits": 1277,
           "reasons": [
             "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 42,
+          "pro_ensemble_score": 0.6942857142857144,
+          "prior_frequency": 0.12281399046104928,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.17027669475237248,
+          "sgd_log_probability": 0.5374691435977406,
+          "gaussian_nb_probability": 0.14708393877009246,
+          "current_gap": 7,
+          "average_gap": 8.14331983805668,
+          "median_gap": 6.0,
+          "total_hits": 1236,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
             "ml_probability_support"
           ]
         },
         {
           "number": 48,
-          "pro_ensemble_score": 0.7624489795918367,
-          "prior_frequency": 0.12624254473161034,
+          "pro_ensemble_score": 0.7902040816326531,
+          "prior_frequency": 0.12619236883942767,
           "rolling_250_frequency": 0.14,
-          "gap_rhythm_score": 0.1156803524378619,
-          "sgd_log_probability": 0.5204359578721756,
-          "gaussian_nb_probability": 0.16409669432400797,
-          "current_gap": 2,
+          "gap_rhythm_score": 0.15338282143079218,
+          "sgd_log_probability": 0.5244319069708067,
+          "gaussian_nb_probability": 0.16321091088590906,
+          "current_gap": 6,
           "average_gap": 7.916469661150512,
           "median_gap": 6.0,
           "total_hits": 1270,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 49,
+          "pro_ensemble_score": 0.7097959183673469,
+          "prior_frequency": 0.1266891891891892,
+          "rolling_250_frequency": 0.128,
+          "gap_rhythm_score": 0.1454618556842312,
+          "sgd_log_probability": 0.558052956208469,
+          "gaussian_nb_probability": 0.15616546725084898,
+          "current_gap": 3,
+          "average_gap": 7.895604395604396,
+          "median_gap": 6.0,
+          "total_hits": 1275,
           "reasons": [
             "strong_ensemble_rank",
             "above_expected_recent_frequency",
@@ -151,25 +152,24 @@
       "ticket_index": 2,
       "label": "coverage_low_overlap",
       "numbers": [
-        6,
+        13,
         17,
-        29,
+        30,
         37,
-        48,
-        49
+        44,
+        48
       ],
-      "average_score": 0.6778231292517006,
+      "average_score": 0.6836734693877551,
       "structure": {
-        "odd_count": 4,
-        "even_count": 2,
+        "odd_count": 3,
+        "even_count": 3,
         "low_count": 2,
         "high_count": 4,
-        "sum": 186,
-        "consecutive_pairs": 1,
+        "sum": 189,
+        "consecutive_pairs": 0,
         "max_zone_count": 2,
         "zones": {
-          "0": 1,
-          "1": 1,
+          "1": 2,
           "2": 1,
           "3": 1,
           "4": 2
@@ -177,31 +177,17 @@
       },
       "number_details": [
         {
-          "number": 6,
-          "pro_ensemble_score": 0.6212244897959184,
-          "prior_frequency": 0.1265407554671968,
-          "rolling_250_frequency": 0.112,
-          "gap_rhythm_score": 0.12160439410462269,
-          "sgd_log_probability": 0.5010067433998967,
-          "gaussian_nb_probability": 0.1630604696555737,
-          "current_gap": 3,
-          "average_gap": 7.90566037735849,
+          "number": 13,
+          "pro_ensemble_score": 0.6277551020408163,
+          "prior_frequency": 0.12072734499205087,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.15353630867143994,
+          "sgd_log_probability": 0.5150250209597865,
+          "gaussian_nb_probability": 0.15845193494435839,
+          "current_gap": 7,
+          "average_gap": 8.2833607907743,
           "median_gap": 6.0,
-          "total_hits": 1273,
-          "reasons": []
-        },
-        {
-          "number": 17,
-          "pro_ensemble_score": 0.686530612244898,
-          "prior_frequency": 0.12604373757455267,
-          "rolling_250_frequency": 0.132,
-          "gap_rhythm_score": 0.10658141330743828,
-          "sgd_log_probability": 0.508232871185505,
-          "gaussian_nb_probability": 0.16333585113271512,
-          "current_gap": 1,
-          "average_gap": 7.927387529597475,
-          "median_gap": 6.0,
-          "total_hits": 1268,
+          "total_hits": 1215,
           "reasons": [
             "strong_ensemble_rank",
             "above_expected_recent_frequency",
@@ -209,48 +195,330 @@
           ]
         },
         {
-          "number": 29,
-          "pro_ensemble_score": 0.6636734693877552,
-          "prior_frequency": 0.12485089463220676,
-          "rolling_250_frequency": 0.12,
-          "gap_rhythm_score": 0.11698963620611252,
-          "sgd_log_probability": 0.5103506919407071,
-          "gaussian_nb_probability": 0.16311852076154246,
-          "current_gap": 4,
-          "average_gap": 8.00796812749004,
+          "number": 17,
+          "pro_ensemble_score": 0.6555102040816326,
+          "prior_frequency": 0.12609300476947535,
+          "rolling_250_frequency": 0.136,
+          "gap_rhythm_score": 0.12489767672514672,
+          "sgd_log_probability": 0.5136173793810674,
+          "gaussian_nb_probability": 0.16120930292188101,
+          "current_gap": 2,
+          "average_gap": 7.923501577287066,
           "median_gap": 6.0,
-          "total_hits": 1256,
-          "reasons": [
-            "strong_ensemble_rank",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 37,
-          "pro_ensemble_score": 0.6526530612244898,
-          "prior_frequency": 0.1268389662027833,
-          "rolling_250_frequency": 0.168,
-          "gap_rhythm_score": 0.18745657760626144,
-          "sgd_log_probability": 0.5001835715599595,
-          "gaussian_nb_probability": 0.14718107158654992,
-          "current_gap": 6,
-          "average_gap": 7.88078431372549,
-          "median_gap": 6.0,
-          "total_hits": 1276,
+          "total_hits": 1269,
           "reasons": [
             "strong_ensemble_rank",
             "above_expected_recent_frequency"
           ]
         },
         {
-          "number": 48,
-          "pro_ensemble_score": 0.7624489795918367,
-          "prior_frequency": 0.12624254473161034,
-          "rolling_250_frequency": 0.14,
-          "gap_rhythm_score": 0.1156803524378619,
-          "sgd_log_probability": 0.5204359578721756,
-          "gaussian_nb_probability": 0.16409669432400797,
+          "number": 30,
+          "pro_ensemble_score": 0.6379591836734694,
+          "prior_frequency": 0.12390699523052465,
+          "rolling_250_frequency": 0.128,
+          "gap_rhythm_score": 0.10332364717450679,
+          "sgd_log_probability": 0.529246598467991,
+          "gaussian_nb_probability": 0.1623992351207437,
           "current_gap": 2,
+          "average_gap": 8.067415730337078,
+          "median_gap": 6.0,
+          "total_hits": 1247,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 37,
+          "pro_ensemble_score": 0.7273469387755103,
+          "prior_frequency": 0.1268879173290938,
+          "rolling_250_frequency": 0.168,
+          "gap_rhythm_score": 0.13763923335714404,
+          "sgd_log_probability": 0.5595216647322435,
+          "gaussian_nb_probability": 0.14345772198316326,
+          "current_gap": 1,
+          "average_gap": 7.881661442006269,
+          "median_gap": 6.0,
+          "total_hits": 1277,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 44,
+          "pro_ensemble_score": 0.6632653061224489,
+          "prior_frequency": 0.12847774244833068,
+          "rolling_250_frequency": 0.108,
+          "gap_rhythm_score": 0.11517348617496742,
+          "sgd_log_probability": 0.5184820290638742,
+          "gaussian_nb_probability": 0.19797431566859833,
+          "current_gap": 1,
+          "average_gap": 7.78328173374613,
+          "median_gap": 5.0,
+          "total_hits": 1293,
+          "reasons": [
+            "strong_ensemble_rank",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 48,
+          "pro_ensemble_score": 0.7902040816326531,
+          "prior_frequency": 0.12619236883942767,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.15338282143079218,
+          "sgd_log_probability": 0.5244319069708067,
+          "gaussian_nb_probability": 0.16321091088590906,
+          "current_gap": 6,
+          "average_gap": 7.916469661150512,
+          "median_gap": 6.0,
+          "total_hits": 1270,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        }
+      ]
+    },
+    {
+      "ticket_index": 3,
+      "label": "rhythm_weighted_alternative",
+      "numbers": [
+        11,
+        17,
+        28,
+        33,
+        46,
+        48
+      ],
+      "average_score": 0.6736734693877552,
+      "structure": {
+        "odd_count": 3,
+        "even_count": 3,
+        "low_count": 2,
+        "high_count": 4,
+        "sum": 183,
+        "consecutive_pairs": 0,
+        "max_zone_count": 2,
+        "zones": {
+          "1": 2,
+          "2": 1,
+          "3": 1,
+          "4": 2
+        }
+      },
+      "number_details": [
+        {
+          "number": 11,
+          "pro_ensemble_score": 0.6987755102040816,
+          "prior_frequency": 0.1266891891891892,
+          "rolling_250_frequency": 0.132,
+          "gap_rhythm_score": 0.1395551623505046,
+          "sgd_log_probability": 0.5140334580098208,
+          "gaussian_nb_probability": 0.16176267726918667,
+          "current_gap": 3,
+          "average_gap": 7.889324960753532,
+          "median_gap": 6.0,
+          "total_hits": 1275,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency"
+          ]
+        },
+        {
+          "number": 17,
+          "pro_ensemble_score": 0.6555102040816326,
+          "prior_frequency": 0.12609300476947535,
+          "rolling_250_frequency": 0.136,
+          "gap_rhythm_score": 0.12489767672514672,
+          "sgd_log_probability": 0.5136173793810674,
+          "gaussian_nb_probability": 0.16120930292188101,
+          "current_gap": 2,
+          "average_gap": 7.923501577287066,
+          "median_gap": 6.0,
+          "total_hits": 1269,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency"
+          ]
+        },
+        {
+          "number": 28,
+          "pro_ensemble_score": 0.6183673469387756,
+          "prior_frequency": 0.12440381558028617,
+          "rolling_250_frequency": 0.12,
+          "gap_rhythm_score": 0.10743268394509976,
+          "sgd_log_probability": 0.5187235867954257,
+          "gaussian_nb_probability": 0.1632010273460601,
+          "current_gap": 3,
+          "average_gap": 8.041566746602717,
+          "median_gap": 6.0,
+          "total_hits": 1252,
+          "reasons": [
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 33,
+          "pro_ensemble_score": 0.6440816326530612,
+          "prior_frequency": 0.12211844197138315,
+          "rolling_250_frequency": 0.136,
+          "gap_rhythm_score": 0.11170791314437262,
+          "sgd_log_probability": 0.5267146901373126,
+          "gaussian_nb_probability": 0.16316460114309794,
+          "current_gap": 4,
+          "average_gap": 8.188110749185668,
+          "median_gap": 6.0,
+          "total_hits": 1229,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 46,
+          "pro_ensemble_score": 0.6351020408163266,
+          "prior_frequency": 0.12390699523052465,
+          "rolling_250_frequency": 0.116,
+          "gap_rhythm_score": 0.13275686711518106,
+          "sgd_log_probability": 0.5103691663699258,
+          "gaussian_nb_probability": 0.16600164229492897,
+          "current_gap": 6,
+          "average_gap": 8.071428571428571,
+          "median_gap": 6.0,
+          "total_hits": 1247,
+          "reasons": [
+            "strong_ensemble_rank"
+          ]
+        },
+        {
+          "number": 48,
+          "pro_ensemble_score": 0.7902040816326531,
+          "prior_frequency": 0.12619236883942767,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.15338282143079218,
+          "sgd_log_probability": 0.5244319069708067,
+          "gaussian_nb_probability": 0.16321091088590906,
+          "current_gap": 6,
+          "average_gap": 7.916469661150512,
+          "median_gap": 6.0,
+          "total_hits": 1270,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        }
+      ]
+    },
+    {
+      "ticket_index": 4,
+      "label": "historical_signal_alternative",
+      "numbers": [
+        4,
+        12,
+        33,
+        44,
+        48,
+        49
+      ],
+      "average_score": 0.666734693877551,
+      "structure": {
+        "odd_count": 2,
+        "even_count": 4,
+        "low_count": 2,
+        "high_count": 4,
+        "sum": 190,
+        "consecutive_pairs": 1,
+        "max_zone_count": 3,
+        "zones": {
+          "0": 1,
+          "1": 1,
+          "3": 1,
+          "4": 3
+        }
+      },
+      "number_details": [
+        {
+          "number": 4,
+          "pro_ensemble_score": 0.5853061224489796,
+          "prior_frequency": 0.1269872813990461,
+          "rolling_250_frequency": 0.108,
+          "gap_rhythm_score": 0.12122405009604628,
+          "sgd_log_probability": 0.5010863130555653,
+          "gaussian_nb_probability": 0.1647333456493369,
+          "current_gap": 3,
+          "average_gap": 7.861393891934221,
+          "median_gap": 6.0,
+          "total_hits": 1278,
+          "reasons": []
+        },
+        {
+          "number": 12,
+          "pro_ensemble_score": 0.6077551020408163,
+          "prior_frequency": 0.12430445151033387,
+          "rolling_250_frequency": 0.128,
+          "gap_rhythm_score": 0.09900704517627672,
+          "sgd_log_probability": 0.5147320914740566,
+          "gaussian_nb_probability": 0.16337569227104495,
+          "current_gap": 2,
+          "average_gap": 8.0496,
+          "median_gap": 6.0,
+          "total_hits": 1251,
+          "reasons": [
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 33,
+          "pro_ensemble_score": 0.6440816326530612,
+          "prior_frequency": 0.12211844197138315,
+          "rolling_250_frequency": 0.136,
+          "gap_rhythm_score": 0.11170791314437262,
+          "sgd_log_probability": 0.5267146901373126,
+          "gaussian_nb_probability": 0.16316460114309794,
+          "current_gap": 4,
+          "average_gap": 8.188110749185668,
+          "median_gap": 6.0,
+          "total_hits": 1229,
+          "reasons": [
+            "strong_ensemble_rank",
+            "above_expected_recent_frequency",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 44,
+          "pro_ensemble_score": 0.6632653061224489,
+          "prior_frequency": 0.12847774244833068,
+          "rolling_250_frequency": 0.108,
+          "gap_rhythm_score": 0.11517348617496742,
+          "sgd_log_probability": 0.5184820290638742,
+          "gaussian_nb_probability": 0.19797431566859833,
+          "current_gap": 1,
+          "average_gap": 7.78328173374613,
+          "median_gap": 5.0,
+          "total_hits": 1293,
+          "reasons": [
+            "strong_ensemble_rank",
+            "ml_probability_support"
+          ]
+        },
+        {
+          "number": 48,
+          "pro_ensemble_score": 0.7902040816326531,
+          "prior_frequency": 0.12619236883942767,
+          "rolling_250_frequency": 0.14,
+          "gap_rhythm_score": 0.15338282143079218,
+          "sgd_log_probability": 0.5244319069708067,
+          "gaussian_nb_probability": 0.16321091088590906,
+          "current_gap": 6,
           "average_gap": 7.916469661150512,
           "median_gap": 6.0,
           "total_hits": 1270,
@@ -262,284 +530,19 @@
         },
         {
           "number": 49,
-          "pro_ensemble_score": 0.6804081632653061,
-          "prior_frequency": 0.12664015904572565,
-          "rolling_250_frequency": 0.124,
-          "gap_rhythm_score": 0.19653078908148247,
-          "sgd_log_probability": 0.5041446962526244,
-          "gaussian_nb_probability": 0.15753922213070778,
-          "current_gap": 8,
-          "average_gap": 7.894736842105263,
-          "median_gap": 6.0,
-          "total_hits": 1274,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "interesting_interval_profile",
-            "ml_probability_support"
-          ]
-        }
-      ]
-    },
-    {
-      "ticket_index": 3,
-      "label": "rhythm_weighted_alternative",
-      "numbers": [
-        6,
-        22,
-        29,
-        42,
-        43,
-        46
-      ],
-      "average_score": 0.6631972789115647,
-      "structure": {
-        "odd_count": 2,
-        "even_count": 4,
-        "low_count": 2,
-        "high_count": 4,
-        "sum": 188,
-        "consecutive_pairs": 1,
-        "max_zone_count": 3,
-        "zones": {
-          "0": 1,
-          "2": 2,
-          "4": 3
-        }
-      },
-      "number_details": [
-        {
-          "number": 6,
-          "pro_ensemble_score": 0.6212244897959184,
-          "prior_frequency": 0.1265407554671968,
-          "rolling_250_frequency": 0.112,
-          "gap_rhythm_score": 0.12160439410462269,
-          "sgd_log_probability": 0.5010067433998967,
-          "gaussian_nb_probability": 0.1630604696555737,
-          "current_gap": 3,
-          "average_gap": 7.90566037735849,
-          "median_gap": 6.0,
-          "total_hits": 1273,
-          "reasons": []
-        },
-        {
-          "number": 22,
-          "pro_ensemble_score": 0.6840816326530612,
-          "prior_frequency": 0.1242544731610338,
-          "rolling_250_frequency": 0.152,
-          "gap_rhythm_score": 0.12058045549319167,
-          "sgd_log_probability": 0.5043933126304013,
-          "gaussian_nb_probability": 0.15973430991602833,
-          "current_gap": 4,
-          "average_gap": 8.048038430744596,
-          "median_gap": 6.0,
-          "total_hits": 1250,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 29,
-          "pro_ensemble_score": 0.6636734693877552,
-          "prior_frequency": 0.12485089463220676,
-          "rolling_250_frequency": 0.12,
-          "gap_rhythm_score": 0.11698963620611252,
-          "sgd_log_probability": 0.5103506919407071,
-          "gaussian_nb_probability": 0.16311852076154246,
-          "current_gap": 4,
-          "average_gap": 8.00796812749004,
-          "median_gap": 6.0,
-          "total_hits": 1256,
-          "reasons": [
-            "strong_ensemble_rank",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 42,
-          "pro_ensemble_score": 0.646938775510204,
-          "prior_frequency": 0.12286282306163022,
-          "rolling_250_frequency": 0.14,
-          "gap_rhythm_score": 0.12768861830555492,
-          "sgd_log_probability": 0.5211553472767045,
-          "gaussian_nb_probability": 0.14729493343728278,
-          "current_gap": 3,
-          "average_gap": 8.14331983805668,
-          "median_gap": 6.0,
-          "total_hits": 1236,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 43,
-          "pro_ensemble_score": 0.7220408163265307,
-          "prior_frequency": 0.12147117296222663,
-          "rolling_250_frequency": 0.144,
-          "gap_rhythm_score": 0.13803512830740594,
-          "sgd_log_probability": 0.5108703280634979,
-          "gaussian_nb_probability": 0.16204471736573517,
-          "current_gap": 7,
-          "average_gap": 8.212940212940213,
-          "median_gap": 6.0,
-          "total_hits": 1222,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 46,
-          "pro_ensemble_score": 0.6412244897959184,
-          "prior_frequency": 0.12395626242544731,
-          "rolling_250_frequency": 0.116,
-          "gap_rhythm_score": 0.09349788378991303,
-          "sgd_log_probability": 0.5204764423620033,
-          "gaussian_nb_probability": 0.16584177601505073,
-          "current_gap": 2,
-          "average_gap": 8.071428571428571,
-          "median_gap": 6.0,
-          "total_hits": 1247,
-          "reasons": [
-            "strong_ensemble_rank",
-            "ml_probability_support"
-          ]
-        }
-      ]
-    },
-    {
-      "ticket_index": 4,
-      "label": "historical_signal_alternative",
-      "numbers": [
-        6,
-        11,
-        35,
-        42,
-        44,
-        49
-      ],
-      "average_score": 0.6631292517006803,
-      "structure": {
-        "odd_count": 3,
-        "even_count": 3,
-        "low_count": 2,
-        "high_count": 4,
-        "sum": 187,
-        "consecutive_pairs": 0,
-        "max_zone_count": 3,
-        "zones": {
-          "0": 1,
-          "1": 1,
-          "3": 1,
-          "4": 3
-        }
-      },
-      "number_details": [
-        {
-          "number": 6,
-          "pro_ensemble_score": 0.6212244897959184,
-          "prior_frequency": 0.1265407554671968,
-          "rolling_250_frequency": 0.112,
-          "gap_rhythm_score": 0.12160439410462269,
-          "sgd_log_probability": 0.5010067433998967,
-          "gaussian_nb_probability": 0.1630604696555737,
-          "current_gap": 3,
-          "average_gap": 7.90566037735849,
-          "median_gap": 6.0,
-          "total_hits": 1273,
-          "reasons": []
-        },
-        {
-          "number": 11,
-          "pro_ensemble_score": 0.6702040816326531,
-          "prior_frequency": 0.12664015904572565,
+          "pro_ensemble_score": 0.7097959183673469,
+          "prior_frequency": 0.1266891891891892,
           "rolling_250_frequency": 0.128,
-          "gap_rhythm_score": 0.12671300776513428,
-          "sgd_log_probability": 0.5034967988783641,
-          "gaussian_nb_probability": 0.16166744432217697,
-          "current_gap": 2,
-          "average_gap": 7.8931657501963866,
-          "median_gap": 6.0,
-          "total_hits": 1274,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency"
-          ]
-        },
-        {
-          "number": 35,
-          "pro_ensemble_score": 0.6326530612244898,
-          "prior_frequency": 0.12365805168986084,
-          "rolling_250_frequency": 0.148,
-          "gap_rhythm_score": 0.0826578016671688,
-          "sgd_log_probability": 0.5258913166707824,
-          "gaussian_nb_probability": 0.1582434462285809,
-          "current_gap": 1,
-          "average_gap": 8.079646017699115,
-          "median_gap": 6.0,
-          "total_hits": 1244,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 42,
-          "pro_ensemble_score": 0.646938775510204,
-          "prior_frequency": 0.12286282306163022,
-          "rolling_250_frequency": 0.14,
-          "gap_rhythm_score": 0.12768861830555492,
-          "sgd_log_probability": 0.5211553472767045,
-          "gaussian_nb_probability": 0.14729493343728278,
+          "gap_rhythm_score": 0.1454618556842312,
+          "sgd_log_probability": 0.558052956208469,
+          "gaussian_nb_probability": 0.15616546725084898,
           "current_gap": 3,
-          "average_gap": 8.14331983805668,
+          "average_gap": 7.895604395604396,
           "median_gap": 6.0,
-          "total_hits": 1236,
+          "total_hits": 1275,
           "reasons": [
             "strong_ensemble_rank",
             "above_expected_recent_frequency",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 44,
-          "pro_ensemble_score": 0.7273469387755103,
-          "prior_frequency": 0.12842942345924455,
-          "rolling_250_frequency": 0.104,
-          "gap_rhythm_score": 0.11979987199128876,
-          "sgd_log_probability": 0.519791429525917,
-          "gaussian_nb_probability": 0.19698302158023023,
-          "current_gap": 2,
-          "average_gap": 7.785437645236251,
-          "median_gap": 5.0,
-          "total_hits": 1292,
-          "reasons": [
-            "strong_ensemble_rank",
-            "ml_probability_support"
-          ]
-        },
-        {
-          "number": 49,
-          "pro_ensemble_score": 0.6804081632653061,
-          "prior_frequency": 0.12664015904572565,
-          "rolling_250_frequency": 0.124,
-          "gap_rhythm_score": 0.19653078908148247,
-          "sgd_log_probability": 0.5041446962526244,
-          "gaussian_nb_probability": 0.15753922213070778,
-          "current_gap": 8,
-          "average_gap": 7.894736842105263,
-          "median_gap": 6.0,
-          "total_hits": 1274,
-          "reasons": [
-            "strong_ensemble_rank",
-            "above_expected_recent_frequency",
-            "interesting_interval_profile",
             "ml_probability_support"
           ]
         }
@@ -556,32 +559,32 @@
   "model_metrics": [
     {
       "model": "frequency_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.709741550695825,
+      "test_events": 2013,
+      "average_hits_top6": 0.7098857426726279,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 894,
-        "1": 837,
+        "0": 896,
+        "1": 835,
         "2": 253,
-        "3": 27,
+        "3": 28,
         "4": 1
       },
-      "events_with_3plus_hits": 28,
+      "events_with_3plus_hits": 29,
       "events_with_4plus_hits": 1,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "recency_250_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.7475149105367793,
+      "test_events": 2013,
+      "average_hits_top6": 0.7481371087928465,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 865,
-        "1": 827,
-        "2": 284,
+        "0": 866,
+        "1": 825,
+        "2": 286,
         "3": 35,
         "4": 1
       },
@@ -592,14 +595,14 @@
     },
     {
       "model": "gap_rhythm_statistical",
-      "test_events": 2012,
-      "average_hits_top6": 0.6998011928429424,
+      "test_events": 2013,
+      "average_hits_top6": 0.702434177844014,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 918,
-        "1": 817,
-        "2": 242,
+        "0": 915,
+        "1": 819,
+        "2": 244,
         "3": 33,
         "4": 2
       },
@@ -610,14 +613,14 @@
     },
     {
       "model": "random_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.7256461232604374,
+      "test_events": 2013,
+      "average_hits_top6": 0.726775956284153,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 883,
-        "1": 840,
-        "2": 251,
+        "0": 882,
+        "1": 841,
+        "2": 252,
         "3": 34,
         "4": 4
       },
@@ -628,55 +631,55 @@
     },
     {
       "model": "sgd_logistic_probability",
-      "test_events": 2012,
-      "average_hits_top6": 0.7579522862823062,
+      "test_events": 2013,
+      "average_hits_top6": 0.7739692001987084,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 865,
-        "1": 812,
-        "2": 294,
-        "3": 39,
-        "4": 2
+        "0": 844,
+        "1": 819,
+        "2": 315,
+        "3": 31,
+        "4": 4
       },
-      "events_with_3plus_hits": 41,
-      "events_with_4plus_hits": 2,
+      "events_with_3plus_hits": 35,
+      "events_with_4plus_hits": 4,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "gaussian_naive_bayes",
-      "test_events": 2012,
-      "average_hits_top6": 0.7365805168986084,
+      "test_events": 2013,
+      "average_hits_top6": 0.7357178340784898,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 886,
+        "0": 887,
         "1": 815,
-        "2": 268,
-        "3": 41,
+        "2": 269,
+        "3": 40,
         "4": 2
       },
-      "events_with_3plus_hits": 43,
+      "events_with_3plus_hits": 42,
       "events_with_4plus_hits": 2,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "v45_pro_ensemble",
-      "test_events": 2012,
-      "average_hits_top6": 0.7619284294234593,
+      "test_events": 2013,
+      "average_hits_top6": 0.7690014903129657,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 878,
-        "1": 790,
-        "2": 290,
-        "3": 53,
-        "4": 1
+        "0": 849,
+        "1": 821,
+        "2": 305,
+        "3": 35,
+        "4": 3
       },
-      "events_with_3plus_hits": 54,
-      "events_with_4plus_hits": 1,
+      "events_with_3plus_hits": 38,
+      "events_with_4plus_hits": 3,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     }

@@ -1,22 +1,22 @@
 {
   "step": "106.2",
   "status": "POST_DRAW_DATASETS_SYNCED",
-  "dataset_rows": 10060,
+  "dataset_rows": 10064,
   "row_counts": {
-    "historical": 10060,
-    "normalized": 10060,
-    "canonical": 10060
+    "historical": 10064,
+    "normalized": 10064,
+    "canonical": 10064
   },
   "latest_draw": {
-    "date": "2026-06-28",
-    "draw_no": "50",
+    "date": "2026-07-12",
+    "draw_no": "54",
     "numbers": [
-      2,
-      4,
-      17,
-      33,
+      16,
+      29,
       35,
-      38
+      37,
+      44,
+      47
     ]
   },
   "blocking_failures": 0

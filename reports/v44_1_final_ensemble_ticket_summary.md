@@ -4,47 +4,47 @@ This foundation combines historical/rules-style signals, combined positive/negat
 
 **Important:** This is statistical analysis, not a winning guarantee. Lottery draws are random.
 
-Valid historical draws analyzed: **10060**
+Valid historical draws analyzed: **10064**
 Bonus number used: **False**
 
 ## ПРЕДЛОЖЕНИЕ ЗА ЧИСЛА
 
-Combination 1: **12, 18, 21, 23, 36, 37**
-- Average final combined score: 63.372
-- Average rhythm score: 57.881
-- Average combined score: 53.355
+Combination 1: **2, 3, 20, 24, 37, 48**
+- Average final combined score: 60.829
+- Average rhythm score: 52.821
+- Average combined score: 53.567
 
-Combination 2: **12, 20, 25, 31, 34, 41**
-- Average final combined score: 58.076
-- Average rhythm score: 60.773
-- Average combined score: 40.27
+Combination 2: **14, 25, 27, 31, 32, 45**
+- Average final combined score: 55.265
+- Average rhythm score: 58.221
+- Average combined score: 38.085
 
-Combination 3: **2, 4, 17, 33, 38, 42**
-- Average final combined score: 55.819
-- Average rhythm score: 35.298
-- Average combined score: 60.956
+Combination 3: **11, 16, 36, 38, 44, 49**
+- Average final combined score: 54.704
+- Average rhythm score: 36.754
+- Average combined score: 57.533
 
-Combination 4: **16, 24, 30, 37, 43, 49**
-- Average final combined score: 58.909
-- Average rhythm score: 50.341
-- Average combined score: 54.529
+Combination 4: **13, 18, 22, 23, 33, 42**
+- Average final combined score: 56.155
+- Average rhythm score: 45.561
+- Average combined score: 53.527
 
 ## Top combined-score numbers
 
 | number | final score | combined | rhythm | next-window | rules | consensus |
 | --- | --- | --- | --- | --- | --- | --- |
-| 12 | 65.907 | 48.654 | 67.297 | 70.201 | 57.408 | 3 |
-| 37 | 65.554 | 65.251 | 52.656 | 48.635 | 66.315 | 2 |
-| 18 | 64.302 | 51.657 | 59.077 | 59.816 | 61.455 | 4 |
-| 21 | 62.167 | 45.211 | 61.114 | 61.225 | 52.664 | 4 |
-| 23 | 61.739 | 52.794 | 56.405 | 58.358 | 63.988 | 1 |
-| 24 | 61.35 | 53.64 | 55.361 | 55.656 | 62.412 | 0 |
-| 36 | 60.563 | 56.56 | 50.736 | 48.928 | 60.565 | 1 |
-| 30 | 59.803 | 53.991 | 53.415 | 48.284 | 59.316 | 1 |
-| 49 | 59.585 | 53.977 | 51.984 | 46.875 | 59.131 | 1 |
-| 20 | 59.485 | 47.534 | 58.644 | 59.947 | 52.692 | 0 |
-| 38 | 58.608 | 67.006 | 34.967 | 31.976 | 59.431 | 2 |
-| 25 | 58.032 | 37.181 | 63.862 | 64.444 | 47.352 | 3 |
-| 2 | 57.533 | 65.824 | 34.184 | 30.93 | 56.236 | 2 |
-| 9 | 56.669 | 47.927 | 53.298 | 47.738 | 47.4 | 1 |
-| 1 | 56.143 | 51.366 | 49.932 | 47.041 | 43.718 | 0 |
+| 20 | 63.423 | 44.858 | 66.297 | 69.339 | 52.025 | 3 |
+| 48 | 61.948 | 57.279 | 51.473 | 46.817 | 57.637 | 3 |
+| 24 | 61.187 | 51.273 | 57.963 | 57.778 | 63.018 | 0 |
+| 2 | 60.109 | 57.565 | 48.363 | 44.751 | 59.568 | 2 |
+| 42 | 59.802 | 54.474 | 53.025 | 47.736 | 58.691 | 1 |
+| 22 | 59.766 | 53.09 | 52.598 | 47.783 | 57.129 | 2 |
+| 3 | 59.337 | 43.955 | 57.707 | 58.942 | 53.531 | 3 |
+| 13 | 59.025 | 52.712 | 53.14 | 48.03 | 58.095 | 1 |
+| 37 | 58.972 | 66.471 | 35.121 | 31.805 | 63.309 | 2 |
+| 25 | 58.148 | 36.207 | 65.418 | 65.94 | 47.338 | 3 |
+| 45 | 57.39 | 41.245 | 57.222 | 58.066 | 44.701 | 3 |
+| 38 | 57.17 | 62.081 | 36.317 | 32.041 | 62.741 | 2 |
+| 26 | 57.164 | 51.974 | 50.96 | 45.658 | 56.248 | 0 |
+| 1 | 56.272 | 49.617 | 51.674 | 47.441 | 46.704 | 0 |
+| 46 | 56.111 | 50.117 | 51.075 | 46.654 | 50.123 | 0 |

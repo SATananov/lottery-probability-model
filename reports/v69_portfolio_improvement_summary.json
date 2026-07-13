@@ -6,9 +6,9 @@
   "source_portfolio": "reports/v68_weighted_portfolio_summary.json",
   "suggestions_generated": 60,
   "candidate_changes_applied": 3,
-  "baseline_portfolio_score": 64.298,
-  "candidate_portfolio_score": 71.448,
-  "portfolio_score_delta": 7.15,
+  "baseline_portfolio_score": 63.573,
+  "candidate_portfolio_score": 70.671,
+  "portfolio_score_delta": 7.098,
   "baseline_top20_coverage": 17,
   "candidate_top20_coverage": 20,
   "baseline_unique_numbers": 19,
@@ -19,23 +19,23 @@
   "candidate_repeated_triples": 0,
   "undercovered_top20_before": [
     {
-      "number": 16,
-      "step66_rank": 15,
-      "weighted_score_percent": 58.754
-    },
-    {
-      "number": 43,
-      "step66_rank": 18,
-      "weighted_score_percent": 54.099
-    },
-    {
       "number": 48,
+      "step66_rank": 13,
+      "weighted_score_percent": 57.041
+    },
+    {
+      "number": 16,
+      "step66_rank": 19,
+      "weighted_score_percent": 49.188
+    },
+    {
+      "number": 9,
       "step66_rank": 20,
-      "weighted_score_percent": 52.077
+      "weighted_score_percent": 47.45
     }
   ],
   "undercovered_top20_after": [],
-  "generated_at": "2026-06-28T16:45:24+00:00",
+  "generated_at": "2026-07-13T03:10:00+00:00",
   "generated_reports": [
     "reports/v69_portfolio_improvement_summary.json",
     "reports/v69_portfolio_improvement_summary.md",

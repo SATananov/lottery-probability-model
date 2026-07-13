@@ -1,15 +1,15 @@
 {
   "status": "v45_training_pipeline_completed",
-  "created_at_utc": "2026-06-28T16:43:47.150548+00:00",
+  "created_at_utc": "2026-07-13T03:08:23.243505+00:00",
   "dataset_source": "data\\v41_canonical_draw_events.csv",
-  "total_draw_events": 10060,
+  "total_draw_events": 10064,
   "year_min": 1958,
   "year_max": 2026,
-  "train_events": 8048,
-  "test_events": 2012,
+  "train_events": 8051,
+  "test_events": 2013,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
-  "feature_rows": 492940,
+  "feature_rows": 493136,
   "feature_columns": [
     "number_scaled",
     "number_zone_scaled",
@@ -45,32 +45,32 @@
   "model_metrics": [
     {
       "model": "frequency_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.709741550695825,
+      "test_events": 2013,
+      "average_hits_top6": 0.7098857426726279,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 894,
-        "1": 837,
+        "0": 896,
+        "1": 835,
         "2": 253,
-        "3": 27,
+        "3": 28,
         "4": 1
       },
-      "events_with_3plus_hits": 28,
+      "events_with_3plus_hits": 29,
       "events_with_4plus_hits": 1,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "recency_250_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.7475149105367793,
+      "test_events": 2013,
+      "average_hits_top6": 0.7481371087928465,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 865,
-        "1": 827,
-        "2": 284,
+        "0": 866,
+        "1": 825,
+        "2": 286,
         "3": 35,
         "4": 1
       },
@@ -81,14 +81,14 @@
     },
     {
       "model": "gap_rhythm_statistical",
-      "test_events": 2012,
-      "average_hits_top6": 0.6998011928429424,
+      "test_events": 2013,
+      "average_hits_top6": 0.702434177844014,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 918,
-        "1": 817,
-        "2": 242,
+        "0": 915,
+        "1": 819,
+        "2": 244,
         "3": 33,
         "4": 2
       },
@@ -99,14 +99,14 @@
     },
     {
       "model": "random_baseline",
-      "test_events": 2012,
-      "average_hits_top6": 0.7256461232604374,
+      "test_events": 2013,
+      "average_hits_top6": 0.726775956284153,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 883,
-        "1": 840,
-        "2": 251,
+        "0": 882,
+        "1": 841,
+        "2": 252,
         "3": 34,
         "4": 4
       },
@@ -117,84 +117,84 @@
     },
     {
       "model": "sgd_logistic_probability",
-      "test_events": 2012,
-      "average_hits_top6": 0.7579522862823062,
+      "test_events": 2013,
+      "average_hits_top6": 0.7739692001987084,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 865,
-        "1": 812,
-        "2": 294,
-        "3": 39,
-        "4": 2
+        "0": 844,
+        "1": 819,
+        "2": 315,
+        "3": 31,
+        "4": 4
       },
-      "events_with_3plus_hits": 41,
-      "events_with_4plus_hits": 2,
+      "events_with_3plus_hits": 35,
+      "events_with_4plus_hits": 4,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "gaussian_naive_bayes",
-      "test_events": 2012,
-      "average_hits_top6": 0.7365805168986084,
+      "test_events": 2013,
+      "average_hits_top6": 0.7357178340784898,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 886,
+        "0": 887,
         "1": 815,
-        "2": 268,
-        "3": 41,
+        "2": 269,
+        "3": 40,
         "4": 2
       },
-      "events_with_3plus_hits": 43,
+      "events_with_3plus_hits": 42,
       "events_with_4plus_hits": 2,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     },
     {
       "model": "v45_pro_ensemble",
-      "test_events": 2012,
-      "average_hits_top6": 0.7619284294234593,
+      "test_events": 2013,
+      "average_hits_top6": 0.7690014903129657,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 878,
-        "1": 790,
-        "2": 290,
-        "3": 53,
-        "4": 1
+        "0": 849,
+        "1": 821,
+        "2": 305,
+        "3": 35,
+        "4": 3
       },
-      "events_with_3plus_hits": 54,
-      "events_with_4plus_hits": 1,
+      "events_with_3plus_hits": 38,
+      "events_with_4plus_hits": 3,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     }
   ],
   "best_model_by_average_hits_top6": {
-    "model": "v45_pro_ensemble",
-    "test_events": 2012,
-    "average_hits_top6": 0.7619284294234593,
+    "model": "sgd_logistic_probability",
+    "test_events": 2013,
+    "average_hits_top6": 0.7739692001987084,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 878,
-      "1": 790,
-      "2": 290,
-      "3": 53,
-      "4": 1
+      "0": 844,
+      "1": 819,
+      "2": 315,
+      "3": 31,
+      "4": 4
     },
-    "events_with_3plus_hits": 54,
-    "events_with_4plus_hits": 1,
+    "events_with_3plus_hits": 35,
+    "events_with_4plus_hits": 4,
     "events_with_5plus_hits": 0,
     "events_with_6_hits": 0
   },
   "primary_numbers": [
+    2,
     11,
-    17,
-    22,
-    43,
-    44,
-    48
+    37,
+    42,
+    48,
+    49
   ],
   "ticket_count": 4,
   "outputs": [

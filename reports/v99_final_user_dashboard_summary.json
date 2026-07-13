@@ -2,7 +2,7 @@
   "step": 99,
   "status": "READY_WAITING_NEXT_DRAW",
   "title_bg": "Финално потребителско табло",
-  "generated_at_utc": "2026-07-08T10:31:25+00:00",
+  "generated_at_utc": "2026-07-13T03:10:08+00:00",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
     "status": "ACTIVE",
@@ -13,7 +13,7 @@
     "cost_text": "10.80",
     "saved_after_draw_date": "2026-06-21",
     "saved_after_draw_numbers": "6, 13, 16, 19, 42, 44",
-    "real_result_rows": 2,
+    "real_result_rows": 3,
     "next_status_bg": "Историята има реални резултати. След следващ тираж ще се добави нов ред.",
     "plan_source": "v117_real_ticket_pack_builder",
     "ticket_count": 3,
@@ -110,21 +110,21 @@
     ]
   },
   "dataset": {
-    "dataset_rows": 10062,
-    "canonical_rows": 10062,
-    "latest_draw_date": "2026-07-05",
+    "dataset_rows": 10064,
+    "canonical_rows": 10064,
+    "latest_draw_date": "2026-07-12",
     "latest_draw_year": "2026",
-    "latest_draw_number": "52",
+    "latest_draw_number": "54",
     "latest_draw_position": "1",
     "latest_numbers": [
-      4,
-      11,
-      21,
-      28,
-      36,
-      49
+      16,
+      29,
+      35,
+      37,
+      44,
+      47
     ],
-    "latest_numbers_text": "4, 11, 21, 28, 36, 49"
+    "latest_numbers_text": "16, 29, 35, 37, 44, 47"
   },
   "statuses": {
     "step95_status": "EVALUATED",
@@ -175,7 +175,7 @@
   ],
   "issues": [],
   "warnings": [
-    "Има реален тираж след базовия V1 checkpoint; това е нормално post-draw състояние."
+    "Има реален тираж след заключената контролна точка; това е нормално състояние след тираж."
   ],
   "source_files": {
     "active_plan": "models/v97/v97_real_draw_lifecycle_model.json + models/v96/v96_add_draw_controlled_flow_model.json",

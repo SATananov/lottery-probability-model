@@ -2,7 +2,7 @@
   "step": 101,
   "status": "WAITING_NEXT_REAL_DRAW",
   "title_bg": "Протокол за реална употреба",
-  "generated_at_utc": "2026-07-07T13:21:56+00:00",
+  "generated_at_utc": "2026-07-13T03:10:09+00:00",
   "step100_status": "V1_LOCKED_WAITING_NEXT_DRAW",
   "active_plan": {
     "plan_id": "v94_active_20260623T163844Z0000",
@@ -17,73 +17,73 @@
     "historical": {
       "path": "data/historical_draws.csv",
       "exists": true,
-      "rows": 10061,
-      "latest_draw_date": "2026-07-02",
+      "rows": 10064,
+      "latest_draw_date": "2026-07-12",
       "latest_numbers": [
-        8,
-        9,
-        12,
-        18,
-        33,
-        38
+        16,
+        29,
+        35,
+        37,
+        44,
+        47
       ],
-      "latest_numbers_text": "8, 9, 12, 18, 33, 38",
+      "latest_numbers_text": "16, 29, 35, 37, 44, 47",
       "year_min": 1958,
       "year_max": 2026,
-      "rows_2026": 52
+      "rows_2026": 55
     },
     "normalized": {
       "path": "data/v40_normalized_draw_events.csv",
       "exists": true,
-      "rows": 10061,
-      "latest_draw_date": "2026-07-02",
+      "rows": 10064,
+      "latest_draw_date": "2026-07-12",
       "latest_numbers": [
-        8,
-        9,
-        12,
-        18,
-        33,
-        38
+        16,
+        29,
+        35,
+        37,
+        44,
+        47
       ],
-      "latest_numbers_text": "8, 9, 12, 18, 33, 38",
+      "latest_numbers_text": "16, 29, 35, 37, 44, 47",
       "year_min": 1958,
       "year_max": 2026,
-      "rows_2026": 52
+      "rows_2026": 55
     },
     "canonical": {
       "path": "data/v41_canonical_draw_events.csv",
       "exists": true,
-      "rows": 10061,
-      "latest_draw_date": "2026-07-02",
+      "rows": 10064,
+      "latest_draw_date": "2026-07-12",
       "latest_numbers": [
-        8,
-        9,
-        12,
-        18,
-        33,
-        38
+        16,
+        29,
+        35,
+        37,
+        44,
+        47
       ],
-      "latest_numbers_text": "8, 9, 12, 18, 33, 38",
+      "latest_numbers_text": "16, 29, 35, 37, 44, 47",
       "year_min": 1958,
       "year_max": 2026,
-      "rows_2026": 52
+      "rows_2026": 55
     },
-    "historical_rows": 10061,
-    "normalized_rows": 10061,
-    "canonical_rows": 10061,
+    "historical_rows": 10064,
+    "normalized_rows": 10064,
+    "canonical_rows": 10064,
     "datasets_synced": true,
-    "latest_draw_date": "2026-07-02",
+    "latest_draw_date": "2026-07-12",
     "latest_numbers": [
-      8,
-      9,
-      12,
-      18,
-      33,
-      38
+      16,
+      29,
+      35,
+      37,
+      44,
+      47
     ],
-    "latest_numbers_text": "8, 9, 12, 18, 33, 38",
+    "latest_numbers_text": "16, 29, 35, 37, 44, 47",
     "latest_draw_year": "2026",
-    "latest_draw_no": "51",
+    "latest_draw_no": "54",
     "latest_draw_position": "1"
   },
   "statuses": {
@@ -106,9 +106,9 @@
     {
       "order": 1,
       "phase_bg": "Преди следващия тираж",
-      "action_bg": "Запази Step 100 като заключен V1 checkpoint и не променяй модели, тегла или генератори преди реалната проверка.",
+      "action_bg": "Запази финалното заключване и не променяй модели, тегла или генератори преди реалната проверка.",
       "why_bg": "Така първият реален цикъл ще измери заключената система, а не нова смесена версия.",
-      "expected_result_bg": "Проектът остава във V1_LOCKED_WAITING_NEXT_DRAW."
+      "expected_result_bg": "Проектът остава заключен и очаква следващия реален тираж."
     },
     {
       "order": 2,
@@ -149,7 +149,7 @@
   "checklist": [
     {
       "area_bg": "Step 100",
-      "check_bg": "V1 lock е активен",
+      "check_bg": "Финалното заключване е активно",
       "status": "OK",
       "blocking": "yes",
       "details_bg": "V1_LOCKED_WAITING_NEXT_DRAW"
@@ -166,14 +166,14 @@
       "check_bg": "Dataset-ите са синхронизирани",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "historical=10061, normalized=10061, canonical=10061"
+      "details_bg": "historical=10064, normalized=10064, canonical=10064"
     },
     {
       "area_bg": "Данни",
       "check_bg": "Последният тираж е валиден и актуален",
       "status": "OK",
       "blocking": "yes",
-      "details_bg": "2026-07-02 — 8, 9, 12, 18, 33, 38"
+      "details_bg": "2026-07-12 — 16, 29, 35, 37, 44, 47"
     },
     {
       "area_bg": "Активен план",

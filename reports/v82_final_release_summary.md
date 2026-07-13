@@ -3,7 +3,7 @@
 Статус: **Има нужда от преглед**
 Проверени задължителни файлове: **22**
 Проверени datasets: **3**
-Файлове в списък на файловете: **1156**
+Файлове в списък на файловете: **1161**
 Нежелани файлове: **0**
 Намерени проблеми: **5**
 
@@ -22,8 +22,8 @@
 
 ## Елементи за преглед
 
-- Dataset expectation failed: data/historical_draws.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38
-- Dataset expectation failed: data/v40_normalized_draw_events.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38
-- Dataset expectation failed: data/v41_canonical_draw_events.csv — rows: expected 10058, actual 10060; rows_2026: expected 49, actual 51; latest_date: expected 2026-06-21, actual 2026-06-28; latest_numbers: expected 6,13,16,19,42,44, actual 2,4,17,33,35,38
+- Dataset expectation failed: data/historical_draws.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47
+- Dataset expectation failed: data/v40_normalized_draw_events.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47
+- Dataset expectation failed: data/v41_canonical_draw_events.csv — rows: expected 10058, actual 10064; rows_2026: expected 49, actual 55; latest_date: expected 2026-06-21, actual 2026-07-12; latest_numbers: expected 6,13,16,19,42,44, actual 16,29,35,37,44,47
 - Upstream audit not OK: reports/v80_final_system_audit_summary.json
 - Upstream audit not OK: reports/v81_final_ux_navigation_summary.json

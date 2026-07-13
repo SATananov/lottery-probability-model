@@ -1,28 +1,28 @@
 ﻿source_bg,candidate_label,candidate_text,hit_count,matching_numbers_text,missing_numbers_text,note_bg
-v41 честотен baseline,frequency_baseline,"4, 11, 21, 34, 37, 44",3,"4, 11, 21","34, 37, 44",Сравнение с текущия v41 statistical output.
-v44.1 финален ансамбъл,final_consensus,"12, 18, 21, 23, 36, 37",2,"21, 36","12, 18, 23, 37",Финален ensemble ticket candidate.
-v45 Prediction Engine Pro — ticket,historical_signal_alternative,"6, 11, 35, 42, 44, 49",2,"11, 49","6, 35, 42, 44",Ticket candidate от v45.
-v60 export sample,ticket_2,"11, 18, 22, 31, 40, 49",2,"11, 49","18, 22, 31, 40","Sample generated ticket, използва се само за post-draw overlap context."
-v42 комбиниран позитивен/негативен анализ,combined_numbers,"2, 4, 17, 37, 38, 42",1,4,"2, 17, 37, 38, 42",Обединен номерен сигнал от v42.
-v43.1 интервален ритъм — балансиран ритъм,balanced_rhythm_numbers,"9, 10, 30, 39, 43, 49",1,49,"9, 10, 30, 39, 43","Ритъм/интервален контекст, не прогноза."
-v43.1 интервален ритъм — закъснели числа,overdue_watchlist_numbers,"12, 18, 21, 25, 34, 41",1,21,"12, 18, 25, 34, 41","Ритъм/интервален контекст, не прогноза."
-v43.1 интервален ритъм — следващ прозорец,next_window_numbers,"12, 18, 21, 25, 31, 41",1,21,"12, 18, 25, 31, 41","Ритъм/интервален контекст, не прогноза."
-v43.1 интервален ритъм — финален ритъм,final_refined_rhythm_numbers,"12, 18, 21, 25, 31, 41",1,21,"12, 18, 25, 31, 41","Ритъм/интервален контекст, не прогноза."
-v44.1 финален ансамбъл,combined_positive_negative,"2, 4, 17, 33, 38, 42",1,4,"2, 17, 33, 38, 42",Финален ensemble ticket candidate.
-v44.1 финален ансамбъл,coverage_diversified,"16, 24, 30, 37, 43, 49",1,49,"16, 24, 30, 37, 43",Финален ensemble ticket candidate.
-v45 Prediction Engine Pro — primary,primary_numbers,"11, 17, 22, 43, 44, 48",1,11,"17, 22, 43, 44, 48",Primary statistical candidate от v45.
-v45 Prediction Engine Pro — ticket,coverage_low_overlap,"6, 17, 29, 37, 48, 49",1,49,"6, 17, 29, 37, 48",Ticket candidate от v45.
-v45 Prediction Engine Pro — ticket,primary_rule_aware_ml_ensemble,"11, 17, 22, 43, 44, 48",1,11,"17, 22, 43, 44, 48",Ticket candidate от v45.
-v59 Интелигентен генератор 2 sample,ticket_2,"10, 13, 20, 26, 37, 49",1,49,"10, 13, 20, 26, 37","Sample generated ticket, използва се само за post-draw overlap context."
-v59 Интелигентен генератор 2 sample,ticket_4,"16, 18, 21, 30, 45, 47",1,21,"16, 18, 30, 45, 47","Sample generated ticket, използва се само за post-draw overlap context."
-v59 Интелигентен генератор 2 sample,ticket_5,"1, 16, 21, 42, 43, 48",1,21,"1, 16, 42, 43, 48","Sample generated ticket, използва се само за post-draw overlap context."
-v60 export sample,ticket_1,"13, 18, 20, 28, 34, 43",1,28,"13, 18, 20, 34, 43","Sample generated ticket, използва се само за post-draw overlap context."
-v60 export sample,ticket_3,"1, 14, 17, 24, 36, 43",1,36,"1, 14, 17, 24, 43","Sample generated ticket, използва се само за post-draw overlap context."
-v60 export sample,ticket_5,"8, 9, 21, 26, 37, 45",1,21,"8, 9, 26, 37, 45","Sample generated ticket, използва се само за post-draw overlap context."
-v41 SGD класификатор,sgd_number_classifier,"1, 2, 3, 5, 10, 23",0,,"1, 2, 3, 5, 10, 23",Сравнение с текущия v41 statistical output.
-v41 recent 250 baseline,recency_250_baseline,"2, 18, 22, 23, 37, 38",0,,"2, 18, 22, 23, 37, 38",Сравнение с текущия v41 statistical output.
-v44.1 финален ансамбъл,interval_rhythm_next_window,"12, 20, 25, 31, 34, 41",0,,"12, 20, 25, 31, 34, 41",Финален ensemble ticket candidate.
-v45 Prediction Engine Pro — ticket,rhythm_weighted_alternative,"6, 22, 29, 42, 43, 46",0,,"6, 22, 29, 42, 43, 46",Ticket candidate от v45.
-v59 Интелигентен генератор 2 sample,ticket_1,"2, 17, 24, 31, 34, 37",0,,"2, 17, 24, 31, 34, 37","Sample generated ticket, използва се само за post-draw overlap context."
-v59 Интелигентен генератор 2 sample,ticket_3,"8, 22, 24, 34, 35, 43",0,,"8, 22, 24, 34, 35, 43","Sample generated ticket, използва се само за post-draw overlap context."
-v60 export sample,ticket_4,"5, 22, 24, 30, 37, 46",0,,"5, 22, 24, 30, 37, 46","Sample generated ticket, използва се само за post-draw overlap context."
+v41 SGD класификатор,sgd_number_classifier,"21, 37, 38, 44, 48, 49",2,"37, 44","21, 38, 48, 49",Сравнение с текущия v41 statistical output.
+v41 честотен baseline,frequency_baseline,"4, 11, 21, 34, 37, 44",2,"37, 44","4, 11, 21, 34",Сравнение с текущия v41 statistical output.
+v44.1 финален ансамбъл,combined_positive_negative,"11, 16, 36, 38, 44, 49",2,"16, 44","11, 36, 38, 49",Финален ensemble ticket candidate.
+v45 Prediction Engine Pro — ticket,coverage_low_overlap,"13, 17, 30, 37, 44, 48",2,"37, 44","13, 17, 30, 48",Ticket candidate от v45.
+v59 Интелигентен генератор 2 sample,ticket_2,"4, 12, 27, 29, 37, 48",2,"29, 37","4, 12, 27, 48","Sample generated ticket, използва се само за post-draw overlap context."
+v60 export sample,ticket_5,"1, 16, 29, 34, 39, 48",2,"16, 29","1, 34, 39, 48","Sample generated ticket, използва се само за post-draw overlap context."
+v41 recent 250 baseline,recency_250_baseline,"2, 18, 22, 23, 37, 38",1,37,"2, 18, 22, 23, 38",Сравнение с текущия v41 statistical output.
+v42 комбиниран позитивен/негативен анализ,combined_numbers,"2, 11, 37, 38, 48, 49",1,37,"2, 11, 38, 48, 49",Обединен номерен сигнал от v42.
+v44.1 финален ансамбъл,final_consensus,"2, 3, 20, 24, 37, 48",1,37,"2, 3, 20, 24, 48",Финален ensemble ticket candidate.
+v45 Prediction Engine Pro — primary,primary_numbers,"2, 11, 37, 42, 48, 49",1,37,"2, 11, 42, 48, 49",Primary statistical candidate от v45.
+v45 Prediction Engine Pro — ticket,historical_signal_alternative,"4, 12, 33, 44, 48, 49",1,44,"4, 12, 33, 48, 49",Ticket candidate от v45.
+v45 Prediction Engine Pro — ticket,primary_rule_aware_ml_ensemble,"2, 11, 37, 42, 48, 49",1,37,"2, 11, 42, 48, 49",Ticket candidate от v45.
+v59 Интелигентен генератор 2 sample,ticket_1,"2, 17, 24, 31, 34, 37",1,37,"2, 17, 24, 31, 34","Sample generated ticket, използва се само за post-draw overlap context."
+v59 Интелигентен генератор 2 sample,ticket_3,"11, 12, 16, 28, 34, 43",1,16,"11, 12, 28, 34, 43","Sample generated ticket, използва се само за post-draw overlap context."
+v43.1 интервален ритъм — балансиран ритъм,balanced_rhythm_numbers,"6, 13, 19, 22, 42, 48",0,,"6, 13, 19, 22, 42, 48","Ритъм/интервален контекст, не прогноза."
+v43.1 интервален ритъм — закъснели числа,overdue_watchlist_numbers,"3, 20, 25, 31, 34, 45",0,,"3, 20, 25, 31, 34, 45","Ритъм/интервален контекст, не прогноза."
+v43.1 интервален ритъм — следващ прозорец,next_window_numbers,"3, 20, 25, 31, 32, 45",0,,"3, 20, 25, 31, 32, 45","Ритъм/интервален контекст, не прогноза."
+v43.1 интервален ритъм — финален ритъм,final_refined_rhythm_numbers,"3, 20, 25, 31, 32, 45",0,,"3, 20, 25, 31, 32, 45","Ритъм/интервален контекст, не прогноза."
+v44.1 финален ансамбъл,coverage_diversified,"13, 18, 22, 23, 33, 42",0,,"13, 18, 22, 23, 33, 42",Финален ensemble ticket candidate.
+v44.1 финален ансамбъл,interval_rhythm_next_window,"14, 25, 27, 31, 32, 45",0,,"14, 25, 27, 31, 32, 45",Финален ensemble ticket candidate.
+v45 Prediction Engine Pro — ticket,rhythm_weighted_alternative,"11, 17, 28, 33, 46, 48",0,,"11, 17, 28, 33, 46, 48",Ticket candidate от v45.
+v59 Интелигентен генератор 2 sample,ticket_4,"8, 9, 22, 33, 45, 49",0,,"8, 9, 22, 33, 45, 49","Sample generated ticket, използва се само за post-draw overlap context."
+v59 Интелигентен генератор 2 sample,ticket_5,"4, 9, 25, 36, 43, 46",0,,"4, 9, 25, 36, 43, 46","Sample generated ticket, използва се само за post-draw overlap context."
+v60 export sample,ticket_1,"12, 17, 20, 28, 34, 43",0,,"12, 17, 20, 28, 34, 43","Sample generated ticket, използва се само за post-draw overlap context."
+v60 export sample,ticket_2,"5, 11, 20, 26, 48, 49",0,,"5, 11, 20, 26, 48, 49","Sample generated ticket, използва се само за post-draw overlap context."
+v60 export sample,ticket_3,"4, 15, 24, 31, 36, 45",0,,"4, 15, 24, 31, 36, 45","Sample generated ticket, използва се само за post-draw overlap context."
+v60 export sample,ticket_4,"3, 11, 17, 24, 38, 42",0,,"3, 11, 17, 24, 38, 42","Sample generated ticket, използва се само за post-draw overlap context."

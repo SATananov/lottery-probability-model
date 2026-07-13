@@ -1,7 +1,7 @@
 {
   "step": "123",
   "name": "BST Official Draw Detection Foundation",
-  "checked_at_utc": "2026-07-10T14:47:05+00:00",
+  "checked_at_utc": "2026-07-13T03:01:02+00:00",
   "official_source_url": "https://info.toto.bg/results/6x49",
   "mode": "read_only_detection",
   "writes_draw_data": false,
@@ -20,43 +20,25 @@
     ],
     "draw_key": "2026-53"
   },
-  "official_latest_draw": {
-    "year": 2026,
-    "draw_number": 53,
-    "date": "2026-07-09",
-    "numbers": [
-      12,
-      17,
-      23,
-      30,
-      38,
-      41
-    ],
-    "source_url": "https://info.toto.bg/results/6x49/2026-53",
-    "draw_key": "2026-53"
-  },
-  "status": "up_to_date",
-  "draw_delta": 0,
-  "message": "Локалният source of truth е актуален.",
+  "official_latest_draw": {},
+  "status": "official_unavailable",
+  "draw_delta": null,
+  "message": "Официалната страница не съдържа разпознаваем 6/49 тираж. HTML SHA256: a3378c7947e598ee6811a4fc3eeee8cf3e15697b5701652dad207f9ce7e41e6b",
   "validation": {
     "requested": true,
-    "passed": true,
+    "passed": false,
     "errors": []
   },
-  "failure_stage": null,
+  "failure_stage": "index_parse",
   "connectivity": {
     "index_fetch_succeeded": true,
-    "detail_fetch_succeeded": true
+    "detail_fetch_succeeded": false
   },
   "source_diagnostics": {
-    "html_sha256": "930a630da2846df1b09384bd9e947121b16284e55cdde16d90c4ec226e27fef2",
-    "html_bytes": 85447,
+    "html_sha256": "a3378c7947e598ee6811a4fc3eeee8cf3e15697b5701652dad207f9ce7e41e6b",
+    "html_bytes": 15043,
     "contains_6x49_marker": true,
-    "candidate_count": 20,
-    "selected_parser_strategies": [
-      "6x49_url",
-      "draw_year_text",
-      "draw_date_text"
-    ]
-  }
+    "candidate_count": 0
+  },
+  "error_type": "RuntimeError"
 }

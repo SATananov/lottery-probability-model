@@ -2,21 +2,21 @@
   "step": 104,
   "name_bg": "Финален одит след Step 102",
   "status": "FINAL_AUDIT_REFRESHED",
-  "generated_at_utc": "2026-07-01T08:54:00.832156+00:00",
+  "generated_at_utc": "2026-07-13T03:10:11.327013+00:00",
   "blocking_failures": 0,
   "dataset": {
     "exists": true,
-    "rows": 10060,
+    "rows": 10064,
     "valid_numbers": true,
     "duplicate_inside_draws": 0,
-    "latest_date": "2026-06-28",
+    "latest_date": "2026-07-12",
     "latest_numbers": [
-      2,
-      4,
-      17,
-      33,
+      16,
+      29,
       35,
-      38
+      37,
+      44,
+      47
     ]
   },
   "refresh_chain": {
@@ -85,7 +85,7 @@
       "step": "v106",
       "report": "reports\\v106_post_draw_status_sync_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "POST_DRAW_SYNCED"
     },
     {
       "step": "v106_2",
@@ -97,7 +97,7 @@
       "step": "v106_1",
       "report": "reports\\v106_1_post_draw_dataset_sync_summary.json",
       "exists": true,
-      "status": "CHECK_REQUIRED"
+      "status": "POST_DRAW_DATASETS_SYNCED"
     }
   ],
   "checks": [

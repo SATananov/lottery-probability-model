@@ -1,30 +1,30 @@
 {
   "status": "v41_model_retraining_completed",
-  "canonical_dataset": "data/v41_canonical_draw_events.csv",
-  "total_draw_events": 10062,
-  "train_events": 8049,
+  "canonical_dataset": "data\\v41_canonical_draw_events.csv",
+  "total_draw_events": 10064,
+  "train_events": 8051,
   "test_events": 2013,
   "uses_bonus_number": false,
   "bonus_model_trained": false,
   "drawing_no_used": true,
   "models_created": [
-    "models/v41/v41_frequency_main_numbers_model.json",
-    "models/v41/v41_recency_main_numbers_model.json",
-    "models/v41/v41_latest_predictions.json"
+    "models\\v41\\v41_frequency_main_numbers_model.json",
+    "models\\v41\\v41_recency_main_numbers_model.json",
+    "models\\v41\\v41_latest_predictions.json"
   ],
   "sgd_model_trained": true,
   "sgd_status": "trained",
-  "sgd_model_path": "models/v41/v41_sgd_number_model.joblib",
+  "sgd_model_path": "models\\v41\\v41_sgd_number_model.joblib",
   "model_metrics": [
     {
       "model": "frequency_baseline",
       "test_events": 2013,
-      "average_hits_top6": 0.7103825136612022,
+      "average_hits_top6": 0.7098857426726279,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 895,
-        "1": 836,
+        "0": 896,
+        "1": 835,
         "2": 253,
         "3": 28,
         "4": 1
@@ -37,13 +37,13 @@
     {
       "model": "recency_250_baseline",
       "test_events": 2013,
-      "average_hits_top6": 0.7476403378042722,
+      "average_hits_top6": 0.7481371087928465,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
         "0": 866,
-        "1": 826,
-        "2": 285,
+        "1": 825,
+        "2": 286,
         "3": 35,
         "4": 1
       },
@@ -55,37 +55,37 @@
     {
       "model": "sgd_number_classifier",
       "test_events": 2013,
-      "average_hits_top6": 0.7436661698956781,
+      "average_hits_top6": 0.7779433681073026,
       "median_hits_top6": 1.0,
       "max_hits_top6": 4,
       "hit_distribution": {
-        "0": 861,
-        "1": 840,
-        "2": 281,
-        "3": 29,
-        "4": 2
+        "0": 854,
+        "1": 809,
+        "2": 299,
+        "3": 45,
+        "4": 6
       },
-      "events_with_3plus_hits": 31,
-      "events_with_4plus_hits": 2,
+      "events_with_3plus_hits": 51,
+      "events_with_4plus_hits": 6,
       "events_with_5plus_hits": 0,
       "events_with_6_hits": 0
     }
   ],
   "best_model_by_average_hits_top6": {
-    "model": "recency_250_baseline",
+    "model": "sgd_number_classifier",
     "test_events": 2013,
-    "average_hits_top6": 0.7476403378042722,
+    "average_hits_top6": 0.7779433681073026,
     "median_hits_top6": 1.0,
     "max_hits_top6": 4,
     "hit_distribution": {
-      "0": 866,
-      "1": 826,
-      "2": 285,
-      "3": 35,
-      "4": 1
+      "0": 854,
+      "1": 809,
+      "2": 299,
+      "3": 45,
+      "4": 6
     },
-    "events_with_3plus_hits": 36,
-    "events_with_4plus_hits": 1,
+    "events_with_3plus_hits": 51,
+    "events_with_4plus_hits": 6,
     "events_with_5plus_hits": 0,
     "events_with_6_hits": 0
   },

@@ -71,12 +71,12 @@
       "v95_engine_exists": true,
       "waiting_next_draw_marker": true
     },
-    "dataset_rows": 10062,
-    "latest_draw_date": "2026-07-05",
-    "latest_draw_numbers": "4,11,21,28,36,49",
+    "dataset_rows": 10064,
+    "latest_draw_date": "2026-07-12",
+    "latest_draw_numbers": "16,29,35,37,44,47",
     "step95": {
       "evaluation_type": "ADD_DRAW_PRE_SAVE_REAL_RESULT",
-      "history_rows": 2,
+      "history_rows": 3,
       "latest_best_hit_count": 3,
       "latest_rows_with_3_plus": 1,
       "latest_rows_with_4_plus": 0,
@@ -98,39 +98,39 @@
   "datasets": [
     {
       "exists": true,
-      "latest_date": "2026-07-05",
-      "latest_draw_no": "52",
-      "latest_numbers": "4,11,21,28,36,49",
+      "latest_date": "2026-07-12",
+      "latest_draw_no": "54",
+      "latest_numbers": "16,29,35,37,44,47",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/historical_draws.csv",
-      "rows": 10062
+      "rows": 10064
     },
     {
       "exists": true,
-      "latest_date": "2026-07-05",
-      "latest_draw_no": "52",
-      "latest_numbers": "4,11,21,28,36,49",
+      "latest_date": "2026-07-12",
+      "latest_draw_no": "54",
+      "latest_numbers": "16,29,35,37,44,47",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v40_normalized_draw_events.csv",
-      "rows": 10062
+      "rows": 10064
     },
     {
       "exists": true,
-      "latest_date": "2026-07-05",
-      "latest_draw_no": "52",
-      "latest_numbers": "4,11,21,28,36,49",
+      "latest_date": "2026-07-12",
+      "latest_draw_no": "54",
+      "latest_numbers": "16,29,35,37,44,47",
       "latest_position": "1",
       "latest_year": "2026",
       "parse_ok": true,
       "path": "data/v41_canonical_draw_events.csv",
-      "rows": 10062
+      "rows": 10064
     }
   ],
-  "generated_at_utc": "2026-07-08T10:31:23+00:00",
+  "generated_at_utc": "2026-07-13T03:10:08+00:00",
   "issues": [],
   "lifecycle_steps": [
     {

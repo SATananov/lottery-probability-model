@@ -1,5 +1,5 @@
 check,status,blocking,details_bg
 dataset_files_exist,OK,yes,"historical=True, normalized=True, canonical=True"
-post_draw_row_counts_synced,OK,yes,"historical=10060, normalized=10060, canonical=10060"
-latest_draw_has_six_numbers,OK,yes,"latest_draw={'date': '2026-06-28', 'draw_no': '50', 'numbers': [2, 4, 17, 33, 35, 38]}"
-latest_draw_numbers_valid,OK,yes,"numbers=[2, 4, 17, 33, 35, 38]"
+post_draw_row_counts_synced,OK,yes,"historical=10064, normalized=10064, canonical=10064"
+latest_draw_has_six_numbers,OK,yes,"latest_draw={'date': '2026-07-12', 'draw_no': '54', 'numbers': [16, 29, 35, 37, 44, 47]}"
+latest_draw_numbers_valid,OK,yes,"numbers=[16, 29, 35, 37, 44, 47]"
