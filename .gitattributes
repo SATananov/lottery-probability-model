@@ -1,0 +1,21 @@
+# Stable cross-platform repository bytes
+* text=auto eol=lf
+# Binary project artifacts
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.joblib binary
+*.pkl binary
+*.db binary
+*.sqlite binary
+*.zip binary
+
+# Step 148 frozen policy and lock artifacts use exact LF bytes
+reports/forward_tests/v148/LOCK-148-29ad1f2b8b69a3bc45e7de02.json text eol=lf
+reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json text eol=lf
+src/v145_experimental_neural_dynamics_engine.py text eol=lf
+src/v146_controlled_neural_robustness_engine.py text eol=lf
+src/v148_prospective_forward_test_engine.py text eol=lf

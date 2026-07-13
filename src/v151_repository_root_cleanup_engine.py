@@ -257,10 +257,10 @@ def write_audit_artifacts(root: Path = ROOT) -> dict[str, Any]:
     model_path.parent.mkdir(parents=True, exist_ok=True)
     report_json.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
-    model_path.write_text(payload, encoding="utf-8")
-    report_json.write_text(payload, encoding="utf-8")
+    model_path.write_text(payload, encoding="utf-8", newline="\n")
+    report_json.write_text(payload, encoding="utf-8", newline="\n")
     with inventory_csv.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["name", "type", "category", "size_bytes"])
+        writer = csv.DictWriter(handle, fieldnames=["name", "type", "category", "size_bytes"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(result["root_inventory"])
     draw = result["latest_draw"]
@@ -293,6 +293,6 @@ def write_audit_artifacts(root: Path = ROOT) -> dict[str, Any]:
 
 Стъпката подрежда root директорията и синхронизира документацията след официалния тираж. Не променя историческите числа, моделните алгоритми, scoring логиката, Step 148 ledger веригата или личния SQLite дневник.
 """,
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
     return result

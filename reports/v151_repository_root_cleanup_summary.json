@@ -73,25 +73,25 @@
       "size_bytes": ""
     },
     {
+      "name": ".gitattributes",
+      "type": "file",
+      "category": "root_support_file",
+      "size_bytes": 633
+    },
+    {
       "name": ".gitignore",
       "type": "file",
       "category": "root_support_file",
-      "size_bytes": 1455
+      "size_bytes": 1518
     },
     {
       "name": ".python-version",
       "type": "file",
       "category": "root_support_file",
-      "size_bytes": 5
+      "size_bytes": 6
     },
     {
       "name": ".streamlit",
-      "type": "directory",
-      "category": "project_directory",
-      "size_bytes": ""
-    },
-    {
-      "name": ".venv",
       "type": "directory",
       "category": "project_directory",
       "size_bytes": ""
@@ -106,13 +106,19 @@
       "name": "app.py",
       "type": "file",
       "category": "application_entrypoint",
-      "size_bytes": 109
+      "size_bytes": 115
     },
     {
       "name": "audit_dataset.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 2259
+      "size_bytes": 2340
+    },
+    {
+      "name": "CLEAN_ZIP_MANIFEST_STEP151.md",
+      "type": "file",
+      "category": "current_release_metadata",
+      "size_bytes": 1372
     },
     {
       "name": "configs",
@@ -131,6 +137,12 @@
       "type": "directory",
       "category": "project_directory",
       "size_bytes": ""
+    },
+    {
+      "name": "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151.md",
+      "type": "file",
+      "category": "current_release_metadata",
+      "size_bytes": 1522
     },
     {
       "name": "lottery_app_icon.ico",
@@ -160,7 +172,7 @@
       "name": "predict_next_draw.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 1381
+      "size_bytes": 1414
     },
     {
       "name": "r",
@@ -178,7 +190,7 @@
       "name": "release-manifest.json",
       "type": "file",
       "category": "root_project_metadata",
-      "size_bytes": 227950
+      "size_bytes": 230013
     },
     {
       "name": "reports",
@@ -190,19 +202,19 @@
       "name": "requirements-notebooks.txt",
       "type": "file",
       "category": "root_support_file",
-      "size_bytes": 202
+      "size_bytes": 211
     },
     {
       "name": "requirements.txt",
       "type": "file",
       "category": "root_support_file",
-      "size_bytes": 168
+      "size_bytes": 175
     },
     {
       "name": "run_advanced_backtest.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 1370
+      "size_bytes": 1402
     },
     {
       "name": "scripts",
@@ -214,7 +226,7 @@
       "name": "show_advanced_recommendations.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 803
+      "size_bytes": 829
     },
     {
       "name": "src",
@@ -226,7 +238,7 @@
       "name": "start_lottery_app.bat",
       "type": "file",
       "category": "windows_launcher",
-      "size_bytes": 932
+      "size_bytes": 957
     },
     {
       "name": "START_LOTTERY_CHROME_SIMPLE.bat",
@@ -238,7 +250,7 @@
       "name": "streamlit_app.py",
       "type": "file",
       "category": "application_entrypoint",
-      "size_bytes": 253501
+      "size_bytes": 257716
     },
     {
       "name": "streamlit_pages",
@@ -256,46 +268,46 @@
       "name": "train_advanced_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 1299
+      "size_bytes": 1333
     },
     {
       "name": "train_cold_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 2476
+      "size_bytes": 2553
     },
     {
       "name": "train_combined_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 1950
+      "size_bytes": 2005
     },
     {
       "name": "train_gap_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 2700
+      "size_bytes": 2774
     },
     {
       "name": "train_middle_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 2655
+      "size_bytes": 2736
     },
     {
       "name": "train_ml_extensions.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 626
+      "size_bytes": 641
     },
     {
       "name": "train_model.py",
       "type": "file",
       "category": "operator_or_training_entrypoint",
-      "size_bytes": 2138
+      "size_bytes": 2208
     }
   ],
   "result_signature_sha256": "ec1b36265482cfd6f6a45e70dc7c8321f55100e4a3b2a84dca7b19ee6d60bd87",
   "ok": true,
-  "checked_at_utc": "2026-07-13T04:23:23+00:00"
+  "checked_at_utc": "2026-07-13T07:59:28+00:00"
 }

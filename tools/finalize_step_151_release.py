@@ -142,7 +142,7 @@ def write_manifests() -> dict:
 - The root README and Streamlit guide were synchronized with the official draw and current prospective-test state.
 - Runtime code, model scoring, historical data and the Step 148 ledger were not modified by this documentation checkpoint.
 """,
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
     generated = datetime.now(ZoneInfo("Europe/Sofia")).isoformat(timespec="seconds")
     FULL_MANIFEST.write_text(
@@ -191,7 +191,7 @@ git status -sb
 
 The personal journal database and exports remain local-only and are not included in the release manifest or clean ZIP.
 """,
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
     return {
         "ok": True,

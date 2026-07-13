@@ -4,8 +4,8 @@
 
 - Project: `lottery-probability-model`
 - Checkpoint: `Step 151 — Repository Root Cleanup & Post-Draw Documentation Sync`
-- Generated (Europe/Sofia): `2026-07-13T07:23:24+03:00`
-- Base Git commit: `c543be2 Repair Step 148 runtime verifier and recovery artifact scope`
+- Generated (Europe/Sofia): `2026-07-13T10:59:29+03:00`
+- Base Git commit: `0e0858e Complete Step 151 repository root cleanup and post-draw documentation sync`
 - New Git commit: **not asserted** (`.git` is intentionally absent from the clean archive)
 - Release policy version: `149.0`
 

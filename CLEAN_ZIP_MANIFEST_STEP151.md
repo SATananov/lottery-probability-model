@@ -2,10 +2,10 @@
 
 - Project: `lottery-probability-model`
 - Checkpoint: `Step 151 — Repository Root Cleanup & Post-Draw Documentation Sync`
-- Base Git commit: `c543be2 Repair Step 148 runtime verifier and recovery artifact scope`
-- Project files in archive: **1254**
-- Release manifest entries: **1251**
-- Release manifest SHA-256: `21f739c088d7956a3b02ca858273408656974ed3dedca49af35af56724fd9bfe`
+- Base Git commit: `0e0858e Complete Step 151 repository root cleanup and post-draw documentation sync`
+- Project files in archive: **1251**
+- Release manifest entries: **1248**
+- Release manifest SHA-256: `093a3545c15f4ed6d416946fdc23c1b2927bef2ed0211bf6eb80ea87e07c4347`
 - Release policy version: `149.0`
 - Step 151 verification: `STEP_151_VERIFY_OK`
 - Last official draw: `2026-54` from `2026-07-12`

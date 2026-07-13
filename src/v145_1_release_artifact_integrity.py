@@ -46,6 +46,7 @@ FORBIDDEN_SUFFIXES = {
     ".db-journal",
 }
 FORBIDDEN_PREFIXES = {
+    "reports/v111_unparsed_bst_page_",
     "reports/runtime/",
     "data/manual_backups/",
     "data/user_journal_exports/",

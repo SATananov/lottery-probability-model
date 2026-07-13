@@ -95,6 +95,7 @@ def main() -> int:
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP150.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150.md"),
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP150_1.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_1.md"),
         (ROOT / "CLEAN_ZIP_MANIFEST_STEP150_3.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP150_3.md"),
+        (ROOT / "CLEAN_ZIP_MANIFEST_STEP151.md", ROOT / "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151.md"),
     )
     if not any(all(path.is_file() for path in pair) for pair in metadata_pairs):
         failures.append("Missing Step 148 or later clean checkpoint manifests")
@@ -267,7 +268,7 @@ def main() -> int:
             failures.append("Active evaluation package audit row count mismatch")
 
         release = load_json(ROOT / "release-manifest.json")
-        if release.get("checkpoint") not in {"Step 148", "Step 149", "Step 150", "Step 150.1", "Step 150.2", "Step 150.3"}:
+        if release.get("checkpoint") not in {"Step 148", "Step 149", "Step 150", "Step 150.1", "Step 150.2", "Step 150.3", "Step 151"}:
             failures.append(f"Unexpected release checkpoint: {release.get('checkpoint')}")
         listed = {str(row.get("path")) for row in release.get("files", [])}
         for required_path in (
