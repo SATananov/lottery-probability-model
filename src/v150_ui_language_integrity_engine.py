@@ -272,6 +272,16 @@ def _protected_hash_status() -> dict[str, Any]:
     }
 
 
+def protected_step148_status() -> dict[str, Any]:
+    """Public compatibility API for the dynamic Step 148 integrity check.
+
+    Step 151.2 replaced the old hard-coded ``PROTECTED_STEP148_HASHES``
+    mapping with ledger-aware validation.  Deeper UI audits must call this
+    function instead of importing the removed constant.
+    """
+    return _protected_hash_status()
+
+
 def deterministic_status_signature(payload: dict[str, Any]) -> str:
     stable = {key: value for key, value in payload.items() if key not in {"generated_at_utc", "result_signature_sha256"}}
     encoded = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")

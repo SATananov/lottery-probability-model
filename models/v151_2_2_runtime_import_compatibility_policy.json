@@ -1,0 +1,11 @@
+{
+  "step": "151.2.2",
+  "name": "Runtime Import Compatibility Hotfix",
+  "scope": "restore Streamlit startup compatibility after the dynamic Step 148 integrity migration",
+  "required_api": "protected_step148_status",
+  "forbidden_legacy_import": "PROTECTED_STEP148_HASHES",
+  "display_only": true,
+  "production_scoring_changed": false,
+  "historical_draw_data_changed": false,
+  "personal_journal_used": false
+}

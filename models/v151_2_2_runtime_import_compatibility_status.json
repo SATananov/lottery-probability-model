@@ -1,0 +1,30 @@
+{
+  "step": "151.2.2",
+  "name": "Runtime Import Compatibility Hotfix",
+  "missing_files": [],
+  "checks": {
+    "public_dynamic_step148_api_present": true,
+    "deep_engine_imports_public_api": true,
+    "legacy_hash_constant_not_imported": true,
+    "legacy_hash_constant_not_referenced": true,
+    "deep_status_delegates_to_dynamic_api": true
+  },
+  "runtime": {
+    "base_import_ok": true,
+    "deep_import_ok": true,
+    "downstream_imports_ok": true,
+    "public_api_callable": true,
+    "protected_status_is_object": true,
+    "protected_status_all_ok": true,
+    "protected_status_file_count": 6,
+    "protected_status_failures": []
+  },
+  "display_only": true,
+  "production_scoring_changed": false,
+  "historical_draw_data_changed": false,
+  "personal_journal_used": false,
+  "failures": [],
+  "result_signature_sha256": "3b6baf8ab9c942e097f69e62455804933a9a9a6e099832af2b3a3e29c1abe30a",
+  "ok": true,
+  "checked_at_utc": "2026-07-14T06:54:08+00:00"
+}

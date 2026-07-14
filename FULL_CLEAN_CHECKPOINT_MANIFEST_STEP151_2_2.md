@@ -1,10 +1,10 @@
-# Full CLEAN Checkpoint Manifest — Step 151.2.1
+# Full CLEAN Checkpoint Manifest — Step 151.2.2
 
 ## Project
 
-- Generated: `2026-07-14T07:28:50+03:00`
-- Parent Git: `dccfc21 Repair Step 151.1 fresh-clone portability and Step 148 artifact integrity`
-- Checkpoint: `Step 151.2.1 — User-Facing Backup UI & Technical Details Separation Closure`
+- Generated: `2026-07-14T09:54:12+03:00`
+- Parent Git: `20772b8 Complete Step 151.2.1 user-facing backup UI separation`
+- Checkpoint: `Step 151.2.2 — Runtime Import Compatibility Hotfix`
 - Release policy: `149.0`
 
 ## Closed items
@@ -15,7 +15,8 @@
 - all raw technical outputs remain available through the global **Technical details** switch;
 - the backup button is disabled until the repository is ready;
 - an AST regression guard rejects unprotected technical output;
-- Step 151.2 repository, line-ending and UI runtime guarantees remain active.
+- Step 151.2 repository and line-ending guarantees remain active;
+- the Step 150 runtime import chain is restored through a public dynamic Step 148 API.
 
 ## Final operator verification
 

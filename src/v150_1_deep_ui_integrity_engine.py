@@ -17,9 +17,8 @@ from src.v150_global_ui_polish import (
     translate_value,
 )
 from src.v150_ui_language_integrity_engine import (
-    PROTECTED_STEP148_HASHES,
     extract_ui_literals,
-    sha256_file,
+    protected_step148_status,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -184,15 +183,8 @@ def _iter_dynamic_values() -> Iterable[tuple[str, str, Any]]:
 
 
 def _protected_status() -> dict[str, Any]:
-    rows: list[dict[str, Any]] = []
-    all_ok = True
-    for rel, expected in PROTECTED_STEP148_HASHES.items():
-        path = ROOT / rel
-        actual = sha256_file(path) if path.is_file() else None
-        ok = actual == expected
-        all_ok = all_ok and ok
-        rows.append({"path": rel, "expected_sha256": expected, "actual_sha256": actual, "ok": ok})
-    return {"all_ok": all_ok, "files": rows}
+    """Reuse the current ledger-aware Step 148 validation."""
+    return protected_step148_status()
 
 
 def _signature(payload: dict[str, Any]) -> str:
