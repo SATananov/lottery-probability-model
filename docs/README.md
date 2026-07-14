@@ -9,3 +9,5 @@
 - `STEP_HISTORY.md` — подробна история на завършените проектни стъпки.
 
 Основният `README.md` остава кратка входна точка с актуалното състояние, стартиране и безопасност.
+
+- `reports/STEP_151_2_REPOSITORY_SYNCHRONIZATION_UI_RUNTIME_REPAIRS_AND_FRESH_CLONE_INTEGRITY_CLOSURE.md` — repository synchronization, UI runtime repair and fresh-clone closure.

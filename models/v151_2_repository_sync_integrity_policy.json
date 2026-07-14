@@ -1,0 +1,30 @@
+{
+  "step": "151.2",
+  "name": "Repository Synchronization, UI Runtime Repairs & Fresh-Clone Integrity Closure",
+  "repository_goal": "Desktop working tree, Git index, fresh clone and origin/main must reproduce the same tracked project bytes.",
+  "line_endings": {
+    "tracked_text": "LF",
+    "git_core_autocrlf": false,
+    "gitattributes": "* text=auto eol=lf"
+  },
+  "ui_repairs": {
+    "numeric_selectbox_formatter": "always_returns_string",
+    "active_plan_result_downloads": "unique_streamlit_keys",
+    "training_center_unicode": "decode_literal_escapes_only",
+    "subprocess_output": "forced_utf8_for_python_children"
+  },
+  "step148_integrity": "immutable code from policy hashes; mutable ledger and active lock validated dynamically",
+  "volatile_tracked_paths_restored_before_commit": [
+    "models/v109/v109_sqlite_played_tickets_journal_model.json",
+    "models/v123_bst_official_draw_detection_status.json",
+    "reports/v109_sqlite_played_tickets_journal_checklist.csv",
+    "reports/v109_sqlite_played_tickets_journal_summary.json",
+    "reports/v109_sqlite_played_tickets_journal_summary.md",
+    "reports/v123_bst_official_draw_detection_report.json",
+    "reports/v123_bst_official_draw_detection_summary.md"
+  ],
+  "fresh_clone_required": true,
+  "personal_journal_database": "local_only_not_tracked",
+  "production_scoring_changed": false,
+  "historical_draw_data_changed": false
+}

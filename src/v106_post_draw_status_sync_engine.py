@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -48,6 +49,13 @@ SAFE_NOTE_BG = (
     "Step 106 е post-draw синхронен слой. Той не променя прогнозната математика, "
     "а обновява отчетите след реално записан тираж, за да няма остарели статуси като REVIEW или 10058."
 )
+
+
+def _utf8_subprocess_env() -> dict[str, str]:
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
 
 
 def _now_iso() -> str:
@@ -133,6 +141,7 @@ def _run_script(script: str, timeout_seconds: int = 180) -> dict[str, Any]:
             text=True,
             encoding="utf-8",
             errors="replace",
+            env=_utf8_subprocess_env(),
             capture_output=True,
             timeout=timeout_seconds,
         )

@@ -1971,7 +1971,10 @@ def inject_global_css(st_module: Any) -> None:
 def _translate_options(options: Iterable[Any], format_func: Callable[[Any], Any] | None, language: str) -> Callable[[Any], Any]:
     def formatter(value: Any) -> Any:
         rendered = format_func(value) if format_func is not None else value
-        return translate_text(rendered, language=language) if isinstance(rendered, str) else rendered
+        # LOTTERY_NUMERIC_SELECTBOX_FORMAT_FIX_V1
+        if isinstance(rendered, str):
+            return translate_text(rendered, language=language)
+        return str(rendered)
     return formatter
 
 

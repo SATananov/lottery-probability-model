@@ -185,6 +185,20 @@ def main() -> int:
         if "Статистически и технически подробности" not in text:
             failures.append(f"technical_expander:{path.name}")
 
+    # Step 151.2.1 closes a concrete Step 150.2 regression on the backup page.
+    # When the later integrity layer is present, the historical plain-language verifier
+    # also enforces that raw Git/terminal output remains behind Technical details.
+    later_guard = ROOT / "src/v151_2_1_user_backup_ui_integrity_engine.py"
+    if later_guard.is_file():
+        from src.v151_2_1_user_backup_ui_integrity_engine import audit_user_backup_ui
+
+        backup_ui = audit_user_backup_ui()
+        failures.extend(
+            f"backup_ui_technical_separation:{key}"
+            for key, passed in backup_ui.get("checks", {}).items()
+            if not passed
+        )
+
     release = load_json(ROOT / "release-manifest.json")
     validation = validate_release_manifest(release, root=ROOT, expected_checkpoint=str(release.get("checkpoint")))
     failures.extend(f"manifest:{item}" for item in validation.get("failures", []))

@@ -1,13 +1,13 @@
 {
   "step": "106.1",
   "status": "POST_DRAW_DATASETS_SYNCED",
-  "generated_at_utc": "2026-07-13T03:10:09+00:00",
+  "generated_at_utc": "2026-07-13T10:21:12+00:00",
   "blocking_failures": 0,
   "safe_note_bg": "Step 106.1 поправя post-draw dataset синхрона след реален тираж: historical, v40 normalized и v41 canonical трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, а обновява производните dataset-и и отчетите след запис.",
   "dataset": {
     "datasets": {
       "historical": {
-        "path": "C:/Users/stana/Desktop/lottery-probability-model/data/historical_draws.csv",
+        "path": "/mnt/data/lottery_step151_2_work/lottery-probability-model/data/historical_draws.csv",
         "rows": 10064,
         "latest_date": "2026-07-12",
         "latest_numbers": [
@@ -20,7 +20,7 @@
         ]
       },
       "normalized": {
-        "path": "C:/Users/stana/Desktop/lottery-probability-model/data/v40_normalized_draw_events.csv",
+        "path": "/mnt/data/lottery_step151_2_work/lottery-probability-model/data/v40_normalized_draw_events.csv",
         "rows": 10064,
         "latest_date": "2026-07-12",
         "latest_numbers": [
@@ -33,7 +33,7 @@
         ]
       },
       "canonical": {
-        "path": "C:/Users/stana/Desktop/lottery-probability-model/data/v41_canonical_draw_events.csv",
+        "path": "/mnt/data/lottery_step151_2_work/lottery-probability-model/data/v41_canonical_draw_events.csv",
         "rows": 10064,
         "latest_date": "2026-07-12",
         "latest_numbers": [
@@ -86,13 +86,13 @@
       "script": "scripts/v40_create_normalized_draw_events.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "DONE: v40 normalized draw events dataset created.\nSOURCE_ROWS: 10064\nNORMALIZED_ROWS: 10064\nYEARS: 1958 2026\nROWS_2026: 55\nDRAWING_NO_COUNTS: {'1': 5182, '2': 3587, '3': 1280, '4': 15}\nOUTPUT_DATASET: C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\v40_normalized_draw_events.csv\nREPORT_MD: C:\\Users\\stana\\Desktop\\lottery-probability-model\\reports\\v40_normalized_draw_events_report.md"
+      "output_tail": "DONE: v40 normalized draw events dataset created.\nSOURCE_ROWS: 10064\nNORMALIZED_ROWS: 10064\nYEARS: 1958 2026\nROWS_2026: 55\nDRAWING_NO_COUNTS: {'1': 5182, '2': 3587, '3': 1280, '4': 15}\nOUTPUT_DATASET: /mnt/data/lottery_step151_2_work/lottery-probability-model/data/v40_normalized_draw_events.csv\nREPORT_MD: /mnt/data/lottery_step151_2_work/lottery-probability-model/reports/v40_normalized_draw_events_report.md"
     },
     {
       "script": "scripts/v41_build_canonical_draw_events.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "DONE: v41 canonical rules-aware dataset built.\nCANONICAL_DATASET C:\\Users\\stana\\Desktop\\lottery-probability-model\\data\\v41_canonical_draw_events.csv\nAUDIT_JSON C:\\Users\\stana\\Desktop\\lottery-probability-model\\reports\\v41_canonical_draw_events_audit.json\nAUDIT_MD C:\\Users\\stana\\Desktop\\lottery-probability-model\\reports\\v41_canonical_draw_events_audit.md\nTOTAL_DRAW_EVENTS 10064\nTOTAL_UNIQUE_DRAWS 5182\nYEARS 1958 2026\nDRAWING_NO_COUNTS {1: 5182, 2: 3587, 3: 1280, 4: 15}\nDRAWINGS_PER_DRAW_DISTRIBUTION {1: 1595, 2: 2307, 3: 1265, 4: 15}\nDATE_AVAILABLE_ROWS 55\nDATE_MISSING_ROWS 10009\nBONUS_AVAILABLE_ROWS 0\nBONUS_MISSING_ROWS 10064"
+      "output_tail": "DONE: v41 canonical rules-aware dataset built.\nCANONICAL_DATASET /mnt/data/lottery_step151_2_work/lottery-probability-model/data/v41_canonical_draw_events.csv\nAUDIT_JSON /mnt/data/lottery_step151_2_work/lottery-probability-model/reports/v41_canonical_draw_events_audit.json\nAUDIT_MD /mnt/data/lottery_step151_2_work/lottery-probability-model/reports/v41_canonical_draw_events_audit.md\nTOTAL_DRAW_EVENTS 10064\nTOTAL_UNIQUE_DRAWS 5182\nYEARS 1958 2026\nDRAWING_NO_COUNTS {1: 5182, 2: 3587, 3: 1280, 4: 15}\nDRAWINGS_PER_DRAW_DISTRIBUTION {1: 1595, 2: 2307, 3: 1265, 4: 15}\nDATE_AVAILABLE_ROWS 55\nDATE_MISSING_ROWS 10009\nBONUS_AVAILABLE_ROWS 0\nBONUS_MISSING_ROWS 10064"
     },
     {
       "script": "scripts/v76_build_explainability_validation_center.py",
@@ -104,31 +104,31 @@
       "script": "scripts/v97_build_real_draw_lifecycle.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_97_STATUS READY\nDATASET_ROWS 10064\nACTIVE_PLAN ������ 12 10.80"
+      "output_tail": "STEP_97_STATUS READY\nDATASET_ROWS 10064\nACTIVE_PLAN Хибрид 12 10.80"
     },
     {
       "script": "scripts/v98_build_active_plan_result_history.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_98_STATUS HAS_HISTORY\nACTIVE_PLAN ������ 11 9.90\nHISTORY_ROWS 3"
+      "output_tail": "STEP_98_STATUS HAS_HISTORY\nACTIVE_PLAN Хибрид 11 9.90\nHISTORY_ROWS 3"
     },
     {
       "script": "scripts/v99_build_final_user_dashboard.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_99_STATUS READY_WAITING_NEXT_DRAW\nACTIVE_PLAN ������ 12 10.80\nSTEP_95 EVALUATED\nNEXT_ACTION ��������� ��������� � ���� ���� �� ������� �����"
+      "output_tail": "STEP_99_STATUS READY_WAITING_NEXT_DRAW\nACTIVE_PLAN Хибрид 12 10.80\nSTEP_95 EVALUATED\nNEXT_ACTION Прегледай резултата и реши дали да обновиш плана"
     },
     {
       "script": "scripts/v100_build_final_release_lock.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_100_STATUS V1_LOCKED_WAITING_NEXT_DRAW\nACTIVE_PLAN ������ 12 10.80 EUR\nDATASET_ROWS 10064\nBLOCKING_FAILURES 0\nNEXT_ACTION ������ ��������� ������ �����"
+      "output_tail": "STEP_100_STATUS V1_LOCKED_WAITING_NEXT_DRAW\nACTIVE_PLAN Хибрид 12 10.80 EUR\nDATASET_ROWS 10064\nBLOCKING_FAILURES 0\nNEXT_ACTION Въведи следващия реален тираж"
     },
     {
       "script": "scripts/v101_build_real_use_protocol.py",
       "ok": true,
       "status": "OK",
-      "output_tail": "STEP_101_STATUS WAITING_NEXT_REAL_DRAW\nSTEP_100_STATUS V1_LOCKED_WAITING_NEXT_DRAW\nACTIVE_PLAN ������ 12 10.80 EUR\nDATASET_ROWS 10064\nBLOCKING_FAILURES 0\nNEXT_ACTION ������� ��������� ������ ����� � �� ������ ���� �������� �� �����."
+      "output_tail": "STEP_101_STATUS WAITING_NEXT_REAL_DRAW\nSTEP_100_STATUS V1_LOCKED_WAITING_NEXT_DRAW\nACTIVE_PLAN Хибрид 12 10.80 EUR\nDATASET_ROWS 10064\nBLOCKING_FAILURES 0\nNEXT_ACTION Изчакай следващия реален тираж и го въведи през Добавяне на тираж."
     },
     {
       "script": "internal:v106_build_post_draw_status_sync_no_dependencies",

@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import subprocess
 import sys
 from datetime import datetime
@@ -152,8 +154,25 @@ V45_SUMMARY_PATH = ROOT / "reports" / "v45_training_summary.json"
 V45_BY_MODEL_PATH = ROOT / "reports" / "v45_backtest_by_model.csv"
 
 
+_ESCAPED_UNICODE_RE = re.compile(r"\\(?:u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8}|x[0-9a-fA-F]{2})")
+
+
 def T(value: str) -> str:
-    return value.encode("ascii").decode("unicode_escape")
+    """Decode legacy literal Unicode escapes without touching real UTF-8 text."""
+    text = str(value)
+    if not _ESCAPED_UNICODE_RE.search(text):
+        return text
+    try:
+        return text.encode("ascii").decode("unicode_escape")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return text
+
+
+def _utf8_subprocess_env() -> dict[str, str]:
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
 
 
 def _exists(rel_path: str) -> bool:
@@ -190,6 +209,9 @@ def _run_script(script: str) -> tuple[bool, str]:
             [sys.executable, str(script_path)],
             cwd=str(ROOT),
             text=True,
+            encoding="utf-8",
+            errors="replace",
+            env=_utf8_subprocess_env(),
             capture_output=True,
             timeout=900,
         )
@@ -384,6 +406,9 @@ def _run_git_command(args: list[str]) -> tuple[bool, str]:
             args,
             cwd=str(ROOT),
             text=True,
+            encoding="utf-8",
+            errors="replace",
+            env=_utf8_subprocess_env(),
             capture_output=True,
             timeout=300,
         )

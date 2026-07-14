@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -45,6 +46,13 @@ SAFE_NOTE_BG = (
     "трябва да имат еднакъв брой редове и един и същ последен тираж. Това не променя прогнозната математика, "
     "а обновява производните dataset-и и отчетите след запис."
 )
+
+
+def _utf8_subprocess_env() -> dict[str, str]:
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
 
 
 def _now_iso() -> str:
@@ -133,6 +141,7 @@ def _run_script(script: str, timeout_seconds: int = 300) -> dict[str, Any]:
             text=True,
             encoding="utf-8",
             errors="replace",
+            env=_utf8_subprocess_env(),
             capture_output=True,
             timeout=timeout_seconds,
         )

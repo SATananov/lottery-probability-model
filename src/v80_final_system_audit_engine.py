@@ -27,10 +27,8 @@ SAFE_NOTE = (
     "Това е контролен слой, не прогноза и не гаранция за печалба."
 )
 
-EXPECTED_LATEST_DATE = "2026-06-21"
-EXPECTED_LATEST_NUMBERS = [6, 13, 16, 19, 42, 44]
-EXPECTED_ROWS = 10058
-EXPECTED_2026_ROWS = 49
+# Dataset expectations are derived from the current canonical source file.
+# Hardcoded draw counts made this audit stale after every valid official draw.
 
 PRIMARY_DATASETS = [
     "data/historical_draws.csv",
@@ -122,6 +120,14 @@ CHECK_PY_FILES = [
 
 QUALITY_TEXT_EXTENSIONS = {".py", ".md", ".json", ".csv", ".txt", ".html", ".toml"}
 SUSPICIOUS_PATTERNS = [chr(63) * 4, chr(0xFFFD) * 8, chr(0xFFFD)]
+MOJIBAKE_DETECTOR_FILES = {
+    "scripts/v111_6_build_prize_import_captcha_safe_manual_import.py",
+    "scripts/v111_9_remove_unofficial_archive_source.py",
+    "scripts/v114_build_ticket_value.py",
+    "scripts/v116_1_fix_backtesting_duplicate_columns.py",
+    "src/v150_ui_language_integrity_engine.py",
+    "reports/v150_1_dynamic_text_audit.csv",
+}
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -174,7 +180,7 @@ def _row_sort_key(row: dict[str, str]) -> tuple[int, int, int, str]:
     )
 
 
-def _audit_dataset(rel_path: str) -> dict[str, Any]:
+def _audit_dataset(rel_path: str, expected: dict[str, Any]) -> dict[str, Any]:
     path = ROOT / rel_path
     rows = _read_csv(path)
     existing = path.exists()
@@ -206,10 +212,10 @@ def _audit_dataset(rel_path: str) -> dict[str, Any]:
 
     checks = {
         "exists": existing,
-        "rows_10058": len(rows) == EXPECTED_ROWS,
-        "rows_2026_49": len(rows_2026) == EXPECTED_2026_ROWS,
-        "latest_date_ok": latest_date == EXPECTED_LATEST_DATE,
-        "latest_numbers_ok": latest_numbers == EXPECTED_LATEST_NUMBERS,
+        "rows_match_current_source": len(rows) == int(expected.get("rows", -1)),
+        "rows_2026_match_current_source": len(rows_2026) == int(expected.get("rows_2026", -1)),
+        "latest_date_ok": latest_date == expected.get("latest_date"),
+        "latest_numbers_ok": latest_numbers == expected.get("latest_numbers"),
         "invalid_rows_ok": invalid_rows == 0,
         "duplicate_keys_ok": duplicate_keys == 0,
     }
@@ -316,6 +322,8 @@ def _audit_compile_and_text_quality() -> list[dict[str, Any]]:
             continue
         if rel.startswith("reports/v80_") or rel.startswith("models/v80/"):
             continue
+        if rel in MOJIBAKE_DETECTOR_FILES:
+            continue
         try:
             text = path.read_text(encoding="utf-8-sig")
         except UnicodeDecodeError:
@@ -390,11 +398,24 @@ def _audit_sync_plans() -> list[dict[str, Any]]:
     return rows
 
 
+def _current_dataset_expectation() -> dict[str, Any]:
+    rows = _read_csv(ROOT / PRIMARY_DATASETS[0])
+    rows_2026 = [row for row in rows if str(row.get("year", "")).strip() == "2026"]
+    latest_row = sorted(rows, key=_row_sort_key)[-1] if rows else {}
+    return {
+        "rows": len(rows),
+        "rows_2026": len(rows_2026),
+        "latest_date": str(latest_row.get("date", "")) if latest_row else "",
+        "latest_numbers": _numbers_from_row(latest_row) if latest_row else [],
+    }
+
+
 def build_final_system_audit_center() -> dict[str, Any]:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     V80_MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
-    dataset_rows = [_audit_dataset(path) for path in PRIMARY_DATASETS]
+    expected = _current_dataset_expectation()
+    dataset_rows = [_audit_dataset(path, expected) for path in PRIMARY_DATASETS]
     artifact_rows = _audit_artifacts()
     quality_rows = _audit_compile_and_text_quality()
     sync_rows = _audit_sync_plans()
@@ -426,11 +447,11 @@ def build_final_system_audit_center() -> dict[str, Any]:
         "quality_checks": len(quality_rows),
         "sync_plans_checked": len(sync_rows),
         "issues_found": len(issues),
-        "dataset_rows_expected": EXPECTED_ROWS,
-        "dataset_2026_rows_expected": EXPECTED_2026_ROWS,
+        "dataset_rows_expected": expected["rows"],
+        "dataset_2026_rows_expected": expected["rows_2026"],
         "latest_draw_expected": {
-            "date": EXPECTED_LATEST_DATE,
-            "numbers": EXPECTED_LATEST_NUMBERS,
+            "date": expected["latest_date"],
+            "numbers": expected["latest_numbers"],
         },
         "generated_reports": [
             "reports/v80_final_system_audit_summary.json",

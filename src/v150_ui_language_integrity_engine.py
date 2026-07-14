@@ -40,15 +40,9 @@ ALLOW_ASCII_TERMS = {
 }
 ALLOW_ASCII_TERMS_LOWER = {term.lower() for term in ALLOW_ASCII_TERMS}
 
-PROTECTED_STEP148_HASHES = {
-    "src/v145_experimental_neural_dynamics_engine.py": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
-    "src/v146_controlled_neural_robustness_engine.py": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
-    "src/v148_prospective_forward_test_engine.py": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
-    "models/v148_prospective_forward_test_policy.json": "e26d0274bc3701cc6f21df47c26e8543dd34fd4d86405f3f4f41e52b7c36481c",
-    "models/v148_prospective_forward_test_status.json": "9492f4e5ccf1c97e05dfd9abb0e682963f295e884da54ae3682ef3d240c01eba",
-    "data/prospective_forward_test_ledger.jsonl": "dcf274fd8522dd6b7478e5515a2129f4db166becd75d1ce088f500adf72d1887",
-    "reports/forward_tests/v148/LOCK-148-c299f383382d1f4a3ec7355f.json": "b049d96c01f295b5163bee4af663d1b83fefd804c9e734db5a830fc7e793305d",
-}
+PROTECTED_STEP148_POLICY_PATH = "models/v148_prospective_forward_test_policy.json"
+PROTECTED_STEP148_STATUS_PATH = "models/v148_prospective_forward_test_status.json"
+PROTECTED_STEP148_LEDGER_PATH = "data/prospective_forward_test_ledger.jsonl"
 
 
 def sha256_file(path: Path) -> str:
@@ -169,16 +163,113 @@ def _mojibake_findings() -> list[dict[str, Any]]:
     return findings
 
 
+def _load_json_object(path: Path) -> dict[str, Any]:
+    if not path.is_file():
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return value if isinstance(value, dict) else {}
+
+
 def _protected_hash_status() -> dict[str, Any]:
-    rows = []
-    all_ok = True
-    for rel, expected in PROTECTED_STEP148_HASHES.items():
-        path = ROOT / rel
+    """Validate immutable Step 148 sources and the current mutable ledger state."""
+    from src.v148_prospective_forward_test_engine import (
+        active_lock,
+        ensure_policy,
+        load_ledger,
+        verify_ledger,
+    )
+
+    failures: list[str] = []
+    rows: list[dict[str, Any]] = []
+    policy_path = ROOT / PROTECTED_STEP148_POLICY_PATH
+    status_path = ROOT / PROTECTED_STEP148_STATUS_PATH
+    stored_policy = _load_json_object(policy_path)
+    status = _load_json_object(status_path)
+
+    try:
+        expected_policy = ensure_policy()
+        policy_ok = stored_policy == expected_policy
+    except Exception as exc:
+        expected_policy = {}
+        policy_ok = False
+        failures.append(f"policy_reproduction:{type(exc).__name__}:{exc}")
+    rows.append({
+        "path": PROTECTED_STEP148_POLICY_PATH,
+        "validation": "reproduces_from_frozen_step146_step147_sources",
+        "ok": policy_ok,
+    })
+    if not policy_ok:
+        failures.append("policy_reproduction_mismatch")
+
+    frozen_code_locks = stored_policy.get("frozen_code_locks") or {}
+    if not isinstance(frozen_code_locks, dict) or len(frozen_code_locks) != 3:
+        failures.append("frozen_code_lock_set_invalid")
+        frozen_code_locks = {}
+    for rel, expected in sorted(frozen_code_locks.items()):
+        path = ROOT / str(rel)
         actual = sha256_file(path) if path.is_file() else None
         ok = actual == expected
-        all_ok = all_ok and ok
-        rows.append({"path": rel, "expected_sha256": expected, "actual_sha256": actual, "ok": ok})
-    return {"all_ok": all_ok, "files": rows}
+        rows.append({
+            "path": str(rel),
+            "validation": "immutable_code_sha256",
+            "expected_sha256": expected,
+            "actual_sha256": actual,
+            "ok": ok,
+        })
+        if not ok:
+            failures.append(f"frozen_code_hash:{rel}")
+
+    try:
+        events = load_ledger()
+        chain = verify_ledger(events)
+        lock = active_lock(events)
+    except Exception as exc:
+        events = []
+        chain = {"ok": False, "failures": [f"{type(exc).__name__}:{exc}"]}
+        lock = None
+    chain_ok = bool(chain.get("ok"))
+    rows.append({
+        "path": PROTECTED_STEP148_LEDGER_PATH,
+        "validation": "append_only_hash_chain_and_lock_artifacts",
+        "event_count": chain.get("event_count", len(events)),
+        "settled_count": chain.get("settled_count"),
+        "ok": chain_ok,
+    })
+    if not chain_ok:
+        failures.extend(f"ledger:{item}" for item in chain.get("failures", []))
+
+    active_lock_id = str(lock.get("lock_id") or "") if lock else None
+    active_expected_draw_key = str(lock.get("expected_draw_key") or "") if lock else None
+    status_checks = {
+        "ledger_integrity_ok": status.get("ledger_integrity_ok") is True and chain_ok,
+        "ledger_event_count": int(status.get("ledger_event_count") or -1) == int(chain.get("event_count") or 0),
+        "eligible_settled_draws": int(status.get("eligible_settled_draws") or -1) == int(chain.get("settled_count") or 0),
+        "active_lock_id": status.get("active_lock_id") == active_lock_id,
+        "active_expected_draw_key": status.get("active_expected_draw_key") == active_expected_draw_key,
+        "production_promotion_blocked": status.get("production_promotion_approved") is False,
+    }
+    status_ok = all(status_checks.values())
+    rows.append({
+        "path": PROTECTED_STEP148_STATUS_PATH,
+        "validation": "current_status_matches_ledger",
+        "checks": status_checks,
+        "ok": status_ok,
+    })
+    if not status_ok:
+        failures.extend(f"status_alignment:{key}" for key, ok in status_checks.items() if not ok)
+
+    return {
+        "all_ok": not failures,
+        "files": rows,
+        "failures": failures,
+        "active_lock_id": active_lock_id,
+        "active_expected_draw_key": active_expected_draw_key,
+        "ledger_event_count": chain.get("event_count", len(events)),
+        "eligible_settled_draws": chain.get("settled_count", 0),
+    }
 
 
 def deterministic_status_signature(payload: dict[str, Any]) -> str:
@@ -230,8 +321,8 @@ def run_ui_language_integrity_audit(*, write_outputs: bool = True) -> dict[str, 
         "global_delta_generator_patch_present": "DeltaGenerator" in (ROOT / "src/v150_global_ui_polish.py").read_text(encoding="utf-8"),
         "technical_table_columns_hidden_by_default": True,
         "protected_step148_files": protected,
-        "active_lock_id": "LOCK-148-c299f383382d1f4a3ec7355f",
-        "active_expected_draw_key": "2026-54",
+        "active_lock_id": protected.get("active_lock_id"),
+        "active_expected_draw_key": protected.get("active_expected_draw_key"),
         "production_scoring_changed": False,
         "personal_journal_used": False,
         "failures": [],

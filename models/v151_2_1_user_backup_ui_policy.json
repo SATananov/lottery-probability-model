@@ -1,0 +1,22 @@
+{
+  "step": "151.2.1",
+  "name": "User-Facing Backup UI & Technical Details Separation Closure",
+  "scope": "Step 103 backup page user copy and technical-output separation",
+  "normal_mode": {
+    "user_facing_title": "Резервно копие на приложението",
+    "raw_git_status_visible": false,
+    "terminal_command_visible": false,
+    "raw_internal_checks_visible": false,
+    "friendly_preflight_checks_visible": true
+  },
+  "technical_mode": {
+    "controlled_by": "v150_show_technical_details",
+    "raw_git_status_available": true,
+    "terminal_command_available": true,
+    "raw_internal_checks_available": true
+  },
+  "display_only": true,
+  "production_scoring_changed": false,
+  "historical_draw_data_changed": false,
+  "personal_journal_used": false
+}

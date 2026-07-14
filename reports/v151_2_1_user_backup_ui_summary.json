@@ -1,0 +1,76 @@
+{
+  "report_type": "step151_2_1_user_backup_ui",
+  "summary": {
+    "step": "151.2.1",
+    "name": "User-Facing Backup UI & Technical Details Separation Closure",
+    "section": "src/v103_clean_release_checkpoint_section.py",
+    "missing_files": [],
+    "checks": {
+      "required_files_present": true,
+      "user_facing_backup_title": true,
+      "purpose_explained": true,
+      "backup_contents_explained": true,
+      "friendly_preflight_table_present": true,
+      "raw_preflight_table_available_in_technical_mode": true,
+      "create_button_user_facing": true,
+      "create_button_has_stable_key": true,
+      "create_button_disabled_until_ready": true,
+      "technical_toggle_used": true,
+      "all_raw_outputs_guarded": true,
+      "raw_checks_guarded": true,
+      "friendly_checks_visible_normally": true,
+      "normal_copy_has_no_raw_technical_tokens": true,
+      "legacy_developer_title_removed": true,
+      "legacy_terminal_section_removed_from_normal_flow": true,
+      "raw_result_dump_removed_from_normal_flow": true
+    },
+    "raw_technical_outputs": [
+      {
+        "line": 173,
+        "method": "exception",
+        "expression": "st.exception(exc)",
+        "guarded": true
+      },
+      {
+        "line": 185,
+        "method": "code",
+        "expression": "st.code(str(zip_path), language='text')",
+        "guarded": true
+      },
+      {
+        "line": 186,
+        "method": "json",
+        "expression": "st.json(result)",
+        "guarded": true
+      },
+      {
+        "line": 201,
+        "method": "code",
+        "expression": "st.code(git_status or 'git status --short: clean', language='text')",
+        "guarded": true
+      },
+      {
+        "line": 204,
+        "method": "code",
+        "expression": "st.code(str(summary.get('recommended_command', 'python .\\\\scripts\\\\v103_create_clean_release_checkpoint.py')), language='powershell')",
+        "guarded": true
+      },
+      {
+        "line": 215,
+        "method": "code",
+        "expression": "st.code('\\n'.join(map(str, forbidden_preview)), language='text')",
+        "guarded": true
+      }
+    ],
+    "unguarded_raw_technical_outputs": [],
+    "forbidden_normal_copy_hits": [],
+    "normal_literal_count": 11,
+    "display_only": true,
+    "production_scoring_changed": false,
+    "historical_draw_data_changed": false,
+    "personal_journal_used": false,
+    "result_signature_sha256": "8936bd2006afd6fbb4b2fa6ae130bfd96ee83b4cc3550c0938235f2be128157b",
+    "ok": true,
+    "checked_at_utc": "2026-07-14T04:28:44+00:00"
+  }
+}

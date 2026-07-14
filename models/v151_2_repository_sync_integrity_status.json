@@ -1,0 +1,167 @@
+{
+  "step": "151.2",
+  "name": "Repository Synchronization, UI Runtime Repairs & Fresh-Clone Integrity Closure",
+  "missing_files": [],
+  "checks": {
+    "required_files_present": true,
+    "git_available": true,
+    "branch_main": true,
+    "not_behind_upstream": true,
+    "canonical_index_lf": true,
+    "canonical_worktree_lf": true,
+    "ui_runtime_repairs": true
+  },
+  "git": {
+    "git_available": true,
+    "branch": "main",
+    "upstream": "origin/main",
+    "ahead": 0,
+    "behind": 0,
+    "working_tree_clean": false,
+    "on_main": true,
+    "not_behind_upstream": true,
+    "fully_synced": false,
+    "baseline_upstream_sha": "dccfc21ef69f17485f5aa21e2efac93baf053f7c",
+    "working_tree_change_count_at_build": 283,
+    "working_tree_state_context": "pre_commit_release_build",
+    "post_push_sync_must_be_verified_live": true
+  },
+  "line_endings": {
+    "git_eol_read_ok": true,
+    "tracked_files": 1269,
+    "index_crlf_text_files": [],
+    "worktree_crlf_text_files": [],
+    "canonical_index_lf": true,
+    "canonical_worktree_lf": true
+  },
+  "ui_repairs": {
+    "ok": true,
+    "checks": {
+      "real_result_download_key": true,
+      "demo_result_download_key": true,
+      "download_button_uses_key": true,
+      "training_unicode_guard": true,
+      "training_subprocess_utf8": true,
+      "numeric_selectbox_returns_text": true
+    },
+    "training_decoder_runtime_test": true,
+    "ui_language_integrity": {
+      "step": 150,
+      "status": "completed",
+      "scope": "global_streamlit_ui_menus_pages_widgets_tables_statuses_and_research_technical_detail_separation",
+      "generated_at_utc": "2026-07-14T04:28:44+00:00",
+      "ui_literal_rows": 2048,
+      "unique_ui_literals": 1712,
+      "widget_counts": {
+        "button": 101,
+        "caption": 139,
+        "checkbox": 20,
+        "download_button": 41,
+        "error": 60,
+        "expander": 80,
+        "file_uploader": 3,
+        "form_submit_button": 3,
+        "header": 1,
+        "info": 140,
+        "markdown": 310,
+        "metric": 484,
+        "multiselect": 3,
+        "number_input": 18,
+        "radio": 7,
+        "selectbox": 30,
+        "slider": 21,
+        "spinner": 47,
+        "subheader": 94,
+        "success": 133,
+        "tabs": 97,
+        "text_area": 14,
+        "text_input": 19,
+        "title": 72,
+        "toggle": 1,
+        "warning": 110
+      },
+      "forbidden_bulgarian_residual_rows": 0,
+      "mixed_language_rows": 0,
+      "mojibake_findings": 0,
+      "research_navigation_group_present": true,
+      "research_page_labels_present": true,
+      "old_mixed_research_labels_absent": true,
+      "technical_details_toggle_present": true,
+      "deploy_button_hidden": true,
+      "global_delta_generator_patch_present": true,
+      "technical_table_columns_hidden_by_default": true,
+      "protected_step148_files": {
+        "all_ok": true,
+        "files": [
+          {
+            "path": "models/v148_prospective_forward_test_policy.json",
+            "validation": "reproduces_from_frozen_step146_step147_sources",
+            "ok": true
+          },
+          {
+            "path": "src/v145_experimental_neural_dynamics_engine.py",
+            "validation": "immutable_code_sha256",
+            "expected_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+            "actual_sha256": "0f5c1c4852bfaba97208054537550e695d806b7d63d7b6333b17e70bc6cc1b3c",
+            "ok": true
+          },
+          {
+            "path": "src/v146_controlled_neural_robustness_engine.py",
+            "validation": "immutable_code_sha256",
+            "expected_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+            "actual_sha256": "b43ff1d213752d549cd3d03b2d4074f204bbc89a0f398a8dad98944121a5c82e",
+            "ok": true
+          },
+          {
+            "path": "src/v148_prospective_forward_test_engine.py",
+            "validation": "immutable_code_sha256",
+            "expected_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+            "actual_sha256": "1a3cf6dbd67e4ea210aa45b52b9dfa659d6062d79e008837a5319f342d5bce14",
+            "ok": true
+          },
+          {
+            "path": "data/prospective_forward_test_ledger.jsonl",
+            "validation": "append_only_hash_chain_and_lock_artifacts",
+            "event_count": 4,
+            "settled_count": 1,
+            "ok": true
+          },
+          {
+            "path": "models/v148_prospective_forward_test_status.json",
+            "validation": "current_status_matches_ledger",
+            "checks": {
+              "ledger_integrity_ok": true,
+              "ledger_event_count": true,
+              "eligible_settled_draws": true,
+              "active_lock_id": true,
+              "active_expected_draw_key": true,
+              "production_promotion_blocked": true
+            },
+            "ok": true
+          }
+        ],
+        "failures": [],
+        "active_lock_id": "LOCK-148-29ad1f2b8b69a3bc45e7de02",
+        "active_expected_draw_key": "2026-55",
+        "ledger_event_count": 4,
+        "eligible_settled_draws": 1
+      },
+      "active_lock_id": "LOCK-148-29ad1f2b8b69a3bc45e7de02",
+      "active_expected_draw_key": "2026-55",
+      "production_scoring_changed": false,
+      "personal_journal_used": false,
+      "failures": [],
+      "ok": true,
+      "result_signature_sha256": "653ad5a9d50e20c156bd098982e58c43a2fb37909bb0d3e0c8963b86b947e646"
+    },
+    "failures": []
+  },
+  "fresh_clone_requirement": "run scripts/verify_step_151_2.py --require-synced in a separate clone",
+  "external_github_push_asserted": false,
+  "production_scoring_changed": false,
+  "historical_draw_data_changed": false,
+  "personal_journal_used": false,
+  "result_signature_sha256": "cd3d4c209627fa6e3e36c8c8af8ef766a3d8ca0d60e826f8be7e2a114c98613e",
+  "ok": true,
+  "checked_at_utc": "2026-07-14T04:28:44+00:00"
+}

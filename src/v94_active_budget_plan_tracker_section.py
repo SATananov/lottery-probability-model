@@ -92,7 +92,7 @@ def _render_active_plan(plan: dict[str, Any]) -> None:
     st.caption(f"Запазен: {plan.get('created_at_utc', '-')} | След тираж: {(plan.get('saved_after_draw', {}) or {}).get('numbers_text', '-')}")
 
 
-def _render_result(result: dict[str, Any], *, title: str) -> None:
+def _render_result(result: dict[str, Any], *, title: str, download_key: str) -> None:
     st.markdown(f"### {title}")
     status = result.get("status", "UNKNOWN")
     if status == "WAITING_NEXT_DRAW":
@@ -123,6 +123,7 @@ def _render_result(result: dict[str, Any], *, title: str) -> None:
             data=_csv_bytes(rows),
             file_name="active_budget_plan_latest_result.csv",
             mime="text/csv",
+            key=download_key,
         )
 
 
@@ -168,12 +169,20 @@ def render_v94_active_budget_plan_tracker_section() -> None:
 
     with tabs[1]:
         result = evaluate_plan_against_latest(plan, allow_same_draw=False)
-        _render_result(result, title="Проверка след нов тираж")
+        _render_result(
+            result,
+            title="Проверка след нов тираж",
+            download_key="v94_real_result_csv",
+        )
 
     with tabs[2]:
         st.info("Демо проверката сравнява активния план с последния наличен тираж, дори ако планът е запазен след него. Използвай я само за преглед на формата.")
         demo_result = evaluate_plan_against_latest(plan, allow_same_draw=True)
-        _render_result(demo_result, title="Демо срещу последния наличен тираж")
+        _render_result(
+            demo_result,
+            title="Демо срещу последния наличен тираж",
+            download_key="v94_demo_result_csv",
+        )
 
     with tabs[3]:
         history = _history_dataframe()

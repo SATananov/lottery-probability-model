@@ -23,9 +23,14 @@ def main() -> int:
     release = load_json(ROOT / "release-manifest.json")
     validation = validate_release_manifest(release, root=ROOT, expected_checkpoint="Step 151")
     failures.extend(f"release:{item}" for item in validation.get("failures", []))
+    metadata_pairs = (
+        ("CLEAN_ZIP_MANIFEST_STEP151.md", "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151.md"),
+        ("CLEAN_ZIP_MANIFEST_STEP151_2.md", "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151_2.md"),
+        ("CLEAN_ZIP_MANIFEST_STEP151_2_1.md", "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151_2_1.md"),
+    )
+    if not any(all((ROOT / rel).is_file() for rel in pair) for pair in metadata_pairs):
+        failures.append("missing:step151_or_later_clean_manifests")
     required = (
-        "CLEAN_ZIP_MANIFEST_STEP151.md",
-        "FULL_CLEAN_CHECKPOINT_MANIFEST_STEP151.md",
         "models/v151_repository_root_cleanup_policy.json",
         "models/v151_repository_root_cleanup_status.json",
         "reports/STEP_151_REPOSITORY_ROOT_CLEANUP_AND_POST_DRAW_DOCUMENTATION_SYNC.md",
