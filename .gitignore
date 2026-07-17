@@ -46,8 +46,8 @@ reports/v111_unparsed_bst_page_*.json
 # Local Step 143.2 GitHub synchronization audit evidence
 reports/runtime/v143_2_git_sync/
 
-# Local Step 145.1 volatile runtime status and audit cache
-reports/runtime/v145_1_artifact_integrity/
+# Local volatile runtime status, diagnostics and audit cache (Steps 145.1 / 151.6)
+reports/runtime/
 # Personal lottery journal and exports (local-only)
 data/user_journal.db
 data/user_journal_exports/

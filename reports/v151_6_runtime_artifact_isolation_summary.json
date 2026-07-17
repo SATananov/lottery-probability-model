@@ -1,0 +1,8 @@
+{
+  "step": "151.6",
+  "result": "runtime_only_default",
+  "protected_tracked_paths": 7,
+  "ignored_runtime_root": "reports/runtime/",
+  "startup_git_delta_expected": 0,
+  "data_migration": false
+}

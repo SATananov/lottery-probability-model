@@ -4,6 +4,7 @@ import streamlit as st
 
 from src.v123_bst_official_draw_detection_engine import (
     OFFICIAL_BASE_URL,
+    RUNTIME_SUMMARY_MD,
     SUMMARY_MD,
     detect_latest_official_draw,
     latest_local_draw,
@@ -62,6 +63,7 @@ def render_v123_bst_official_draw_detection_section() -> None:
         if validation.get("errors"):
             st.code("\n".join(validation["errors"]), language="text")
 
-    if SUMMARY_MD.exists():
+    summary_path = RUNTIME_SUMMARY_MD if RUNTIME_SUMMARY_MD.exists() else SUMMARY_MD
+    if summary_path.exists():
         with st.expander("Последен Step 123 detection summary", expanded=False):
-            st.markdown(SUMMARY_MD.read_text(encoding="utf-8", errors="replace"))
+            st.markdown(summary_path.read_text(encoding="utf-8", errors="replace"))

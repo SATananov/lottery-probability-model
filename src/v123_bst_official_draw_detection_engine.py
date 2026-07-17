@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from src.v145_1_runtime_artifact_integrity import RUNTIME_ROOT, persist_json_pair, write_text
+from src.v145_1_runtime_artifact_integrity import RUNTIME_ROOT, write_json, write_text
 
 from src.bst_official_sync_engine import (
     BSTCaptchaBlockedError,
@@ -26,6 +26,11 @@ STATUS_JSON = MODELS_DIR / "v123_bst_official_draw_detection_status.json"
 REPORT_JSON = REPORTS_DIR / "v123_bst_official_draw_detection_report.json"
 SUMMARY_MD = REPORTS_DIR / "v123_bst_official_draw_detection_summary.md"
 STARTUP_AUDIT_JSONL = REPORTS_DIR / "v126_startup_automation_audit.jsonl"
+RUNTIME_DIR = RUNTIME_ROOT / "v123"
+RUNTIME_STATUS_JSON = RUNTIME_DIR / STATUS_JSON.name
+RUNTIME_REPORT_JSON = RUNTIME_DIR / REPORT_JSON.name
+RUNTIME_SUMMARY_MD = RUNTIME_DIR / SUMMARY_MD.name
+RUNTIME_STARTUP_AUDIT_JSONL = RUNTIME_ROOT / "v126" / STARTUP_AUDIT_JSONL.name
 
 
 def utc_now() -> str:
@@ -40,7 +45,7 @@ def _safe_int(value: Any) -> int | None:
 
 
 def _read_previous_detection() -> dict[str, Any]:
-    for path in (STATUS_JSON, REPORT_JSON):
+    for path in (RUNTIME_STATUS_JSON, RUNTIME_REPORT_JSON, STATUS_JSON, REPORT_JSON):
         if not path.exists():
             continue
         try:
@@ -56,9 +61,10 @@ def _last_known_good_draw(previous: dict[str, Any]) -> dict[str, Any]:
     candidate = previous.get("official_latest_draw") or previous.get("last_known_good_official_draw") or {}
     if candidate.get("year") and candidate.get("draw_number"):
         return dict(candidate)
-    if STARTUP_AUDIT_JSONL.exists():
+    audit_path = RUNTIME_STARTUP_AUDIT_JSONL if RUNTIME_STARTUP_AUDIT_JSONL.exists() else STARTUP_AUDIT_JSONL
+    if audit_path.exists():
         try:
-            lines = STARTUP_AUDIT_JSONL.read_text(encoding="utf-8-sig", errors="replace").splitlines()
+            lines = audit_path.read_text(encoding="utf-8-sig", errors="replace").splitlines()
         except OSError:
             lines = []
         for line in reversed(lines):
@@ -120,6 +126,7 @@ def detect_latest_official_draw(
     write_outputs: bool = True,
     index_fetcher: Callable[[int], str] | None = None,
     detail_fetcher: Callable[[int, int, int], dict[str, Any]] | None = None,
+    publish_snapshot: bool = False,
 ) -> dict[str, Any]:
     """Read-only detection. CAPTCHA is classified explicitly and never treated as parser drift."""
     checked_at = utc_now()
@@ -217,7 +224,7 @@ def detect_latest_official_draw(
         report["failure_stage"] = stage
 
     if write_outputs:
-        write_detection_outputs(report)
+        write_detection_outputs(report, publish_snapshot=publish_snapshot)
     return report
 
 def _render_detection_summary(report: dict[str, Any]) -> str:
@@ -240,18 +247,22 @@ def _render_detection_summary(report: dict[str, Any]) -> str:
     ])
 
 
-def write_detection_outputs(report: dict[str, Any]) -> None:
-    MODELS_DIR.mkdir(parents=True, exist_ok=True)
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    canonical_changed = persist_json_pair(
-        component="v123_bst_official_draw_detection",
-        payload=report,
-        canonical_paths=(STATUS_JSON, REPORT_JSON),
-        volatile_keys={"source_diagnostics"},
-    )
+def load_detection_report() -> dict[str, Any]:
+    """Return current ignored runtime state, falling back to the committed release snapshot."""
+    return _read_previous_detection()
+
+
+def write_detection_outputs(report: dict[str, Any], *, publish_snapshot: bool = False) -> None:
+    """Persist volatile detection state outside Git. Canonical snapshots require explicit publishing."""
     summary = _render_detection_summary(report)
-    write_text(RUNTIME_ROOT / "v123" / SUMMARY_MD.name, summary)
-    if canonical_changed:
+    write_json(RUNTIME_STATUS_JSON, report)
+    write_json(RUNTIME_REPORT_JSON, report)
+    write_text(RUNTIME_SUMMARY_MD, summary)
+    if publish_snapshot:
+        MODELS_DIR.mkdir(parents=True, exist_ok=True)
+        REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+        write_json(STATUS_JSON, report)
+        write_json(REPORT_JSON, report)
         write_text(SUMMARY_MD, summary)
 
 

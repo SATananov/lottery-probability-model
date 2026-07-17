@@ -1,0 +1,12 @@
+{
+  "step": "151.6",
+  "name": "Runtime Volatile Artifact Isolation and Clean Startup",
+  "policy": {
+    "normal_startup_writes_tracked_snapshots": false,
+    "manual_bst_check_writes_tracked_snapshots": false,
+    "runtime_root": "reports/runtime/",
+    "tracked_snapshot_publish_requires_explicit_flag": true,
+    "draw_data_changed": false,
+    "heavy_model_retraining_performed": false
+  }
+}

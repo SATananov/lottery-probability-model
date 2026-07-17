@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from src.v122_unified_official_draw_freshness_engine import build_freshness_report
-from src.v123_bst_official_draw_detection_engine import detect_latest_official_draw
+from src.v123_bst_official_draw_detection_engine import detect_latest_official_draw, load_detection_report
 from src.v128_production_auto_apply_guardrails_engine import consent_is_valid, load_checkpoint, load_config
 from src.v130_production_activation_audit_recovery_engine import checkpoint_inspector, list_activation_history, list_ingestion_backups
 
@@ -111,7 +111,7 @@ def _bst_operational_state(*, live_bst_check: bool, detection_status: str, bst_a
 
 def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: int = 15, write_outputs: bool = True) -> dict[str, Any]:
     freshness = build_freshness_report(write_outputs=False)
-    detection = detect_latest_official_draw(timeout=timeout_seconds, write_outputs=False) if live_bst_check else _read_json(ROOT / 'reports' / 'v123_bst_official_draw_detection_report.json')
+    detection = detect_latest_official_draw(timeout=timeout_seconds, write_outputs=False) if live_bst_check else load_detection_report()
     if not detection:
         detection = {'status': 'not_checked', 'local_latest_draw': freshness.get('official_latest_draw', {}), 'official_latest_draw': {}}
 

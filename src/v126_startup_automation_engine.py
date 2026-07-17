@@ -8,7 +8,7 @@ from typing import Any, Callable
 from src.v145_1_runtime_artifact_integrity import (
     RUNTIME_ROOT,
     append_jsonl_if_signature_changed,
-    persist_json_pair,
+    write_json,
     write_text,
 )
 
@@ -22,7 +22,13 @@ STATUS_JSON = ROOT / "models" / "v126_startup_automation_status.json"
 REPORT_JSON = ROOT / "reports" / "v126_startup_automation_report.json"
 SUMMARY_MD = ROOT / "reports" / "v126_startup_automation_summary.md"
 AUDIT_JSONL = ROOT / "reports" / "v126_startup_automation_audit.jsonl"
-RUNTIME_STATUS_JSON = RUNTIME_ROOT / "v126_startup_automation.json"
+RUNTIME_DIR = RUNTIME_ROOT / "v126"
+RUNTIME_STATUS_JSON = RUNTIME_DIR / STATUS_JSON.name
+RUNTIME_REPORT_JSON = RUNTIME_DIR / REPORT_JSON.name
+RUNTIME_SUMMARY_MD = RUNTIME_DIR / SUMMARY_MD.name
+RUNTIME_AUDIT_JSONL = RUNTIME_DIR / AUDIT_JSONL.name
+RUNTIME_AUDIT_SIGNATURE = RUNTIME_DIR / "last_audit_signature.sha256"
+LEGACY_RUNTIME_STATUS_JSON = RUNTIME_ROOT / "v126_startup_automation.json"
 
 DEFAULT_CONFIG: dict[str, Any] = {
     "auto_check_enabled": True,
@@ -87,7 +93,7 @@ def load_config_from_mapping(config: dict[str, Any]) -> dict[str, Any]:
 
 
 def load_status(path: Path = STATUS_JSON) -> dict[str, Any]:
-    candidates = (RUNTIME_STATUS_JSON, path) if path == STATUS_JSON else (path,)
+    candidates = (RUNTIME_STATUS_JSON, LEGACY_RUNTIME_STATUS_JSON, path) if path == STATUS_JSON else (path,)
     for candidate in candidates:
         if not candidate.exists():
             continue
@@ -144,38 +150,35 @@ def _write_outputs(
     report_path: Path = REPORT_JSON,
     summary_path: Path = SUMMARY_MD,
     audit_path: Path = AUDIT_JSONL,
+    publish_snapshot: bool = False,
 ) -> None:
+    summary = _render_startup_summary(report)
     default_paths = (status_path, report_path, summary_path, audit_path) == (
         STATUS_JSON, REPORT_JSON, SUMMARY_MD, AUDIT_JSONL
     )
-    summary = _render_startup_summary(report)
     if not default_paths:
         for path in (status_path, report_path, summary_path, audit_path):
             path.parent.mkdir(parents=True, exist_ok=True)
-        payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-        write_text(status_path, payload)
-        write_text(report_path, payload)
+        write_json(status_path, report)
+        write_json(report_path, report)
         write_text(summary_path, summary)
         with audit_path.open("a", encoding="utf-8", newline="") as handle:
             handle.write(json.dumps(report, ensure_ascii=False, sort_keys=True) + "\n")
         return
 
     volatile = {"source_diagnostics", "trigger", "cache_reused"}
-    canonical_changed = persist_json_pair(
-        component="v126_startup_automation",
-        payload=report,
-        canonical_paths=(STATUS_JSON, REPORT_JSON),
-        volatile_keys=volatile,
-    )
-    runtime_dir = RUNTIME_ROOT / "v126"
-    write_text(runtime_dir / SUMMARY_MD.name, summary)
+    write_json(RUNTIME_STATUS_JSON, report)
+    write_json(RUNTIME_REPORT_JSON, report)
+    write_text(RUNTIME_SUMMARY_MD, summary)
     append_jsonl_if_signature_changed(
-        runtime_dir / AUDIT_JSONL.name,
+        RUNTIME_AUDIT_JSONL,
         report,
-        signature_path=runtime_dir / "last_audit_signature.sha256",
+        signature_path=RUNTIME_AUDIT_SIGNATURE,
         volatile_keys=volatile,
     )
-    if canonical_changed:
+    if publish_snapshot:
+        write_json(STATUS_JSON, report)
+        write_json(REPORT_JSON, report)
         write_text(SUMMARY_MD, summary)
         AUDIT_JSONL.parent.mkdir(parents=True, exist_ok=True)
         with AUDIT_JSONL.open("a", encoding="utf-8", newline="") as handle:
@@ -192,6 +195,7 @@ def run_startup_automation(
     refresher: Callable[..., dict[str, Any]] | None = None,
     write_outputs: bool = True,
     previous_status: dict[str, Any] | None = None,
+    publish_snapshot: bool = False,
 ) -> dict[str, Any]:
     cfg = load_config_from_mapping(config or load_config())
     previous = load_status() if previous_status is None else previous_status
@@ -218,7 +222,7 @@ def run_startup_automation(
     if trigger == "startup" and not cfg["auto_check_enabled"] and not force_check:
         base.update(status="disabled", message="Автоматичната проверка при старт е изключена.", finished_at_utc=utc_now())
         if write_outputs:
-            _write_outputs(base)
+            _write_outputs(base, publish_snapshot=publish_snapshot)
         return base
 
     if trigger == "startup" and not force_check and cache_is_fresh(previous, cfg["cache_minutes"]):
@@ -276,5 +280,5 @@ def run_startup_automation(
 
     base["finished_at_utc"] = utc_now()
     if write_outputs:
-        _write_outputs(base)
+        _write_outputs(base, publish_snapshot=publish_snapshot)
     return base
