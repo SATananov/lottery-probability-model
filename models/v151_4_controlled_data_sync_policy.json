@@ -1,0 +1,23 @@
+{
+  "step": "151.4",
+  "name": "Controlled Prize History 54-55 Data Synchronization and Step 148 Settlement",
+  "ordered_phases": [
+    "strict preflight on Step 151.3 repaired state",
+    "atomic Prize History and SQLite import for draw 54 then 55",
+    "Step 120 historical-v40-v41 synchronization",
+    "Step 148 settlement for the pre-draw locked 2026-55 forecast",
+    "zero-blocker lightweight downstream rebuild including R compatibility layer",
+    "new Step 148 lock for expected draw 2026-56",
+    "final integrity verification"
+  ],
+  "official_record_source": "Bulgarian Sports Totalizator official 6/49 result pages",
+  "official_urls": [
+    "https://info.toto.bg/results/6x49/2026-54",
+    "https://info.toto.bg/results/6x49/2026-55"
+  ],
+  "captcha_policy": "frozen verified records; no CAPTCHA bypass and no live parser dependency",
+  "heavy_model_retraining_performed": false,
+  "personal_journal_policy": "only Prize History table and mirror may change",
+  "rollback_policy": "full data-models-reports and source restoration by apply wrapper on any failure",
+  "commit_or_push_performed": false
+}

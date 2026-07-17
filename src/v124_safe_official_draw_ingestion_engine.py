@@ -118,6 +118,35 @@ def _validate_staged_dataset(path: Path, expected_key: str, previous_count: int)
     }
 
 
+
+
+def _bootstrap_missing_mirror(data_path: Path, export_path: Path) -> bool:
+    if export_path.exists():
+        return False
+    rows = read_rows(data_path)
+    if not rows:
+        raise RuntimeError("Primary Prize History е празен; missing mirror не може да бъде създаден безопасно.")
+    keys = [_draw_key(row) for row in rows]
+    if len(keys) != len(set(keys)):
+        raise RuntimeError("Primary Prize History съдържа duplicate draw keys; mirror bootstrap е блокиран.")
+    invalid = [(_draw_key(row), validate_record(row)) for row in rows if validate_record(row)]
+    if invalid:
+        raise RuntimeError(f"Primary Prize History не преминава валидация: {invalid[:3]}")
+    export_path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temp_name = tempfile.mkstemp(prefix="step151_3_mirror_", suffix=".csv", dir=export_path.parent)
+    os.close(fd)
+    temp_path = Path(temp_name)
+    try:
+        shutil.copy2(data_path, temp_path)
+        os.replace(temp_path, export_path)
+    finally:
+        temp_path.unlink(missing_ok=True)
+    if _sha256(data_path) != _sha256(export_path):
+        export_path.unlink(missing_ok=True)
+        raise RuntimeError("Новосъздаденият journal mirror не е byte-identical с primary Prize History.")
+    return True
+
+
 def ingest_official_draw_record(
     record: dict[str, Any],
     *,
@@ -147,6 +176,7 @@ def ingest_official_draw_record(
         "promoted": False,
         "rollback_performed": False,
         "downstream_refresh_started": False,
+        "mirror_bootstrapped": False,
         "data_path": str(data_path),
         "export_path": str(export_path),
     }
@@ -204,8 +234,13 @@ def ingest_official_draw_record(
 
         if not data_path.exists():
             raise FileNotFoundError(f"Primary source of truth does not exist: {data_path}")
-        if not export_path.exists():
-            raise FileNotFoundError(f"Journal export mirror does not exist: {export_path}")
+        if export_path.exists() and _sha256(data_path) != _sha256(export_path):
+            report.update(
+                status="mirror_mismatch_blocked",
+                message="Primary Prize History и journal mirror се различават; ingestion е блокиран преди backup/promote.",
+            )
+            return report
+        report["mirror_bootstrapped"] = _bootstrap_missing_mirror(data_path, export_path)
 
         backup_export.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(data_path, backup_data)

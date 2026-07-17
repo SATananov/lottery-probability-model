@@ -94,7 +94,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> Non
                 merged_fields.append(key)
 
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=merged_fields)
+        writer = csv.DictWriter(handle, fieldnames=merged_fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in merged_fields})
@@ -198,6 +198,54 @@ def _canonical_prize_records() -> list[dict[str, Any]]:
     return sorted(records, key=_sort_key)
 
 
+
+
+def _numbers_signature(row: dict[str, Any]) -> tuple[int, ...]:
+    return tuple(_safe_int(row.get(f"n{i}"), 0) for i in range(1, 7))
+
+
+def _content_conflicts(prize_records: list[dict[str, Any]], layer_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    prize_map = {_pair(row): row for row in prize_records}
+    layer_map = {_pair(row): row for row in layer_rows}
+    conflicts: list[dict[str, Any]] = []
+    for pair in sorted(prize_map.keys() & layer_map.keys()):
+        prize = prize_map[pair]
+        layer = layer_map[pair]
+        prize_date = str(prize.get("date") or prize.get("draw_date") or "")
+        layer_date = str(layer.get("date") or layer.get("draw_date") or "")
+        if _numbers_signature(prize) != _numbers_signature(layer) or (prize_date and layer_date and prize_date != layer_date):
+            conflicts.append({
+                "year": pair[0],
+                "draw_number": pair[1],
+                "prize_numbers": list(_numbers_signature(prize)),
+                "layer_numbers": list(_numbers_signature(layer)),
+                "prize_date": prize_date,
+                "layer_date": layer_date,
+            })
+    return conflicts
+
+
+def _layer_relation(
+    latest_prize: dict[str, Any],
+    latest_layer: dict[str, Any],
+    missing: list[tuple[int, int]],
+    conflicts: list[dict[str, Any]],
+) -> str:
+    if not latest_layer.get("draw_number"):
+        return "unavailable"
+    if conflicts:
+        return "out_of_sync"
+    prize_pair = (_safe_int(latest_prize.get("year"), 0), _safe_int(latest_prize.get("draw_number"), 0))
+    layer_pair = (_safe_int(latest_layer.get("year"), 0), _safe_int(latest_layer.get("draw_number"), 0))
+    if layer_pair > prize_pair:
+        return "ahead"
+    if layer_pair < prize_pair:
+        return "behind"
+    if missing:
+        return "out_of_sync"
+    return "synced"
+
+
 def get_sync_status() -> dict[str, Any]:
     prize_records = _canonical_prize_records()
     historical_rows = _read_csv(HISTORICAL_DRAWS_CSV)
@@ -205,29 +253,42 @@ def get_sync_status() -> dict[str, Any]:
     v41_rows = _read_csv(V41_CANONICAL_CSV)
 
     prize_pairs = {_pair(row) for row in prize_records}
-    historical_pairs = {_pair(row) for row in historical_rows}
-    v40_pairs = {_pair(row) for row in v40_rows}
-    v41_pairs = {_pair(row) for row in v41_rows}
-
-    missing_historical = sorted(prize_pairs - historical_pairs)
-    missing_v40 = sorted(prize_pairs - v40_pairs)
-    missing_v41 = sorted(prize_pairs - v41_pairs)
-
+    layer_rows = {
+        "historical_draws": historical_rows,
+        "v40_normalized": v40_rows,
+        "v41_canonical": v41_rows,
+    }
+    layer_pairs = {key: {_pair(row) for row in rows} for key, rows in layer_rows.items()}
+    missing = {key: sorted(prize_pairs - pairs) for key, pairs in layer_pairs.items()}
     latest_prize = _latest_pair(prize_records)
-    latest_historical = _latest_pair(historical_rows)
-    latest_v40 = _latest_pair(v40_rows)
-    latest_v41 = _latest_pair(v41_rows)
+    latest = {
+        "historical_draws": _latest_pair(historical_rows),
+        "v40_normalized": _latest_pair(v40_rows),
+        "v41_canonical": _latest_pair(v41_rows),
+    }
+    conflicts = {key: _content_conflicts(prize_records, rows) for key, rows in layer_rows.items()}
+    relations = {
+        key: _layer_relation(latest_prize, latest[key], missing[key], conflicts[key])
+        for key in layer_rows
+    }
+    status = "MODEL_DATA_SYNCED" if all(value == "synced" for value in relations.values()) else "MODEL_DATA_OUT_OF_SYNC"
 
-    max_missing_count = max(len(missing_historical), len(missing_v40), len(missing_v41))
-    status = "MODEL_DATA_SYNCED" if max_missing_count == 0 else "MODEL_DATA_OUT_OF_SYNC"
-
+    latest_prize_pair = (_safe_int(latest_prize.get("year"), 0), _safe_int(latest_prize.get("draw_number"), 0))
+    ahead = {
+        key: [
+            {"year": year, "draw_number": draw}
+            for year, draw in sorted(pair for pair in layer_pairs[key] if pair > latest_prize_pair)
+        ]
+        for key in layer_rows
+    }
     return {
         "checked_at_utc": utc_now(),
         "status": status,
         "latest_prize_history": latest_prize,
-        "latest_historical_draws": latest_historical,
-        "latest_v40_normalized": latest_v40,
-        "latest_v41_canonical": latest_v41,
+        "latest_historical_draws": latest["historical_draws"],
+        "latest_v40_normalized": latest["v40_normalized"],
+        "latest_v41_canonical": latest["v41_canonical"],
+        "layer_status": relations,
         "counts": {
             "prize_history": len(prize_records),
             "historical_draws": len(historical_rows),
@@ -235,16 +296,16 @@ def get_sync_status() -> dict[str, Any]:
             "v41_canonical": len(v41_rows),
         },
         "missing": {
-            "historical_draws": [{"year": y, "draw_number": d} for y, d in missing_historical],
-            "v40_normalized": [{"year": y, "draw_number": d} for y, d in missing_v40],
-            "v41_canonical": [{"year": y, "draw_number": d} for y, d in missing_v41],
+            key: [{"year": year, "draw_number": draw} for year, draw in values]
+            for key, values in missing.items()
         },
+        "ahead_of_prize_history": ahead,
+        "conflicts": conflicts,
         "policy": {
             "model_retraining": "not_automatic",
-            "reason": "A new official draw updates the model dataset layer, but heavy ML retraining remains a deliberate manual step.",
+            "reason": "Dataset synchronization now requires equal latest draw, no missing Prize History draws and no content conflicts.",
         },
     }
-
 
 def _record_map(records: list[dict[str, Any]]) -> dict[tuple[int, int], dict[str, Any]]:
     return {_pair(row): row for row in records}

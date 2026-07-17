@@ -2,31 +2,31 @@
 
 - Protocol ID: `PFT-148-9873e2dabbe3ec8e287f`
 - Status: **ACTIVE**
-- Eligible settled draws: **1 / 30**
-- Remaining draws: **29**
+- Eligible settled draws: **2 / 30**
+- Remaining draws: **28**
 - Next milestone: **10**
-- Ledger events: **4**
+- Ledger events: **6**
 - Ledger integrity: **PASS**
 - Production promotion: **BLOCKED**
 
 ## Active pre-draw lock
 
-- Lock ID: `LOCK-148-29ad1f2b8b69a3bc45e7de02`
-- Locked at UTC: `2026-07-13T03:25:50+00:00`
-- Expected draw: **2026-55**
-- Source dataset rows: **10064**
-- Forecast signature: `9da6becb0a69911bd7dfba1081306dbbac6a56080788c53b7a0a05c616c38fa9`
+- Lock ID: `LOCK-148-77bd8de48241186a6f388cb4`
+- Locked at UTC: `2026-07-17T05:39:33+00:00`
+- Expected draw: **2026-56**
+- Source dataset rows: **10065**
+- Forecast signature: `16eb625834fbe851a46011b2cd5f694b1e623b16ca545cfb62e3483d250e3277`
 
 ## Prospective aggregate results
 
 | Method | Draws | Average best hits |
 |---|---:|---:|
-| neural_dynamics_frozen_ensemble | 1 | 2.000000 |
-| frequency_walk_forward | 1 | 1.000000 |
-| recency_weighted_walk_forward | 1 | 1.000000 |
-| recent_window_frequency | 1 | 2.000000 |
-| frequency_recency_blend | 1 | 3.000000 |
-| uniform_random_mean | 1 | 2.060000 |
+| neural_dynamics_frozen_ensemble | 2 | 2.000000 |
+| frequency_walk_forward | 2 | 1.500000 |
+| recency_weighted_walk_forward | 2 | 1.500000 |
+| recent_window_frequency | 2 | 2.000000 |
+| frequency_recency_blend | 2 | 2.500000 |
+| uniform_random_mean | 2 | 2.040000 |
 
 ## Protocol protections
 

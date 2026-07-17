@@ -64,6 +64,16 @@ def _bst_operational_state(*, live_bst_check: bool, detection_status: str, bst_a
             'Официалният индекс не е достъпен',
             'Провери интернет/DNS/TLS достъпа и повтори само read-only live проверката. Не прилагай тираж ръчно само заради мрежова грешка.',
         ),
+        'index_captcha': (
+            'BST_INDEX_CAPTCHA_BLOCKED',
+            'Официалният индекс върна CAPTCHA',
+            'Не променяй parser-а. Изчакай или използвай валидирания CAPTCHA-safe manual import поток.',
+        ),
+        'detail_captcha': (
+            'BST_DETAIL_CAPTCHA_BLOCKED',
+            'Страницата на тиража върна CAPTCHA',
+            'Ingestion остава блокиран fail-closed. Използвай само валидиран ръчен импорт с официален URL.',
+        ),
         'index_parse': (
             'BST_INDEX_PARSE_UNRECOGNIZED',
             'Индексът е достъпен, но форматът не е разпознат',
@@ -116,7 +126,7 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
     official_draw = detection.get('official_latest_draw') or {}
     local_draw = detection.get('local_latest_draw') or freshness.get('official_latest_draw') or {}
     detection_status = str(detection.get('status') or 'not_checked')
-    bst_available = detection_status not in {'official_unavailable', 'check_failed', 'not_checked'} and bool(official_draw)
+    bst_available = detection_status not in {'official_unavailable', 'captcha_blocked', 'check_failed', 'not_checked'} and bool(official_draw)
     diagnostics = detection.get('source_diagnostics') or {}
     connectivity = detection.get('connectivity') or {}
     failure_stage = detection.get('failure_stage')
@@ -128,9 +138,16 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
     )
 
     sources = freshness.get('sources') or []
+    non_blocking_statuses = {'synced', 'informational', 'local_optional'}
+    blocking_sources = [
+        row for row in sources
+        if row.get('key') != 'official' and str(row.get('status') or '') not in non_blocking_statuses
+    ]
     synced_count = sum(1 for row in sources if row.get('status') == 'synced')
-    out_of_sync_count = sum(1 for row in sources if row.get('status') == 'out_of_sync')
-    unavailable_count = sum(1 for row in sources if row.get('status') == 'unavailable')
+    out_of_sync_count = len(blocking_sources)
+    unavailable_count = sum(1 for row in blocking_sources if row.get('status') in {'unavailable', 'missing'})
+    ahead_count = sum(1 for row in blocking_sources if row.get('status') == 'ahead')
+    behind_count = sum(1 for row in blocking_sources if row.get('status') == 'behind')
 
     token_exists = bool(token)
     token_consumed = bool(token.get('consumed')) if token_exists else False
@@ -151,7 +168,7 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
 
     if not checks['primary_mirror_equal']:
         health = 'critical'
-    elif out_of_sync_count > 0 or detection_status in {'official_unavailable', 'check_failed'}:
+    elif out_of_sync_count > 0 or detection_status in {'official_unavailable', 'captcha_blocked', 'check_failed'}:
         health = 'attention'
     else:
         health = 'healthy'
@@ -189,6 +206,9 @@ def build_operations_snapshot(*, live_bst_check: bool = False, timeout_seconds: 
             'synced_count': synced_count,
             'out_of_sync_count': out_of_sync_count,
             'unavailable_count': unavailable_count,
+            'ahead_count': ahead_count,
+            'behind_count': behind_count,
+            'blocking_sources': blocking_sources,
             'sources': sources,
         },
         'activation': {

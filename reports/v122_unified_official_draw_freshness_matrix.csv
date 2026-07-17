@@ -1,12 +1,12 @@
 key,label,status,year,draw_number,date,draw_delta,path,message
-official,Официална история,synced,2026,53,2026-07-09,0,data/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
-journal_prize,Дневник — история на печалбите,synced,2026,53,2026-07-09,0,data/user_journal_exports/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
-historical,Исторически тиражи,synced,2026,53,2026-07-09,0,data/historical_draws.csv,Синхронизиран с официалния последен тираж.
-normalized,Нормализирани събития,synced,2026,53,2026-07-09,0,data/v40_normalized_draw_events.csv,Синхронизиран с официалния последен тираж.
-canonical,Канонични събития,synced,2026,53,2026-07-09,0,data/v41_canonical_draw_events.csv,Синхронизиран с официалния последен тираж.
-r_layer,R статистически слой,synced,2026,53,2026-07-09,0,reports/r/r_data_audit.csv,Синхронизиран с официалния последен тираж.
-step121,R статистически характеристики,synced,2026,53,2026-07-09,0,models/v121_r_statistical_features_status.json,Синхронизиран с официалния последен тираж.
-decision,Решение за игра,synced,2026,53,2026-07-09,0,reports/v115_play_decision_center_report.json,Синхронизиран с официалния последен тираж.
-final_pack,Готов фиш пакет,synced,2026,53,2026-07-09,0,reports/v117_real_ticket_pack_builder_summary.json,Синхронизиран с официалния последен тираж.
-model_system,Системен фиш от моделите,synced,2026,53,2026-07-09,0,reports/v118_model_system_ticket_builder_summary.json,Синхронизиран с официалния последен тираж.
+official,Официална история,synced,2026,55,2026-07-16,0,data/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
+journal_prize,Дневник — история на печалбите,synced,2026,55,2026-07-16,0,data/user_journal_exports/prize_winner_history.csv,Синхронизиран с официалния последен тираж.
+historical,Исторически тиражи,synced,2026,55,2026-07-16,0,data/historical_draws.csv,Синхронизиран с официалния последен тираж.
+normalized,Нормализирани събития,synced,2026,55,2026-07-16,0,data/v40_normalized_draw_events.csv,Синхронизиран с официалния последен тираж.
+canonical,Канонични събития,synced,2026,55,2026-07-16,0,data/v41_canonical_draw_events.csv,Синхронизиран с официалния последен тираж.
+r_layer,R статистически слой,synced,2026,55,2026-07-16,0,reports/r/r_data_audit.csv,Синхронизиран с официалния последен тираж.
+step121,R статистически характеристики,synced,2026,55,2026-07-16,0,models/v121_r_statistical_features_status.json,Синхронизиран с официалния последен тираж.
+decision,Решение за игра,synced,2026,55,2026-07-16,0,reports/v115_play_decision_center_report.json,Синхронизиран с официалния последен тираж.
+final_pack,Готов фиш пакет,synced,2026,55,2026-07-16,0,reports/v117_real_ticket_pack_builder_summary.json,Синхронизиран с официалния последен тираж.
+model_system,Системен фиш от моделите,synced,2026,55,2026-07-16,0,reports/v118_model_system_ticket_builder_summary.json,Синхронизиран с официалния последен тираж.
 models,Обучени ML модели,informational,,,,,models/,Моделите се обновяват по отделна политика и не са част от обновяването след всеки тираж.

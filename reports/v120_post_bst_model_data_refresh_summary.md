@@ -1,11 +1,11 @@
 # Step 120 — Post-BST Sync Model Data Refresh
 
-- Refreshed at UTC: `2026-07-11T10:29:24+00:00`
+- Refreshed at UTC: `2026-07-17T05:39:19+00:00`
 - Final status: **MODEL_DATA_SYNCED**
-- Latest prize history draw: **2026 / 53**
-- Latest historical draw: **2026 / 53**
-- Latest v40 normalized draw: **2026 / 53**
-- Latest v41 canonical draw: **2026 / 53**
+- Latest prize history draw: **2026 / 55**
+- Latest historical draw: **2026 / 55**
+- Latest v40 normalized draw: **2026 / 55**
+- Latest v41 canonical draw: **2026 / 55**
 
 ## Inserted records
 

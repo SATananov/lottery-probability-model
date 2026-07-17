@@ -1,19 +1,19 @@
 {
   "step": "122",
   "name": "Unified Official Draw Freshness Layer",
-  "generated_at_utc": "2026-07-13T02:48:34+00:00",
+  "generated_at_utc": "2026-07-17T05:39:32+00:00",
   "official_source_of_truth": "data/prize_winner_history.csv",
   "official_latest_draw": {
     "year": 2026,
-    "draw_number": 53,
-    "date": "2026-07-09",
+    "draw_number": 55,
+    "date": "2026-07-16",
     "numbers": [
-      12,
+      5,
+      10,
       17,
-      23,
-      30,
-      38,
-      41
+      20,
+      42,
+      47
     ]
   },
   "overall_status": "synced",
@@ -28,15 +28,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -50,15 +50,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -72,15 +72,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -94,15 +94,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -116,15 +116,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -138,15 +138,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -160,15 +160,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -182,8 +182,8 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": []
       },
       "status": "synced",
@@ -197,15 +197,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",
@@ -219,15 +219,15 @@
       "exists": true,
       "latest": {
         "year": 2026,
-        "draw_number": 53,
-        "date": "2026-07-09",
+        "draw_number": 55,
+        "date": "2026-07-16",
         "numbers": [
-          12,
+          5,
+          10,
           17,
-          23,
-          30,
-          38,
-          41
+          20,
+          42,
+          47
         ]
       },
       "status": "synced",

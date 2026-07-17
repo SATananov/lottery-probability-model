@@ -3,59 +3,59 @@
   "status": "PRIZE_WINNER_IMPORT_READY",
   "blocking_failures": 0,
   "official_source": "https://info.toto.bg/results/6x49",
-  "imported_draws": 26,
+  "imported_draws": 32,
   "interval_summary": {
     "6": {
       "category": 6,
-      "total_draws": 26,
+      "total_draws": 32,
       "event_count": 1,
-      "draws_without_event": 25,
+      "draws_without_event": 31,
       "avg_interval": null,
       "median_interval": null,
       "max_interval": null,
-      "current_gap": 14,
+      "current_gap": 20,
       "last_event_date": "2026-05-07",
       "last_event_draw": 35,
       "last_event_winners": 1
     },
     "5": {
       "category": 5,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 2
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 19
     },
     "4": {
       "category": 4,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 442
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 574
     },
     "3": {
       "category": 3,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 7164
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 10791
     }
   }
 }

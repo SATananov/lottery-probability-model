@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-07-11T10:29:43+00:00",
+  "generated_at_utc": "2026-07-17T05:39:30+00:00",
   "latest_draw": {
     "year": 2026,
-    "draw_number": 53,
-    "date": "2026-07-09",
+    "draw_number": 55,
+    "date": "2026-07-16",
     "numbers": [
-      12,
+      5,
+      10,
       17,
-      23,
-      30,
-      38,
-      41
+      20,
+      42,
+      47
     ]
   },
   "feature_outputs": {

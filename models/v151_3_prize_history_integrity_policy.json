@@ -1,0 +1,23 @@
+{
+  "step": "151.3",
+  "name": "Prize History Integrity, CAPTCHA Diagnostics and Freshness Repair",
+  "scope": [
+    "prevent empty or partial SQLite Prize History from overwriting a non-empty canonical CSV",
+    "hydrate an empty SQLite Prize History table from the canonical CSV",
+    "validate CAPTCHA-safe manual imports fail-closed",
+    "preserve verified financial fields when an incoming CSV omits them",
+    "classify BST index/detail CAPTCHA separately from parser drift",
+    "preserve the last validated official draw as diagnostic evidence",
+    "require exact latest-draw equality in Step 120 synchronization",
+    "count ahead, behind, missing and unavailable freshness states as Step 131 blockers",
+    "bootstrap a missing journal mirror safely before Step 124 ingestion",
+    "route the legacy BST write path through Step 124 safe ingestion"
+  ],
+  "historical_draw_data_changed": false,
+  "prize_history_data_changed": false,
+  "draw_54_imported": false,
+  "draw_55_imported": false,
+  "step_148_lock_changed": false,
+  "heavy_model_retraining_performed": false,
+  "next_required_phase": "validated data synchronization for draws 54 and 55"
+}

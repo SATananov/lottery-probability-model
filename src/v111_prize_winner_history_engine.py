@@ -1,16 +1,22 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import html
+import io
 import json
+import os
 import re
+import shutil
 import sqlite3
+import tempfile
 import urllib.error
 import urllib.request
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from statistics import mean, median
-from typing import Any
+from typing import Any, Iterator
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "data" / "user_journal.db"
@@ -41,11 +47,21 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-def connect() -> sqlite3.Connection:
+@contextmanager
+def connect() -> Iterator[sqlite3.Connection]:
+    """Open a transaction-scoped SQLite connection and always close its Windows handle."""
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
-    return conn
+    try:
+        yield conn
+    except Exception:
+        conn.rollback()
+        raise
+    else:
+        conn.commit()
+    finally:
+        conn.close()
 
 
 def initialize_database() -> None:
@@ -119,6 +135,243 @@ def _format_money(value: Any) -> str:
 
 def _format_numbers(numbers: list[int]) -> str:
     return ", ".join(str(number) for number in numbers)
+
+
+class PrizeHistoryIntegrityError(RuntimeError):
+    """Raised when Prize History persistence would risk data loss or drift."""
+
+
+_OPTIONAL_INT_FIELDS = tuple(f"winners_{category}" for category in (6, 5, 4, 3))
+_OPTIONAL_FLOAT_FIELDS = (
+    "jackpot_eur",
+    *(f"prize_{category}_eur" for category in (6, 5, 4, 3)),
+    *(f"total_{category}_eur" for category in (6, 5, 4, 3)),
+)
+_CORE_FIELDS = ("draw_year", "draw_number", "draw_date", "n1", "n2", "n3", "n4", "n5", "n6")
+
+
+def _optional_int(value: Any) -> int | None:
+    if value is None or str(value).strip() == "":
+        return None
+    parsed = _safe_int(value, -1)
+    if parsed < 0:
+        raise ValueError(f"Невалидна отрицателна числова стойност: {value}")
+    return parsed
+
+
+def _optional_float(value: Any) -> float | None:
+    if value is None or str(value).strip() == "":
+        return None
+    parsed = _safe_float(value, -1.0)
+    if parsed < 0:
+        raise ValueError(f"Невалидна отрицателна парична стойност: {value}")
+    return parsed
+
+
+def _read_history_csv(path: Path = DATA_PATH) -> list[dict[str, Any]]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return [dict(row) for row in csv.DictReader(handle)]
+
+
+def _normalize_history_record(record: dict[str, Any], *, row_label: str = "Запис") -> dict[str, Any]:
+    draw_year = _safe_int(record.get("draw_year") or record.get("year"), 0)
+    draw_number = _safe_int(record.get("draw_number") or record.get("draw"), 0)
+    draw_date = str(record.get("draw_date") or record.get("date") or "").strip()
+    if re.fullmatch(r"\d{2}\.\d{2}\.\d{4}", draw_date):
+        draw_date = datetime.strptime(draw_date, "%d.%m.%Y").strftime("%Y-%m-%d")
+    try:
+        parsed_date = datetime.strptime(draw_date, "%Y-%m-%d").date()
+    except ValueError as exc:
+        raise ValueError(f"{row_label}: датата трябва да е валидна и във формат YYYY-MM-DD или DD.MM.YYYY.") from exc
+    if draw_year <= 0 or draw_number <= 0:
+        raise ValueError(f"{row_label}: липсва валидна година или номер на тираж.")
+    if parsed_date.year != draw_year:
+        raise ValueError(f"{row_label}: draw_year {draw_year} не съвпада с датата {draw_date}.")
+
+    numbers = [_safe_int(record.get(f"n{position}"), -1) for position in range(1, 7)]
+    if not all(1 <= number <= 49 for number in numbers):
+        raw = str(record.get("numbers_text") or record.get("numbers") or "")
+        numbers = [_safe_int(token, -1) for token in re.findall(r"\b\d{1,2}\b", raw)]
+        numbers = [number for number in numbers if 1 <= number <= 49][:6]
+    if len(numbers) != 6 or not all(1 <= number <= 49 for number in numbers):
+        raise ValueError(f"{row_label}: нужни са точно шест числа от 1 до 49.")
+    if len(set(numbers)) != 6:
+        raise ValueError(f"{row_label}: шестте числа трябва да са уникални.")
+    if numbers != sorted(numbers):
+        raise ValueError(f"{row_label}: шестте числа трябва да са подредени във възходящ ред.")
+
+    expected_key = f"{draw_year}-{draw_number}"
+    source_url = str(record.get("source_url") or "").strip()
+    normalized: dict[str, Any] = {
+        "draw_key": expected_key,
+        "draw_year": draw_year,
+        "draw_number": draw_number,
+        "draw_date": draw_date,
+        "numbers_text": _format_numbers(numbers),
+        "source_url": source_url or official_url(draw_year, draw_number),
+        "imported_at_utc": str(record.get("imported_at_utc") or utc_now()),
+        "note": str(record.get("note") or "").strip(),
+    }
+    for position, number in enumerate(numbers, start=1):
+        normalized[f"n{position}"] = number
+    for field in _OPTIONAL_INT_FIELDS:
+        normalized[field] = _optional_int(record.get(field))
+    for field in _OPTIONAL_FLOAT_FIELDS:
+        normalized[field] = _optional_float(record.get(field))
+    return normalized
+
+
+def _insert_sql() -> str:
+    columns = ", ".join(CSV_FIELDS)
+    values = ", ".join(f":{field}" for field in CSV_FIELDS)
+    return f"INSERT INTO prize_winner_history ({columns}) VALUES ({values})"
+
+
+def _storage_payload(record: dict[str, Any]) -> dict[str, Any]:
+    return {field: record.get(field) for field in CSV_FIELDS}
+
+
+def _query_history_rows(conn: sqlite3.Connection) -> list[dict[str, Any]]:
+    return [dict(row) for row in conn.execute(
+        "SELECT * FROM prize_winner_history ORDER BY draw_year, draw_number, draw_date"
+    ).fetchall()]
+
+
+def ensure_database_hydrated_from_csv() -> dict[str, Any]:
+    """Hydrate an empty SQLite table from a non-empty canonical CSV, never the reverse."""
+    initialize_database()
+    csv_rows = _read_history_csv(DATA_PATH)
+    with connect() as conn:
+        db_rows = _query_history_rows(conn)
+        if db_rows and csv_rows:
+            normalized_csv = [
+                _normalize_history_record(row, row_label=f"CSV ред {index}")
+                for index, row in enumerate(csv_rows, start=2)
+            ]
+            csv_map = {row["draw_key"]: row for row in normalized_csv}
+            db_map = {str(row.get("draw_key") or ""): row for row in db_rows}
+            missing_in_db = sorted(set(csv_map) - set(db_map))
+            conflicts = [
+                key for key in sorted(set(csv_map) & set(db_map))
+                if _core_signature(csv_map[key]) != _core_signature(db_map[key])
+            ]
+            if missing_in_db or conflicts:
+                raise PrizeHistoryIntegrityError(
+                    "SQLite/CSV Prize History drift detected; export is blocked. "
+                    f"missing_in_db={missing_in_db[:5]}, conflicts={conflicts[:5]}"
+                )
+            return {
+                "hydrated": False,
+                "database_rows": len(db_rows),
+                "csv_rows": len(csv_rows),
+            }
+        if db_rows or not csv_rows:
+            return {
+                "hydrated": False,
+                "database_rows": len(db_rows),
+                "csv_rows": len(csv_rows),
+            }
+        normalized = [
+            _normalize_history_record(row, row_label=f"CSV ред {index}")
+            for index, row in enumerate(csv_rows, start=2)
+        ]
+        keys = [row["draw_key"] for row in normalized]
+        if len(keys) != len(set(keys)):
+            raise PrizeHistoryIntegrityError("Canonical Prize History CSV съдържа дублирани тиражи.")
+        conn.execute("BEGIN IMMEDIATE")
+        try:
+            conn.executemany(_insert_sql(), [_storage_payload(row) for row in normalized])
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+    return {"hydrated": True, "database_rows": len(normalized), "csv_rows": len(csv_rows)}
+
+
+def _csv_payload(rows: list[dict[str, Any]]) -> bytes:
+    output = io.StringIO(newline="")
+    writer = csv.DictWriter(output, fieldnames=CSV_FIELDS, lineterminator="\n")
+    writer.writeheader()
+    for row in sorted(rows, key=lambda item: (
+        _safe_int(item.get("draw_year"), 0),
+        _safe_int(item.get("draw_number"), 0),
+        str(item.get("draw_date") or ""),
+    )):
+        writer.writerow({field: "" if row.get(field) is None else row.get(field, "") for field in CSV_FIELDS})
+    return output.getvalue().encode("utf-8")
+
+
+def _restore_file(path: Path, old_bytes: bytes | None) -> None:
+    if old_bytes is None:
+        path.unlink(missing_ok=True)
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temp_name = tempfile.mkstemp(prefix="step151_3_restore_", suffix=path.suffix, dir=path.parent)
+    os.close(fd)
+    temp_path = Path(temp_name)
+    try:
+        temp_path.write_bytes(old_bytes)
+        os.replace(temp_path, path)
+    finally:
+        temp_path.unlink(missing_ok=True)
+
+
+def _atomic_write_csv_pair(payload: bytes) -> None:
+    DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    EXPORT_CSV.parent.mkdir(parents=True, exist_ok=True)
+    old_data = DATA_PATH.read_bytes() if DATA_PATH.exists() else None
+    old_export = EXPORT_CSV.read_bytes() if EXPORT_CSV.exists() else None
+    temp_paths: list[Path] = []
+    try:
+        for target in (DATA_PATH, EXPORT_CSV):
+            fd, temp_name = tempfile.mkstemp(prefix="step151_3_prize_", suffix=".csv", dir=target.parent)
+            os.close(fd)
+            temp_path = Path(temp_name)
+            temp_path.write_bytes(payload)
+            temp_paths.append(temp_path)
+        if hashlib.sha256(temp_paths[0].read_bytes()).digest() != hashlib.sha256(temp_paths[1].read_bytes()).digest():
+            raise PrizeHistoryIntegrityError("Staged Prize History mirrors are not byte-identical.")
+        os.replace(temp_paths[0], DATA_PATH)
+        os.replace(temp_paths[1], EXPORT_CSV)
+    except Exception:
+        _restore_file(DATA_PATH, old_data)
+        _restore_file(EXPORT_CSV, old_export)
+        raise
+    finally:
+        for temp_path in temp_paths:
+            temp_path.unlink(missing_ok=True)
+
+
+def _core_signature(row: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(str(row.get(field) if row.get(field) is not None else "") for field in _CORE_FIELDS)
+
+
+def _backup_database() -> Path:
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fd, name = tempfile.mkstemp(prefix="step151_3_db_backup_", suffix=".sqlite", dir=DB_PATH.parent)
+    os.close(fd)
+    backup_path = Path(name)
+    with connect() as source:
+        destination = sqlite3.connect(backup_path)
+        try:
+            source.backup(destination)
+            destination.commit()
+        finally:
+            destination.close()
+    return backup_path
+
+
+def _restore_database(backup_path: Path) -> None:
+    fd, temp_name = tempfile.mkstemp(prefix="step151_3_db_restore_", suffix=".sqlite", dir=DB_PATH.parent)
+    os.close(fd)
+    temp_path = Path(temp_name)
+    try:
+        shutil.copy2(backup_path, temp_path)
+        os.replace(temp_path, DB_PATH)
+    finally:
+        temp_path.unlink(missing_ok=True)
 
 
 def official_url(year: int, draw_number: int | None = None) -> str:
@@ -715,114 +968,147 @@ def _value_from_row(row: dict[str, Any], *names: str, default: Any = "") -> Any:
 def parse_manual_csv_text(csv_text: str) -> list[dict[str, Any]]:
     rows = _read_manual_csv_rows(csv_text)
     records: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
     for index, row in enumerate(rows, start=1):
         draw_year = _safe_int(_value_from_row(row, "draw_year", "year", "година"), 0)
         draw_number = _safe_int(_value_from_row(row, "draw_number", "draw", "тираж", "тираж №"), 0)
         draw_date_raw = str(_value_from_row(row, "draw_date", "date", "дата")).strip()
-        if re.fullmatch(r"\d{2}\.\d{2}\.\d{4}", draw_date_raw):
-            dd, mm, yyyy = draw_date_raw.split(".")
-            draw_date = f"{yyyy}-{mm}-{dd}"
-        else:
-            draw_date = draw_date_raw
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", draw_date):
-            raise ValueError(f"Ред {index}: датата трябва да е YYYY-MM-DD или DD.MM.YYYY.")
         if not draw_year:
-            draw_year = _safe_int(draw_date.split("-")[0], 0)
-        if not draw_year or not draw_number:
-            raise ValueError(f"Ред {index}: липсва година или номер на тираж.")
+            date_year_match = re.search(r"(20\d{2})", draw_date_raw)
+            draw_year = _safe_int(date_year_match.group(1), 0) if date_year_match else 0
         numbers = [_safe_int(_value_from_row(row, f"n{pos}", f"число {pos}", f"number_{pos}"), -1) for pos in range(1, 7)]
-        if not all(1 <= number <= 49 for number in numbers):
-            numbers_text = str(_value_from_row(row, "numbers_text", "numbers", "числа", default=""))
-            parsed = [_safe_int(item, -1) for item in re.findall(r"\b\d{1,2}\b", numbers_text)]
-            numbers = [value for value in parsed if 1 <= value <= 49][:6]
-        if len(numbers) != 6 or not all(1 <= number <= 49 for number in numbers):
-            raise ValueError(f"Ред {index}: липсват шест валидни числа от 1 до 49.")
-        record: dict[str, Any] = {
-            "draw_key": f"{draw_year}-{draw_number}",
+        numbers_text = str(_value_from_row(row, "numbers_text", "numbers", "числа", default=""))
+        source_value = str(_value_from_row(row, "source_url", "source", "източник", default="")).strip()
+        source_url = source_value or official_url(draw_year, draw_number)
+        official_pattern = rf"^https://info\.toto\.bg/results/6x49/{draw_year}-{draw_number}(?:[/?#].*)?$"
+        if not re.fullmatch(official_pattern, source_url, flags=re.IGNORECASE):
+            raise ValueError(f"Ред {index}: source_url трябва да е официалната БСТ страница за същия тираж.")
+
+        raw_record: dict[str, Any] = {
             "draw_year": draw_year,
             "draw_number": draw_number,
-            "draw_date": draw_date,
-            "numbers_text": _format_numbers(numbers),
-            "jackpot_eur": _safe_float(_value_from_row(row, "jackpot_eur", "jackpot", "джакпот")),
-            "source_url": str(_value_from_row(row, "source_url", "source", "източник", default="ръчен CSV импорт")).strip() or "ръчен CSV импорт",
+            "draw_date": draw_date_raw,
+            "numbers_text": numbers_text,
+            "source_url": source_url,
             "imported_at_utc": utc_now(),
-            "note": "Импортирано ръчно от CSV, когато автоматичният импорт от БСТ е блокиран с CAPTCHA.",
+            "note": "Импортирано ръчно от CSV при CAPTCHA; официалният URL е запазен за последваща проверка.",
         }
         for pos, number in enumerate(numbers, start=1):
-            record[f"n{pos}"] = int(number)
+            raw_record[f"n{pos}"] = number
         for category in (6, 5, 4, 3):
-            record[f"winners_{category}"] = _safe_int(_value_from_row(row, f"winners_{category}", f"{category} числа", f"broi_{category}"), 0)
-            record[f"prize_{category}_eur"] = _safe_float(_value_from_row(row, f"prize_{category}_eur", f"prize_{category}", f"pechalba_{category}"), 0.0)
-            record[f"total_{category}_eur"] = _safe_float(_value_from_row(row, f"total_{category}_eur", f"total_{category}", f"obshto_{category}"), 0.0)
-        records.append(record)
+            raw_record[f"winners_{category}"] = _value_from_row(
+                row, f"winners_{category}", f"{category} числа", f"broi_{category}", default=""
+            )
+            raw_record[f"prize_{category}_eur"] = _value_from_row(
+                row, f"prize_{category}_eur", f"prize_{category}", f"pechalba_{category}", default=""
+            )
+            raw_record[f"total_{category}_eur"] = _value_from_row(
+                row, f"total_{category}_eur", f"total_{category}", f"obshto_{category}", default=""
+            )
+        raw_record["jackpot_eur"] = _value_from_row(row, "jackpot_eur", "jackpot", "джакпот", default="")
+        normalized = _normalize_history_record(raw_record, row_label=f"Ред {index}")
+        if normalized["draw_key"] in seen_keys:
+            raise ValueError(f"Ред {index}: тираж {normalized['draw_key']} е дублиран в CSV файла.")
+        seen_keys.add(normalized["draw_key"])
+        records.append(normalized)
     return records
-
 
 def import_manual_csv_text(csv_text: str) -> dict[str, Any]:
     records = parse_manual_csv_text(csv_text)
-    upsert_result = upsert_records(records) if records else {"inserted": 0, "updated": 0, "total_input": 0}
+    if records:
+        ensure_database_hydrated_from_csv()
+        existing = history_rows(limit=None)
+        latest_pair = max(
+            ((_safe_int(row.get("draw_year"), 0), _safe_int(row.get("draw_number"), 0)) for row in existing),
+            default=(0, 0),
+        )
+        ordered_pairs = [(_safe_int(row["draw_year"], 0), _safe_int(row["draw_number"], 0)) for row in records]
+        if ordered_pairs != sorted(ordered_pairs):
+            raise ValueError("Ръчният CSV трябва да бъде подреден по година и номер на тираж.")
+        expected = latest_pair
+        for pair in ordered_pairs:
+            contiguous = (
+                (pair[0] == expected[0] and pair[1] == expected[1] + 1)
+                or (expected != (0, 0) and pair[0] == expected[0] + 1 and pair[1] == 1)
+                or expected == (0, 0)
+            )
+            if not contiguous:
+                raise ValueError(
+                    f"Ръчният импорт е блокиран: очакван е следващият тираж след {expected[0]}-{expected[1]}, получен е {pair[0]}-{pair[1]}."
+                )
+            expected = pair
+    upsert_result = upsert_records(records, allow_existing_updates=False) if records else {
+        "inserted": 0, "updated": 0, "total_input": 0
+    }
     return write_artifacts(import_result={
-        "mode": "manual_csv",
+        "mode": "manual_csv_captcha_safe",
         "imported_records": len(records),
         "errors": [],
         "error_count": 0,
         "upsert_result": upsert_result,
     })
 
-
 def import_manual_csv_file(path: str | Path) -> dict[str, Any]:
     text = Path(path).read_text(encoding="utf-8-sig", errors="replace")
     return import_manual_csv_text(text)
 
-def upsert_records(records: list[dict[str, Any]]) -> dict[str, Any]:
-    initialize_database()
+def upsert_records(records: list[dict[str, Any]], allow_existing_updates: bool = True) -> dict[str, Any]:
+    ensure_database_hydrated_from_csv()
+    normalized = [
+        _normalize_history_record(record, row_label=f"Импортен запис {index}")
+        for index, record in enumerate(records, start=1)
+    ]
+    keys = [record["draw_key"] for record in normalized]
+    if len(keys) != len(set(keys)):
+        raise PrizeHistoryIntegrityError("Импортният пакет съдържа дублирани тиражи.")
+
+    backup_path = _backup_database()
+    old_data = DATA_PATH.read_bytes() if DATA_PATH.exists() else None
+    old_export = EXPORT_CSV.read_bytes() if EXPORT_CSV.exists() else None
     inserted = 0
     updated = 0
-    with connect() as conn:
-        for record in records:
-            existing = conn.execute("SELECT draw_key FROM prize_winner_history WHERE draw_key = ?", (record["draw_key"],)).fetchone()
-            conn.execute(
-                """
-                INSERT INTO prize_winner_history(
-                    draw_key, draw_year, draw_number, draw_date,
-                    n1, n2, n3, n4, n5, n6, numbers_text, jackpot_eur,
-                    winners_6, prize_6_eur, total_6_eur,
-                    winners_5, prize_5_eur, total_5_eur,
-                    winners_4, prize_4_eur, total_4_eur,
-                    winners_3, prize_3_eur, total_3_eur,
-                    source_url, imported_at_utc, note
-                ) VALUES (
-                    :draw_key, :draw_year, :draw_number, :draw_date,
-                    :n1, :n2, :n3, :n4, :n5, :n6, :numbers_text, :jackpot_eur,
-                    :winners_6, :prize_6_eur, :total_6_eur,
-                    :winners_5, :prize_5_eur, :total_5_eur,
-                    :winners_4, :prize_4_eur, :total_4_eur,
-                    :winners_3, :prize_3_eur, :total_3_eur,
-                    :source_url, :imported_at_utc, :note
+    try:
+        with connect() as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            for record in normalized:
+                existing_row = conn.execute(
+                    "SELECT * FROM prize_winner_history WHERE draw_key = ?",
+                    (record["draw_key"],),
+                ).fetchone()
+                if existing_row is None:
+                    conn.execute(_insert_sql(), _storage_payload(record))
+                    inserted += 1
+                    continue
+                if not allow_existing_updates:
+                    raise PrizeHistoryIntegrityError(
+                        f"Тираж {record['draw_key']} вече съществува; ръчният импорт не презаписва съществуващи записи."
+                    )
+                existing = dict(existing_row)
+                if _core_signature(existing) != _core_signature(record):
+                    raise PrizeHistoryIntegrityError(
+                        f"Конфликт в основните данни за тираж {record['draw_key']}; автоматично презаписване е забранено."
+                    )
+                merged = dict(existing)
+                for field in (*_OPTIONAL_INT_FIELDS, *_OPTIONAL_FLOAT_FIELDS, "source_url", "imported_at_utc", "note"):
+                    incoming = record.get(field)
+                    if incoming is not None and str(incoming).strip() != "":
+                        merged[field] = incoming
+                assignments = ", ".join(f"{field} = :{field}" for field in CSV_FIELDS if field != "draw_key")
+                conn.execute(
+                    f"UPDATE prize_winner_history SET {assignments} WHERE draw_key = :draw_key",
+                    _storage_payload(merged),
                 )
-                ON CONFLICT(draw_key) DO UPDATE SET
-                    draw_date = excluded.draw_date,
-                    n1 = excluded.n1, n2 = excluded.n2, n3 = excluded.n3,
-                    n4 = excluded.n4, n5 = excluded.n5, n6 = excluded.n6,
-                    numbers_text = excluded.numbers_text,
-                    jackpot_eur = excluded.jackpot_eur,
-                    winners_6 = excluded.winners_6, prize_6_eur = excluded.prize_6_eur, total_6_eur = excluded.total_6_eur,
-                    winners_5 = excluded.winners_5, prize_5_eur = excluded.prize_5_eur, total_5_eur = excluded.total_5_eur,
-                    winners_4 = excluded.winners_4, prize_4_eur = excluded.prize_4_eur, total_4_eur = excluded.total_4_eur,
-                    winners_3 = excluded.winners_3, prize_3_eur = excluded.prize_3_eur, total_3_eur = excluded.total_3_eur,
-                    source_url = excluded.source_url,
-                    imported_at_utc = excluded.imported_at_utc,
-                    note = excluded.note
-                """,
-                record,
-            )
-            if existing:
                 updated += 1
-            else:
-                inserted += 1
-    export_csv_mirror()
-    return {"inserted": inserted, "updated": updated, "total_input": len(records)}
-
+            conn.commit()
+        export_csv_mirror()
+    except Exception:
+        _restore_database(backup_path)
+        _restore_file(DATA_PATH, old_data)
+        _restore_file(EXPORT_CSV, old_export)
+        raise
+    finally:
+        backup_path.unlink(missing_ok=True)
+    return {"inserted": inserted, "updated": updated, "total_input": len(normalized)}
 
 def import_draw(year: int, draw_number: int) -> dict[str, Any]:
     url = official_url(year, draw_number)
@@ -858,39 +1144,41 @@ def import_year_range(year: int, start_draw: int = 1, end_draw: int = 120, stop_
 
 
 def history_rows(limit: int | None = None) -> list[dict[str, Any]]:
-    initialize_database()
+    ensure_database_hydrated_from_csv()
     query = "SELECT * FROM prize_winner_history ORDER BY draw_date DESC, draw_number DESC"
     if limit:
         query += f" LIMIT {int(limit)}"
     with connect() as conn:
         return [dict(row) for row in conn.execute(query).fetchall()]
 
-
 def history_count() -> int:
-    initialize_database()
+    ensure_database_hydrated_from_csv()
     with connect() as conn:
         row = conn.execute("SELECT COUNT(*) AS count FROM prize_winner_history").fetchone()
     return int(row["count"] if row else 0)
 
-
 def latest_record() -> dict[str, Any] | None:
-    initialize_database()
+    ensure_database_hydrated_from_csv()
     with connect() as conn:
-        row = conn.execute("SELECT * FROM prize_winner_history ORDER BY draw_date DESC, draw_number DESC LIMIT 1").fetchone()
+        row = conn.execute(
+            "SELECT * FROM prize_winner_history ORDER BY draw_date DESC, draw_number DESC LIMIT 1"
+        ).fetchone()
     return dict(row) if row else None
 
-
 def export_csv_mirror() -> None:
-    rows = history_rows(limit=None)
-    DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
-    for path in (DATA_PATH, EXPORT_CSV):
-        with path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
-            writer.writeheader()
-            for row in sorted(rows, key=lambda item: (item.get("draw_date") or "", int(item.get("draw_number") or 0))):
-                writer.writerow({field: row.get(field, "") for field in CSV_FIELDS})
-
+    ensure_database_hydrated_from_csv()
+    with connect() as conn:
+        rows = _query_history_rows(conn)
+    canonical_rows = _read_history_csv(DATA_PATH)
+    canonical_keys = {str(row.get("draw_key") or "") for row in canonical_rows}
+    database_keys = {str(row.get("draw_key") or "") for row in rows}
+    if canonical_rows and (len(rows) < len(canonical_rows) or not canonical_keys.issubset(database_keys)):
+        raise PrizeHistoryIntegrityError(
+            f"Export blocked: SQLite records cannot replace the canonical CSV safely "
+            f"(database={len(rows)}, csv={len(canonical_rows)}, missing_keys={sorted(canonical_keys - database_keys)[:5]})."
+        )
+    payload = _csv_payload(rows)
+    _atomic_write_csv_pair(payload)
 
 def interval_stats_for_category(rows: list[dict[str, Any]], category: int) -> dict[str, Any]:
     ordered = sorted(rows, key=lambda item: (str(item.get("draw_date") or ""), int(item.get("draw_number") or 0)))

@@ -1,0 +1,15 @@
+{
+  "step": "151.3",
+  "name": "Prize History Integrity, CAPTCHA Diagnostics and Freshness Repair",
+  "status": "completed",
+  "verified_on_audit_snapshot": true,
+  "audit_snapshot_latest_prize_history": "2026-53",
+  "audit_snapshot_latest_downstream_draw": "2026-54",
+  "last_validated_official_draw_evidence": "2026-55",
+  "regression_verifier": "scripts/verify_step_151_3.py",
+  "expected_verifier_result": "STEP_151_3_VERIFY_OK",
+  "data_synchronization_performed": true,
+  "clean_checkpoint_created": true,
+  "synchronized_through_draw": "2026-55",
+  "closed_by_step": "151.5"
+}

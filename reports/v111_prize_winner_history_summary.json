@@ -7,107 +7,103 @@
   "database_path": "data\\user_journal.db",
   "csv_path": "data\\prize_winner_history.csv",
   "export_csv": "data\\user_journal_exports\\prize_winner_history.csv",
-  "imported_draws": 26,
+  "imported_draws": 32,
   "latest_record": {
-    "draw_key": "2026-49",
+    "draw_key": "2026-55",
     "draw_year": 2026,
-    "draw_number": 49,
-    "draw_date": "2026-06-25",
+    "draw_number": 55,
+    "draw_date": "2026-07-16",
     "n1": 5,
-    "n2": 11,
-    "n3": 44,
-    "n4": 46,
-    "n5": 47,
-    "n6": 48,
-    "numbers_text": "5, 11, 44, 46, 47, 48",
-    "jackpot_eur": 2189497.94,
+    "n2": 10,
+    "n3": 17,
+    "n4": 20,
+    "n5": 42,
+    "n6": 47,
+    "numbers_text": "5, 10, 17, 20, 42, 47",
+    "jackpot_eur": 2724436.24,
     "winners_6": 0,
     "prize_6_eur": 0.0,
     "total_6_eur": 0.0,
-    "winners_5": 2,
-    "prize_5_eur": 11417.3,
-    "total_5_eur": 22834.6,
-    "winners_4": 442,
-    "prize_4_eur": 57.1,
-    "total_4_eur": 25238.2,
-    "winners_3": 7164,
-    "prize_3_eur": 7.6,
-    "total_3_eur": 54446.4,
-    "source_url": "official_manual_screenshot_2026_24_49",
-    "imported_at_utc": "2026-06-27T06:06:53+00:00",
-    "note": "Проверен ръчен импорт от официална визуална таблица за 2026. Източник: официален екран/скрийншот. Проверка по числа: да."
+    "winners_5": 19,
+    "prize_5_eur": 1281.8,
+    "total_5_eur": 24354.2,
+    "winners_4": 574,
+    "prize_4_eur": 46.9,
+    "total_4_eur": 26920.6,
+    "winners_3": 10791,
+    "prize_3_eur": 5.4,
+    "total_3_eur": 58271.4,
+    "source_url": "https://info.toto.bg/results/6x49/2026-55",
+    "imported_at_utc": "2026-07-17T05:39:17+00:00",
+    "note": "Импортирано ръчно от CSV при CAPTCHA; официалният URL е запазен за последваща проверка."
   },
   "interval_summary": {
     "6": {
       "category": 6,
-      "total_draws": 26,
+      "total_draws": 32,
       "event_count": 1,
-      "draws_without_event": 25,
+      "draws_without_event": 31,
       "avg_interval": null,
       "median_interval": null,
       "max_interval": null,
-      "current_gap": 14,
+      "current_gap": 20,
       "last_event_date": "2026-05-07",
       "last_event_draw": 35,
       "last_event_winners": 1
     },
     "5": {
       "category": 5,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 2
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 19
     },
     "4": {
       "category": 4,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 442
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 574
     },
     "3": {
       "category": 3,
-      "total_draws": 26,
-      "event_count": 26,
+      "total_draws": 32,
+      "event_count": 32,
       "draws_without_event": 0,
       "avg_interval": 1,
       "median_interval": 1,
       "max_interval": 1,
       "current_gap": 0,
-      "last_event_date": "2026-06-25",
-      "last_event_draw": 49,
-      "last_event_winners": 7164
+      "last_event_date": "2026-07-16",
+      "last_event_draw": 55,
+      "last_event_winners": 10791
     }
   },
   "import_result": {
-    "mode": "verified_2026_manual_screenshots",
-    "imported_records": 26,
+    "mode": "manual_csv_captcha_safe",
+    "imported_records": 2,
     "errors": [],
     "error_count": 0,
     "upsert_result": {
-      "inserted": 25,
-      "updated": 1,
-      "total_input": 26
-    },
-    "quarantine_result": {
-      "quarantined": 10,
-      "path": "reports\\v111_8_quarantined_invalid_prize_rows.csv"
+      "inserted": 2,
+      "updated": 0,
+      "total_input": 2
     }
   },
   "safe_note_bg": "Този слой анализира историята на печалбите. Той не гарантира печалба и не променя случайността на следващия тираж.",
-  "generated_at_utc": "2026-06-27T06:06:53+00:00",
+  "generated_at_utc": "2026-07-17T05:39:17+00:00",
   "checks": [
     {
       "check": "sqlite_table_ready",
@@ -131,7 +127,7 @@
       "check": "has_imported_rows",
       "status": "OK",
       "blocking": "no",
-      "details_bg": "Импортирани тиражи: 26"
+      "details_bg": "Импортирани тиражи: 32"
     }
   ]
 }

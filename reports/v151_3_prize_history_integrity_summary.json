@@ -1,0 +1,24 @@
+{
+  "step": "151.3",
+  "status": "REPAIR_CODE_APPLIED_DATA_SYNC_PENDING",
+  "fixed": {
+    "destructive_empty_sqlite_export": true,
+    "manual_csv_validation": true,
+    "missing_financial_value_preservation": true,
+    "captcha_classification": true,
+    "last_known_good_draw_preservation": true,
+    "step120_false_synced_result": true,
+    "step131_false_zero_blocker_count": true,
+    "step124_missing_mirror_bootstrap": true,
+    "legacy_bst_direct_write_path": true,
+    "canonical_lf_csv_writers": true
+  },
+  "not_performed": {
+    "draw_54_import": true,
+    "draw_55_import": true,
+    "downstream_rebuild": true,
+    "step148_settlement": true,
+    "git_commit_or_push": true,
+    "clean_checkpoint": true
+  }
+}

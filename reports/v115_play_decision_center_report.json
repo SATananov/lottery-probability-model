@@ -1,35 +1,35 @@
 {
   "status": "PLAY_DECISION_READY",
-  "created_at_utc": "2026-07-11T10:29:44+00:00",
+  "created_at_utc": "2026-07-17T05:39:31+00:00",
   "history": {
-    "rows": 10063,
+    "rows": 10065,
     "first_year": 1958,
     "last_year": 2026
   },
-  "prize_rows": 30,
+  "prize_rows": 32,
   "coverage": "начална база",
   "coverage_note": "Може да се гледа текущият цикъл, но изводите са ограничени.",
   "latest_draw": {
     "year": 2026,
-    "draw_number": 53,
-    "draw_date": "2026-07-09",
-    "jackpot_eur": 2538119.44
+    "draw_number": 55,
+    "draw_date": "2026-07-16",
+    "jackpot_eur": 2724436.24
   },
   "last_six": {
     "year": 2026,
     "draw_number": 35,
     "draw_date": "2026-05-07",
-    "gap_after_last_six": 18
+    "gap_after_last_six": 20
   },
   "jackpot_cycle": {
     "restart_jackpot_eur": 1086605.1,
-    "latest_jackpot_eur": 2538119.44,
-    "growth_eur": 1451514.3399999999
+    "latest_jackpot_eur": 2724436.24,
+    "growth_eur": 1637831.1400000001
   },
   "averages": {
-    "winners_5": 12.43,
-    "winners_4": 622.8,
-    "winners_3": 10861.3
+    "winners_5": 12.59,
+    "winners_4": 616.22,
+    "winners_3": 10772.5
   },
   "recommendation": {
     "recommended_tickets": 3,

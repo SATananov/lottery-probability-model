@@ -1,0 +1,54 @@
+{
+  "step": "151.5",
+  "name": "Full Post-Synchronization Integrity Audit, Runtime Cleanup and Clean Git Checkpoint",
+  "expected_post_sync_state": {
+    "prize_history_rows": 32,
+    "dataset_rows": 10065,
+    "latest_draw": "2026-55",
+    "latest_numbers": [
+      5,
+      10,
+      17,
+      20,
+      42,
+      47
+    ],
+    "freshness_blockers": 0,
+    "step148_settled_draws": 2,
+    "step148_active_expected_draw": "2026-56"
+  },
+  "runtime_cleanup": {
+    "restore_to_head": [
+      "models/v123_bst_official_draw_detection_status.json",
+      "models/v125_unified_downstream_refresh_status.json",
+      "models/v126_startup_automation_status.json",
+      "models/v131_production_operations_dashboard_status.json",
+      "reports/v123_bst_official_draw_detection_report.json",
+      "reports/v123_bst_official_draw_detection_summary.md",
+      "reports/v125_unified_downstream_refresh_audit.jsonl",
+      "reports/v125_unified_downstream_refresh_report.json",
+      "reports/v125_unified_downstream_refresh_summary.md",
+      "reports/v126_startup_automation_audit.jsonl",
+      "reports/v126_startup_automation_report.json",
+      "reports/v126_startup_automation_summary.md",
+      "reports/v131_production_operations_dashboard_report.json",
+      "reports/v131_production_operations_dashboard_summary.md"
+    ],
+    "remove_only_disposable_caches_and_temporary_files": true,
+    "preserve_local_journal_and_exports": true,
+    "preserve_forensic_backups_outside_project": true
+  },
+  "heavy_model_hashes": {
+    "models/v41/v41_sgd_number_model.joblib": "f2f4b60d6dbaa29378ffab0e455ca3fd19e50374bf3d0b2c7dde632b512d8786",
+    "models/v45/v45_number_score_model.joblib": "24ac07eb57f7828666daa338410f85b481be8ff806f98143dc71d6a24911eab8"
+  },
+  "git_checkpoint": {
+    "branch": "main",
+    "commit_is_explicit_operator_action": true,
+    "push_is_explicit_operator_action": true,
+    "required_final_state": "main...origin/main with no working-tree changes"
+  },
+  "production_scoring_changed": false,
+  "heavy_model_retraining_performed": false,
+  "personal_journal_tracked": false
+}

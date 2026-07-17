@@ -13,19 +13,19 @@
   "plan_id": "v94_active_20260623T163844Z0000",
   "strategy_type": "Хибрид",
   "latest_dataset_draw": {
-    "date": "2026-07-12",
-    "draw_number": "54",
+    "date": "2026-07-16",
+    "draw_number": "55",
     "drawing_position": "1",
     "numbers": [
-      16,
-      29,
-      35,
-      37,
-      44,
+      5,
+      10,
+      17,
+      20,
+      42,
       47
     ]
   },
-  "latest_dataset_draw_date": "2026-07-12",
+  "latest_dataset_draw_date": "2026-07-16",
   "next_target_draw_date": "2026-07-19",
   "cards": [
     {
@@ -120,14 +120,14 @@
       "source_note": "Този фиш е съставен само от редове, които се виждат във Финален план.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10064,
-        "latest_draw_date": "2026-07-12",
+        "dataset_rows": 10065,
+        "latest_draw_date": "2026-07-16",
         "latest_draw_numbers": [
-          16,
-          29,
-          35,
-          37,
-          44,
+          5,
+          10,
+          17,
+          20,
+          42,
           47
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -227,14 +227,14 @@
       "source_note": "Този фиш също е само от видимия финален план.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10064,
-        "latest_draw_date": "2026-07-12",
+        "dataset_rows": 10065,
+        "latest_draw_date": "2026-07-16",
         "latest_draw_numbers": [
-          16,
-          29,
-          35,
-          37,
-          44,
+          5,
+          10,
+          17,
+          20,
+          42,
           47
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -334,14 +334,14 @@
       "source_note": "Този фиш е допълващ: използва редове от активния модел извън видимата финална таблица, когато са налични.",
       "source_context": {
         "source_label": "Текущи налични модели",
-        "dataset_rows": 10064,
-        "latest_draw_date": "2026-07-12",
+        "dataset_rows": 10065,
+        "latest_draw_date": "2026-07-16",
         "latest_draw_numbers": [
-          16,
-          29,
-          35,
-          37,
-          44,
+          5,
+          10,
+          17,
+          20,
+          42,
           47
         ],
         "training_recommendation": "Не обучавай тежки модели сега",
@@ -353,7 +353,7 @@
   "copy_text_path": "reports\\v117_real_ticket_pack_builder_copy.txt",
   "csv_path": "reports\\v117_real_ticket_pack_builder_cards.csv",
   "safe_note_bg": "Готовият фиш пакет подрежда реални комбинации за пускане. Той не обещава печалба и не променя вероятностите.",
-  "generated_at_utc": "2026-07-13T03:10:10+00:00",
+  "generated_at_utc": "2026-07-17T05:39:31+00:00",
   "checks": [
     {
       "check": "cards_created",

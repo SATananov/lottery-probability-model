@@ -1,89 +1,119 @@
 {
-  "refreshed_at_utc": "2026-07-11T10:29:24+00:00",
+  "refreshed_at_utc": "2026-07-17T05:39:19+00:00",
   "status_before": {
-    "checked_at_utc": "2026-07-11T10:29:23+00:00",
+    "checked_at_utc": "2026-07-17T05:39:19+00:00",
     "status": "MODEL_DATA_SYNCED",
     "latest_prize_history": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_historical_draws": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_v40_normalized": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_v41_canonical": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
+    },
+    "layer_status": {
+      "historical_draws": "synced",
+      "v40_normalized": "synced",
+      "v41_canonical": "synced"
     },
     "counts": {
-      "prize_history": 30,
-      "historical_draws": 10063,
-      "v40_normalized": 10063,
-      "v41_canonical": 10063
+      "prize_history": 32,
+      "historical_draws": 10065,
+      "v40_normalized": 10065,
+      "v41_canonical": 10065
     },
     "missing": {
       "historical_draws": [],
       "v40_normalized": [],
       "v41_canonical": []
     },
+    "ahead_of_prize_history": {
+      "historical_draws": [],
+      "v40_normalized": [],
+      "v41_canonical": []
+    },
+    "conflicts": {
+      "historical_draws": [],
+      "v40_normalized": [],
+      "v41_canonical": []
+    },
     "policy": {
       "model_retraining": "not_automatic",
-      "reason": "A new official draw updates the model dataset layer, but heavy ML retraining remains a deliberate manual step."
+      "reason": "Dataset synchronization now requires equal latest draw, no missing Prize History draws and no content conflicts."
     }
   },
   "status_after": {
-    "checked_at_utc": "2026-07-11T10:29:24+00:00",
+    "checked_at_utc": "2026-07-17T05:39:19+00:00",
     "status": "MODEL_DATA_SYNCED",
     "latest_prize_history": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_historical_draws": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_v40_normalized": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
     },
     "latest_v41_canonical": {
       "year": 2026,
-      "draw_number": 53,
-      "date": "2026-07-09",
-      "draw_key": "2026-53"
+      "draw_number": 55,
+      "date": "2026-07-16",
+      "draw_key": "2026-55"
+    },
+    "layer_status": {
+      "historical_draws": "synced",
+      "v40_normalized": "synced",
+      "v41_canonical": "synced"
     },
     "counts": {
-      "prize_history": 30,
-      "historical_draws": 10063,
-      "v40_normalized": 10063,
-      "v41_canonical": 10063
+      "prize_history": 32,
+      "historical_draws": 10065,
+      "v40_normalized": 10065,
+      "v41_canonical": 10065
     },
     "missing": {
       "historical_draws": [],
       "v40_normalized": [],
       "v41_canonical": []
     },
+    "ahead_of_prize_history": {
+      "historical_draws": [],
+      "v40_normalized": [],
+      "v41_canonical": []
+    },
+    "conflicts": {
+      "historical_draws": [],
+      "v40_normalized": [],
+      "v41_canonical": []
+    },
     "policy": {
       "model_retraining": "not_automatic",
-      "reason": "A new official draw updates the model dataset layer, but heavy ML retraining remains a deliberate manual step."
+      "reason": "Dataset synchronization now requires equal latest draw, no missing Prize History draws and no content conflicts."
     }
   },
   "inserted": {

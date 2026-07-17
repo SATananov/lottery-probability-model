@@ -37,6 +37,14 @@ CSV_FIELDS = list(getattr(prize_engine, "CSV_FIELDS", [
 ]))
 
 
+class BSTCaptchaBlockedError(RuntimeError):
+    """The official BST endpoint returned a CAPTCHA challenge instead of draw data."""
+
+
+def is_captcha_page(page_html: str) -> bool:
+    return prize_engine.is_captcha_page(page_html)
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -94,7 +102,6 @@ def fetch_url(url: str, timeout: int = 30) -> str:
 
 def fetch_latest_index(timeout: int = 30) -> str:
     return fetch_url(OFFICIAL_BASE_URL, timeout=timeout)
-
 
 def extract_draw_links(index_html: str, limit: int = 10) -> list[dict[str, Any]]:
     """Return official 6/49 draw candidates, newest first, across known BST HTML variants."""
@@ -257,22 +264,20 @@ def parse_official_draw(year: int, draw_number: int, timeout: int = 30, save_raw
     if save_raw:
         RAW_DIR.mkdir(parents=True, exist_ok=True)
         (RAW_DIR / f"{int(year)}_{int(draw_number):03d}.html").write_text(
-            page_html[:500000],
-            encoding="utf-8",
-            errors="replace",
+            page_html[:500000], encoding="utf-8", errors="replace"
+        )
+    if is_captcha_page(page_html):
+        raise BSTCaptchaBlockedError(
+            f"Официалната BST detail страница за {year}-{draw_number} върна CAPTCHA; ingestion е блокиран fail-closed."
         )
 
     parsed = prize_engine.parse_official_result_page(
-        page_html,
-        url,
-        expected_year=int(year),
-        expected_draw=int(draw_number),
+        page_html, url, expected_year=int(year), expected_draw=int(draw_number)
     )
     parsed["source_url"] = url
     parsed["imported_at_utc"] = utc_now()
     parsed["note"] = "BST official sync"
     return normalize_record(parsed, read_rows(DATA_PATH))
-
 
 def write_rows(rows: list[dict[str, Any]], path: Path = DATA_PATH) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -294,7 +299,7 @@ def write_rows(rows: list[dict[str, Any]], path: Path = DATA_PATH) -> None:
         normalized_rows.append({field: str(row.get(field, "")) for field in fields})
 
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(normalized_rows)
 
@@ -347,14 +352,19 @@ def upsert_records(records: list[dict[str, Any]], update_existing: bool = False)
 
 def preview_latest(recent_count: int = 5, timeout: int = 30) -> dict[str, Any]:
     index_html = fetch_latest_index(timeout=timeout)
+    if is_captcha_page(index_html):
+        raise BSTCaptchaBlockedError(
+            "BST индексът върна CAPTCHA. Preview/parser е блокиран без промяна на данни."
+        )
     links = extract_draw_links(index_html, limit=recent_count)
+    if not links:
+        raise RuntimeError("BST индексът е достъпен, но не съдържа разпознаваеми 6/49 тиражи.")
     existing = read_rows(DATA_PATH)
     existing_keys = {str(row.get("draw_key") or "") for row in existing}
     existing_pairs = {
         (_safe_int(row.get("draw_year"), -1), _safe_int(row.get("draw_number"), -1))
         for row in existing
     }
-
     preview_rows: list[dict[str, Any]] = []
     for link in links:
         year = int(link["draw_year"])
@@ -365,59 +375,74 @@ def preview_latest(recent_count: int = 5, timeout: int = 30) -> dict[str, Any]:
             "draw_year": year,
             "draw_number": draw_number,
             "source_url": link["source_url"],
+            "parser_strategies": link.get("parser_strategies", []),
             "exists_local": key in existing_keys or (year, draw_number) in existing_pairs,
         })
-
     return {
         "checked_at_utc": utc_now(),
         "official_base_url": OFFICIAL_BASE_URL,
         "latest_candidates": preview_rows,
         "local_count": len(existing),
+        "captcha_detected": False,
     }
 
-
 def sync_latest(recent_count: int = 5, update_existing: bool = False, timeout: int = 30) -> dict[str, Any]:
+    """Route legacy UI sync through Step 124's safe one-draw ingestion transaction."""
     preview = preview_latest(recent_count=recent_count, timeout=timeout)
     candidates = preview["latest_candidates"]
-
     parsed_records: list[dict[str, Any]] = []
     parse_errors: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
 
-    for item in candidates:
-        if item.get("exists_local") and not update_existing:
+    for item in sorted(candidates, key=lambda row: (int(row["draw_year"]), int(row["draw_number"]))):
+        if item.get("exists_local"):
+            skipped.append({**item, "skip_reason": "already_exists; existing updates are blocked by Step 151.3"})
             continue
-
-        year = int(item["draw_year"])
-        draw_number = int(item["draw_number"])
         try:
-            parsed_records.append(parse_official_draw(year, draw_number, timeout=timeout, save_raw=True))
+            parsed_records.append(parse_official_draw(
+                int(item["draw_year"]), int(item["draw_number"]), timeout=timeout, save_raw=True
+            ))
         except Exception as exc:
             parse_errors.append({
-                "draw_year": year,
-                "draw_number": draw_number,
+                "draw_year": item["draw_year"],
+                "draw_number": item["draw_number"],
                 "source_url": item.get("source_url"),
+                "error_type": type(exc).__name__,
                 "error": str(exc),
             })
 
-    result = upsert_records(parsed_records, update_existing=update_existing) if parsed_records else {
-        "inserted": [],
-        "updated": [],
-        "skipped": [],
-        "final_count": len(read_rows(DATA_PATH)),
-        "data_path": str(DATA_PATH.relative_to(ROOT)),
-        "export_path": str(EXPORT_PATH.relative_to(ROOT)),
-    }
+    inserted: list[dict[str, Any]] = []
+    ingestion_results: list[dict[str, Any]] = []
+    if parsed_records:
+        from src.v124_safe_official_draw_ingestion_engine import ingest_official_draw_record
+        for record in sorted(parsed_records, key=lambda row: (
+            _safe_int(row.get("draw_year"), 0), _safe_int(row.get("draw_number"), 0)
+        )):
+            ingestion = ingest_official_draw_record(record)
+            ingestion_results.append(ingestion)
+            if ingestion.get("status") == "inserted":
+                inserted.append(record)
+            else:
+                skipped.append({**record, "skip_reason": ingestion.get("status"), "message": ingestion.get("message")})
 
-    result.update({
+    result = {
         "checked_at_utc": preview["checked_at_utc"],
         "official_base_url": OFFICIAL_BASE_URL,
         "latest_candidates": candidates,
+        "inserted": inserted,
+        "updated": [],
+        "skipped": skipped,
         "parse_errors": parse_errors,
-    })
-
+        "ingestion_results": ingestion_results,
+        "final_count": len(read_rows(DATA_PATH)),
+        "data_path": str(DATA_PATH.relative_to(ROOT)),
+        "export_path": str(EXPORT_PATH.relative_to(ROOT)),
+        "safe_ingestion_routed": True,
+        "update_existing_requested": bool(update_existing),
+        "update_existing_performed": False,
+    }
     write_sync_reports(result)
     return result
-
 
 def write_sync_reports(result: dict[str, Any]) -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -448,7 +473,7 @@ def write_sync_reports(result: dict[str, Any]) -> None:
 
     with CHECKLIST_CSV.open("w", encoding="utf-8", newline="") as handle:
         fields = ["status", "draw_year", "draw_number", "draw_date", "numbers_text", "jackpot_eur", "source_url", "message"]
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
 
         for status, rows in [("inserted", inserted), ("updated", updated), ("skipped", skipped)]:

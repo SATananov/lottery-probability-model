@@ -10063,3 +10063,4 @@ draw_event_id,source_draw_id,date,year,draw_number,drawing_no,n1,n2,n3,n4,n5,n6,
 2026-052-1,10062,2026-07-05,2026,52,1,4,11,21,28,36,49,,https://info.toto.bg/results/6x49,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
 2026-053-1,10063,2026-07-09,2026,53,1,12,17,23,30,38,41,,https://info.toto.bg/results/6x49/2026-53,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
 2026-054-1,10064,2026-07-12,2026,54,1,16,29,35,37,44,47,,,legacy_v39_known_draw_position,known_from_v39_dataset_bonus_missing
+2026-055-1,10065,2026-07-16,2026,55,1,5,10,17,20,42,47,,https://info.toto.bg/results/6x49/2026-55,post_bst_sync_official_6x49,official_bst_sync_bonus_missing

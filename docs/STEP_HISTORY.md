@@ -242,3 +242,15 @@ Step 151.2.1 довършва правилото от Step 150.2 за разде
 Суровият Git статус, терминалната команда, файловите пътища, вътрешните проверки и резултатните речници се показват само при включени **„Технически подробности“**. Добавена е AST regression проверка, която не допуска повторно връщане на тези технически блокове в нормалния изглед.
 
 Стъпката е само визуална и верификационна. Не променя данните, моделите, scoring логиката, Step 148 или личния дневник.
+
+## Step 151.3 — Prize History Integrity, CAPTCHA Diagnostics and Freshness Repair
+
+Step 151.3 repairs the Prize History persistence boundary so an empty SQLite table cannot erase a non-empty canonical CSV. Manual import now validates unique sorted numbers, date/year consistency, official source URLs and contiguous draw order. The BST detector distinguishes an index CAPTCHA from a parser-format failure, Step 120 compares exact latest-draw equality and Step 131 counts every blocking freshness state.
+
+## Step 151.4 — Controlled Prize History 54–55 Data Synchronization and Step 148 Settlement
+
+Step 151.4 imports the verified official Prize History records for draws 54 and 55, synchronizes historical, normalized and canonical datasets through `2026-55`, refreshes the R and lightweight downstream layers without heavy retraining, closes Step 143.3 with zero blockers, settles the frozen Step 148 package for draw 55 and creates the next immutable lock for `2026-56`.
+
+## Step 151.5 — Full Post-Synchronization Integrity Audit, Runtime Cleanup and Clean Git Checkpoint
+
+Step 151.5 verifies 32 Prize History rows, 10065 synchronized dataset rows, zero freshness blockers, R coverage through draw 55, an intact Step 148 ledger with two settlements and an active lock for draw 56. Transient BST/startup/operations runtime snapshots are restored to the previous committed baseline, disposable caches are removed, heavy model hashes are verified unchanged and the repository is prepared for an explicit clean commit and push.
